@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "stat454.github.io",
+    "title": "STAT545: Fall 2025",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Welcome to STAT 545 at the University of British Columbia!"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,47 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Acknowledgement\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəyəm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.\n\n\nCourse Information\n\n\n\nCourse Title\nCourse Code Number\nCredit Value\n\n\nExploratory Data Analysis Part I\nSTAT 545A\n1.5\n\n\nExploratory Data Analysis\nSTAT 545B\n1.5\n\n\n\n\n\nPrerequisites\nWhile there are no formal pre-requisites for STAT 545A, students should be familiar with basic statistical analyses and have taken at least one introductory statistics course.\nSTAT545A is a pre-requisite for STAT545B. No exceptions.\n\n\nContact and Office Hours\n\n\n\nInstructor\nContact Details\nOffice Location\nOffice Hours\n\n\n\n\nGrace Tompkins\ngrace@stat.ubc.ca\nESB 3134\nTBD\n\n\n\n\n\n\nTeaching Assistants\n\n\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\nCourse Structure\nThis course will feature short lectures and in-class demonstrations so students get hands-on experience with the help of their instructor and TAs. The class will be partially “flipped”, with students being expected to review a short video prior to the lecture. Dedicated time will be given in lecture for students to work through assigned worksheets.\n\n\nSchedule of Topics and Assessments\nPART A:\n\n\n\n\n\n\n\n\n\nDate\nTopic\nIn-class work\nAssessments\n\n\n\n\nTuesday Sept 2\nInstallation\n\n\n\n\nThursday Sept 4\nIntro to STAT545 and R\nWorksheet A1\nWorksheet A1 due September 8th, 11:59pm PT\n\n\nTuesday Sept 9\nAuthoring and Reproducibility\n\n\n\n\nThursday Sept 11\nVersion Control\n\n\n\n\nTuesday Sept 16\nData Manipulation with dplyr\nWorksheet A2\n\n\n\nThursday Sept 18\n\nWorksheet A2\nWorksheet A2 due September 22nd, 11:59pm PT\n\n\nTuesday Sept 23\nData Visualization\nWorksheet A3\n\n\n\nThursday Sept 25\n\nWorksheet A3\nWorksheet A3 due September 29th, 11:59pm PT\n\n\nTuesday Sept 30\nTidy Data\nWorksheet A4\n\n\n\nThursday Oct 2\n\nWorksheet A4\n\n\n\nTuesday Oct 7\nModel Fitting\nWorksheet A4\nWorksheet A4 due October 13th, 11:59pm PT\n\n\nThursday Oct 9\nFactors and Dates\nWorksheet A5\n\n\n\nTuesday Oct 14\nReading and Writing Data, Tibble Joins\nWorksheet A5\n\n\n\nTuesday Oct 16\nReview and Work Session\nWorksheet 5, Mini Data Analysis (MDA)\nWorksheet A5 due October 20th, 11:59pm PT\n\n\n\nPART B:\n\n\n\nDate\nTopic\nIn-class Work\nAssessments"
+  },
+  {
+    "objectID": "teachingteam.html",
+    "href": "teachingteam.html",
+    "title": "Teaching Team",
+    "section": "",
+    "text": "teaching team info goes here"
+  },
+  {
+    "objectID": "worksheets.html",
+    "href": "worksheets.html",
+    "title": "Worksheets",
+    "section": "",
+    "text": "Worksheets go here"
+  },
+  {
+    "objectID": "material.html",
+    "href": "material.html",
+    "title": "Course Material",
+    "section": "",
+    "text": "Links to individual lectures/material goes here"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Additional resources go here"
+  },
+  {
+    "objectID": "syllabus.html#acknoledgement",
+    "href": "syllabus.html#acknoledgement",
+    "title": "Syllabus",
+    "section": "",
+    "text": "UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəyəm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site."
   }
 ]

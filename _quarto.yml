@@ -3,12 +3,16 @@ project:
   output-dir: docs
 
 website:
-  title: "stat454.github.io"
+  title: "STAT545 @ UBC"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - syllabus.qmd
+      - teachingteam.qmd
+      - material.qmd
+      - worksheets.qmd
+      - faq.qmd
 
 format:
   html:
