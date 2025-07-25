@@ -50,7 +50,7 @@ There are no official pre-requisites for STAT 545A but most students will have h
 
 ### I’m not enrolled – can I sit in during class?
 
-Unfortunately not.
+A: Unfortunately not.
 The room is usually at capacity, and further, we’ve allocated TA time for the specific number of students attending the class.
 Feel free to follow along online using the online lecture resources.
 
@@ -75,13 +75,13 @@ But, I encourage you to join the waitlist.
 ### The course is listed as “restricted”. What should I do? 
 
 When all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types.
-If you are a student of that type, then go ahead and register!
+If you are a student of that type, then go ahead and register through SSC!
 Otherwise, I encourage you to join the waitlist.
 
 ### Should I take this course? 
 
 This course is open to any graduate student at UBC.
-Students from other departments vastly outnumber those from the Statistics Department.
+Students from other departments vastly outnumber those from Statistics.
 In fact, the most successful students are often grad students from other fields who need to analyze and visualize data for a thesis.
 They are highly motivated and excel.
 

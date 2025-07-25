@@ -5,14 +5,38 @@ project:
 website:
   title: "STAT545 @ UBC"
   navbar:
+    background: primary
+    search: true
     left:
-      - href: index.qmd
-        text: Home
-      - syllabus.qmd
-      - teachingteam.qmd
-      - material.qmd
-      - worksheets.qmd
-      - faq.qmd
+      - href: webpages/index.qmd
+        text: "Home"
+      - sidebar:syllabus
+      - href: webpages/teachingteam.qmd
+        text: "Teaching Team"
+      - href: webpages/worksheets.qmd
+        text: "Worksheets"
+      - sidebar:lectures
+      - href: webpages/faq.qmd
+        text: "FAQ"
+        
+  sidebar:
+    - id: syllabus
+      title: "Syllabus"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - webpages/syllabus/syllabusA.qmd
+        - webpages/syllabus/syllabusB.qmd
+        
+    - id: lectures
+      title: "Course Material"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - webpages/lectures/lec0installation.qmd
+        - webpages/lectures/lec1introR.qmd
 
 format:
   html:

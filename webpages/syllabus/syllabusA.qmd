@@ -1,0 +1,173 @@
+---
+title: "Syllabus: STAT 545 A (Part I)"
+date-modified: last-modified
+---
+
+### Acknowledgement
+
+UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəyəm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
+
+### Course Information
+
+|  |  |  |
+|----|----|----|
+| **Course Title** | **Course Code Number** | **Credit** **Value** |
+| Exploratory Data Analysis Part I | STAT 545 A | 1.5 |
+
+### Prerequisites
+
+While there are no formal pre-requisites for STAT 545 A, students should be familiar with basic statistical analyses and have taken at least one introductory statistics course.
+
+STAT545 A is a pre-requisite for STAT545 B. No exceptions.
+
+### Contact and Office Hours
+
+| Instructor     | Contact Details        | Office Location | Office Hours |
+|----------------|------------------------|-----------------|--------------|
+| Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134        | TBD          |
+
+| Teaching Assistants |
+|---------------------|
+| TBD                 |
+| TBD                 |
+| TBD                 |
+
+### Course Structure
+
+This course will feature short lectures and in-class demonstrations so students get hands-on experience with the help of their instructor and TAs. The class will be partially "flipped", with students being expected to review a short video prior to the lecture. Dedicated time will be given in lecture for students to work through assigned worksheets.
+
+**Please bring a charged laptop to every class.** If you do not have a personal laptop, one can be borrowed through the [UBC library](https://wiki.ubc.ca/Library:Technology_Borrowing/Laptop_Lending).
+
+### Schedule of Topics and Assessments
+
+**STAT 545 A (Part I):**
+
+| Date | Topic | In-class work | Assessments |
+|----------------|-----------------|-----------------|---------------------|
+| Tuesday Sept 2 | Installation |  |  |
+| Thursday Sept 4 | Intro to STAT545 and R | Worksheet A1 | **Worksheet A1 due September 8th, 11:59pm PT** |
+| Tuesday Sept 9 | Authoring and Reproducibility |  |  |
+| Thursday Sept 11 | Version Control |  |  |
+| Tuesday Sept 16 | Data Manipulation with dplyr | Worksheet A2 |  |
+| Thursday Sept 18 |  | Worksheet A2 | **Worksheet A2 due September 22nd, 11:59pm PT** |
+| Tuesday Sept 23 | Data Visualization | Worksheet A3 |  |
+| Thursday Sept 25 |  | Worksheet A3 | **Worksheet A3 due September 29th, 11:59pm PT** |
+| Tuesday Sept 30 | Tidy Data | Worksheet A4 |  |
+| Thursday Oct 2 |  | Worksheet A4 |  |
+| Tuesday Oct 7 | Model Fitting | Worksheet A4 | **Worksheet A4 due October 13th, 11:59pm PT** |
+| Thursday Oct 9 | Factors and Dates | Worksheet A5 |  |
+| Tuesday Oct 14 | Reading and Writing Data, Tibble Joins | Worksheet A5 |  |
+| Tuesday Oct 16 | Review and Work Session | Worksheet 5, Mini Data Analysis (MDA) | **Worksheet A5 due October 20th, 11:59pm PT** |
+
+This schedule is subject to change. Any changes will be announced via the `#annoucements` channel on Slack, and major changes will be sent out via email.
+
+### Assessments and Grade Breakdown
+
+| Assessment | Percent Grade | Note |
+|----|----|----|
+| Worksheets | 15% | Worksheets are graded by completion. For example, if you complete the worksheet with no errors, you will get 100%. If you successfully complete 13/15 questions, your score will be 13/15 for that worksheet. |
+| In class iClicker | 5% | Three iClicker questions will be given on Tuesday's lectures. Correctly answer at least one question to receive full marks for that lecture. |
+| Mini Data Analysis | 45% | Students write their own mini analysis |
+| Collaborative Project | 35% | Team project intended for practicing version control and collaboration |
+
+Regrade requests must be sent to the TAs through Slack within one week of the assessment being returned. If required, regrade requests can be escalated to the instructor [only if]{.underline} the request has already been brought up to the TA team and the student is unsatisfied. The instructor reserves the right to regrade the entire assessment, resulting in a higher or lower mark than originally provided.
+
+### Auditing Students
+
+Auditing students are expected to complete all assessments (see above). All assessments are graded on a pass/fail basis for those officially auditing.
+
+You must be registered as an auditing student to attend lectures due to capacity limitations.
+
+### Course Communications
+
+We will be using Slack as our primary platform of all course-related communications! Students will be emailed an invite to their class' Slack workspace.
+
+Official course communications will occur on the `#announcements` channel. You will receive an invite on the first day of classes. Please notify the instructor by email if you have not received your personal invite.
+
+Our STAT 545 team will be actively monitoring Slack during regular working hours (9am to 5pm PT, Monday to Friday). You are free to ask questions outside of this window but please keep in mind that there are no expectations for the team to answer questions outside of working hours or on weekends or holidays.
+
+To make the most out of Slack, please
+
+-   Use the `#general` channel for clarifications, asking about course organization, or clarifying instructions. Things you post on the `#general` channel will be seen by everyone, so please do not provide information that gives away answers to assignments.
+
+-   Make a group chat with our TAs when you need more personalized help, or have an issue with grading. They may direct you to the `#general` channel when appropriate, or direct you to the instructor.
+
+-   Direct message the instructor if there is a concern that is more personal (i.e., you need to self declare an absense) or if you have already talked to the TAs about an issue and are unsatisfied. You can also direct message the instructor if you are having issues with a group member in any group-related assignments.
+
+-   Post in the `#random` channel if you find things related to the course that you'd like to share
+
+### Privacy
+
+Slack and GitHub are hosted on servers stored outside of Canada. Please keep this in mind.
+
+### Policies
+
+#### Late Policies
+
+Worksheets (and larger assignments, if applicable) are due at 11:59pm PT on the date indicated in the course schedule. For a late submission, a 24 hour extension will be provided for the first offense. Late submissions will be given a grade of 0 for subsequent occurrences.
+
+There is a zero-tolerance policy for late projects, including the mini data analysis and the collaborative project. If you are having issues with a team member regarding any group work, reach out to the instructor directly through Slack or email.
+
+#### Academic Concession
+
+UBC no longer requires a doctor’s note (or supporting documentation) for [academic concession](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,48,0,0). A self-declaration will suffice – [here is a template you can use](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://biologyprogram-2023.sites.olt.ubc.ca/files/2024/10/Academic-Concession-Form-2022W.pdf). The form is also posted on our Canvas page. Please submit this to the instructor via email.
+
+Examples of “conflicting responsibility” are conference travel and time-sensitive field work.
+
+If you arrange to have an assignment submitted late, you may not be able to receive feedback from your peers.
+
+#### Plagiarism
+
+Plagiarism, which is intellectual theft, occurs where an individual submits or presents the oral or written work of another person as his or her own and can include:
+
+-   multiple students submitting the same response
+
+-   copying from sources without citing them
+
+-   copying verbatim (word-for-word) from source and citing, but failing to make it explicit that this is a quotation (quotations should be used only rarely, if at all)
+
+Students are responsible for ensuring that any work submitted does not constitute plagiarism. Students who are in any doubt as to what constitutes plagiarism should consult their instructor before handing in any assignments.
+
+For more information see the [UBC Academic Misconduct policies](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,959).
+
+#### **Code Plagiarism**
+
+Students must correctly cite any code that has been authored by someone else or by the student themselves for other assignments. Cases of code plagiarism may include, but are not limited to:
+
+-   the reproduction (copying and pasting) of code with none or minimal reformatting (e.g., changing the name of the variables)
+
+-   the translation of an algorithm or a script from a language to another
+
+-   the generation of code by automatic code-generations software
+
+An “adequate acknowledgement” requires a detailed identification of the (parts of the) code reused and a full citation of the original source code that has been reused.
+
+#### UBC’s Policies and Resources to Support Student Success
+
+UBC provides resources to support student learning and to maintain healthy lifestyles but recognizes that sometimes crises arise and so there are additional resources to access including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious, spiritual and cultural observances. UBC values academic honesty and students are expected to acknowledge the ideas generated by others and to uphold the highest academic standards in all of their actions. Details of the policies and how to access support are available [here](https://senate.ubc.ca/policies-resources-support-student-success).
+
+#### Your personal health
+
+**If you’re sick, it’s important that you stay home – no matter what you think you may be sick with (e.g., cold, flu, other).** Your precautions will help reduce risk and keep everyone safer. The structure of this class is intended to provide flexibility so that you can prioritize your health and still be able to succeed.
+
+**If you do miss class because of illness:**
+
+-   Consult the class resources on the course website
+
+-   Come to office hours on Zoom.
+
+-   Use Slack to carry out discussions.
+
+If you miss an assessment due to illness, see the above section on Academic Concessions, and review the UBC policy here: <http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0>
+
+#### Instructor health
+
+If I am ill, then I will not come to class. If that happens, here’s what you can expect:
+
+-   If I am well enough to teach, I will conduct virtual lectures through Zoom until I am well. If this happens, you will be tagged in an announcement via Slack with information. You can anticipate that this would very likely be a last minute announcement. Our classroom will still be available for you to sit and attend an online session, although it is recommended that you bring headphones.
+
+-   If I am not well enough to teach, it is possible that one or more teaching assistants will take my place. But if not, we will either try to make up for lost time, make new resources to aid in your learning, or make accommodations regarding the assessments.
+
+### Copyright
+
+Course materials are licensed under [Creative Commons 4.0](https://creativecommons.org/licenses/by/4.0/).
