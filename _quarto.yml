@@ -37,6 +37,7 @@ website:
       contents: 
         - webpages/lectures/lec0installation.qmd
         - webpages/lectures/lec1introR.qmd
+        
 
 format:
   html:
