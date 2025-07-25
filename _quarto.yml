@@ -13,8 +13,6 @@ website:
       - sidebar:syllabus
       - href: webpages/teachingteam.qmd
         text: "Teaching Team"
-      - href: webpages/worksheets.qmd
-        text: "Worksheets"
       - sidebar:lectures
       - href: webpages/faq.qmd
         text: "FAQ"
