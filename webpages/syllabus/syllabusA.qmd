@@ -38,39 +38,80 @@ This course will feature short lectures and in-class demonstrations so students 
 
 **Please bring a charged laptop to every class.** If you do not have a personal laptop, one can be borrowed through the [UBC library](https://wiki.ubc.ca/Library:Technology_Borrowing/Laptop_Lending).
 
-### Schedule of Topics and Assessments
+### Schedule of Topics
 
 **STAT 545 A (Part I):**
 
-| Date | Topic | In-class work | Assessments |
-|----------------|-----------------|-----------------|---------------------|
-| Tuesday Sept 2 | Installation |  |  |
-| Thursday Sept 4 | Intro to STAT545 and R | Worksheet A1 | **Worksheet A1 due September 8th, 11:59pm PT** |
-| Tuesday Sept 9 | Authoring and Reproducibility |  |  |
-| Thursday Sept 11 | Version Control |  |  |
-| Tuesday Sept 16 | Data Manipulation with dplyr | Worksheet A2 |  |
-| Thursday Sept 18 |  | Worksheet A2 | **Worksheet A2 due September 22nd, 11:59pm PT** |
-| Tuesday Sept 23 | Data Visualization | Worksheet A3 |  |
-| Thursday Sept 25 |  | Worksheet A3 | **Worksheet A3 due September 29th, 11:59pm PT** |
-| Tuesday Sept 30 | Tidy Data | Worksheet A4 |  |
-| Thursday Oct 2 |  | Worksheet A4 |  |
-| Tuesday Oct 7 | Model Fitting | Worksheet A4 | **Worksheet A4 due October 13th, 11:59pm PT** |
-| Thursday Oct 9 | Factors and Dates | Worksheet A5 |  |
-| Tuesday Oct 14 | Reading and Writing Data, Tibble Joins | Worksheet A5 |  |
-| Tuesday Oct 16 | Review and Work Session | Worksheet 5, Mini Data Analysis (MDA) | **Worksheet A5 due October 20th, 11:59pm PT** |
+| Week | Date | Topic | In-class work |
+|--------|---------------|---------------|---------------|
+| 1 | Tuesday Sept 2 | Installation |  |
+|  | Thursday Sept 4 | Intro to STAT545 and R | Worksheet A1 |
+|  |  |  |  |
+| 2 | Tuesday Sept 9 | Authoring and Reproducibility | *Ensure you have completed the installation instructions from Sept 2*! |
+|  | Thursday Sept 11 | Version Control |  |
+|  |  |  |  |
+| 3 | Tuesday Sept 16 | Data Manipulation with dplyr | Worksheet A2 |
+|  | Thursday Sept 18 |  | Worksheet A2 |
+|  |  |  |  |
+| 4 | Tuesday Sept 23 | Data Visualization | Worksheet A3 |
+|  | Thursday Sept 25 |  | Worksheet A3 |
+|  |  |  |  |
+| 5 | Tuesday Sept 30 | Tidy Data | Worksheet A4 |
+|  | Thursday Oct 2 |  | Worksheet A4 |
+|  |  |  |  |
+| 6 | Tuesday Oct 7 | Model Fitting | Worksheet A4 |
+|  | Thursday Oct 9 | Factors and Dates | Worksheet A5 |
+|  |  |  |  |
+| 7 | Tuesday Oct 14 | Reading and Writing Data, Tibble Joins | Worksheet A5 |
+|  | Thursday Oct 16 | Review and Work Session | Worksheet A5, Mini Data Analysis (MDA) |
 
 This schedule is subject to change. Any changes will be announced via the `#annoucements` channel on Slack, and major changes will be sent out via email.
 
-### Assessments and Grade Breakdown
+### Assessments
+
+This course will have autograded, formative worksheets meant to guide you through a number of exercises.
 
 | Assessment | Percent Grade | Note |
-|----|----|----|
-| Worksheets | 15% | Worksheets are graded by completion. For example, if you complete the worksheet with no errors, you will get 100%. If you successfully complete 13/15 questions, your score will be 13/15 for that worksheet. |
-| In class iClicker | 5% | Three iClicker questions will be given on Tuesday's lectures. Correctly answer at least one question to receive full marks for that lecture. |
+|------------------------|------------------------|------------------------|
+| Worksheets | 20% | Guided worksheets |
 | Mini Data Analysis | 45% | Students write their own mini analysis |
 | Collaborative Project | 35% | Team project intended for practicing version control and collaboration |
 
-Regrade requests must be sent to the TAs through Slack within one week of the assessment being returned. If required, regrade requests can be escalated to the instructor [only if]{.underline} the request has already been brought up to the TA team and the student is unsatisfied. The instructor reserves the right to regrade the entire assessment, resulting in a higher or lower mark than originally provided.
+#### Worksheets
+
+Worksheets are interactive assignments that allow students to get real-time feedback on their code. Your grade will be based on the number of correct answers provided. There are unlimited attempts for the worksheets, and time will be given in class to work through them.
+
+Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
+
+| Worksheet    | Release Date         | Due Date (11:59PM PT) |
+|--------------|----------------------|-----------------------|
+| Worksheet A1 | September 2nd, 2025  | NA                    |
+| Worksheet A2 | September 15th, 2025 | September 22nd, 2025  |
+| Worksheet A3 | September 22nd, 2025 | September 29th, 2025  |
+| Worksheet A4 | September 29th, 2025 | October 13th, 2025    |
+| Worksheet A5 | October 13th, 2025   | October 20th, 2025    |
+
+#### Collaborative Project
+
+Teams will be randomly assigned. The idea behind the collaborative project is to practice using Version Control and collaborative tools on Github, troubleshoot broken R code, and rewrite code to address issues. There will be two deliverables for the project:
+
+| Collaborative Project Milestone | Release Date        | Due Date (11:59pm PT) |
+|--------------------------|-----------------------|-----------------------|
+| Deliverable 1 (100 points)        | September 4th, 2025 | September 19th, 2025  |
+| Deliverable 2 (78 points)         | September 4th, 2025 | September 26th, 2025  |
+
+Instructions will be posted on the Course Website under "Collaborative Project"
+
+#### Mini Data Analysis
+
+Conduct your own mini data analysis! The goal of this assignment is to become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as `tibble`. There are two equally weighted deliverables:
+
+| Mini Data Analysis Milestone | Release Date         | Due Date (11:59PM PT) |
+|-------------------------|------------------------|------------------------|
+| Deliverable 1 (36 points)      | September 26th, 2025 | October 3rd, 2025     |
+| Deliverable 2 (36 points)      | September 26th, 2025 | October 22nd, 2025    |
+
+
 
 ### Auditing Students
 
@@ -101,6 +142,11 @@ To make the most out of Slack, please
 Slack and GitHub are hosted on servers stored outside of Canada. Please keep this in mind.
 
 ### Policies
+
+
+#### Regrade Requests
+
+Regrade requests must be sent to the TAs through Slack within one week of the assessment being returned. If required, regrade requests can be escalated to the instructor [only if]{.underline} the request has already been brought up to the TA team and the student is unsatisfied. The instructor reserves the right to regrade the entire assessment, resulting in a higher or lower mark than originally provided.
 
 #### Late Policies
 

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -67,6 +101,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -179,8 +242,16 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#course-platforms" id="toc-course-platforms" class="nav-link" data-scroll-target="#course-platforms">Course Platforms</a></li>
   <li><a href="#important-course-information" id="toc-important-course-information" class="nav-link" data-scroll-target="#important-course-information">Important Course Information</a></li>
+  <li><a href="#lecture-flow" id="toc-lecture-flow" class="nav-link" data-scroll-target="#lecture-flow">Lecture Flow</a></li>
   </ul></li>
-  <li><a href="#coding-in-r" id="toc-coding-in-r" class="nav-link" data-scroll-target="#coding-in-r">Coding in R</a></li>
+  <li><a href="#coding-in-r-the-basics" id="toc-coding-in-r-the-basics" class="nav-link" data-scroll-target="#coding-in-r-the-basics">Coding in R: The Basics</a>
+  <ul class="collapse">
+  <li><a href="#calculations" id="toc-calculations" class="nav-link" data-scroll-target="#calculations">Calculations</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">Data Structures</a></li>
+  </ul></li>
+  <li><a href="#worksheet-a1" id="toc-worksheet-a1" class="nav-link" data-scroll-target="#worksheet-a1">Worksheet A1</a></li>
+  <li><a href="#what-to-do-when-youre-stuck" id="toc-what-to-do-when-youre-stuck" class="nav-link" data-scroll-target="#what-to-do-when-youre-stuck">What to do when you’re stuck</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +272,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 24, 2025</p>
+      <p class="date-modified">July 25, 2025</p>
     </div>
   </div>
     
@@ -214,8 +285,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="welcome-to-stat545" class="level2">
 <h2 class="anchored" data-anchor-id="welcome-to-stat545">Welcome to STAT545!</h2>
-<p>Hi and welcome! My name is Grace Tompkins and I’m very excited to be your instructor for this year’s session of STAT 545 A/B.</p>
-<p>For today’s lecture, we are going to go through the some important information related to the course and jump right into some coding in R.</p>
+<p>For today’s lecture, we are going to go through the some important information related to the course and jump right into some coding in R using an interactive worksheet and Jupyter Notebooks.</p>
 <section id="course-platforms" class="level3">
 <h3 class="anchored" data-anchor-id="course-platforms">Course Platforms</h3>
 <p>We will be using various technologies throughout this course which you should familiarize yourself with. The main platforms we’ll be using are;</p>
@@ -244,48 +314,196 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>But please - read the syllabus :)</p>
 </section>
+<section id="lecture-flow" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-flow">Lecture Flow</h3>
+<p>Lectures for STAT545 are designed to be more interactive than a traditional statistics lecture. The class will begin with a short summary of the previous class, followed by an introduction to that day’s topic. For most of the lectures, we will be going through the interactive worksheets (yes, the ones that you receive marks for and yes, prior to the deadline). This will give provide you with dedicated time to work on the assessments in class with access to the instructor and the TAs.</p>
+<p>Lectures build on top of each other and it is crucial to stay on track as we progress through this course.</p>
+<p>And remember, your participation in the course is valuable for your final grade! iClicker questions will be given during each lecture. Correctly answer at least one to receive full marks for that lecture’s participation. iClicker questions are worth 5% of your overall grade (see Syllabus for more details).</p>
 </section>
-<section id="coding-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="coding-in-r">Coding in R</h2>
-<section id="the-basics" class="level4">
-<h4 class="anchored" data-anchor-id="the-basics">The Basics</h4>
+</section>
+<section id="coding-in-r-the-basics" class="level2">
+<h2 class="anchored" data-anchor-id="coding-in-r-the-basics">Coding in R: The Basics</h2>
 <p>Let’s get started! By this point, I’m assuming you’ve successfully installed R, RStudio, Github, and Jupyter notebooks. If you haven’t, check out the previous lecture for a guide to setting up this software.</p>
+<p>Before diving into the worksheet, let’s talk about R. R is an open source programming language designed for statistical computing and data analysis. It is a commonly used programming language alongside Python and SAS, which we will not be covering in this course.</p>
+<section id="calculations" class="level3">
+<h3 class="anchored" data-anchor-id="calculations">Calculations</h3>
+<p>In its simplest form, R is a <em>calculator</em>. For example, we can type <code>1 + 2</code> in the console of R (we will be using RStudio) will spit out the answer of 3.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>The <code>[1]</code> in the answer can be ignored for now.</p>
+<p>R can also be used to do more complex expressions, such as <span class="math inline">\((450 - 15)^2/(5 + 7\times4)\)</span>, which we would write in R with:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">450-15</span>)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">7</span><span class="sc">*</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5734.091</code></pre>
+</div>
+</div>
 </section>
-<section id="what-to-do-when-you-are-stuck" class="level4">
-<h4 class="anchored" data-anchor-id="what-to-do-when-you-are-stuck"><strong>What to do when you are stuck</strong></h4>
+<section id="variables" class="level3">
+<h3 class="anchored" data-anchor-id="variables">Variables</h3>
+<p>R can also be used to store values as a <em>variable</em>. To assign a value to a variable in R, we use the <code>&lt;-</code> symbol (the less than symbol followed by the minus sign). For example, if I wanted to store the number of apartments I’ve lived in since moving out for university, I could assign this to a variable called <code>apartments_lived_in</code> by:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>apartments_lived_in <span class="ot">&lt;-</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, if I later wanted to use this value, I could simply execute</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>apartments_lived_in</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>which you can see stores the value of 4! I can also do math on this variable, for example multiplying it by 2:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>apartments_lived_in<span class="sc">*</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+<p>Variables can also store the results of expressions, which we will dive into in Worksheet 1.</p>
+</section>
+<section id="data-structures" class="level3">
+<h3 class="anchored" data-anchor-id="data-structures">Data Structures</h3>
+<p>R isn’t just a calculator. R can handle different <em>data structures</em> (which are just objects that contain data) including <em>strings</em>, <em>vectors</em>, and <em>data frames</em> (just to name a few). We will go over the basics of these structures in this section.</p>
+<section id="strings" class="level4">
+<h4 class="anchored" data-anchor-id="strings">Strings</h4>
+<p>A string is a R (often called character data) is a string of characters enclosed in quotations. For example, I could store my name in a variable called <code>name</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">"Grace"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and access it later by typing <code>name</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grace"</code></pre>
+</div>
+</div>
+<p>Strings can also have write space, such as</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>manifestation <span class="ot">&lt;-</span> <span class="st">"I'm a great R coder!"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>manifestation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I'm a great R coder!"</code></pre>
+</div>
+</div>
+<p>You can use single <code>'</code> or double <code>"</code> quotation marks to wrap around the string - just be consistent!</p>
+<p><strong>NOTE</strong>: In some worksheets, questions are multiple choice. Ensure that you type your answer as a string, i.e., <code>my_answer &lt;- "A".</code></p>
+</section>
+<section id="numeric-vectors" class="level4">
+<h4 class="anchored" data-anchor-id="numeric-vectors">Numeric Vectors</h4>
+<p>A <em>vector</em> is an ordered list of items of the same type. A <em>numeric vector</em> is an ordered list of numbers.</p>
+<p>Vectors are created in R using the <code>c()</code> function, with elements separated by commas. For example, suppose someone wanted to store the number of roommates they lived with in their four apartments. They had 4 roommates in their first apartment, then 2 in their next, followed by 3, and finally lived alone with 0 roommates. We can save this information in a vector named <code>roommates</code> using the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>roommates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To see the contents of a vector, simply type its name in the console and run the code</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>roommates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 2 3 0</code></pre>
+</div>
+</div>
+<p>We can access each element of the vector by indexing it with <code>[]</code>. In R, unlike some other programming languages, the index starts at 1. So if you’d like to access the first element of the vector, you can use <code>[1]</code>. For example, to see the number of roommates in my first apartment, I could use</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>roommates[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>Or view the number of roommates in my third apartment using:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>roommates[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>We can also perform functions on vectors! Suppose we wanted to calculate the total number of occupants in each apartment (including myself). I need to add one person to each apartment! To do so, I can make a new variable called <code>totaloccupants</code> which is equal to <code>roommates</code> plus one:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>totaloccupants <span class="ot">&lt;-</span> roommates <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>totaloccupants</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5 3 4 1</code></pre>
+</div>
+</div>
+<p>We will dive more into functions on vectors in Worksheet 1.</p>
+</section>
+<section id="logical-vectors" class="level4">
+<h4 class="anchored" data-anchor-id="logical-vectors">Logical Vectors</h4>
+<p>A <em>logical vector</em> is a vector where the elements are a logical statement containing <code>TRUE</code> or <code>FALSE</code>. Let’s see how we can create a vector indicating whether or not there were more than two roommates in a given apartment. We can store this as a variable, named <code>more_than_two_roommates using</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>more_than_two_roommates <span class="ot">&lt;-</span> roommates <span class="sc">&gt;</span> <span class="dv">2</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>more_than_two_roommates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE  TRUE FALSE</code></pre>
+</div>
+</div>
+<p>From the output, you can see that this statement is true for apartments 1 and 3, indicating there were more than two roommates for these apartments.</p>
+</section>
+<section id="other-useful-functions-on-vectors" class="level4">
+<h4 class="anchored" data-anchor-id="other-useful-functions-on-vectors">Other useful functions on vectors</h4>
+<p>R has a number of built in functions that are useful for exploring vectors. We can check the length (number of elements) of a vector using the <code>length()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(roommates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>This answer makes sense as we had data for four apartments. We can also look at the types of data stored in vectors using the <code>typeof</code> function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(roommates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(totaloccupants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(more_than_two_roommates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+</div>
+<p><code>double</code> is a type of numeric data. <code>logical</code> is the type of data that stores TRUE/FALSE.</p>
+</section>
+<section id="dataframes" class="level4">
+<h4 class="anchored" data-anchor-id="dataframes">Dataframes</h4>
+<p>Dataframes are a powerful tool for storing <em>multidimensional</em> data. For example, we could have data on housing for multiple people, including the rent paid, number of roommates, city, etc. Dataframes are a convenient way to store such information. Suppose we have data on three individuals stored in the dataframe <code>housingdata</code>. To access it, type <code>housingdata</code> in the R Console.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>housingdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Name NumRooms NumOccupants Rent      City
+1 Grace        2            2 2700 Vancouver
+2   Mei        3            4 5000   Toronto
+3   Sam        1            1 1900   Halifax</code></pre>
+</div>
+</div>
+<p>We see that Grace rents a 2 bedroom apartment, with two total occupants, and the total rent is $2700 per month in Vancouver. Mei lives in Toronto and has a 3 bedroom apartment shared between 4 people, and the total rent is $5000. Sam lives alone in a one bedroom apartment in Halifax, and pays $1900.</p>
+<p>We will focus more on dataframes in a coming lecture, but I wanted to mention them here.</p>
+</section>
+</section>
+</section>
+<section id="worksheet-a1" class="level2">
+<h2 class="anchored" data-anchor-id="worksheet-a1">Worksheet A1</h2>
+<p>Now it’s your turn to use R! Work through Worksheet A1 on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.</p>
+<p>Worksheet A1 is <strong>NOT</strong> going to be graded. However, I highly recommend going through it to practice using Jupyter Notebooks and to get a handle on R. Future worksheets <strong>will</strong> be graded.</p>
+</section>
+<section id="what-to-do-when-youre-stuck" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-do-when-youre-stuck">What to do when you’re stuck</h2>
 <p>Working with technology can be hard. Coding can be especially hard. Getting stuck is very common in both cases.</p>
-<p>Very useful general skills for getting unstuck are to 1. learn to help yourself, and 2. learn how to productively ask for help. The content below gives self-help advice for acquiring this skill.</p>
+<p>Before running to Slack, try searching for the answer yourself. This is an extremely important real-world skill! When you’re conducting your own analyses down the road, you may not have anyone to directly ask for help.</p>
+<p>Try:</p>
 <ul>
-<li><p><a href="http://xkcd.com/627/">Google is your friend</a>.</p>
-<ul>
-<li>E.g. copy the error message, maybe strip out anything highly specific, such the name of your R objects, surround with quotes and Google it!</li>
-</ul></li>
-<li><p>While you are getting started, I recommend you seek help within the STAT545 community first (try Slack!), before, e.g.&nbsp;posting to external forums. We are more cuddly.</p></li>
-<li><p>This stackoverflow thread <a href="http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610">How to make a great R reproducible example?</a> is fantastic. I find that, in the process of preparing my great reproducible example, I <a href="http://htmlpreview.github.io/?https://gist.githubusercontent.com/jennybc/58466fd018823302f398/raw/4c7059558e1525b482f1ee794a5828ca8999bf98/2014-07-25_wrapper-graphics-dev-open-close.html">answer my own question</a> 90% of the time. YMMV. So it is a useful exercise even if you aren’t ready to call in the experts yet. The process of stripping your problem down to its bare essence often reveals where the root issue lies. <strong>Highly recommended!</strong></p></li>
+<li><p>Googling your error codes (removing highly specific information like variable names)</p></li>
+<li><p>Googling the problem (i.e., R dataframe can’t rename columns)</p></li>
 <li><p>Search <a href="http://stackoverflow.com/">stackoverflow</a> and include the <code>[r]</code> tag. Or the <code>[ggplot2]</code> tag. Or the <code>[plyr]</code> tag. You get the idea.</p></li>
-<li><p>Check out <a href="http://www.burns-stat.com/documents/books/the-r-inferno/">The R Inferno</a> (see the 9th circle: “Unhelpfully seeking help”).</p></li>
 </ul>
-<blockquote class="blockquote">
-<p>If someone has the wit and knowledge to answer your question, they probably have other things they would like to do. Making your message clear, concise and user-friendly gives you the best hope of at least one of those strangers diverting their attention away from their life towards your problem.</p>
-</blockquote>
-<ul>
-<li>Read <a href="http://www.catb.org/~esr/faqs/smart-questions.html">How To Ask Questions The Smart Way</a> by Eric Raymond and Rick Moen. You’ll need a slightly thick skin, but they speak truth.</li>
-</ul>
-<blockquote class="blockquote">
-<p>… demonstrate the kind of attitude that leads to competence: alert, thoughtful, observant, willing to be an active partner in developing a solution</p>
-</blockquote>
-<ul>
-<li><p>Read the <a href="http://www.r-project.org/posting-guide.html">R-help posting guide</a>. <em>But don’t rush to post any questions there!</em></p></li>
-<li><p>More links via <a href="https://github.com/ireapps/scraping-class/blob/master/notes/how-to-ask-questions.md">How to Ask Questions</a> from a web-scraping class</p>
-<ul>
-<li><p><a href="http://codingkilledthecat.wordpress.com/2012/06/26/how-to-ask-for-programming-help/">How to Ask for Programming Help</a></p></li>
-<li><p><a href="https://codereview.stackexchange.com/help/how-to-ask">Stack Exchange’s ‘How to ask’</a></p></li>
-<li><p><a href="http://mattgemmell.com/what-have-you-tried/">Matt Gemmell’s ‘What have you tried?’</a></p></li>
-</ul></li>
-</ul>
+<p><strong>Beware of AI tools: sometimes they’re helpful, and sometimes they’re not.</strong></p>
+<p>While I encourage you to search for answers on your own, don’t fret if you’re stuck. We’re here to help on Slack! Review the posting guidelines on the Syllabus so your questions go to the appropriate channel.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

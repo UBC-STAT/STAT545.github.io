@@ -5,9 +5,7 @@ date-modified: last-modified
 
 ## Welcome to STAT545!
 
-Hi and welcome! My name is Grace Tompkins and I'm very excited to be your instructor for this year's session of STAT 545 A/B.
-
-For today's lecture, we are going to go through the some important information related to the course and jump right into some coding in R.
+For today's lecture, we are going to go through the some important information related to the course and jump right into some coding in R using an interactive worksheet and Jupyter Notebooks.
 
 ### Course Platforms
 
@@ -49,42 +47,193 @@ All of the important information is in the syllabus, which you can navigate to a
 
 But please - read the syllabus :)
 
-## Coding in R
+### Lecture Flow
 
-#### The Basics
+Lectures for STAT545 are designed to be more interactive than a traditional statistics lecture. The class will begin with a short summary of the previous class, followed by an introduction to that day's topic. For most of the lectures, we will be going through the interactive worksheets (yes, the ones that you receive marks for and yes, prior to the deadline). This will give provide you with dedicated time to work on the assessments in class with access to the instructor and the TAs.
+
+Lectures build on top of each other and it is crucial to stay on track as we progress through this course.
+
+And remember, your participation in the course is valuable for your final grade! iClicker questions will be given during each lecture. Correctly answer at least one to receive full marks for that lecture's participation. iClicker questions are worth 5% of your overall grade (see Syllabus for more details).
+
+## Coding in R: The Basics
 
 Let's get started! By this point, I'm assuming you've successfully installed R, RStudio, Github, and Jupyter notebooks. If you haven't, check out the previous lecture for a guide to setting up this software.
 
-#### **What to do when you are stuck**
+Before diving into the worksheet, let's talk about R. R is an open source programming language designed for statistical computing and data analysis. It is a commonly used programming language alongside Python and SAS, which we will not be covering in this course.
+
+### Calculations
+
+In its simplest form, R is a *calculator*. For example, we can type `1 + 2` in the console of R (we will be using RStudio) will spit out the answer of 3.
+
+```{r}
+1 + 2
+```
+
+The `[1]` in the answer can be ignored for now.
+
+R can also be used to do more complex expressions, such as $(450 - 15)^2/(5 + 7\times4)$, which we would write in R with:
+
+```{r}
+(450-15)^2/(5+7*4)
+```
+
+### Variables
+
+R can also be used to store values as a *variable*. To assign a value to a variable in R, we use the `<-` symbol (the less than symbol followed by the minus sign). For example, if I wanted to store the number of apartments I've lived in since moving out for university, I could assign this to a variable called `apartments_lived_in` by:
+
+```{r}
+apartments_lived_in <- 4
+```
+
+Then, if I later wanted to use this value, I could simply execute
+
+```{r}
+apartments_lived_in
+```
+
+which you can see stores the value of 4! I can also do math on this variable, for example multiplying it by 2:
+
+```{r}
+apartments_lived_in*2
+```
+
+Variables can also store the results of expressions, which we will dive into in Worksheet 1.
+
+### Data Structures
+
+R isn't just a calculator. R can handle different *data structures* (which are just objects that contain data) including *strings*, *vectors*, and *data frames* (just to name a few). We will go over the basics of these structures in this section.
+
+#### Strings
+
+A string is a R (often called character data) is a string of characters enclosed in quotations. For example, I could store my name in a variable called `name`:
+
+```{r}
+name <- "Grace"
+```
+
+and access it later by typing `name`
+
+```{r}
+name
+```
+
+Strings can also have write space, such as
+
+```{r}
+manifestation <- "I'm a great R coder!"
+manifestation
+```
+
+You can use single `'` or double `"` quotation marks to wrap around the string - just be consistent!
+
+**NOTE**: In some worksheets, questions are multiple choice. Ensure that you type your answer as a string, i.e., `my_answer <- "A".`
+
+#### Numeric Vectors
+
+A *vector* is an ordered list of items of the same type. A *numeric vector* is an ordered list of numbers.
+
+Vectors are created in R using the `c()` function, with elements separated by commas. For example, suppose someone wanted to store the number of roommates they lived with in their four apartments. They had 4 roommates in their first apartment, then 2 in their next, followed by 3, and finally lived alone with 0 roommates. We can save this information in a vector named `roommates` using the following code:
+
+```{r}
+roommates <- c(4, 2, 3, 0)
+```
+
+To see the contents of a vector, simply type its name in the console and run the code
+
+```{r}
+roommates
+```
+
+We can access each element of the vector by indexing it with `[]`. In R, unlike some other programming languages, the index starts at 1. So if you'd like to access the first element of the vector, you can use `[1]`. For example, to see the number of roommates in my first apartment, I could use
+
+```{r}
+roommates[1]
+```
+
+Or view the number of roommates in my third apartment using:
+
+```{r}
+roommates[3]
+```
+
+We can also perform functions on vectors! Suppose we wanted to calculate the total number of occupants in each apartment (including myself). I need to add one person to each apartment! To do so, I can make a new variable called `totaloccupants` which is equal to `roommates` plus one:
+
+```{r}
+totaloccupants <- roommates + 1
+totaloccupants
+```
+
+We will dive more into functions on vectors in Worksheet 1.
+
+#### Logical Vectors
+
+A *logical vector* is a vector where the elements are a logical statement containing `TRUE` or `FALSE`. Let's see how we can create a vector indicating whether or not there were more than two roommates in a given apartment. We can store this as a variable, named `more_than_two_roommates using`
+
+```{r}
+more_than_two_roommates <- roommates > 2
+more_than_two_roommates
+```
+
+From the output, you can see that this statement is true for apartments 1 and 3, indicating there were more than two roommates for these apartments.
+
+#### Other useful functions on vectors
+
+R has a number of built in functions that are useful for exploring vectors. We can check the length (number of elements) of a vector using the `length()` function:
+
+```{r}
+length(roommates)
+```
+
+This answer makes sense as we had data for four apartments. We can also look at the types of data stored in vectors using the `typeof` function
+
+```{r}
+typeof(roommates)
+typeof(totaloccupants)
+typeof(more_than_two_roommates)
+```
+
+`double` is a type of numeric data. `logical` is the type of data that stores TRUE/FALSE.
+
+#### Dataframes
+
+Dataframes are a powerful tool for storing *multidimensional* data. For example, we could have data on housing for multiple people, including the rent paid, number of roommates, city, etc. Dataframes are a convenient way to store such information. Suppose we have data on three individuals stored in the dataframe `housingdata`. To access it, type `housingdata` in the R Console.
+
+```{r}
+#| include: false
+housingdata <- data.frame(rbind(c("Grace", 2, 2, 2700, "Vancouver"),
+                     c("Mei", 3, 4, 5000, "Toronto"),
+                     c("Sam", 1, 1, 1900, "Halifax")))
+colnames(housingdata) <- c("Name", "NumRooms", "NumOccupants", "Rent", "City")
+```
+
+```{r}
+housingdata
+```
+
+We see that Grace rents a 2 bedroom apartment, with two total occupants, and the total rent is \$2700 per month in Vancouver. Mei lives in Toronto and has a 3 bedroom apartment shared between 4 people, and the total rent is \$5000. Sam lives alone in a one bedroom apartment in Halifax, and pays \$1900.
+
+We will focus more on dataframes in a coming lecture, but I wanted to mention them here.
+
+## Worksheet A1
+
+Now it's your turn to use R! Work through Worksheet A1 on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.
+
+Worksheet A1 is **NOT** going to be graded. However, I highly recommend going through it to practice using Jupyter Notebooks and to get a handle on R. Future worksheets **will** be graded.
+
+## What to do when you're stuck
 
 Working with technology can be hard. Coding can be especially hard. Getting stuck is very common in both cases.
 
-Very useful general skills for getting unstuck are to 1. learn to help yourself, and 2. learn how to productively ask for help. The content below gives self-help advice for acquiring this skill.
+Before running to Slack, try searching for the answer yourself. This is an extremely important real-world skill! When you're conducting your own analyses down the road, you may not have anyone to directly ask for help.
 
--   [Google is your friend](http://xkcd.com/627/).
+Try:
 
-    -   E.g. copy the error message, maybe strip out anything highly specific, such the name of your R objects, surround with quotes and Google it!
+-   Googling your error codes (removing highly specific information like variable names)
 
--   While you are getting started, I recommend you seek help within the STAT545 community first (try Slack!), before, e.g. posting to external forums. We are more cuddly.
-
--   This stackoverflow thread [How to make a great R reproducible example?](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610) is fantastic. I find that, in the process of preparing my great reproducible example, I [answer my own question](http://htmlpreview.github.io/?https://gist.githubusercontent.com/jennybc/58466fd018823302f398/raw/4c7059558e1525b482f1ee794a5828ca8999bf98/2014-07-25_wrapper-graphics-dev-open-close.html) 90% of the time. YMMV. So it is a useful exercise even if you aren’t ready to call in the experts yet. The process of stripping your problem down to its bare essence often reveals where the root issue lies. **Highly recommended!**
+-   Googling the problem (i.e., R dataframe can't rename columns)
 
 -   Search [stackoverflow](http://stackoverflow.com/) and include the `[r]` tag. Or the `[ggplot2]` tag. Or the `[plyr]` tag. You get the idea.
 
--   Check out [The R Inferno](http://www.burns-stat.com/documents/books/the-r-inferno/) (see the 9th circle: “Unhelpfully seeking help”).
+**Beware of AI tools: sometimes they're helpful, and sometimes they're not.**
 
-> If someone has the wit and knowledge to answer your question, they probably have other things they would like to do. Making your message clear, concise and user-friendly gives you the best hope of at least one of those strangers diverting their attention away from their life towards your problem.
-
--   Read [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html) by Eric Raymond and Rick Moen. You’ll need a slightly thick skin, but they speak truth.
-
-> … demonstrate the kind of attitude that leads to competence: alert, thoughtful, observant, willing to be an active partner in developing a solution
-
--   Read the [R-help posting guide](http://www.r-project.org/posting-guide.html). *But don’t rush to post any questions there!*
-
--   More links via [How to Ask Questions](https://github.com/ireapps/scraping-class/blob/master/notes/how-to-ask-questions.md) from a web-scraping class
-
-    -   [How to Ask for Programming Help](http://codingkilledthecat.wordpress.com/2012/06/26/how-to-ask-for-programming-help/)
-
-    -   [Stack Exchange’s ‘How to ask’](https://codereview.stackexchange.com/help/how-to-ask)
-
-    -   [Matt Gemmell’s ‘What have you tried?’](http://mattgemmell.com/what-have-you-tried/)
+While I encourage you to search for answers on your own, don't fret if you're stuck. We're here to help on Slack! Review the posting guidelines on the Syllabus so your questions go to the appropriate channel.

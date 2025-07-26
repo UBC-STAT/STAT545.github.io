@@ -11,9 +11,11 @@ website:
       - href: webpages/index.qmd
         text: "Home"
       - sidebar:syllabus
-      - href: webpages/teachingteam.qmd
-        text: "Teaching Team"
       - sidebar:lectures
+      - href: webpages/worksheets.qmd
+        text: "Worksheets"
+      - sidebar:collabproj
+      - sidebar:mda
       - href: webpages/faq.qmd
         text: "FAQ"
         
@@ -28,13 +30,31 @@ website:
         - webpages/syllabus/syllabusB.qmd
         
     - id: lectures
-      title: "Course Material"
+      title: "Lectures"
       style: "docked"
       background: light
       collapse-level: 2
       contents: 
         - webpages/lectures/lec0installation.qmd
         - webpages/lectures/lec1introR.qmd
+        
+    - id: collabproj
+      title: "Collaborative Project"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - webpages/collabproj/collabproj_deliverable1.qmd
+        - webpages/collabproj/collabproj_deliverable2.qmd
+                
+    - id: mda
+      title: "Mini Data Analysis"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - webpages/mda/mda_deliverable1.qmd
+        - webpages/mda/mda_deliverable2.qmd        
         
 
 format:

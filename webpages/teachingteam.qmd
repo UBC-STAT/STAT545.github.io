@@ -1,7 +1,0 @@
----
-title: "Teaching Team"
-date-modified: last-modified
-
----
-
-Coming soon!
