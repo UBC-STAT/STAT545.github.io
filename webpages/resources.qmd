@@ -1,7 +1,0 @@
----
-title: "Resources"
-date-modified: last-modified
----
-
-Additional resources go here
-

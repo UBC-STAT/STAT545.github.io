@@ -1,7 +1,0 @@
----
-title: "Course Material"
-date-modified: last-modified
-
----
-
-Links to individual lectures/material goes here
