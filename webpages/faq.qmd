@@ -1,9 +1,6 @@
 ---
 title: "Frequently Asked Questions"
 date-modified: last-modified
-editor: 
-  markdown: 
-    wrap: sentence
 ---
 
 ### When is the course offered?

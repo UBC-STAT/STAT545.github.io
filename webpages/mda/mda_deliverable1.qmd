@@ -1,5 +1,6 @@
 ---
 title: "Mini Data Analysis: Deliverable 1"
+date-modified: last-modified
 ---
 
 ## Deliverable 1 will be posted on Friday September 26th, 2025
