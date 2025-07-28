@@ -2,6 +2,8 @@
 title: "Lecture 2: Reproducibility"
 subtitle: "September 9, 2025"
 date-modified: last-modified
+bibliography: ../bibliography.bib
+csl: ../../diabetologia.csl
 ---
 
 ## Learning Objectives
