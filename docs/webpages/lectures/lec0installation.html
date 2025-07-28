@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#note-on-pc-vs-mac" id="toc-note-on-pc-vs-mac" class="nav-link" data-scroll-target="#note-on-pc-vs-mac">Note on PC vs Mac</a></li>
   <li><a href="#step-1-install-r-and-rstudio" id="toc-step-1-install-r-and-rstudio" class="nav-link" data-scroll-target="#step-1-install-r-and-rstudio">Step 1: Install R and RStudio</a></li>
   <li><a href="#step-2-install-jupyter-and-r-kernel" id="toc-step-2-install-jupyter-and-r-kernel" class="nav-link" data-scroll-target="#step-2-install-jupyter-and-r-kernel">Step 2: Install Jupyter and R Kernel</a></li>
-  <li><a href="#step-3-install-git-and-github" id="toc-step-3-install-git-and-github" class="nav-link" data-scroll-target="#step-3-install-git-and-github">Step 3: Install Git and GitHub</a></li>
+  <li><a href="#step-4-install-git-and-github" id="toc-step-4-install-git-and-github" class="nav-link" data-scroll-target="#step-4-install-git-and-github">Step 4: Install Git and GitHub</a></li>
   <li><a href="#step-3-configure-git" id="toc-step-3-configure-git" class="nav-link" data-scroll-target="#step-3-configure-git">Step 3: Configure Git</a></li>
   </ul></li>
   </ul>
@@ -233,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 25, 2025</p>
+      <p class="date-modified">July 28, 2025</p>
     </div>
   </div>
     
@@ -317,8 +317,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Having trouble? Check out <a href="https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/" class="uri">https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/</a>.</p>
 </section>
-<section id="step-3-install-git-and-github" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-install-git-and-github">Step 3: Install Git and GitHub</h3>
+<section id="step-4-install-git-and-github" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-install-git-and-github">Step 4: Install Git and GitHub</h3>
 <p>Git is a version control software. Github is a cloud-based platform (built on Git) for sharing code.</p>
 <ol type="1">
 <li>Register a Github account at github.com (if you don’t already have one).
@@ -448,7 +448,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/UBC-STAT\.github\.io\/STAT545\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

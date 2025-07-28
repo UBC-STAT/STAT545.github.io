@@ -97,27 +97,68 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Syllabus</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
+        <li>
+    <a class="dropdown-item" href="../webpages/syllabus/syllabusA.html">
+ <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../webpages/syllabus/syllabusB.html">
+ <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
+  </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../webpages/teachingteam.html"> 
-<span class="menu-text">Teaching Team</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lectures</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
+        <li>
+    <a class="dropdown-item" href="../webpages/lectures/lec0installation.html">
+ <span class="dropdown-text">Lecture 0: Installation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../webpages/material.html" aria-current="page"> 
-<span class="menu-text">Material</span></a>
+        <li>
+    <a class="dropdown-item" href="../webpages/lectures/lec1introR.html">
+ <span class="dropdown-text">Lecture 1: Course Introduction and R</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collaborative-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Collaborative Project</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-collaborative-project">    
+        <li>
+    <a class="dropdown-item" href="../webpages/collabproj/collabproj_deliverable1.html">
+ <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../webpages/collabproj/collabproj_deliverable2.html">
+ <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mini-data-analysis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mini Data Analysis</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
+        <li>
+    <a class="dropdown-item" href="../webpages/mda/mda_deliverable1.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../webpages/mda/mda_deliverable2.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../webpages/lectures/lec1installation.html"> 
-<span class="menu-text">lec1installation</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -150,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 23, 2025</p>
+      <p class="date-modified">July 28, 2025</p>
     </div>
   </div>
     
@@ -256,7 +297,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/UBC-STAT\.github\.io\/STAT545\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
