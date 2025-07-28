@@ -38,7 +38,7 @@ website:
         - webpages/lectures/lec0installation.qmd
         - webpages/lectures/lec1introR.qmd
         - webpages/lectures/lec2reproducibility.qmd
-        - webpages/lectures/lec3versiooncontrol.qmd
+        - webpages/lectures/lec3versioncontrol.qmd
         
     - id: collabproj
       title: "Collaborative Project"
