@@ -33,7 +33,7 @@ In Part II (STAT545 B), we will dive deeper into
 
 My name is Grace Tompkins (she/her) and I'll be your course instructor. I'm a Biostatistician and recent PhD graduate passionate about teaching! I'm excited to be guiding you throughout this course.
 
-![Instructor: Grace Tompkins](images/avatar.png){fig-align="center" width="229"}
+![Instructor: Grace Tompkins](../images/avatar.png){fig-align="center" width="229"}
 
 I am joined by a wonderful group of TAs, including:
 

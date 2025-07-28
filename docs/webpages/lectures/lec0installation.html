@@ -157,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/faq.html"> 
+    <a class="nav-link" href="../../webpages/faq.qmd"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -210,8 +210,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#note-on-pc-vs-mac" id="toc-note-on-pc-vs-mac" class="nav-link" data-scroll-target="#note-on-pc-vs-mac">Note on PC vs Mac</a></li>
   <li><a href="#step-1-install-r-and-rstudio" id="toc-step-1-install-r-and-rstudio" class="nav-link" data-scroll-target="#step-1-install-r-and-rstudio">Step 1: Install R and RStudio</a></li>
   <li><a href="#step-2-install-jupyter-and-r-kernel" id="toc-step-2-install-jupyter-and-r-kernel" class="nav-link" data-scroll-target="#step-2-install-jupyter-and-r-kernel">Step 2: Install Jupyter and R Kernel</a></li>
-  <li><a href="#step-4-install-git-and-github" id="toc-step-4-install-git-and-github" class="nav-link" data-scroll-target="#step-4-install-git-and-github">Step 4: Install Git and GitHub</a></li>
-  <li><a href="#step-3-configure-git" id="toc-step-3-configure-git" class="nav-link" data-scroll-target="#step-3-configure-git">Step 3: Configure Git</a></li>
+  <li><a href="#step-3-configure-git-and-github" id="toc-step-3-configure-git-and-github" class="nav-link" data-scroll-target="#step-3-configure-git-and-github">Step 3: Configure Git and GitHub</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -222,6 +221,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lecture 0: Installation</h1>
+<p class="subtitle lead">September 2, 2025</p>
 </div>
 
 
@@ -247,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="software-and-troubleshooting" class="level2">
 <h2 class="anchored" data-anchor-id="software-and-troubleshooting">Software and Troubleshooting</h2>
 <p>The goal of this lecture is to learn how to install and setup key software for use in the course.</p>
-<p>IF YOU NEED EXTRA HELP: TAs are available in class on Imagine Day from 9am-10:30am on Tuesday September 2nd.</p>
+<p><strong>TAs are available in class on Imagine Day from 9am-10:30am on Tuesday September 2nd to aid with installation. I highly recommend you join if you haven’t used RStudio, Jupyter, or GitHub before.</strong></p>
 <section id="note-on-pc-vs-mac" class="level3">
 <h3 class="anchored" data-anchor-id="note-on-pc-vs-mac">Note on PC vs Mac</h3>
 <p>You may encounter some material that implicitly assumes that you are using a Mac. For example, they might point you to a Terminal app, or ask you to use Unix commands like which or ls. <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://static-bcrf.biochem.wisc.edu/tutorials/unix/basic_unix/dos_and_unix_commands.pdf">Here is a cheatsheet</a> that helps you convert between Windows command line (“DOS”) and Mac command line (“UNIX”). One thing that’s missing is the equivalent to Unix’s which; the closest equivalent in DOS is where.</p>
@@ -317,16 +317,16 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Having trouble? Check out <a href="https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/" class="uri">https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/</a>.</p>
 </section>
-<section id="step-4-install-git-and-github" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-install-git-and-github">Step 4: Install Git and GitHub</h3>
+<section id="step-3-configure-git-and-github" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-configure-git-and-github">Step 3: Configure Git and GitHub</h3>
 <p>Git is a version control software. Github is a cloud-based platform (built on Git) for sharing code.</p>
 <ol type="1">
-<li>Register a Github account at github.com (if you don’t already have one).
+<li><p>Register a Github account at github.com (if you don’t already have one).</p>
 <ul>
 <li>Create a username that uses your actual name. Shorter is better! For example, mine is grcetmpk. <a href="https://happygitwithr.com/github-acct.html">See this for more information.</a></li>
 <li>You don’t need to download any apps.</li>
 </ul></li>
-<li>Install Git (more info <a href="https://happygitwithr.com/install-git">here</a>)
+<li><p>Install Git (more info <a href="https://happygitwithr.com/install-git">here</a>)</p>
 <ul>
 <li>See if Git is already installed. For Mac OS, on the Terminal (Mac) type <code>which git</code>. For Windows, go to Command Prompt and type <code>where git</code>. If you get an error of <code>git: command not found</code>, you do not have git installed yet.</li>
 <li><strong>Windows:</strong>
@@ -340,18 +340,22 @@ ul.task-list li input[type="checkbox"] {
 <li>In Terminal, enter <code>git config</code>. Click install.</li>
 </ul></li>
 </ul></li>
+<li><p>Configure Git: In RStudio, within the Terminal (Mac) or Shell (Windows) (Tools &gt; Terminal/Shell) do:</p>
+<p><code>git config --global user.name "your_github_username"</code></p>
+<p><code>git config --global user.email "your_email_you_used_for_github@example.com"</code></p>
+<p><code>git config --global --list</code></p></li>
 </ol>
-</section>
-<section id="step-3-configure-git" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-configure-git">Step 3: Configure Git</h3>
-<p>Configure git. See Chapter 7: Introduce yourself to git.</p>
-<p>Get setup with a GitHub Personal Access Token (PAT): this will allow you to sync GitHub with files on your computer.</p>
-<p>Step 1: Create a PAT</p>
-<p>Option 1: Go to to https://github.com/settings/tokens and click “Generate token”. Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “vm-for-project-xyz”. Select “repo”, “user”, and “workflow” for scopes.</p>
-<p>Option 2: From R, execute usethis::create_github_token() (you may have to install the usethis package first by first running install.packages(“usethis”)). Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “vm-for-project-xyz”.</p>
-<p>Step 2: From R, execute <code>gitcreds::gitcreds_set()</code> and enter the PAT that you just made when prompted. (You may have to install the gitcreds package first by first running install.packages(“gitcreds”)). That should be it!</p>
-<p>Step 3 (optional but recommended) Also save the PAT that you just made somewhere secure, like a password manager.</p>
-<p>Attribution By Vincenzo Coia and Jenny Bryan, with inputs from STAT 545 teaching teams.</p>
+<p>If you are having issues, you could use the <code>usethis</code> package in R. <a href="https://happygitwithr.com/hello-git.html">See here.</a></p>
+<ol start="4" type="1">
+<li>Get your Personal Access Token (PAT)
+<ul>
+<li><strong>Option 1</strong>: Go to to <a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a> and click “Generate token”. Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “Stat545Installation”. <u>Select “repo”, “user”, and “workflow” for scopes.</u> Save this token somewhere so you can use it again later, such as a password manager.</li>
+<li><strong>Option 2:</strong> From R, execute <code>usethis::create_github_token()</code> (you may have to install the usethis package first by first running <code>install.packages("usethis")</code>). Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “stat545installation”.</li>
+</ul></li>
+<li>From R (in the console), run <code>install.packages("gitcreds")</code> if you haven’t already.</li>
+<li>Execute <code>gitcreds::gitcreds_set()</code> and enter the PAT that you just made when prompted.</li>
+</ol>
+<p><em>Attribution By Vincenzo Coia and Jenny Bryan, with inputs from STAT 545 teaching teams.</em></p>
 
 
 </section>

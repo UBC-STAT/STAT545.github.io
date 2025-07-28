@@ -1,5 +1,6 @@
 ---
 title: "Lecture 0: Installation"
+subtitle: "September 2, 2025"
 date-modified: last-modified
 ---
 
@@ -7,7 +8,7 @@ date-modified: last-modified
 
 The goal of this lecture is to learn how to install and setup key software for use in the course.
 
-IF YOU NEED EXTRA HELP: TAs are available in class on Imagine Day from 9am-10:30am on Tuesday September 2nd.
+**TAs are available in class on Imagine Day from 9am-10:30am on Tuesday September 2nd to aid with installation. I highly recommend you join if you haven't used RStudio, Jupyter, or GitHub before.**
 
 ### Note on PC vs Mac
 
@@ -57,28 +58,37 @@ Having trouble? Check the instructions here: <https://richpauloo.github.io/2018-
     -   Provide your email and an installation link will be sent to you
     -   Install the full version of Anaconda (not miniconda)
 2.  Install and setup the IR Kernel
-    -   Open R install the necessary packages by entering
+    -   Open R and navigate to the Console (see below).
+
+        ![Your console may have a different appearance! Mine's in dark mode.](/images/rconsole.png)
+
+    -   Install the necessary packages by entering
 
         `install.packages(c("repr", "IRdisplay", "evaluate", "crayon", "pbdZMQ", "devtools", "uuid", "digest"))`
 
         `devtools::install_github("IRkernel/IRkernel")`
+
+    -   Exit RStudio.
 3.  Configure the IRkernel from within R
     -   It's important that these next commands are done from within the version of R that you want to link to Jupyter Lab (R version 5.4.1, for example)
-    -   Launch R (typically found in /usr/bin/R. If you can't find it, open the Terminal application and type in `which R`. This will provide you with the path to R. Then, open a Finder window and at the top of your screen hit `Go` -\> `go to folder` and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.
-    -   In the R application, type `IRkernel::installspec()`
+    -   Launch R (**NOT RSTUDIO**! This is typically found in /usr/bin/R. If you can't find it, open the Terminal application and type in `which R`. This will provide you with the path to R. Then, open a Finder window and at the top of your screen hit `Go` -\> `go to folder` and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.
+    -   In the R application, run `IRkernel::installspec()`
     -   If prompted to choose a IRkernel mirror, select 12 (Canada - MB).
 4.  Launch Anaconda, and open a Jupyter Lab and you should see an R kernel available.
 
 Having trouble? Check out <https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/>.
 
-### Step 4: Install Git and GitHub
+### Step 3: Configure Git and GitHub
 
 Git is a version control software. Github is a cloud-based platform (built on Git) for sharing code.
 
 1.  Register a Github account at github.com (if you don't already have one).
+
     -   Create a username that uses your actual name. Shorter is better! For example, mine is grcetmpk. [See this for more information.](https://happygitwithr.com/github-acct.html)
     -   You don't need to download any apps.
+
 2.  Install Git (more info [here](https://happygitwithr.com/install-git))
+
     -   See if Git is already installed. For Mac OS, on the Terminal (Mac) type `which git`. For Windows, go to Command Prompt and type `where git`. If you get an error of `git: command not found`, you do not have git installed yet.
     -   **Windows:**
         -   Install Git for Windows (<https://gitforwindows.org/>)
@@ -87,20 +97,24 @@ Git is a version control software. Github is a cloud-based platform (built on Gi
         -   Install XCode Command Line Tools by opening Terminal and typing `xcode-select --install` (more info [here](https://www.freecodecamp.org/news/install-xcode-command-line-tools/))
         -   In Terminal, enter `git config`. Click install.
 
-### Step 3: Configure Git
+3.  Configure Git: In RStudio, navigate to the Terminal or Shell (see below).
 
-Configure git. See Chapter 7: Introduce yourself to git.
+    ![If using Windows, you will have a Shell, not a Terminal.](/images/rterminal.png)
 
-Get setup with a GitHub Personal Access Token (PAT): this will allow you to sync GitHub with files on your computer.
+4.  within the Terminal (Mac) or Shell (Windows) (Tools \> Terminal/Shell) do:
 
-Step 1: Create a PAT
+    `git config --global user.name "your_github_username"`
 
-Option 1: Go to to https://github.com/settings/tokens and click “Generate token”. Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “vm-for-project-xyz”. Select “repo”, “user”, and “workflow” for scopes.
+    `git config --global user.email "your_email_you_used_for_github@example.com"`
 
-Option 2: From R, execute usethis::create_github_token() (you may have to install the usethis package first by first running install.packages("usethis")). Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “vm-for-project-xyz”.
+    `git config --global --list`
 
-Step 2: From R, execute `gitcreds::gitcreds_set()` and enter the PAT that you just made when prompted. (You may have to install the gitcreds package first by first running install.packages("gitcreds")). That should be it!
+If you are having issues, you could use the `usethis` package in R. [See here.](https://happygitwithr.com/hello-git.html)
 
-Step 3 (optional but recommended) Also save the PAT that you just made somewhere secure, like a password manager.
+4.  Get your Personal Access Token (PAT)
+    -   **Option 1**: Go to to <https://github.com/settings/tokens> and click “Generate token”. Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “Stat545Installation”. [Select “repo”, “user”, and “workflow” for scopes.]{.underline} Save this token somewhere so you can use it again later, such as a password manager.
+    -   **Option 2:** From R, execute `usethis::create_github_token()` (you may have to install the usethis package first by first running `install.packages("usethis")`). Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “stat545installation".
+5.  From R (in the console), run `install.packages("gitcreds")` if you haven't already.
+6.  Execute `gitcreds::gitcreds_set()` and enter the PAT that you just made when prompted.
 
-Attribution By Vincenzo Coia and Jenny Bryan, with inputs from STAT 545 teaching teams.
+*Thank you to Vincenzo Coia and Jenny Bryan and previous STAT 545 instructors for these directions!*
