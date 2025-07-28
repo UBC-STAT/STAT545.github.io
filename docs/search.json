@@ -149,7 +149,7 @@
     "href": "webpages/faq.html",
     "title": "Frequently Asked Questions",
     "section": "",
-    "text": "When is the course offered?\nSeptember - December of each academic year. Typical format: STAT 545A 1.5 credits in September through mid October, followed by STAT 545B 1.5 credits from mid October through early December.\n\n\nWhat happened to STAT 547M?\nSTAT 547M became STAT 545B in 2020, so that the course codes align. Otherwise, these are the same courses.\n\n\nWhat happened to the guidebook?\nWe used a guidebook in 2019/2020. It’s still available at https://stat545guidebook.netlify.app, but had become deprecated in place of worksheets and some tutorials.\n\n\nWhy are there two courses, instead of a single “STAT 545” course?\nFor several years, Jenny Bryan taught STAT 545A as a 1.5 credit course. She – and many students – felt there was a lot of great, relevant content that could go into an additional 1.5 credits.\nA full semester of data exploration, visualization, and all-around data wrangling was piloted in 2014/2015. It was structured as two half courses primarily so that several year’s worth of STAT 545A alums could register for the second part (then STAT 547M) and get the “missing half” of the course. And now it’s hard to break the cycle.\n\n\nI have taken STAT 545A for 1.5 credits in the past. Can I take STAT 545B?\nYes, but STAT 545 keeps evolving to keep current with the R world. It is your responsibility to fill in any gaps.\n\n\nCan I just take the second half, i.e. STAT 545B?\nNo, not unless you have taken STAT 545A previously.\n\n\nI am an undergraduate. Can I take this course?\nMaybe, if there’s room. Contact the instructor.\n\n\nWhat if I’ve never had a stats class?\nThere are no official pre-requisites for STAT 545A but most students will have had at least one prior statistics course or comparable experience.\n\n\nI’m not enrolled – can I sit in during class?\nA: Unfortunately not. The room is usually at capacity, and further, we’ve allocated TA time for the specific number of students attending the class. Feel free to follow along online using the online lecture resources.\n\n\nI’d like to officially audit – can I?\nAbsolutely! Please take a look at what is required of auditors in the Syllabus so that you have an understanding of your expectations coming into the course; then, fill out the form (graduate version) and send it to the instructor to get signed.\n\n\nThe course is full – can I audit instead?\nYou’ll still have to join the waitlist – auditing still counts as a seat in the class, so auditing is not a way around the course capacity.\nIn all cases, I encourage you to register! Or if the course is full, join the waitlist. Alternatively, you can engage in your own self-study using our online resources.\n\n\nThe course is full. Is there a chance that the course capacity will increase?\nUnfortunately, the course enrollment capacity will not increase. But, I encourage you to join the waitlist.\n\n\nThe course is listed as “restricted”. What should I do?\nWhen all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types. If you are a student of that type, then go ahead and register through SSC! Otherwise, I encourage you to join the waitlist.\n\n\nShould I take this course?\nThis course is open to any graduate student at UBC. Students from other departments vastly outnumber those from Statistics. In fact, the most successful students are often grad students from other fields who need to analyze and visualize data for a thesis. They are highly motivated and excel.\nHowever, if you have never programmed or worked at the command line before, prepare for a shock. This will be a powerful, positive experience, but it’s a big adjustment. Come suffer through the worst part of the learning curve in good company!\n\n\nDo I need a computer?\nYes! You absolutely must have access to a computer on which you can install software, download data, etc. In fact, class meetings will be a mix of lecture, discussion, and live coding. Students will get the most out of this if they can bring their own laptop to class every day. If this is not possible, we will try to help you work something out."
+    "text": "September - December of each academic year. Typical format: STAT 545A 1.5 credits in September through mid October, followed by STAT 545B 1.5 credits from mid October through early December."
   },
   {
     "objectID": "webpages/lectures/lec0installation.html",
@@ -262,7 +262,7 @@
     "href": "webpages/lectures/lec2reproducibility.html#resources-high-level-video-lecture-for-today",
     "title": "Lecture 2: Reproducibility",
     "section": "Resources High-level video lecture for today:",
-    "text": "Resources High-level video lecture for today:\nHere are a number of resources that may help supplement you with today’s lesson:\n\nSTAT 545 Episode 3-A: Reproducible Reports with R Markdown Some additional resources that you might find useful:\nThe Official R Markdown Tutorial from the “Introduction” up to and including the “Inline Code” section.\nR Markdown cheat sheet\n\nNote that many cheat sheets can be found from RStudio: go to Help -&gt; Cheatsheets.",
+    "text": "Resources High-level video lecture for today:\nHere are a number of resources that may help supplement you with today’s lesson:\n\nSTAT 545 Episode 3-A: Reproducible Reports with R Markdown Some additional resources that you might find useful:\nThe Official R Markdown Tutorial from the “Introduction” up to and including the “Inline Code” section.\nR Markdown cheat sheet\n\nNote that many cheat sheets can be found from RStudio: go to “Help” -&gt; “Cheatsheets”.",
     "crumbs": [
       "Lecture 2: Reproducibility"
     ]
@@ -282,7 +282,7 @@
     "href": "webpages/lectures/lec2reproducibility.html#r-markdown",
     "title": "Lecture 2: Reproducibility",
     "section": "R Markdown",
-    "text": "R Markdown\nUsing an editor like MS Word is like painting: you decorate the page with text, graphs, and tables, making sure things are positioned, sized, and coloured appropriately.\nThis is great for a letter to a friend, but is less great for scientific work, because it hampers reproducibility and shareability.\nR Markdown lets you write a single “blueprint” for your analysis that includes everything - positioning/sizing/colouring/formatting, analysis/graph/table code and results, and text – and then “knit” all of those components together into a complete report with a single button press.\nThere is a large community of R Markdown users, making it easy to find tutorials and blog posts about a ton of different types of documents. We’re going to start simple and dive right into R Markdown.\n\nGetting Started with Markdown\nIn lecture, we are going to work through this online Markdown tutorial together in small groups. Challenge yourself to meet someone new in the class!\nAfter completing the tutorial, try making your own R Markdown document!\n\nIn RStudio, go to “File” -&gt; “New File” -&gt; “Markdown File”\nWrite a Markdown document all about you that includes:\n\nA header\nA link to your GitHub profile\nA list of courses you’re taking this semester\n\nClick the “Preview” button to generate an output .html file from the source .md file.\n\n\n\nInstall RMarkdown\n\nOpen a new .Rmd file in RStudio (“File” &gt; “New File” &gt; “RMarkdown…”). Add “STAT545_Lecture_2” as your title and save the other default options.\nTo get started with using R Markdown, you’ll need to install the rmarkdown R package. You might automatically be prompted to do this; accept, if so. If not, you will have to manually install the package.\ninstall.packages('rmarkdown')\nAfter installation, install the DT package:\ninstall.packages('DT')\nClick “knit”.\n\nThings to notice:\n\nThe YAML header is contained between two — at the top of the .Rmd source, and contains metadata on the document. This is where you specify the output type to be HTML.\nText is formatted using Markdown. There are three chunks of R code, and knitting executes the R code and displays the output in the output file.\n\nHow does it all work?\nThe key drivers under the hood are knitrand Pandoc! When you press “Knit”, R Markdown passes the .Rmdfile to knitr, which executes all of the code and creates a new .md file including the code and output. Then, that .md file is processed into the final output format (e.g. .html) by pandoc.\n\n\nYour Turn: Edit Your YAML in Small Groups:\nRun ?html_document from your R console and/or check out Yihui Xie’s RMarkdown book to:\n\nAdd a floating table of contents\nAdd a theme.\n\nIf this was easy, then try to figure out how to knit to a pdf document!\n\n\nInstructor demo: mtcars Report\nTo follow along, download the demonstration.Rmd file from the STAT545 GitHub and open it in RStudio.\n\nExploting Code Chunks\n\nAdd a code chunk below the first paragraph in the “Motor Trend Car Road Tests data” section of the .Rmd file. Either select “Code” -&gt; “Insert Chunk”, or use a keyboard shortcut: cmd + option + I(MAC) / ctrl + alt + i(WINDOWS).\nIn this code chunk, print out the mtcars data frame to explore the output. (Yes, this object comes shipped with R.)\nRun that chunk interactively using the green ‘play’ button.\nNow try out the DT::datatable() function on mtcars in this new chunk, and knit the file (to html, ideally).\nAdd an in-line code chunk specifying the number of rows of the mtcars dataset in place of the hardcoded number “32 automobiles”. Hint: nrow().\nFill in the document with markdown commentary for each of the code chunks! A few notes go a long way towards improving the readability of the report.\n\n\n\nExploring chunk options\nGot lost in the demonstration? No problem, just open a new .Rmd file in RStudio via “File” -&gt; “New File” -&gt; “R Markdown…”, and just press “OK”, and resume!)\nJust like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the {r} at the top of a code chunk, separated by commas. For a list of chunk options, check out Yihui Xie’s knitr book. Let’s try some:\n\nHide the code from the output with echo = FALSE.\nChange the figure width and height with fig.width = 5 and fig.height = 3.\nKnit the results. Can you spot the differences?\n\n\n\n\nTest Your Understanding\nTrue or False: It doesn’t make sense to output an .Rmd file to markdown, because .Rmd is already markdown.\nWhich of these file formats are proprietary? (a) .docx; (b) .html; (c) .txt; (d) .Rmd; (e) .xlsx\n\n\nYour turn: data update!\nIn the instructor demo, we prettied up a nice report about mtcars together. But suddenly, you receive an email from your collaborator who collected the mtcars data, who says that the data on Mazda RX4, the Valiant, and the Volvo 142E were transcribed wrong from the magazine! They’re going to work on correcting them, but in the mean time, they’d like to re-run the analysis with those three cars excluded.\nIn small groups, prepare an updated report by updating your .Rmd appropriately, then re-knitting it. Then discuss: in this case, how did using the RMarkdown workflow rather than copying and pasting R output to MS Word help prevent the creation of non-reproducible results?",
+    "text": "R Markdown\nUsing an editor like MS Word is like painting: you decorate the page with text, graphs, and tables, making sure things are positioned, sized, and coloured appropriately.\nThis is great for a letter to a friend, but is less great for scientific work, because it hampers reproducibility and shareability.\nR Markdown lets you write a single “blueprint” for your analysis that includes everything - positioning/sizing/colouring/formatting, analysis/graph/table code and results, and text – and then “knit” all of those components together into a complete report with a single button press.\nThere is a large community of R Markdown users, making it easy to find tutorials and blog posts about a ton of different types of documents. We’re going to start simple and dive right into R Markdown.\n\nGetting Started with Markdown\nIn lecture, we are going to work through this online Markdown tutorial together in small groups. Challenge yourself to meet someone new in the class!\nAfter completing the tutorial, try making your own R Markdown document!\n\nIn RStudio, go to “File” -&gt; “New File” -&gt; “Markdown File”\nWrite a Markdown document all about you that includes:\n\nA header\nA link to your GitHub profile\nA list of courses you’re taking this semester\n\nClick the “Preview” button to generate an output .html file from the source .md file.\n\n\n\nInstall RMarkdown\n\nOpen a new .Rmd file in RStudio (“File” &gt; “New File” &gt; “RMarkdown…”). Add “STAT545_Lecture_2” as your title and save the other default options.\nTo get started with using R Markdown, you’ll need to install the rmarkdown R package. You might automatically be prompted to do this; accept, if so. If not, you will have to manually install the package.\ninstall.packages('rmarkdown')\nAfter installation, install the DT package:\ninstall.packages('DT')\nClick “knit”.\n\nThings to notice:\n\nThe YAML header is contained between two — at the top of the .Rmd source, and contains metadata on the document. This is where you specify the output type to be HTML.\nText is formatted using Markdown. There are three chunks of R code, and knitting executes the R code and displays the output in the output file.\n\nHow does it all work?\nThe key drivers under the hood are knitrand Pandoc! When you press “Knit”, R Markdown passes the .Rmdfile to knitr, which executes all of the code and creates a new .md file including the code and output. Then, that .md file is processed into the final output format (e.g. .html) by pandoc.\n\n\nYour Turn: Edit Your YAML in Small Groups:\nRun ?html_document from your R console and/or check out Yihui Xie’s RMarkdown book to:\n\nAdd a floating table of contents\nAdd a theme.\n\nIf this was easy, then try to figure out how to knit to a pdf document!\n\n\nInstructor demo: mtcars Report\nTo follow along, download the demonstration.Rmd file from the STAT545 GitHub and open it in RStudio.\n\nExploting Code Chunks\n\nAdd a code chunk below the first paragraph in the “Motor Trend Car Road Tests data” section of the .Rmd file. Either select “Code” -&gt; “Insert Chunk”, or use a keyboard shortcut: cmd + option + I(MAC) / ctrl + alt + i(WINDOWS).\nIn this code chunk, print out the mtcars data frame to explore the output. (Yes, this object comes shipped with R.)\nRun that chunk interactively using the green ‘play’ button.\nNow try out the DT::datatable() function on mtcars in this new chunk, and knit the file (to html, ideally).\nAdd an in-line code chunk specifying the number of rows of the mtcars dataset in place of the hardcoded number “32 automobiles”. Hint: nrow().\nFill in the document with markdown commentary for each of the code chunks! A few notes go a long way towards improving the readability of the report.\n\n\n\nExploring chunk options\nGot lost in the demonstration? No problem, just open a new .Rmd file in RStudio via “File” -&gt; “New File” -&gt; “R Markdown…”, and just press “OK”, and resume!)\nJust like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the {r} at the top of a code chunk, separated by commas. For a list of chunk options, check out Yihui Xie’s knitr book. Let’s try some:\n\nHide the code from the output with echo = FALSE.\nChange the figure width and height with fig.width = 5 and fig.height = 3.\nKnit the results. Can you spot the differences?\n\n\n\n\nYour turn: data update!\nIn the instructor demo, we prettied up a nice report about mtcars together. But suddenly, you receive an email from your collaborator who collected the mtcars data, who says that the data on Mazda RX4, the Valiant, and the Volvo 142E were transcribed wrong from the magazine! They’re going to work on correcting them, but in the mean time, they’d like to re-run the analysis with those three cars excluded.\nIn small groups, prepare an updated report by updating your .Rmd appropriately, then re-knitting it. Then discuss: in this case, how did using the RMarkdown workflow rather than copying and pasting R output to MS Word help prevent the creation of non-reproducible results?",
     "crumbs": [
       "Lecture 2: Reproducibility"
     ]
@@ -296,5 +296,124 @@
     "crumbs": [
       "Lecture 2: Reproducibility"
     ]
+  },
+  {
+    "objectID": "webpages/faq.html#when-is-the-course-offered",
+    "href": "webpages/faq.html#when-is-the-course-offered",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "September - December of each academic year. Typical format: STAT 545A 1.5 credits in September through mid October, followed by STAT 545B 1.5 credits from mid October through early December."
+  },
+  {
+    "objectID": "webpages/faq.html#what-happened-to-stat-547m",
+    "href": "webpages/faq.html#what-happened-to-stat-547m",
+    "title": "Frequently Asked Questions",
+    "section": "What happened to STAT 547M?",
+    "text": "What happened to STAT 547M?\nSTAT 547M became STAT 545B in 2020, so that the course codes align. Otherwise, these are the same courses."
+  },
+  {
+    "objectID": "webpages/faq.html#what-happened-to-the-guidebook",
+    "href": "webpages/faq.html#what-happened-to-the-guidebook",
+    "title": "Frequently Asked Questions",
+    "section": "What happened to the guidebook?",
+    "text": "What happened to the guidebook?\nWe used a guidebook in 2019/2020. It’s still available at https://stat545guidebook.netlify.app, but had become deprecated in place of worksheets and some tutorials."
+  },
+  {
+    "objectID": "webpages/faq.html#why-are-there-two-courses-instead-of-a-single-stat-545-course",
+    "href": "webpages/faq.html#why-are-there-two-courses-instead-of-a-single-stat-545-course",
+    "title": "Frequently Asked Questions",
+    "section": "Why are there two courses, instead of a single “STAT 545” course?",
+    "text": "Why are there two courses, instead of a single “STAT 545” course?\nFor several years, Jenny Bryan taught STAT 545A as a 1.5 credit course. She – and many students – felt there was a lot of great, relevant content that could go into an additional 1.5 credits.\nA full semester of data exploration, visualization, and all-around data wrangling was piloted in 2014/2015. It was structured as two half courses primarily so that several year’s worth of STAT 545A alums could register for the second part (then STAT 547M) and get the “missing half” of the course. And now it’s hard to break the cycle."
+  },
+  {
+    "objectID": "webpages/faq.html#i-have-taken-stat-545a-for-1.5-credits-in-the-past.-can-i-take-stat-545b",
+    "href": "webpages/faq.html#i-have-taken-stat-545a-for-1.5-credits-in-the-past.-can-i-take-stat-545b",
+    "title": "Frequently Asked Questions",
+    "section": "I have taken STAT 545A for 1.5 credits in the past. Can I take STAT 545B?",
+    "text": "I have taken STAT 545A for 1.5 credits in the past. Can I take STAT 545B?\nYES. But STAT 545 keeps changing to keep current with the R world. It is your responsibility to level up."
+  },
+  {
+    "objectID": "webpages/faq.html#can-i-just-take-the-second-half-i.e.-stat-545b",
+    "href": "webpages/faq.html#can-i-just-take-the-second-half-i.e.-stat-545b",
+    "title": "Frequently Asked Questions",
+    "section": "Can I just take the second half, i.e. STAT 545B?",
+    "text": "Can I just take the second half, i.e. STAT 545B?\nNO, not unless you have taken STAT 545A previously."
+  },
+  {
+    "objectID": "webpages/faq.html#can-i-just-take-the-second-half-i.e.-stat-545b-ill-do-a-self-study-for-stat-545a.",
+    "href": "webpages/faq.html#can-i-just-take-the-second-half-i.e.-stat-545b-ill-do-a-self-study-for-stat-545a.",
+    "title": "Frequently Asked Questions",
+    "section": "Can I just take the second half, i.e. STAT 545B? I’ll do a self-study for STAT 545A.",
+    "text": "Can I just take the second half, i.e. STAT 545B? I’ll do a self-study for STAT 545A.\nUnfortunately, the answer is still no. As much as we’d want to say yes to you, it just becomes too difficult for us to evaluate your level without having seen deliverables for STAT 545A."
+  },
+  {
+    "objectID": "webpages/faq.html#i-am-an-undergraduate.-can-i-take-this-course",
+    "href": "webpages/faq.html#i-am-an-undergraduate.-can-i-take-this-course",
+    "title": "Frequently Asked Questions",
+    "section": "I am an undergraduate. Can I take this course?",
+    "text": "I am an undergraduate. Can I take this course?\nA: Maybe, if there’s room. Contact the instructor."
+  },
+  {
+    "objectID": "webpages/faq.html#what-if-ive-never-had-a-stats-class",
+    "href": "webpages/faq.html#what-if-ive-never-had-a-stats-class",
+    "title": "Frequently Asked Questions",
+    "section": "What if I’ve never had a stats class?",
+    "text": "What if I’ve never had a stats class?\nThere are no official pre-requisites for STAT 545A but most students will have had at least one prior statistics course or comparable experience."
+  },
+  {
+    "objectID": "webpages/faq.html#im-not-enrolled-can-i-sit-in-during-class",
+    "href": "webpages/faq.html#im-not-enrolled-can-i-sit-in-during-class",
+    "title": "Frequently Asked Questions",
+    "section": "I’m not enrolled – can I sit in during class?",
+    "text": "I’m not enrolled – can I sit in during class?\nUnfortunately not. The room is usually at capacity, and further, we’ve allocated TA time for the specific number of students attending the class."
+  },
+  {
+    "objectID": "webpages/faq.html#id-like-to-officially-audit-can-i",
+    "href": "webpages/faq.html#id-like-to-officially-audit-can-i",
+    "title": "Frequently Asked Questions",
+    "section": "I’d like to officially audit – can I?",
+    "text": "I’d like to officially audit – can I?\nAbsolutely! Please take a look at what is required of auditors so that you have an understanding of your expectations coming into the course; then, fill out the form (graduate version) and send it to the instructor to get signed."
+  },
+  {
+    "objectID": "webpages/faq.html#the-course-is-full-can-i-audit-instead",
+    "href": "webpages/faq.html#the-course-is-full-can-i-audit-instead",
+    "title": "Frequently Asked Questions",
+    "section": "The course is full – can I audit instead?",
+    "text": "The course is full – can I audit instead?\nYou’ll still have to join the waitlist – auditing still counts as a seat in the class, so auditing is not a way around the course capacity.\nIn all cases, I encourage you to register! Or if the course is full, join the waitlist. Alternatively, you can engage in your own self-study using our online resources."
+  },
+  {
+    "objectID": "webpages/faq.html#the-course-is-full.-is-there-a-chance-that-the-course-capacity-will-increase",
+    "href": "webpages/faq.html#the-course-is-full.-is-there-a-chance-that-the-course-capacity-will-increase",
+    "title": "Frequently Asked Questions",
+    "section": "The course is full. Is there a chance that the course capacity will increase?",
+    "text": "The course is full. Is there a chance that the course capacity will increase?\nUnfortunately, the course enrollment capacity will not increase. But, I encourage you to join the waitlist."
+  },
+  {
+    "objectID": "webpages/faq.html#the-course-is-listed-as-restricted.-what-should-i-do",
+    "href": "webpages/faq.html#the-course-is-listed-as-restricted.-what-should-i-do",
+    "title": "Frequently Asked Questions",
+    "section": "The course is listed as “restricted”. What should I do?",
+    "text": "The course is listed as “restricted”. What should I do?\nWhen all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types. If you are a student of that type, then go ahead and register through SSC! Otherwise, I encourage you to join the waitlist."
+  },
+  {
+    "objectID": "webpages/faq.html#can-i-take-this-course-if-im-not-a-statistics-student",
+    "href": "webpages/faq.html#can-i-take-this-course-if-im-not-a-statistics-student",
+    "title": "Frequently Asked Questions",
+    "section": "Can I take this course if I’m not a Statistics student?",
+    "text": "Can I take this course if I’m not a Statistics student?\nThis course is open to any graduate student at UBC. Students from other departments vastly outnumber those from Statistics. In fact, the most successful students are often grad students from other fields who need to analyze and visualize data for a thesis. They are highly motivated and excel.\nHowever, if you have never programmed or worked at the command line before, prepare for a shock. This will be a powerful, positive experience, but it’s a big adjustment. Come suffer through the worst part of the learning curve in good company!"
+  },
+  {
+    "objectID": "webpages/faq.html#do-i-need-a-computer",
+    "href": "webpages/faq.html#do-i-need-a-computer",
+    "title": "Frequently Asked Questions",
+    "section": "Do I need a computer?",
+    "text": "Do I need a computer?\nYES. You absolutely must have access to a computer on which you can install software, download data, etc. In fact, class meetings will be a mix of lecture, discussion, and live coding. Students will get the most out of this if they can bring their own laptop to class every day. If this is not possible, we will try to help you work something out."
+  },
+  {
+    "objectID": "webpages/faq.html#are-they-any-prerequisites",
+    "href": "webpages/faq.html#are-they-any-prerequisites",
+    "title": "Frequently Asked Questions",
+    "section": "Are they any prerequisites?",
+    "text": "Are they any prerequisites?\nThere are no official pre-requisites for STAT 545A, but most students will have had at least one prior statistics course or comparable experience.\nSTAT 545B requires STAT 545A."
   }
 ]
