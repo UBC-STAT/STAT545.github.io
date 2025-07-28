@@ -1,0 +1,18 @@
+Instructions for Updating Website
+
+Website is built using Quarto, and is hosted on GitHub pages through the UBC-STAT Organization.
+
+I (Grace) rebuilt this website in 2025 to use Quarto and provide a more easily editable and maintainable website for this course.
+
+To edit the website:
+- Clone the repository to your local machine
+- Open the R project
+- Edit the webpages (.qmd files) in the webpages folder
+- If adding any webpages, add them to the _quarto.yml file 
+
+MDA and Collaborative project instructions are hidden until the page goes live? (Grace - update instructions once this is set up) 
+
+Running the course:
+- Post worksheets week by week (un-comment each download link)
+- Post MDA and collaborative project when appropriate (see above)
+- 
