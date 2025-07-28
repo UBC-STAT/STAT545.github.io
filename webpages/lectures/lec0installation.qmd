@@ -117,4 +117,6 @@ If you are having issues, you could use the `usethis` package in R. [See here.](
 5.  From R (in the console), run `install.packages("gitcreds")` if you haven't already.
 6.  Execute `gitcreds::gitcreds_set()` and enter the PAT that you just made when prompted.
 
-*Thank you to Vincenzo Coia and Jenny Bryan and previous STAT 545 instructors for these directions!*
+## Attribution
+
+Thank *you to Vincenzo Coia and Jenny Bryan and previous STAT 545 instructors for these directions!*
