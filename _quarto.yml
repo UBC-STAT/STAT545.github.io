@@ -8,7 +8,7 @@ website:
     background: primary
     search: true
     left:
-      - href: webpages/index.qmd
+      - href: index.qmd
         text: "Home"
       - sidebar:syllabus
       - sidebar:lectures

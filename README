@@ -16,3 +16,7 @@ Running the course:
 - Post worksheets week by week (un-comment each download link)
 - Post MDA and collaborative project when appropriate (see above)
 - 
+
+
+NOTES:
+- index.qmd must be named index.qmd and must be on the top level (not in a folder)
