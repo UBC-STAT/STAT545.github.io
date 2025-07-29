@@ -40,7 +40,7 @@ We need to convey the message using a data visualization while removing as much 
 
 -   Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).ß
 
--   Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry [@deeb2005molecular]). For example, [ColorBrewer](https://colorbrewer2.org/) and [the `RColorBrewer` R package](https://cran.r-project.org/web/packages/RColorBrewer/index.html) ([Neuwirth 2014](https://datasciencebook.ca/viz.html#ref-RColorBrewer)) provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a [color blindness simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/).
+-   Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry [@deeb2005molecular]). For example, [ColorBrewer](https://colorbrewer2.org/) and [the `RColorBrewer` R package](https://cran.r-project.org/web/packages/RColorBrewer/index.html) [@neuwirth2014rcolorbrewer] provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a [color blindness simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/).
 
 -   Redundancy can be helpful; sometimes conveying the same message in multiple ways reinforces it for the audience.
 
