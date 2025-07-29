@@ -397,39 +397,39 @@ div.csl-indent {
 <section id="effective-data-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="effective-data-visualization">Effective Data Visualization</h2>
 <p>Plots and other forms of data visualization are powerful tools for conveying complex relationships. While tables can be useful, data visualizations are often preferred to aid with identify patterns and relationships and emphasizing important findings in a research projects. This is especially true for presentations, where the audience may not have time to digest a large table of numbers. Jenny Bryan’s Challenger Example (<a href="https://speakerdeck.com/jennybc/ggplot2-tutorial?slide=22">https://speakerdeck.com/jennybc/ggplot2-tutorial</a>) is a great example of why we may want to visualize data.</p>
-<p>Now the question is, what visualization should you use to convey an idea? Well, you need to first formulate the question you want the data visualization to answer. That is, you need to figure out what you want to convey <em>before</em> you start visualizing the data. From UBC’s <a href="https://datasciencebook.ca/viz.html"><em>A First Introduction to Data Science</em></a> book:</p>
+<p>Now the question is, what visualization should you use to convey an idea? Well, you need to first formulate the question you want the data visualization to answer. That is, you need to figure out what you want to convey <em>before</em> you start visualizing the data. From UBC’s <a href="https://datasciencebook.ca/viz.html"><em>A First Introduction to Data Science</em></a> <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span> book:</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>“A good visualization will clearly answer your question without distraction; a <em>great</em> visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience.”</p>
+<p>“A good visualization will clearly answer your question without distraction; a <em>great</em> visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience.” <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span></p>
 </div>
 </div>
 </div>
-<p>We need to convey the message using a data visualization while removing as much redundant or unnecessary information as possible. As such, the authors <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span> also suggest the following:</p>
-<p><strong>Convey the message</strong></p>
+<p>We need to convey the message using a data visualization while removing as much unnecessary information as possible. Below is a direct quote from the <a href="https://datasciencebook.ca/viz.html"><em>A First Introduction to Data Science</em></a> <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span> containing their suggestions for effective data visualizations:</p>
+<p><strong>“Convey the message”</strong></p>
 <ul>
 <li><p>Make sure the visualization answers the question you have asked most simply and plainly as possible.</p></li>
 <li><p>Use legends and labels so that your visualization is understandable without reading the surrounding text.</p></li>
 <li><p>Ensure the text, symbols, lines, etc., on your visualization are big enough to be easily read.</p></li>
-<li><p>Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).</p></li>
-<li><p>Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry (<a href="https://datasciencebook.ca/viz.html#ref-deebblind">Deeb 2005</a>)). For example, <a href="https://colorbrewer2.org/">ColorBrewer</a> and <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">the <code>RColorBrewer</code> R package</a> (<a href="https://datasciencebook.ca/viz.html#ref-RColorBrewer">Neuwirth 2014</a>) provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/">color blindness simulator</a>.</p></li>
+<li><p>Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).ß</p></li>
+<li><p>Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry <span class="citation" data-cites="deeb2005molecular">[<a href="#ref-deeb2005molecular" role="doc-biblioref">2</a>]</span>). For example, <a href="https://colorbrewer2.org/">ColorBrewer</a> and <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">the <code>RColorBrewer</code> R package</a> (<a href="https://datasciencebook.ca/viz.html#ref-RColorBrewer">Neuwirth 2014</a>) provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/">color blindness simulator</a>.</p></li>
 <li><p>Redundancy can be helpful; sometimes conveying the same message in multiple ways reinforces it for the audience.</p></li>
 </ul>
-<p><strong>Minimize noise</strong></p>
+<p><strong>“Minimize noise”</strong></p>
 <ul>
 <li><p>Use colors sparingly. Too many different colors can be distracting, create false patterns, and detract from the message.</p></li>
 <li><p>Be wary of overplotting. Overplotting is when marks that represent the data overlap, and is problematic as it prevents you from seeing how many data points are represented in areas of the visualization where this occurs. If your plot has too many dots or lines and starts to look like a mess, you need to do something different.</p></li>
 <li><p>Only make the plot area (where the dots, lines, bars are) as big as needed. Simple plots can be made small.</p></li>
 <li><p>Don’t adjust the axes to zoom in on small differences. If the difference is small, show that it’s small!</p></li>
 </ul>
-<p>If you’ve learned about data visualization in R before, you’ve likely produced plots using “base R” methods (for example, the <code>boxplot()</code> function in R. It is a simple framework for making plots and is often “enough” for producing basic plots. In this lecture, we are going to dive into <code>ggplot2</code>, a package R users often use to make more sophisticated plots! If you’ve never used R to plot before, don’t worry. We aren’t assuming you have any experience with either method of plotting in R.</p>
 </section>
 <section id="ggplot2-and-the-grammar-of-graphics" class="level2">
 <h2 class="anchored" data-anchor-id="ggplot2-and-the-grammar-of-graphics"><code>ggplot2</code> and the Grammar of Graphics</h2>
-<p>We will be using the <code>ggplot2</code> and <code>tidyverse</code> packages throughout this lecture. To load them:</p>
+<p>If you’ve learned about data visualization in R before, you’ve likely produced plots using “base R” methods (for example, the <code>boxplot()</code> function in R. It is a simple framework for making plots and is often “enough” for producing basic plots. In this lecture, we are going to dive into <code>ggplot2</code>, a package R users often use to make more sophisticated plots! If you’ve never used R to plot before, don’t worry. We aren’t assuming you have any experience with either method of plotting in R.</p>
+<p>We will be utilising the <code>ggplot2</code> and <code>tidyverse</code> packages throughout this lecture. To load them:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse") #uncomment if not already installed</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2") #uncomment if not already installed</span></span>
@@ -637,6 +637,9 @@ Tip
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-timbers2022data" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Timbers T, Campbell T, Lee M (2022) Data science: A first introduction. Chapman; Hall/CRC</div>
+</div>
+<div id="ref-deeb2005molecular" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Deeb S (2005) The molecular basis of variation in human color vision. Clinical genetics 67(5):369–377</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
