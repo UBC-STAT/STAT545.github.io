@@ -23,7 +23,7 @@ In short, this course will enable you to confidently write clean and modern data
 ::: {.column width="30%"}
 
 
-![](../images/stat545.png) 
+![](images/stat545.png) 
 
 :::
 :::
