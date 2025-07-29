@@ -2,5 +2,230 @@
 title: "Lecture 4: Data Visualization"
 subtitle: "September 23, 2025"
 date-modified: last-modified
+bibliography: ../bibliography.bib
+csl: ../../diabetologia.csl
 ---
 
+## Learning Objectives
+
+From this topic, students are anticipated to be able to:
+
+-   Identify the seven components of the grammar of graphics underlying ggplot2.
+
+-   Produce plots with ggplot2 by implementing the components of the grammar of graphics.
+
+-   Customize the look of ggplot2 graphs.
+
+-   Choose an appropriate plot type for Exploratory Data Analysis, based on an understanding of what makes a graph effective.
+
+## Effective Data Visualization
+
+Plots and other forms of data visualization are powerful tools for conveying complex relationships. While tables can be useful, data visualizations are often preferred to aid with identify patterns and relationships and emphasizing important findings in a research projects. This is especially true for presentations, where the audience may not have time to digest a large table of numbers. Jenny Bryan's Challenger Example ([https://speakerdeck.com/jennybc/ggplot2-tutorial](https://speakerdeck.com/jennybc/ggplot2-tutorial?slide=22)) is a great example of why we may want to visualize data.
+
+Now the question is, what visualization should you use to convey an idea? Well, you need to first formulate the question you want the data visualization to answer. That is, you need to figure out what you want to convey *before* you start visualizing the data. From UBC's [*A First Introduction to Data Science*](https://datasciencebook.ca/viz.html) [@timbers2022data] book:
+
+::: {.callout-note appearance="minimal" icon="false"}
+"A good visualization will clearly answer your question without distraction; a *great* visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience." [@timbers2022data]
+:::
+
+We need to convey the message using a data visualization while removing as much unnecessary information as possible. Below is a direct quote from the [*A First Introduction to Data Science*](https://datasciencebook.ca/viz.html) [@timbers2022data] containing their suggestions for effective data visualizations:
+
+**"Convey the message"**
+
+-   Make sure the visualization answers the question you have asked most simply and plainly as possible.
+
+-   Use legends and labels so that your visualization is understandable without reading the surrounding text.
+
+-   Ensure the text, symbols, lines, etc., on your visualization are big enough to be easily read.
+
+-   Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).ß
+
+-   Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry [@deeb2005molecular]). For example, [ColorBrewer](https://colorbrewer2.org/) and [the `RColorBrewer` R package](https://cran.r-project.org/web/packages/RColorBrewer/index.html) ([Neuwirth 2014](https://datasciencebook.ca/viz.html#ref-RColorBrewer)) provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a [color blindness simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/).
+
+-   Redundancy can be helpful; sometimes conveying the same message in multiple ways reinforces it for the audience.
+
+**"Minimize noise"**
+
+-   Use colors sparingly. Too many different colors can be distracting, create false patterns, and detract from the message.
+
+-   Be wary of overplotting. Overplotting is when marks that represent the data overlap, and is problematic as it prevents you from seeing how many data points are represented in areas of the visualization where this occurs. If your plot has too many dots or lines and starts to look like a mess, you need to do something different.
+
+-   Only make the plot area (where the dots, lines, bars are) as big as needed. Simple plots can be made small.
+
+-   Don’t adjust the axes to zoom in on small differences. If the difference is small, show that it’s small!
+
+## `ggplot2` and the Grammar of Graphics
+
+If you've learned about data visualization in R before, you've likely produced plots using "base R" methods (for example, the `boxplot()` function in R. It is a simple framework for making plots and is often "enough" for producing basic plots. In this lecture, we are going to dive into `ggplot2`, a package R users often use to make more sophisticated plots! If you've never used R to plot before, don't worry. We aren't assuming you have any experience with either method of plotting in R.
+
+We will be utilising the `ggplot2` and `tidyverse` packages throughout this lecture. To load them:
+
+```{r, message=F, warning=F}
+# install.packages("tidyverse") #uncomment if not already installed
+# install.packages("ggplot2") #uncomment if not already installed
+
+library(tidyverse)
+library(ggplot2)
+```
+
+`ggplot2` is based on the grammar of graphics, which is a systematic approach for describing different components or aspects of a graph. It involves seven components (required components are indicated with the \*):
+
+-   Data\*
+
+    -   the data you're feeding into the plot, perhaps a tibble or dataframe
+
+-   Aesthetic mappings\*
+
+    -   a specification of how you will connect variables (for example, horizontal or vertical positioning, grouping, size, colour, shape)
+
+-   Geometric objects\*
+
+    -   a specification of what the object will be drawn as (for example, a scatter plot, line, bar chart)
+
+-   Scales
+
+    -   a specification of how a variable is mapped to its aesthetic
+
+-   Statistical transformations
+
+    -   a specification of whether and how the data are combined or transformed. For example, is a bar chart plotting the values or a relative frequency?
+
+-   Coordinate system
+
+    -   a specification of how the position aesthetics (x and y) are depicted in the plot. We typically use cartesian coordinates, though polar coordinates are also possible.
+
+-   Facet
+
+    -   a specification of data variables that partition the data into smaller "sub plots" or panels
+
+It's okay if you don't quite understand all of these components yet. We will walk through examples of commonly used plots and discuss which components are necessary!
+
+### Example: Scatterplot
+
+To build our first `ggplot`, we will use the `gapminder` data from the `gapminder` package. To install and load it, we use:
+
+```{r}
+# install.packages("gapminder") #uncomment if not already installed
+library(gapminder)
+data(gapminder) 
+
+head(gapminder) #view first few rows of the tibble
+```
+
+The `ggplot()` function takes two arguments: `data` (the data frame or tibble containing your data that you'd like to plot) and `mapping` (aesthetic mappings applied to the entire plot. We use the `aes()` function inside of this argument.).
+
+Let's start building the scatterplot! Let's plot `gdpPercap` on the x axis and `lifeExp` on the y axis:
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, lifeExp))
+```
+
+Notice that we haven't actually plotted anything! `ggplot` doesn't know what type of plot we want to draw, only that we want `gpdPercap` on the x axis and `lifeExp` on the y axis from the `gapminder` data we provided. To tell `ggplot` that we want a scatterplot, we are going to add a *layer* to the plot using the `+` at the end of the previous line. `geom_point()` is the geometric object we'd like to add (i.e., a scatterplot):
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, lifeExp)) +
+  geom_point()
+```
+
+We now have created a scatterplot! However, it's a bit dense and difficult to see. We can specify an alpha transparency value within the `geom_point()` function to change the opacity:
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, lifeExp)) +
+  geom_point(alpha = 0.2)
+```
+
+That's already looking better! We can really tell now where there are a lot of observations.
+
+Now, let's transform the scale of the x axis to see if there is a more linear relationship between life expectancy and the log transformation of GDP per capita. The transformation will be of the form `scale_AES_TRANSFORMATION()` where `AES` corresponds to which aesthetic value is being transformed, and the `TRANSFORMATION` is the transformation being completed (here it will be `log10`. We can also rename the x axis using the first argument. We also can change the labels on the x axis to be dollar format. Let's add another layer to do so:
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, lifeExp)) +
+  geom_point(alpha = 0.2) + 
+  scale_x_log10("GDP per capita (log-scale)", labels = scales::dollar_format())
+```
+
+The more translucent grey points are still a bit hard to see. Let's change the background to a more minimalist theme using a `theme()` layer. While we're at it, let's also rename the y axis using a `ylab()` later:
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, lifeExp)) +
+  geom_point(alpha = 0.2) + 
+  scale_x_log10("GDP per capita (log-scale)", labels = scales::dollar_format()) +
+  theme_minimal() +
+  ylab("Life Expectancy (Years)")
+```
+
+::: callout-tip
+Names of axes should have quotations "" around them.
+
+The order of the layers doesn't matter after the `geom_layer()` layer.
+:::
+
+### Common Types of Plots
+
+-   `geom_point()`: scatterplot
+
+-   `geom_line()`: line plot
+
+-   `geom_bar()`: bar chart
+
+-   `geom_histogram()`: histogram
+
+-   `geom_boxplot()`: box plot
+
+-   `geom_smooth()`: adds a smooth trend line (various methods)
+
+### Advice for `ggplot`
+
+Google is *absolutely* your friend when building `ggplots`. I don't think I've ever made a plot without googling how to do it. `ggplot` is extremely powerful, flexible, and a bit scary to learn! If you need to build a plot, search it! Need to plot two histograms, separated by groups (say, gender), side by side? I'd google: "ggplot histogram grouped by variable". This brings me to [this blog post by R Charts](https://r-charts.com/distribution/histogram-group-ggplot2/) that has a TON of different side by side histograms with code! `ggplot` is very much a "learn by doing" skill.
+
+## Try it Yourself:
+
+We think the best way to learn the basics of ggplot2 is to work through Worksheet A3.
+
+### **Remainder of this class:**
+
+-   Spend time working through Worksheet 3.
+
+-   Finished attempting all of the questions? Then do the optional [R4DS Data Visualization](https://r4ds.had.co.nz/data-visualisation.html) reading, and maybe even do some of the exercises for extra practice.
+
+Post any questions you have on the Slack channel!
+
+## Next class: FEV Case Study
+
+We will get a flavour for how you might use `ggplot2` in the wild and get in even more practice by working through [a continuation of our FEV case study from last week](https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/notes/supp-a06.Rmd).
+
+By yourself and in small groups, work through the exercises in the case study. We will also discuss instructor answers to each exercise.
+
+## Additional Resources
+
+Video lectures for this topic (ignore the episode numbering):
+
+-   Video Lecture: [ggplot2 Part 1: Introduction to Plotting](https://youtu.be/cqcQT44mJTM)
+
+-   Video Lecture: [ggplot2 Part 2: Plotting for Exploratory Data Analysis](https://youtu.be/X8b44P5D-5w)
+
+-   The [R4DS Data Visualization](https://r4ds.had.co.nz/data-visualisation.html) chapter (provides an excellent overview of plotting in ggplot2 and the grammar of graphics. We especially recommend sections 3.1 to 3.4.)
+
+-   Hadley Wickham’s [ggplot2 book](https://ggplot2-book.org/) (a well-organized, approachable, and comprehensive coverage of ggplot2.)
+
+-   Cheatsheets:
+
+    -   The [ggplot2 cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf) (Also available through RStudio: “Help” -\> “Cheatsheets” -\> “Data visualization with ggplot2”).
+
+    -   [R Cookbook Graphs](http://www.cookbook-r.com/Graphs/)
+
+-   Craig Hutton's [comprehensive blog post](https://craig.rbind.io/post/2021-05-17-asgr-3-1-data-visualization/) adopting a similar structure to our course notes, but with more explorations.
+
+-   Resources about producing effective visualizations:
+
+    -   [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/introduction.html) by Claus Wilke is an excellent guide to designing effective visuals. If you only look at one resource, this should be it.
+
+    -   [Visualization Analysis and Design](https://www-taylorfrancis-com.ezproxy.library.ubc.ca/books/9780429088902) by Tamara Munzner is a gold-standard book for the theory of designing plots with a focus on human perception.
+
+    -   Bite-sized resources to help you produce effective visualizations:
+
+        -   The [“do’s and don’ts of effective graphics” in Jenny Bryan’s STAT 545 book](https://stat545.com/effective-graphs.html) provides some rules of thumb for producing effective visuals.
+
+        -   Vincenzo’s [“Communicating data” slides](https://vincenzocoia.com/communicating_data/#1) provide some rules of thumb.
+
+        -   [Callingbull.org’s entry on visualizations](https://www.callingbull.org/tools/tools_misleading_axes.html), by Carl T. Bergstrom and Jevin West, goes over several examples of improving ineffective visuals.

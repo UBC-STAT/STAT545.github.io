@@ -22,18 +22,6 @@ From today’s class, students are anticipated to be able to:
 
 -   Render your finalized document to HTML & PDF.
 
-## Resources High-level video lecture for today:
-
-Here are a number of resources that may help supplement you with today's lesson:
-
--   [STAT 545 Episode 3-A: Reproducible Reports with R Markdown Some additional resources that you might find useful:](https://www.youtube.com/watch?v=ZzDSkBgt9xQ)
-
--   [The Official R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html) from the “Introduction” up to and including the “Inline Code” section.
-
--   [R Markdown cheat sheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf)
-
-Note that many cheat sheets can be found from RStudio: go to "Help" -\> "Cheatsheets".
-
 ## Reproducibility
 
 *Reproducibility* is the ability of an independent researcher to repeat an experiment using the [same data and workflow]{.underline} to obtain the same results [@resnik2017reproducibility]. One way to ensure reproducible research is sharing clear details on the analysis and providing the code used to produce the results. Reproducibility is often confused with *replication*. However, replication is a separate concept where the results of a study should be validated on an independent study using new data. A "good" study is both replicable and reproducible.
@@ -145,3 +133,17 @@ In small groups, prepare an updated report by updating your `.Rmd` appropriately
 ## Attribution
 
 *Thanks to Icíar Fernández Boyano’s help in putting this demonstration together. Inspiration for activity ideas drawn from Nicholas Tierney’s R Markdown for Scientists book, the R Markdown for Medicine workshop materials, and the UBC MDS program.*
+
+## Resources
+
+Here are a number of resources that may help supplement you with today's lesson:
+
+-   [STAT 545 Episode 3-A: Reproducible Reports with R Markdown Some additional resources that you might find useful:](https://www.youtube.com/watch?v=ZzDSkBgt9xQ)
+
+-   [The Official R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html) from the “Introduction” up to and including the “Inline Code” section.
+
+-   [R Markdown cheat sheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf)
+
+::: callout-tip
+Many cheat sheets can be found from RStudio: go to "Help" -\> "Cheatsheets".
+:::

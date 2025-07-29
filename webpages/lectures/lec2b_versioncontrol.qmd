@@ -20,25 +20,6 @@ From today’s topic, students are anticipated to be able to:
 
 After this class, you should be able to start working on your Collaborative Project.
 
-## Resources
-
-Today’s class is a digest of the following resources:
-
--   Video lecture [STAT 545 Episode 2-A: Git and GitHub for an Organized Project](https://youtu.be/l2ftm-YwJs8)
-
--   Online tutorials:
-
-    -   The basic version control workflow (without branching): [Happy git w R: Chapter 20](https://happygitwithr.com/git-basics.html).
-
-    -   Starting with GitHub: [Chapter 15: New project, GitHub first](https://happygitwithr.com/new-github-first.html)
-
-    -   Starting with files on your computer, and didn’t set up git: [Chapter 16: Existing project, GitHub first](https://happygitwithr.com/existing-github-first.html)
-
-    -   Starting with files on your computer, and *did* set up git: [Chapter 17: Existing project, GitHub Last](https://happygitwithr.com/existing-github-last.html)
-
-Some additional resources that you might find useful:
-
--   Read the [Understanding the GitHub flow](https://guides.github.com/introduction/flow/) to get a sense of branching.
 
 ## Instructor demo: Get Acquainted with GitHub
 
@@ -153,3 +134,25 @@ Find a partner. In this exercise, we will learn how to have different team membe
 6.  Teammate A will follow the instructions [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request) to merge the pull request.
 
 Too easy? Then either switch roles, or try creating a pull request that causes a merge conflict and resolving it!
+
+
+## Resources
+
+Today’s class is a digest of the following resources:
+
+-   Video lecture [STAT 545 Episode 2-A: Git and GitHub for an Organized Project](https://youtu.be/l2ftm-YwJs8)
+
+-   Online tutorials:
+
+    -   The basic version control workflow (without branching): [Happy git w R: Chapter 20](https://happygitwithr.com/git-basics.html).
+
+    -   Starting with GitHub: [Chapter 15: New project, GitHub first](https://happygitwithr.com/new-github-first.html)
+
+    -   Starting with files on your computer, and didn’t set up git: [Chapter 16: Existing project, GitHub first](https://happygitwithr.com/existing-github-first.html)
+
+    -   Starting with files on your computer, and *did* set up git: [Chapter 17: Existing project, GitHub Last](https://happygitwithr.com/existing-github-last.html)
+
+Some additional resources that you might find useful:
+
+-   Read the [Understanding the GitHub flow](https://guides.github.com/introduction/flow/) to get a sense of branching.
+

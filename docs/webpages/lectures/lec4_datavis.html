@@ -20,7 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -280,8 +333,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#effective-data-visualization" id="toc-effective-data-visualization" class="nav-link" data-scroll-target="#effective-data-visualization">Effective Data Visualization</a></li>
+  <li><a href="#ggplot2-and-the-grammar-of-graphics" id="toc-ggplot2-and-the-grammar-of-graphics" class="nav-link" data-scroll-target="#ggplot2-and-the-grammar-of-graphics"><code>ggplot2</code> and the Grammar of Graphics</a>
+  <ul class="collapse">
+  <li><a href="#example-scatterplot" id="toc-example-scatterplot" class="nav-link" data-scroll-target="#example-scatterplot">Example: Scatterplot</a></li>
+  <li><a href="#common-types-of-plots" id="toc-common-types-of-plots" class="nav-link" data-scroll-target="#common-types-of-plots">Common Types of Plots</a></li>
+  <li><a href="#advice-for-ggplot" id="toc-advice-for-ggplot" class="nav-link" data-scroll-target="#advice-for-ggplot">Advice for <code>ggplot</code></a></li>
+  </ul></li>
+  <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try it Yourself:</a>
+  <ul class="collapse">
+  <li><a href="#remainder-of-this-class" id="toc-remainder-of-this-class" class="nav-link" data-scroll-target="#remainder-of-this-class"><strong>Remainder of this class:</strong></a></li>
+  </ul></li>
+  <li><a href="#next-class-fev-case-study" id="toc-next-class-fev-case-study" class="nav-link" data-scroll-target="#next-class-fev-case-study">Next class: FEV Case Study</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -301,7 +373,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 28, 2025</p>
+      <p class="date-modified">July 29, 2025</p>
     </div>
   </div>
     
@@ -312,10 +384,261 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>From this topic, students are anticipated to be able to:</p>
+<ul>
+<li><p>Identify the seven components of the grammar of graphics underlying ggplot2.</p></li>
+<li><p>Produce plots with ggplot2 by implementing the components of the grammar of graphics.</p></li>
+<li><p>Customize the look of ggplot2 graphs.</p></li>
+<li><p>Choose an appropriate plot type for Exploratory Data Analysis, based on an understanding of what makes a graph effective.</p></li>
+</ul>
+</section>
+<section id="effective-data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="effective-data-visualization">Effective Data Visualization</h2>
+<p>Plots and other forms of data visualization are powerful tools for conveying complex relationships. While tables can be useful, data visualizations are often preferred to aid with identify patterns and relationships and emphasizing important findings in a research projects. This is especially true for presentations, where the audience may not have time to digest a large table of numbers. Jenny Bryan’s Challenger Example (<a href="https://speakerdeck.com/jennybc/ggplot2-tutorial?slide=22">https://speakerdeck.com/jennybc/ggplot2-tutorial</a>) is a great example of why we may want to visualize data.</p>
+<p>Now the question is, what visualization should you use to convey an idea? Well, you need to first formulate the question you want the data visualization to answer. That is, you need to figure out what you want to convey <em>before</em> you start visualizing the data. From UBC’s <a href="https://datasciencebook.ca/viz.html"><em>A First Introduction to Data Science</em></a> book:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>“A good visualization will clearly answer your question without distraction; a <em>great</em> visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience.”</p>
+</div>
+</div>
+</div>
+<p>We need to convey the message using a data visualization while removing as much redundant or unnecessary information as possible. As such, the authors <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span> also suggest the following:</p>
+<p><strong>Convey the message</strong></p>
+<ul>
+<li><p>Make sure the visualization answers the question you have asked most simply and plainly as possible.</p></li>
+<li><p>Use legends and labels so that your visualization is understandable without reading the surrounding text.</p></li>
+<li><p>Ensure the text, symbols, lines, etc., on your visualization are big enough to be easily read.</p></li>
+<li><p>Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).</p></li>
+<li><p>Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry (<a href="https://datasciencebook.ca/viz.html#ref-deebblind">Deeb 2005</a>)). For example, <a href="https://colorbrewer2.org/">ColorBrewer</a> and <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">the <code>RColorBrewer</code> R package</a> (<a href="https://datasciencebook.ca/viz.html#ref-RColorBrewer">Neuwirth 2014</a>) provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/">color blindness simulator</a>.</p></li>
+<li><p>Redundancy can be helpful; sometimes conveying the same message in multiple ways reinforces it for the audience.</p></li>
+</ul>
+<p><strong>Minimize noise</strong></p>
+<ul>
+<li><p>Use colors sparingly. Too many different colors can be distracting, create false patterns, and detract from the message.</p></li>
+<li><p>Be wary of overplotting. Overplotting is when marks that represent the data overlap, and is problematic as it prevents you from seeing how many data points are represented in areas of the visualization where this occurs. If your plot has too many dots or lines and starts to look like a mess, you need to do something different.</p></li>
+<li><p>Only make the plot area (where the dots, lines, bars are) as big as needed. Simple plots can be made small.</p></li>
+<li><p>Don’t adjust the axes to zoom in on small differences. If the difference is small, show that it’s small!</p></li>
+</ul>
+<p>If you’ve learned about data visualization in R before, you’ve likely produced plots using “base R” methods (for example, the <code>boxplot()</code> function in R. It is a simple framework for making plots and is often “enough” for producing basic plots. In this lecture, we are going to dive into <code>ggplot2</code>, a package R users often use to make more sophisticated plots! If you’ve never used R to plot before, don’t worry. We aren’t assuming you have any experience with either method of plotting in R.</p>
+</section>
+<section id="ggplot2-and-the-grammar-of-graphics" class="level2">
+<h2 class="anchored" data-anchor-id="ggplot2-and-the-grammar-of-graphics"><code>ggplot2</code> and the Grammar of Graphics</h2>
+<p>We will be using the <code>ggplot2</code> and <code>tidyverse</code> packages throughout this lecture. To load them:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse") #uncomment if not already installed</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2") #uncomment if not already installed</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>ggplot2</code> is based on the grammar of graphics, which is a systematic approach for describing different components or aspects of a graph. It involves seven components (required components are indicated with the *):</p>
+<ul>
+<li><p>Data*</p>
+<ul>
+<li>the data you’re feeding into the plot, perhaps a tibble or dataframe</li>
+</ul></li>
+<li><p>Aesthetic mappings*</p>
+<ul>
+<li>a specification of how you will connect variables (for example, horizontal or vertical positioning, grouping, size, colour, shape)</li>
+</ul></li>
+<li><p>Geometric objects*</p>
+<ul>
+<li>a specification of what the object will be drawn as (for example, a scatter plot, line, bar chart)</li>
+</ul></li>
+<li><p>Scales</p>
+<ul>
+<li>a specification of how a variable is mapped to its aesthetic</li>
+</ul></li>
+<li><p>Statistical transformations</p>
+<ul>
+<li>a specification of whether and how the data are combined or transformed. For example, is a bar chart plotting the values or a relative frequency?</li>
+</ul></li>
+<li><p>Coordinate system</p>
+<ul>
+<li>a specification of how the position aesthetics (x and y) are depicted in the plot. We typically use cartesian coordinates, though polar coordinates are also possible.</li>
+</ul></li>
+<li><p>Facet</p>
+<ul>
+<li>a specification of data variables that partition the data into smaller “sub plots” or panels</li>
+</ul></li>
+</ul>
+<p>It’s okay if you don’t quite understand all of these components yet. We will walk through examples of commonly used plots and discuss which components are necessary!</p>
+<section id="example-scatterplot" class="level3">
+<h3 class="anchored" data-anchor-id="example-scatterplot">Example: Scatterplot</h3>
+<p>To build our first <code>ggplot</code>, we will use the <code>gapminder</code> data from the <code>gapminder</code> package. To install and load it, we use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("gapminder") #uncomment if not already installed</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gapminder) </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder) <span class="co">#view first few rows of the tibble</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  country     continent  year lifeExp      pop gdpPercap
+  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+1 Afghanistan Asia       1952    28.8  8425333      779.
+2 Afghanistan Asia       1957    30.3  9240934      821.
+3 Afghanistan Asia       1962    32.0 10267083      853.
+4 Afghanistan Asia       1967    34.0 11537966      836.
+5 Afghanistan Asia       1972    36.1 13079460      740.
+6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
+</div>
+</div>
+<p>The <code>ggplot()</code> function takes two arguments: <code>data</code> (the data frame or tibble containing your data that you’d like to plot) and <code>mapping</code> (aesthetic mappings applied to the entire plot. We use the <code>aes()</code> function inside of this argument.).</p>
+<p>Let’s start building the scatterplot! Let’s plot <code>gdpPercap</code> on the x axis and <code>lifeExp</code> on the y axis:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice that we haven’t actually plotted anything! <code>ggplot</code> doesn’t know what type of plot we want to draw, only that we want <code>gpdPercap</code> on the x axis and <code>lifeExp</code> on the y axis from the <code>gapminder</code> data we provided. To tell <code>ggplot</code> that we want a scatterplot, we are going to add a <em>layer</em> to the plot using the <code>+</code> at the end of the previous line. <code>geom_point()</code> is the geometric object we’d like to add (i.e., a scatterplot):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We now have created a scatterplot! However, it’s a bit dense and difficult to see. We can specify an alpha transparency value within the <code>geom_point()</code> function to change the opacity:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>That’s already looking better! We can really tell now where there are a lot of observations.</p>
+<p>Now, let’s transform the scale of the x axis to see if there is a more linear relationship between life expectancy and the log transformation of GDP per capita. The transformation will be of the form <code>scale_AES_TRANSFORMATION()</code> where <code>AES</code> corresponds to which aesthetic value is being transformed, and the <code>TRANSFORMATION</code> is the transformation being completed (here it will be <code>log10</code>. We can also rename the x axis using the first argument. We also can change the labels on the x axis to be dollar format. Let’s add another layer to do so:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="st">"GDP per capita (log-scale)"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The more translucent grey points are still a bit hard to see. Let’s change the background to a more minimalist theme using a <code>theme()</code> layer. While we’re at it, let’s also rename the y axis using a <code>ylab()</code> later:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="st">"GDP per capita (log-scale)"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Life Expectancy (Years)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Names of axes should have quotations “” around them.</p>
+<p>The order of the layers doesn’t matter after the <code>geom_layer()</code> layer.</p>
+</div>
+</div>
+</section>
+<section id="common-types-of-plots" class="level3">
+<h3 class="anchored" data-anchor-id="common-types-of-plots">Common Types of Plots</h3>
+<ul>
+<li><p><code>geom_point()</code>: scatterplot</p></li>
+<li><p><code>geom_line()</code>: line plot</p></li>
+<li><p><code>geom_bar()</code>: bar chart</p></li>
+<li><p><code>geom_histogram()</code>: histogram</p></li>
+<li><p><code>geom_boxplot()</code>: box plot</p></li>
+<li><p><code>geom_smooth()</code>: adds a smooth trend line (various methods)</p></li>
+</ul>
+</section>
+<section id="advice-for-ggplot" class="level3">
+<h3 class="anchored" data-anchor-id="advice-for-ggplot">Advice for <code>ggplot</code></h3>
+<p>Google is <em>absolutely</em> your friend when building <code>ggplots</code>. I don’t think I’ve ever made a plot without googling how to do it. <code>ggplot</code> is extremely powerful, flexible, and a bit scary to learn! If you need to build a plot, search it! Need to plot two histograms, separated by groups (say, gender), side by side? I’d google: “ggplot histogram grouped by variable”. This brings me to <a href="https://r-charts.com/distribution/histogram-group-ggplot2/">this blog post by R Charts</a> that has a TON of different side by side histograms with code! <code>ggplot</code> is very much a “learn by doing” skill.</p>
+</section>
+</section>
+<section id="try-it-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="try-it-yourself">Try it Yourself:</h2>
+<p>We think the best way to learn the basics of ggplot2 is to work through Worksheet A3.</p>
+<section id="remainder-of-this-class" class="level3">
+<h3 class="anchored" data-anchor-id="remainder-of-this-class"><strong>Remainder of this class:</strong></h3>
+<ul>
+<li><p>Spend time working through Worksheet 3.</p></li>
+<li><p>Finished attempting all of the questions? Then do the optional <a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS Data Visualization</a> reading, and maybe even do some of the exercises for extra practice.</p></li>
+</ul>
+<p>Post any questions you have on the Slack channel!</p>
+</section>
+</section>
+<section id="next-class-fev-case-study" class="level2">
+<h2 class="anchored" data-anchor-id="next-class-fev-case-study">Next class: FEV Case Study</h2>
+<p>We will get a flavour for how you might use <code>ggplot2</code> in the wild and get in even more practice by working through <a href="https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/notes/supp-a06.Rmd">a continuation of our FEV case study from last week</a>.</p>
+<p>By yourself and in small groups, work through the exercises in the case study. We will also discuss instructor answers to each exercise.</p>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<p>Video lectures for this topic (ignore the episode numbering):</p>
+<ul>
+<li><p>Video Lecture: <a href="https://youtu.be/cqcQT44mJTM">ggplot2 Part 1: Introduction to Plotting</a></p></li>
+<li><p>Video Lecture: <a href="https://youtu.be/X8b44P5D-5w">ggplot2 Part 2: Plotting for Exploratory Data Analysis</a></p></li>
+<li><p>The <a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS Data Visualization</a> chapter (provides an excellent overview of plotting in ggplot2 and the grammar of graphics. We especially recommend sections 3.1 to 3.4.)</p></li>
+<li><p>Hadley Wickham’s <a href="https://ggplot2-book.org/">ggplot2 book</a> (a well-organized, approachable, and comprehensive coverage of ggplot2.)</p></li>
+<li><p>Cheatsheets:</p>
+<ul>
+<li><p>The <a href="https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf">ggplot2 cheatsheet</a> (Also available through RStudio: “Help” -&gt; “Cheatsheets” -&gt; “Data visualization with ggplot2”).</p></li>
+<li><p><a href="http://www.cookbook-r.com/Graphs/">R Cookbook Graphs</a></p></li>
+</ul></li>
+<li><p>Craig Hutton’s <a href="https://craig.rbind.io/post/2021-05-17-asgr-3-1-data-visualization/">comprehensive blog post</a> adopting a similar structure to our course notes, but with more explorations.</p></li>
+<li><p>Resources about producing effective visualizations:</p>
+<ul>
+<li><p><a href="https://serialmentor.com/dataviz/introduction.html">Fundamentals of Data Visualization</a> by Claus Wilke is an excellent guide to designing effective visuals. If you only look at one resource, this should be it.</p></li>
+<li><p><a href="https://www-taylorfrancis-com.ezproxy.library.ubc.ca/books/9780429088902">Visualization Analysis and Design</a> by Tamara Munzner is a gold-standard book for the theory of designing plots with a focus on human perception.</p></li>
+<li><p>Bite-sized resources to help you produce effective visualizations:</p>
+<ul>
+<li><p>The <a href="https://stat545.com/effective-graphs.html">“do’s and don’ts of effective graphics” in Jenny Bryan’s STAT 545 book</a> provides some rules of thumb for producing effective visuals.</p></li>
+<li><p>Vincenzo’s <a href="https://vincenzocoia.com/communicating_data/#1">“Communicating data” slides</a> provide some rules of thumb.</p></li>
+<li><p><a href="https://www.callingbull.org/tools/tools_misleading_axes.html">Callingbull.org’s entry on visualizations</a>, by Carl T. Bergstrom and Jevin West, goes over several examples of improving ineffective visuals.</p></li>
+</ul></li>
+</ul></li>
+</ul>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-timbers2022data" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Timbers T, Campbell T, Lee M (2022) Data science: A first introduction. Chapman; Hall/CRC</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

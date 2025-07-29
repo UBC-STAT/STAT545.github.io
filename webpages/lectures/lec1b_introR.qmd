@@ -127,7 +127,9 @@ manifestation
 
 You can use single `'` or double `"` quotation marks to wrap around the string - just be consistent!
 
-**NOTE**: In some worksheets, questions are multiple choice. Ensure that you type your answer as a string, i.e., `my_answer <- "A".`
+::: callout-tip
+In some worksheets, questions are multiple choice. Ensure that you type your answer as a string, i.e., `my_answer <- "A".`
+:::
 
 #### Numeric Vectors
 
@@ -219,7 +221,9 @@ We will focus more on dataframes in a coming lecture, but I wanted to mention th
 
 Now it's your turn to use R! Work through Worksheet A1 on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.
 
+::: callout-note
 Worksheet A1 is **NOT** going to be graded. However, I highly recommend going through it to practice using Jupyter Notebooks and to get a handle on R. Future worksheets **will** be graded.
+:::
 
 ## What to do when you're stuck
 
@@ -235,6 +239,8 @@ Try:
 
 -   Search [stackoverflow](http://stackoverflow.com/) and include the `[r]` tag. Or the `[ggplot2]` tag. Or the `[plyr]` tag. You get the idea.
 
+::: callout-caution
 **Beware of AI tools: sometimes they're helpful, and sometimes they're not.**
+:::
 
 While I encourage you to search for answers on your own, don't fret if you're stuck. We're here to help on Slack! Review the posting guidelines on the Syllabus so your questions go to the appropriate channel.

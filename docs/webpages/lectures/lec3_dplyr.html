@@ -320,7 +320,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   <li><a href="#why-data-manipulation" id="toc-why-data-manipulation" class="nav-link" data-scroll-target="#why-data-manipulation">Why Data Manipulation?</a></li>
   <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles">Tibbles</a></li>
   <li><a href="#dplyr-functions" id="toc-dplyr-functions" class="nav-link" data-scroll-target="#dplyr-functions"><code>dplyr</code> Functions</a>
@@ -333,6 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try it Yourself!</a></li>
   <li><a href="#next-class-fev-case-study" id="toc-next-class-fev-case-study" class="nav-link" data-scroll-target="#next-class-fev-case-study">Next Class: FEV Case Study</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -375,19 +375,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Use <code>across()</code> to operate on multiple columns with <code>summarise()</code> and <code>mutate()</code>.</p></li>
 </ol>
 <p>We will spend two classes on this topic.</p>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<ul>
-<li><p>Video lecture: <a href="https://youtu.be/Gms3zSPqCk8">dplyr Part 1: Basic Data Manipulation</a></p></li>
-<li><p>Video lecture: <a href="https://youtu.be/38BA_v7BwKk">dplyr Part 2: Calculations on tibbles</a></p></li>
-</ul>
-<!-- -->
-<ul>
-<li><p><a href="https://stat545.com/dplyr-intro.html">Chapter 6</a> and <a href="https://stat545.com/dplyr-single.html">Chapter 7</a> of Jenny Bryan’s STAT 545 book follows along with what we will be covering in Day 1 and Day 2 of this topic (although you won’t find the <code>across()</code> function).</p></li>
-<li><p>“R for Data Science” is another great resource for learning data wrangling. Take a look at:</p></li>
-<li><p><a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html">dplyr’s introductory vignette</a> is useful for orienting you to the package.</p></li>
-</ul>
 </section>
 <section id="why-data-manipulation" class="level2">
 <h2 class="anchored" data-anchor-id="why-data-manipulation">Why Data Manipulation?</h2>
@@ -587,7 +574,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3 David         2      2350      2400 Vancouver</code></pre>
 </div>
 </div>
-<p>Note the double <code>==</code> in the statement to indicate “is equal to”! Further, as the variable of interest is a string (or character type), we need to use quotations around the city name.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The double <code>==</code> in the statement to indicate “is equal to”! Further, as the variable of interest is a string (or character type), we need to use quotations around the city name “Vancouver”.</p>
+</div>
+</div>
 <p>We can also filter on multiple variables at the same time, even if they are different types. for example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(housingdata, rent_2025 <span class="sc">&gt;</span> <span class="dv">2500</span>, city <span class="sc">==</span> <span class="st">"Vancouver"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -710,7 +709,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Here, we tell dplyr the tibble we want to transform (<code>housingdata</code>), and then use the pipe operator (<code>%&gt;%</code>) to tell dplyr what functions we want to perform on it.</p>
-<p><u><strong>Note</strong></u>: when using the pipe operator, we no longer need to include the dataframe in the first argument of the function. Compare the previous two code chunks to see what I mean.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When using the pipe operator, we no longer need to include the dataframe in the first argument of the function. Compare the previous two code chunks to see what I mean.</p>
+</div>
+</div>
 <p>While it may not be obvious from this first example why the pipe operator is commonly used, let’s consider that we want to</p>
 <ul>
 <li><p>filter on rents for 2025 above $2500</p></li>
@@ -740,7 +751,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5        2      2665      2700 Vancouver              1350 </code></pre>
 </div>
 </div>
-<p>A few things to note here: after each function call, we need to include the pipe operator to tell dplyr that we’re not done yet, and the chain of commands continues on the next line.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After each function call, we need to include the pipe operator to tell dplyr that we’re not done yet, and the chain of commands continues on the next line.</p>
+</div>
+</div>
 <p>Another thing to note is that the pipe operator creates a new tibble and does not alter the original. So, <code>housingdata</code> still contains all of the original rows and columns in its unaltered form. If we wanted to alter it (or save the output to a new variable), we need to assign it using <code>&lt;-</code>. For example, the following code will <u>overwrite</u> the original tibble:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>housingdata <span class="ot">&lt;-</span> housingdata <span class="sc">%&gt;%</span> </span>
@@ -777,6 +800,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Next class we will be working through <a href="#0">a case study centred on a biomedical data set</a>.</p>
 <p>By yourself or in small groups, work through the exercises in the case study. The teaching team will walk around and answer questions and chat about anything data manipulation related.</p>
 <p>We will conclude class by going over instructor solutions.</p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><p>Video lecture: <a href="https://youtu.be/Gms3zSPqCk8">dplyr Part 1: Basic Data Manipulation</a></p></li>
+<li><p>Video lecture: <a href="https://youtu.be/38BA_v7BwKk">dplyr Part 2: Calculations on tibbles</a></p></li>
+<li><p><a href="https://stat545.com/dplyr-intro.html">Chapter 6</a> and <a href="https://stat545.com/dplyr-single.html">Chapter 7</a> of Jenny Bryan’s STAT 545 book follows along with what we will be covering in Day 1 and Day 2 of this topic (although you won’t find the <code>across()</code> function).</p></li>
+<li><p>“R for Data Science” is another great resource for learning data wrangling. Take a look at:</p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html">dplyr’s introductory vignette</a> is useful for orienting you to the package.</p></li>
+</ul>
 
 
 </section>

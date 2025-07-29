@@ -18,20 +18,6 @@ From this topic, students are anticipated to be able to:
 
 We will spend two classes on this topic.
 
-## Resources
-
--   Video lecture: [dplyr Part 1: Basic Data Manipulation](https://youtu.be/Gms3zSPqCk8)
-
--   Video lecture: [dplyr Part 2: Calculations on tibbles](https://youtu.be/38BA_v7BwKk)
-
-<!-- -->
-
--   [Chapter 6](https://stat545.com/dplyr-intro.html) and [Chapter 7](https://stat545.com/dplyr-single.html) of Jenny Bryan’s STAT 545 book follows along with what we will be covering in Day 1 and Day 2 of this topic (although you won’t find the `across()` function).
-
--   “R for Data Science” is another great resource for learning data wrangling. Take a look at:
-
--   [dplyr’s introductory vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) is useful for orienting you to the package.
-
 ## Why Data Manipulation?
 
 You have a shiny new data set - great! You might be tempted to dive right in and start making pretty graphs and fitting cool models to your data. Not so fast! In practice, it’s very rare that you have the data in the exact right form to make the graph you want, or fit the model you want. You will need to start by *manipulating* your data into the right form: creating new variables, subsetting rows, renaming columns, etc.
@@ -125,7 +111,7 @@ We can also use `select()` to indicate which columns to **remove.** For example,
 select(housingdata, -name)
 ```
 
-### Subsetting with `filter()` 
+### Subsetting with `filter()`
 
 The `filter()` function allows you to specify which rows to keep in the tibble. The `filter()` function takes *conditional statements* and allows us to remove or keep rows based on these conditions.
 
@@ -143,7 +129,9 @@ We can also use the `==` sign to indicate that something is equivalent. For exam
 filter(housingdata, city == "Vancouver")
 ```
 
-Note the double `==` in the statement to indicate "is equal to"! Further, as the variable of interest is a string (or character type), we need to use quotations around the city name.
+::: callout-note
+The double `==` in the statement to indicate "is equal to"! Further, as the variable of interest is a string (or character type), we need to use quotations around the city name "Vancouver".
+:::
 
 We can also filter on multiple variables at the same time, even if they are different types. for example:
 
@@ -213,7 +201,9 @@ housingdata %>%
 
 Here, we tell dplyr the tibble we want to transform (`housingdata`), and then use the pipe operator (`%>%`) to tell dplyr what functions we want to perform on it.
 
-[**Note**]{.underline}: when using the pipe operator, we no longer need to include the dataframe in the first argument of the function. Compare the previous two code chunks to see what I mean.
+::: callout-note
+When using the pipe operator, we no longer need to include the dataframe in the first argument of the function. Compare the previous two code chunks to see what I mean.
+:::
 
 While it may not be obvious from this first example why the pipe operator is commonly used, let's consider that we want to
 
@@ -239,7 +229,9 @@ housingdata %>%
   arrange(desc(rent_2025))
 ```
 
-A few things to note here: after each function call, we need to include the pipe operator to tell dplyr that we're not done yet, and the chain of commands continues on the next line.
+::: callout-note
+After each function call, we need to include the pipe operator to tell dplyr that we're not done yet, and the chain of commands continues on the next line.
+:::
 
 Another thing to note is that the pipe operator creates a new tibble and does not alter the original. So, `housingdata` still contains all of the original rows and columns in its unaltered form. If we wanted to alter it (or save the output to a new variable), we need to assign it using `<-`. For example, the following code will [overwrite]{.underline} the original tibble:
 
@@ -270,3 +262,15 @@ Next class we will be working through [a case study centred on a biomedical data
 By yourself or in small groups, work through the exercises in the case study. The teaching team will walk around and answer questions and chat about anything data manipulation related.
 
 We will conclude class by going over instructor solutions.
+
+## Resources
+
+-   Video lecture: [dplyr Part 1: Basic Data Manipulation](https://youtu.be/Gms3zSPqCk8)
+
+-   Video lecture: [dplyr Part 2: Calculations on tibbles](https://youtu.be/38BA_v7BwKk)
+
+-   [Chapter 6](https://stat545.com/dplyr-intro.html) and [Chapter 7](https://stat545.com/dplyr-single.html) of Jenny Bryan’s STAT 545 book follows along with what we will be covering in Day 1 and Day 2 of this topic (although you won’t find the `across()` function).
+
+-   “R for Data Science” is another great resource for learning data wrangling. Take a look at:
+
+-   [dplyr’s introductory vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) is useful for orienting you to the package.
