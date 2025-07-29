@@ -1,5 +1,5 @@
 ---
-title: "Lecture 0: Installation"
+title: "Lecture 1A: Installation"
 subtitle: "September 2, 2025"
 date-modified: last-modified
 ---

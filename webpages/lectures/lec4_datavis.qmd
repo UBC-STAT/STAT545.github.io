@@ -1,0 +1,6 @@
+---
+title: "Lecture 4: Data Visualization"
+subtitle: "September 23, 2025"
+date-modified: last-modified
+---
+

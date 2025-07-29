@@ -1,0 +1,5 @@
+---
+title: "Lecture 6B: Factors and Dates"
+subtitle: "October 9, 2025"
+date-modified: last-modified
+---

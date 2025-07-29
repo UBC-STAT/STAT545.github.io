@@ -35,10 +35,18 @@ website:
       background: light
       collapse-level: 2
       contents: 
-        - webpages/lectures/lec0installation.qmd
-        - webpages/lectures/lec1introR.qmd
-        - webpages/lectures/lec2reproducibility.qmd
-        - webpages/lectures/lec3versioncontrol.qmd
+        - webpages/lectures/lec1a_installation.qmd
+        - webpages/lectures/lec1b_introR.qmd
+        - webpages/lectures/lec2A_reproducibility.qmd
+        - webpages/lectures/lec2b_versioncontrol.qmd
+        - webpages/lectures/lec3_dplyr.qmd
+        - webpages/lectures/lec4_datavis.qmd
+        - webpages/lectures/lec5_tidydata.qmd
+        - webpages/lectures/lec6a_modelfitting.qmd
+        - webpages/lectures/lec6b_dates.qmd
+        - webpages/lectures/lec7_rrdata_tibble.qmd
+        
+
         
     - id: collabproj
       title: "Collaborative Project"

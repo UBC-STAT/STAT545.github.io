@@ -1,0 +1,6 @@
+---
+title: "Lecture 7: Reading and Writing Data, Tibble Joins"
+subtitle: "October 14, 2025"
+date-modified: last-modified
+---
+

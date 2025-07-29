@@ -1,0 +1,6 @@
+---
+title: "Lecture 6A: Model Fitting"
+subtitle: "October 7, 2025"
+date-modified: last-modified
+---
+

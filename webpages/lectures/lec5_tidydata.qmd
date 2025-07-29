@@ -1,0 +1,6 @@
+---
+title: "Lecture 5: Tidy Data"
+subtitle: "September 30, 2025"
+date-modified: last-modified
+---
+

@@ -1,5 +1,5 @@
 ---
-title: "Lecture 2: Reproducibility"
+title: "Lecture 2A: Reproducibility"
 subtitle: "September 9, 2025"
 date-modified: last-modified
 bibliography: ../bibliography.bib
@@ -54,7 +54,7 @@ R Markdown lets you write a single “blueprint” for your analysis that includ
 
 There is a large community of R Markdown users, making it easy to find tutorials and blog posts about a ton of different types of documents. We're going to start simple and dive right into R Markdown.
 
-### Getting Started with Markdown 
+### Getting Started with Markdown
 
 In lecture, we are going to work through [this online Markdown tutorial together](https://www.markdowntutorial.com/) in small groups. Challenge yourself to meet someone new in the class!
 
@@ -106,7 +106,7 @@ Run `?html_document` from your R console and/or check out [Yihui Xie’s RMarkdo
 
 If this was easy, then try to figure out how to knit to a pdf document!
 
-### Instructor demo: mtcars Report 
+### Instructor demo: mtcars Report
 
 To follow along, download the [demonstration.Rmd](https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/notes/notes-a03/mtcars_demonstration.Rmd) file from the STAT545 GitHub and open it in RStudio.
 
@@ -124,7 +124,7 @@ To follow along, download the [demonstration.Rmd](https://raw.githubusercontent.
 
 6.  Fill in the document with markdown commentary for each of the code chunks! A few notes go a long way towards improving the readability of the report.
 
-#### Exploring chunk options 
+#### Exploring chunk options
 
 Got lost in the demonstration? No problem, just open a new .Rmd file in RStudio via “File” -\> “New File” -\> “R Markdown…”, and just press “OK”, and resume!)
 
@@ -136,7 +136,7 @@ Just like YAML is metadata for the Rmd document, code chunk options are metadata
 
 3.  Knit the results. Can you spot the differences?
 
-### Your turn: data update! 
+### Your turn: data update!
 
 In the instructor demo, we prettied up a nice report about `mtcars` together. But suddenly, you receive an email from your collaborator who collected the `mtcars` data, who says that the data on Mazda RX4, the Valiant, and the Volvo 142E were transcribed wrong from the magazine! They’re going to work on correcting them, but in the mean time, they’d like to re-run the analysis with those three cars excluded.
 

@@ -1,5 +1,5 @@
 ---
-title: "Lecture 3: Version Control"
+title: "Lecture 2B: Version Control"
 subtitle: "September 11, 2025"
 date-modified: last-modified
 ---

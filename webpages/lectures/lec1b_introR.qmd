@@ -1,5 +1,5 @@
 ---
-title: "Lecture 1: Course Introduction and R"
+title: "Lecture 1B: Course Introduction and R"
 subtitle: "September 4, 2025"
 date-modified: last-modified
 ---
