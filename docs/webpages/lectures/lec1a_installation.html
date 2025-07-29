@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT545 A/B: Exploratory Data Analysis (Fall 2025) – STAT545 @ UBC</title>
+<title>Lecture 1A: Installation – STAT545 @ UBC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,17 +68,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">STAT545 @ UBC</span>
     </a>
   </div>
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -98,11 +98,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="./webpages/syllabus/syllabusA.html">
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusA.html">
  <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/syllabus/syllabusB.html">
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusB.html">
  <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
   </li>  
     </ul>
@@ -113,49 +113,49 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec1a_installation.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec1a_installation.html">
  <span class="dropdown-text">Lecture 1A: Installation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec1b_introR.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec1b_introR.html">
  <span class="dropdown-text">Lecture 1B: Course Introduction and R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec2A_reproducibility.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec2A_reproducibility.html">
  <span class="dropdown-text">Lecture 2A: Reproducibility</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec2b_versioncontrol.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec2b_versioncontrol.html">
  <span class="dropdown-text">Lecture 2B: Version Control</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec3_dplyr.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec3_dplyr.html">
  <span class="dropdown-text">Lecture 3: Data Manipulation with dplyr</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec4_datavis.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec4_datavis.html">
  <span class="dropdown-text">Lecture 4: Data Visualization</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec5_tidydata.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec5_tidydata.html">
  <span class="dropdown-text">Lecture 5: Tidy Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec6a_modelfitting.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec6a_modelfitting.html">
  <span class="dropdown-text">Lecture 6A: Model Fitting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec6b_dates.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec6b_dates.html">
  <span class="dropdown-text">Lecture 6B: Factors and Dates</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/lectures/lec7_rrdata_tibble.html">
+    <a class="dropdown-item" href="../../webpages/lectures/lec7_rrdata_tibble.html">
  <span class="dropdown-text">Lecture 7: Reading and Writing Data, Tibble Joins</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./webpages/worksheets.html"> 
+    <a class="nav-link" href="../../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -164,11 +164,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-collaborative-project">    
         <li>
-    <a class="dropdown-item" href="./webpages/collabproj/collabproj_deliverable1.html">
+    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/collabproj/collabproj_deliverable2.html">
+    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable2.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
   </li>  
     </ul>
@@ -179,17 +179,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
         <li>
-    <a class="dropdown-item" href="./webpages/mda/mda_deliverable1.html">
+    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable1.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./webpages/mda/mda_deliverable2.html">
+    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./webpages/faq.html"> 
+    <a class="nav-link" href="../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -198,27 +198,111 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures/lec1a_installation.html">Lecture 1A: Installation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec1a_installation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 1A: Installation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec1b_introR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1B: Course Introduction and R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec2A_reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2A: Reproducibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec2b_versioncontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2B: Version Control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec3_dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Data Manipulation with dplyr</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec4_datavis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Data Visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec5_tidydata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Tidy Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec6a_modelfitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6A: Model Fitting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec6b_dates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6B: Factors and Dates</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec7_rrdata_tibble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Reading and Writing Data, Tibble Joins</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
-  <li><a href="#your-teaching-team-2025" id="toc-your-teaching-team-2025" class="nav-link" data-scroll-target="#your-teaching-team-2025">Your Teaching Team (2025)</a></li>
+  <li><a href="#software-and-troubleshooting" id="toc-software-and-troubleshooting" class="nav-link active" data-scroll-target="#software-and-troubleshooting">Software and Troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#note-on-pc-vs-mac" id="toc-note-on-pc-vs-mac" class="nav-link" data-scroll-target="#note-on-pc-vs-mac">Note on PC vs Mac</a></li>
+  <li><a href="#step-1-install-r-and-rstudio" id="toc-step-1-install-r-and-rstudio" class="nav-link" data-scroll-target="#step-1-install-r-and-rstudio">Step 1: Install R and RStudio</a></li>
+  <li><a href="#step-2-install-jupyter-and-r-kernel" id="toc-step-2-install-jupyter-and-r-kernel" class="nav-link" data-scroll-target="#step-2-install-jupyter-and-r-kernel">Step 2: Install Jupyter and R Kernel</a></li>
+  <li><a href="#step-3-configure-git-and-github" id="toc-step-3-configure-git-and-github" class="nav-link" data-scroll-target="#step-3-configure-git-and-github">Step 3: Configure Git and GitHub</a></li>
+  </ul></li>
+  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">STAT545 A/B: Exploratory Data Analysis (Fall 2025)</h1>
+<h1 class="title">Lecture 1A: Installation</h1>
+<p class="subtitle lead">September 2, 2025</p>
 </div>
 
 
@@ -230,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 29, 2025</p>
+      <p class="date-modified">July 28, 2025</p>
     </div>
   </div>
     
@@ -241,52 +325,137 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="welcome">Welcome!</h2>
-<div class="column-layout">
-<div class="column" style="width:60%;">
-<p>Welcome to STAT 545 at the University of British Columbia! Whether you’re a student enrolled in STAT 545 or simply someone looking to learn how to write reproducible and collaborative data analyses, it is our hope that this website will serve as a great resource for learning these new skills!</p>
-<p>In short, this course will enable you to confidently write clean and modern data analyses in R using version control software (GitHub), and creating reports using R Markdown. The primary focus will be on using these technologies to conduct analyses with daily workflow, rather than the statistical theory and methods for analysis.</p>
-</div>
-<div class="column" style="width:5%;">
-
-</div>
-<div class="column" style="width:30%;">
-<p><img src="../images/stat545.png" class="img-fluid"></p>
-</div>
-</div>
-<p>This course is divided into two parts. In Part I (STAT545 A), we will introduce</p>
-<ul>
-<li>R and RStudio,</li>
-<li>Report generation with R Markdown,</li>
-<li>Project organization, workflow, and coding style,</li>
-<li>Data management with dataframes and tibbles using tidyverse,</li>
-<li>Data visualization with ggplot2, and</li>
-<li>Version control using Git and Github.</li>
-</ul>
-<p>In Part II (STAT545 B), we will dive deeper into</p>
-<ul>
-<li>Writing functions in R,</li>
-<li>Advanced computations on data,</li>
-<li>Functional programming with purrr,</li>
-<li>R packages,</li>
-<li>Interactive pages, apps, and graphics with RShiny, and</li>
-<li>Website development using Quarto.</li>
-</ul>
-<p><strong>If you are a student enrolling in this course for credit at UBC, you MUST take STAT 545 A to enroll in STAT545 B. There are no exceptions to this rule.</strong></p>
+<section id="software-and-troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="software-and-troubleshooting">Software and Troubleshooting</h2>
+<p>The goal of this lecture is to learn how to install and setup key software for use in the course.</p>
+<p><strong>TAs are available in class on Imagine Day from 9am-10:30am on Tuesday September 2nd to aid with installation. I highly recommend you join if you haven’t used RStudio, Jupyter, or GitHub before.</strong></p>
+<section id="note-on-pc-vs-mac" class="level3">
+<h3 class="anchored" data-anchor-id="note-on-pc-vs-mac">Note on PC vs Mac</h3>
+<p>You may encounter some material that implicitly assumes that you are using a Mac. For example, they might point you to a Terminal app, or ask you to use Unix commands like which or ls. <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://static-bcrf.biochem.wisc.edu/tutorials/unix/basic_unix/dos_and_unix_commands.pdf">Here is a cheatsheet</a> that helps you convert between Windows command line (“DOS”) and Mac command line (“UNIX”). One thing that’s missing is the equivalent to Unix’s which; the closest equivalent in DOS is where.</p>
 </section>
-<section id="your-teaching-team-2025" class="level2">
-<h2 class="anchored" data-anchor-id="your-teaching-team-2025">Your Teaching Team (2025)</h2>
-<p>My name is Grace Tompkins (she/her) and I’ll be your course instructor. I’m a Biostatistician and recent PhD graduate passionate about teaching! I’m excited to be guiding you throughout this course.</p>
+<section id="step-1-install-r-and-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-install-r-and-rstudio">Step 1: Install R and RStudio</h3>
+<p>R and RStudio The main programming language used in the class is R and our main IDE (a text editor with helpful features for writing and running code) is RStudio. The following instructions are adapted from <a href="https://happygitwithr.com/install-r-rstudio.html">Chapter 5 of Jenny Bryan’s “happy git” book</a>.</p>
+<ol type="1">
+<li><p>Install (or update to) the latest release R on your computer (4.5.1 currently):</p>
+<ul>
+<li><p>Windows: <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a></p></li>
+<li><p>Mac: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a></p></li>
+</ul></li>
+<li><p>Install RStudio</p>
+<ul>
+<li><a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
+</ul></li>
+</ol>
+<p><strong>Even if you already have R/RStudio, please update them to the most recent version!</strong></p>
+</section>
+<section id="step-2-install-jupyter-and-r-kernel" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-install-jupyter-and-r-kernel">Step 2: Install Jupyter and R Kernel</h3>
+<p>You will need another IDE for R (Jupyter Notebook) and an R kernel called ‘IR Kernel’ (needed to run R code within Jupyter) to work on the autograded worksheets. This is because the autograder we use plays well with Jupyter.</p>
+<p>The following instructions are adapted from <a href="https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/">Rich Pauloo</a>.</p>
+<p><strong>PC Installation:</strong></p>
+<ol type="1">
+<li>Install Anaconda from <a href="https://www.anaconda.com/download" class="uri">https://www.anaconda.com/download</a>
+<ul>
+<li>Provide your email and an installation link will be sent to you</li>
+<li>Install the full version of Anaconda (not miniconda)</li>
+</ul></li>
+<li>Install and setup the IR Kernel
+<ul>
+<li>Find the location of <code>R.exe</code> on your computer (the location probably looks like C:\Program Files\R\R-4.5.1\bin). If you can’t find it, launch Command Prompt (CMD) and execute <code>where R</code>. The output should be the path to the file R.exe.</li>
+<li>Open the Anaconda Prompt application. Enter the following command into Anaconda Prompt: <code>cd file_path_here</code> where <code>file_path_here</code> is replaced with the location of the <code>R.exe</code> that you found.</li>
+<li>Run R from within Anaconda Prompt by entering in <code>R.exe</code>. This opens an R session inside Anaconda Prompt. From here, enter the following commands in this order:
+<ul>
+<li><code>install.packages("IRkernel")</code></li>
+<li><code>IR:kernel::installspec()</code></li>
+</ul></li>
+<li>If prompted to select a IR kernel mirror, select 12 (CANADA - MB).</li>
+</ul></li>
+<li>To verify that everything is working, open Anaconda Prompt and type <code>jupyter lab</code>. Jupyter Lab should launch and display both a Python and R kernel.</li>
+</ol>
+<p>Having trouble? Check the instructions here: <a href="https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/" class="uri">https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/</a>.</p>
+<p><strong>Mac OS Installation:</strong></p>
+<ol type="1">
+<li>Install Anaconda from <a href="https://www.anaconda.com/download" class="uri">https://www.anaconda.com/download</a>
+<ul>
+<li>Provide your email and an installation link will be sent to you</li>
+<li>Install the full version of Anaconda (not miniconda)</li>
+</ul></li>
+<li>Install and setup the IR Kernel
+<ul>
+<li><p>Open R and navigate to the Console (see below).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/avatar.png" class="img-fluid figure-img" width="229"></p>
-<figcaption>Instructor: Grace Tompkins</figcaption>
+<p><img src="../../images/rconsole.png" class="img-fluid figure-img"></p>
+<figcaption>Your console may have a different appearance! Mine’s in dark mode.</figcaption>
 </figure>
-</div>
-<p>I am joined by a wonderful group of TAs, including:</p>
-<p>….</p>
-<p>Please reach out if you have any concerns or questions at grace&lt;at&gt;stat.ubc.ca, or through our Slack channel.</p>
+</div></li>
+<li><p>Install the necessary packages by entering</p>
+<p><code>install.packages(c("repr", "IRdisplay", "evaluate", "crayon", "pbdZMQ", "devtools", "uuid", "digest"))</code></p>
+<p><code>devtools::install_github("IRkernel/IRkernel")</code></p></li>
+<li><p>Exit RStudio.</p></li>
+</ul></li>
+<li>Configure the IRkernel from within R
+<ul>
+<li>It’s important that these next commands are done from within the version of R that you want to link to Jupyter Lab (R version 5.4.1, for example)</li>
+<li>Launch R (<strong>NOT RSTUDIO</strong>! This is typically found in /usr/bin/R. If you can’t find it, open the Terminal application and type in <code>which R</code>. This will provide you with the path to R. Then, open a Finder window and at the top of your screen hit <code>Go</code> -&gt; <code>go to folder</code> and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.</li>
+<li>In the R application, run <code>IRkernel::installspec()</code></li>
+<li>If prompted to choose a IRkernel mirror, select 12 (Canada - MB).</li>
+</ul></li>
+<li>Launch Anaconda, and open a Jupyter Lab and you should see an R kernel available.</li>
+</ol>
+<p>Having trouble? Check out <a href="https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/" class="uri">https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/</a>.</p>
+</section>
+<section id="step-3-configure-git-and-github" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-configure-git-and-github">Step 3: Configure Git and GitHub</h3>
+<p>Git is a version control software. Github is a cloud-based platform (built on Git) for sharing code.</p>
+<ol type="1">
+<li><p>Register a Github account at github.com (if you don’t already have one).</p>
+<ul>
+<li>Create a username that uses your actual name. Shorter is better! For example, mine is grcetmpk. <a href="https://happygitwithr.com/github-acct.html">See this for more information.</a></li>
+<li>You don’t need to download any apps.</li>
+</ul></li>
+<li><p>Install Git (more info <a href="https://happygitwithr.com/install-git">here</a>)</p>
+<ul>
+<li>See if Git is already installed. For Mac OS, on the Terminal (Mac) type <code>which git</code>. For Windows, go to Command Prompt and type <code>where git</code>. If you get an error of <code>git: command not found</code>, you do not have git installed yet.</li>
+<li><strong>Windows:</strong>
+<ul>
+<li>Install Git for Windows (<a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a>)</li>
+<li>When asked about “Adjusting your PATH environment”, make sure to select “Git from the command line and also from 3rd-party software”. Otherwise, keep the defaults.</li>
+</ul></li>
+<li><strong>Mac OS:</strong>
+<ul>
+<li>Install XCode Command Line Tools by opening Terminal and typing <code>xcode-select --install</code> (more info <a href="https://www.freecodecamp.org/news/install-xcode-command-line-tools/">here</a>)</li>
+<li>In Terminal, enter <code>git config</code>. Click install.</li>
+</ul></li>
+</ul></li>
+<li><p>Configure Git: In RStudio, navigate to the Terminal or Shell (see below).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/rterminal.png" class="img-fluid figure-img"></p>
+<figcaption>If using Windows, you will have a Shell, not a Terminal.</figcaption>
+</figure>
+</div></li>
+<li><p>within the Terminal (Mac) or Shell (Windows) (Tools &gt; Terminal/Shell) do:</p>
+<p><code>git config --global user.name "your_github_username"</code></p>
+<p><code>git config --global user.email "your_email_you_used_for_github@example.com"</code></p>
+<p><code>git config --global --list</code></p></li>
+</ol>
+<p>If you are having issues, you could use the <code>usethis</code> package in R. <a href="https://happygitwithr.com/hello-git.html">See here.</a></p>
+<ol start="4" type="1">
+<li>Get your Personal Access Token (PAT)
+<ul>
+<li><strong>Option 1</strong>: Go to to <a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a> and click “Generate token”. Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “Stat545Installation”. <u>Select “repo”, “user”, and “workflow” for scopes.</u> Save this token somewhere so you can use it again later, such as a password manager.</li>
+<li><strong>Option 2:</strong> From R, execute <code>usethis::create_github_token()</code> (you may have to install the usethis package first by first running <code>install.packages("usethis")</code>). Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “stat545installation”.</li>
+</ul></li>
+<li>From R (in the console), run <code>install.packages("gitcreds")</code> if you haven’t already.</li>
+<li>Execute <code>gitcreds::gitcreds_set()</code> and enter the PAT that you just made when prompted.</li>
+</ol>
+</section>
+</section>
+<section id="attribution" class="level2">
+<h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
+<p>Thank <em>you to Vincenzo Coia and Jenny Bryan and previous STAT 545 instructors for these directions!</em></p>
 
 
 </section>
