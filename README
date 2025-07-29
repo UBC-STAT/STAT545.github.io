@@ -21,3 +21,4 @@ Running the course:
 NOTES:
 - index.qmd must be named index.qmd and must be on the top level (not in a folder)
 - if you rename, delete, or move a webpage, you need to go into the docs folder and delete it there. You can just delete everything and re-render. 
+- always render site and save all before pushing to github
