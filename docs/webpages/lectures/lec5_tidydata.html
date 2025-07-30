@@ -20,7 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -280,8 +333,28 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#tidy-data-and-the-tidyverse" id="toc-tidy-data-and-the-tidyverse" class="nav-link" data-scroll-target="#tidy-data-and-the-tidyverse">Tidy Data and the Tidyverse</a>
+  <ul class="collapse">
+  <li><a href="#example-bake-off" id="toc-example-bake-off" class="nav-link" data-scroll-target="#example-bake-off">Example: Bake-off</a></li>
+  </ul></li>
+  <li><a href="#pivoting" id="toc-pivoting" class="nav-link" data-scroll-target="#pivoting">Pivoting</a>
+  <ul class="collapse">
+  <li><a href="#pivoting-wider" id="toc-pivoting-wider" class="nav-link" data-scroll-target="#pivoting-wider"><strong>Pivoting Wider</strong></a></li>
+  <li><a href="#pivoting-longer" id="toc-pivoting-longer" class="nav-link" data-scroll-target="#pivoting-longer"><strong>Pivoting Longer</strong></a></li>
+  </ul></li>
+  <li><a href="#separating-and-uniting" id="toc-separating-and-uniting" class="nav-link" data-scroll-target="#separating-and-uniting">Separating and Uniting</a></li>
+  <li><a href="#the-merits-of-untidy-data" id="toc-the-merits-of-untidy-data" class="nav-link" data-scroll-target="#the-merits-of-untidy-data">The Merits of Untidy Data</a></li>
+  <li><a href="#worksheet-a4" id="toc-worksheet-a4" class="nav-link" data-scroll-target="#worksheet-a4">Worksheet A4</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -301,7 +374,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 28, 2025</p>
+      <p class="date-modified">July 30, 2025</p>
     </div>
   </div>
     
@@ -312,10 +385,565 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>From this topic, students are anticipated to be able to:</p>
+<ul>
+<li><p>recognize whether a given data set is ‘tidy’ or ‘untidy’ for their analysis</p></li>
+<li><p>understand why ‘tidy’ data can be useful</p></li>
+<li><p>reshape a data set between ‘long’ and ‘wide’ formats, using <code>tidyr::pivot_longer()</code> and <code>tidyr::pivot_wider()</code></p></li>
+<li><p>understand how to grapple with explicit missing values created by pivoting</p></li>
+</ul>
+</section>
+<section id="tidy-data-and-the-tidyverse" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-and-the-tidyverse">Tidy Data and the Tidyverse</h2>
+<p>In the last two weeks, we learned about the <code>dplyr</code> package for data manipulation and the <code>ggplot2</code> package for graphing. These two packages are part of the “tidyverse”: a collection of data science packages that are designed to have input data frames and output data frames that are <em>tidy</em>. In fact, we can load all packages in the tidyverse at once with the single command <code>library(tidyverse)</code>.</p>
+<p>Here, we are using the word “tidy” in a technical sense - we’re not talking about how “neat” or “organized” your data is. Instead, “tidy” is a very specific set of rules for storing data.</p>
+<p><strong>Tidy data is defined as data where</strong></p>
+<ul>
+<li><p><strong>each variables form a column,</strong></p></li>
+<li><p><strong>each observation forms a row, and</strong></p></li>
+<li><p><strong>each cell is a single measurement.</strong> <span class="citation" data-cites="tidyR">[<a href="#ref-tidyR" role="doc-biblioref">1</a>]</span></p></li>
+</ul>
+<p>For example, the following data set containing cat and dog names by family is <u>not tidy.</u> We have multiple observations per row (a cat, and a dog observation):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Cat Name</th>
+<th>Dog Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tompkins</td>
+<td>Sumo</td>
+<td>Mochi</td>
+</tr>
+<tr class="even">
+<td>Truong</td>
+<td>Mr.&nbsp;Meow</td>
+<td>Bowser</td>
+</tr>
+<tr class="odd">
+<td>Adakis</td>
+<td>Snowball</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Instead, a tidy version of this data set may look like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Pet Name</th>
+<th>Type</th>
+<th>Family</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sumo</td>
+<td>Cat</td>
+<td>Tompkins</td>
+</tr>
+<tr class="even">
+<td>Mochi</td>
+<td>Dog</td>
+<td>Tompkins</td>
+</tr>
+<tr class="odd">
+<td>Mr.&nbsp;Meow</td>
+<td>Cat</td>
+<td>Truong</td>
+</tr>
+<tr class="even">
+<td>Bowser</td>
+<td>Dog</td>
+<td>Truong</td>
+</tr>
+<tr class="odd">
+<td>Snowball</td>
+<td>Cat</td>
+<td>Adakis</td>
+</tr>
+</tbody>
+</table>
+<p>Each row is an observation, each variable is a column, and each cell is a single measurement. Our data is tidy!</p>
+<p>All of the data we used before this week were already tidy. This made it easy to use the tidyverse packages <code>dplyr</code> and <code>ggplot2</code> to do what we needed to do. Oftentimes however, data is not collected in a tidy way. So, what happens do we do when we have untidy data? Let’s explore it!</p>
+<p>The <code>fivethirtyeight</code> R package contains a dataset called <code>drinks</code>. This dataset was compiled as part of a <a href="https://fivethirtyeight.com/features/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/">FiveThirtyEight article</a> that explored (among other things) which countries consumes the most alcohol. Let’s look at a subset of the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("fivethirtyeight") #uncomment if not installed</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fivethirtyeight)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>drinks_tbl1 <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(drinks) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>total_litres_of_pure_alcohol) <span class="co">#remove total liters variable</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(drinks_tbl1) <span class="co">#view the first few rows of the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  country           beer_servings spirit_servings wine_servings
+  &lt;chr&gt;                     &lt;int&gt;           &lt;int&gt;         &lt;int&gt;
+1 Afghanistan                   0               0             0
+2 Albania                      89             132            54
+3 Algeria                      25               0            14
+4 Andorra                     245             138           312
+5 Angola                      217              57            45
+6 Antigua &amp; Barbuda           102             128            45</code></pre>
+</div>
+</div>
+<p>The following graphic was made from the <code>drinks</code> dataset.</p>
+<p><img src="https://stat545.stat.ubc.ca/notes/notes-a08_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>With a partner or a small group discuss the following questions think about if the data is tidy or untidy. If tidy, what would the <code>ggplot</code> code look like to reproduce this graph? If untidy, what would the tidy format look like? Sketch the first few rows of the data. Now, what would the <code>ggplot</code> code look like to reproduce this graph?</p>
+</div>
+</div>
+<section id="example-bake-off" class="level3">
+<h3 class="anchored" data-anchor-id="example-bake-off">Example: Bake-off</h3>
+<p>It’s clear from the definition that tidiness is an attribute of a dataset. But did you know that tidiness also depends on what you are planning to <em>do</em> with the data? That’s because what’s an observation and what’s a variable depends on the data analysis plan!</p>
+<p>We will demonstrate using data from “The Great British Bake Off” compiled by <a href="https://www.apreshill.com/">Allison Hill</a> in the R package <code>bakeoff</code>. The graphics that follow (and the code to produce the graphics) were lightly adapted from Allison’s <a href="https://www.apreshill.com/talk/2019-rladies-sydney/">Plot Twist talk</a>.</p>
+<p>First, let’s decide on some questions we can address with this data.</p>
+<ol type="1">
+<li><p>How did viewership change as new series came out?</p></li>
+<li><p>The show moved channels after Series 7. Was viewership higher, lower, or about the same before and after the move?</p></li>
+</ol>
+<p>These questions have implicitly defined our <em>observations</em>: they are individual units of the most granular populations we are trying to describe or compare. Here, the populations to be compared are <em>series</em>, and units within them are <em>episodes</em>. The <em>variables</em> now fall into place: they are measured attributes of our observations (episodes): episode number, viewership, series membership, etc. This means that the following representation of viewership data is tidy for the “change in viewership over series” analysis:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("bakeoff") #uncomment if not yet installed</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bakeoff)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ratings_tbl1 <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ep_id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ep_id, viewers_7day, series, episode) </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings_tbl1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  ep_id viewers_7day series episode
+  &lt;int&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+1     1         2.24      1       1
+2     2         3         1       2
+3     3         3         1       3
+4     4         2.6       1       4
+5     5         3.03      1       5
+6     6         2.75      1       6</code></pre>
+</div>
+</div>
+<p>Every row is an observation (a unique episode), and the columns are variables (episode number across series, 7-day viewership, series, and episode number within series).</p>
+<p>This is a typical example where the tidy format makes it easy to do our analysis. For example, to investigate these questions, we might make a bar plot of the number of viewers in millions within a 7-day window per episode, coloured by series. The following code uses the tidy tibble <code>ratings_tbl1</code> to make this bar plot. Notice that it was easy to use our graphing environment of choice (<code>ggplot2</code> in the tidyverse) to make the plot <em>because</em> our data is tidy, and the tidyverse is designed to work with tidy data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>series_labels <span class="ot">&lt;-</span> ratings_tbl1 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series=</span><span class="fu">as.factor</span>(series)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">y_position =</span> <span class="fu">median</span>(viewers_7day) <span class="sc">+</span> <span class="dv">1</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">x_position =</span> <span class="fu">mean</span>(ep_id))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># make the plot</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ratings_tbl1 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series=</span><span class="fu">as.factor</span>(series)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day, <span class="at">fill =</span> series)) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">alpha =</span> .<span class="dv">9</span>) <span class="sc">+</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"7-Day Viewership across Series 1-10"</span>) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> series_labels, <span class="fu">aes</span>(<span class="at">label =</span> series,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">x =</span> x_position, </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">y =</span> y_position)) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span>  </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">bakeoff_palette</span>(), </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                    <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"Episode Number"</span>) <span class="sc">+</span> </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"7-Day Viewership (millions)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec5_tidydata_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now let’s consider a different set of questions:</p>
+<ol type="1">
+<li><p>How did viewership grow between premiere to final episode in each series?</p></li>
+<li><p>Does the premiere-to-final-episode growth vary across series?</p></li>
+</ol>
+<p>To investigate these questions, we might make a bar plot like the one below displaying percentage increase in the number of viewers in millions within a 7-day window from the premiere episode to finale episode for the first 10 series, using the tidy tibble <code>ratings_tbl2</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings_tbl2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  series first  last
+  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 1       2.24  2.75
+2 2       3.1   5.06
+3 3       3.85  6.74
+4 4       6.6   9.45
+5 5       8.51 13.5 
+6 6      11.6  15.0 </code></pre>
+</div>
+</div>
+<p>First, we can calculate the percentage change in viewership using <code>mutate()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ratings_tbl2 <span class="ot">&lt;-</span> ratings_tbl2 <span class="sc">%&gt;%</span>  <span class="co">#overwrite original df so new variable saves</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">pct_change =</span> (last <span class="sc">-</span> first)<span class="sc">/</span>first) <span class="co">#calculate percent change</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>ratings_tbl2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   series first  last pct_change
+   &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
+ 1 1       2.24  2.75     0.228 
+ 2 2       3.1   5.06     0.632 
+ 3 3       3.85  6.74     0.751 
+ 4 4       6.6   9.45     0.432 
+ 5 5       8.51 13.5      0.588 
+ 6 6      11.6  15.0      0.295 
+ 7 7      13.6  15.9      0.171 
+ 8 8       9.46 10.0      0.0613
+ 9 9       9.55 10.3      0.0827
+10 10      9.62 10.0      0.0447</code></pre>
+</div>
+</div>
+<p>Then, we can visualize this using a bar chart:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ratings_tbl2 <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(series), <span class="at">y=</span>pct_change)) <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> bakeoff<span class="sc">::</span><span class="fu">bakeoff_colors</span>(<span class="st">"baltic"</span>), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Series"</span>, <span class="at">y =</span> <span class="st">"% Increase in Viewers, First to Last Episode"</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"% Increase in Viewers from Premiere to Finale"</span>) <span class="sc">+</span> </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec5_tidydata_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img src="https://stat545.stat.ubc.ca/notes/notes-a08_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise: with a partner or a small group:</p>
+<ol type="1">
+<li><p>What do you think <code>ratings_tbl2</code> looks like?</p></li>
+<li><p>Why is it tidy? (Hint: what are the observations and variables?)</p></li>
+<li><p>Could you have calculated the information in <code>ratings_tbl2</code> using <code>ratings_tbl1</code>? (No need to write code - just discuss whether it’s possible.)</p></li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="pivoting" class="level2">
+<h2 class="anchored" data-anchor-id="pivoting">Pivoting</h2>
+<p>Once you have figured out what’s tidy for you, you may come to realize that your data is <em>not</em> tidy. As we have discussed, it will typically save you time and frustration to tidy it before moving on in your analysis.</p>
+<p>Very often this will involve using “pivoting” type functions. For example, the <code>tidyr</code> package in the tidyverse has two main pivoting functions:</p>
+<ol type="1">
+<li><p><code>pivot_longer()</code> makes datasets <em>longer</em>: it moves some information in the columns into new rows, thereby <em>increasing</em> the number of <em>rows</em> of the dataset.</p></li>
+<li><p><code>pivot_wider()</code> makes datasets <em>wider</em>: it moves some information in the rows into new columns, thereby <em>decreasing</em> the number of rows of the dataset.</p></li>
+</ol>
+<p>By now, you should have a sense for why this might be useful for tidying!</p>
+<section id="pivoting-wider" class="level3">
+<h3 class="anchored" data-anchor-id="pivoting-wider"><strong>Pivoting Wider</strong></h3>
+<p>Here is some code to create a variable for whether an episode is the first or last episode of the season to <code>ratings_tbl1</code> and subset to only the data from the first and last episodes of each season.</p>
+<pre><code>ratings_tbl1 &lt;- ratings_tbl1 %&gt;% 
+ group_by(series) %&gt;% 
+  filter(episode == 1 | episode == max(episode)) %&gt;%
+  ungroup() %&gt;% 
+  mutate(episode_fl = recode(episode, `1` = "first", .default = "last"))
+
+head(ratings_tbl1)</code></pre>
+<pre><code>## # A tibble: 6 × 5
+##   ep_id viewers_7day series episode episode_fl
+##   &lt;int&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     
+## 1     1         2.24      1       1 first     
+## 2     6         2.75      1       6 last      
+## 3     7         3.1       2       1 first     
+## 4    14         5.06      2       8 last      
+## 5    15         3.85      3       1 first     
+## 6    24         6.74      3      10 last</code></pre>
+<p>This is not the same format as <code>ratings_tbl2</code>, which was the tidy format for our earlier “viewership growth within series” analysis. But it does contain the same information. To finish converting <code>ratings_tbl1</code> into <code>ratings_tbl2</code>, we need to make <code>ratings_tbl1</code> <em>wider</em>: we need to move some information in the rows (the info about whether each episode is the first or last episode of each season) into new columns.</p>
+<p>We can solve this problem using <code>pivot_wider</code>, which needs three pieces of information.</p>
+<ul>
+<li><p>What is a set of columns that uniquely identifies each observation? Put their names in the <code>id_cols</code> argument.</p></li>
+<li><p>Where should the names for the new columns come from? Put the name of the column you want to take the new variable names from in the <code>names_from</code> argument.</p></li>
+<li><p>What values should the new columns contain? Put the name of the columns you want to take the values from to <code>values_from</code> in the <code>values_from</code> argument.</p></li>
+</ul>
+<p>Note that if you don’t specify an <code>id_cols</code> argument, <code>pivot_wider</code> will assume that you want it to be every column except those in <code>names_from</code> and <code>values_from</code>.</p>
+<pre><code>ratings_tbl2 &lt;- ratings_tbl1 %&gt;% 
+  pivot_wider(id_cols = series, 
+              names_from=episode_fl, 
+              values_from=viewers_7day)
+
+head(ratings_tbl2)</code></pre>
+<pre><code>## # A tibble: 6 × 3
+##   series first  last
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1      1  2.24  2.75
+## 2      2  3.1   5.06
+## 3      3  3.85  6.74
+## 4      4  6.6   9.45
+## 5      5  8.51 13.5 
+## 6      6 11.6  15.0</code></pre>
+<p>Also note that any columns not included in <code>id_cols</code>, <code>names_from</code>, and <code>values_from</code> (e.g.&nbsp;<code>ep_id</code>) will simply be dropped.</p>
+<p>If we wanted to keep the info in <code>ep_id</code> as well, we would add it to the <code>values_from</code> argument:</p>
+<pre><code>ratings_tbl1 %&gt;% 
+  pivot_wider(id_cols = series, 
+              names_from=episode_fl, 
+              values_from=c(viewers_7day, ep_id))</code></pre>
+<pre><code>## # A tibble: 10 × 5
+##    series viewers_7day_first viewers_7day_last ep_id_first ep_id_last
+##     &lt;dbl&gt;              &lt;dbl&gt;             &lt;dbl&gt;       &lt;int&gt;      &lt;int&gt;
+##  1      1               2.24              2.75           1          6
+##  2      2               3.1               5.06           7         14
+##  3      3               3.85              6.74          15         24
+##  4      4               6.6               9.45          25         34
+##  5      5               8.51             13.5           35         44
+##  6      6              11.6              15.0           45         54
+##  7      7              13.6              15.9           55         64
+##  8      8               9.46             10.0           65         74
+##  9      9               9.55             10.3           75         84
+## 10     10               9.62             10.0           85         94</code></pre>
+</section>
+<section id="pivoting-longer" class="level3">
+<h3 class="anchored" data-anchor-id="pivoting-longer"><strong>Pivoting Longer</strong></h3>
+<section id="the-basics-column-names-contain-variable-values" class="level4">
+<h4 class="anchored" data-anchor-id="the-basics-column-names-contain-variable-values"><strong>The Basics: Column Names Contain Variable Values</strong></h4>
+<p>Here is a snippet of WHO data on the number of tuberculosis cases in different years in different countries.</p>
+<pre><code>table4a</code></pre>
+<pre><code>## # A tibble: 3 × 3
+##   country     `1999` `2000`
+##   &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Afghanistan    745   2666
+## 2 Brazil       37737  80488
+## 3 China       212258 213766</code></pre>
+<p>If we wanted to compare tuberculosis cases over time by country (e.g.&nbsp;by plotting the year on the x-axis and case count on the y-axis with a line for each country), then this format is not tidy. We want to (graphically) compare years within countries, so there should be one observation per unit within each population (country-years). In this case, we do not observe units within each country-year, so each observation is a country-year. The variables then fall into place: the country and year labels, and the case counts.</p>
+<p>(Aside: if we had measured more data, then perhaps there would be more units within each population! Imagine if we had case-level information, like severity. Then we could view cases as observations within the country-year populations, and we would have variables like country, year, case ID, and severity.)</p>
+<p>So the tidy format here puts the variables (the year, the country, and the case counts) on the columns. There are 6 rows, one for each unique country-year combination.</p>
+<pre><code>## # A tibble: 6 × 3
+##   country     year   cases
+##   &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;
+## 1 Afghanistan 1999     745
+## 2 Afghanistan 2000    2666
+## 3 Brazil      1999   37737
+## 4 Brazil      2000   80488
+## 5 China       1999  212258
+## 6 China       2000  213766</code></pre>
+<p>Notice that compared to <code>table4a</code>, the tidy format is <em>longer</em>. That means to produce it using <code>table4a</code>, we need to lengthen it by moving some information in the column names (the info about the measurement year) into new rows.</p>
+<p>We can solve this problem using <code>pivot_longer</code>, which needs three pieces of information.</p>
+<ul>
+<li><p>Which are the columns that we want to expand into more rows? Put their names in the <code>cols</code> argument.</p></li>
+<li><p>We want to save the information in the names of those columns as values in new column(s) of our dataset. What should we name these new column(s)? This is the <code>names_to</code> argument.</p></li>
+<li><p>We also want to preserve the information in the <em>values</em> of those columns - so we should save them as values in a new column of our dataset. What should we name it? This is the <code>values_to</code> argument.</p></li>
+</ul>
+<pre><code>table4a %&gt;% pivot_longer(cols = c(`1999`, `2000`), 
+                         names_to = "year", 
+                         values_to = "cases")</code></pre>
+<pre><code>## # A tibble: 6 × 3
+##   country     year   cases
+##   &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;
+## 1 Afghanistan 1999     745
+## 2 Afghanistan 2000    2666
+## 3 Brazil      1999   37737
+## 4 Brazil      2000   80488
+## 5 China       1999  212258
+## 6 China       2000  213766</code></pre>
+</section>
+<section id="example-column-names-contain-multiple-variable-values" class="level4">
+<h4 class="anchored" data-anchor-id="example-column-names-contain-multiple-variable-values"><strong>Example: Column Names Contain Multiple Variable Values</strong></h4>
+<p>Here’s a more realistic (but still simplified) look at the WHO Tuberculosis data.</p>
+<pre><code>who_demo &lt;- who2 %&gt;% 
+  select(country, year, starts_with("sp")) %&gt;%
+  rename_with(function(x) 
+    str_remove(x, pattern="sp_"), 
+    starts_with("sp")) %&gt;% 
+  filter(year %in% c(1999, 2000)) %&gt;% 
+  filter(country %in% c("Afghanistan", "Brazil", "China"))
+
+head(who_demo)</code></pre>
+<pre><code>## # A tibble: 6 × 16
+##   country      year m_014 m_1524 m_2534 m_3544 m_4554 m_5564  m_65 f_014 f_1524
+##   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Afghanistan  1999     8     55     55     47     34     21     8    25    139
+## 2 Afghanistan  2000    52    228    183    149    129     94    80    93    414
+## 3 Brazil       1999   301   3662   5401   5827   4630   2634  2121   372   2909
+## 4 Brazil       2000  1894   7268  11568  11906   8623   5085  4494  1859   6719
+## 5 China        1999  1247  18961  29328  25095  24239  21564 21367  1431  15178
+## 6 China        2000  1131  19111  29399  25206  25593  21429 21771  1420  14536
+## # ℹ 5 more variables: f_2534 &lt;dbl&gt;, f_3544 &lt;dbl&gt;, f_4554 &lt;dbl&gt;, f_5564 &lt;dbl&gt;,
+## #   f_65 &lt;dbl&gt;</code></pre>
+<p>This time, cases are broken down by gender (<code>f/m</code>) and by age range (<code>014\1524\2534\3544\4554\5564\65</code>).</p>
+<p>Suppose now that we are interested in comparing tuberculosis rates over time across (potentially) gender, age, and country. Then the most granular population we are trying to describe is a country, gender, age, and year combination, and like in the last example, we have no measured sub-units within that population, so an observation is a unique combination of country, gender, age, and year. (What a mouthful!)</p>
+<p>Once we’ve sorted that out, the variables fall into place: country, year, gender, age range, and case count. Values for gender and age range are currently located in the column names of <code>who_demo</code>, and values for case count are currently spread across multiple columns. So to tidy <code>who_demo</code> up, we need to use <code>pivot_longer()</code> to move the info in the columns into new rows.</p>
+<p>Conceptually, this is pretty similar to the last example: we want to use the information in <code>m_014</code>, <code>m_1524</code>, etc. to create new rows. So we should put those column names into the <code>cols</code> argument. But now, we want the information in their column names - the gender and age - to go into <em>two</em> new columns: gender and age. We can do this by specifying two column names in the <code>names_to</code> argument: <code>gender</code> and <code>age</code>.</p>
+<p>But how is <code>pivot_longer()</code> to know which part of the column name <code>m_014</code> corresponds to the gender, and which part corresponds to the age? You need to tell it that the pieces of information are separated by the “_” character using the <code>names_sep</code> argument.</p>
+<p>Finally, we can specify the name of the new column we want the values in the <code>m_014</code>, <code>m_1524</code>, etc. columns to go into with the <code>values_to</code> argument.</p>
+<pre><code>who_demo %&gt;% pivot_longer(cols = !(country:year),
+                          names_to = c("gender", "age"),
+                          names_sep = "_",
+                          values_to = "cases")</code></pre>
+<pre><code>## # A tibble: 84 × 5
+##    country      year gender age   cases
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
+##  1 Afghanistan  1999 m      014       8
+##  2 Afghanistan  1999 m      1524     55
+##  3 Afghanistan  1999 m      2534     55
+##  4 Afghanistan  1999 m      3544     47
+##  5 Afghanistan  1999 m      4554     34
+##  6 Afghanistan  1999 m      5564     21
+##  7 Afghanistan  1999 m      65        8
+##  8 Afghanistan  1999 f      014      25
+##  9 Afghanistan  1999 f      1524    139
+## 10 Afghanistan  1999 f      2534    160
+## # ℹ 74 more rows</code></pre>
+</section>
+<section id="example-column-names-contain-variable-names-and-values" class="level4">
+<h4 class="anchored" data-anchor-id="example-column-names-contain-variable-names-and-values"><strong>Example: Column Names Contain Variable Names And Values</strong></h4>
+<p>So far we have seen examples where the column names contain variable values. But what if they contain names AND values?</p>
+<p>Let’s have a look at the <code>household</code> dataset (loaded with the <code>tidyr</code> package), which has the date of birth and names of two children in families. Let’s say that we wanted to investigate how children names relate to their date of birth.</p>
+<pre><code>head(household)</code></pre>
+<pre><code>## # A tibble: 5 × 5
+##   family dob_child1 dob_child2 name_child1 name_child2
+##    &lt;int&gt; &lt;date&gt;     &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      
+## 1      1 1998-11-26 2000-01-29 Susan       Jose       
+## 2      2 1996-06-22 NA         Mark        &lt;NA&gt;       
+## 3      3 2002-07-11 2004-04-05 Sam         Seth       
+## 4      4 2004-10-10 2009-08-27 Craig       Khai       
+## 5      5 2000-12-05 2005-02-28 Parker      Gracie</code></pre>
+<p>We are trying to learn about the population from which these children belong; it is hard to say precisely what that is without having more information about how this data was collected, but it is likely something like “all children living in a particular place in a particular year”. The units in this population are children. So to tidy this data, we’d want “date of birth” and “name” to be two variables/columns associated with an observation/row (a child). We know we want to use <code>pivot_longer()</code>, because we want to make <code>household</code> longer by creating new variables. But wait! The names of the “date of birth”/“name” variables AND the values of the “child” variable are BOTH in the column names of <code>household</code>!</p>
+<p>Inspecting <a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">the documentation</a> for <code>pivot_longer()</code> very carefully reveals that you can use a special specification of the <code>names_to</code> argument to resolve this problem.</p>
+<pre><code>household %&gt;% pivot_longer(cols = -family, 
+                           names_to = c(".value", "child"), 
+                           names_sep = "_")</code></pre>
+<pre><code>## # A tibble: 10 × 4
+##    family child  dob        name  
+##     &lt;int&gt; &lt;chr&gt;  &lt;date&gt;     &lt;chr&gt; 
+##  1      1 child1 1998-11-26 Susan 
+##  2      1 child2 2000-01-29 Jose  
+##  3      2 child1 1996-06-22 Mark  
+##  4      2 child2 NA         &lt;NA&gt;  
+##  5      3 child1 2002-07-11 Sam   
+##  6      3 child2 2004-04-05 Seth  
+##  7      4 child1 2004-10-10 Craig 
+##  8      4 child2 2009-08-27 Khai  
+##  9      5 child1 2000-12-05 Parker
+## 10      5 child2 2005-02-28 Gracie</code></pre>
+<p>The special <code>".value"</code> specification says that we want to use the first component of the pivoted column name as a variable name, and make a new column with values coming from the second component of the pivoted column name. The second thing we pass into <code>names_to</code> names that new column.</p>
+<p>This process is best described by <a href="https://r4ds.hadley.nz/data-tidy#fig-pivot-names-and-values">Figure 6.7 from R4DS</a>.</p>
+<p>But wait! Row 4 is a bunch of NAs! Does that mean this data isn’t tidy??</p>
+<p>The fact that there is an NA does not necessarily mean that this data is untidy. To be clear: for the purpose of the tidy data definition, an indicator for a missing value <em>is</em> a value.</p>
+<p>Whether this data is untidy depends on the data context. Essentially, the question we should ask is: “Is row 4 an observation that we are missing information about? Or is it simply an artifact of our pivoting procedure?”</p>
+<p>Suppose this study was designed to only sample families with two children. Then, row 4 could be a real observation that we are missing information about: family 2 should have only been included if they had two children. Perhaps this reflects family 2 filling out a survey that asks them the number of children (in which they listed 2), but then getting distracted and forgetting to fill out the information for their second child. In this case, our data is tidy, and the tidy data format is a real advantage: it reveals missing information in our data set that was not obvious from the original untidy format.</p>
+<p>Now suppose this study just samples families at large. We know from experience about the world that some families have one children, some families have two, and some families have more. Then, it seems possible that row 4 is <em>not</em> a real observation: family 2 might just have a single child. In this case, we have a row for something that is not an observation, so we would like to tidy up by dropping it. We could actually have done this by altering our original <code>pivot_wider()</code> call as follows:</p>
+<pre><code>household %&gt;% pivot_longer(cols = -family, 
+                           names_to = c(".value", "child"), 
+                           names_sep = "_", 
+                           values_drop_na = TRUE)</code></pre>
+<pre><code>## # A tibble: 9 × 4
+##   family child  dob        name  
+##    &lt;int&gt; &lt;chr&gt;  &lt;date&gt;     &lt;chr&gt; 
+## 1      1 child1 1998-11-26 Susan 
+## 2      1 child2 2000-01-29 Jose  
+## 3      2 child1 1996-06-22 Mark  
+## 4      3 child1 2002-07-11 Sam   
+## 5      3 child2 2004-04-05 Seth  
+## 6      4 child1 2004-10-10 Craig 
+## 7      4 child2 2009-08-27 Khai  
+## 8      5 child1 2000-12-05 Parker
+## 9      5 child2 2005-02-28 Gracie</code></pre>
+<p>This discussion highlights the importance of knowing the context in which your data is collected for tidying (and for your analysis at large). Here and elsewhere, it really pays to be in close contact with the people who generated your data.</p>
+</section>
+</section>
+</section>
+<section id="separating-and-uniting" class="level2">
+<h2 class="anchored" data-anchor-id="separating-and-uniting">Separating and Uniting</h2>
+<p>The <code>tidyr</code> package has a function for gluing columns together (<code>unite</code>) and for cutting columns apart (<code>separate</code>). Why might this help us tidy? Here is another snippet of WHO Tuberculosis data.</p>
+<pre><code>table3</code></pre>
+<pre><code>## # A tibble: 6 × 3
+##   country      year rate             
+##   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;            
+## 1 Afghanistan  1999 745/19987071     
+## 2 Afghanistan  2000 2666/20595360    
+## 3 Brazil       1999 37737/172006362  
+## 4 Brazil       2000 80488/174504898  
+## 5 China        1999 212258/1272915272
+## 6 China        2000 213766/1280428583</code></pre>
+<p>The <code>rate</code> column contains the values of two variables: case counts and population counts. We would like to snip it apart at the “/” character to create two columns:</p>
+<pre><code>(table5 &lt;- table3 %&gt;% separate(col = rate, 
+                    into = c("cases", "population")))</code></pre>
+<pre><code>## # A tibble: 6 × 4
+##   country      year cases  population
+##   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+## 1 Afghanistan  1999 745    19987071  
+## 2 Afghanistan  2000 2666   20595360  
+## 3 Brazil       1999 37737  172006362 
+## 4 Brazil       2000 80488  174504898 
+## 5 China        1999 212258 1272915272
+## 6 China        2000 213766 1280428583</code></pre>
+<p>The <code>col</code> argument specifies the column we want to separate, and the <code>into</code> argument specifies the names of the new columns. The <code>sep</code> argument (not specified here) specifies where we want to cut. The default is pretty clever - it separates at any non-alphanumeric value. (How this is accomplished involves <em>regular expressions</em>, which are very useful when working with character data. We will learn more about regular expressions in STAT 545B. )</p>
+</section>
+<section id="the-merits-of-untidy-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-merits-of-untidy-data">The Merits of Untidy Data</h2>
+<p>As we’ve seen, tidy data is often very helpful. But there are also times when <em>un</em>tidy data is good. Here are a few reasons:</p>
+<ul>
+<li><p>The format that lends itself best to fast computations might not be tidy. <a href="http://varianceexplained.org/r/tidy-genomics/">Case Study: Tidy Genomics</a>.</p></li>
+<li><p>Untidy data is often easier for humans to interpret and edit. See <a href="https://arxiv.org/pdf/2106.15005.pdf">Untidy Data: The Unreasonable Effectiveness of Tables</a>.</p></li>
+<li><p>We could lose important information about the context in which the data was collected by cleaning and tidying raw data. This can have important ethical implications; see Chapter 5 of the book <a href="https://data-feminism.mitpress.mit.edu/">“Data Feminism”</a> by Catherine D’Ignazio and Lauren F. Klein.</p></li>
+</ul>
+<p>In summary, tidiness is a very useful concept, and tidying data is often useful. But we should remember that absolutes are few and far between in data science and statistics. Just because tidying data is <em>often</em> useful, doesn’t mean it’s <em>always</em> useful.</p>
+</section>
+<section id="worksheet-a4" class="level2">
+<h2 class="anchored" data-anchor-id="worksheet-a4">Worksheet A4</h2>
+<p>Spend the rest of this class and next class working through Worksheet A4.</p>
+<ul>
+<li>Finished attempting all of the questions? Then do the optional <a href="https://r4ds.hadley.nz/data-tidy">R4DS Tidying</a> reading, and maybe even do some of the exercises for extra practice.</li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><p>Video Lecture: <a href="https://youtu.be/qivE6exNsZI">tidyr for Pivoting and Tidy Data</a></p></li>
+<li><p>To learn how to use the <code>pivot_*()</code> functions, consult tidyr’s <a href="https://tidyr.tidyverse.org/articles/pivot.html">pivot vignette</a>.</p></li>
+<li><p>To get a better understanding of the concept of tidy data:</p>
+<ul>
+<li><p>Hadley Wickham’s <a href="https://vita.had.co.nz/papers/tidy-data.pdf">paper on Tidy Data</a> is the gold standard treatment of tidy data.</p></li>
+<li><p>A “code heavy” version of the tidy data paper is tidyr’s <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">“Tidy Data” vignette</a>.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="attribution" class="level2">
+<h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
+<p>Albert Y. Kim inspired the in-class exercises using the <code>drinks</code> data set from <code>fivethirtyeight</code>. Allison Horst and Julia Lowndes created the illustrated tidy data series. Alison Hill inspired the Great British Bakeoff example. We are immensely grateful to these people for creating amazing educational materials!</p>
+<p>We would also like to thank Samantha Tyner for pointing us towards the Data Feminism book during her week as the curator of the <a href="https://twitter.com/WomenInStat">@WomenInStat</a> Twitter account.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-tidyR" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wickham H (2014) Tidy data. Journal of Statistical Software 59(10):1–23. <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a></div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

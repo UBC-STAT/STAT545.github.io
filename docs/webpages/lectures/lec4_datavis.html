@@ -346,10 +346,7 @@ div.csl-indent {
   <li><a href="#common-types-of-plots" id="toc-common-types-of-plots" class="nav-link" data-scroll-target="#common-types-of-plots">Common Types of Plots</a></li>
   <li><a href="#advice-for-ggplot" id="toc-advice-for-ggplot" class="nav-link" data-scroll-target="#advice-for-ggplot">Advice for <code>ggplot</code></a></li>
   </ul></li>
-  <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try it Yourself:</a>
-  <ul class="collapse">
-  <li><a href="#remainder-of-this-class" id="toc-remainder-of-this-class" class="nav-link" data-scroll-target="#remainder-of-this-class"><strong>Remainder of this class:</strong></a></li>
-  </ul></li>
+  <li><a href="#worksheet-a3" id="toc-worksheet-a3" class="nav-link" data-scroll-target="#worksheet-a3">Worksheet A3</a></li>
   <li><a href="#next-class-fev-case-study" id="toc-next-class-fev-case-study" class="nav-link" data-scroll-target="#next-class-fev-case-study">Next class: FEV Case Study</a></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
@@ -373,7 +370,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 29, 2025</p>
+      <p class="date-modified">July 30, 2025</p>
     </div>
   </div>
     
@@ -388,26 +385,19 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <p>From this topic, students are anticipated to be able to:</p>
 <ul>
-<li><p>Identify the seven components of the grammar of graphics underlying ggplot2.</p></li>
-<li><p>Produce plots with ggplot2 by implementing the components of the grammar of graphics.</p></li>
-<li><p>Customize the look of ggplot2 graphs.</p></li>
-<li><p>Choose an appropriate plot type for Exploratory Data Analysis, based on an understanding of what makes a graph effective.</p></li>
+<li><p>Identify the seven components of the grammar of graphics underlying <code>ggplot2</code>.</p></li>
+<li><p>Produce plots with <code>ggplot2</code> by implementing the components of the grammar of graphics.</p></li>
+<li><p>Customize the look of <code>ggplot2</code> graphs.</p></li>
+<li><p>Choose an appropriate plot type for analysis, based on an understanding of what makes a graph effective.</p></li>
 </ul>
 </section>
 <section id="effective-data-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="effective-data-visualization">Effective Data Visualization</h2>
 <p>Plots and other forms of data visualization are powerful tools for conveying complex relationships. While tables can be useful, data visualizations are often preferred to aid with identify patterns and relationships and emphasizing important findings in a research projects. This is especially true for presentations, where the audience may not have time to digest a large table of numbers. Jenny Bryan’s Challenger Example (<a href="https://speakerdeck.com/jennybc/ggplot2-tutorial?slide=22">https://speakerdeck.com/jennybc/ggplot2-tutorial</a>) is a great example of why we may want to visualize data.</p>
 <p>Now the question is, what visualization should you use to convey an idea? Well, you need to first formulate the question you want the data visualization to answer. That is, you need to figure out what you want to convey <em>before</em> you start visualizing the data. From UBC’s <a href="https://datasciencebook.ca/viz.html"><em>A First Introduction to Data Science</em></a> <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span> book:</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>“A good visualization will clearly answer your question without distraction; a <em>great</em> visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience.” <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span></p>
-</div>
-</div>
-</div>
+<blockquote class="blockquote">
+<p>“A good visualization will clearly answer your question without distraction; a great visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience.”</p>
+</blockquote>
 <p>We need to convey the message using a data visualization while removing as much unnecessary information as possible. Below is a direct quote from the <a href="https://datasciencebook.ca/viz.html"><em>A First Introduction to Data Science</em></a> <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span> containing their suggestions for effective data visualizations:</p>
 <p><strong>“Convey the message”</strong></p>
 <ul>
@@ -586,17 +576,13 @@ Tip
 <p>Google is <em>absolutely</em> your friend when building <code>ggplots</code>. I don’t think I’ve ever made a plot without googling how to do it. <code>ggplot</code> is extremely powerful, flexible, and a bit scary to learn! If you need to build a plot, search it! Need to plot two histograms, separated by groups (say, gender), side by side? I’d google: “ggplot histogram grouped by variable”. This brings me to <a href="https://r-charts.com/distribution/histogram-group-ggplot2/">this blog post by R Charts</a> that has a TON of different side by side histograms with code! <code>ggplot</code> is very much a “learn by doing” skill.</p>
 </section>
 </section>
-<section id="try-it-yourself" class="level2">
-<h2 class="anchored" data-anchor-id="try-it-yourself">Try it Yourself:</h2>
-<p>We think the best way to learn the basics of ggplot2 is to work through Worksheet A3.</p>
-<section id="remainder-of-this-class" class="level3">
-<h3 class="anchored" data-anchor-id="remainder-of-this-class"><strong>Remainder of this class:</strong></h3>
+<section id="worksheet-a3" class="level2">
+<h2 class="anchored" data-anchor-id="worksheet-a3">Worksheet A3</h2>
 <ul>
-<li><p>Spend time working through Worksheet 3.</p></li>
+<li><p>It’s time to try <code>ggplot1</code> yourself! Spend time working through Worksheet 3.</p></li>
 <li><p>Finished attempting all of the questions? Then do the optional <a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS Data Visualization</a> reading, and maybe even do some of the exercises for extra practice.</p></li>
 </ul>
 <p>Post any questions you have on the Slack channel!</p>
-</section>
 </section>
 <section id="next-class-fev-case-study" class="level2">
 <h2 class="anchored" data-anchor-id="next-class-fev-case-study">Next class: FEV Case Study</h2>

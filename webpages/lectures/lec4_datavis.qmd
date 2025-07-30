@@ -10,13 +10,13 @@ csl: ../../diabetologia.csl
 
 From this topic, students are anticipated to be able to:
 
--   Identify the seven components of the grammar of graphics underlying ggplot2.
+-   Identify the seven components of the grammar of graphics underlying `ggplot2`.
 
--   Produce plots with ggplot2 by implementing the components of the grammar of graphics.
+-   Produce plots with `ggplot2` by implementing the components of the grammar of graphics.
 
--   Customize the look of ggplot2 graphs.
+-   Customize the look of `ggplot2` graphs.
 
--   Choose an appropriate plot type for Exploratory Data Analysis, based on an understanding of what makes a graph effective.
+-   Choose an appropriate plot type for analysis, based on an understanding of what makes a graph effective.
 
 ## Effective Data Visualization
 
@@ -24,9 +24,7 @@ Plots and other forms of data visualization are powerful tools for conveying com
 
 Now the question is, what visualization should you use to convey an idea? Well, you need to first formulate the question you want the data visualization to answer. That is, you need to figure out what you want to convey *before* you start visualizing the data. From UBC's [*A First Introduction to Data Science*](https://datasciencebook.ca/viz.html) [@timbers2022data] book:
 
-::: {.callout-note appearance="minimal" icon="false"}
-"A good visualization will clearly answer your question without distraction; a *great* visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience." [@timbers2022data]
-:::
+> "A good visualization will clearly answer your question without distraction; a great visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience."
 
 We need to convey the message using a data visualization while removing as much unnecessary information as possible. Below is a direct quote from the [*A First Introduction to Data Science*](https://datasciencebook.ca/viz.html) [@timbers2022data] containing their suggestions for effective data visualizations:
 
@@ -178,13 +176,9 @@ The order of the layers doesn't matter after the `geom_layer()` layer.
 
 Google is *absolutely* your friend when building `ggplots`. I don't think I've ever made a plot without googling how to do it. `ggplot` is extremely powerful, flexible, and a bit scary to learn! If you need to build a plot, search it! Need to plot two histograms, separated by groups (say, gender), side by side? I'd google: "ggplot histogram grouped by variable". This brings me to [this blog post by R Charts](https://r-charts.com/distribution/histogram-group-ggplot2/) that has a TON of different side by side histograms with code! `ggplot` is very much a "learn by doing" skill.
 
-## Try it Yourself:
+## Worksheet A3
 
-We think the best way to learn the basics of ggplot2 is to work through Worksheet A3.
-
-### **Remainder of this class:**
-
--   Spend time working through Worksheet 3.
+-   It's time to try `ggplot1` yourself! Spend time working through Worksheet 3.
 
 -   Finished attempting all of the questions? Then do the optional [R4DS Data Visualization](https://r4ds.had.co.nz/data-visualisation.html) reading, and maybe even do some of the exercises for extra practice.
 

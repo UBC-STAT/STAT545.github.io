@@ -245,9 +245,9 @@ housingdata <- housingdata %>%
 housingdata
 ```
 
-## Try it Yourself!
+## Worksheet A2
 
-We think the best way to learn the basics of dplyr is to work through Worksheet A2.
+Worksheet A2 will guide you through some of the basics of `dplyr`.
 
 -   Haven’t attempted all of the questions on Worksheet A2? Then spend this time completing the worksheet.
 
