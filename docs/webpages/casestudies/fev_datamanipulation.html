@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lecture 3 Case Study: Data Manipulation on FEV Dataset – STAT545 @ UBC</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">STAT545 @ UBC</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Syllabus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusA.html">
+ <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusB.html">
+ <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lectures</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec1a_installation.html">
+ <span class="dropdown-text">Lecture 1A: Installation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec1b_introR.html">
+ <span class="dropdown-text">Lecture 1B: Course Introduction and R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec2A_reproducibility.html">
+ <span class="dropdown-text">Lecture 2A: Reproducibility</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec2b_versioncontrol.html">
+ <span class="dropdown-text">Lecture 2B: Version Control</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec3_dplyr.html">
+ <span class="dropdown-text">Lecture 3: Data Manipulation with dplyr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec4_datavis.html">
+ <span class="dropdown-text">Lecture 4: Data Visualization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec5_tidydata.html">
+ <span class="dropdown-text">Lecture 5: Tidy Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec6a_modelfitting.html">
+ <span class="dropdown-text">Lecture 6A: Model Fitting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec6b_dates.html">
+ <span class="dropdown-text">Lecture 6B: Factors and Dates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec7a_readwritedata.html">
+ <span class="dropdown-text">Lecture 7a: Reading and Writing Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec7b_joiningtibbles.html">
+ <span class="dropdown-text">Lecture 7b: Tibble Joins</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../webpages/worksheets.html"> 
+<span class="menu-text">Worksheets</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collaborative-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Collaborative Project</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-collaborative-project">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
+ <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable2.html">
+ <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mini-data-analysis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mini Data Analysis</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable1.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-case-studies" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Case Studies</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-case-studies">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/casestudies/fev_datamanipulation.html">
+ <span class="dropdown-text">Lecture 3 Case Study: Data Manipulation on FEV Dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/casestudies/fev_datavis.html">
+ <span class="dropdown-text">Lecture 4 Case Study: Data Visualization with FEV Dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/casestudies/nycflights_dates.html">
+ <span class="dropdown-text">Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../webpages/faq.html"> 
+<span class="menu-text">FAQ</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/casestudies/fev_datamanipulation.html">Lecture 3 Case Study: Data Manipulation on FEV Dataset</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/casestudies/fev_datamanipulation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 3 Case Study: Data Manipulation on FEV Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/casestudies/fev_datavis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4 Case Study: Data Visualization with FEV Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/casestudies/nycflights_dates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 3 Case Study: Data Manipulation on FEV Dataset</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Copy the following code into a new RMarkdown Document:</p>
+<pre><code>---
+title: 'FEV Case Study: Data Manipulation'
+output: html_document
+date: "2025-07-31"
+---
+
+
+
+## Introduction 
+
+We will perform exploratory data analysis of the `fev` data set. 
+Let's start by getting the data set. Load the `readr` package (more on this later) and run `fev &lt;- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")` to get access to it. Let's also load `dplyr` while we're at it - we'll need it to do the exercises! 
+
+::: {.cell}
+
+```{.r .cell-code}
+#install.packages("dplyr") #uncomment and run once, if needed
+#install.packages("readr") #uncomment and run once, if needed
+
+library(dplyr)
+library(readr)
+fev &lt;- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")
+fev_tbl &lt;- as_tibble(fev) %&gt;% mutate(across(gender:smoking, ~ as.factor(.x))) #assign gender and smoking as factors (more on this later, too!)
+```
+:::
+
+## The `fev` data set 
+
+It is now widely believed that smoking tends to impair lung function. Much of the data to support this claim arises from studies of pulmonary function in adults who are long-time smokers. A question then arises whether such deleterious effects of smoking can be detected in children who smoke. To address this question, measures of lung function were made in about 600 children seen for a routine check up in a particular pediatric clinic. The children participating in this study were asked whether they were current smokers.
+
+A common measurement of lung function is the forced expiratory volume (FEV), which measures how much air you can blow out of your lungs in a short period of time. A higher FEV is usually associated with better respiratory function. It is well known that prolonged smoking diminishes FEV in adults, and those adults with diminished FEV also tend to have decreased pulmonary function as measured by other clinical variables, such as blood oxygen and carbon dioxide levels.
+
+Data collected from the study on the relationship between smoking status and lung function (measured by FEV) in children are contained in the `fev_tbl` dataset. Here is a data dictionary:
+
+| Variable Name | Description | 
+| :--: |:--: |
+| age           | subject age (years) | 
+| fev           | measured forced exhalation volume (litres/second)| 
+| height        | subject height (inches) | 
+| gender        | subject gender (here, male or female) | 
+| smoking         | smoking status (yes or no) | 
+
+
+Here is a few rows of the data set:
+
+::: {.cell}
+
+```{.r .cell-code}
+head(fev_tbl)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 6 × 5
+    age   fev height gender smoking
+  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;fct&gt;  &lt;fct&gt;  
+1     9  1.71   57   f      0      
+2     8  1.72   67.5 f      0      
+3     7  1.72   54.5 f      0      
+4     9  1.56   53   m      0      
+5     9  1.90   57   m      0      
+6     8  2.34   61   f      0      
+```
+
+
+:::
+:::
+
+
+## Understanding the data structure
+
+### Exercise 1
+
+Am I missing any variables compared to the data dictionary? Let's check. 
+
+::: {.cell}
+
+```{.r .cell-code}
+# FILL IN HERE
+```
+:::
+
+### Exercise 2
+
+Next: are there any duplicate case numbers? Are there any duplicate subject IDs?
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# FILL IN HERE
+```
+:::
+
+Now we know that no cases were entered twice, and each case corresponds to a different patient. 
+
+## Understanding the patients in the study
+
+### Exercise 3
+
+Let's summarize the age of the patients first, by computing the mean, standard deviation, min, and max of the patient ages. 
+
+::: {.cell}
+
+```{.r .cell-code}
+# FILL IN HERE
+```
+:::
+
+Something's a little odd about these summaries. Remember: this is a smoking study on children.
+
+- Why would a 3 year old be enrolled in a smoking study?  
+- Why would a 19 year old be enrolled in a study on children? 
+
+### Exercise 4
+
+I'm now a bit worried: what's the youngest patient who smokes in this dataset?
+
+::: {.cell}
+
+```{.r .cell-code}
+# FILL IN HERE 
+```
+:::
+
+Looks like the youngest patient who smokes is 9. Seems young to me, but much less far-fetched than (say) 3. 
+
+### Exercise 5
+
+What about the 19 year olds? Should they be included? The definition of a "child" can vary from study to study. Possible definitions include &lt; 21 and &lt; 18.  Let's find out who the patients 18 or older are and what their case numbers are so that we can ask our point of contact for the study about them. 
+
+::: {.cell}
+
+```{.r .cell-code}
+# FILL IN HERE 
+```
+:::
+
+**Aside**: if it turns out that we need to exclude any of these odd-looking patients from our final data analysis, then we will need to re-run everything after this point with their data removed. Isn't it nice that we are preparing this report in R Markdown?  
+
+### Exercise 6
+
+This is a smoking study, so it seems useful to know what proportion of the study participants are smokers. In fact, let's break it down by sex, and calculate the proportion of girls who are smokers and the proportion of boys who are smokers, as well as the number of girls and the number of boys in the study. 
+
+::: {.cell}
+
+```{.r .cell-code}
+# FILL IN HERE
+```
+:::
+
+The proportion of girls who are smokers is higher than the proportion of boys that are smokers.
+
+### Exercise 7
+
+Is this because there are more smokers among teenage girls than teenage boys? Or is this a phenomenon that is uniform across age groups? To find out, let's calculate: 
+
+- the proportion and number of girls aged 0-6 who are smokers
+- the proportion and number of girls aged 7-12 who are smokers 
+- the proportion and number of girls aged 13-19 who are smokers
+- the proportion and number of boys aged 0-6 who are smokers
+- the proportion and number of boys aged 7-12 who are smokers 
+- the proportion and number of boys aged 13-19 who are smokers
+
+Hint: you will need to create a new variable that has three categories: age 0-6, age 7-12, and age 13-19. You can do so with `fev_tbl %&gt;% mutate(age_cat = cut(age, c(0, 6, 12, 19)))`.
+
+::: {.cell}
+
+```{.r .cell-code}
+# FILL IN HERE
+```
+:::
+
+There are no smokers (female or male) in the 0-6 group. There is a higher proportion of girls in the 7-12 group who are smokers than boys in the 7-12 group. Ditto the 13-19 group. 
+
+## Does smoking have an effect on lung function? 
+
+Let's continue exploring the data set with a closer eye to our main research question: does smoking have an effect on lung function in children? 
+
+### Exercise 8
+
+Let's start by summarizing the FEV of the smokers and non-smokers. Let's calculate the mean, standard deviation, and number of observations in each group. We will mainly be comparing the means to gather information about the question, but the standard deviation and number of observations are important to look at too. 
+
+::: {.cell}
+
+```{.r .cell-code}
+# FILL IN HERE
+```
+:::
+We see that the mean FEV in the smoking group seems to be substantially higher than the average FEV in the non-smoking group. That is, the smokers appear to have *better* lung function than the non-smokers. 
+
+Does this surprise you? Recall that this is an observational study - children were not randomly assigned to smoke or not smoke. We might then have reason to suspect that the association between FEV and smoking status is confounded by some other factors. For example, 
+we already know that the youngest smoker in our data set is 9, while the non-smokers are as young as 3. This suggests that the smokers in our data set are generally older than the non-smokers. Furthermore, we might expect older children to have higher FEV, because they are bigger and have bigger lungs. Could age be a confounder here? Maybe the smoking group has higher lung function simply because they are older and bigger.
+
+We will investigate this point next week after we have learned about graphing tools.</code></pre>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lecture 5: Tidy Data – STAT545 @ UBC</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">STAT545 @ UBC</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Syllabus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusA.html">
+ <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusB.html">
+ <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lectures</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec1a_installation.html">
+ <span class="dropdown-text">Lecture 1A: Installation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec1b_introR.html">
+ <span class="dropdown-text">Lecture 1B: Course Introduction and R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec2A_reproducibility.html">
+ <span class="dropdown-text">Lecture 2A: Reproducibility</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec2b_versioncontrol.html">
+ <span class="dropdown-text">Lecture 2B: Version Control</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec3_dplyr.html">
+ <span class="dropdown-text">Lecture 3: Data Manipulation with dplyr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec4_datavis.html">
+ <span class="dropdown-text">Lecture 4: Data Visualization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec5_tidydata.html">
+ <span class="dropdown-text">Lecture 5: Tidy Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec6a_modelfitting.html">
+ <span class="dropdown-text">Lecture 6A: Model Fitting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec6b_dates.html">
+ <span class="dropdown-text">Lecture 6B: Factors and Dates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec7a_readwritedata.html">
+ <span class="dropdown-text">Lecture 7a: Reading and Writing Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures/lec7b_joiningtibbles.html">
+ <span class="dropdown-text">Lecture 7b: Tibble Joins</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../webpages/worksheets.html"> 
+<span class="menu-text">Worksheets</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collaborative-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Collaborative Project</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-collaborative-project">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
+ <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable2.html">
+ <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mini-data-analysis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mini Data Analysis</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable1.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-case-studies" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Case Studies</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-case-studies">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/casestudies/fev_datamanipulation.html">
+ <span class="dropdown-text">Lecture 3 Case Study: Data Manipulation on FEV Dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/casestudies/fev_datavis.html">
+ <span class="dropdown-text">Lecture 4 Case Study: Data Visualization with FEV Dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/casestudies/nycflights_dates.html">
+ <span class="dropdown-text">Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../webpages/faq.html"> 
+<span class="menu-text">FAQ</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures/lec5_tidydata.html">Lecture 5: Tidy Data</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec1a_installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1A: Installation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec1b_introR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1B: Course Introduction and R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec2A_reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2A: Reproducibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec2b_versioncontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2B: Version Control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec3_dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Data Manipulation with dplyr</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec4_datavis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Data Visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec5_tidydata.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 5: Tidy Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec6a_modelfitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6A: Model Fitting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec6b_dates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6B: Factors and Dates</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec7a_readwritedata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7a: Reading and Writing Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures/lec7b_joiningtibbles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7b: Tibble Joins</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#tidy-data-and-the-tidyverse" id="toc-tidy-data-and-the-tidyverse" class="nav-link" data-scroll-target="#tidy-data-and-the-tidyverse">Tidy Data and the Tidyverse</a>
+  <ul class="collapse">
+  <li><a href="#example-bake-off" id="toc-example-bake-off" class="nav-link" data-scroll-target="#example-bake-off">Example: Bake-off</a></li>
+  </ul></li>
+  <li><a href="#pivoting" id="toc-pivoting" class="nav-link" data-scroll-target="#pivoting">Pivoting</a>
+  <ul class="collapse">
+  <li><a href="#pivoting-wider" id="toc-pivoting-wider" class="nav-link" data-scroll-target="#pivoting-wider"><strong>Pivoting Wider</strong></a></li>
+  <li><a href="#pivoting-longer" id="toc-pivoting-longer" class="nav-link" data-scroll-target="#pivoting-longer"><strong>Pivoting Longer</strong></a></li>
+  </ul></li>
+  <li><a href="#separating-and-uniting" id="toc-separating-and-uniting" class="nav-link" data-scroll-target="#separating-and-uniting">Separating and Uniting</a></li>
+  <li><a href="#the-merits-of-untidy-data" id="toc-the-merits-of-untidy-data" class="nav-link" data-scroll-target="#the-merits-of-untidy-data">The Merits of Untidy Data</a></li>
+  <li><a href="#worksheet-a4" id="toc-worksheet-a4" class="nav-link" data-scroll-target="#worksheet-a4">Worksheet A4</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 5: Tidy Data</h1>
+<p class="subtitle lead">September 30, 2025</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">July 30, 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>From this topic, students are anticipated to be able to:</p>
+<ul>
+<li><p>recognize whether a given data set is ‘tidy’ or ‘untidy’ for their analysis</p></li>
+<li><p>understand why ‘tidy’ data can be useful</p></li>
+<li><p>reshape a data set between ‘long’ and ‘wide’ formats, using <code>tidyr::pivot_longer()</code> and <code>tidyr::pivot_wider()</code></p></li>
+<li><p>understand how to grapple with explicit missing values created by pivoting</p></li>
+</ul>
+</section>
+<section id="tidy-data-and-the-tidyverse" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-and-the-tidyverse">Tidy Data and the Tidyverse</h2>
+<p>In the last two weeks, we learned about the <code>dplyr</code> package for data manipulation and the <code>ggplot2</code> package for graphing. These two packages are part of the “tidyverse”: a collection of data science packages that are designed to have input data frames and output data frames that are <em>tidy</em>. In fact, we can load all packages in the tidyverse at once with the single command <code>library(tidyverse)</code>.</p>
+<p>Here, we are using the word “tidy” in a technical sense - we’re not talking about how “neat” or “organized” your data is. Instead, “tidy” is a very specific set of rules for storing data.</p>
+<p><strong>Tidy data is defined as data where</strong></p>
+<ul>
+<li><p><strong>each variables form a column,</strong></p></li>
+<li><p><strong>each observation forms a row, and</strong></p></li>
+<li><p><strong>each cell is a single measurement.</strong> <span class="citation" data-cites="tidyR">[<a href="#ref-tidyR" role="doc-biblioref">1</a>]</span></p></li>
+</ul>
+<p>For example, the following data set containing cat and dog names by family is <u>not tidy.</u> We have multiple observations per row (a cat, and a dog observation):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Cat Name</th>
+<th>Dog Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tompkins</td>
+<td>Sumo</td>
+<td>Mochi</td>
+</tr>
+<tr class="even">
+<td>Truong</td>
+<td>Mr.&nbsp;Meow</td>
+<td>Bowser</td>
+</tr>
+<tr class="odd">
+<td>Adakis</td>
+<td>Snowball</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Instead, a tidy version of this data set may look like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Pet Name</th>
+<th>Type</th>
+<th>Family</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sumo</td>
+<td>Cat</td>
+<td>Tompkins</td>
+</tr>
+<tr class="even">
+<td>Mochi</td>
+<td>Dog</td>
+<td>Tompkins</td>
+</tr>
+<tr class="odd">
+<td>Mr.&nbsp;Meow</td>
+<td>Cat</td>
+<td>Truong</td>
+</tr>
+<tr class="even">
+<td>Bowser</td>
+<td>Dog</td>
+<td>Truong</td>
+</tr>
+<tr class="odd">
+<td>Snowball</td>
+<td>Cat</td>
+<td>Adakis</td>
+</tr>
+</tbody>
+</table>
+<p>Each row is an observation, each variable is a column, and each cell is a single measurement. Our data is tidy!</p>
+<p>All of the data we used before this week were already tidy. This made it easy to use the tidyverse packages <code>dplyr</code> and <code>ggplot2</code> to do what we needed to do. Oftentimes however, data is not collected in a tidy way. So, what happens do we do when we have untidy data? Let’s explore it!</p>
+<p>The <code>fivethirtyeight</code> R package contains a dataset called <code>drinks</code>. This dataset was compiled as part of a <a href="https://fivethirtyeight.com/features/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/">FiveThirtyEight article</a> that explored (among other things) which countries consumes the most alcohol. Let’s look at a subset of the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("fivethirtyeight") #uncomment if not installed</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fivethirtyeight)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>drinks_tbl1 <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(drinks) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>total_litres_of_pure_alcohol) <span class="co">#remove total liters variable</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(drinks_tbl1) <span class="co">#view the first few rows of the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  country           beer_servings spirit_servings wine_servings
+  &lt;chr&gt;                     &lt;int&gt;           &lt;int&gt;         &lt;int&gt;
+1 Afghanistan                   0               0             0
+2 Albania                      89             132            54
+3 Algeria                      25               0            14
+4 Andorra                     245             138           312
+5 Angola                      217              57            45
+6 Antigua &amp; Barbuda           102             128            45</code></pre>
+</div>
+</div>
+<p>The following graphic was made from the <code>drinks</code> dataset.</p>
+<p><img src="https://stat545.stat.ubc.ca/notes/notes-a08_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>With a partner or a small group discuss the following questions think about if the data is tidy or untidy. If tidy, what would the <code>ggplot</code> code look like to reproduce this graph? If untidy, what would the tidy format look like? Sketch the first few rows of the data. Now, what would the <code>ggplot</code> code look like to reproduce this graph?</p>
+</div>
+</div>
+<section id="example-bake-off" class="level3">
+<h3 class="anchored" data-anchor-id="example-bake-off">Example: Bake-off</h3>
+<p>It’s clear from the definition that tidiness is an attribute of a dataset. But did you know that tidiness also depends on what you are planning to <em>do</em> with the data? That’s because what’s an observation and what’s a variable depends on the data analysis plan!</p>
+<p>We will demonstrate using data from “The Great British Bake Off” compiled by <a href="https://www.apreshill.com/">Allison Hill</a> in the R package <code>bakeoff</code>. The graphics that follow (and the code to produce the graphics) were lightly adapted from Allison’s <a href="https://www.apreshill.com/talk/2019-rladies-sydney/">Plot Twist talk</a>.</p>
+<p>First, let’s decide on some questions we can address with this data.</p>
+<ol type="1">
+<li><p>How did viewership change as new series came out?</p></li>
+<li><p>The show moved channels after Series 7. Was viewership higher, lower, or about the same before and after the move?</p></li>
+</ol>
+<p>These questions have implicitly defined our <em>observations</em>: they are individual units of the most granular populations we are trying to describe or compare. Here, the populations to be compared are <em>series</em>, and units within them are <em>episodes</em>. The <em>variables</em> now fall into place: they are measured attributes of our observations (episodes): episode number, viewership, series membership, etc. This means that the following representation of viewership data is tidy for the “change in viewership over series” analysis:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("bakeoff") #uncomment if not yet installed</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bakeoff)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ratings_tbl1 <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> <span class="co">#save output to new tibble called ratings_tbl1</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ep_id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> <span class="co"># create variable for episode number</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ep_id, viewers_7day, series, episode) <span class="co">#select specific columns</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings_tbl1) <span class="co">#view first few rows of tibble</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  ep_id viewers_7day series episode
+  &lt;int&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+1     1         2.24      1       1
+2     2         3         1       2
+3     3         3         1       3
+4     4         2.6       1       4
+5     5         3.03      1       5
+6     6         2.75      1       6</code></pre>
+</div>
+</div>
+<p>Every row is an observation (a unique episode), and the columns are variables (episode number across series, 7-day viewership, series, and episode number within series).</p>
+<p>This is a typical example where the tidy format makes it easy to do our analysis. For example, to investigate these questions, we might make a bar plot of the number of viewers in millions within a 7-day window per episode, coloured by series. The following code uses the tidy tibble <code>ratings_tbl1</code> to make this bar plot. Notice that it was easy to use our graphing environment of choice (<code>ggplot2</code> in the tidyverse) to make the plot <em>because</em> our data is tidy, and the tidyverse is designed to work with tidy data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>series_labels <span class="ot">&lt;-</span> ratings_tbl1 <span class="sc">%&gt;%</span> <span class="co">#save output to series_labels</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series=</span><span class="fu">as.factor</span>(series)) <span class="sc">%&gt;%</span> <span class="co">#ensure series variable is a factor (categorical variable)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span> <span class="co">#group by series</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">y_position =</span> <span class="fu">median</span>(viewers_7day) <span class="sc">+</span> <span class="dv">1</span>, <span class="co"># calculate positions for the bar charts</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">x_position =</span> <span class="fu">mean</span>(ep_id)) <span class="co">#</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># make the plot</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ratings_tbl1 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series=</span><span class="fu">as.factor</span>(series)) <span class="sc">%&gt;%</span> <span class="co"># ensure series is a factor variable</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day, <span class="at">fill =</span> series)) <span class="sc">+</span> <span class="co">#set x and y axes, tell ggplot that we want things coloured by series</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">alpha =</span> .<span class="dv">9</span>) <span class="sc">+</span> <span class="co">#tell ggplot we want a boxplot, change translucency with alpha</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"7-Day Viewership across Series 1-10"</span>) <span class="sc">+</span> <span class="co">#add a title</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> series_labels, <span class="fu">aes</span>(<span class="at">label =</span> series, <span class="co">#add text for series numbers</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">x =</span> x_position, </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">y =</span> y_position)) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span>  <span class="co">#add a classic theme</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">bakeoff_palette</span>(),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                    <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span> <span class="co">#set the colours so they aren't rainbow</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"Episode Number"</span>) <span class="sc">+</span>  <span class="co">#add x axis label</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"7-Day Viewership (millions)"</span>) <span class="co">#add y axis label</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec5_tidydata_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now let’s consider a different set of questions:</p>
+<ol type="1">
+<li><p>How did viewership grow between premiere to final episode in each series?</p></li>
+<li><p>Does the premiere-to-final-episode growth vary across series?</p></li>
+</ol>
+<p>To investigate these questions, we might make a bar plot like the one below displaying percentage increase in the number of viewers in millions within a 7-day window from the premiere episode to finale episode for the first 10 series, using the tidy tibble <code>ratings_tbl2</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings_tbl2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  series first  last
+  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 1       2.24  2.75
+2 2       3.1   5.06
+3 3       3.85  6.74
+4 4       6.6   9.45
+5 5       8.51 13.5 
+6 6      11.6  15.0 </code></pre>
+</div>
+</div>
+<p>First, we can calculate the percentage change in viewership using <code>mutate()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ratings_tbl2 <span class="ot">&lt;-</span> ratings_tbl2 <span class="sc">%&gt;%</span>  <span class="co">#overwrite original df so new variable saves</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">pct_change =</span> (last <span class="sc">-</span> first)<span class="sc">/</span>first) <span class="co">#calculate percent change</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings_tbl2) <span class="co">#view first few rows of tibble</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  series first  last pct_change
+  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
+1 1       2.24  2.75      0.228
+2 2       3.1   5.06      0.632
+3 3       3.85  6.74      0.751
+4 4       6.6   9.45      0.432
+5 5       8.51 13.5       0.588
+6 6      11.6  15.0       0.295</code></pre>
+</div>
+</div>
+<p>Then, we can visualize this using a bar chart:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ratings_tbl2 <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(series), <span class="at">y=</span>pct_change)) <span class="sc">+</span> <span class="co">#initialize the plot</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> bakeoff<span class="sc">::</span><span class="fu">bakeoff_colors</span>(<span class="st">"baltic"</span>), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span> <span class="co">#set bar chart with fill colours, semi-translucent </span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Series"</span>, <span class="at">y =</span> <span class="st">"% Increase in Viewers, First to Last Episode"</span>) <span class="sc">+</span> <span class="co">#add x labels</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"% Increase in Viewers from Premiere to Finale"</span>) <span class="sc">+</span> <span class="co">#add y labels</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span> <span class="co">#change y axis to percentage </span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="co">#add classic theme</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="co">#flip horizontally</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec5_tidydata_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise: with a partner or a small group:</p>
+<ol type="1">
+<li><p>What do you think <code>ratings_tbl2</code> looks like?</p></li>
+<li><p>Why is it tidy? (Hint: what are the observations and variables?)</p></li>
+<li><p>Could you have calculated the information in <code>ratings_tbl2</code> using <code>ratings_tbl1</code>? (No need to write code - just discuss whether it’s possible.)</p></li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="pivoting" class="level2">
+<h2 class="anchored" data-anchor-id="pivoting">Pivoting</h2>
+<p>Once you have figured out what’s tidy for you, you may come to realize that your data is <em>not</em> tidy. As we have discussed, it will typically save you time and frustration to tidy it before moving on in your analysis.</p>
+<p>Very often this will involve using “pivoting” type functions. For example, the <code>tidyr</code> package in the tidyverse has two main pivoting functions:</p>
+<ol type="1">
+<li><p><code>pivot_longer()</code> makes datasets <em>longer</em>: it moves some information in the columns into new rows, thereby <em>increasing</em> the number of <em>rows</em> of the dataset.</p></li>
+<li><p><code>pivot_wider()</code> makes datasets <em>wider</em>: it moves some information in the rows into new columns, thereby <em>decreasing</em> the number of rows of the dataset.</p></li>
+</ol>
+<p>By now, you should have a sense for why this might be useful for tidying!</p>
+<section id="pivoting-wider" class="level3">
+<h3 class="anchored" data-anchor-id="pivoting-wider"><strong>Pivoting Wider</strong></h3>
+<p>Here is some code to create a variable for whether an episode is the first or last episode of the season to <code>ratings_tbl1</code> and subset to only the data from the first and last episodes of each season.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ratings_tbl1 <span class="ot">&lt;-</span> ratings_tbl1 <span class="sc">%&gt;%</span> <span class="co">#overwrite ratings_tbl1</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span> <span class="co">#group by series</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(episode <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> episode <span class="sc">==</span> <span class="fu">max</span>(episode)) <span class="sc">%&gt;%</span> <span class="co">#get only the first and last episodes</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="co">#ungroup the data</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">episode_fl =</span> <span class="fu">recode</span>(episode, <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"first"</span>, <span class="at">.default =</span> <span class="st">"last"</span>)) <span class="co">#add a new variable indicatign whether or not the episode was first or last, and recode the variable to "first" or "last"</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings_tbl1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  ep_id viewers_7day series episode episode_fl
+  &lt;int&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     
+1     1         2.24      1       1 first     
+2     6         2.75      1       6 last      
+3     7         3.1       2       1 first     
+4    14         5.06      2       8 last      
+5    15         3.85      3       1 first     
+6    24         6.74      3      10 last      </code></pre>
+</div>
+</div>
+<p>This is not the same format as <code>ratings_tbl2</code>, which was the tidy format for our earlier “viewership growth within series” analysis. But it does contain the same information. To finish converting <code>ratings_tbl1</code> into <code>ratings_tbl2</code>, we need to make <code>ratings_tbl1</code> <em>wider</em>: we need to move some information in the rows (the info about whether each episode is the first or last episode of each season) into new columns.</p>
+<p>We can solve this problem using <code>pivot_wider</code>, which needs three pieces of information.</p>
+<ul>
+<li><p>What is a set of columns that uniquely identifies each observation? Put their names in the <code>id_cols</code> argument.</p></li>
+<li><p>Where should the names for the new columns come from? Put the name of the column you want to take the new variable names from in the <code>names_from</code> argument.</p></li>
+<li><p>What values should the new columns contain? Put the name of the columns you want to take the values from to <code>values_from</code> in the <code>values_from</code> argument.</p></li>
+</ul>
+<p>Note that if you don’t specify an <code>id_cols</code> argument, <code>pivot_wider</code> will assume that you want it to be every column except those in <code>names_from</code> and <code>values_from</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ratings_tbl2 <span class="ot">&lt;-</span> ratings_tbl1 <span class="sc">%&gt;%</span> <span class="co">#overwrite ratings_tbl2</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> series, <span class="co">#pivot with id as series</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from=</span>episode_fl, <span class="co">#get column names from episode_fl</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from=</span>viewers_7day) <span class="co">#fill in values form viewers_7day</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings_tbl2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  series first  last
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1      1  2.24  2.75
+2      2  3.1   5.06
+3      3  3.85  6.74
+4      4  6.6   9.45
+5      5  8.51 13.5 
+6      6 11.6  15.0 </code></pre>
+</div>
+</div>
+<p>Also note that any columns not included in <code>id_cols</code>, <code>names_from</code>, and <code>values_from</code> (e.g.&nbsp;<code>ep_id</code>) will simply be dropped.</p>
+<p>If we wanted to keep the info in <code>ep_id</code> as well, we would add it to the <code>values_from</code> argument:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ratings_tbl1 <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> series, </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from=</span>episode_fl, </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from=</span><span class="fu">c</span>(viewers_7day, ep_id)) <span class="co">#now including ep_id in the values_from call to include it in the output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+   series viewers_7day_first viewers_7day_last ep_id_first ep_id_last
+    &lt;dbl&gt;              &lt;dbl&gt;             &lt;dbl&gt;       &lt;int&gt;      &lt;int&gt;
+ 1      1               2.24              2.75           1          6
+ 2      2               3.1               5.06           7         14
+ 3      3               3.85              6.74          15         24
+ 4      4               6.6               9.45          25         34
+ 5      5               8.51             13.5           35         44
+ 6      6              11.6              15.0           45         54
+ 7      7              13.6              15.9           55         64
+ 8      8               9.46             10.0           65         74
+ 9      9               9.55             10.3           75         84
+10     10               9.62             10.0           85         94</code></pre>
+</div>
+</div>
+</section>
+<section id="pivoting-longer" class="level3">
+<h3 class="anchored" data-anchor-id="pivoting-longer"><strong>Pivoting Longer</strong></h3>
+<section id="the-basics-column-names-contain-variable-values" class="level4">
+<h4 class="anchored" data-anchor-id="the-basics-column-names-contain-variable-values"><strong>The Basics: Column Names Contain Variable Values</strong></h4>
+<p>Here is a snippet of WHO data on the number of tuberculosis cases in different years in different countries.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  country     `1999` `2000`
+  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+1 Afghanistan    745   2666
+2 Brazil       37737  80488
+3 China       212258 213766</code></pre>
+</div>
+</div>
+<p>If we wanted to compare tuberculosis cases over time by country (e.g.&nbsp;by plotting the year on the x-axis and case count on the y-axis with a line for each country), then this format is not tidy. We want to (graphically) compare years within countries, so there should be one observation per unit within each population (country-years). In this case, we do not observe units within each country-year, so each observation is a country-year. The variables then fall into place: the country and year labels, and the case counts.</p>
+<p>(Aside: if we had measured more data, then perhaps there would be more units within each population! Imagine if we had case-level information, like severity. Then we could view cases as observations within the country-year populations, and we would have variables like country, year, case ID, and severity.)</p>
+<p>So the tidy format here puts the variables (the year, the country, and the case counts) on the columns. There are 6 rows, one for each unique country-year combination. In this example, the tidy format is <em>longer</em>. That means to produce it using <code>table4a</code>, we need to lengthen it by moving some information in the column names (the info about the measurement year) into new rows.</p>
+<p>We can solve this problem using <code>pivot_longer</code>, which needs three pieces of information.</p>
+<ul>
+<li><p>Which are the columns that we want to expand into more rows? Put their names in the <code>cols</code> argument.</p></li>
+<li><p>We want to save the information in the names of those columns as values in new column(s) of our dataset. What should we name these new column(s)? This is the <code>names_to</code> argument.</p></li>
+<li><p>We also want to preserve the information in the <em>values</em> of those columns - so we should save them as values in a new column of our dataset. What should we name it? This is the <code>values_to</code> argument.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>table4a <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">1999</span><span class="st">`</span>, <span class="st">`</span><span class="at">2000</span><span class="st">`</span>), <span class="co">#pivot these columns</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">names_to =</span> <span class="st">"year"</span>, <span class="co">#new column name is year</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">values_to =</span> <span class="st">"cases"</span>) <span class="co">#use cases as the values of the column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  country     year   cases
+  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;
+1 Afghanistan 1999     745
+2 Afghanistan 2000    2666
+3 Brazil      1999   37737
+4 Brazil      2000   80488
+5 China       1999  212258
+6 China       2000  213766</code></pre>
+</div>
+</div>
+<p>Now our data is tidy!</p>
+</section>
+<section id="example-column-names-contain-multiple-variable-values" class="level4">
+<h4 class="anchored" data-anchor-id="example-column-names-contain-multiple-variable-values"><strong>Example: Column Names Contain Multiple Variable Values</strong></h4>
+<p>Here’s a more realistic (but still simplified) look at the WHO Tuberculosis data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>who_demo <span class="ot">&lt;-</span> who2 <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, year, <span class="fu">starts_with</span>(<span class="st">"sp"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="cf">function</span>(x) </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_remove</span>(x, <span class="at">pattern=</span><span class="st">"sp_"</span>), </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">"sp"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1999</span>, <span class="dv">2000</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"China"</span>))</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(who_demo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 16
+  country      year m_014 m_1524 m_2534 m_3544 m_4554 m_5564  m_65 f_014 f_1524
+  &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1 Afghanistan  1999     8     55     55     47     34     21     8    25    139
+2 Afghanistan  2000    52    228    183    149    129     94    80    93    414
+3 Brazil       1999   301   3662   5401   5827   4630   2634  2121   372   2909
+4 Brazil       2000  1894   7268  11568  11906   8623   5085  4494  1859   6719
+5 China        1999  1247  18961  29328  25095  24239  21564 21367  1431  15178
+6 China        2000  1131  19111  29399  25206  25593  21429 21771  1420  14536
+# ℹ 5 more variables: f_2534 &lt;dbl&gt;, f_3544 &lt;dbl&gt;, f_4554 &lt;dbl&gt;, f_5564 &lt;dbl&gt;,
+#   f_65 &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>This time, cases are broken down by gender (<code>f/m</code>) and by age range (<code>014\1524\2534\3544\4554\5564\65</code>).</p>
+<p>Suppose now that we are interested in comparing tuberculosis rates over time across (potentially) gender, age, and country. Then the most granular population we are trying to describe is a country, gender, age, and year combination, and like in the last example, we have no measured sub-units within that population, so an observation is a unique combination of country, gender, age, and year. (What a mouthful!)</p>
+<p>Once we’ve sorted that out, the variables fall into place: country, year, gender, age range, and case count. Values for gender and age range are currently located in the column names of <code>who_demo</code>, and values for case count are currently spread across multiple columns. So to tidy <code>who_demo</code> up, we need to use <code>pivot_longer()</code> to move the info in the columns into new rows.</p>
+<p>Conceptually, this is pretty similar to the last example: we want to use the information in <code>m_014</code>, <code>m_1524</code>, etc. to create new rows. So we should put those column names into the <code>cols</code> argument. But now, we want the information in their column names - the gender and age - to go into <em>two</em> new columns: gender and age. We can do this by specifying two column names in the <code>names_to</code> argument: <code>gender</code> and <code>age</code>.</p>
+<p>But how is <code>pivot_longer()</code> to know which part of the column name <code>m_014</code> corresponds to the gender, and which part corresponds to the age? You need to tell it that the pieces of information are separated by the “_” character using the <code>names_sep</code> argument.</p>
+<p>Finally, we can specify the name of the new column we want the values in the <code>m_014</code>, <code>m_1524</code>, etc. columns to go into with the <code>values_to</code> argument.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>who_demo <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">!</span>(country<span class="sc">:</span>year), <span class="co"># all columns aside from country to year</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">"gender"</span>, <span class="st">"age"</span>), <span class="co">#new columns named age and gender</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">names_sep =</span> <span class="st">"_"</span>,<span class="co">#current gender and age are a single variable separated by _</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">values_to =</span> <span class="st">"cases"</span>) <span class="co">#use the cases column for the values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 84 × 5
+   country      year gender age   cases
+   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
+ 1 Afghanistan  1999 m      014       8
+ 2 Afghanistan  1999 m      1524     55
+ 3 Afghanistan  1999 m      2534     55
+ 4 Afghanistan  1999 m      3544     47
+ 5 Afghanistan  1999 m      4554     34
+ 6 Afghanistan  1999 m      5564     21
+ 7 Afghanistan  1999 m      65        8
+ 8 Afghanistan  1999 f      014      25
+ 9 Afghanistan  1999 f      1524    139
+10 Afghanistan  1999 f      2534    160
+# ℹ 74 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="example-column-names-contain-variable-names-and-values" class="level4">
+<h4 class="anchored" data-anchor-id="example-column-names-contain-variable-names-and-values"><strong>Example: Column Names Contain Variable Names And Values</strong></h4>
+<p>So far we have seen examples where the column names contain variable values. But what if they contain names AND values?</p>
+<p>Let’s have a look at the <code>household</code> dataset (loaded with the <code>tidyr</code> package), which has the date of birth and names of two children in families. Let’s say that we wanted to investigate how children names relate to their date of birth.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(household)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  family dob_child1 dob_child2 name_child1 name_child2
+   &lt;int&gt; &lt;date&gt;     &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      
+1      1 1998-11-26 2000-01-29 Susan       Jose       
+2      2 1996-06-22 NA         Mark        &lt;NA&gt;       
+3      3 2002-07-11 2004-04-05 Sam         Seth       
+4      4 2004-10-10 2009-08-27 Craig       Khai       
+5      5 2000-12-05 2005-02-28 Parker      Gracie     </code></pre>
+</div>
+</div>
+<p>We are trying to learn about the population from which these children belong; it is hard to say precisely what that is without having more information about how this data was collected, but it is likely something like “all children living in a particular place in a particular year”. The units in this population are children. So to tidy this data, we’d want “date of birth” and “name” to be two variables/columns associated with an observation/row (a child). We know we want to use <code>pivot_longer()</code>, because we want to make <code>household</code> longer by creating new variables. But wait! The names of the “date of birth”/“name” variables AND the values of the “child” variable are BOTH in the column names of <code>household</code>!</p>
+<p>Inspecting <a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">the documentation</a> for <code>pivot_longer()</code> very carefully reveals that you can use a special specification of the <code>names_to</code> argument to resolve this problem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>household <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>family, <span class="co"># all columns except family</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"child"</span>), <span class="co">#change column names, .value is a placeholder</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">names_sep =</span> <span class="st">"_"</span>) <span class="co"># dob and child are currently separated by _ in one single variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   family child  dob        name  
+    &lt;int&gt; &lt;chr&gt;  &lt;date&gt;     &lt;chr&gt; 
+ 1      1 child1 1998-11-26 Susan 
+ 2      1 child2 2000-01-29 Jose  
+ 3      2 child1 1996-06-22 Mark  
+ 4      2 child2 NA         &lt;NA&gt;  
+ 5      3 child1 2002-07-11 Sam   
+ 6      3 child2 2004-04-05 Seth  
+ 7      4 child1 2004-10-10 Craig 
+ 8      4 child2 2009-08-27 Khai  
+ 9      5 child1 2000-12-05 Parker
+10      5 child2 2005-02-28 Gracie</code></pre>
+</div>
+</div>
+<p>The special <code>".value"</code> specification says that we want to use the first component of the pivoted column name as a variable name, and make a new column with values coming from the second component of the pivoted column name. The second thing we pass into <code>names_to</code> names that new column.</p>
+<p>This process is best described by <a href="https://r4ds.hadley.nz/data-tidy#fig-pivot-names-and-values">Figure 6.7 from R4DS</a>.</p>
+<p>But wait! Row 4 is a bunch of NAs! Does that mean this data isn’t tidy??</p>
+<p>The fact that there is an NA does not necessarily mean that this data is untidy. To be clear: for the purpose of the tidy data definition, an indicator for a missing value <em>is</em> a value.</p>
+<p>Whether this data is untidy depends on the data context. Essentially, the question we should ask is: “Is row 4 an observation that we are missing information about? Or is it simply an artifact of our pivoting procedure?”</p>
+<p>Suppose this study was designed to only sample families with two children. Then, row 4 could be a real observation that we are missing information about: family 2 should have only been included if they had two children. Perhaps this reflects family 2 filling out a survey that asks them the number of children (in which they listed 2), but then getting distracted and forgetting to fill out the information for their second child. In this case, our data is tidy, and the tidy data format is a real advantage: it reveals missing information in our data set that was not obvious from the original untidy format.</p>
+<p>Now suppose this study just samples families at large. We know from experience about the world that some families have one children, some families have two, and some families have more. Then, it seems possible that row 4 is <em>not</em> a real observation: family 2 might just have a single child. In this case, we have a row for something that is not an observation, so we would like to tidy up by dropping it. We could actually have done this by altering our original <code>pivot_wider()</code> call as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>household <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>family, </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"child"</span>), </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">names_sep =</span> <span class="st">"_"</span>, </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">values_drop_na =</span> <span class="cn">TRUE</span>) <span class="co">#remove NAs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 4
+  family child  dob        name  
+   &lt;int&gt; &lt;chr&gt;  &lt;date&gt;     &lt;chr&gt; 
+1      1 child1 1998-11-26 Susan 
+2      1 child2 2000-01-29 Jose  
+3      2 child1 1996-06-22 Mark  
+4      3 child1 2002-07-11 Sam   
+5      3 child2 2004-04-05 Seth  
+6      4 child1 2004-10-10 Craig 
+7      4 child2 2009-08-27 Khai  
+8      5 child1 2000-12-05 Parker
+9      5 child2 2005-02-28 Gracie</code></pre>
+</div>
+</div>
+<p>This discussion highlights the importance of knowing the context in which your data is collected for tidying (and for your analysis at large). Here and elsewhere, it really pays to be in close contact with the people who generated your data.</p>
+</section>
+</section>
+</section>
+<section id="separating-and-uniting" class="level2">
+<h2 class="anchored" data-anchor-id="separating-and-uniting">Separating and Uniting</h2>
+<p>The <code>tidyr</code> package has a function for gluing columns together (<code>unite</code>) and for cutting columns apart (<code>separate</code>). Why might this help us tidy? Here is another snippet of WHO Tuberculosis data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>table3 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Brazil"</span>, <span class="st">"China"</span>, <span class="st">"China"</span>),</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">1999</span>, <span class="dv">2000</span>, <span class="dv">1999</span>, <span class="dv">2000</span>, <span class="dv">1999</span>, <span class="dv">2000</span>),</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">rate =</span> <span class="fu">c</span>(<span class="st">"745/19987071"</span>, <span class="st">"2666/20595360"</span>, <span class="st">"37737/172006362"</span>, </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"80488/174504898"</span>, <span class="st">"212258/1272915272"</span>, <span class="st">"213766/1280428583"</span>))</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>table3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  country      year rate             
+  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;            
+1 Afghanistan  1999 745/19987071     
+2 Afghanistan  2000 2666/20595360    
+3 Brazil       1999 37737/172006362  
+4 Brazil       2000 80488/174504898  
+5 China        1999 212258/1272915272
+6 China        2000 213766/1280428583</code></pre>
+</div>
+</div>
+<p>The <code>rate</code> column contains the values of two variables: case counts and population counts. We would like to snip it apart at the “/” character to create two columns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>table5 <span class="ot">&lt;-</span> table3 <span class="sc">%&gt;%</span> <span class="fu">separate</span>(<span class="at">col =</span> rate, </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"cases"</span>, <span class="st">"population"</span>))</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>table5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  country      year cases  population
+  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+1 Afghanistan  1999 745    19987071  
+2 Afghanistan  2000 2666   20595360  
+3 Brazil       1999 37737  172006362 
+4 Brazil       2000 80488  174504898 
+5 China        1999 212258 1272915272
+6 China        2000 213766 1280428583</code></pre>
+</div>
+</div>
+<p>The <code>col</code> argument specifies the column we want to separate, and the <code>into</code> argument specifies the names of the new columns. The <code>sep</code> argument (not specified here) specifies where we want to cut. The default is pretty clever - it separates at any non-alphanumeric value. (How this is accomplished involves <em>regular expressions</em>, which are very useful when working with character data. We will learn more about regular expressions in STAT 545B. )</p>
+</section>
+<section id="the-merits-of-untidy-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-merits-of-untidy-data">The Merits of Untidy Data</h2>
+<p>As we’ve seen, tidy data is often very helpful. But there are also times when <em>un</em>tidy data is good. Here are a few reasons:</p>
+<ul>
+<li><p>The format that lends itself best to fast computations might not be tidy. <a href="http://varianceexplained.org/r/tidy-genomics/">Case Study: Tidy Genomics</a>.</p></li>
+<li><p>Untidy data is often easier for humans to interpret and edit. See <a href="https://arxiv.org/pdf/2106.15005.pdf">Untidy Data: The Unreasonable Effectiveness of Tables</a>.</p></li>
+<li><p>We could lose important information about the context in which the data was collected by cleaning and tidying raw data. This can have important ethical implications; see Chapter 5 of the book <a href="https://data-feminism.mitpress.mit.edu/">“Data Feminism”</a> by Catherine D’Ignazio and Lauren F. Klein.</p></li>
+</ul>
+<p>In summary, tidiness is a very useful concept, and tidying data is often useful. But we should remember that absolutes are few and far between in data science and statistics. Just because tidying data is <em>often</em> useful, doesn’t mean it’s <em>always</em> useful.</p>
+</section>
+<section id="worksheet-a4" class="level2">
+<h2 class="anchored" data-anchor-id="worksheet-a4">Worksheet A4</h2>
+<p>Spend the rest of this class and next class working through Worksheet A4.</p>
+<ul>
+<li>Finished attempting all of the questions? Then do the optional <a href="https://r4ds.hadley.nz/data-tidy">R4DS Tidying</a> reading, and maybe even do some of the exercises for extra practice.</li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><p>Video Lecture: <a href="https://youtu.be/qivE6exNsZI">tidyr for Pivoting and Tidy Data</a></p></li>
+<li><p>To learn how to use the <code>pivot_*()</code> functions, consult tidyr’s <a href="https://tidyr.tidyverse.org/articles/pivot.html">pivot vignette</a>.</p></li>
+<li><p>To get a better understanding of the concept of tidy data:</p>
+<ul>
+<li><p>Hadley Wickham’s <a href="https://vita.had.co.nz/papers/tidy-data.pdf">paper on Tidy Data</a> is the gold standard treatment of tidy data.</p></li>
+<li><p>A “code heavy” version of the tidy data paper is tidyr’s <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">“Tidy Data” vignette</a>.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="attribution" class="level2">
+<h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
+<p>Albert Y. Kim inspired the in-class exercises using the <code>drinks</code> data set from <code>fivethirtyeight</code>. Allison Horst and Julia Lowndes created the illustrated tidy data series. Alison Hill inspired the Great British Bakeoff example. We are immensely grateful to these people for creating amazing educational materials!</p>
+<p>We would also like to thank Samantha Tyner for pointing us towards the Data Feminism book during her week as the curator of the <a href="https://twitter.com/WomenInStat">@WomenInStat</a> Twitter account.</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-tidyR" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wickham H (2014) Tidy data. Journal of Statistical Software 59(10):1–23. <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a></div>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

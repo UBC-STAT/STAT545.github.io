@@ -42,6 +42,7 @@ This course will feature short lectures and in-class demonstrations so students 
 
 **STAT 545 A (Part I):**
 
+
 | Week | Date | Topic | In-class work |
 |--------|---------------|---------------|---------------|
 | 1 | Tuesday Sept 2 |  [Installation](../lectures/lec1a_installation.qmd)|  |
