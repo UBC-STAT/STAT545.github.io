@@ -45,7 +45,8 @@ website:
         - webpages/lectures/lec5_tidydata.qmd
         - webpages/lectures/lec6a_modelfitting.qmd
         - webpages/lectures/lec6b_dates.qmd
-        - webpages/lectures/lec7_rrdata_tibble.qmd
+        - webpages/lectures/lec7a_readwritedata.qmd
+        - webpages/lectures/lec7b_joiningtibbles.qmd
         
 
         
@@ -73,7 +74,9 @@ website:
       background: light
       collapse-level: 2
       contents: 
-        - webpages/casestudies/nycflights.qmd
+        - webpages/casestudies/fev_datamanipulation.qmd
+        - webpages/casestudies/fev_datavis.qmd
+        - webpages/casestudies/nycflights_dates.qmd
   
         
 

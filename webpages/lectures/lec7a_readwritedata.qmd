@@ -1,0 +1,153 @@
+---
+title: "Lecture 7a: Reading and Writing Data"
+subtitle: "October 14, 2025"
+date-modified: last-modified
+---
+
+## Reading and Writing Data in R
+
+From today’s class, students are anticipated to be able to:
+
+-   Read and write a delimited file, like a csv, from R using the `readr` package.
+
+-   Make relative paths using the `here::here()` function.
+
+-   Read data from a spreadsheet
+
+-   Read and write R binary files (rds files) from R.
+
+Required packages:
+
+```{r, message = F, warning = F}
+library(tidyverse)
+library(here)
+```
+
+::: callout-important
+In some of the eariler examples, I will be demonstrating using absolute and relative file paths. On Mac OS, files are written with forward slashes (i.e., datasets/penguins.csv). On Windows, backslashes are used (i.e., datasets\\penguins.csv). My examples are writted for MacOS - the only thing you'd need to change in the examples are the direction of the slashes if you plan to reproduce my code!
+
+Later in the lecture, we discuss the `here::here()` function which solves this problem completely.
+:::
+
+Common file formats include
+
+-   *Spreadsheets*: Excel, Google Sheets, Numbers
+
+-   *Delimited files*: Plaintext files containing data, e.g. comma separated values (CSVs), tab separated values (TSVs)
+
+-   *R binary*: A serialization of an R object to a binary file. Basically, that means that it can be loaded in and out of R, but it can’t be opened by anything but R.
+
+CSVs are the most “one-size-fits-all”: you can open them in spreadsheet software, but they are also plaintext, so are lightweight, can be opened in any text editor, and can be “diff”ed. Spreadsheets are nice for human interaction (like through Excel), but can be clunky in R. R binary is quite restrictive and we don't tend to store data this way. Our lecture will focus on CSVs.
+
+### Comma Separated Values (CSVs)
+
+[Jenny Bryan's website](https://stat545.com/import-export.html#file-io-overview:~:text=Chapter%209%20Writing%20and%20reading%20files) has a fabulous section on reading and writing files in R. We're going to summarize a few of the important functions here, but if you'd like to learn more then check out that website for more in-depth explorations!
+
+We are going to focus on reading and writing data using the `readr` package, because we think it has the most “work right out of the box” experience.
+
+We will start by talking about how to read and write Comma Separated Value (CSV) files (files that end in .csv). CSVs are often used to store data. When the `penguins` data set is stored as a .csv, the first few entries look like when opened as a text file:
+
+`species,island,bill_len,bill_dep,flipper_len,body_mass,sex,year`
+
+`Adelie,Torgersen,39.1,18.7,181,3750,male,2007 Adelie,Torgersen,39.5,17.4,186,3800,female,2007 Adelie,Torgersen,40.3,18,195,3250,female,2007 Adelie,Torgersen,NA,NA,NA,NA,NA,2007 Adelie,Torgersen,36.7,19.3,193,3450,female,2007 Adelie,Torgersen,39.3,20.6,190,3650,male,2007 Adelie,Torgersen,38.9,17.8,181,3625,female,2007 Adelie,Torgersen,39.2,19.6,195,4675,male,2007`
+
+Now, this isn't exactly easy for humans to read, but saving data as CSVs has its advantages. The data is stored in a simple form (lightweight - files aren't large) that has broad compatibility and can be used in a wide range of applications. And of course, we can use functions in R to make it more readable. A few main functions of note are
+
+-   `read_csv()`: tidyverse equivalent of `read.csv()` used to read from a CSV to a tibble
+
+-   `write_csv()`: tidyverse equivalent of `write.csv()` used to export a tibble into CSV format
+
+Let's assume that a file called `penguins.csv` is saved in a `dataset` folder in our current directory. We can read in, and save the tibble as a variable called `penguins` using:
+
+```{r}
+penguins <- read_csv("datasets/penguins.csv")
+
+head(penguins)
+```
+
+Pretty easy! Note that the file path needs to be a string, relative to where you are now in the directory (i.e., where the R script you're working on is saved. You can always call `getwd()` to see what directory you're working on currently, and we'll show more tools for dealing with directories later in this lecture.)
+
+We can manipulate the data, and save the output as a new CSV. For example,
+
+```{r}
+penguins_2007 <- penguins %>%
+  filter(year == 2007) #filter only on year 2007
+
+write_csv(penguins_2007, "datasets/penguins_2007.csv") #save csv in datasets folder, name as penguins_2007.csv
+```
+
+Now, in my `datasets` folder, I have `penguins` and `penguins_2007.`
+
+::: callout-note
+Want to read and write to an Excel file? The `readxl` package in the tidyverse is for you!
+
+For the very niche option of R binary: `read_rds()` and `write_rds()`.
+:::
+
+### Using Relative Paths
+
+As previously mentioned, we need to specify where we are reading/writing our data from/to. The best practice is to use a *relative path*. This helps with reproducibility and automation!
+
+I could always read in my `penguins` dataset using an absolute file path where the file path begins at the root of your computer (for me, it is a long chain of folders in `/Users/......../STAT545/stat454.github.io/webpages/lectures/datasets/penguins.csv`). This, however, is not best practice. As previously mentioned, this string telling me where the file path is can also differ for Windows users! I'd have to manually change all of the forward slashes to backslashes to make this run on Windows.
+
+We will use the `here` package for relative file paths. Let's (install, if necessary, and) load it and call the function `here()`\
+
+```{r, warning = F, message = F}
+# install.packages("here")
+library(here)
+here()
+```
+
+I get that long chain of folders where this R Project (which I used to build this website) is stored. The cool thing about `here` is that I can specify a file path relative to my project root (the above location) without using any operating system-specific strings.
+
+For example, the `penguins.csv` data set is located in `webpages` \> `lectures` \> `datasets` within my R project folder. I can access it by:
+
+```{r}
+penguins <- read_csv(here("webpages", "lectures", "datasets", "penguins.csv"))
+head(penguins) #view first few entries of the tibble
+```
+
+This is reproducible!
+
+## 
+
+::: {.callout-warning icon="false"}
+**Exercise**:
+
+Open RStudio. Go to Session =\> Set Working Directory =\> Choose Directory and then pick a folder you would like to read and write data into. Then, run the following piece of code in a new R Script:
+
+```         
+library(tidyverse) 
+library(gapminder)
+
+gap_asia_2007 <- gapminder %>% 
+  filter(year == 2007, continent == "Asia")
+head(gap_asia_2007)
+```
+
+Write `gap_asia_2007` to a comma-separated value (csv) file named `exported_file.csv` with just one command:
+
+```         
+write_csv(FILL_THIS_IN, "exported_file.csv")
+```
+
+Check out your files after executing this line!
+
+Now, let’s practice reading csvs by reading the file we just wrote back into R:
+
+```         
+gap_asia_2007_in <- read_csv("FILL_THIS_IN")
+```
+
+Check out your R environment after executing this line!
+
+Also notice the output of running `read_csv`. This tells us about the types of variables that were read in. It’s a good habit to check this every time you run a `read_` function. Sometimes we might want to change how these variable types are specified.
+:::
+
+## Resources
+
+-   Video lecture: [Reading and Writing Data](https://youtu.be/2nHuNu6Zaqk)
+
+<!-- -->
+
+-   The [“Writing and Reading files”](https://stat545.com/import-export.html) chapter of stat545.com.
