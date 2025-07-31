@@ -92,7 +92,7 @@ levels(penguins$species)
 
 We see here, the levels of the factor are ordered alphabetically.
 
-#### Reordering Levels of a Factors Manually 
+#### Reordering Levels of a Factors Manually
 
 There are many ways to reorder the levels of a factor in R. To reorder the levels of the factor, we can use built in R functions such as `ordered()`:
 
@@ -206,7 +206,7 @@ levels(penguins$species)
 ::: {.callout-warning icon="false"}
 Exercise: the `gapminder` dataset contains information on GDP per capita (`gdpPercap`) by country. Add to the following `ggplot` to visualize the GDP per capita, ordered by GDP per capita, for countries in Asia in 2007. Copy the code block to edit and run it in R.
 
-``` R
+``` r
 library(gapminder)
 library(tidyverse)
 
@@ -236,7 +236,7 @@ gapminder %>%
   
 ```
 
-### Expanding Factor Levels 
+### Expanding Factor Levels
 
 Perhaps we may want to visualize that in our data set, there are no Emperor or King penguins. To do so, we can add "Emperor" and "King" as possible factor levels for `species` in our `penguins` data set. We do so by `fct_expand()`
 
@@ -294,7 +294,7 @@ penguins %>% #this is the original data frame with alphabetical ordering
 
 ## 
 
-## Dates and Times 
+## Dates and Times
 
 Often you will need to work with dates and times in your data. For example, we could have had a variable in the FEV data set that contains the date of each patient visit.
 
@@ -325,6 +325,8 @@ Finished attempting all of the questions? Then do the optional [R4DS Factors](ht
 ## Additional Resources
 
 -   Video lecture: [Special Data Types in R: Dates, Times, and Factors](https://youtu.be/TTNfLtEUFDQ)
+
+-   Chapter IV of [https://stat545.com/](https://stat545.com/date-time.html)
 
 -   The [forcats](https://forcats.tidyverse.org/) package page and reference guide on page.
 
