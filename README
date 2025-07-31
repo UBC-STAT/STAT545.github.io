@@ -10,6 +10,8 @@ To edit the website:
 - Edit the webpages (.qmd files) in the webpages folder
 - If adding any webpages, add them to the _quarto.yml file 
 
+NOTE: the _quarto.yml file is white space sensitive.
+
 MDA and Collaborative project instructions are hidden until the page goes live? (Grace - update instructions once this is set up) 
 
 Running the course:

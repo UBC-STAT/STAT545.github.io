@@ -98,11 +98,11 @@ These questions have implicitly defined our *observations*: they are individual 
 library(bakeoff)
 library(tidyverse)
 
-ratings_tbl1 <- ratings %>% 
-  mutate(ep_id = row_number()) %>% 
-  select(ep_id, viewers_7day, series, episode) 
+ratings_tbl1 <- ratings %>% #save output to new tibble called ratings_tbl1
+  mutate(ep_id = row_number()) %>% # create variable for episode number
+  select(ep_id, viewers_7day, series, episode) #select specific columns
 
-head(ratings_tbl1)
+head(ratings_tbl1) #view first few rows of tibble
 ```
 
 Every row is an observation (a unique episode), and the columns are variables (episode number across series, 7-day viewership, series, and episode number within series).
@@ -110,26 +110,26 @@ Every row is an observation (a unique episode), and the columns are variables (e
 This is a typical example where the tidy format makes it easy to do our analysis. For example, to investigate these questions, we might make a bar plot of the number of viewers in millions within a 7-day window per episode, coloured by series. The following code uses the tidy tibble `ratings_tbl1` to make this bar plot. Notice that it was easy to use our graphing environment of choice (`ggplot2` in the tidyverse) to make the plot *because* our data is tidy, and the tidyverse is designed to work with tidy data.
 
 ```{r}
-series_labels <- ratings_tbl1 %>% 
-  mutate(series=as.factor(series)) %>% 
-  group_by(series) %>% 
-  summarize(y_position = median(viewers_7day) + 1,
-            x_position = mean(ep_id))
+series_labels <- ratings_tbl1 %>% #save output to series_labels
+  mutate(series=as.factor(series)) %>% #ensure series variable is a factor (categorical variable)
+  group_by(series) %>% #group by series
+  summarize(y_position = median(viewers_7day) + 1, # calculate positions for the bar charts
+            x_position = mean(ep_id)) #
 
 # make the plot
 ratings_tbl1 %>% 
-  mutate(series=as.factor(series)) %>% 
-  ggplot(aes(x = ep_id, y = viewers_7day, fill = series)) +
-    geom_col(alpha = .9) + 
-    ggtitle("7-Day Viewership across Series 1-10") +
-    geom_text(data = series_labels, aes(label = series,
+  mutate(series=as.factor(series)) %>% # ensure series is a factor variable
+  ggplot(aes(x = ep_id, y = viewers_7day, fill = series)) + #set x and y axes, tell ggplot that we want things coloured by series
+    geom_col(alpha = .9) + #tell ggplot we want a boxplot, change translucency with alpha
+    ggtitle("7-Day Viewership across Series 1-10") + #add a title
+    geom_text(data = series_labels, aes(label = series, #add text for series numbers
                                       x = x_position, 
                                       y = y_position)) +
-    theme_classic() +  
-    scale_fill_manual(values = bakeoff_palette(), 
-                    guide = "none") +
-    xlab("Episode Number") + 
-    ylab("7-Day Viewership (millions)")
+    theme_classic() +  #add a classic theme
+    scale_fill_manual(values = bakeoff_palette(),
+                    guide = "none") + #set the colours so they aren't rainbow
+    xlab("Episode Number") +  #add x axis label
+    ylab("7-Day Viewership (millions)") #add y axis label
 ```
 
 Now let’s consider a different set of questions:
@@ -142,7 +142,11 @@ To investigate these questions, we might make a bar plot like the one below disp
 
 ```{r, echo = FALSE}
 ratings_tbl2 <- ratings_tbl1 %>% mutate(series=as.factor(series)) %>% 
-  group_by(series) %>% filter(episode == 1 | episode == max(episode)) %>% ungroup() %>% mutate(episode = recode(episode, `1` = "first", .default = "last")) %>% pivot_wider(id_cols=series, names_from=episode, values_from=viewers_7day)
+  group_by(series) %>% 
+  filter(episode == 1 | episode == max(episode)) %>% 
+  ungroup() %>% 
+  mutate(episode = recode(episode, `1` = "first", .default = "last")) %>%
+  pivot_wider(id_cols=series, names_from=episode, values_from=viewers_7day)
 ```
 
 ```{r}
@@ -155,23 +159,21 @@ First, we can calculate the percentage change in viewership using `mutate()`:
 ratings_tbl2 <- ratings_tbl2 %>%  #overwrite original df so new variable saves
    mutate(pct_change = (last - first)/first) #calculate percent change
 
-ratings_tbl2
+head(ratings_tbl2) #view first few rows of tibble
 ```
 
 Then, we can visualize this using a bar chart:
 
 ```{r}
 ratings_tbl2 %>% 
-  ggplot(aes(x = fct_rev(series), y=pct_change)) + 
-  geom_col(fill = bakeoff::bakeoff_colors("baltic"), alpha = .5) + 
-  labs(x = "Series", y = "% Increase in Viewers, First to Last Episode") +
-  ggtitle("% Increase in Viewers from Premiere to Finale") + 
-  scale_y_continuous(labels = scales::percent) +
-  theme_classic() + 
-  coord_flip() 
+  ggplot(aes(x = fct_rev(series), y=pct_change)) + #initialize the plot
+  geom_col(fill = bakeoff::bakeoff_colors("baltic"), alpha = .5) + #set bar chart with fill colours, semi-translucent 
+  labs(x = "Series", y = "% Increase in Viewers, First to Last Episode") + #add x labels
+  ggtitle("% Increase in Viewers from Premiere to Finale") + #add y labels
+  scale_y_continuous(labels = scales::percent) + #change y axis to percentage 
+  theme_classic() + #add classic theme
+  coord_flip() #flip horizontally
 ```
-
-![](https://stat545.stat.ubc.ca/notes/notes-a08_files/figure-html/unnamed-chunk-8-1.png)
 
 ::: {.callout-warning icon="false"}
 Exercise: with a partner or a small group:
@@ -199,26 +201,14 @@ By now, you should have a sense for why this might be useful for tidying!
 
 Here is some code to create a variable for whether an episode is the first or last episode of the season to `ratings_tbl1` and subset to only the data from the first and last episodes of each season.
 
-```         
-ratings_tbl1 <- ratings_tbl1 %>% 
- group_by(series) %>% 
-  filter(episode == 1 | episode == max(episode)) %>%
-  ungroup() %>% 
-  mutate(episode_fl = recode(episode, `1` = "first", .default = "last"))
+```{r}
+ratings_tbl1 <- ratings_tbl1 %>% #overwrite ratings_tbl1
+ group_by(series) %>% #group by series
+  filter(episode == 1 | episode == max(episode)) %>% #get only the first and last episodes
+  ungroup() %>% #ungroup the data
+  mutate(episode_fl = recode(episode, `1` = "first", .default = "last")) #add a new variable indicatign whether or not the episode was first or last, and recode the variable to "first" or "last"
 
 head(ratings_tbl1)
-```
-
-```         
-## # A tibble: 6 × 5
-##   ep_id viewers_7day series episode episode_fl
-##   <int>        <dbl>  <dbl>   <dbl> <chr>     
-## 1     1         2.24      1       1 first     
-## 2     6         2.75      1       6 last      
-## 3     7         3.1       2       1 first     
-## 4    14         5.06      2       8 last      
-## 5    15         3.85      3       1 first     
-## 6    24         6.74      3      10 last
 ```
 
 This is not the same format as `ratings_tbl2`, which was the tidy format for our earlier “viewership growth within series” analysis. But it does contain the same information. To finish converting `ratings_tbl1` into `ratings_tbl2`, we need to make `ratings_tbl1` *wider*: we need to move some information in the rows (the info about whether each episode is the first or last episode of each season) into new columns.
@@ -233,52 +223,24 @@ We can solve this problem using `pivot_wider`, which needs three pieces of infor
 
 Note that if you don’t specify an `id_cols` argument, `pivot_wider` will assume that you want it to be every column except those in `names_from` and `values_from`.
 
-```         
-ratings_tbl2 <- ratings_tbl1 %>% 
-  pivot_wider(id_cols = series, 
-              names_from=episode_fl, 
-              values_from=viewers_7day)
+```{r}
+ratings_tbl2 <- ratings_tbl1 %>% #overwrite ratings_tbl2
+  pivot_wider(id_cols = series, #pivot with id as series
+              names_from=episode_fl, #get column names from episode_fl
+              values_from=viewers_7day) #fill in values form viewers_7day
 
 head(ratings_tbl2)
-```
-
-```         
-## # A tibble: 6 × 3
-##   series first  last
-##    <dbl> <dbl> <dbl>
-## 1      1  2.24  2.75
-## 2      2  3.1   5.06
-## 3      3  3.85  6.74
-## 4      4  6.6   9.45
-## 5      5  8.51 13.5 
-## 6      6 11.6  15.0
 ```
 
 Also note that any columns not included in `id_cols`, `names_from`, and `values_from` (e.g. `ep_id`) will simply be dropped.
 
 If we wanted to keep the info in `ep_id` as well, we would add it to the `values_from` argument:
 
-```         
+```{r}
 ratings_tbl1 %>% 
   pivot_wider(id_cols = series, 
               names_from=episode_fl, 
-              values_from=c(viewers_7day, ep_id))
-```
-
-```         
-## # A tibble: 10 × 5
-##    series viewers_7day_first viewers_7day_last ep_id_first ep_id_last
-##     <dbl>              <dbl>             <dbl>       <int>      <int>
-##  1      1               2.24              2.75           1          6
-##  2      2               3.1               5.06           7         14
-##  3      3               3.85              6.74          15         24
-##  4      4               6.6               9.45          25         34
-##  5      5               8.51             13.5           35         44
-##  6      6              11.6              15.0           45         54
-##  7      7              13.6              15.9           55         64
-##  8      8               9.46             10.0           65         74
-##  9      9               9.55             10.3           75         84
-## 10     10               9.62             10.0           85         94
+              values_from=c(viewers_7day, ep_id)) #now including ep_id in the values_from call to include it in the output
 ```
 
 ### **Pivoting Longer**
@@ -287,38 +249,19 @@ ratings_tbl1 %>%
 
 Here is a snippet of WHO data on the number of tuberculosis cases in different years in different countries.
 
-```         
-table4a
-```
+```{r, echo  = F}
+table4a <- tibble(country = c("Afghanistan", "Brazil", "China"),
+                  `1999` = c(745, 37737, 212258),
+                  `2000` = c(2666, 80488, 213766))
 
-```         
-## # A tibble: 3 × 3
-##   country     `1999` `2000`
-##   <chr>        <dbl>  <dbl>
-## 1 Afghanistan    745   2666
-## 2 Brazil       37737  80488
-## 3 China       212258 213766
+table4a
 ```
 
 If we wanted to compare tuberculosis cases over time by country (e.g. by plotting the year on the x-axis and case count on the y-axis with a line for each country), then this format is not tidy. We want to (graphically) compare years within countries, so there should be one observation per unit within each population (country-years). In this case, we do not observe units within each country-year, so each observation is a country-year. The variables then fall into place: the country and year labels, and the case counts.
 
 (Aside: if we had measured more data, then perhaps there would be more units within each population! Imagine if we had case-level information, like severity. Then we could view cases as observations within the country-year populations, and we would have variables like country, year, case ID, and severity.)
 
-So the tidy format here puts the variables (the year, the country, and the case counts) on the columns. There are 6 rows, one for each unique country-year combination.
-
-```         
-## # A tibble: 6 × 3
-##   country     year   cases
-##   <chr>       <chr>  <dbl>
-## 1 Afghanistan 1999     745
-## 2 Afghanistan 2000    2666
-## 3 Brazil      1999   37737
-## 4 Brazil      2000   80488
-## 5 China       1999  212258
-## 6 China       2000  213766
-```
-
-Notice that compared to `table4a`, the tidy format is *longer*. That means to produce it using `table4a`, we need to lengthen it by moving some information in the column names (the info about the measurement year) into new rows.
+So the tidy format here puts the variables (the year, the country, and the case counts) on the columns. There are 6 rows, one for each unique country-year combination. In this example, the tidy format is *longer*. That means to produce it using `table4a`, we need to lengthen it by moving some information in the column names (the info about the measurement year) into new rows.
 
 We can solve this problem using `pivot_longer`, which needs three pieces of information.
 
@@ -328,29 +271,19 @@ We can solve this problem using `pivot_longer`, which needs three pieces of info
 
 -   We also want to preserve the information in the *values* of those columns - so we should save them as values in a new column of our dataset. What should we name it? This is the `values_to` argument.
 
-```         
-table4a %>% pivot_longer(cols = c(`1999`, `2000`), 
-                         names_to = "year", 
-                         values_to = "cases")
+```{r}
+table4a %>% pivot_longer(cols = c(`1999`, `2000`), #pivot these columns
+                         names_to = "year", #new column name is year
+                         values_to = "cases") #use cases as the values of the column
 ```
 
-```         
-## # A tibble: 6 × 3
-##   country     year   cases
-##   <chr>       <chr>  <dbl>
-## 1 Afghanistan 1999     745
-## 2 Afghanistan 2000    2666
-## 3 Brazil      1999   37737
-## 4 Brazil      2000   80488
-## 5 China       1999  212258
-## 6 China       2000  213766
-```
+Now our data is tidy!
 
 #### **Example: Column Names Contain Multiple Variable Values**
 
 Here’s a more realistic (but still simplified) look at the WHO Tuberculosis data.
 
-```         
+```{r}
 who_demo <- who2 %>% 
   select(country, year, starts_with("sp")) %>%
   rename_with(function(x) 
@@ -360,20 +293,6 @@ who_demo <- who2 %>%
   filter(country %in% c("Afghanistan", "Brazil", "China"))
 
 head(who_demo)
-```
-
-```         
-## # A tibble: 6 × 16
-##   country      year m_014 m_1524 m_2534 m_3544 m_4554 m_5564  m_65 f_014 f_1524
-##   <chr>       <dbl> <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <dbl> <dbl>  <dbl>
-## 1 Afghanistan  1999     8     55     55     47     34     21     8    25    139
-## 2 Afghanistan  2000    52    228    183    149    129     94    80    93    414
-## 3 Brazil       1999   301   3662   5401   5827   4630   2634  2121   372   2909
-## 4 Brazil       2000  1894   7268  11568  11906   8623   5085  4494  1859   6719
-## 5 China        1999  1247  18961  29328  25095  24239  21564 21367  1431  15178
-## 6 China        2000  1131  19111  29399  25206  25593  21429 21771  1420  14536
-## # ℹ 5 more variables: f_2534 <dbl>, f_3544 <dbl>, f_4554 <dbl>, f_5564 <dbl>,
-## #   f_65 <dbl>
 ```
 
 This time, cases are broken down by gender (`f/m`) and by age range (`014\1524\2534\3544\4554\5564\65`).
@@ -388,28 +307,12 @@ But how is `pivot_longer()` to know which part of the column name `m_014` corres
 
 Finally, we can specify the name of the new column we want the values in the `m_014`, `m_1524`, etc. columns to go into with the `values_to` argument.
 
-```         
-who_demo %>% pivot_longer(cols = !(country:year),
-                          names_to = c("gender", "age"),
-                          names_sep = "_",
-                          values_to = "cases")
-```
+```{r}
+who_demo %>% pivot_longer(cols = !(country:year), # all columns aside from country to year
+                          names_to = c("gender", "age"), #new columns named age and gender
+                          names_sep = "_",#current gender and age are a single variable separated by _
+                          values_to = "cases") #use the cases column for the values
 
-```         
-## # A tibble: 84 × 5
-##    country      year gender age   cases
-##    <chr>       <dbl> <chr>  <chr> <dbl>
-##  1 Afghanistan  1999 m      014       8
-##  2 Afghanistan  1999 m      1524     55
-##  3 Afghanistan  1999 m      2534     55
-##  4 Afghanistan  1999 m      3544     47
-##  5 Afghanistan  1999 m      4554     34
-##  6 Afghanistan  1999 m      5564     21
-##  7 Afghanistan  1999 m      65        8
-##  8 Afghanistan  1999 f      014      25
-##  9 Afghanistan  1999 f      1524    139
-## 10 Afghanistan  1999 f      2534    160
-## # ℹ 74 more rows
 ```
 
 #### **Example: Column Names Contain Variable Names And Values**
@@ -418,45 +321,19 @@ So far we have seen examples where the column names contain variable values. But
 
 Let’s have a look at the `household` dataset (loaded with the `tidyr` package), which has the date of birth and names of two children in families. Let’s say that we wanted to investigate how children names relate to their date of birth.
 
-```         
+```{r}
 head(household)
-```
-
-```         
-## # A tibble: 5 × 5
-##   family dob_child1 dob_child2 name_child1 name_child2
-##    <int> <date>     <date>     <chr>       <chr>      
-## 1      1 1998-11-26 2000-01-29 Susan       Jose       
-## 2      2 1996-06-22 NA         Mark        <NA>       
-## 3      3 2002-07-11 2004-04-05 Sam         Seth       
-## 4      4 2004-10-10 2009-08-27 Craig       Khai       
-## 5      5 2000-12-05 2005-02-28 Parker      Gracie
 ```
 
 We are trying to learn about the population from which these children belong; it is hard to say precisely what that is without having more information about how this data was collected, but it is likely something like “all children living in a particular place in a particular year”. The units in this population are children. So to tidy this data, we’d want “date of birth” and “name” to be two variables/columns associated with an observation/row (a child). We know we want to use `pivot_longer()`, because we want to make `household` longer by creating new variables. But wait! The names of the “date of birth”/“name” variables AND the values of the “child” variable are BOTH in the column names of `household`!
 
 Inspecting [the documentation](https://tidyr.tidyverse.org/reference/pivot_longer.html) for `pivot_longer()` very carefully reveals that you can use a special specification of the `names_to` argument to resolve this problem.
 
-```         
-household %>% pivot_longer(cols = -family, 
-                           names_to = c(".value", "child"), 
-                           names_sep = "_")
-```
+```{r}
+household %>% pivot_longer(cols = -family, # all columns except family
+                           names_to = c(".value", "child"), #change column names, .value is a placeholder
+                           names_sep = "_") # dob and child are currently separated by _ in one single variable
 
-```         
-## # A tibble: 10 × 4
-##    family child  dob        name  
-##     <int> <chr>  <date>     <chr> 
-##  1      1 child1 1998-11-26 Susan 
-##  2      1 child2 2000-01-29 Jose  
-##  3      2 child1 1996-06-22 Mark  
-##  4      2 child2 NA         <NA>  
-##  5      3 child1 2002-07-11 Sam   
-##  6      3 child2 2004-04-05 Seth  
-##  7      4 child1 2004-10-10 Craig 
-##  8      4 child2 2009-08-27 Khai  
-##  9      5 child1 2000-12-05 Parker
-## 10      5 child2 2005-02-28 Gracie
 ```
 
 The special `".value"` specification says that we want to use the first component of the pivoted column name as a variable name, and make a new column with values coming from the second component of the pivoted column name. The second thing we pass into `names_to` names that new column.
@@ -473,26 +350,11 @@ Suppose this study was designed to only sample families with two children. Then,
 
 Now suppose this study just samples families at large. We know from experience about the world that some families have one children, some families have two, and some families have more. Then, it seems possible that row 4 is *not* a real observation: family 2 might just have a single child. In this case, we have a row for something that is not an observation, so we would like to tidy up by dropping it. We could actually have done this by altering our original `pivot_wider()` call as follows:
 
-```         
+```{r}
 household %>% pivot_longer(cols = -family, 
                            names_to = c(".value", "child"), 
                            names_sep = "_", 
-                           values_drop_na = TRUE)
-```
-
-```         
-## # A tibble: 9 × 4
-##   family child  dob        name  
-##    <int> <chr>  <date>     <chr> 
-## 1      1 child1 1998-11-26 Susan 
-## 2      1 child2 2000-01-29 Jose  
-## 3      2 child1 1996-06-22 Mark  
-## 4      3 child1 2002-07-11 Sam   
-## 5      3 child2 2004-04-05 Seth  
-## 6      4 child1 2004-10-10 Craig 
-## 7      4 child2 2009-08-27 Khai  
-## 8      5 child1 2000-12-05 Parker
-## 9      5 child2 2005-02-28 Gracie
+                           values_drop_na = TRUE) #remove NAs
 ```
 
 This discussion highlights the importance of knowing the context in which your data is collected for tidying (and for your analysis at large). Here and elsewhere, it really pays to be in close contact with the people who generated your data.
@@ -501,39 +363,21 @@ This discussion highlights the importance of knowing the context in which your d
 
 The `tidyr` package has a function for gluing columns together (`unite`) and for cutting columns apart (`separate`). Why might this help us tidy? Here is another snippet of WHO Tuberculosis data.
 
-```         
-table3
-```
+```{r}
+table3 <- tibble(country = c("Afghanistan", "Afghanistan", "Brazil", "Brazil", "China", "China"),
+                 year = c(1999, 2000, 1999, 2000, 1999, 2000),
+                 rate = c("745/19987071", "2666/20595360", "37737/172006362", 
+                          "80488/174504898", "212258/1272915272", "213766/1280428583"))
 
-```         
-## # A tibble: 6 × 3
-##   country      year rate             
-##   <chr>       <dbl> <chr>            
-## 1 Afghanistan  1999 745/19987071     
-## 2 Afghanistan  2000 2666/20595360    
-## 3 Brazil       1999 37737/172006362  
-## 4 Brazil       2000 80488/174504898  
-## 5 China        1999 212258/1272915272
-## 6 China        2000 213766/1280428583
+table3
 ```
 
 The `rate` column contains the values of two variables: case counts and population counts. We would like to snip it apart at the “/” character to create two columns:
 
-```         
-(table5 <- table3 %>% separate(col = rate, 
-                    into = c("cases", "population")))
-```
-
-```         
-## # A tibble: 6 × 4
-##   country      year cases  population
-##   <chr>       <dbl> <chr>  <chr>     
-## 1 Afghanistan  1999 745    19987071  
-## 2 Afghanistan  2000 2666   20595360  
-## 3 Brazil       1999 37737  172006362 
-## 4 Brazil       2000 80488  174504898 
-## 5 China        1999 212258 1272915272
-## 6 China        2000 213766 1280428583
+```{r}
+table5 <- table3 %>% separate(col = rate, 
+                    into = c("cases", "population"))
+table5
 ```
 
 The `col` argument specifies the column we want to separate, and the `into` argument specifies the names of the new columns. The `sep` argument (not specified here) specifies where we want to cut. The default is pretty clever - it separates at any non-alphanumeric value. (How this is accomplished involves *regular expressions*, which are very useful when working with character data. We will learn more about regular expressions in STAT 545B. )
