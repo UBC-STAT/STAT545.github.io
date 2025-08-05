@@ -1,0 +1,295 @@
+---
+title: "Lecture 8: Functions"
+subtitle: "October 21, 2025"
+date-modified: last-modified
+---
+
+From this lecture, students are expected to be able to:
+
+-   Understand when to use a function
+
+-   Build functions from scratch in R
+
+-   Document functions using `roxygen2`
+
+-   Test functions with the `testthat` package
+
+-   Specify what to return in a function using `return()`
+
+We will require the following packages for this lecture:
+
+```{r, warning = F, message = F}
+library(roxygen2)
+library(testthat)
+```
+
+```{r, echo = F}
+set.seed(100)
+```
+
+## Self-made R Functions
+
+At this point in the course, we’ve used lots of functions, like `mean()`, `mutate()`, and `pivot_longer()`. But it can be really useful to *write your own* function. For example, the ability to writing your own functions can supercharge your `group_by() %>% summarize()` workflow: you can write your own function to use inside `summarize()`, instead of relying solely on functions built into R or available in packages!
+
+So why write functions? In short, it avoids repeatedly duplicating code. This is helpful because:
+
+1.  It shortens your code – crucially, without losing interpretability – making it easier and faster to read through and process its overall intent.
+
+2.  If your needs change, then you only need to change your code in one place (the function definition) rather than a bunch of places.
+
+3.  Bullet points 1 and 2 mean that using functions typically leads to fewer bugs and fewer headaches.
+
+A good rule of thumb is whenever you find yourself repeating code more than a few times, consider writing a function.
+
+Here’s a simple example of a function I wrote to simulate rolling a user-inputted number of D10s (a 10-sided die used for tabletop gaming) and returning the sum of the dice.
+
+```{r}
+roll_d10 <- function(num_dice) { 
+    sum(sample(1:10, num_dice, replace=TRUE))
+}
+
+roll_d10(2)
+```
+
+::: callout-note
+This is not reproducible code, as the output will change each time I run this function as I am randomly sampling. If I wanted to make this reproducible, then I would set the *seed* to (say) 123 before running my function with `set.seed(123)`.
+:::
+
+### **Documentation**
+
+You should have also noticed by now that other people’s functions in packages are *documented* - there’s information about:
+
+1.  what the function does, at a high level
+
+2.  the objects it expects you to input
+
+3.  the object that the function outputs
+
+At an *absolute minimum*, functions should have some comments indicating what the function does and what the inputs are. However, to make the function more user-friendly, commenting each line can be extremely helpful to let the user know exactly what's happening under the hood. For example, we could comment the above function to make it more clear:
+
+```{r}
+roll_d10 <- function(num_dice) { 
+  # this function simulates rolling `num_dice` number of 10-sided dice and outputs the sum
+  # note: no seed is used so the function will return a dice combination each time it is run
+  #
+  # inputs:
+  # - num_dice: number of dice you wish to roll
+  
+    sum(sample(1:10, num_dice, replace=TRUE)) #sample two numbers with replacement between 1 and 10, return sum
+}
+
+# test function
+roll_d10(2)
+```
+
+We can do even better than this wutg [roxygen2 tags](https://roxygen2.r-lib.org/articles/rd-formatting.html) to document the function! These tags are placed immediately above the function definition. Although `roxygen2` tags are designed for use when creating R packages, they provide a standardized way to document a function – and make it easy for you to migrate your function to an R package if need be! Roxygen comment lines always start with `#'` , the usual `#` for a comment, followed immediately by a single quote `'`:
+
+```         
+#' Description of function goes here
+#' 
+#' @param x description of the parameter input x goes here
+#' @param y description of the parameter input x goes here
+#' @returns description of the what function returns goes here
+
+name_of_function <- function(x, y) {
+  your function goes here!
+}
+```
+
+For the dice example, we could write:
+
+```{r}
+#' @details
+#' Simulates rolling `num_dice` number of dice for a 10 sided dice and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run
+#'
+#' @param num_dice integer representing number of dice to be rolled
+#' @return the sum of the dice rolled
+  
+roll_d10 <- function(num_dice) { 
+    sum(sample(1:10, num_dice, replace=TRUE)) #sample two numbers from one to 10 with replacement, return sum
+}
+
+roll_d10(2)
+```
+
+### **Testing**
+
+When you’re using other people’s functions – like those in packages – they often *work*. However, as you have probably discovered by this point, it is very easy to inadvertently write code – and therefore functions – that *do not* work. Because of this, it’s important to *test* the functions we write to make sure they work. It is useful to ensure that
+
+It's useful to think of a few cases to test, along with *edge cases* (conditions that fall outside the typical or expected parameters) and see if the function performs
+
+Let's try rolling 4 dice:
+
+```{r}
+roll_d10(4)
+```
+
+Now, let's try rolling no dice. The expected output should be 0.
+
+```{r}
+roll_d10(0)
+```
+
+Instead of manually coding test cases over and over, we can use functions from the `testthat` package in R. For example, when rolling no dice, we would expect the output to be 0. We can use the `expect_equal()` function to confirm this. The function won't output anything if the output is as expected:
+
+```{r}
+expect_equal(roll_d10(0), 0)
+```
+
+or will throw an error if not:
+
+``` r
+expect_equal(roll_d10(0), 2)
+```
+
+```         
+Error: roll_d10(0) not equal to 2.
+1/1 mismatches
+[1] 0 - 2 == -2
+```
+
+The `test_that()` function makes these tests even more readable:
+
+```{r}
+test_that("Rolling no dice equals 0", {
+  expect_equal(roll_d10(0), 0)
+})
+```
+
+More examples for the `test_that()` can be found on on this [Video Lecture](https://www.youtube.com/watch?v=3nDgR7l5Tps).
+
+### Error Handling
+
+Let's try inputting a nonsense input, like 2.5 dice. This input doesn't make sense, so let's see what happens:
+
+```{r}
+roll_d10(2.5)
+```
+
+Interesting! This is something we should consider controlling for when creating our function.
+
+Within a function call, we can force errors to appear using the `stop()` function and conditional statements. For example, we may only want to allow whole numbers (positive numbers of dice) to be inputs. We can do this by seeing if the `num_dice %% 1`function returns 0. `%%` is the "modular division" function which returns the remainder after division. Whole numbers will not have any remainder when divided by 1. Let's update our function:
+
+```{r}
+#' @details
+#' Simulates rolling `num_dice` number of dice and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run
+#'
+#' @param num_dice integer representing number of dice to be rolled
+#' @return the sum of the dice rolled
+  
+roll_d10 <- function(num_dice) { 
+  
+    # throw an error if num_dice (the input) is not an integer
+  
+    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0
+      stop("num_dice must be an integer") #throw this error message and stop the function
+    }
+  
+    #if the num_dice is an integer, continue with the function:
+    sum(sample(1:10, num_dice, replace=TRUE)) #sample two numbers from one to 10 with replacement, return sum
+}
+
+```
+
+So rolling 2 dice shouldn't throw an error:
+
+```{r}
+roll_d10(2)
+```
+
+But rolling 2.5 dice should:
+
+``` r
+roll_d10(2.5)
+```
+
+```         
+Error in roll_d10(2.5) : num_dice must be an integer
+```
+
+Our function is working as expected for this edge case!
+
+### Returns
+
+By default, your function will return the last thing computed in your function. However, we can return other items, like lists and vectors and dataframes using `return()`.
+
+While perhaps redundant as the last line of code here is what we want to output, we could explictly tell R what to output by:
+
+```{r}
+#' @details
+#' Simulates rolling `num_dice` number of dice with `n_sides` sides and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run
+#'
+#' @param num_dice integer representing number of dice to be rolled
+#' @return the sum of the dice rolled
+  
+roll_d10 <- function(num_dice) { 
+  
+    # throw an error if num_dice (the input) is not an integer
+  
+    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0
+      stop("num_dice must be an integer") #throw this error message and stop the function
+    }
+  
+    #if the num_dice is an integer, continue with the function:
+    sum_dice <- sum(sample(1:10, num_dice, replace=TRUE)) #sample two numbers from one to 10 with replacement, save as sum_dice
+    
+    #output
+    return(sum_dice)
+}
+```
+
+We could also return a vector of the the number of dice, and the number of faces of each dice, and the sum.
+
+```{r}
+#' @details
+#' Simulates rolling `num_dice` number of dice with `n_sides` sides and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run
+#'
+#' @param num_dice integer representing number of dice to be rolled
+#' @param n_sides integer representing the number of sides of each dice.
+#' @return the sum of the dice rolled
+  
+roll_d10 <- function(n_sides, num_dice) { 
+  
+    # throw an error if num_dice (the input) is not an integer
+  
+    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0
+      stop("num_dice must be an integer") #throw this error message and stop the function
+    }
+  
+    #if the num_dice is an integer, continue with the function:
+    sum_dice <- sum(sample(1:10, num_dice, replace=TRUE)) #sample two numbers from one to 10 with replacement, return sum
+    
+    out <- c(num_dice, sum_dice) #create a vector of what we want to return
+    
+    return(out)
+    
+}
+
+roll_d10(num_dice = 5)
+```
+
+Looks like we rolled 5 dice and the sum was 23.
+
+## Worksheet B1
+
+Now it's your turn to explore functions. Working through Worksheet B1 is a great place to go from here to learn the basics of how to define your own functions and how to test it.
+
+## Resources
+
+Video lecture:
+
+-   [R Functions for Data Analysis](https://youtu.be/3nDgR7l5Tps)
+
+Written resources:
+
+-   Basic function syntax in R: <https://swcarpentry.github.io/r-novice-inflammation/02-func-R/>
+
+-   When to use functions in your data analysis:
+
+    -   [stat545.com Functions, Parts 1-3](https://stat545.com/functions-part1.html)
+
+    -   [R4DS functions chapter](https://r4ds.hadley.nz/functions.html)
+
+### Attribution
+
+*Content created by Grace Tompkins based off of previous instructional teams and Vincenzo Coia.*

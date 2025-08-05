@@ -1,0 +1,281 @@
+---
+title: "Lecture 3: Data Manipulation with dplyr"
+subtitle: "September 16, 2025"
+date-modified: last-modified
+---
+
+## Learning Objectives
+
+From this topic, students are anticipated to be able to:
+
+1.  Use the five core dplyr verbs for data wrangling: `select()`, `filter()`, `arrange()`, `mutate()`, `summarise()`.
+
+2.  Use piping when implementing function chains.
+
+3.  Use `group_by()` to operate within groups (of rows) with `mutate()` and `summarise()`.
+
+4.  Use `across()` to operate on multiple columns with `summarise()` and `mutate()`.
+
+We will spend two classes on this topic.
+
+## Why Data Manipulation?
+
+You have a shiny new data set - great! You might be tempted to dive right in and start making pretty graphs and fitting cool models to your data. Not so fast! In practice, it’s very rare that you have the data in the exact right form to make the graph you want, or fit the model you want. You will need to start by *manipulating* your data into the right form: creating new variables, subsetting rows, renaming columns, etc.
+
+Plus, an important piece of data analysis output is tables that summarize the data in some way. For example, it is extremely standard practice in biomedical and public health studies to have the first table of any journal article summarize basic characteristics of the study population, possibly stratified by exposure. While these tables are less pretty than graphs, they can nevertheless be very insightful!
+
+An even less exciting but perhaps even more important part of data analysis is simply checking the data for things like:
+
+-   Possible inconsistencies with your understanding of what the data set should contain
+
+-   Possible errors
+
+-   Basic info gathering: number of rows, number of columns, amount of missing data, etc.
+
+All of these require data manipulation. We choose to use the `dplyr` (pronounced d-plier) package for this.
+
+## Tibbles
+
+As mentioned in Lecture 1A, *data frames* are useful tools for storing data. You can think of it as a spreadsheet of information, but in R. A *tibble* is a modern version of a basic data frame. To use tibbles, we first install the `tibble` package (if we haven't already) and load it into R by:
+
+```{r}
+# install.packages("tibble") # remove comment if not already installed
+library(tibble)
+```
+
+Tibbles typically said to be more user friendly than standard R dataframes, and are easily used with *tidyverse* functions. More on that in a bit!
+
+We can either load in pre-existing data frames (like from a `.csv` file or an R package), or create a tibble manually using the `tibble()` function. For example, we could use
+
+```{r}
+tibble(x = letters)
+```
+
+to have a single column tibble of letters of the alphabet, or
+
+```{r}
+housingdata <- tibble(name = c("Grace", "Mei", "Steven", "Phuong", "Omar", "Richa", "Bruce", "David"), 
+                      numrooms = c(2, 3, 1, 4, 2, 1, 3, 2), 
+                      rent_2024 = c(2665, 4900, 2900, 4950, 2400, 1000, 2800, 2350),
+                      rent_2025 = c(2700, 5000, 2900, 5000, 2500, 1000, 2800, 2400),
+                      city = c("Vancouver", "Toronto", "Halifax", "Vancouver", "Montreal", "Victoria", "Halifax", "Vancouver"))
+housingdata
+```
+
+We can see that the tibble can store different data types (here we have both numeric data ("dbl" is short for double) and character data ("chr" is short for character).
+
+We can also change an R data frame to a dibble. For example, the `mtcars` data set is available in the `datasets` package in R as a dataframe. We can load it as a tibble using:
+
+```{r}
+library(datasets)
+tibble(mtcars)
+```
+
+## `dplyr` Functions
+
+To use the dplyr functions, we need to install (if necessary) and load the dplyr package:
+
+```{r, message = F, warning = F}
+# install.packages("dplyr") #remove comment if not installed yet
+library(dplyr)
+```
+
+Once loaded, we will have a number of new tools at our disposal. Here are a few functions we are going to review in this lecture:
+
+-   `select()`: keep or remove certain columns
+
+### Subsetting with `select()`
+
+`select()` allows you to keep or remove columns. For example, in the `housingdata` dataset, say we only want the columns `name` and `city`. We use the `select` function where the first argument is the name of the tibble, and the other arguments are the names of the columns we wish to keep:
+
+```{r}
+select(housingdata, name, city)
+```
+
+Now, this didn't alter the original data frame! If we wanted to save this reduced dataframe, we can name it to a new variable, such as
+
+```{r}
+housingdata2 <- select(housingdata, name, city)
+housingdata2
+```
+
+Now, `housingdata2` contains only the rows we were interested in keeping, without overriding the original `housingdata` tibble. We can see that `housingdata` still contains all of the information from the original data set.
+
+```{r}
+housingdata
+```
+
+We can also use `select()` to indicate which columns to **remove.** For example, if I wanted all variables except `name` in my data set, I could do:
+
+```{r}
+select(housingdata, -name)
+```
+
+### Subsetting with `filter()`
+
+The `filter()` function allows you to specify which rows to keep in the tibble. The `filter()` function takes *conditional statements* and allows us to remove or keep rows based on these conditions.
+
+For example, let's say we wanted to keep only data where the rent in 2025 (`rent_2025`) is strictly larger than 2500. Then, we could use:
+
+```{r}
+filter(housingdata, rent_2025 > 2500)
+```
+
+Now, only rows with `rent_2025` \> 2500 are kept in the data frame.
+
+We can also use the `==` sign to indicate that something is equivalent. For example, we may only be interested in observations in Vancouver. To do so, we can use:
+
+```{r}
+filter(housingdata, city == "Vancouver")
+```
+
+::: callout-note
+The double `==` in the statement to indicate "is equal to"! Further, as the variable of interest is a string (or character type), we need to use quotations around the city name "Vancouver".
+:::
+
+We can also filter on multiple variables at the same time, even if they are different types. for example:
+
+```{r}
+filter(housingdata, rent_2025 > 2500, city == "Vancouver")
+```
+
+### Leveling Up with `tidyselect()`
+
+Sometimes we will want to select columns that have something in common with their name. This is particularly useful when the number of columns is large (for example, think if we had historical rent data for many years). To do so, we can use helper functions in the `tidyverse` library. First, install (if necessary) and load in the `tidyverse` library
+
+```{r, message=F, warning=F}
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+Let's use the `starts_with()` function to select all columns that relate to rents. We can do this by:
+
+```{r}
+select(housingdata, starts_with("rent"))
+```
+
+This code returned a tibble where only the columns involving rents are included! Other useful helper functions include:
+
+-   `starts_with()` finds variables that start with the given input
+
+-   `ends_with()` finds variables that end with the given input
+
+-   `contains()` finds variables that have the given input at any location in the name
+
+While for the example data set we are really only selecting two columns, using these functions allows your code to be more flexible as data may be added later for more years of rent, for example.
+
+### Creating New Variables with `mutate()`
+
+Sometimes we need to create another variable or column based on information already present in a tibble. For example, suppose we are interested in the cost per room, rather than total rent, in our data. We can create a new variable that is the rent divided by the number of rooms using `mutate()`:
+
+```{r}
+mutate(housingdata, rent_per_room_2025 = rent_2025/numrooms)
+```
+
+We can also clean this up by rounding our new variable to two decimal places using the `round()` function:
+
+```{r}
+mutate(housingdata, rent_per_room_2025 = round(rent_2025/numrooms,2))
+```
+
+As we can see, the `mutate()` function took the data as the first argument, and then we listed the new variable name `rent_per_room_2025` which we calculated by taking the rent in 2025 (`rent_2025`) and dividing it by the number of rooms in the house (`numrooms`). We wrapped `round( x, 2)` around the calculation to clean up the answer to two decimal places.
+
+### The Pipe Operator `%>%`
+
+The pipe operator (`%>%`) is a convenient way to form a chain of commands on a tibble to perform multiple tasks at once.
+
+Let's assume we want to modify a tibble using both `select()` and `filter()`. We can do so in one single line of code using the pipe operator. But for now, let's start simple and use just one function using `%>%`.
+
+Let's say we want to subset our data and select only the rent and city columns on a tibble. We could use:
+
+```{r}
+select(housingdata, starts_with("rent"), city)
+```
+
+which is a perfectly valid answer. However, we could also use the pipe operator, as:
+
+```{r}
+housingdata %>%
+  select(starts_with("rent"), city)
+```
+
+Here, we tell dplyr the tibble we want to transform (`housingdata`), and then use the pipe operator (`%>%`) to tell dplyr what functions we want to perform on it.
+
+::: callout-note
+When using the pipe operator, we no longer need to include the dataframe in the first argument of the function. Compare the previous two code chunks to see what I mean.
+:::
+
+While it may not be obvious from this first example why the pipe operator is commonly used, let's consider that we want to
+
+-   filter on rents for 2025 above \$2500
+
+-   select all columns aside from name
+
+-   create a new variable for the rent per room in 2025 (rounded to 2 decimal places)
+
+-   reorder the rows by descending order of 2025 rents
+
+    -   The `arrange()` function can change the order of rows.
+
+    -   `arrange(desc(column_name))` will arrange the roms in descending order for the `column_name` given. See more [here](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html#:~:text=Arrange%20rows%20with%20arrange())!
+
+To do all of these tasks, the pipe operator allows us to write clear and readable code:
+
+```{r}
+housingdata %>% 
+  filter(rent_2025 > 2500) %>%
+  select(-name) %>%
+  mutate(rent_per_room_2025 = round(rent_2025/numrooms,2)) %>%
+  arrange(desc(rent_2025))
+```
+
+::: callout-note
+After each function call, we need to include the pipe operator to tell dplyr that we're not done yet, and the chain of commands continues on the next line.
+:::
+
+Another thing to note is that the pipe operator creates a new tibble and does not alter the original. So, `housingdata` still contains all of the original rows and columns in its unaltered form. If we wanted to alter it (or save the output to a new variable), we need to assign it using `<-`. For example, the following code will [overwrite]{.underline} the original tibble:
+
+```{r}
+housingdata <- housingdata %>% 
+    filter(rent_2025 > 2500) %>%
+    select(-name) %>%
+    mutate(rent_per_room_2025 = round(rent_2025/numrooms,2)) %>%
+    arrange(desc(rent_2025))
+
+housingdata
+```
+
+## Worksheet A2
+
+Worksheet A2 will guide you through some of the basics of `dplyr`.
+
+-   Haven’t attempted all of the questions on Worksheet A2? Then spend this time completing the worksheet.
+
+-   Finished attempting all of the questions? Then do the optional [R4DS Data Transformation](https://r4ds.hadley.nz/data-transform.html) reading, and maybe even do some of the exercises for extra practice.
+
+Put any questions you have about the worksheet questions or about data manipulation in Slack.
+
+## Next Class: FEV Case Study
+
+Next class we will be working through the first part of the [FEV Case Study](../casestudies/fev_datamanipulation.qmd).
+
+By yourself or in small groups, work through the exercises in the case study. The teaching team will walk around and answer questions and chat about anything data manipulation related.
+
+We will conclude class by going over instructor solutions.
+
+## Resources
+
+-   Video lecture: [dplyr Part 1: Basic Data Manipulation](https://youtu.be/Gms3zSPqCk8)
+
+-   Video lecture: [dplyr Part 2: Calculations on tibbles](https://youtu.be/38BA_v7BwKk)
+
+-   [Chapter 6](https://stat545.com/dplyr-intro.html) and [Chapter 7](https://stat545.com/dplyr-single.html) of Jenny Bryan’s STAT 545 book follows along with what we will be covering in Day 1 and Day 2 of this topic (although you won’t find the `across()` function).
+
+-   “R for Data Science” is another great resource for learning data wrangling. Take a look at:
+
+-   [dplyr’s introductory vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) is useful for orienting you to the package.
+
+
+### Attribution
+
+*Example created by Grace Tompkins. Notes originally created by Vincenzo Coia.*

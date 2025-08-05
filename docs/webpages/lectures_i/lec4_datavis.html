@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS) – STAT545 @ UBC</title>
+<title>Lecture 4: Data Visualization – STAT545 @ UBC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -267,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/casestudies/nycflights_dates.html">Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_i/lec4_datavis.html">Lecture 4: Data Visualization</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -281,20 +300,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/fev_datamanipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 3 Case Study: Data Manipulation on FEV Dataset</span></a>
+  <a href="../../webpages/lectures_i/lec1a_installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1A: Installation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/fev_datavis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 4 Case Study: Data Visualization with FEV Dataset</span></a>
+  <a href="../../webpages/lectures_i/lec1b_introR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1B: Course Introduction and R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/nycflights_dates.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)</span></a>
+  <a href="../../webpages/lectures_i/lec2A_reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2A: Reproducibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec2b_versioncontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2B: Version Control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec3_dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Data Manipulation with dplyr</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec4_datavis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 4: Data Visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec5_tidydata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Tidy Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec6a_modelfitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6A: Model Fitting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec6b_dates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6B: Factors and Dates</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec7a_readwritedata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7A: Reading and Writing Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec7b_joiningtibbles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7B: Tibble Joins</span></a>
   </div>
 </li>
     </ul>
@@ -307,11 +374,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nyc-flights-data" id="toc-nyc-flights-data" class="nav-link active" data-scroll-target="#nyc-flights-data">NYC Flights Data</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#effective-data-visualization" id="toc-effective-data-visualization" class="nav-link" data-scroll-target="#effective-data-visualization">Effective Data Visualization</a></li>
+  <li><a href="#ggplot2-and-the-grammar-of-graphics" id="toc-ggplot2-and-the-grammar-of-graphics" class="nav-link" data-scroll-target="#ggplot2-and-the-grammar-of-graphics"><code>ggplot2</code> and the Grammar of Graphics</a>
   <ul class="collapse">
-  <li><a href="#date-time-creation-and-extraction" id="toc-date-time-creation-and-extraction" class="nav-link" data-scroll-target="#date-time-creation-and-extraction"><strong>Date-Time Creation and Extraction</strong></a></li>
-  <li><a href="#date-time-math" id="toc-date-time-math" class="nav-link" data-scroll-target="#date-time-math"><strong>Date-Time Math</strong></a></li>
+  <li><a href="#example-scatterplot" id="toc-example-scatterplot" class="nav-link" data-scroll-target="#example-scatterplot">Example: Scatterplot</a></li>
+  <li><a href="#common-types-of-plots" id="toc-common-types-of-plots" class="nav-link" data-scroll-target="#common-types-of-plots">Common Types of Plots</a></li>
+  <li><a href="#advice-for-ggplot" id="toc-advice-for-ggplot" class="nav-link" data-scroll-target="#advice-for-ggplot">Advice for <code>ggplot</code></a></li>
+  </ul></li>
+  <li><a href="#worksheet-a3" id="toc-worksheet-a3" class="nav-link" data-scroll-target="#worksheet-a3">Worksheet A3</a></li>
+  <li><a href="#next-class-fev-case-study" id="toc-next-class-fev-case-study" class="nav-link" data-scroll-target="#next-class-fev-case-study">Next class: FEV Case Study</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a>
+  <ul class="collapse">
+  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -321,7 +396,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)</h1>
+<h1 class="title">Lecture 4: Data Visualization</h1>
+<p class="subtitle lead">September 23, 2025</p>
 </div>
 
 
@@ -333,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 31, 2025</p>
+      <p class="date-modified">August 5, 2025</p>
     </div>
   </div>
     
@@ -344,140 +420,260 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="nyc-flights-data" class="level2">
-<h2 class="anchored" data-anchor-id="nyc-flights-data">NYC Flights Data</h2>
-<p>The NYC Flights data set contains (among many other things) on-time performance data for all flights departing a New York City airport in 2013. Let’s load it from the package <code>nycflights13</code>. Let’s also load the tidyverse; the key package we will be using from it today is lubridate.</p>
-<p>There’s lots to explore in this data set, and lots of variables! We’ll work with a super pared down version.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.2     ✔ tibble    3.3.0
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.1.0     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>flights_demo <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, month, day, hour, minute, flight, carrier)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(flights_demo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 7
-   year month   day  hour minute flight carrier
-  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;  
-1  2013     1     1     5     15   1545 UA     
-2  2013     1     1     5     29   1714 UA     
-3  2013     1     1     5     40   1141 AA     
-4  2013     1     1     5     45    725 B6     
-5  2013     1     1     6      0    461 DL     
-6  2013     1     1     5     58   1696 UA     </code></pre>
-</div>
-</div>
-<p>This currently contains the scheduled departure time of every flight, as well its carrier and flight code.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>From this topic, students are anticipated to be able to:</p>
+<ul>
+<li><p>Identify the seven components of the grammar of graphics underlying <code>ggplot2</code>.</p></li>
+<li><p>Produce plots with <code>ggplot2</code> by implementing the components of the grammar of graphics.</p></li>
+<li><p>Customize the look of <code>ggplot2</code> graphs.</p></li>
+<li><p>Choose an appropriate plot type for analysis, based on an understanding of what makes a graph effective.</p></li>
+</ul>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<section id="date-time-creation-and-extraction" class="level3">
-<h3 class="anchored" data-anchor-id="date-time-creation-and-extraction"><strong>Date-Time Creation and Extraction</strong></h3>
-<p>I want to add a fake flight to this data set: AC 123, scheduled to depart at 9:00am on Oct 1 2013.</p>
-<p>We can use a family of functions named as permutations of “y”, “m”, and “d” to convert character input into special Date objects.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mdy</span>(<span class="st">"Oct 1 2013"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2013-10-01"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mdy</span>(<span class="st">"October 1st 2013"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2013-10-01"</code></pre>
-</div>
-</div>
-<p>We just need to get the order right in what’s passed in - lubridate does the rest!</p>
-<p>We can use a similar family of functions to convert character input into special Date-Time objects. Let’s be careful to get the timezone right too, in case it turns out to be important later.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(new_sched_dep_time <span class="ot">&lt;-</span> <span class="fu">mdy_hm</span>(<span class="st">"Oct 1 2013 9:00"</span>, <span class="at">tz =</span> <span class="st">"America/New_York"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2013-10-01 09:00:00 EDT"</code></pre>
-</div>
-</div>
-<p>Now let’s make a 1-row tibble with the components we need: year, month, day, hour, minute, carrier, and flight code. The key will be the <code>year()</code>, <code>month()</code>, etc. functions from the lubridate package.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(new_flight <span class="ot">&lt;-</span> <span class="fu">tribble</span>(<span class="sc">~</span>year, <span class="sc">~</span>month, <span class="sc">~</span>day, <span class="sc">~</span>hour, <span class="sc">~</span>minute, <span class="sc">~</span>flight, <span class="sc">~</span>carrier, </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">year</span>(new_sched_dep_time), <span class="fu">month</span>(new_sched_dep_time), </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">day</span>(new_sched_dep_time), <span class="fu">hour</span>(new_sched_dep_time), </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">minute</span>(new_sched_dep_time), <span class="dv">123</span>, <span class="st">"AC"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 7
-   year month   day  hour minute flight carrier
-  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;  
-1  2013    10     1     9      0    123 AC     </code></pre>
-</div>
-</div>
-<p>Like magic!!! We can then add it to the <code>flights_demo</code> dataset using <code>bind_rows()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>flights_demo <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(flights_demo, new_flight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="effective-data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="effective-data-visualization">Effective Data Visualization</h2>
+<p>Plots and other forms of data visualization are powerful tools for conveying complex relationships. While tables can be useful, data visualizations are often preferred to aid with identify patterns and relationships and emphasizing important findings in a research projects. This is especially true for presentations, where the audience may not have time to digest a large table of numbers. Jenny Bryan’s Challenger Example (<a href="https://speakerdeck.com/jennybc/ggplot2-tutorial?slide=22">https://speakerdeck.com/jennybc/ggplot2-tutorial</a>) is a great example of why we may want to visualize data.</p>
+<p>Now the question is, what visualization should you use to convey an idea? Well, you need to first formulate the question you want the data visualization to answer. That is, you need to figure out what you want to convey <em>before</em> you start visualizing the data. From UBC’s <a href="https://datasciencebook.ca/viz.html"><em>A First Introduction to Data Science</em></a> <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span> book:</p>
+<blockquote class="blockquote">
+<p>“A good visualization will clearly answer your question without distraction; a great visualization will suggest even what the question was itself without additional explanation. Imagine your visualization as part of a poster presentation for a project; even if you aren’t standing at the poster explaining things, an effective visualization will convey your message to the audience.”</p>
+</blockquote>
+<p>We need to convey the message using a data visualization while removing as much unnecessary information as possible. Below is a direct quote from the <a href="https://datasciencebook.ca/viz.html"><em>A First Introduction to Data Science</em></a> <span class="citation" data-cites="timbers2022data">[<a href="#ref-timbers2022data" role="doc-biblioref">1</a>]</span> containing their suggestions for effective data visualizations:</p>
+<p><strong>“Convey the message”</strong></p>
+<ul>
+<li><p>Make sure the visualization answers the question you have asked most simply and plainly as possible.</p></li>
+<li><p>Use legends and labels so that your visualization is understandable without reading the surrounding text.</p></li>
+<li><p>Ensure the text, symbols, lines, etc., on your visualization are big enough to be easily read.</p></li>
+<li><p>Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).ß</p></li>
+<li><p>Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry <span class="citation" data-cites="deeb2005molecular">[<a href="#ref-deeb2005molecular" role="doc-biblioref">2</a>]</span>). For example, <a href="https://colorbrewer2.org/">ColorBrewer</a> and <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">the <code>RColorBrewer</code> R package</a> <span class="citation" data-cites="neuwirth2014rcolorbrewer">[<a href="#ref-neuwirth2014rcolorbrewer" role="doc-biblioref">3</a>]</span> provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/">color blindness simulator</a>.</p></li>
+<li><p>Redundancy can be helpful; sometimes conveying the same message in multiple ways reinforces it for the audience.</p></li>
+</ul>
+<p><strong>“Minimize noise”</strong></p>
+<ul>
+<li><p>Use colors sparingly. Too many different colors can be distracting, create false patterns, and detract from the message.</p></li>
+<li><p>Be wary of overplotting. Overplotting is when marks that represent the data overlap, and is problematic as it prevents you from seeing how many data points are represented in areas of the visualization where this occurs. If your plot has too many dots or lines and starts to look like a mess, you need to do something different.</p></li>
+<li><p>Only make the plot area (where the dots, lines, bars are) as big as needed. Simple plots can be made small.</p></li>
+<li><p>Don’t adjust the axes to zoom in on small differences. If the difference is small, show that it’s small!</p></li>
+</ul>
 </section>
-<section id="date-time-math" class="level3">
-<h3 class="anchored" data-anchor-id="date-time-math"><strong>Date-Time Math</strong></h3>
-<p>The full <code>flights</code> dataset has info about the departure delays of these flights. Let’s make another simplified version for demo purposes with that info.</p>
+<section id="ggplot2-and-the-grammar-of-graphics" class="level2">
+<h2 class="anchored" data-anchor-id="ggplot2-and-the-grammar-of-graphics"><code>ggplot2</code> and the Grammar of Graphics</h2>
+<p>If you’ve learned about data visualization in R before, you’ve likely produced plots using “base R” methods (for example, the <code>boxplot()</code> function in R. It is a simple framework for making plots and is often “enough” for producing basic plots. In this lecture, we are going to dive into <code>ggplot2</code>, a package R users often use to make more sophisticated plots! If you’ve never used R to plot before, don’t worry. We aren’t assuming you have any experience with either method of plotting in R.</p>
+<p>We will be utilising the <code>ggplot2</code> and <code>tidyverse</code> packages throughout this lecture. To load them:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>flights_demo2 <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, month, day, dep_time, sched_dep_time, dep_delay)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(flights_demo2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse") #uncomment if not already installed</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2") #uncomment if not already installed</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>ggplot2</code> is based on the grammar of graphics, which is a systematic approach for describing different components or aspects of a graph. It involves seven components (required components are indicated with the *):</p>
+<ul>
+<li><p>Data*</p>
+<ul>
+<li>the data you’re feeding into the plot, perhaps a tibble or dataframe</li>
+</ul></li>
+<li><p>Aesthetic mappings*</p>
+<ul>
+<li>a specification of how you will connect variables (for example, horizontal or vertical positioning, grouping, size, colour, shape)</li>
+</ul></li>
+<li><p>Geometric objects*</p>
+<ul>
+<li>a specification of what the object will be drawn as (for example, a scatter plot, line, bar chart)</li>
+</ul></li>
+<li><p>Scales</p>
+<ul>
+<li>a specification of how a variable is mapped to its aesthetic</li>
+</ul></li>
+<li><p>Statistical transformations</p>
+<ul>
+<li>a specification of whether and how the data are combined or transformed. For example, is a bar chart plotting the values or a relative frequency?</li>
+</ul></li>
+<li><p>Coordinate system</p>
+<ul>
+<li>a specification of how the position aesthetics (x and y) are depicted in the plot. We typically use cartesian coordinates, though polar coordinates are also possible.</li>
+</ul></li>
+<li><p>Facet</p>
+<ul>
+<li>a specification of data variables that partition the data into smaller “sub plots” or panels</li>
+</ul></li>
+</ul>
+<p>It’s okay if you don’t quite understand all of these components yet. We will walk through examples of commonly used plots and discuss which components are necessary!</p>
+<section id="example-scatterplot" class="level3">
+<h3 class="anchored" data-anchor-id="example-scatterplot">Example: Scatterplot</h3>
+<p>To build our first <code>ggplot</code>, we will use the <code>gapminder</code> data from the <code>gapminder</code> package. To install and load it, we use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("gapminder") #uncomment if not already installed</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gapminder) </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder) <span class="co">#view first few rows of the tibble</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
-   year month   day dep_time sched_dep_time dep_delay
-  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
-1  2013     1     1      517            515         2
-2  2013     1     1      533            529         4
-3  2013     1     1      542            540         2
-4  2013     1     1      544            545        -1
-5  2013     1     1      554            600        -6
-6  2013     1     1      554            558        -4</code></pre>
+  country     continent  year lifeExp      pop gdpPercap
+  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+1 Afghanistan Asia       1952    28.8  8425333      779.
+2 Afghanistan Asia       1957    30.3  9240934      821.
+3 Afghanistan Asia       1962    32.0 10267083      853.
+4 Afghanistan Asia       1967    34.0 11537966      836.
+5 Afghanistan Asia       1972    36.1 13079460      740.
+6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
 </div>
 </div>
-<p>The <code>dep_delay</code> variable contains the number of minutes the flight departs either early or late, with a positive number if the flight departs late, and a negative number if the flight departs early. How was this variable made?</p>
-<p>Let’s see one way how. Let’s make two Date-Time objects corresponding to the departure and scheduled departure of our fake flight. If we <em>subtract</em> them, then we get a <code>difftime</code> object.</p>
+<p>The <code>ggplot()</code> function takes two arguments: <code>data</code> (the data frame or tibble containing your data that you’d like to plot) and <code>mapping</code> (aesthetic mappings applied to the entire plot. We use the <code>aes()</code> function inside of this argument.).</p>
+<p>Let’s start building the scatterplot! Let’s plot <code>gdpPercap</code> on the x axis and <code>lifeExp</code> on the y axis:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>new_sched_dep_time <span class="ot">&lt;-</span> <span class="fu">ymd_hm</span>(<span class="st">"2013 October 1 9:00"</span>, <span class="at">tz =</span> <span class="st">"America/New_York"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>new_dep_time <span class="ot">&lt;-</span> <span class="fu">ymd_hm</span>(<span class="st">"2013 Oct 1 9:15"</span>, <span class="at">tz =</span> <span class="st">"America/New_York"</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>new_dep_time <span class="sc">-</span> new_sched_dep_time </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 15 mins</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p>Beautiful! In this case, this calculation was easy to do by hand, but it would’ve been more annoying if we were calculating the time elapsed between (say) December 11th 2010 3:17am and March 24th 2011 11:51pm.</p>
-<p><code>difftime</code> objects produce human readable output, but can be a little annoying when you want output in consistent units. <code>duration</code> objects to the rescue - they always use seconds! Let’s do the math again but this time coerce the result to a <code>duration</code> object.</p>
+</div>
+<p>Notice that we haven’t actually plotted anything! <code>ggplot</code> doesn’t know what type of plot we want to draw, only that we want <code>gpdPercap</code> on the x axis and <code>lifeExp</code> on the y axis from the <code>gapminder</code> data we provided. To tell <code>ggplot</code> that we want a scatterplot, we are going to add a <em>layer</em> to the plot using the <code>+</code> at the end of the previous line. <code>geom_point()</code> is the geometric object we’d like to add (i.e., a scatterplot):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(duration_delay <span class="ot">&lt;-</span> <span class="fu">as.duration</span>(new_dep_time <span class="sc">-</span> new_sched_dep_time))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "900s (~15 minutes)"</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p>Finally we can convert this to minutes by creating a <code>duration</code> object that spans a minute using the convenience function <code>dminutes()</code>, and doing date-time division.</p>
+</div>
+<p>We now have created a scatterplot! However, it’s a bit dense and difficult to see. We can specify an alpha transparency value within the <code>geom_point()</code> function to change the opacity:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>duration_delay<span class="sc">/</span><span class="fu">dminutes</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 15</code></pre>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
+</div>
+<p>That’s already looking better! We can really tell now where there are a lot of observations.</p>
+<p>Now, let’s transform the scale of the x axis to see if there is a more linear relationship between life expectancy and the log transformation of GDP per capita. The transformation will be of the form <code>scale_AES_TRANSFORMATION()</code> where <code>AES</code> corresponds to which aesthetic value is being transformed, and the <code>TRANSFORMATION</code> is the transformation being completed (here it will be <code>log10</code>. We can also rename the x axis using the first argument. We also can change the labels on the x axis to be dollar format. Let’s add another layer to do so:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="st">"GDP per capita (log-scale)"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The more translucent grey points are still a bit hard to see. Let’s change the background to a more minimalist theme using a <code>theme()</code> layer. While we’re at it, let’s also rename the y axis using a <code>ylab()</code> later:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="st">"GDP per capita (log-scale)"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Life Expectancy (Years)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Names of axes should have quotations “” around them.</p>
+<p>The order of the layers doesn’t matter after the <code>geom_layer()</code> layer.</p>
+</div>
+</div>
+</section>
+<section id="common-types-of-plots" class="level3">
+<h3 class="anchored" data-anchor-id="common-types-of-plots">Common Types of Plots</h3>
+<ul>
+<li><p><code>geom_point()</code>: scatterplot</p></li>
+<li><p><code>geom_line()</code>: line plot</p></li>
+<li><p><code>geom_bar()</code>: bar chart</p></li>
+<li><p><code>geom_histogram()</code>: histogram</p></li>
+<li><p><code>geom_boxplot()</code>: box plot</p></li>
+<li><p><code>geom_smooth()</code>: adds a smooth trend line (various methods)</p></li>
+</ul>
+</section>
+<section id="advice-for-ggplot" class="level3">
+<h3 class="anchored" data-anchor-id="advice-for-ggplot">Advice for <code>ggplot</code></h3>
+<p>Google is <em>absolutely</em> your friend when building <code>ggplots</code>. I don’t think I’ve ever made a plot without googling how to do it. <code>ggplot</code> is extremely powerful, flexible, and a bit scary to learn! If you need to build a plot, search it! Need to plot two histograms, separated by groups (say, gender), side by side? I’d google: “ggplot histogram grouped by variable”. This brings me to <a href="https://r-charts.com/distribution/histogram-group-ggplot2/">this blog post by R Charts</a> that has a TON of different side by side histograms with code! <code>ggplot</code> is very much a “learn by doing” skill.</p>
+</section>
+</section>
+<section id="worksheet-a3" class="level2">
+<h2 class="anchored" data-anchor-id="worksheet-a3">Worksheet A3</h2>
+<ul>
+<li><p>It’s time to try <code>ggplot1</code> yourself! Spend time working through Worksheet 3.</p></li>
+<li><p>Finished attempting all of the questions? Then do the optional <a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS Data Visualization</a> reading, and maybe even do some of the exercises for extra practice.</p></li>
+</ul>
+<p>Post any questions you have on the Slack channel!</p>
+</section>
+<section id="next-class-fev-case-study" class="level2">
+<h2 class="anchored" data-anchor-id="next-class-fev-case-study">Next class: FEV Case Study</h2>
+<p>We will get a flavour for how you might use <code>ggplot2</code> in the wild and get in even more practice by working through <a href="https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/notes/supp-a06.Rmd">a continuation of our FEV case study from last week</a>.</p>
+<p>By yourself and in small groups, work through the exercises in the case study. We will also discuss instructor answers to each exercise.</p>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<p>Video lectures for this topic (ignore the episode numbering):</p>
+<ul>
+<li><p>Video Lecture: <a href="https://youtu.be/cqcQT44mJTM">ggplot2 Part 1: Introduction to Plotting</a></p></li>
+<li><p>Video Lecture: <a href="https://youtu.be/X8b44P5D-5w">ggplot2 Part 2: Plotting for Exploratory Data Analysis</a></p></li>
+<li><p>The <a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS Data Visualization</a> chapter (provides an excellent overview of plotting in ggplot2 and the grammar of graphics. We especially recommend sections 3.1 to 3.4.)</p></li>
+<li><p>Hadley Wickham’s <a href="https://ggplot2-book.org/">ggplot2 book</a> (a well-organized, approachable, and comprehensive coverage of ggplot2.)</p></li>
+<li><p>Cheatsheets:</p>
+<ul>
+<li><p>The <a href="https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf">ggplot2 cheatsheet</a> (Also available through RStudio: “Help” -&gt; “Cheatsheets” -&gt; “Data visualization with ggplot2”).</p></li>
+<li><p><a href="http://www.cookbook-r.com/Graphs/">R Cookbook Graphs</a></p></li>
+</ul></li>
+<li><p>Craig Hutton’s <a href="https://craig.rbind.io/post/2021-05-17-asgr-3-1-data-visualization/">comprehensive blog post</a> adopting a similar structure to our course notes, but with more explorations.</p></li>
+<li><p>Resources about producing effective visualizations:</p>
+<ul>
+<li><p><a href="https://serialmentor.com/dataviz/introduction.html">Fundamentals of Data Visualization</a> by Claus Wilke is an excellent guide to designing effective visuals. If you only look at one resource, this should be it.</p></li>
+<li><p><a href="https://www-taylorfrancis-com.ezproxy.library.ubc.ca/books/9780429088902">Visualization Analysis and Design</a> by Tamara Munzner is a gold-standard book for the theory of designing plots with a focus on human perception.</p></li>
+<li><p>Bite-sized resources to help you produce effective visualizations:</p>
+<ul>
+<li><p>The <a href="https://stat545.com/effective-graphs.html">“do’s and don’ts of effective graphics” in Jenny Bryan’s STAT 545 book</a> provides some rules of thumb for producing effective visuals.</p></li>
+<li><p>Vincenzo’s <a href="https://vincenzocoia.com/communicating_data/#1">“Communicating data” slides</a> provide some rules of thumb.</p></li>
+<li><p><a href="https://www.callingbull.org/tools/tools_misleading_axes.html">Callingbull.org’s entry on visualizations</a>, by Carl T. Bergstrom and Jevin West, goes over several examples of improving ineffective visuals.</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="attribution" class="level3">
+<h3 class="anchored" data-anchor-id="attribution">Attribution</h3>
+<p><em>Lecture created by Vincenzo Coia.</em></p>
+
 
 
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-timbers2022data" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Timbers T, Campbell T, Lee M (2022) Data science: A first introduction. Chapman; Hall/CRC</div>
+</div>
+<div id="ref-deeb2005molecular" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Deeb S (2005) The molecular basis of variation in human color vision. Clinical genetics 67(5):369–377</div>
+</div>
+<div id="ref-neuwirth2014rcolorbrewer" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Neuwirth E et al (2014) RColorBrewer: Colorbrewer palettes</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

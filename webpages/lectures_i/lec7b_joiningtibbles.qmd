@@ -1,0 +1,250 @@
+---
+title: "Lecture 7B: Tibble Joins"
+subtitle: "October 14, 2025"
+date-modified: last-modified
+---
+
+From today’s class, students are anticipated to be able to:
+
+-   Recognize how to manipulate data through a variety of tibble joins such as:
+
+    -   Mutating joins: `left_join()`, `right_join()`, `full_join()`, `anti_join()`
+
+    -   Filtering joins: `semi_join()`, `anti_join()`
+
+-   Perform binding: `bind_rows()`, `bind_cols()`
+
+-   Join more than 2 tibbles
+
+-   Join based on multiple conditions
+
+-   Perform set operations on data: `intersect()`, `union()`, `setdiff()`
+
+-   Join tibbles with different types of variables
+
+We will require the `tidyverse` functions for this chapter:
+
+```{r, message = F, warning = F}
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+## Overview of join functions
+
+**Note:** In order to merge two tibbles, you need to have an identifier variable that has unique values for every row of observations in both tibbles.
+
+Create two sample tibbles:
+
+```{r}
+# First tibble
+df1 <- tibble(ID = 1:3,                     
+              Name = c("Sophie", "Josh","Alex"))
+
+# Second tibble
+df2 <- tibble(ID = 2:4,                      
+              Age = c(20,50,31))
+```
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/df.png)
+
+## Mutating joins
+
+### **Join matching rows from `df2` to `df1`**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/left_join.png)
+
+```{r}
+left_join(df1, df2, by = "ID")
+```
+
+### **Join matching rows from `df1` to `df2`**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/right_join.png)
+
+```{r}
+right_join(df1, df2, by = "ID")
+```
+
+### **Retain only rows present in both sets**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/inner_join.png)
+
+```{r}
+inner_join(df1, df2, by = "ID")
+```
+
+### **Retain all values, all rows**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/full_join.png)
+
+```{r}
+full_join(df1, df2, by = "ID")
+```
+
+## Filtering joins
+
+### **Retain all rows in `df1` that have a match in `df2`**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/semi_join.png)
+
+```{r}
+semi_join(df1, df2, by = "ID")
+```
+
+### **Retain all rows in `df1` that do not have a match in `df2`**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/anti_join.png)
+
+```{r}
+anti_join(df1, df2, by = "ID")
+```
+
+## Binding
+
+### **Append `df2` to `df1` as new rows**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/bind_rows.png)
+
+```{r}
+bind_rows(df1, df2)
+```
+
+### **Append `df2` to `df1` as new columns**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/bind_cols.png)
+
+```{r}
+bind_cols(df1, df2)
+```
+
+## Joining multiple (\>2) tibbles
+
+Create a third tibble
+
+```{r}
+df3 <- tibble(ID = 1:5,                      
+              Height = c(175,167,190,155,160))
+```
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/three_tibbles.png)
+
+Use piping operator (%\>%) to layer multiple join functions
+
+```{r}
+full_join(df1, df2, by = "ID") %>%
+  full_join(df3, by = "ID") 
+```
+
+## Joining tibbles on multiple conditions
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/new_df.png)
+
+Create two new tibbles `df4` and `df5`
+
+```{r}
+df4 <- tibble(FirstName = c("Sophie", "Josh","Alex"),
+              LastName=c("Wang","Smith","Smith"),
+              Age = c(42,20,50))
+
+df5 <- tibble(First_name = c("Josh","Alex","Sophie"),        
+              Last_name=c("Smith","Smith","Jones"),
+              Height = c(167,190,155))
+```
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/multiple_conditions.png)
+
+```{r}
+full_join(df4, df5, by = c("FirstName" = "First_name", "LastName" = "Last_name"))
+```
+
+## Set operations
+
+Create sample tibbles
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/new_df2.png)
+
+```{r}
+# First tibble
+df6 <- tibble(Number = 1:3,                     
+              Letter = c("A", "B","C"))
+
+# Second tibble
+df7 <- tibble(Number = 2:4,                      
+              Letter = c("B","C","D"))
+```
+
+### **Include rows that appear in both tibbles**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/intersect.png)
+
+```{r}
+# First tibble
+df6 <- tibble(Number = 1:3,                     
+              Letter = c("A", "B","C"))
+
+# Second tibble
+df7 <- tibble(Number = 2:4,                      
+              Letter = c("B","C","D"))
+```
+
+### **Include rows that appear in either or both tibbles**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/union.png)
+
+```{r}
+union(df6, df7)
+```
+
+### **Include rows that appear in one tibble/dataset but not another**
+
+![](https://stat545.stat.ubc.ca/notes/notes-a11/images/setdiff.png)
+
+Include rows that appear in `df6` but not in `df7`
+
+```{r}
+setdiff(df6, df7)
+```
+
+Include rows that appear in `df7` but not in `df6`
+
+```{r}
+setdiff(df7, df6)
+```
+
+## Joining tibbles with different types of variables
+
+You can also join tibbles with sets of predictions:
+
+```{r}
+set.seed(1) #make reproducible
+
+x <- rnorm(5) #randomly sample 5 times from a N(0,1) distribution
+
+model1 <- tibble(x = x, yhat = 2.1 + 3.2 * x) #do prediction based on the linear function
+model2 <- tibble(x = x, yhat = 1.5 + 2.9 * x)
+
+left_join(model1, model2, by = "x")
+
+```
+
+## Worksheet A5
+
+Try your hand at basics of tibble joins by working through the corresponding part of Worksheet A5.
+
+There will be some class time to go over solutions if you got stuck on any questions.
+
+## Resources
+
+-   Video lecture: [Tibble Joins with dplyr](https://youtu.be/YAdX9MVRY1c)
+
+-    [“Relational Data” chapter](https://r4ds.had.co.nz/relational-data.html) in “R for Data Science”.
+
+-   “Two-table verbs” [vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/two-table.html) gives a concise overview of tibble joins with dplyr.
+
+-   [Jenny’s Join Cheatsheet](https://stat545.com/join-cheatsheet.html) for a quick reference to joins.
+
+-   [dplyr cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) for all these concepts packed onto a sheet of paper.
+
+### **Attributions**
+
+*Written by Albina Gibadullina and Vincenzo Coia*

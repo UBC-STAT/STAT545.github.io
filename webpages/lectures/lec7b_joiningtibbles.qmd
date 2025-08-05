@@ -1,5 +1,0 @@
----
-title: "Lecture 7b: Tibble Joins"
-subtitle: "October 14, 2025"
-date-modified: last-modified
----

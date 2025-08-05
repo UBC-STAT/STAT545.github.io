@@ -1,0 +1,259 @@
+---
+title: "Lecture 8b: Advanced Functions"
+subtitle: "October 23, 2025"
+date-modified: last-modified
+---
+
+We will learn about a couple of advanced topics:
+
+-   Data-masking and the curly-curly `{{}}`
+
+-   Default values
+
+-   Ellipses `...`
+
+-   Handling `NA`'s
+
+These topics are covered in the [R4DS Functions](https://r4ds.hadley.nz/functions) book chapter as well. So if you miss this class, then the R4DS Functions reading is a good alternative.
+
+We will be using the following packages throughout this lecture:
+
+```{r, warning = F, message = F}
+library(palmerpenguins)
+library(tidyverse)
+library(gapminder)
+```
+
+### **Example: Counting Missing Values by Group**
+
+Here’s some code that:
+
+-   groups `penguins` by species, then summarizes the number of missing values in each variable.
+
+-   groups `gapminder` by continent, then summarizes the number of missing values in each variable.
+
+```{r}
+penguins %>% 
+  group_by(species) %>% 
+  summarize(across(everything(), ~ sum(is.na(.x))))
+```
+
+```{r}
+gapminder %>% 
+  group_by(continent) %>% 
+  summarize(across(everything(), ~ sum(is.na(.x))))
+```
+
+These steps to summarize the data are quite similar! Instead of coding each step multiple times, let's turn it into a function.
+
+::: {.callout-warning icon="false"}
+### Exercise 1
+
+By yourself or in small groups, try to turn the code above into a function called `summarizeby_fun()`. Document your code!
+:::
+
+We will go over the solution in class.
+
+### Data-masking and the Curly-Curly `{{}}`
+
+Sometimes your function needs to take in variable names without quotation marks and work with them that way.
+
+For example, `select(penguins, species)` does not put quotation marks around `lifeExp` -- the reasoning being that `lifeExp` is like a variable in our workspace, if we were to include column names in our R Environment -- and `select("penguins", "species")` will not do the same thing.
+
+If your function needs to do this, then you need to work with the arguments with extra care inside the function definition. Whenever we use those arguments, we need to embrace them within two curly brackets -- an operator called "curly curly".
+
+Take this function that produces a quick scatterplot between two columns in a dataset as an example.
+
+``` r
+quick_scatter <- function(data, x, y) {
+  ggplot(data, aes(x, y)) + #note curly brackets here!
+     geom_point()
+}
+
+quick_scatter(penguins, bill_length_mm, body_mass_g)
+```
+
+```         
+Error in `geom_point()`:
+! Problem while computing aesthetics.
+ℹ Error occurred in the 1st layer.
+Caused by error:
+! object 'bill_length_mm' not found
+```
+
+Why doesn't this work? The reason is that R is looking for variables named `bill_len` and `body_mass` in the workspace, and cannot find them. To fix the problem, we can change the function definition so that \`x\` and \`y\` are embraced within two curly brackets `{{}}` ("curly curly"):
+
+```{r, warning = F}
+quick_scatter <- function(data, x, y) {
+  ggplot(data, aes({{ x }}, {{ y }})) + #note curly brackets here!
+     geom_point()
+}
+
+quick_scatter(penguins, bill_length_mm, body_mass_g)
+
+```
+
+But, you can only use curly-curly when passing your function's argument to another function that's anticipating a variable name without brackets.
+
+::: callout-tip
+In the \`dplyr\` documentation, if you spy the words "data masking" or "tidy selection", then you will need to curly-curly your arguments when using those functions within your custom function.
+:::
+
+::: {.callout-warning icon="false"}
+### Exercise 2
+
+Make a modification to our function `summarizeby_fun()`: allow the user to also pass in which variables they want to summarize. (Right now it just summarizes all of them.)
+:::
+
+We will go over the solution in class.
+
+### Default Parameters
+
+Recall the dice-rolling example from the previous lecture. Sometimes you want to use a function frequently without re-writing the same parameters over and over again. Let's make a more flexible function that allows us to change the number of faces on the dice being rolled.
+
+```{r}
+#' @details
+#' Simulates rolling `num_dice` number of dice with `n_sides` sides and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run
+#'
+#' @param num_dice integer representing number of dice to be rolled
+#' @param n_sides integer representing the number of sides of each dice
+#' @return the sum of the dice rolled
+  
+roll_dice <- function(n_sides, num_dice) { 
+  
+    # throw an error if num_dice (the input) is not an integer
+  
+    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0
+      stop("num_dice must be an integer") #throw this error message and stop the function
+    }
+  
+    #if the num_dice is an integer, continue with the function:
+    sum(sample(1:n_sides, num_dice, replace=TRUE)) #sample two numbers from one to n_sides with replacement, return sum
+}
+```
+
+Notice now that in this function, there are two parameters (the new one is `n_sides`). We are also sampling from `1:nsides` instead of `1:10` to make the function more flexible. I also renamed the function to `roll_dice` as we are not necessarily rolling d10 dice.
+
+So to roll 2, 10-sided dice, I can call:
+
+```{r}
+roll_dice(n_sides = 10, num_dice = 2)
+```
+
+If I wanted to make the default number of sides to 10, I can do that in the `function()`!
+
+```{r}
+#' @details
+#' Simulates rolling `num_dice` number of dice with `n_sides` sides and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run
+#'
+#' @param num_dice integer representing number of dice to be rolled
+#' @param n_sides integer representing the number of sides of each dice. Default is 10.
+#' @return the sum of the dice rolled
+  
+roll_dice <- function(n_sides = 10, num_dice) { 
+  
+    # throw an error if num_dice (the input) is not an integer
+  
+    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0
+      stop("num_dice must be an integer") #throw this error message and stop the function
+    }
+  
+    #if the num_dice is an integer, continue with the function:
+    sum(sample(1:n_sides, num_dice, replace=TRUE)) #sample two numbers from one to n_sides with replacement, return sum
+}
+```
+
+We have set `n_sides = 10` as the default. This means the function will assume we have a 10 sided dice unless otherwise specified. Let's roll 3 dice using 10 sided dice (the default):
+
+```{r}
+roll_dice(num_dice = 3)
+```
+
+I didn't need to include `n_sides = 10` in my function call! But I can if I want to change it to a number other than 10. Let's roll 3 standard 6-sided dice
+
+```{r}
+roll_dice(n_sides = 6, num_dice = 3)
+```
+
+::: {.callout-warning icon="false"}
+### Exercise 3
+
+Make a new argument for the `summarizeby_fun()` we made previously called `.groups` that makes it default to dropping the groups in the output.
+:::
+
+### **Ellipses (`...`**)
+
+The ellipses allow a function to accept a variable number of additional unnamed arguments beyond what is explicitly written in the function. Many built-in functions have `...` listed (check out `c()`!)
+
+::: {.callout-important icon="false"}
+Instructor Demo: We’ll modify our function together using ellipses to get extra functionality: we’ll allow the user to group by more than one variable.
+:::
+
+### Handling `NA`s
+
+Missing data is essentially inevitable. Few studies are able to collect 100% of the data they intend to.
+
+Missing data can *heavily* complicate analyses and even lead to biased results when not handled properly. Missing data is a big research area in statistics! But for this class, we are going to focus on dealing with missing data using a simple example.
+
+Let's look at the flipper length of penguins in the `penguins` data set and count how many missing values there are using the `is.na()` function in R. `is.na(flipper_len)` will return a vector full of `TRUE` or `FALSE` values indicating whether or not the observation was missing. As `TRUE` is coded as a 1 and `FALSE` as a 0, we can sum over these to count how many missing values there are.
+
+```{r}
+flipper_len <- penguins$flipper_length_mm #save this data as its own vector
+sum(is.na(flipper_len)) # count how many NAs there are in the flipper data
+```
+
+We see we have two missing values. Let's see if we can summarize the quantiles of the lengths:
+
+``` r
+quantile(flipper_len)
+```
+
+```         
+Error in quantile.default(flipper_length) :
+missing values and NaN's not allowed if 'na.rm' is FALSE
+```
+
+We see here that missing values are not allowed unless we specify `na.rm = TRUE`. When `na.rm = TRUE`, we remove missing values from the data and then calculate the quantiles. This is also referred to as a *complete case analysis.*
+
+```{r}
+quantile(flipper_len, na.rm = TRUE)
+```
+
+Now suppose we wanted to make our own function that utilized the `quantile()` built-in function:
+
+```{r}
+#' @details
+#' calculates the range of data by finding the 100th and 0th quantile and finding their difference
+#'
+#' @param vec a vector that we want to find the range of
+#' @return the difference in the maximum and minimum
+  
+get_range <- function(vec){
+  quantiles <- quantile(vec, na.rm = TRUE) #calc quantiles, remove NA's
+  return(max(quantiles) - min(quantiles)) #calculate and return the range
+}
+
+get_range(flipper_len)
+```
+
+We could also include `na.rm` in our function parameters to allow the user to specify whether or not it should be set to `TRUE` or `FALSE`. We can use a default, as well.
+
+```{r}
+#' @details
+#' calculates the range of data by finding the 100th and 0th quantile and finding their difference
+#'
+#' @param vec a vector that we want to find the range of
+#' @param na.rm logical, whether or not to remove NAs. Default set to TRUE.
+#' @return the difference in the maximum and minimum
+  
+get_range <- function(vec, na.rm = TRUE){
+  quantiles <- quantile(vec, na.rm = na.rm) #calc quantiles, remove NA's
+  return(max(quantiles) - min(quantiles)) #calculate and return the range
+}
+
+get_range(flipper_len) #default to true
+```
+
+### Attribution
+
+*Some of these notes were originally compiled by previous iterations of the instructional staff, including Vincenzo Coia.*

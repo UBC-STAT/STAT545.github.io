@@ -9,10 +9,10 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 
 ### Course Information
 
-|  |  |  |
-|----|----|----|
-| **Course Title** | **Course Code Number** | **Credit** **Value** |
-| Exploratory Data Analysis Part I | STAT 545 A | 1.5 |
+|  |  |  |  |  |
+|----|----|----|----|----|
+| **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
+| Exploratory Data Analysis Part I | STAT 545 A | 1.5 | Monday/Wednesday: 9:00am - 10:20am | CEME 1202 |
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ STAT545 A is a pre-requisite for STAT545 B. No exceptions.
 
 ### Course Structure
 
-This course will feature short lectures and in-class demonstrations so students get hands-on experience with the help of their instructor and TAs. The class will be partially "flipped", with students being expected to review a short video prior to the lecture. Dedicated time will be given in lecture for students to work through assigned worksheets.
+This course will feature short lectures and in-class demonstrations so students get hands-on experience with the help of their instructor and TAs. Dedicated time will be given in lecture for students to work through assigned worksheets.
 
 **Please bring a charged laptop to every class.** If you do not have a personal laptop, one can be borrowed through the [UBC library](https://wiki.ubc.ca/Library:Technology_Borrowing/Laptop_Lending).
 
@@ -42,28 +42,27 @@ This course will feature short lectures and in-class demonstrations so students 
 
 **STAT 545 A (Part I):**
 
-
 | Week | Date | Topic | In-class work |
-|--------|---------------|---------------|---------------|
-| 1 | Tuesday Sept 2 |  [Installation](../lectures/lec1a_installation.qmd)|  |
-|  | Thursday Sept 4 | [Intro to STAT545 and R](../lectures/lec1b_introR.qmd) | Worksheet A1 |
+|-----------------|-------------------|-------------------|-------------------|
+| 1 | Tuesday Sept 2 | [Installation](../lectures_i/lec1a_installation.qmd) |  |
+|  | Thursday Sept 4 | [Intro to STAT545 and R](../lectures_i/lec1b_introR.qmd) | Worksheet A1 |
 |  |  |  |  |
-| 2 | Tuesday Sept 9 | [Authoring and Reproducibility](../lectures/lec2A_reproducibility.qmd) | Ensure you have completed the installation instructions from Sept 2*! |
-|  | Thursday Sept 11 | [Version Control](../lectures/lec2b_versioncontrol.qmd) |  |
+| 2 | Tuesday Sept 9 | [Authoring and Reproducibility](../lectures_i/lec2A_reproducibility.qmd) | Ensure you have completed the installation instructions from Sept 2\*! |
+|  | Thursday Sept 11 | [Version Control](../lectures_i/lec2b_versioncontrol.qmd) |  |
 |  |  |  |  |
-| 3 | Tuesday Sept 16 | [Data Manipulation with `dplyr`](../lectures/lec3_dplyr.qmd) | Worksheet A2 |
+| 3 | Tuesday Sept 16 | [Data Manipulation with `dplyr`](../lectures_i/lec3_dplyr.qmd) | Worksheet A2 |
 |  | Thursday Sept 18 |  | Worksheet A2 |
 |  |  |  |  |
-| 4 | Tuesday Sept 23 | [Data Visualization](../lectures/lec4_datavis.qmd) | Worksheet A3 |
+| 4 | Tuesday Sept 23 | [Data Visualization](../lectures_i/lec4_datavis.qmd) | Worksheet A3 |
 |  | Thursday Sept 25 |  | Worksheet A3 |
 |  |  |  |  |
-| 5 | Tuesday Sept 30 | [Tidy Data](../lectures/lec5_tidydata.qmd) | Worksheet A4 |
+| 5 | Tuesday Sept 30 | [Tidy Data](../lectures_i/lec5_tidydata.qmd) | Worksheet A4 |
 |  | Thursday Oct 2 |  | Worksheet A4 |
 |  |  |  |  |
-| 6 | Tuesday Oct 7 |  [Model Fitting](../lectures/lec6a_modelfitting.qmd) | Worksheet A4 |
-|  | Thursday Oct 9 | [Factors and Dates](../lectures/lec6b_dates.qmd) | Worksheet A5 |
+| 6 | Tuesday Oct 7 | [Model Fitting](../lectures_i/lec6a_modelfitting.qmd) | Worksheet A4 |
+|  | Thursday Oct 9 | [Factors and Dates](../lectures_i/lec6b_dates.qmd) | Worksheet A5 |
 |  |  |  |  |
-| 7 | Tuesday Oct 14 | [Reading and Writing Data](../lectures/lec7a_readwritedata.qmd), and [Tibble Joins](../lectures/lec7b_joiningtibbles.qmd) | Worksheet A5 |
+| 7 | Tuesday Oct 14 | [Reading and Writing Data](../lectures_i/lec7a_readwritedata.qmd), and [Tibble Joins](../lectures_i/lec7b_joiningtibbles.qmd) | Worksheet A5 |
 |  | Thursday Oct 16 | Review and Work Session | Worksheet A5, Mini Data Analysis (MDA) |
 
 This schedule is subject to change. Any changes will be announced via the `#annoucements` channel on Slack, and major changes will be sent out via email.
@@ -98,8 +97,8 @@ Teams will be randomly assigned. The idea behind the collaborative project is to
 
 | Collaborative Project Milestone | Release Date        | Due Date (11:59pm PT) |
 |--------------------------|-----------------------|-----------------------|
-| Deliverable 1 (100 points)        | September 4th, 2025 | September 19th, 2025  |
-| Deliverable 2 (78 points)         | September 4th, 2025 | September 26th, 2025  |
+| Deliverable 1 (100 points)      | September 4th, 2025 | September 19th, 2025  |
+| Deliverable 2 (78 points)       | September 4th, 2025 | September 26th, 2025  |
 
 Instructions will be posted on the Course Website under "Collaborative Project"
 
@@ -109,10 +108,8 @@ Conduct your own mini data analysis! The goal of this assignment is to become mo
 
 | Mini Data Analysis Milestone | Release Date         | Due Date (11:59PM PT) |
 |-------------------------|------------------------|------------------------|
-| Deliverable 1 (36 points)      | September 26th, 2025 | October 3rd, 2025     |
-| Deliverable 2 (36 points)      | September 26th, 2025 | October 22nd, 2025    |
-
-
+| Deliverable 1 (36 points)    | September 26th, 2025 | October 3rd, 2025     |
+| Deliverable 2 (36 points)    | September 26th, 2025 | October 22nd, 2025    |
 
 ### Auditing Students
 
@@ -143,7 +140,6 @@ To make the most out of Slack, please
 Slack and GitHub are hosted on servers stored outside of Canada. Please keep this in mind.
 
 ### Policies
-
 
 #### Regrade Requests
 
