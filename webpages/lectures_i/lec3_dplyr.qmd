@@ -275,7 +275,6 @@ We will conclude class by going over instructor solutions.
 
 -   [dplyr’s introductory vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) is useful for orienting you to the package.
 
-
 ### Attribution
 
 *Example created by Grace Tompkins. Notes originally created by Vincenzo Coia.*

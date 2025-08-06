@@ -84,7 +84,8 @@ After completing the tutorial, try making your own R Markdown document!
 
 The key drivers under the hood are `knitr`and `Pandoc`! When you press “Knit”, R Markdown passes the .`Rmd`file to `knitr`, which executes all of the code and creates a new `.md` file including the code and output. Then, that `.md` file is processed into the final output format (e.g. `.html`) by pandoc.
 
-### Your Turn: Edit Your YAML in Small Groups:
+::: {.callout-warning appearance="minimal" icon="false"}
+### Exercise: Edit Your YAML in Small Groups:
 
 Run `?html_document` from your R console and/or check out [Yihui Xie’s RMarkdown book](https://bookdown.org/yihui/rmarkdown/html-document.html) to:
 
@@ -93,12 +94,15 @@ Run `?html_document` from your R console and/or check out [Yihui Xie’s RMarkdo
 -   Add a theme.
 
 If this was easy, then try to figure out how to knit to a pdf document!
+:::
 
+::: {.callout-tip appearance="minimal" icon="false"}
 ### Instructor demo: mtcars Report
 
 To follow along, download the [demonstration.Rmd](https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/notes/notes-a03/mtcars_demonstration.Rmd) file from the STAT545 GitHub and open it in RStudio.
+:::
 
-#### Exploting Code Chunks
+#### Exploring Code Chunks
 
 1.  Add a code chunk below the first paragraph in the “Motor Trend Car Road Tests data” section of the `.Rmd` file. Either select “Code” -\> “Insert Chunk”, or use a keyboard shortcut: `cmd + option + I`(MAC) / `ctrl + alt + i`(WINDOWS).
 
@@ -112,9 +116,11 @@ To follow along, download the [demonstration.Rmd](https://raw.githubusercontent.
 
 6.  Fill in the document with markdown commentary for each of the code chunks! A few notes go a long way towards improving the readability of the report.
 
-#### Exploring chunk options
+#### Code Chunk Options
 
+::: callout-tip
 Got lost in the demonstration? No problem, just open a new .Rmd file in RStudio via “File” -\> “New File” -\> “R Markdown…”, and just press “OK”, and resume!)
+:::
 
 Just like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the `{r}` at the top of a code chunk, separated by commas. For a list of chunk options, check out [Yihui Xie’s knitr book](https://yihui.org/knitr/options/). Let’s try some:
 
@@ -124,12 +130,13 @@ Just like YAML is metadata for the Rmd document, code chunk options are metadata
 
 3.  Knit the results. Can you spot the differences?
 
-### Your turn: data update!
+::: {.callout-warning appearance="minimal" icon="false"}
+### Exercise 2
 
 In the instructor demo, we prettied up a nice report about `mtcars` together. But suddenly, you receive an email from your collaborator who collected the `mtcars` data, who says that the data on Mazda RX4, the Valiant, and the Volvo 142E were transcribed wrong from the magazine! They’re going to work on correcting them, but in the mean time, they’d like to re-run the analysis with those three cars excluded.
 
 In small groups, prepare an updated report by updating your `.Rmd` appropriately, then re-knitting it. Then discuss: in this case, how did using the RMarkdown workflow rather than copying and pasting R output to MS Word help prevent the creation of non-reproducible results?
-
+:::
 
 ## Resources
 
@@ -145,6 +152,6 @@ Here are a number of resources that may help supplement you with today's lesson:
 Many cheat sheets can be found from RStudio: go to "Help" -\> "Cheatsheets".
 :::
 
-
 ### Attribution
+
 *This section was written by Grace Tompkins. Demonstration by Icíar Fernández Boyano. Inspiration for activity ideas drawn from Nicholas Tierney’s R Markdown for Scientists book, the R Markdown for Medicine workshop materials, and the UBC MDS program.*

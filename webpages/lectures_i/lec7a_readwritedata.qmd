@@ -111,7 +111,7 @@ This is reproducible!
 
 ## 
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning appearance="minimal" icon="false"}
 ### **Exercise**
 
 Open RStudio. Go to Session =\> Set Working Directory =\> Choose Directory and then pick a folder you would like to read and write data into. Then, run the following piece of code in a new R Script:

@@ -46,7 +46,7 @@ gapminder %>%
 
 These steps to summarize the data are quite similar! Instead of coding each step multiple times, let's turn it into a function.
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning appearance="minimal" icon="false"}
 ### Exercise 1
 
 By yourself or in small groups, try to turn the code above into a function called `summarizeby_fun()`. Document your code!
@@ -99,7 +99,7 @@ But, you can only use curly-curly when passing your function's argument to anoth
 In the \`dplyr\` documentation, if you spy the words "data masking" or "tidy selection", then you will need to curly-curly your arguments when using those functions within your custom function.
 :::
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning appearance="minimal" icon="false"}
 ### Exercise 2
 
 Make a modification to our function `summarizeby_fun()`: allow the user to also pass in which variables they want to summarize. (Right now it just summarizes all of them.)
@@ -175,7 +175,7 @@ I didn't need to include `n_sides = 10` in my function call! But I can if I want
 roll_dice(n_sides = 6, num_dice = 3)
 ```
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning appearance="minimal" icon="false"}
 ### Exercise 3
 
 Make a new argument for the `summarizeby_fun()` we made previously called `.groups` that makes it default to dropping the groups in the output.
@@ -185,8 +185,10 @@ Make a new argument for the `summarizeby_fun()` we made previously called `.grou
 
 The ellipses allow a function to accept a variable number of additional unnamed arguments beyond what is explicitly written in the function. Many built-in functions have `...` listed (check out `c()`!)
 
-::: {.callout-important icon="false"}
-Instructor Demo: We’ll modify our function together using ellipses to get extra functionality: we’ll allow the user to group by more than one variable.
+::: {.callout-tip appearance="minimal" icon="false"}
+## Instructor Demo
+
+We’ll modify our function together using ellipses to get extra functionality: we’ll allow the user to group by more than one variable.
 :::
 
 ### Handling `NA`s

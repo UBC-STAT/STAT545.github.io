@@ -203,7 +203,7 @@ We get the exact same plot with a single chunk of code! And, the original tibble
 levels(penguins$species)
 ```
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning icon="false" appearance="minimal"}
 ### Exercise
 
 The `gapminder` dataset contains information on GDP per capita (`gdpPercap`) by country. Add to the following `ggplot` to visualize the GDP per capita, ordered by GDP per capita, for countries in Asia in 2007. Copy the code block to edit and run it in R.

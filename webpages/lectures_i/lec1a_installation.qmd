@@ -60,7 +60,7 @@ Having trouble? Check the instructions here: <https://richpauloo.github.io/2018-
 2.  Install and setup the IR Kernel
     -   Open R and navigate to the Console (see below).
 
-        ![Your console may have a different appearance! Mine's in dark mode.](/images/rconsole.png)
+        ![Your console may have a different appearance! Mine's in dark mode.](/images/rconsole.png){width="400"}
 
     -   Install the necessary packages by entering
 
@@ -99,7 +99,7 @@ Git is a version control software. Github is a cloud-based platform (built on Gi
 
 3.  Configure Git: In RStudio, navigate to the Terminal or Shell (see below).
 
-    ![If using Windows, you will have a Shell, not a Terminal.](/images/rterminal.png)
+    ![If using Windows, you will have a Shell, not a Terminal.](/images/rterminal.png){width="400"}
 
 4.  within the Terminal (Mac) or Shell (Windows) (Tools \> Terminal/Shell) do:
 

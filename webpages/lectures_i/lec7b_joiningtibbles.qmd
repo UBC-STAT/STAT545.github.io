@@ -45,13 +45,13 @@ df2 <- tibble(ID = 2:4,
               Age = c(20,50,31))
 ```
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/df.png)
+![](../../images/tablejoins/dataframes.png){width=350 fig-align="center"}
 
 ## Mutating joins
 
 ### **Join matching rows from `df2` to `df1`**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/left_join.png)
+![](../../images/tablejoins/left_join.png){width=400 fig-align="center"}
 
 ```{r}
 left_join(df1, df2, by = "ID")
@@ -59,7 +59,8 @@ left_join(df1, df2, by = "ID")
 
 ### **Join matching rows from `df1` to `df2`**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/right_join.png)
+![](../../images/tablejoins/right_join.png){width=400 fig-align="center"}
+
 
 ```{r}
 right_join(df1, df2, by = "ID")
@@ -67,7 +68,8 @@ right_join(df1, df2, by = "ID")
 
 ### **Retain only rows present in both sets**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/inner_join.png)
+![](../../images/tablejoins/inner_join.png){width=400 fig-align="center"}
+
 
 ```{r}
 inner_join(df1, df2, by = "ID")
@@ -75,7 +77,8 @@ inner_join(df1, df2, by = "ID")
 
 ### **Retain all values, all rows**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/full_join.png)
+![](../../images/tablejoins/full_join.png){width=360 fig-align="center"}
+
 
 ```{r}
 full_join(df1, df2, by = "ID")
@@ -85,7 +88,7 @@ full_join(df1, df2, by = "ID")
 
 ### **Retain all rows in `df1` that have a match in `df2`**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/semi_join.png)
+![](../../images/tablejoins/semi_join.png){width=400 fig-align="center"}
 
 ```{r}
 semi_join(df1, df2, by = "ID")
@@ -93,7 +96,7 @@ semi_join(df1, df2, by = "ID")
 
 ### **Retain all rows in `df1` that do not have a match in `df2`**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/anti_join.png)
+![](../../images/tablejoins/anti_join.png){width=400 fig-align="center"}
 
 ```{r}
 anti_join(df1, df2, by = "ID")
@@ -103,7 +106,7 @@ anti_join(df1, df2, by = "ID")
 
 ### **Append `df2` to `df1` as new rows**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/bind_rows.png)
+![](../../images/tablejoins/bind_rows.png){width=400 fig-align="center"}
 
 ```{r}
 bind_rows(df1, df2)
@@ -111,7 +114,7 @@ bind_rows(df1, df2)
 
 ### **Append `df2` to `df1` as new columns**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/bind_cols.png)
+![](../../images/tablejoins/bind_cols.png){width=400 fig-align="center"}
 
 ```{r}
 bind_cols(df1, df2)
@@ -126,7 +129,7 @@ df3 <- tibble(ID = 1:5,
               Height = c(175,167,190,155,160))
 ```
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/three_tibbles.png)
+![](../../images/tablejoins/three_tibbles.png){width=600 fig-align="center"}
 
 Use piping operator (%\>%) to layer multiple join functions
 
@@ -137,7 +140,7 @@ full_join(df1, df2, by = "ID") %>%
 
 ## Joining tibbles on multiple conditions
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/new_df.png)
+![](../../images/tablejoins/multiple_conditions.png){width=400 fig-align="center"}
 
 Create two new tibbles `df4` and `df5`
 
@@ -151,7 +154,7 @@ df5 <- tibble(First_name = c("Josh","Alex","Sophie"),
               Height = c(167,190,155))
 ```
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/multiple_conditions.png)
+![](../../images/tablejoins/multiple_conditions_full.png){width=400 fig-align="center"}
 
 ```{r}
 full_join(df4, df5, by = c("FirstName" = "First_name", "LastName" = "Last_name"))
@@ -161,7 +164,7 @@ full_join(df4, df5, by = c("FirstName" = "First_name", "LastName" = "Last_name")
 
 Create sample tibbles
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/new_df2.png)
+![](../../images/tablejoins/df6df7.png){width=400 fig-align="center"}
 
 ```{r}
 # First tibble
@@ -175,7 +178,7 @@ df7 <- tibble(Number = 2:4,
 
 ### **Include rows that appear in both tibbles**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/intersect.png)
+![](../../images/tablejoins/intersect.png){width=400 fig-align="center"}
 
 ```{r}
 # First tibble
@@ -189,7 +192,7 @@ df7 <- tibble(Number = 2:4,
 
 ### **Include rows that appear in either or both tibbles**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/union.png)
+![](../../images/tablejoins/union.png){width=400 fig-align="center"}
 
 ```{r}
 union(df6, df7)
@@ -197,7 +200,7 @@ union(df6, df7)
 
 ### **Include rows that appear in one tibble/dataset but not another**
 
-![](https://stat545.stat.ubc.ca/notes/notes-a11/images/setdiff.png)
+![](../../images/tablejoins/setdiff.png){width=400 fig-align="center"}
 
 Include rows that appear in `df6` but not in `df7`
 

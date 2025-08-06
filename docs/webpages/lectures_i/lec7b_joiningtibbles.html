@@ -197,6 +197,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Lectures: Part II</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures-part-ii">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8a_functions.html">
+ <span class="dropdown-text">Lecture 8: Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8b_advfunctions.html">
+ <span class="dropdown-text">Lecture 8b: Advanced Functions</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -408,7 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 5, 2025</p>
+      <p class="date-modified">August 6, 2025</p>
     </div>
   </div>
     
@@ -450,13 +458,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">ID =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>,                      </span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">50</span>,<span class="dv">31</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/df.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/dataframes.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
 </section>
 <section id="mutating-joins" class="level2">
 <h2 class="anchored" data-anchor-id="mutating-joins">Mutating joins</h2>
 <section id="join-matching-rows-from-df2-to-df1" class="level3">
 <h3 class="anchored" data-anchor-id="join-matching-rows-from-df2-to-df1"><strong>Join matching rows from <code>df2</code> to <code>df1</code></strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/left_join.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/left_join.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -471,7 +487,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="join-matching-rows-from-df1-to-df2" class="level3">
 <h3 class="anchored" data-anchor-id="join-matching-rows-from-df1-to-df2"><strong>Join matching rows from <code>df1</code> to <code>df2</code></strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/right_join.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/right_join.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -486,7 +506,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="retain-only-rows-present-in-both-sets" class="level3">
 <h3 class="anchored" data-anchor-id="retain-only-rows-present-in-both-sets"><strong>Retain only rows present in both sets</strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/inner_join.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/inner_join.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -500,7 +524,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="retain-all-values-all-rows" class="level3">
 <h3 class="anchored" data-anchor-id="retain-all-values-all-rows"><strong>Retain all values, all rows</strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/full_join.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/full_join.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="360"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -519,7 +547,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="filtering-joins">Filtering joins</h2>
 <section id="retain-all-rows-in-df1-that-have-a-match-in-df2" class="level3">
 <h3 class="anchored" data-anchor-id="retain-all-rows-in-df1-that-have-a-match-in-df2"><strong>Retain all rows in <code>df1</code> that have a match in <code>df2</code></strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/semi_join.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/semi_join.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semi_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -533,7 +565,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="retain-all-rows-in-df1-that-do-not-have-a-match-in-df2" class="level3">
 <h3 class="anchored" data-anchor-id="retain-all-rows-in-df1-that-do-not-have-a-match-in-df2"><strong>Retain all rows in <code>df1</code> that do not have a match in <code>df2</code></strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/anti_join.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/anti_join.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anti_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -549,7 +585,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="binding">Binding</h2>
 <section id="append-df2-to-df1-as-new-rows" class="level3">
 <h3 class="anchored" data-anchor-id="append-df2-to-df1-as-new-rows"><strong>Append <code>df2</code> to <code>df1</code> as new rows</strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/bind_rows.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/bind_rows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -567,7 +607,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="append-df2-to-df1-as-new-columns" class="level3">
 <h3 class="anchored" data-anchor-id="append-df2-to-df1-as-new-columns"><strong>Append <code>df2</code> to <code>df1</code> as new columns</strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/bind_cols.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/bind_cols.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -593,7 +637,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,                      </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">Height =</span> <span class="fu">c</span>(<span class="dv">175</span>,<span class="dv">167</span>,<span class="dv">190</span>,<span class="dv">155</span>,<span class="dv">160</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/three_tibbles.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/three_tibbles.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+</figure>
+</div>
 <p>Use piping operator (%&gt;%) to layer multiple join functions</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"ID"</span>) <span class="sc">%&gt;%</span></span>
@@ -612,7 +660,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="joining-tibbles-on-multiple-conditions" class="level2">
 <h2 class="anchored" data-anchor-id="joining-tibbles-on-multiple-conditions">Joining tibbles on multiple conditions</h2>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/new_df.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/multiple_conditions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <p>Create two new tibbles <code>df4</code> and <code>df5</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df4 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">FirstName =</span> <span class="fu">c</span>(<span class="st">"Sophie"</span>, <span class="st">"Josh"</span>,<span class="st">"Alex"</span>),</span>
@@ -623,7 +675,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">Last_name=</span><span class="fu">c</span>(<span class="st">"Smith"</span>,<span class="st">"Smith"</span>,<span class="st">"Jones"</span>),</span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">Height =</span> <span class="fu">c</span>(<span class="dv">167</span>,<span class="dv">190</span>,<span class="dv">155</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/multiple_conditions.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/multiple_conditions_full.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(df4, df5, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"FirstName"</span> <span class="ot">=</span> <span class="st">"First_name"</span>, <span class="st">"LastName"</span> <span class="ot">=</span> <span class="st">"Last_name"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -640,7 +696,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="set-operations" class="level2">
 <h2 class="anchored" data-anchor-id="set-operations">Set operations</h2>
 <p>Create sample tibbles</p>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/new_df2.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/df6df7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First tibble</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df6 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Number =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,                     </span>
@@ -652,7 +712,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="include-rows-that-appear-in-both-tibbles" class="level3">
 <h3 class="anchored" data-anchor-id="include-rows-that-appear-in-both-tibbles"><strong>Include rows that appear in both tibbles</strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/intersect.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/intersect.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First tibble</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df6 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Number =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,                     </span>
@@ -665,7 +729,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="include-rows-that-appear-in-either-or-both-tibbles" class="level3">
 <h3 class="anchored" data-anchor-id="include-rows-that-appear-in-either-or-both-tibbles"><strong>Include rows that appear in either or both tibbles</strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/union.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/union.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">union</span>(df6, df7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -681,7 +749,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="include-rows-that-appear-in-one-tibbledataset-but-not-another" class="level3">
 <h3 class="anchored" data-anchor-id="include-rows-that-appear-in-one-tibbledataset-but-not-another"><strong>Include rows that appear in one tibble/dataset but not another</strong></h3>
-<p><img src="https://stat545.stat.ubc.ca/notes/notes-a11/images/setdiff.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/tablejoins/setdiff.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 <p>Include rows that appear in <code>df6</code> but not in <code>df7</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setdiff</span>(df6, df7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

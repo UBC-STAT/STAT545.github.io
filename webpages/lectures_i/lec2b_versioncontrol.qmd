@@ -36,7 +36,7 @@ A *repository* stores files and the history of the files; the usual convention i
 The first repository lives under Grace's personal Github account. The second repository lives under the [UBC-STAT](https://github.com/UBC-STAT) organization. Organizations are useful if you have lots of different projects with a common theme which lots of people are collaborating on.
 
 
-::: {.callout-tip icon="false"}
+::: {.callout-tip icon="false" appearance="minimal"}
 ### Instructor Demo: GitHub
 
 We will spend some time exploring some GitHub basics, with some real examples of repositories.
@@ -54,7 +54,7 @@ We will spend some time exploring some GitHub basics, with some real examples of
 
 ## Create Your Own Repository
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning icon="false" appearance="minimal"}
 ### Exercise
 
 Try making your own Github repository and editing it on Github! (This exercise is slightly adapted from [Data Carpentries](https://datacarpentry.org/rr-version-control/02-git-in-github/index.html).)
@@ -124,7 +124,7 @@ STAT 777 @ UBC
 
 4.  Save and commit the file. (An informative message here might be “Fixing a merge conflict.”) You should now be able to successfully push!
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning icon="false" appearance="minimal"}
 ### Exercise
 
 

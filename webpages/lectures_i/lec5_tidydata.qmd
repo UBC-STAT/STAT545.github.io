@@ -73,10 +73,10 @@ head(drinks_tbl1) #view the first few rows of the data
 
 The following graphic was made from the `drinks` dataset.
 
-![](https://stat545.stat.ubc.ca/notes/notes-a08_files/figure-html/unnamed-chunk-4-1.png)
+![](../../images/drinks.png){width=600}
 
-::: {.callout-warning icon="false"}
-### Exercise
+::: {.callout-warning icon="false" appearance="minimal"}
+### Exercise 1
 
 With a partner or a small group discuss the following questions think about if the data is tidy or untidy. If tidy, what would the `ggplot` code look like to reproduce this graph? If untidy, what would the tidy format look like? Sketch the first few rows of the data. Now, what would the `ggplot` code look like to reproduce this graph?
 :::
@@ -177,8 +177,8 @@ ratings_tbl2 %>%
   coord_flip() #flip horizontally
 ```
 
-::: {.callout-warning icon="false"}
-### Exercise
+::: {.callout-warning icon="false" appearance="minimal"}
+### Exercise 2
 
 With a partner or a small group:
 

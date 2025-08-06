@@ -336,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 5, 2025</p>
+      <p class="date-modified">August 6, 2025</p>
     </div>
   </div>
     
@@ -398,7 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>These steps to summarize the data are quite similar! Instead of coding each step multiple times, let’s turn it into a function.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -460,7 +460,7 @@ Tip
 <p>In the `dplyr` documentation, if you spy the words “data masking” or “tidy selection”, then you will need to curly-curly your arguments when using those functions within your custom function.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -503,7 +503,7 @@ Exercise 2
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">roll_dice</span>(<span class="at">n_sides =</span> <span class="dv">10</span>, <span class="at">num_dice =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11</code></pre>
+<pre><code>[1] 14</code></pre>
 </div>
 </div>
 <p>If I wanted to make the default number of sides to 10, I can do that in the <code>function()</code>!</p>
@@ -531,17 +531,17 @@ Exercise 2
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">roll_dice</span>(<span class="at">num_dice =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 16</code></pre>
+<pre><code>[1] 22</code></pre>
 </div>
 </div>
 <p>I didn’t need to include <code>n_sides = 10</code> in my function call! But I can if I want to change it to a number other than 10. Let’s roll 3 standard 6-sided dice</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">roll_dice</span>(<span class="at">n_sides =</span> <span class="dv">6</span>, <span class="at">num_dice =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 14</code></pre>
+<pre><code>[1] 12</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -558,17 +558,17 @@ Exercise 3
 <section id="ellipses-..." class="level3">
 <h3 class="anchored" data-anchor-id="ellipses-..."><strong>Ellipses (<code>...</code></strong>)</h3>
 <p>The ellipses allow a function to accept a variable number of additional unnamed arguments beyond what is explicitly written in the function. Many built-in functions have <code>...</code> listed (check out <code>c()</code>!)</p>
-<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Instructor Demo
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Instructor Demo: We’ll modify our function together using ellipses to get extra functionality: we’ll allow the user to group by more than one variable.</p>
+<p>We’ll modify our function together using ellipses to get extra functionality: we’ll allow the user to group by more than one variable.</p>
 </div>
 </div>
 </section>

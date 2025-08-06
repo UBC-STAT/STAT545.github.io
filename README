@@ -27,8 +27,8 @@ NOTES:
 - Right now lectures are named by week since some weeks have two lectures and some don't. Due to how I wrote the syllabus I found this made the most sense
 
 FORMATTING: 
-- in-class exercises are built using a call-out block (warning type with icon = F. Orange)
-- instructor demos are build using a call-out block (important type with icon = F. Green)
+- in-class exercises are built using a call-out block (warning type with icon = F. Orange, minimal)
+- instructor demos are build using a call-out block (tip type with icon = F. Green, minimal)
 - notes are build using call out blocks (note type, blue)
 - tips are built using call out blocks (tip type, green)
 - cautions are build using call out blocks (caution type, orange)
