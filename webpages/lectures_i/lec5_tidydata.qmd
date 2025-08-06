@@ -73,7 +73,7 @@ head(drinks_tbl1) #view the first few rows of the data
 
 The following graphic was made from the `drinks` dataset.
 
-![](../../images/drinks.png){width=600}
+![](../../images/drinks.png){width=600 fig-align="center"}
 
 ::: {.callout-warning icon="false" appearance="minimal"}
 ### Exercise 1

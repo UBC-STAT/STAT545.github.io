@@ -57,6 +57,8 @@ website:
       contents: 
         - webpages/lectures_ii/lec8a_functions.qmd
         - webpages/lectures_ii/lec8b_advfunctions.qmd
+        - webpages/lectures_ii/lec9_rpackages.qmd
+
 
         
         
