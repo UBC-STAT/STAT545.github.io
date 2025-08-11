@@ -1,6 +1,6 @@
 ---
 title: "Lecture 9: R Packages"
-subtitle: "October 23, 2025"
+subtitle: "October 28, 2025"
 date-modified: last-modified
 ---
 

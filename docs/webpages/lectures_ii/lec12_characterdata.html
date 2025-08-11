@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Syllabus: STAT 545 B (Part II) – STAT545 @ UBC</title>
+<title>Lecture 12: StringR and Regular Expressions – STAT545 @ UBC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -183,6 +217,14 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../webpages/lectures_ii/lec11_automation.html">
  <span class="dropdown-text">Lecture 11: Automation</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec12_characterdata.html">
+ <span class="dropdown-text">Lecture 12: StringR and Regular Expressions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec13_listcolumns.html">
+ <span class="dropdown-text">Lecture 13: List Columns</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -253,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/syllabus/syllabusB.html">Syllabus: STAT 545 B (Part II)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_ii/lec12_characterdata.html">Lecture 12: StringR and Regular Expressions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -267,14 +309,44 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../webpages/syllabus/syllabusA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus: STAT 545 A (Part I)</span></a>
+  <a href="../../webpages/lectures_ii/lec8a_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Functions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../webpages/syllabus/syllabusB.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Syllabus: STAT 545 B (Part II)</span></a>
+  <a href="../../webpages/lectures_ii/lec8b_advfunctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8b: Advanced Functions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_ii/lec9_rpackages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: R Packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_ii/lec10_shiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10: Dashboards with R Shiny</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_ii/lec11_automation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 11: Automation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_ii/lec12_characterdata.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 12: StringR and Regular Expressions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_ii/lec13_listcolumns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 13: List Columns</span></a>
   </div>
 </li>
     </ul>
@@ -287,18 +359,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#acknowledgement" id="toc-acknowledgement" class="nav-link active" data-scroll-target="#acknowledgement">Acknowledgement</a></li>
-  <li><a href="#course-information" id="toc-course-information" class="nav-link" data-scroll-target="#course-information">Course Information</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#contact-and-office-hours" id="toc-contact-and-office-hours" class="nav-link" data-scroll-target="#contact-and-office-hours">Contact and Office Hours</a></li>
-  <li><a href="#course-structure" id="toc-course-structure" class="nav-link" data-scroll-target="#course-structure">Course Structure</a></li>
-  <li><a href="#schedule-of-topics" id="toc-schedule-of-topics" class="nav-link" data-scroll-target="#schedule-of-topics">Schedule of Topics</a></li>
-  <li><a href="#assessments" id="toc-assessments" class="nav-link" data-scroll-target="#assessments">Assessments</a></li>
-  <li><a href="#auditing-students" id="toc-auditing-students" class="nav-link" data-scroll-target="#auditing-students">Auditing Students</a></li>
-  <li><a href="#course-communications" id="toc-course-communications" class="nav-link" data-scroll-target="#course-communications">Course Communications</a></li>
-  <li><a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy">Privacy</a></li>
-  <li><a href="#policies" id="toc-policies" class="nav-link" data-scroll-target="#policies">Policies</a></li>
-  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright">Copyright</a></li>
+  <li><a href="#strings" id="toc-strings" class="nav-link active" data-scroll-target="#strings">Strings</a></li>
+  <li><a href="#working-with-strings" id="toc-working-with-strings" class="nav-link" data-scroll-target="#working-with-strings">Working with strings</a></li>
+  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda"><strong>Agenda</strong></a>
+  <ul class="collapse">
+  <li><a href="#class-1" id="toc-class-1" class="nav-link" data-scroll-target="#class-1">Class 1</a></li>
+  <li><a href="#class-2" id="toc-class-2" class="nav-link" data-scroll-target="#class-2">Class 2</a></li>
+  </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -307,7 +375,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus: STAT 545 B (Part II)</h1>
+<h1 class="title">Lecture 12: StringR and Regular Expressions</h1>
+<p class="subtitle lead">November 18, 2025</p>
 </div>
 
 
@@ -330,426 +399,76 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="acknowledgement" class="level3">
-<h3 class="anchored" data-anchor-id="acknowledgement">Acknowledgement</h3>
-<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəyəm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.</p>
-</section>
-<section id="course-information" class="level3">
-<h3 class="anchored" data-anchor-id="course-information">Course Information</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Course Title</strong></td>
-<td><strong>Course Code</strong></td>
-<td><strong>Credit</strong> <strong>Value</strong></td>
-<td><strong>Class Times</strong></td>
-<td><strong>Class Location</strong></td>
-</tr>
-<tr class="even">
-<td>Exploratory Data Analysis Part II</td>
-<td>STAT 545 B</td>
-<td>1.5</td>
-<td>Monday/Wednesday: 9:30am - 10:50am</td>
-<td>CEME 1202</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>STAT545 B starts half an hour later than STAT545 A!</p>
-</div>
-</div>
-</section>
-<section id="prerequisites" class="level3">
-<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
-<p>STAT545 A is a pre-requisite for STAT545 B. No exceptions.</p>
-</section>
-<section id="contact-and-office-hours" class="level3">
-<h3 class="anchored" data-anchor-id="contact-and-office-hours">Contact and Office Hours</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 33%">
-<col style="width: 23%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Instructor</th>
-<th>Contact Details</th>
-<th>Office Location</th>
-<th>Office Hours</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Grace Tompkins</td>
-<td>grace&lt;at&gt;stat.ubc.ca</td>
-<td>ESB 3134</td>
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Teaching Assistants</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>TBD</td>
-</tr>
-<tr class="even">
-<td>TBD</td>
-</tr>
-<tr class="odd">
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="course-structure" class="level3">
-<h3 class="anchored" data-anchor-id="course-structure">Course Structure</h3>
-<p>This course will feature short lectures and in-class demonstrations so students get hands-on experience with the help of their instructor and TAs. Dedicated time will be given in lecture for students to work through assigned worksheets.</p>
-<p><strong>Please bring a charged laptop to every class.</strong> If you do not have a personal laptop, one can be borrowed through the <a href="https://wiki.ubc.ca/Library:Technology_Borrowing/Laptop_Lending">UBC library</a>.</p>
-</section>
-<section id="schedule-of-topics" class="level3">
-<h3 class="anchored" data-anchor-id="schedule-of-topics">Schedule of Topics</h3>
-<p><strong>STAT 545 A (Part I):</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Date</th>
-<th>Topic</th>
-<th>In-class work</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>8</td>
-<td>Tuesday Oct 21</td>
-<td><a href="../lectures_ii/lecture8a_functions.qmd">Functions</a></td>
-<td>Worksheet B1</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thursday Oct 23</td>
-<td><a href="../lectures_ii/lecture8b_advfunctions.qmd">Advanced Functions</a></td>
-<td>Worksheet B1, Assignment 1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>Tuesday Oct 28</td>
-<td><a href="../../webpages/lectures_ii/lec9_rpackages.html">R Packages</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thursday Oct 30</td>
-<td></td>
-<td>Assignment 2</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>Tuesday Nov 4</td>
-<td><a href="../../webpages/lectures_ii/lec10_shiny.html">Dashboards with R Shiny</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thursday Nov 6</td>
-<td></td>
-<td>Assignment 3</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>Tuesday Nov 11</td>
-<td><strong>NO LECTURE: REMEMBRANCE DAY</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thursday Nov 13</td>
-<td><a href="../../webpages/lectures_ii/lec11_automation.html">Automation</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>Tuesday Nov 18</td>
-<td><a href="../../webpages/lectures_ii/lec12_characterdata.html">StringR and Regular Expressions</a></td>
-<td>Worksheet B2</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thursday Nov 20</td>
-<td></td>
-<td>Worksheet B2</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>Tuesday Nov 25</td>
-<td>List Columns</td>
-<td>Worksheet B3</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thursday Nov 27</td>
-<td></td>
-<td>Worksheet B3</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>Tuesday Dec 2</td>
-<td>Websites and Slides</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thursday Dec 4</td>
-<td>Review and Work Session</td>
-<td>Assignment 4</td>
-</tr>
-</tbody>
-</table>
-<p>This schedule is subject to change. Any changes will be announced via the <code>#annoucements</code> channel on Slack, and major changes will be sent out via email.</p>
-</section>
-<section id="assessments" class="level3">
-<h3 class="anchored" data-anchor-id="assessments">Assessments</h3>
-<p>This course will have autograded, formative worksheets meant to guide you through a number of exercises.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 21%">
-<col style="width: 53%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Assessment</th>
-<th>Percent Grade</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Worksheets (3)</td>
-<td>20%</td>
-<td>Guided worksheets</td>
-</tr>
-<tr class="even">
-<td>Assignments (4)</td>
-<td>80%</td>
-<td>More independent analyses and tasks</td>
-</tr>
-</tbody>
-</table>
-<section id="worksheets" class="level4">
-<h4 class="anchored" data-anchor-id="worksheets">Worksheets</h4>
-<p>Worksheets are interactive assignments that allow students to get real-time feedback on their code. Your grade will be based on the number of correct answers provided. There are unlimited attempts for the worksheets, and time will be given in class to work through them.</p>
-<p>Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Worksheet</th>
-<th>Release Date</th>
-<th>Due Date (11:59PM PT)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Worksheet B1</td>
-<td>Monday Oct 20, 2025</td>
-<td>Monday Oct 27, 2025</td>
-</tr>
-<tr class="even">
-<td>Worksheet B2</td>
-<td>Friday Nov 14, 2025</td>
-<td>Thursday Nov 27, 2025</td>
-</tr>
-<tr class="odd">
-<td>Worksheet B3</td>
-<td>Thursday Nov 27, 2025</td>
-<td>Thursday Dec 4, 2025</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="assignments" class="level4">
-<h4 class="anchored" data-anchor-id="assignments">Assignments</h4>
-<p>There are four formal assignments for this course:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Assignment</th>
-<th>Release Date</th>
-<th>Due Date (11:59pm PT)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Assignment 1</td>
-<td>Tuesday Oct 21, 2025</td>
-<td>Friday Oct 31, 2025</td>
-</tr>
-<tr class="even">
-<td>Assignment 2</td>
-<td>Friday Oct 31, 2025</td>
-<td>Friday Nov 7, 2025</td>
-</tr>
-<tr class="odd">
-<td>Assignment 3</td>
-<td>Friday Nov 7, 2025</td>
-<td>Friday Nov 21, 2025</td>
-</tr>
-<tr class="even">
-<td>Assignment 4</td>
-<td>Friday Nov 21, 2025</td>
-<td>Thursday Dec 4, 2025</td>
-</tr>
-</tbody>
-</table>
-<p>Instructions will be posted on the Course Website under “Assignments”</p>
-</section>
-</section>
-<section id="auditing-students" class="level3">
-<h3 class="anchored" data-anchor-id="auditing-students">Auditing Students</h3>
-<p>Auditing students are expected to complete all assessments (see above). All assessments are graded on a pass/fail basis for those officially auditing.</p>
-<p>You must be registered as an auditing student to attend lectures due to capacity limitations.</p>
-</section>
-<section id="course-communications" class="level3">
-<h3 class="anchored" data-anchor-id="course-communications">Course Communications</h3>
-<p>We will be using Slack as our primary platform of all course-related communications! Students will be emailed an invite to their class’ Slack workspace.</p>
-<p>Official course communications will occur on the <code>#announcements</code> channel. You will receive an invite on the first day of classes. Please notify the instructor by email if you have not received your personal invite.</p>
-<p>Our STAT 545 team will be actively monitoring Slack during regular working hours (9am to 5pm PT, Monday to Friday). You are free to ask questions outside of this window but please keep in mind that there are no expectations for the team to answer questions outside of working hours or on weekends or holidays.</p>
-<p>To make the most out of Slack, please</p>
+<p>From this topic, students are anticipated to be able to:</p>
 <ul>
-<li><p>Use the <code>#general</code> channel for clarifications, asking about course organization, or clarifying instructions. Things you post on the <code>#general</code> channel will be seen by everyone, so please do not provide information that gives away answers to assignments.</p></li>
-<li><p>Make a group chat with our TAs when you need more personalized help, or have an issue with grading. They may direct you to the <code>#general</code> channel when appropriate, or direct you to the instructor.</p></li>
-<li><p>Direct message the instructor if there is a concern that is more personal (i.e., you need to self declare an absense) or if you have already talked to the TAs about an issue and are unsatisfied. You can also direct message the instructor if you are having issues with a group member in any group-related assignments.</p></li>
-<li><p>Post in the <code>#random</code> channel if you find things related to the course that you’d like to share</p></li>
+<li><p>Manipulate a character vector in R using the stringr package.</p></li>
+<li><p>Write simple regular expressions (regex).</p></li>
+<li><p>Apply stringr and regular expressions to manipulate data in tibbles.</p></li>
+</ul>
+<section id="strings" class="level2">
+<h2 class="anchored" data-anchor-id="strings">Strings</h2>
+<p>You’ve used a bunch of strings at this point without knowing explicitly what they are: any time you surround text by <code>"</code>, you’ve been making a <em>string</em>: a storage format for text. In R, they are of type “character”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sample_string <span class="ot">&lt;-</span> <span class="st">"This is a string"</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(sample_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>Two places where you’ll often want to manipulate these in data analysis:</p>
+<ul>
+<li><p>Cleaning up column/variable names</p></li>
+<li><p>Cleaning up character column values</p></li>
+</ul>
+<p><strong>Good to know</strong>: Constructing strings out of characters and numbers is intuitive, but there’s a gotcha involving particular symbols with special meaning in R. For example, try running <code>quote &lt;- """</code> in R; it won’t work, because the <code>"</code> symbol is interpreted as you trying to make a string! To literally include a quote in a string, you can use the <code>\</code> character to “escape” it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>single_quote <span class="ot">&lt;-</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(single_quote)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>"</code></pre>
+</div>
+</div>
+<p>You can see more examples of special characters and how to escape them in <a href="https://r4ds.hadley.nz/strings#creating-a-string">R4DS Chapter 15.2</a>.</p>
+</section>
+<section id="working-with-strings" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-strings">Working with strings</h2>
+<p>Our main tools for working with strings will be the powerful <code>stringr</code> package in the tidyverse paired with regular expressions.</p>
+</section>
+<section id="agenda" class="level2">
+<h2 class="anchored" data-anchor-id="agenda"><strong>Agenda</strong></h2>
+<section id="class-1" class="level3">
+<h3 class="anchored" data-anchor-id="class-1">Class 1</h3>
+<ul>
+<li><p><strong>Before class</strong>, start working on parts I and II of Worksheet B2.</p></li>
+<li><p>Class will be dedicated to getting your questions answered.</p></li>
+<li><p>Done early? Then do the optional R4DS Strings and R4DS Regular expressions readings (linked above), and do exercises for extra practice.</p></li>
 </ul>
 </section>
-<section id="privacy" class="level3">
-<h3 class="anchored" data-anchor-id="privacy">Privacy</h3>
-<p>Slack and GitHub are hosted on servers stored outside of Canada. Please keep this in mind.</p>
-</section>
-<section id="policies" class="level3">
-<h3 class="anchored" data-anchor-id="policies">Policies</h3>
-<section id="regrade-requests" class="level4">
-<h4 class="anchored" data-anchor-id="regrade-requests">Regrade Requests</h4>
-<p>Regrade requests must be sent to the TAs through Slack within one week of the assessment being returned. If required, regrade requests can be escalated to the instructor <u>only if</u> the request has already been brought up to the TA team and the student is unsatisfied. The instructor reserves the right to regrade the entire assessment, resulting in a higher or lower mark than originally provided.</p>
-</section>
-<section id="late-policies" class="level4">
-<h4 class="anchored" data-anchor-id="late-policies">Late Policies</h4>
-<p>Worksheets (and larger assignments, if applicable) are due at 11:59pm PT on the date indicated in the course schedule. For a late submission, a 24 hour extension will be provided for the first offense. Late submissions will be given a grade of 0 for subsequent occurrences.</p>
-<p>There is a zero-tolerance policy for late projects, including the mini data analysis and the collaborative project. If you are having issues with a team member regarding any group work, reach out to the instructor directly through Slack or email.</p>
-</section>
-<section id="academic-concession" class="level4">
-<h4 class="anchored" data-anchor-id="academic-concession">Academic Concession</h4>
-<p>UBC no longer requires a doctor’s note (or supporting documentation) for <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,48,0,0">academic concession</a>. A self-declaration will suffice – <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://biologyprogram-2023.sites.olt.ubc.ca/files/2024/10/Academic-Concession-Form-2022W.pdf">here is a template you can use</a>. The form is also posted on our Canvas page. Please submit this to the instructor via email.</p>
-<p>Examples of “conflicting responsibility” are conference travel and time-sensitive field work.</p>
-<p>If you arrange to have an assignment submitted late, you may not be able to receive feedback from your peers.</p>
-</section>
-<section id="plagiarism" class="level4">
-<h4 class="anchored" data-anchor-id="plagiarism">Plagiarism</h4>
-<p>Plagiarism, which is intellectual theft, occurs where an individual submits or presents the oral or written work of another person as his or her own and can include:</p>
+<section id="class-2" class="level3">
+<h3 class="anchored" data-anchor-id="class-2">Class 2</h3>
 <ul>
-<li><p>multiple students submitting the same response</p></li>
-<li><p>copying from sources without citing them</p></li>
-<li><p>copying verbatim (word-for-word) from source and citing, but failing to make it explicit that this is a quotation (quotations should be used only rarely, if at all)</p></li>
-</ul>
-<p>Students are responsible for ensuring that any work submitted does not constitute plagiarism. Students who are in any doubt as to what constitutes plagiarism should consult their instructor before handing in any assignments.</p>
-<p>For more information see the <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,959">UBC Academic Misconduct policies</a>.</p>
-</section>
-<section id="code-plagiarism" class="level4">
-<h4 class="anchored" data-anchor-id="code-plagiarism"><strong>Code Plagiarism</strong></h4>
-<p>Students must correctly cite any code that has been authored by someone else or by the student themselves for other assignments. Cases of code plagiarism may include, but are not limited to:</p>
-<ul>
-<li><p>the reproduction (copying and pasting) of code with none or minimal reformatting (e.g., changing the name of the variables)</p></li>
-<li><p>the translation of an algorithm or a script from a language to another</p></li>
-<li><p>the generation of code by automatic code-generations software</p></li>
-</ul>
-<p>An “adequate acknowledgement” requires a detailed identification of the (parts of the) code reused and a full citation of the original source code that has been reused.</p>
-</section>
-<section id="ubcs-policies-and-resources-to-support-student-success" class="level4">
-<h4 class="anchored" data-anchor-id="ubcs-policies-and-resources-to-support-student-success">UBC’s Policies and Resources to Support Student Success</h4>
-<p>UBC provides resources to support student learning and to maintain healthy lifestyles but recognizes that sometimes crises arise and so there are additional resources to access including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious, spiritual and cultural observances. UBC values academic honesty and students are expected to acknowledge the ideas generated by others and to uphold the highest academic standards in all of their actions. Details of the policies and how to access support are available <a href="https://senate.ubc.ca/policies-resources-support-student-success">here</a>.</p>
-</section>
-<section id="your-personal-health" class="level4">
-<h4 class="anchored" data-anchor-id="your-personal-health">Your personal health</h4>
-<p><strong>If you’re sick, it’s important that you stay home – no matter what you think you may be sick with (e.g., cold, flu, other).</strong> Your precautions will help reduce risk and keep everyone safer. The structure of this class is intended to provide flexibility so that you can prioritize your health and still be able to succeed.</p>
-<p><strong>If you do miss class because of illness:</strong></p>
-<ul>
-<li><p>Consult the class resources on the course website</p></li>
-<li><p>Come to office hours on Zoom.</p></li>
-<li><p>Use Slack to carry out discussions.</p></li>
-</ul>
-<p>If you miss an assessment due to illness, see the above section on Academic Concessions, and review the UBC policy here: <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0" class="uri">http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0</a></p>
-</section>
-<section id="instructor-health" class="level4">
-<h4 class="anchored" data-anchor-id="instructor-health">Instructor health</h4>
-<p>If I am ill, then I will not come to class. If that happens, here’s what you can expect:</p>
-<ul>
-<li><p>If I am well enough to teach, I will conduct virtual lectures through Zoom until I am well. If this happens, you will be tagged in an announcement via Slack with information. You can anticipate that this would very likely be a last minute announcement. Our classroom will still be available for you to sit and attend an online session, although it is recommended that you bring headphones.</p></li>
-<li><p>If I am not well enough to teach, it is possible that one or more teaching assistants will take my place. But if not, we will either try to make up for lost time, make new resources to aid in your learning, or make accommodations regarding the assessments.</p></li>
+<li><p><strong>Before class</strong>, start working on parts II and III of Worksheet B2.</p></li>
+<li><p>Class will be dedicated to getting your questions answered.</p></li>
+<li><p>Done early? Then do the optional R4DS Strings and R4DS Regular expressions readings (linked above), and do exercises for extra practice. Or, start Assignment B4.</p></li>
 </ul>
 </section>
 </section>
-<section id="copyright" class="level3">
-<h3 class="anchored" data-anchor-id="copyright">Copyright</h3>
-<p>Course materials are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0</a>.</p>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>Video lecture:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=I0dJ1zpxAtU">Regular Expressions and stringr for Text Data</a> (only labelled as “age restricted” because it looks at real emails within the Enron company.)</li>
+</ul>
+<p>Written material:</p>
+<ul>
+<li><p>Overview tutorials similar to our worksheet:</p>
+<ul>
+<li><p><a href="https://stat545.com/character-vectors.html">stat545.com Chapter 11: character vectors</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/strings.html">R4DS Chapter 15: strings</a>.</p></li>
+<li><p><a href="https://r4ds.hadley.nz/regexps">R4DS Chapter 16: regular expressions</a>.</p></li>
+</ul></li>
+<li><p>The stat545.com Chapter 11 on character vectors <a href="https://stat545.com/character-vectors.html#resources-3">has an elaborate discussion on useful resources</a> for learning more about strings.</p></li>
+</ul>
 
 
 </section>

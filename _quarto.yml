@@ -58,7 +58,11 @@ website:
         - webpages/lectures_ii/lec8a_functions.qmd
         - webpages/lectures_ii/lec8b_advfunctions.qmd
         - webpages/lectures_ii/lec9_rpackages.qmd
-
+        - webpages/lectures_ii/lec10_shiny.qmd
+        - webpages/lectures_ii/lec11_automation.qmd
+        - webpages/lectures_ii/lec12_characterdata.qmd
+        - webpages/lectures_ii/lec13_listcolumns.qmd
+        - webpages/lectures_ii/lec14_quarto.qmd
 
         
         

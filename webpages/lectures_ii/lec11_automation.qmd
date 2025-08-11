@@ -1,0 +1,73 @@
+---
+title: "Lecture 11: Automation"
+subtitle: "November 13, 2025"
+date-modified: last-modified
+---
+
+**Note**: This is an **optional topic**.
+
+From today’s class, students are anticipated to be able to:
+
+-   Use `make`
+
+    -   to record which files are inputs vs. intermediates vs. outputs
+
+    -   to capture how scripts and commands convert inputs to outputs
+
+    -   to re-run parts of an analysis that are out-of-date
+
+<!-- -->
+
+-   Write a Makefile.
+
+-   Interact with `make` in RStudio.
+
+-   Use `make` from the shell.
+
+Other tools aside from make (We won’t be covering these):
+
+-   ProjectTemplate
+
+-   remake for R
+
+## Why Automation
+
+It often makes sense to break up a task (e.g. “analyze data and turn it into publication ready figures and tables”) into smaller chunks, e.g. “data cleaning” vs “summarizing and plotting” vs “model fitting”. This leads to a *pipeline*: a system where the code for some tasks (e.g. summarizing and plotting) depend on the output of others (e.g. data cleaning).
+
+One of the major advantages to this paradigm: **you no longer have to re-run all of the code every time you make a change**. You only need to run the parts downstream from what you changed.
+
+But how do we keep track of what needs to be re-run when we make changes in this system? We could do it by hand, but this is likely to cause human error (recall the reproducibility principle!). It’s much safer to **automate**. We will be learning how to use Makefiles for this purpose.
+
+This will be challenging! But the payoff is huge for larger projects. Shaun Jackman gives an example of a Bioinformatics paper that is generated with a single Makefile that:
+
+-   Downloads the data
+
+-   Runs command-line programs
+
+-   Performs the statistical analyses using R
+
+-   Generates TSV tables
+
+-   Renders figures using ggplot2
+
+-   Renders supplementary material using RMarkdown
+
+-   Renders the manuscript using Pandoc
+
+And critically, *knows which parts need to be run and which parts do not*. Amazing, right?
+
+## Agenda
+
+We will first work through [stat545.com Chapter 35](https://stat545.com/make-test-drive.html) to make sure that we all have `make` installed and that we can access it.
+
+Once we get there, we’ll work through the activity in [stat545.com Chapter 36](https://stat545.com/automating-pipeline.html) together.
+
+## Additional Resources
+
+-   [Shaun Jackman and Jenny Bryan’s automation notes](https://github.com/STAT545-UBC/STAT545-UBC-original-website/blob/master/automation01_slides/slides.md) for getting familiar with the command line.
+
+-   The entire [Part IX: All the Automation Things](https://stat545.com/automation-overview.html) from the stat545.com book contains further elaborations on this topic.
+
+### **Attribution**
+
+Written by Vincenzo Coia, with inspiration from Tiffany Timbers for the explanation of Makefiles, as well as the make activity from Shaun Jackman and Jenny Bryan created for this course prior to 2017.

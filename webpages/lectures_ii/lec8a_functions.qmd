@@ -1,5 +1,5 @@
 ---
-title: "Lecture 8: Functions"
+title: "Lecture 8a: Functions"
 subtitle: "October 21, 2025"
 date-modified: last-modified
 ---

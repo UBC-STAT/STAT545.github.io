@@ -49,16 +49,16 @@ This course will feature short lectures and in-class demonstrations so students 
 | 8 | Tuesday Oct 21 | [Functions](../lectures_ii/lecture8a_functions.qmd) | Worksheet B1 |
 |  | Thursday Oct 23 | [Advanced Functions](../lectures_ii/lecture8b_advfunctions.qmd) | Worksheet B1, Assignment 1 |
 |  |  |  |  |
-| 9 | Tuesday Oct 28 | R Packages |  |
-|  | Thursday Oct 30 | R Packages | Assignment 2 |
+| 9 | Tuesday Oct 28 | [R Packages](../lectures_ii/lec9_rpackages.qmd)  |  |
+|  | Thursday Oct 30 |   | Assignment 2 |
 |  |  |  |  |
-| 10 | Tuesday Nov 4 | Dashboards |  |
-|  | Thursday Nov 6 | Dashboards | Assignment 3 |
+| 10 | Tuesday Nov 4 |  [Dashboards with R Shiny](../lectures_ii/lec10_shiny.qmd) |  |
+|  | Thursday Nov 6 |  | Assignment 3 |
 |  |  |  |  |
 | 11 | Tuesday Nov 11 | **NO LECTURE: REMEMBRANCE DAY** |  |
-|  | Thursday Nov 13 | Automation |  |
+|  | Thursday Nov 13 | [Automation](../lectures_ii/lec11_automation.qmd)  |  |
 |  |  |  |  |
-| 12 | Tuesday Nov 18 | Character Data | Worksheet B2 |
+| 12 | Tuesday Nov 18 | [StringR and Regular Expressions](../lectures_ii/lec12_characterdata.qmd) | Worksheet B2 |
 |  | Thursday Nov 20 |  | Worksheet B2 |
 |  |  |  |  |
 | 13 | Tuesday Nov 25 | List Columns | Worksheet B3 |

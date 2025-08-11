@@ -1,0 +1,71 @@
+---
+title: "Lecture 10: Dashboards with R Shiny"
+subtitle: "November 4, 2025"
+date-modified: last-modified
+---
+
+This topic aims to provide you with a foundation for making a shiny app. From this topic, students are anticipated to be able to:
+
+-   develop the user interface of a shiny app from scratch,
+
+-   develop interactivity using widgets in a shiny app,
+
+-   deploy a shiny app to shinyapps.io,
+
+-   create interactive Shiny R Markdown documents (embed shiny features within an Rmd file).
+
+And possibly:
+
+-   Make an interactive plot with plotly
+
+-   Make an interactive data table with the `DT` package
+
+## Why Dashboards?
+
+Dashboards allow users to get real time (and often customizable) overviews of information. Dashboards can be used for monitoring, measuring, analyzing, and presenting data.
+
+## R Shiny
+
+Shiny is an open-source R package that allows users to create interactive web applications directly from R without needing to learn traditional web development languages like HTML, CSS, or JavaScript.
+
+Here are some examples of R Shiny Dashboards:
+
+-    [http://ShowMeShiny.com](http://showmeshiny.com)
+
+<!-- -->
+
+-   <http://letsrun.com/shoes>
+
+-    <http://daattali.com/shiny/cancer-data/> \
+
+Today, we'll be replicating this dashboard to explore BS Liquor Store prices:
+
+-    <http://daattali.com/shiny/bcl/>
+
+## Agenda
+
+We are going to be working off of this [slide deck](https://docs.google.com/presentation/d/1dXhqqsD7dPOOdcC5Y7RW--dEU7UfU52qlb0YD3kKeLw/edit#slide=id.p) and [tutorial](https://deanattali.com/blog/building-shiny-apps-tutorial/) written by Dean Attali. This should take two classes.
+
+## Additional Resources
+
+-   Video lecture: [How to Make a Shiny App in R](https://www.youtube.com/watch?v=rB4SJGyaGls)
+
+<!-- -->
+
+-   [“Mastering Shiny”](https://mastering-shiny.org/) by Hadley Wickham gives a more comprehensive treatment.
+
+-   The [official shiny site](https://shiny.rstudio.com/) has tutorials, a gallery, and other goodies.
+
+-   For deploying shiny apps, check out <https://www.shinyapps.io/>
+
+-   For shiny documents (= R Markdown + shiny), see [Chapter 19 of Yihui’s R Markdown book](https://bookdown.org/yihui/rmarkdown/shiny-documents.html).
+
+-   For testing your shiny app, check out the [shinytest](https://rstudio.github.io/shinytest/) and [reactlog](https://github.com/rstudio/reactlog) packages.
+
+-   For further cutting down on code repetition by “functionizing” your shiny app, check out [Emily Riederer’s beginner’s guide to Shiny modules](https://emilyriederer.netlify.app/post/shiny-modules/) for a gentle introduction and [Chapter 19 of the “Mastering Shiny” book](https://mastering-shiny.org/scaling-modules.html) for a full treatment.
+
+Other dashboard tools besides shiny (but not in R):
+
+-   With python: plotly dash. Check out the [main website](https://plotly.com/dash/), or [this Medium post](https://medium.com/plotly/introducing-dash-5ecf7191b503) introducing the tool.
+
+-   With javascript: [D3](https://d3js.org/), a tremendously powerful tool with a steep learning curve (esp. if you don’t know javascript).

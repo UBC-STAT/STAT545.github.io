@@ -1,0 +1,151 @@
+---
+title: "Lecture 13: List Columns"
+subtitle: "November 25, 2025"
+date-modified: last-modified
+---
+
+### **Learning Objectives**
+
+From this topic, students are anticipated to be able to:
+
+-   Use the `map` family of functions from the purrr package to iteratively apply a function.
+
+-   Create and operate on list columns in a tibble using `nest()`, `unnest()`, and the `map()` family of functions.
+
+-   Define functions on-the-fly within a `map` function using shortcuts.
+
+-   Apply list columns to cases in data analysis: columns of models, columns of nested lists (JSON-style data), and operating on entire groups within a tibble.
+
+Class 1 will be dedicated to `purrr` while Class 2 will be dedicated to list-columns.
+
+We will need to load in the `tidyverse` package for this lecture:
+
+```{r, warning = F, message = F}
+library(tidyverse)
+```
+
+## Vectors vs Lists
+
+Here is a list in R; it holds multiple items.
+
+```{r}
+sample_list <- list(1:3, c("a", "b", "c"))
+sample_list
+```
+
+A list might sound like a *vector*, which we have worked with before – remember, we construct them using the `c()` function. Indeed, vectors and lists can both hold multiple items. But there are key differences.
+
+| Vectors | Lists |
+|----|----|
+| Access elements with square brackets `[]` | Access elements with `[[]]` |
+| Each element must be an atomic data type (i.e. a single value) | Elements can be anything, even another list or another vector |
+| Each element has to be of the same type | Elements can be as different as you like |
+
+## The Secret Life of Tibbles
+
+Did you know that data frames (and tibbles) are actually a special type of list? It’s true!
+
+```{r}
+typeof(mtcars) 
+```
+
+```{r}
+typeof(palmerpenguins::penguins)
+```
+
+It turns out that they are actually *lists*, where each element of the list stores a column, which is either a list with the same number of entries as the tibble has rows, or a vector with the same number of entries as the tibble has rows.
+
+This has an important implication: we can efficiently apply a function to each column of a tibble by learning how to apply a function to each entry of a list. This is yet another way (beyond functions themselves) of avoiding duplicating code, which you will recall (from the functions topic) has many advantages.
+
+## Iteration
+
+If you programmed before, you probably have an idea of how to do this with a `for` loop. Here’s an example of a for loop in R that iterates over the entries of a numeric vector `x`, squares each entry, and stores the result in a numeric vector `output`:
+
+```{r}
+x <- 1:10 
+output <- vector("double", length(x))
+
+for(i in seq_along(x)) { 
+    output[i] <- x[i]^2  
+}
+
+output
+```
+
+Often, you can replace loops with a compact call to a function in the `purrr` package. This has the advantage of making our code even more readable and compact, since we’re expressing the same logic with less space. Here’s an example using `purrr::map_dbl()` and a custom function:
+
+```{r}
+purrr::map_dbl(1:10, function(x) x^2)
+```
+
+The first argument specifies the list/vector we want to iterate over, and the second argument specifies a function that we want to apply to each entry. Options for specifying functions include the name of a function, a fully specified custom function (as demonstrated above), or one of the “shortcuts” the `purrr` developers have provided.
+
+Here are two examples of “shortcuts”:
+
+```{r}
+purrr::map_dbl(1:10, ~ (.x)^2)
+```
+
+```{r}
+purrr::map_dbl(1:10, \(x) x^2)
+```
+
+The second one is easier to remember and appears to be the one that `purrr` developers are recommending now; see the [purrr cheatsheat](https://github.com/rstudio/cheatsheets/blob/main/purrr.pdf). But this change in recommendation appears to have happened around 2022/2023, so you may still see the first type of shortcut in many places in the wild.
+
+## List Columns
+
+Did you know columns in a tibble can have type “list”? We call these types of columns “list columns”.
+
+Consider the following example: a snippet of the Game of Thrones data from [An API of Ice and Fire](https://anapioficeandfire.com/).
+
+```         
+## # A tibble: 6 × 3
+##   name              gender titles   
+##   <chr>             <chr>  <list>   
+## 1 Theon Greyjoy     Male   <chr [2]>
+## 2 Tyrion Lannister  Male   <chr [2]>
+## 3 Victarion Greyjoy Male   <chr [2]>
+## 4 Will              Male   <chr [1]>
+## 5 Areo Hotah        Male   <chr [1]>
+## 6 Chett             Male   <chr [1]>
+```
+
+Some characters have one title (e.g. Will); others have more than one title (e.g. Theon Greyjoy). Consequently, the `titles` column is a *list column*, where each entry is a *list* that contains as many or as few strings as we like.
+
+## Agenda
+
+### Class 1: Worksheet B3, Part I
+
+We think the best way to get your bearings with `purrr` is to jump into Worksheet B3. Class 1 will be dedicated to getting your questions about Part 1 and about any concepts up to this point answered.
+
+### Class 2: Worksheet B3, Parts 2 and 3
+
+Class 2 will be dedicated to getting your questions about Parts 2 and 3 and about any concepts involving list columns and nested lists answered.
+
+## Resources
+
+Video lectures:
+
+-   [Vectors and Lists in R](https://www.youtube.com/watch?v=nJgrDoCENBI)
+
+-   [R List Columns: purrr map and nesting](https://www.youtube.com/watch?v=_731PZ8I9m0)
+
+Written material:
+
+-   [R4DS Chapter 21: Iteration](https://r4ds.hadley.nz/iteration.html) for purrr
+
+    -   21.1 for an intro
+
+    -   21.5 for the `map` family of functions
+
+    -   The intro of 21.7 for the `map2` and `pmap` families.
+
+-   [“List Columns”](https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html) from [Jenny’s purrr tutorial](https://jennybc.github.io/purrr-tutorial/index.html)
+
+-   [“Nested data” article](https://tidyr.tidyverse.org/articles/nest.html) on tidyr’s website.
+
+Want to dig deeper? These resources can help.
+
+-   [Advanced R Chapter 9: Functionals](https://adv-r.hadley.nz/functionals.html) – looking at purrr and `map()` from a programming perspective.
+
+-   [tidyr’s rectangling vignette](https://tidyr.tidyverse.org/articles/rectangle.html) – for handling deeply nested lists (JSON-style data), similar to tidyr’s `pivot_` functions.

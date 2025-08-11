@@ -1,0 +1,59 @@
+---
+title: "Lecture 14: Websites and Slides with Quarto"
+subtitle: "December 2, 2025"
+date-modified: last-modified
+---
+
+One great thing about having html files output from Rmd? We can use Rmd as a framework for creating websites, because websites are often just html.
+
+Similarly, we can use Rmd as a framework for creating pdf slides (through the Beamer LaTeX document class) or html slides (through reveal.js).
+
+This is especially powerful when you move to the *next generation* version of Rmd, [Quarto](https://quarto.org/).
+
+Note that Quarto was released in 2022, so there are still some growing pains. But it seems to be the way of the future for websites and slides, so it’s what we’ll cover.
+
+**This topic is optional.**
+
+## Quarto Installation and Basics
+
+Official tutorial [here](https://quarto.org/docs/get-started/hello/rstudio.html). It’s very straightforward to pick up if you already know Rmd. (Which we do!)
+
+## Quarto Websites
+
+Turns out, you've been using a Quarto website this whole semester! Our STAT545 webpage (the one you're on right now) was build entirely using Quarto. And, this was build using no prior Quarto knowledge or fancy tools - this was actually my first website build *ever*.
+
+Let's "learn by doing" and build a webpage together! This is a great opportunity to build a professional website (like [mine](https://grcetmpk.github.io/)) using Quarto. We will host our website on Github to make things easy!
+
+Before continuing, ensure that you've installed Quarto using the tutorial in the previous sections.
+
+In RStudio, create a New Project. Select "New Directory" and then find "Quarto Website". A simple build of a two paged website will generate.
+
+In Terminal, use `touch .nojekyll` (mac) or `copy NUL .nojekyll` to disable Jekyll.
+
+Navigate to the \_quarto.yml file in your files on the right-hand side of RStudio. Under the project: preamble, add`output-dir: docs` under the project preamble.
+
+Click the Render button. A local version of this simple website will appear.
+
+Now, we should send this to GitHub so we can host our website on GitHub and make changes both locally and through GitHub. To do so, we need to connect this R Project with Github.
+
+When you made this project, you should have selected to use Git as a version control. If not, head to Tools \> Version control \> Project Setup and select Git as your version control. At this time, origin should be set to `none`.
+
+On GitHub, make a new EMPTY repository. This should be named with the same name as your website (i.e., [yourname.github.io](http://yourname.github.io/)). Ensure you UNSELECT to make a README file.
+
+Now back to RStudio. We will be working in the terminal to give commands to our computer to connect with Github. SAVE ALL FILES. In the Terminal (beside the Console in RStudio), type `git init`. Then, `git add .`. Then, commit the changes of our website to Git. Type \`git commit -m "initial commit".\`\`
+
+`The -m "xxx" part adds a description of your changes. After, tell github where we are pushing the changes to (i.e., the repository you just created!) using` git remote add origin <https://github.com/yourusername/yourreponame%60> and filling in your username and repository name. Then, push the changes using `git push -u origin main`. Head back to github to see new files added to your repository.
+
+On Github in your repository, click the three dots and head to settings. Navigate to `pages` on the lefthand side menu. Under `branch`, select `main` as your branch and `/docs` as the folder. Select save. Give it a few minutes and refresh if you dont see a success message pointing to the website. Head to [yourreponame.github.io](http://yourrepname.github.io) to see if it worked!
+
+Do steps from git add . onward to push changes each time.
+
+## Quarto Slides
+
+Official tutorial [here](https://quarto.org/docs/presentations/).
+
+An example of a Quarto slide deck is [Lucy’s guest lecture in STAT 540](https://stat540-ubc.github.io/lectures/lect16-clustering/lect16-clustering-guest.html). This uses our preferred format, [reveal.js](https://revealjs.com/). You can download the slide deck WITH the source [here](https://www.dropbox.com/s/aataltxawu2qxn3/lec14-clustering.zip?dl=0). This is a great way to make your slide deck *reproducible*.
+
+## Resources
+
+-   Official tutorial for Quarto website building [here](https://quarto.org/docs/websites/).

@@ -1,0 +1,77 @@
+---
+title: "Lecture 12: StringR and Regular Expressions"
+subtitle: "November 18, 2025"
+date-modified: last-modified
+---
+
+From this topic, students are anticipated to be able to:
+
+-   Manipulate a character vector in R using the stringr package.
+
+-   Write simple regular expressions (regex).
+
+-   Apply stringr and regular expressions to manipulate data in tibbles.
+
+## Strings
+
+You’ve used a bunch of strings at this point without knowing explicitly what they are: any time you surround text by `"`, you’ve been making a *string*: a storage format for text. In R, they are of type “character”.
+
+```{r}
+sample_string <- "This is a string" 
+typeof(sample_string)
+```
+
+Two places where you’ll often want to manipulate these in data analysis:
+
+-   Cleaning up column/variable names
+
+-   Cleaning up character column values
+
+**Good to know**: Constructing strings out of characters and numbers is intuitive, but there’s a gotcha involving particular symbols with special meaning in R. For example, try running `quote <- """` in R; it won’t work, because the `"` symbol is interpreted as you trying to make a string! To literally include a quote in a string, you can use the `\` character to “escape” it:
+
+```{r}
+single_quote <- "\""
+cat(single_quote)
+```
+
+You can see more examples of special characters and how to escape them in [R4DS Chapter 15.2](https://r4ds.hadley.nz/strings#creating-a-string).
+
+## Working with strings
+
+Our main tools for working with strings will be the powerful `stringr` package in the tidyverse paired with regular expressions.
+
+## **Agenda**
+
+### Class 1
+
+-   **Before class**, start working on parts I and II of Worksheet B2.
+
+-   Class will be dedicated to getting your questions answered.
+
+-   Done early? Then do the optional R4DS Strings and R4DS Regular expressions readings (linked above), and do exercises for extra practice.
+
+### Class 2
+
+-   **Before class**, start working on parts II and III of Worksheet B2.
+
+-   Class will be dedicated to getting your questions answered.
+
+-   Done early? Then do the optional R4DS Strings and R4DS Regular expressions readings (linked above), and do exercises for extra practice. Or, start Assignment B4.
+
+## Resources
+
+Video lecture:
+
+-   [Regular Expressions and stringr for Text Data](https://www.youtube.com/watch?v=I0dJ1zpxAtU) (only labelled as “age restricted” because it looks at real emails within the Enron company.)
+
+Written material:
+
+-   Overview tutorials similar to our worksheet:
+
+    -   [stat545.com Chapter 11: character vectors](https://stat545.com/character-vectors.html)
+
+    -   [R4DS Chapter 15: strings](https://r4ds.hadley.nz/strings.html).
+
+    -   [R4DS Chapter 16: regular expressions](https://r4ds.hadley.nz/regexps).
+
+-   The stat545.com Chapter 11 on character vectors [has an elaborate discussion on useful resources](https://stat545.com/character-vectors.html#resources-3) for learning more about strings.

@@ -10,7 +10,7 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 ### Course Information
 
 |  |  |  |  |  |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
 | Exploratory Data Analysis Part I | STAT 545 A | 1.5 | Monday/Wednesday: 9:00am - 10:20am | CEME 1202 |
 
@@ -43,7 +43,7 @@ This course will feature short lectures and in-class demonstrations so students 
 **STAT 545 A (Part I):**
 
 | Week | Date | Topic | In-class work |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | 1 | Tuesday Sept 2 | [Installation](../lectures_i/lec1a_installation.qmd) |  |
 |  | Thursday Sept 4 | [Intro to STAT545 and R](../lectures_i/lec1b_introR.qmd) | Worksheet A1 |
 |  |  |  |  |
@@ -72,7 +72,7 @@ This schedule is subject to change. Any changes will be announced via the `#anno
 This course will have autograded, formative worksheets meant to guide you through a number of exercises.
 
 | Assessment | Percent Grade | Note |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | Worksheets | 20% | Guided worksheets |
 | Mini Data Analysis | 45% | Students write their own mini analysis |
 | Collaborative Project | 35% | Team project intended for practicing version control and collaboration |
@@ -96,7 +96,7 @@ Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 Teams will be randomly assigned. The idea behind the collaborative project is to practice using Version Control and collaborative tools on Github, troubleshoot broken R code, and rewrite code to address issues. There will be two deliverables for the project:
 
 | Collaborative Project Milestone | Release Date        | Due Date (11:59pm PT) |
-|--------------------------|-----------------------|-----------------------|
+|---------------------------------|---------------------|-----------------------|
 | Deliverable 1 (100 points)      | September 4th, 2025 | September 19th, 2025  |
 | Deliverable 2 (78 points)       | September 4th, 2025 | September 26th, 2025  |
 
@@ -107,7 +107,7 @@ Instructions will be posted on the Course Website under "Collaborative Project"
 Conduct your own mini data analysis! The goal of this assignment is to become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as `tibble`. There are two equally weighted deliverables:
 
 | Mini Data Analysis Milestone | Release Date         | Due Date (11:59PM PT) |
-|-------------------------|------------------------|------------------------|
+|------------------------------|----------------------|-----------------------|
 | Deliverable 1 (36 points)    | September 26th, 2025 | October 3rd, 2025     |
 | Deliverable 2 (36 points)    | September 26th, 2025 | October 22nd, 2025    |
 
