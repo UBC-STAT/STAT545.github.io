@@ -290,6 +290,4 @@ We will now spend some time attempting questions on the last part of Worksheet A
 
 -   [Mike Marin’s R playlist on YouTube](https://www.youtube.com/playlist?list=PLqzoL9-eJTNBlVXxWvJkq0dtVut2sICUW)
 
-### **Attribution**
 
-Model fitting intro by Vincenzo Coia with input from Victor Yuan. FEV case study added later by Lucy.

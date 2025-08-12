@@ -248,6 +248,4 @@ There will be some class time to go over solutions if you got stuck on any quest
 
 -   [dplyr cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) for all these concepts packed onto a sheet of paper.
 
-### **Attributions**
 
-*Written by Albina Gibadullina and Vincenzo Coia*

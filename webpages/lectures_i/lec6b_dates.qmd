@@ -336,6 +336,3 @@ Finished attempting all of the questions? Then do the optional [R4DS Factors](ht
 
 -   The `tsibble` [vignette](https://cran.rstudio.com/web/packages/tsibble/vignettes/intro-tsibble.html) to learn more about embedding a time series within a tibble.
 
-
-### Attribution
-*Written by Grace Tompkins with examples from Vincenzo Coia*

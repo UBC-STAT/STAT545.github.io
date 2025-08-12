@@ -225,5 +225,3 @@ Video lectures for this topic (ignore the episode numbering):
         -   [Callingbull.org’s entry on visualizations](https://www.callingbull.org/tools/tools_misleading_axes.html), by Carl T. Bergstrom and Jevin West, goes over several examples of improving ineffective visuals.
 
 
-### Attribution
-*Lecture created by Vincenzo Coia.*

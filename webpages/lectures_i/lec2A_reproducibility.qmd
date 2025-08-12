@@ -154,4 +154,4 @@ Many cheat sheets can be found from RStudio: go to "Help" -\> "Cheatsheets".
 
 ### Attribution
 
-*This section was written by Grace Tompkins. Demonstration by Icíar Fernández Boyano. Inspiration for activity ideas drawn from Nicholas Tierney’s R Markdown for Scientists book, the R Markdown for Medicine workshop materials, and the UBC MDS program.*
+*Demonstration by Icíar Fernández Boyano. Inspiration for activity ideas drawn from Nicholas Tierney’s R Markdown for Scientists book, the R Markdown for Medicine workshop materials, and the UBC MDS program.*

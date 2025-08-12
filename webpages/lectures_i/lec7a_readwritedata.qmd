@@ -149,6 +149,3 @@ Also notice the output of running `read_csv`. This tells us about the types of v
 -   Video lecture: [Reading and Writing Data](https://youtu.be/2nHuNu6Zaqk)
 -   The [“Writing and Reading files”](https://stat545.com/import-export.html) chapter of stat545.com.
 
-### Attribution
-
-*Written by Grace Tompkins using materials from Vincenzo Coia and Jenny Bryan.*
