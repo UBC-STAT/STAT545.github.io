@@ -61,10 +61,10 @@ This course will feature short lectures and in-class demonstrations so students 
 | 12 | Tuesday Nov 18 | [StringR and Regular Expressions](../lectures_ii/lec12_characterdata.qmd) | Worksheet B2 |
 |  | Thursday Nov 20 |  | Worksheet B2 |
 |  |  |  |  |
-| 13 | Tuesday Nov 25 | List Columns | Worksheet B3 |
+| 13 | Tuesday Nov 25 | [List Columns](../lectures_ii/lec13_listcolumns.qmd) | Worksheet B3 |
 |  | Thursday Nov 27 |  | Worksheet B3 |
 |  |  |  |  |
-| 14 | Tuesday Dec 2 | Websites and Slides |  |
+| 14 | Tuesday Dec 2 | [Quarto Websites and Slides](../lectures_ii/lec12_quarto.qmd)|  |
 |  | Thursday Dec 4 | Review and Work Session | Assignment 4 |
 
 This schedule is subject to change. Any changes will be announced via the `#annoucements` channel on Slack, and major changes will be sent out via email.
@@ -194,6 +194,8 @@ UBC provides resources to support student learning and to maintain healthy lifes
 -   Use Slack to carry out discussions.
 
 If you miss an assessment due to illness, see the above section on Academic Concessions, and review the UBC policy here: <http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0>
+
+Above all, please take care of yourself and be kind to yourself and your classmates. If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, I strongly encourage you to seek support. UBC Counseling Services is here to help: call 604 822 3811 or visit their website. Consider also reaching out to a friend, faculty member, or family member you trust to help get you the support you need.
 
 #### Instructor health
 
