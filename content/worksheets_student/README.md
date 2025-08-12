@@ -2,7 +2,7 @@
 
 Blank worksheets as `.ipynb` and `.zip` files can be found here!
 
-You can download worksheets by clicking the download button on the top right-hand side of the worksheet preview:
+You can download worksheets by clicking on the worksheet you want (for example, `worksheet_a01.ipynb`) and clicking the download button on the top right-hand side of the worksheet preview:
 
 ![](images/download.png)
 
