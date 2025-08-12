@@ -1,3 +1,15 @@
+
+# About this Repo
+
+This repo contains student-facing materials for STAT545A/B at UBC.
+
+Worksheets can be found in `content/`
+
+
+
+
+
+
 # Instructions for Updating Website
 
 Website is built using Quarto, and is hosted on GitHub pages through the UBC-STAT Organization.
@@ -42,5 +54,4 @@ NOTES:
 ### AS NEEDED:
 - Release worksheets (un-comment each download link)
 - Release MDA and collaborative project when appropriate (see above)
-
 
