@@ -10,6 +10,9 @@ website:
     left:
       - href: index.qmd
         text: "Home"
+        icon: house-door-fill
+      - href: webpages/schedule/scheduleA.qmd #change to B once A finished
+        text: "Schedule"
       - sidebar:syllabus
       - sidebar:lecturesi
       - sidebar:lecturesii
@@ -20,6 +23,11 @@ website:
       - sidebar:casestudies
       - href: webpages/faq.qmd
         text: "FAQ"
+        
+    right:
+      - href: "https://github.com/UBC-STAT/STAT545.github.io"
+        text: "GitHub"
+        icon: github
         
   sidebar:
     - id: syllabus

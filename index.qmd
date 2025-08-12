@@ -3,20 +3,6 @@ title: "STAT545 A/B: Exploratory Data Analysis (Fall 2025)"
 date-modified: last-modified
 ---
 
-::: {.callout-note icon="false"}
-## This Week at a Glance
-
-**Lectures:**
-
--   Tuesday September 2: Get in-person help with [installing course software](webpages/lectures_i/installation.qmd)
-
--   Thursday September 4th: [Intro to R lecture](webpages/lectures_i/introR.qmd), begin working through Worksheet A1
-
-**Assessments Due:**
-
--   Nothing! Ensure you have completed all installation instructions by next week!
-:::
-
 ## 👋 Welcome!
 
 :::::: column-layout
@@ -65,6 +51,24 @@ I am joined by a wonderful group of TAs, including:
 ....
 
 Please reach out if you have any concerns or questions at grace\<at\>stat.ubc.ca, or through our **Slack channel.**
+
+## 📲 Course Communications
+
+Our course communications will occur on a dedicated Slack Channel. If you're enrolled in STAT545 at UBC, head to Canvas to find your invite link. Please email the instructor if you have any issues registering.
+
+Announcements, weekly summaries, and other important information will be in the `#announcements` channel. We'll also have dedicated channels for the course topics, worksheets, and other assessments.
+
+The STAT 545 team will be actively monitoring Slack during regular working hours (9am to 5pm PT, Monday to Friday). You are free to ask questions outside of this window but please keep in mind that there are no expectations for the team to answer questions outside of working hours or on weekends or holidays.
+
+To make the most out of Slack, please
+
+-   Use the `#general` channel for clarifications, asking about course organization, or clarifying instructions. Things you post on the `#general` channel will be seen by everyone, so please do not provide information that gives away answers to assignments.
+
+-   Make a group chat with our TAs when you need more personalized help, or have an issue with grading. They may direct you to the `#general` channel when appropriate, or direct you to the instructor.
+
+-   Direct message the instructor if there is a concern that is more personal (i.e., you need to self declare an absense) or if you have already talked to the TAs about an issue and are unsatisfied. You can also direct message the instructor if you are having issues with a group member in any group-related assignments.
+
+-   Post in the `#random` channel if you find things related to the course that you’d like to share
 
 ## 📝 Attributions
 
