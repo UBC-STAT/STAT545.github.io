@@ -46,8 +46,8 @@ This course will feature short lectures and in-class demonstrations so students 
 
 | Week | Date | Topic | In-class work |
 |------------------|------------------|------------------|------------------|
-| 8 | Tuesday Oct 21 | [Functions](../lectures_ii/lecture8a_functions.qmd) | Worksheet B1 |
-|  | Thursday Oct 23 | [Advanced Functions](../lectures_ii/lecture8b_advfunctions.qmd) | Worksheet B1, Assignment 1 |
+| 8 | Tuesday Oct 21 | [Functions](../lectures_ii/lec8a_functions.qmd) | Worksheet B1 |
+|  | Thursday Oct 23 | [Advanced Functions](../lectures_ii/lec8b_advfunctions.qmd) | Worksheet B1, Assignment 1 |
 |  |  |  |  |
 | 9 | Tuesday Oct 28 | [R Packages](../lectures_ii/lec9_rpackages.qmd) |  |
 |  | Thursday Oct 30 |  | Assignment 2 |
@@ -64,7 +64,7 @@ This course will feature short lectures and in-class demonstrations so students 
 | 13 | Tuesday Nov 25 | [List Columns](../lectures_ii/lec13_listcolumns.qmd) | Worksheet B3 |
 |  | Thursday Nov 27 |  | Worksheet B3 |
 |  |  |  |  |
-| 14 | Tuesday Dec 2 | [Quarto Websites and Slides](../lectures_ii/lec12_quarto.qmd) |  |
+| 14 | Tuesday Dec 2 | [Quarto Websites and Slides](../lectures_ii/lec14_quarto.qmd) |  |
 |  | Thursday Dec 4 | Review and Work Session | Assignment 4 |
 
 This schedule is subject to change. Any changes will be announced via the `#annoucements` channel on Slack, and major changes will be sent out via email.
@@ -74,7 +74,7 @@ This schedule is subject to change. Any changes will be announced via the `#anno
 This course will have autograded worksheets meant to guide you through a number of exercises as well as assignments.
 
 | Assessment | Percent Grade | Note |
-|------------------|------------------|-------------------------------------|
+|------------------------|------------------------|------------------------|
 | Worksheets | 15% | Three guided worksheets |
 | Assignments | 85% | Four assignments involving more independent analyses and tasks |
 
@@ -85,7 +85,7 @@ Worksheets are interactive assignments that allow students to get real-time feed
 Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
 | Worksheet | Release Date | Due Date (11:59PM PT) | Percentage of Final Grade |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Worksheet B1 | Monday Oct 20, 2025 | Monday Oct 27, 2025 | 5% |
 | Worksheet B2 | Friday Nov 14, 2025 | Thursday Nov 27, 2025 | 5% |
 | Worksheet B3 | Thursday Nov 27, 2025 | Thursday Dec 4, 2025 | 5% |

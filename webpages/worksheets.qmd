@@ -24,7 +24,7 @@ Worksheets are produced with Jupyter Notebooks. For installation instructions, s
 -   We're here to help along the way on Slack, so don't be shy to ask for help if you need it.
 
 | Worksheet | Release Date | Due Date (11:59PM PT) | Percentage of Final Grade |
-|------------------------|------------------------|------------------------|--|
+|----|----|----|----|
 | [Worksheet A1](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a01.ipynb) | September 2nd, 2025 | NA | 0% |
 | [Worksheet A2](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a02.ipynb) | September 15th, 2025 | September 22nd, 2025 | 5% |
 | [Worksheet A3](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a03.ipynb) | September 22nd, 2025 | September 29th, 2025 | 5% |
