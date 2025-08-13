@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lecture 3 Case Study: Data Manipulation on FEV Dataset – STAT545 @ UBC</title>
+<title>Lecture 3 Case Study – STAT545 @ UBC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,8 +89,9 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
+</i> 
+<span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -108,10 +109,10 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures-part-i" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lectures: Part I</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lectures</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures-part-i">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_i/lec1a_installation.html">
  <span class="dropdown-text">Lecture 1A: Installation</span></a>
@@ -156,16 +157,9 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../webpages/lectures_i/lec7b_joiningtibbles.html">
  <span class="dropdown-text">Lecture 7B: Tibble Joins</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures-part-ii" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lectures: Part II</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures-part-ii">    
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_ii/lec8a_functions.html">
- <span class="dropdown-text">Lecture 8: Functions</span></a>
+ <span class="dropdown-text">Lecture 8a: Functions</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_ii/lec8b_advfunctions.html">
@@ -175,6 +169,26 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../webpages/lectures_ii/lec9_rpackages.html">
  <span class="dropdown-text">Lecture 9: R Packages</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec10_shiny.html">
+ <span class="dropdown-text">Lecture 10: Dashboards with R Shiny</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec11_automation.html">
+ <span class="dropdown-text">Lecture 11: Automation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec12_characterdata.html">
+ <span class="dropdown-text">Lecture 12: StringR and Regular Expressions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec13_listcolumns.html">
+ <span class="dropdown-text">Lecture 13: List Columns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec14_quarto.html">
+ <span class="dropdown-text">Lecture 14: Websites and Slides with Quarto</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -182,10 +196,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Worksheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collaborative-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Collaborative Project</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collab-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Collab Project</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-collaborative-project">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-collab-project">    
         <li>
     <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
@@ -218,21 +232,28 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-case-studies">    
         <li>
     <a class="dropdown-item" href="../../webpages/casestudies/fev_datamanipulation.html">
- <span class="dropdown-text">Lecture 3 Case Study: Data Manipulation on FEV Dataset</span></a>
+ <span class="dropdown-text">Lecture 3 Case Study</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../webpages/casestudies/fev_datavis.html">
- <span class="dropdown-text">Lecture 4 Case Study: Data Visualization with FEV Dataset</span></a>
+ <span class="dropdown-text">Lecture 4 Case Study</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../webpages/casestudies/nycflights_dates.html">
- <span class="dropdown-text">Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)</span></a>
+ <span class="dropdown-text">Lecture 6b Case Study</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/UBC-STAT/STAT545.github.io"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -245,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/casestudies/fev_datamanipulation.html">Lecture 3 Case Study: Data Manipulation on FEV Dataset</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/casestudies/fev_datamanipulation.html">Lecture 3 Case Study</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -260,19 +281,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/casestudies/fev_datamanipulation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture 3 Case Study: Data Manipulation on FEV Dataset</span></a>
+ <span class="menu-text">Lecture 3 Case Study</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/casestudies/fev_datavis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 4 Case Study: Data Visualization with FEV Dataset</span></a>
+ <span class="menu-text">Lecture 4 Case Study</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/casestudies/nycflights_dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)</span></a>
+ <span class="menu-text">Lecture 6b Case Study</span></a>
   </div>
 </li>
     </ul>
@@ -288,7 +309,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 3 Case Study: Data Manipulation on FEV Dataset</h1>
+<h1 class="title">Lecture 3 Case Study</h1>
+<p class="subtitle lead">Data Manipulation on FEV Dataset</p>
 </div>
 
 
@@ -305,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Copy the following code into a new RMarkdown Document:</p>
+<p>Copy the following code into a new RMarkdown Document, or download it here.</p>
 <pre><code>---
 title: 'FEV Case Study: Data Manipulation'
 output: html_document

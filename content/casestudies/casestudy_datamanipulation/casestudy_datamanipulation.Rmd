@@ -1,16 +1,8 @@
 ---
-title: "Lecture 3 Case Study"
-subtitle: "Data Manipulation on FEV Dataset"
-format: html
----
-
-Copy the following code into a new RMarkdown Document, or download it here.
-
-````         
----
 title: 'FEV Case Study: Data Manipulation'
+author: "Lucy"
+date: "2023-08-29"
 output: html_document
-date: "2025-07-31"
 ---
 
 ```{r setup, include=FALSE}
@@ -20,16 +12,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Introduction 
 
 We will perform exploratory data analysis of the `fev` data set. 
-Let's start by getting the data set. Load the `readr` package (more on this later) and run `fev <- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")` to get access to it. Let's also load `dplyr` while we're at it - we'll need it to do the exercises! 
+Let's start by getting the data set. (Reminder: you will need to run `install.packages("rigr")` to install the `rigr` package which contains the data set before loading it. ) Let's also load `dplyr` while we're at it - we'll need it to do the exercises! 
 
 ```{r, message = FALSE} 
-#install.packages("dplyr") #uncomment and run once, if needed
-#install.packages("readr") #uncomment and run once, if needed
-
+library(rigr) 
 library(dplyr)
-library(readr)
-fev <- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")
-fev_tbl <- as_tibble(fev) %>% mutate(across(gender:smoking, ~ as.factor(.x))) #assign gender and smoking as factors (more on this later, too!)
+
+fev_tbl <- as_tibble(fev) %>% mutate(across(sex:smoke, ~ as.factor(.x)))
 ```
 
 ## The `fev` data set 
@@ -42,11 +31,13 @@ Data collected from the study on the relationship between smoking status and lun
 
 | Variable Name | Description | 
 | :--: |:--: |
+| seqnbr        | case number |
+| subjid        | subject identification number |
 | age           | subject age (years) | 
 | fev           | measured forced exhalation volume (litres/second)| 
 | height        | subject height (inches) | 
-| gender        | subject gender (here, male or female) | 
-| smoking         | smoking status (yes or no) | 
+| sex           | subject sex | 
+| smoke         | smoking status (yes or no) | 
 
 
 Here is a few rows of the data set:
@@ -158,4 +149,3 @@ Does this surprise you? Recall that this is an observational study - children we
 we already know that the youngest smoker in our data set is 9, while the non-smokers are as young as 3. This suggests that the smokers in our data set are generally older than the non-smokers. Furthermore, we might expect older children to have higher FEV, because they are bigger and have bigger lungs. Could age be a confounder here? Maybe the smoking group has higher lung function simply because they are older and bigger.
 
 We will investigate this point next week after we have learned about graphing tools.
-````

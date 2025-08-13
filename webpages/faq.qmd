@@ -3,17 +3,54 @@ title: "Frequently Asked Questions"
 date-modified: last-modified
 ---
 
+## Where can I find.... 
+
+-   The lecture schedule and topics?
+
+    -   [Syllabus: Part A](../webpages/syllabus/syllabusA.qmd#schedule-of-topics)
+
+    -   [Syllabus: Part B](../webpages/syllabus/syllabusB.qmd#schedule-of-topics)
+
+-   How much assessments are worth?
+
+    -   [Syllabus: Part A](../webpages/syllabus/syllabusA.qmd#assessments)
+
+    -   [Syllabus: Part B](../webpages/syllabus/syllabusB.qmd#assessments)
+
+-   Worksheets?
+
+    -   [Our GitHub page](https://github.com/UBC-STAT/STAT545.github.io/tree/main/content/worksheets_student)
+
+-   A calendar of due dates?
+
+    -   [Canvas](https://canvas.ubc.ca/calendar)
+
+-   A summary of what's going on this week?
+
+    -   [Our "This Week at a Glace" section on the home page!](../index.qmd)
+
+-   Slack posting guidelines?
+
+    -   [Syllabus](../webpages/syllabus/syllabusA.qmd#course-communications)
+
+-   The link to join Slack?
+
+    -   [STAT545A Canvas Homepage](https://canvas.ubc.ca/courses/169555) (enrolled students only)
+
 ## When is the course offered?
-September - December of each academic year.
-Typical format: STAT 545A 1.5 credits in September through mid October, followed by STAT 545B 1.5 credits from mid October through early December.
+
+September - December of each academic year. Typical format: STAT 545A 1.5 credits in September through mid October, followed by STAT 545B 1.5 credits from mid October through early December.
 
 ## What happened to STAT 547M?
+
 STAT 547M became STAT 545B in 2020, so that the course codes align. Otherwise, these are the same courses.
 
 ## What happened to the guidebook?
+
 We used a guidebook in 2019/2020. It’s still available at https://stat545guidebook.netlify.app, but had become deprecated in place of worksheets and some tutorials.
 
 ## Why are there two courses, instead of a single “STAT 545” course?
+
 For several years, Jenny Bryan taught STAT 545A as a 1.5 credit course. She – and many students – felt there was a lot of great, relevant content that could go into an additional 1.5 credits.
 
 A full semester of data exploration, visualization, and all-around data wrangling was piloted in 2014/2015. It was structured as two half courses primarily so that several year’s worth of STAT 545A alums could register for the second part (then STAT 547M) and get the “missing half” of the course. And now it’s hard to break the cycle.
@@ -38,8 +75,6 @@ Maybe, if there’s room. Contact the instructor.
 
 There are no official pre-requisites for STAT 545A but most students will have had at least one prior statistics course or comparable experience.
 
-
-
 ## I'm not enrolled – can I sit in during class?
 
 Unfortunately not. The room is usually at capacity, and further, we’ve allocated TA time for the specific number of students attending the class.
@@ -62,16 +97,18 @@ Unfortunately, the course enrollment capacity will not increase. But, I encourag
 
 When all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types. If you are a student of that type, then go ahead and register through SSC! Otherwise, I encourage you to join the waitlist.
 
-
 ## Can I take this course if I'm not a Statistics student?
+
 This course is open to any graduate student at UBC. Students from other departments vastly outnumber those from Statistics. In fact, the most successful students are often grad students from other fields who need to analyze and visualize data for a thesis. They are highly motivated and excel.
 
 However, if you have never programmed or worked at the command line before, prepare for a shock. This will be a powerful, positive experience, but it’s a big adjustment. Come suffer through the worst part of the learning curve in good company!
 
 ## Do I need a computer?
+
 YES. You absolutely must have access to a computer on which you can install software, download data, etc. In fact, class meetings will be a mix of lecture, discussion, and live coding. Students will get the most out of this if they can bring their own laptop to class every day. If this is not possible, we will try to help you work something out.
 
 ## Are they any prerequisites?
+
 There are no official pre-requisites for STAT 545A, but most students will have had at least one prior statistics course or comparable experience.
 
 STAT 545B requires STAT 545A.

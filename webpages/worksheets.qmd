@@ -3,4 +3,30 @@ title: "Worksheets"
 date-modified: last-modified
 ---
 
-Links to worksheets go here
+Worksheets are guided exercises that are meant to supplement lectures, and will be graded as part of your final mark in STAT545.
+
+Worksheets are produced with Jupyter Notebooks. For installation instructions, see [Lecture 1A (Installation)](lectures_i/lec1a_installation.qmd)
+
+[**Worksheet Tips and Tricks:**]{.underline}
+
+-   Download the .ipynb file from GitHub and save it on your personal computer.
+
+-   Only edit cells where prompted. If you accidentally click on a text-only cell, hit the play button and it should re-render.
+
+-   You can check your answers prior to submitting! If you see a "Success!" message, you got the question right. Otherwise, a detailed error message will help you diagnose what went wrong.
+
+-   Save your work frequently.
+
+-   Prior to submitting, restart your kernel and run all to ensure that no errors persist. Save again.
+
+-   Submit the .ipynb file to Canvas with the file name "worksheet_a##".
+
+-   We're here to help along the way on Slack, so don't be shy to ask for help if you need it.
+
+| Worksheet | Release Date | Due Date (11:59PM PT) | Percentage of Final Grade |
+|------------------------|------------------------|------------------------|--|
+| [Worksheet A1](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a01.ipynb) | September 2nd, 2025 | NA | 0% |
+| [Worksheet A2](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a02.ipynb) | September 15th, 2025 | September 22nd, 2025 | 5% |
+| [Worksheet A3](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a03.ipynb) | September 22nd, 2025 | September 29th, 2025 | 5% |
+| [Worksheet A4](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a04.ipynb) | September 29th, 2025 | October 13th, 2025 | 5% |
+| [Worksheet A5](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a05.ipynb) | October 13th, 2025 | October 20th, 2025 | 5% |

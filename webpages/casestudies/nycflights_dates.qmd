@@ -1,5 +1,6 @@
 ---
-title: "Lecture 6b Case Study: Date and Times on NYC Flights (WITH SOLUTIONS)"
+title: "Lecture 6b Case Study"
+subtitle: "Date and Times on NYC Flights (WITH SOLUTIONS)"
 date-modified: last-modified
 ---
 

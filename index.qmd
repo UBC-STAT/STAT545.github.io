@@ -3,6 +3,22 @@ title: "STAT545 A/B: Exploratory Data Analysis (Fall 2025)"
 date-modified: last-modified
 ---
 
+::: {.callout-note icon="false"}
+## This Week at a Glance
+
+**Lectures:**
+
+-   Tuesday September 2: Get in-person help with installing course software
+
+-   Thursday September 4th: Intro to R lecture, begin working through Worksheet A1
+
+**Assessments Due This Week:**
+
+-   Nothing! Ensure you have completed all installation instructions by next week!
+
+**Upcoming Deadlines** - Nothing!
+:::
+
 ## 👋 Welcome!
 
 :::::: column-layout

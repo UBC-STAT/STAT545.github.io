@@ -10,7 +10,7 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 ### Course Information
 
 |  |  |  |  |  |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
 | Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Monday/Wednesday: 9:30am - 10:50am | CEME 1202 |
 
@@ -42,21 +42,21 @@ This course will feature short lectures and in-class demonstrations so students 
 
 ### Schedule of Topics
 
-**STAT 545 A (Part I):**
+**STAT 545 B (Part II):**
 
 | Week | Date | Topic | In-class work |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | 8 | Tuesday Oct 21 | [Functions](../lectures_ii/lecture8a_functions.qmd) | Worksheet B1 |
 |  | Thursday Oct 23 | [Advanced Functions](../lectures_ii/lecture8b_advfunctions.qmd) | Worksheet B1, Assignment 1 |
 |  |  |  |  |
-| 9 | Tuesday Oct 28 | [R Packages](../lectures_ii/lec9_rpackages.qmd)  |  |
-|  | Thursday Oct 30 |   | Assignment 2 |
+| 9 | Tuesday Oct 28 | [R Packages](../lectures_ii/lec9_rpackages.qmd) |  |
+|  | Thursday Oct 30 |  | Assignment 2 |
 |  |  |  |  |
-| 10 | Tuesday Nov 4 |  [Dashboards with R Shiny](../lectures_ii/lec10_shiny.qmd) |  |
+| 10 | Tuesday Nov 4 | [Dashboards with R Shiny](../lectures_ii/lec10_shiny.qmd) |  |
 |  | Thursday Nov 6 |  | Assignment 3 |
 |  |  |  |  |
 | 11 | Tuesday Nov 11 | **NO LECTURE: REMEMBRANCE DAY** |  |
-|  | Thursday Nov 13 | [Automation](../lectures_ii/lec11_automation.qmd)  |  |
+|  | Thursday Nov 13 | [Automation](../lectures_ii/lec11_automation.qmd) |  |
 |  |  |  |  |
 | 12 | Tuesday Nov 18 | [StringR and Regular Expressions](../lectures_ii/lec12_characterdata.qmd) | Worksheet B2 |
 |  | Thursday Nov 20 |  | Worksheet B2 |
@@ -64,19 +64,19 @@ This course will feature short lectures and in-class demonstrations so students 
 | 13 | Tuesday Nov 25 | [List Columns](../lectures_ii/lec13_listcolumns.qmd) | Worksheet B3 |
 |  | Thursday Nov 27 |  | Worksheet B3 |
 |  |  |  |  |
-| 14 | Tuesday Dec 2 | [Quarto Websites and Slides](../lectures_ii/lec12_quarto.qmd)|  |
+| 14 | Tuesday Dec 2 | [Quarto Websites and Slides](../lectures_ii/lec12_quarto.qmd) |  |
 |  | Thursday Dec 4 | Review and Work Session | Assignment 4 |
 
 This schedule is subject to change. Any changes will be announced via the `#annoucements` channel on Slack, and major changes will be sent out via email.
 
 ### Assessments
 
-This course will have autograded, formative worksheets meant to guide you through a number of exercises.
+This course will have autograded worksheets meant to guide you through a number of exercises as well as assignments.
 
-| Assessment      | Percent Grade | Note                                |
-|-----------------|---------------|-------------------------------------|
-| Worksheets (3)  | 20%           | Guided worksheets                   |
-| Assignments (4) | 80%           | More independent analyses and tasks |
+| Assessment | Percent Grade | Note |
+|------------------|------------------|-------------------------------------|
+| Worksheets | 15% | Three guided worksheets |
+| Assignments | 85% | Four assignments involving more independent analyses and tasks |
 
 #### Worksheets
 
@@ -84,22 +84,22 @@ Worksheets are interactive assignments that allow students to get real-time feed
 
 Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
-| Worksheet    | Release Date          | Due Date (11:59PM PT) |
-|--------------|-----------------------|-----------------------|
-| Worksheet B1 | Monday Oct 20, 2025   | Monday Oct 27, 2025   |
-| Worksheet B2 | Friday Nov 14, 2025   | Thursday Nov 27, 2025 |
-| Worksheet B3 | Thursday Nov 27, 2025 | Thursday Dec 4, 2025  |
+| Worksheet | Release Date | Due Date (11:59PM PT) | Percentage of Final Grade |
+|----|----|----|----|
+| Worksheet B1 | Monday Oct 20, 2025 | Monday Oct 27, 2025 | 5% |
+| Worksheet B2 | Friday Nov 14, 2025 | Thursday Nov 27, 2025 | 5% |
+| Worksheet B3 | Thursday Nov 27, 2025 | Thursday Dec 4, 2025 | 5% |
 
 #### Assignments
 
 There are four formal assignments for this course:
 
-| Assignment   | Release Date         | Due Date (11:59pm PT) |
-|--------------|----------------------|-----------------------|
-| Assignment 1 | Tuesday Oct 21, 2025 | Friday Oct 31, 2025   |
-| Assignment 2 | Friday Oct 31, 2025  | Friday Nov 7, 2025    |
-| Assignment 3 | Friday Nov 7, 2025   | Friday Nov 21, 2025   |
-| Assignment 4 | Friday Nov 21, 2025  | Thursday Dec 4, 2025  |
+| Assignment | Release Date | Due Date (11:59pm PT) | Percentage of Final Grade |
+|------------------|------------------|------------------|------------------|
+| Assignment 1 | Tuesday Oct 21, 2025 | Friday Oct 31, 2025 | 21.25% |
+| Assignment 2 | Friday Oct 31, 2025 | Friday Nov 7, 2025 | 21.25% |
+| Assignment 3 | Friday Nov 7, 2025 | Friday Nov 21, 2025 | 21.25% |
+| Assignment 4 | Friday Nov 21, 2025 | Thursday Dec 4, 2025 | 21.25% |
 
 Instructions will be posted on the Course Website under "Assignments"
 

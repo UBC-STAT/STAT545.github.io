@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,12 +91,23 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
 </i> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text"> </span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../../webpages/schedule/scheduleA.html" aria-current="page"> 
-<span class="menu-text">Schedule</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-schedule" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Schedule</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-schedule">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/schedule/scheduleA.html">
+ <span class="dropdown-text">STAT545 A Schedule</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/schedule/scheduleB.html">
+ <span class="dropdown-text">STAT545 B Schedule</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Syllabus</span>
@@ -113,10 +124,10 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures-part-i" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lectures: Part I</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lectures</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures-part-i">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_i/lec1a_installation.html">
  <span class="dropdown-text">Lecture 1A: Installation</span></a>
@@ -161,13 +172,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../webpages/lectures_i/lec7b_joiningtibbles.html">
  <span class="dropdown-text">Lecture 7B: Tibble Joins</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures-part-ii" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lectures: Part II</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures-part-ii">    
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_ii/lec8a_functions.html">
  <span class="dropdown-text">Lecture 8a: Functions</span></a>
@@ -207,10 +211,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Worksheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collaborative-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Collaborative Project</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collab-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Collab Project</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-collaborative-project">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-collab-project">    
         <li>
     <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
@@ -272,10 +276,39 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/schedule/scheduleA.html">STAT545 A Schedule</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/schedule/scheduleA.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">STAT545 A Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/schedule/scheduleB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">STAT545 B Schedule</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -309,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 12, 2025</p>
+      <p class="date-modified">August 13, 2025</p>
     </div>
   </div>
     
@@ -364,7 +397,7 @@ This Week at a Glance
 <td></td>
 <td>Thurs. Sept 4</td>
 <td><a href="../../webpages/lectures_i/lec1b_introR.html">Intro to STAT545 and R</a></td>
-<td>Worksheet A1</td>
+<td><a href="https://github.com/UBC-STAT/STAT545.github.io/tree/main/content/worksheets_student">Worksheet A1</a></td>
 </tr>
 <tr class="odd">
 <td></td>

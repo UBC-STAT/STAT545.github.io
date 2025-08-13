@@ -9,13 +9,10 @@ website:
     search: true
     left:
       - href: index.qmd
-        text: "Home"
+        text: " "
         icon: house-door-fill
-      - href: webpages/schedule/scheduleA.qmd #change to B once A finished
-        text: "Schedule"
       - sidebar:syllabus
-      - sidebar:lecturesi
-      - sidebar:lecturesii
+      - sidebar:lectures
       - href: webpages/worksheets.qmd
         text: "Worksheets"
       - sidebar:collabproj
@@ -38,9 +35,12 @@ website:
       contents: 
         - webpages/syllabus/syllabusA.qmd
         - webpages/syllabus/syllabusB.qmd
+  
+                
         
-    - id: lecturesi
-      title: "Lectures: Part I"
+        
+    - id: lectures
+      title: "Lectures"
       style: "docked"
       background: light
       collapse-level: 2
@@ -56,13 +56,6 @@ website:
         - webpages/lectures_i/lec6b_dates.qmd
         - webpages/lectures_i/lec7a_readwritedata.qmd
         - webpages/lectures_i/lec7b_joiningtibbles.qmd
-        
-    - id: lecturesii
-      title: "Lectures: Part II"
-      style: "docked"
-      background: light
-      collapse-level: 2
-      contents: 
         - webpages/lectures_ii/lec8a_functions.qmd
         - webpages/lectures_ii/lec8b_advfunctions.qmd
         - webpages/lectures_ii/lec9_rpackages.qmd
@@ -77,7 +70,7 @@ website:
 
         
     - id: collabproj
-      title: "Collaborative Project"
+      title: "Collab Project"
       style: "docked"
       background: light
       collapse-level: 2

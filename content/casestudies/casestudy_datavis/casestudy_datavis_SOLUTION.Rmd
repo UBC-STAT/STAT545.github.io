@@ -1,13 +1,4 @@
 ---
-title: "Lecture 4 Case Study"
-subtitle: "Data Visualization with FEV Dataset"
-format: html
----
-
-Copy and paste the following code into a new RMarkdown Document.
-
-````         
----
 title: 'FEV Case Study: Graphing'
 author: "Lucy"
 date: "2023-08-28"
@@ -23,16 +14,11 @@ knitr::opts_chunk$set(echo = TRUE)
 We'll continue exploring the FEV data set from last week. Let's start by loading the data and required packages.
 
 ```{r, message = FALSE} 
-#install.packages("dplyr") #uncomment and run once, if needed
-#install.packages("readr") #uncomment and run once, if needed
-#install.packages("ggplot2") #uncomment and run once, if needed
-
+library(rigr) 
 library(dplyr)
-library(readr)
 library(ggplot2)
 
-fev <- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")
-fev_tbl <- as_tibble(fev) %>% mutate(across(gender:smoking, ~ as.factor(.x))) #assign gender and smoking as factors (more on this later, too!)
+fev_tbl <- as_tibble(fev) %>% mutate(across(sex:smoke, ~ as.factor(.x)))
 ```
 
 Last week, we found that the mean FEV in the smoking group was substantially higher than the average FEV in the non-smoking group. That is, the smokers appear to have *better* lung function than the non-smokers. 
@@ -110,4 +96,3 @@ Make a scatterplot of FEV versus height, with points marked by smoking status.
 ```
 
 Based on this plot, it seems like the FEV of smokers and non-smokers *of the same height* is pretty similar. 
-````
