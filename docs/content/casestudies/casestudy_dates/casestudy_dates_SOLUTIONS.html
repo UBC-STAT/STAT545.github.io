@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lucy">
+<meta name="dcterms.date" content="2023-09-12">
 
-<title>Data Visualization with FEV Dataset – STAT545 @ UBC</title>
+<title>NYC Flights Case Study: Dates/Times, With Solutions – STAT545 @ UBC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,17 +104,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">STAT545 @ UBC</span>
     </a>
   </div>
@@ -89,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-door-fill" role="img">
 </i> 
 <span class="menu-text"> </span></a>
   </li>  
@@ -99,11 +135,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="../../webpages/syllabus/syllabusA.html">
+    <a class="dropdown-item" href="../../../webpages/syllabus/syllabusA.html">
  <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/syllabus/syllabusB.html">
+    <a class="dropdown-item" href="../../../webpages/syllabus/syllabusB.html">
  <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
   </li>  
     </ul>
@@ -114,85 +150,85 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec1a_installation.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec1a_installation.html">
  <span class="dropdown-text">Lecture 1A: Installation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec1b_introR.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec1b_introR.html">
  <span class="dropdown-text">Lecture 1B: Course Introduction and R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec2A_reproducibility.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec2A_reproducibility.html">
  <span class="dropdown-text">Lecture 2A: Reproducibility</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec2b_versioncontrol.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec2b_versioncontrol.html">
  <span class="dropdown-text">Lecture 2B: Version Control</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec3_dplyr.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec3_dplyr.html">
  <span class="dropdown-text">Lecture 3: Data Manipulation with dplyr</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec4_datavis.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec4_datavis.html">
  <span class="dropdown-text">Lecture 4: Data Visualization</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec5_tidydata.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec5_tidydata.html">
  <span class="dropdown-text">Lecture 5: Tidy Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec6a_modelfitting.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec6a_modelfitting.html">
  <span class="dropdown-text">Lecture 6A: Model Fitting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec6b_dates.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec6b_dates.html">
  <span class="dropdown-text">Lecture 6B: Factors and Dates</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec7a_readwritedata.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec7a_readwritedata.html">
  <span class="dropdown-text">Lecture 7A: Reading and Writing Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec7b_joiningtibbles.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec7b_joiningtibbles.html">
  <span class="dropdown-text">Lecture 7B: Tibble Joins</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8a_functions.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec8a_functions.html">
  <span class="dropdown-text">Lecture 8a: Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8b_advfunctions.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec8b_advfunctions.html">
  <span class="dropdown-text">Lecture 8b: Advanced Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec9_rpackages.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec9_rpackages.html">
  <span class="dropdown-text">Lecture 9: R Packages</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec10_shiny.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec10_shiny.html">
  <span class="dropdown-text">Lecture 10: Dashboards with R Shiny</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec11_automation.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec11_automation.html">
  <span class="dropdown-text">Lecture 11: Automation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec12_characterdata.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec12_characterdata.html">
  <span class="dropdown-text">Lecture 12: StringR and Regular Expressions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec13_listcolumns.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec13_listcolumns.html">
  <span class="dropdown-text">Lecture 13: List Columns</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec14_quarto.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec14_quarto.html">
  <span class="dropdown-text">Lecture 14: Websites and Slides with Quarto</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/worksheets.html"> 
+    <a class="nav-link" href="../../../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -201,11 +237,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-collab-project">    
         <li>
-    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
+    <a class="dropdown-item" href="../../../webpages/collabproj/collabproj_deliverable1.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable2.html">
+    <a class="dropdown-item" href="../../../webpages/collabproj/collabproj_deliverable2.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
   </li>  
     </ul>
@@ -216,36 +252,21 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
         <li>
-    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable1.html">
+    <a class="dropdown-item" href="../../../webpages/mda/mda_deliverable1.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
+    <a class="dropdown-item" href="../../../webpages/mda/mda_deliverable2.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-case-studies" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Case Studies</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-case-studies">    
-        <li>
-    <a class="dropdown-item" href="../../webpages/casestudies/fev_datamanipulation.html">
- <span class="dropdown-text">Data Manipulation on FEV Dataset</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/casestudies/fev_datavis.html">
- <span class="dropdown-text">Data Visualization with FEV Dataset</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/casestudies/nycflights_dates.html">
- <span class="dropdown-text">Lecture 6b Case Study</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/faq.html"> 
+    <a class="nav-link" href="../../../webpages/casestudies.html"> 
+<span class="menu-text">Case Studies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -261,63 +282,50 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/casestudies/fev_datavis.html">Data Visualization with FEV Dataset</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/fev_datamanipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Manipulation on FEV Dataset</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/fev_datavis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data Visualization with FEV Dataset</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/nycflights_dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 6b Case Study</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#nyc-flights-data" id="toc-nyc-flights-data" class="nav-link active" data-scroll-target="#nyc-flights-data">NYC Flights Data</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#date-time-creation-and-extraction" id="toc-date-time-creation-and-extraction" class="nav-link" data-scroll-target="#date-time-creation-and-extraction">Date-Time Creation and Extraction</a></li>
+  <li><a href="#date-time-math" id="toc-date-time-math" class="nav-link" data-scroll-target="#date-time-math">Date-Time Math</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Visualization with FEV Dataset</h1>
-<p class="subtitle lead">Lecture 4 Case Study</p>
+<h1 class="title">NYC Flights Case Study: Dates/Times, With Solutions</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lucy </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 12, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -327,132 +335,124 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Copy and paste the following code into a new RMarkdown Document, or download it <a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/casestudies/casestudy_datavis/casestudy_datavis.Rmd">here</a>.</p>
-<pre><code>---
-title: 'FEV Case Study: Graphing'
-author: "Lucy"
-date: "2023-08-28"
-output: html_document
----
+<section id="nyc-flights-data" class="level2">
+<h2 class="anchored" data-anchor-id="nyc-flights-data">NYC Flights Data</h2>
+<p>The NYC Flights data set contains (among many other things) on-time performance data for all flights departing a New York City airport in 2013. Let’s load it from the package <code>nycflights13</code>. Let’s also load the tidyverse; the key package we will be using from it today is lubridate.</p>
+<p>There’s lots to explore in this data set, and lots of variables! We’ll work with a super pared down version.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>flights_demo <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, month, day, hour, minute, flight, carrier)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(flights_demo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+   year month   day  hour minute flight carrier
+  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;  
+1  2013     1     1     5     15   1545 UA     
+2  2013     1     1     5     29   1714 UA     
+3  2013     1     1     5     40   1141 AA     
+4  2013     1     1     5     45    725 B6     
+5  2013     1     1     6      0    461 DL     
+6  2013     1     1     5     58   1696 UA     </code></pre>
+</div>
+</div>
+<p>This currently contains the scheduled departure time of every flight, as well its carrier and flight code.</p>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="date-time-creation-and-extraction" class="level3">
+<h3 class="anchored" data-anchor-id="date-time-creation-and-extraction">Date-Time Creation and Extraction</h3>
+<p>I want to add a fake flight to this data set: AC 123, scheduled to depart at 9:00am on Oct 1 2013.</p>
+<p>We can use a family of functions named as permutations of “y”, “m”, and “d” to convert character input into special Date objects.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mdy</span>(<span class="st">"Oct 1 2013"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2013-10-01"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mdy</span>(<span class="st">"October 1st 2013"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2013-10-01"</code></pre>
+</div>
+</div>
+<p>We just need to get the order right in what’s passed in - lubridate does the rest!</p>
+<p>We can use a similar family of functions to convert character input into special Date-Time objects. Let’s be careful to get the timezone right too, in case it turns out to be important later.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(new_sched_dep_time <span class="ot">&lt;-</span> <span class="fu">mdy_hm</span>(<span class="st">"Oct 1 2013 9:00"</span>, <span class="at">tz =</span> <span class="st">"America/New_York"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2013-10-01 09:00:00 EDT"</code></pre>
+</div>
+</div>
+<p>Now let’s make a 1-row tibble with the components we need: year, month, day, hour, minute, carrier, and flight code. The key will be the <code>year()</code>, <code>month()</code>, etc. functions from the lubridate package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(new_flight <span class="ot">&lt;-</span> <span class="fu">tribble</span>(<span class="sc">~</span>year, <span class="sc">~</span>month, <span class="sc">~</span>day, <span class="sc">~</span>hour, <span class="sc">~</span>minute, <span class="sc">~</span>flight, <span class="sc">~</span>carrier, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">year</span>(new_sched_dep_time), <span class="fu">month</span>(new_sched_dep_time), </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">day</span>(new_sched_dep_time), <span class="fu">hour</span>(new_sched_dep_time), </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">minute</span>(new_sched_dep_time), <span class="dv">123</span>, <span class="st">"AC"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+   year month   day  hour minute flight carrier
+  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;  
+1  2013    10     1     9      0    123 AC     </code></pre>
+</div>
+</div>
+<p>Like magic!!! We can then add it to the <code>flights_demo</code> dataset using <code>bind_rows()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>flights_demo <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(flights_demo, new_flight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="date-time-math" class="level3">
+<h3 class="anchored" data-anchor-id="date-time-math">Date-Time Math</h3>
+<p>The full <code>flights</code> dataset has info about the departure delays of these flights. Let’s make another simplified version for demo purposes with that info.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>flights_demo2 <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, month, day, dep_time, sched_dep_time, dep_delay)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(flights_demo2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+   year month   day dep_time sched_dep_time dep_delay
+  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+1  2013     1     1      517            515         2
+2  2013     1     1      533            529         4
+3  2013     1     1      542            540         2
+4  2013     1     1      544            545        -1
+5  2013     1     1      554            600        -6
+6  2013     1     1      554            558        -4</code></pre>
+</div>
+</div>
+<p>The <code>dep_delay</code> variable contains the number of minutes the flight departs either early or late, with a positive number if the flight departs late, and a negative number if the flight departs early. How was this variable made?</p>
+<p>Let’s see one way how. Let’s make two Date-Time objects corresponding to the departure and scheduled departure of our fake flight. If we <em>subtract</em> them, then we get a <code>difftime</code> object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>new_sched_dep_time <span class="ot">&lt;-</span> <span class="fu">ymd_hm</span>(<span class="st">"2013 October 1 9:00"</span>, <span class="at">tz =</span> <span class="st">"America/New_York"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>new_dep_time <span class="ot">&lt;-</span> <span class="fu">ymd_hm</span>(<span class="st">"2013 Oct 1 9:15"</span>, <span class="at">tz =</span> <span class="st">"America/New_York"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>new_dep_time <span class="sc">-</span> new_sched_dep_time </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time difference of 15 mins</code></pre>
+</div>
+</div>
+<p>Beautiful! In this case, this calculation was easy to do by hand, but it would’ve been more annoying if we were calculating the time elapsed between (say) December 11th 2010 3:17am and March 24th 2011 11:51pm.</p>
+<p><code>difftime</code> objects produce human readable output, but can be a little annoying when you want output in consistent units. <code>duration</code> objects to the rescue - they always use seconds! Let’s do the math again but this time coerce the result to a <code>duration</code> object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(duration_delay <span class="ot">&lt;-</span> <span class="fu">as.duration</span>(new_dep_time <span class="sc">-</span> new_sched_dep_time))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "900s (~15 minutes)"</code></pre>
+</div>
+</div>
+<p>Finally we can convert this to minutes by creating a <code>duration</code> object that spans a minute using the convenience function <code>dminutes()</code>, and doing date-time division.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>duration_delay<span class="sc">/</span><span class="fu">dminutes</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
 
 
-
-## Review 
-
-We'll continue exploring the FEV data set from last week. Let's start by loading the data and required packages.
-
-::: {.cell}
-
-```{.r .cell-code}
-#install.packages("dplyr") #uncomment and run once, if needed
-#install.packages("readr") #uncomment and run once, if needed
-#install.packages("ggplot2") #uncomment and run once, if needed
-
-library(dplyr)
-library(readr)
-library(ggplot2)
-
-fev &lt;- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")
-fev_tbl &lt;- as_tibble(fev) %&gt;% mutate(across(gender:smoking, ~ as.factor(.x))) #assign gender and smoking as factors (more on this later, too!)
-```
-:::
-
-Last week, we found that the mean FEV in the smoking group was substantially higher than the average FEV in the non-smoking group. That is, the smokers appear to have *better* lung function than the non-smokers. 
-
-We also had a theory as to why: the association between FEV and smoking status may be confounded, eg. by age/size.
-
-We'll investigate further this week with our newly acquired plotting skills! 
-
-Here are some helpful resources for making plots, now that we are moving towards less "guided" exercises: 
-
-- [ggplot2 package webpage](https://ggplot2.tidyverse.org/index.html)
-- [ggplot2 Book](https://ggplot2-book.org/)
-- [R Graphics Cookbook](https://r-graphics.org/)
-
-## Smoking and FEV (unadjusted)
-
-### Exercise 1 
-
-Now that we have plotting tools, let's make a plot that compares the FEV of smokers to the FEV of non-smokers. 
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-This broadly tells the same story as the summaries we calculated last week, but conveys more information and is more visually engaging. 
-
-## Searching for potential confounders 
-
-Let's do some digging to see if we can root out some potential confounders.
-
-### Exercise 2
-
-Last week, we found that the youngest patient who smokes is 9, suggesting that there is a difference in the age distribution among smokers and non-smokers. Make a plot that compares these two distributions.
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-Again, we see that the smokers are overall older than the non-smokers. 
-
-### Exercise 3
-
-We think that age should be related to height, which in turn should be related to FEV. Let's investigate that more systematically now with plotting. 
-
-How would you like to investigate that with plotting? Here's one suggestion, though you don't have to take it: make a plot with two panels, one that has a scatterplot of height versus age for the female patients, and one that has a scatterplot of height versus age for the male patients. 
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-We see that the within-sex trend is similar: height is linear-ish at younger ages, and flat-ish at older ages. Boys wind up taller at older ages. 
-
-We will then make a scatterplot of FEV versus height.
-
-::: {.cell}
-
-```{.r .cell-code}
-ggplot(fev_tbl, aes(x = height, y = fev)) + 
-  geom_jitter(width=0.2, alpha = 0.75) + 
-  ggtitle("FEV versus height") +
-  ylab("FEV (l/s)") +
-  xlab("Height (inches)") + 
-  theme_bw()
-```
-
-::: {.cell-output-display}
-![](fev_datavis_files/figure-html/unnamed-chunk-5-1.png){width=672}
-:::
-:::
-
-We see that taller participants generally have higher FEV. 
-
-## Smoking and lung function: a more nuanced look
-
-Now that we know that the smokers are older and bigger and have higher FEV, let's look at the relationship between FEV and smoking status *adjusted* for height. 
-
-### Exercise 4
-
-Make a scatterplot of FEV versus height, with points marked by smoking status.
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-Based on this plot, it seems like the FEV of smokers and non-smokers *of the same height* is pretty similar. </code></pre>
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

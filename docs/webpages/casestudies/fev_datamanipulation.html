@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lecture 3 Case Study – STAT545 @ UBC</title>
+<title>Data Manipulation on FEV Dataset – STAT545 @ UBC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -232,15 +232,15 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-case-studies">    
         <li>
     <a class="dropdown-item" href="../../webpages/casestudies/fev_datamanipulation.html">
- <span class="dropdown-text">Lecture 3 Case Study</span></a>
+ <span class="dropdown-text">Data Manipulation on FEV Dataset</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../webpages/casestudies/fev_datavis.html">
- <span class="dropdown-text">Lecture 4 Case Study</span></a>
+ <span class="dropdown-text">Data Visualization with FEV Dataset</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../webpages/casestudies/nycflights_dates.html">
- <span class="dropdown-text">Lecture 6b Case Study</span></a>
+ <span class="dropdown-text">Date and Times on NYC Flights</span></a>
   </li>  
     </ul>
   </li>
@@ -266,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/casestudies/fev_datamanipulation.html">Lecture 3 Case Study</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/casestudies/fev_datamanipulation.html">Data Manipulation on FEV Dataset</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -281,19 +281,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/casestudies/fev_datamanipulation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture 3 Case Study</span></a>
+ <span class="menu-text">Data Manipulation on FEV Dataset</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/casestudies/fev_datavis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 4 Case Study</span></a>
+ <span class="menu-text">Data Visualization with FEV Dataset</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/casestudies/nycflights_dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 6b Case Study</span></a>
+ <span class="menu-text">Date and Times on NYC Flights</span></a>
   </div>
 </li>
     </ul>
@@ -309,8 +309,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 3 Case Study</h1>
-<p class="subtitle lead">Data Manipulation on FEV Dataset</p>
+<h1 class="title">Data Manipulation on FEV Dataset</h1>
+<p class="subtitle lead">Lecture 3 Case Study</p>
 </div>
 
 
@@ -327,203 +327,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Copy the following code into a new RMarkdown Document, or download it here.</p>
-<pre><code>---
-title: 'FEV Case Study: Data Manipulation'
-output: html_document
-date: "2025-07-31"
----
-
-
-
-## Introduction 
-
-We will perform exploratory data analysis of the `fev` data set. 
-Let's start by getting the data set. Load the `readr` package (more on this later) and run `fev &lt;- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")` to get access to it. Let's also load `dplyr` while we're at it - we'll need it to do the exercises! 
-
-::: {.cell}
-
-```{.r .cell-code}
-#install.packages("dplyr") #uncomment and run once, if needed
-#install.packages("readr") #uncomment and run once, if needed
-
-library(dplyr)
-library(readr)
-fev &lt;- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")
-fev_tbl &lt;- as_tibble(fev) %&gt;% mutate(across(gender:smoking, ~ as.factor(.x))) #assign gender and smoking as factors (more on this later, too!)
-```
-:::
-
-## The `fev` data set 
-
-It is now widely believed that smoking tends to impair lung function. Much of the data to support this claim arises from studies of pulmonary function in adults who are long-time smokers. A question then arises whether such deleterious effects of smoking can be detected in children who smoke. To address this question, measures of lung function were made in about 600 children seen for a routine check up in a particular pediatric clinic. The children participating in this study were asked whether they were current smokers.
-
-A common measurement of lung function is the forced expiratory volume (FEV), which measures how much air you can blow out of your lungs in a short period of time. A higher FEV is usually associated with better respiratory function. It is well known that prolonged smoking diminishes FEV in adults, and those adults with diminished FEV also tend to have decreased pulmonary function as measured by other clinical variables, such as blood oxygen and carbon dioxide levels.
-
-Data collected from the study on the relationship between smoking status and lung function (measured by FEV) in children are contained in the `fev_tbl` dataset. Here is a data dictionary:
-
-| Variable Name | Description | 
-| :--: |:--: |
-| age           | subject age (years) | 
-| fev           | measured forced exhalation volume (litres/second)| 
-| height        | subject height (inches) | 
-| gender        | subject gender (here, male or female) | 
-| smoking         | smoking status (yes or no) | 
-
-
-Here is a few rows of the data set:
-
-::: {.cell}
-
-```{.r .cell-code}
-head(fev_tbl)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-# A tibble: 6 × 5
-    age   fev height gender smoking
-  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;fct&gt;  &lt;fct&gt;  
-1     9  1.71   57   f      0      
-2     8  1.72   67.5 f      0      
-3     7  1.72   54.5 f      0      
-4     9  1.56   53   m      0      
-5     9  1.90   57   m      0      
-6     8  2.34   61   f      0      
-```
-
-
-:::
-:::
-
-
-## Understanding the data structure
-
-### Exercise 1
-
-Am I missing any variables compared to the data dictionary? Let's check. 
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-### Exercise 2
-
-Next: are there any duplicate case numbers? Are there any duplicate subject IDs?
-
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-Now we know that no cases were entered twice, and each case corresponds to a different patient. 
-
-## Understanding the patients in the study
-
-### Exercise 3
-
-Let's summarize the age of the patients first, by computing the mean, standard deviation, min, and max of the patient ages. 
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-Something's a little odd about these summaries. Remember: this is a smoking study on children.
-
-- Why would a 3 year old be enrolled in a smoking study?  
-- Why would a 19 year old be enrolled in a study on children? 
-
-### Exercise 4
-
-I'm now a bit worried: what's the youngest patient who smokes in this dataset?
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE 
-```
-:::
-
-Looks like the youngest patient who smokes is 9. Seems young to me, but much less far-fetched than (say) 3. 
-
-### Exercise 5
-
-What about the 19 year olds? Should they be included? The definition of a "child" can vary from study to study. Possible definitions include &lt; 21 and &lt; 18.  Let's find out who the patients 18 or older are and what their case numbers are so that we can ask our point of contact for the study about them. 
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE 
-```
-:::
-
-**Aside**: if it turns out that we need to exclude any of these odd-looking patients from our final data analysis, then we will need to re-run everything after this point with their data removed. Isn't it nice that we are preparing this report in R Markdown?  
-
-### Exercise 6
-
-This is a smoking study, so it seems useful to know what proportion of the study participants are smokers. In fact, let's break it down by sex, and calculate the proportion of girls who are smokers and the proportion of boys who are smokers, as well as the number of girls and the number of boys in the study. 
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-The proportion of girls who are smokers is higher than the proportion of boys that are smokers.
-
-### Exercise 7
-
-Is this because there are more smokers among teenage girls than teenage boys? Or is this a phenomenon that is uniform across age groups? To find out, let's calculate: 
-
-- the proportion and number of girls aged 0-6 who are smokers
-- the proportion and number of girls aged 7-12 who are smokers 
-- the proportion and number of girls aged 13-19 who are smokers
-- the proportion and number of boys aged 0-6 who are smokers
-- the proportion and number of boys aged 7-12 who are smokers 
-- the proportion and number of boys aged 13-19 who are smokers
-
-Hint: you will need to create a new variable that has three categories: age 0-6, age 7-12, and age 13-19. You can do so with `fev_tbl %&gt;% mutate(age_cat = cut(age, c(0, 6, 12, 19)))`.
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-There are no smokers (female or male) in the 0-6 group. There is a higher proportion of girls in the 7-12 group who are smokers than boys in the 7-12 group. Ditto the 13-19 group. 
-
-## Does smoking have an effect on lung function? 
-
-Let's continue exploring the data set with a closer eye to our main research question: does smoking have an effect on lung function in children? 
-
-### Exercise 8
-
-Let's start by summarizing the FEV of the smokers and non-smokers. Let's calculate the mean, standard deviation, and number of observations in each group. We will mainly be comparing the means to gather information about the question, but the standard deviation and number of observations are important to look at too. 
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-We see that the mean FEV in the smoking group seems to be substantially higher than the average FEV in the non-smoking group. That is, the smokers appear to have *better* lung function than the non-smokers. 
-
-Does this surprise you? Recall that this is an observational study - children were not randomly assigned to smoke or not smoke. We might then have reason to suspect that the association between FEV and smoking status is confounded by some other factors. For example, 
-we already know that the youngest smoker in our data set is 9, while the non-smokers are as young as 3. This suggests that the smokers in our data set are generally older than the non-smokers. Furthermore, we might expect older children to have higher FEV, because they are bigger and have bigger lungs. Could age be a confounder here? Maybe the smoking group has higher lung function simply because they are older and bigger.
-
-We will investigate this point next week after we have learned about graphing tools.</code></pre>
+<p>Download the case study <a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/casestudies/casestudy_datamanipulation/casestudy_datamanipulation.Rmd">here</a>.</p>
 
 
 

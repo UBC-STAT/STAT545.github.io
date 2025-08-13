@@ -1,0 +1,14 @@
+---
+title: "Case Studies"
+date-modified: last-modified
+---
+
+Download the case studies using the following links. To download a file from GitHub, click the download icon in the right-hand corner. Then, open the file using RMarkdown.
+
+![](../images/githubdownload.png){width="600"}
+
+| Case Study | Lecture | Link |
+|----|----|----|
+| Data Manipulation with FEV Dataset | [Lecture 3](lectures_i/lec3_dplyr.qmd) | Download the case study [here](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/casestudies/casestudy_datamanipulation/casestudy_datamanipulation.Rmd) |
+| Data Visualization with FEV Dataset | [Lecture 4](lectures_i/lec4_datavis.qmd) | Download the case study [here](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/casestudies/casestudy_datavis/casestudy_datavis.Rmd). |
+| Date and Times on NYC Flights | [Lecture 6b](lectures_i/lec6b_dates.qmd) | Download the case study [here](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/casestudies/casestudy_dates/casestudy_dates_SOLUTIONS.Rmd). |

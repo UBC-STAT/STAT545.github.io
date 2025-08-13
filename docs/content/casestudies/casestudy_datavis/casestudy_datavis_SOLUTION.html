@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lucy">
+<meta name="dcterms.date" content="2023-08-28">
 
-<title>Data Visualization with FEV Dataset – STAT545 @ UBC</title>
+<title>FEV Case Study: Graphing – STAT545 @ UBC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,17 +104,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">STAT545 @ UBC</span>
     </a>
   </div>
@@ -89,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-door-fill" role="img">
 </i> 
 <span class="menu-text"> </span></a>
   </li>  
@@ -99,11 +135,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="../../webpages/syllabus/syllabusA.html">
+    <a class="dropdown-item" href="../../../webpages/syllabus/syllabusA.html">
  <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/syllabus/syllabusB.html">
+    <a class="dropdown-item" href="../../../webpages/syllabus/syllabusB.html">
  <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
   </li>  
     </ul>
@@ -114,85 +150,85 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec1a_installation.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec1a_installation.html">
  <span class="dropdown-text">Lecture 1A: Installation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec1b_introR.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec1b_introR.html">
  <span class="dropdown-text">Lecture 1B: Course Introduction and R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec2A_reproducibility.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec2A_reproducibility.html">
  <span class="dropdown-text">Lecture 2A: Reproducibility</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec2b_versioncontrol.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec2b_versioncontrol.html">
  <span class="dropdown-text">Lecture 2B: Version Control</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec3_dplyr.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec3_dplyr.html">
  <span class="dropdown-text">Lecture 3: Data Manipulation with dplyr</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec4_datavis.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec4_datavis.html">
  <span class="dropdown-text">Lecture 4: Data Visualization</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec5_tidydata.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec5_tidydata.html">
  <span class="dropdown-text">Lecture 5: Tidy Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec6a_modelfitting.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec6a_modelfitting.html">
  <span class="dropdown-text">Lecture 6A: Model Fitting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec6b_dates.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec6b_dates.html">
  <span class="dropdown-text">Lecture 6B: Factors and Dates</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec7a_readwritedata.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec7a_readwritedata.html">
  <span class="dropdown-text">Lecture 7A: Reading and Writing Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec7b_joiningtibbles.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec7b_joiningtibbles.html">
  <span class="dropdown-text">Lecture 7B: Tibble Joins</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8a_functions.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec8a_functions.html">
  <span class="dropdown-text">Lecture 8a: Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8b_advfunctions.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec8b_advfunctions.html">
  <span class="dropdown-text">Lecture 8b: Advanced Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec9_rpackages.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec9_rpackages.html">
  <span class="dropdown-text">Lecture 9: R Packages</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec10_shiny.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec10_shiny.html">
  <span class="dropdown-text">Lecture 10: Dashboards with R Shiny</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec11_automation.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec11_automation.html">
  <span class="dropdown-text">Lecture 11: Automation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec12_characterdata.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec12_characterdata.html">
  <span class="dropdown-text">Lecture 12: StringR and Regular Expressions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec13_listcolumns.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec13_listcolumns.html">
  <span class="dropdown-text">Lecture 13: List Columns</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec14_quarto.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_ii/lec14_quarto.html">
  <span class="dropdown-text">Lecture 14: Websites and Slides with Quarto</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/worksheets.html"> 
+    <a class="nav-link" href="../../../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -201,11 +237,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-collab-project">    
         <li>
-    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
+    <a class="dropdown-item" href="../../../webpages/collabproj/collabproj_deliverable1.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable2.html">
+    <a class="dropdown-item" href="../../../webpages/collabproj/collabproj_deliverable2.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
   </li>  
     </ul>
@@ -216,36 +252,21 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
         <li>
-    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable1.html">
+    <a class="dropdown-item" href="../../../webpages/mda/mda_deliverable1.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
+    <a class="dropdown-item" href="../../../webpages/mda/mda_deliverable2.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-case-studies" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Case Studies</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-case-studies">    
-        <li>
-    <a class="dropdown-item" href="../../webpages/casestudies/fev_datamanipulation.html">
- <span class="dropdown-text">Data Manipulation on FEV Dataset</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/casestudies/fev_datavis.html">
- <span class="dropdown-text">Data Visualization with FEV Dataset</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/casestudies/nycflights_dates.html">
- <span class="dropdown-text">Lecture 6b Case Study</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/faq.html"> 
+    <a class="nav-link" href="../../../webpages/casestudies.html"> 
+<span class="menu-text">Case Studies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -261,63 +282,58 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/casestudies/fev_datavis.html">Data Visualization with FEV Dataset</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/fev_datamanipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Manipulation on FEV Dataset</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/fev_datavis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data Visualization with FEV Dataset</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/casestudies/nycflights_dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 6b Case Study</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review">Review</a></li>
+  <li><a href="#smoking-and-fev-unadjusted" id="toc-smoking-and-fev-unadjusted" class="nav-link" data-scroll-target="#smoking-and-fev-unadjusted">Smoking and FEV (unadjusted)</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  </ul></li>
+  <li><a href="#searching-for-potential-confounders" id="toc-searching-for-potential-confounders" class="nav-link" data-scroll-target="#searching-for-potential-confounders">Searching for potential confounders</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  </ul></li>
+  <li><a href="#smoking-and-lung-function-a-more-nuanced-look" id="toc-smoking-and-lung-function-a-more-nuanced-look" class="nav-link" data-scroll-target="#smoking-and-lung-function-a-more-nuanced-look">Smoking and lung function: a more nuanced look</a>
+  <ul class="collapse">
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Visualization with FEV Dataset</h1>
-<p class="subtitle lead">Lecture 4 Case Study</p>
+<h1 class="title">FEV Case Study: Graphing</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lucy </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 28, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -327,132 +343,89 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Copy and paste the following code into a new RMarkdown Document, or download it <a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/casestudies/casestudy_datavis/casestudy_datavis.Rmd">here</a>.</p>
-<pre><code>---
-title: 'FEV Case Study: Graphing'
-author: "Lucy"
-date: "2023-08-28"
-output: html_document
----
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p>We’ll continue exploring the FEV data set from last week. Let’s start by loading the data and required packages.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rigr) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fev_tbl <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(fev) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="fu">across</span>(sex<span class="sc">:</span>smoke, <span class="sc">~</span> <span class="fu">as.factor</span>(.x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Last week, we found that the mean FEV in the smoking group was substantially higher than the average FEV in the non-smoking group. That is, the smokers appear to have <em>better</em> lung function than the non-smokers.</p>
+<p>We also had a theory as to why: the association between FEV and smoking status may be confounded, eg. by age/size.</p>
+<p>We’ll investigate further this week with our newly acquired plotting skills!</p>
+<p>Here are some helpful resources for making plots, now that we are moving towards less “guided” exercises:</p>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/index.html">ggplot2 package webpage</a></li>
+<li><a href="https://ggplot2-book.org/">ggplot2 Book</a></li>
+<li><a href="https://r-graphics.org/">R Graphics Cookbook</a></li>
+</ul>
+</section>
+<section id="smoking-and-fev-unadjusted" class="level2">
+<h2 class="anchored" data-anchor-id="smoking-and-fev-unadjusted">Smoking and FEV (unadjusted)</h2>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>Now that we have plotting tools, let’s make a plot that compares the FEV of smokers to the FEV of non-smokers.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FILL IN HERE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This broadly tells the same story as the summaries we calculated last week, but conveys more information and is more visually engaging.</p>
+</section>
+</section>
+<section id="searching-for-potential-confounders" class="level2">
+<h2 class="anchored" data-anchor-id="searching-for-potential-confounders">Searching for potential confounders</h2>
+<p>Let’s do some digging to see if we can root out some potential confounders.</p>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<p>Last week, we found that the youngest patient who smokes is 9, suggesting that there is a difference in the age distribution among smokers and non-smokers. Make a plot that compares these two distributions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FILL IN HERE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Again, we see that the smokers are overall older than the non-smokers.</p>
+</section>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<p>We think that age should be related to height, which in turn should be related to FEV. Let’s investigate that more systematically now with plotting.</p>
+<p>How would you like to investigate that with plotting? Here’s one suggestion, though you don’t have to take it: make a plot with two panels, one that has a scatterplot of height versus age for the female patients, and one that has a scatterplot of height versus age for the male patients.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FILL IN HERE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We see that the within-sex trend is similar: height is linear-ish at younger ages, and flat-ish at older ages. Boys wind up taller at older ages.</p>
+<p>We will then make a scatterplot of FEV versus height.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fev_tbl, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> fev)) <span class="sc">+</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width=</span><span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"FEV versus height"</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"FEV (l/s)"</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Height (inches)"</span>) <span class="sc">+</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="casestudy_datavis_SOLUTION_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We see that taller participants generally have higher FEV.</p>
+</section>
+</section>
+<section id="smoking-and-lung-function-a-more-nuanced-look" class="level2">
+<h2 class="anchored" data-anchor-id="smoking-and-lung-function-a-more-nuanced-look">Smoking and lung function: a more nuanced look</h2>
+<p>Now that we know that the smokers are older and bigger and have higher FEV, let’s look at the relationship between FEV and smoking status <em>adjusted</em> for height.</p>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>Make a scatterplot of FEV versus height, with points marked by smoking status.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FILL IN HERE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Based on this plot, it seems like the FEV of smokers and non-smokers <em>of the same height</em> is pretty similar.</p>
 
 
-
-## Review 
-
-We'll continue exploring the FEV data set from last week. Let's start by loading the data and required packages.
-
-::: {.cell}
-
-```{.r .cell-code}
-#install.packages("dplyr") #uncomment and run once, if needed
-#install.packages("readr") #uncomment and run once, if needed
-#install.packages("ggplot2") #uncomment and run once, if needed
-
-library(dplyr)
-library(readr)
-library(ggplot2)
-
-fev &lt;- read_tsv("https://raw.githubusercontent.com/GTPB/PSLS20/master/data/fev.txt")
-fev_tbl &lt;- as_tibble(fev) %&gt;% mutate(across(gender:smoking, ~ as.factor(.x))) #assign gender and smoking as factors (more on this later, too!)
-```
-:::
-
-Last week, we found that the mean FEV in the smoking group was substantially higher than the average FEV in the non-smoking group. That is, the smokers appear to have *better* lung function than the non-smokers. 
-
-We also had a theory as to why: the association between FEV and smoking status may be confounded, eg. by age/size.
-
-We'll investigate further this week with our newly acquired plotting skills! 
-
-Here are some helpful resources for making plots, now that we are moving towards less "guided" exercises: 
-
-- [ggplot2 package webpage](https://ggplot2.tidyverse.org/index.html)
-- [ggplot2 Book](https://ggplot2-book.org/)
-- [R Graphics Cookbook](https://r-graphics.org/)
-
-## Smoking and FEV (unadjusted)
-
-### Exercise 1 
-
-Now that we have plotting tools, let's make a plot that compares the FEV of smokers to the FEV of non-smokers. 
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-This broadly tells the same story as the summaries we calculated last week, but conveys more information and is more visually engaging. 
-
-## Searching for potential confounders 
-
-Let's do some digging to see if we can root out some potential confounders.
-
-### Exercise 2
-
-Last week, we found that the youngest patient who smokes is 9, suggesting that there is a difference in the age distribution among smokers and non-smokers. Make a plot that compares these two distributions.
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-Again, we see that the smokers are overall older than the non-smokers. 
-
-### Exercise 3
-
-We think that age should be related to height, which in turn should be related to FEV. Let's investigate that more systematically now with plotting. 
-
-How would you like to investigate that with plotting? Here's one suggestion, though you don't have to take it: make a plot with two panels, one that has a scatterplot of height versus age for the female patients, and one that has a scatterplot of height versus age for the male patients. 
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-We see that the within-sex trend is similar: height is linear-ish at younger ages, and flat-ish at older ages. Boys wind up taller at older ages. 
-
-We will then make a scatterplot of FEV versus height.
-
-::: {.cell}
-
-```{.r .cell-code}
-ggplot(fev_tbl, aes(x = height, y = fev)) + 
-  geom_jitter(width=0.2, alpha = 0.75) + 
-  ggtitle("FEV versus height") +
-  ylab("FEV (l/s)") +
-  xlab("Height (inches)") + 
-  theme_bw()
-```
-
-::: {.cell-output-display}
-![](fev_datavis_files/figure-html/unnamed-chunk-5-1.png){width=672}
-:::
-:::
-
-We see that taller participants generally have higher FEV. 
-
-## Smoking and lung function: a more nuanced look
-
-Now that we know that the smokers are older and bigger and have higher FEV, let's look at the relationship between FEV and smoking status *adjusted* for height. 
-
-### Exercise 4
-
-Make a scatterplot of FEV versus height, with points marked by smoking status.
-
-::: {.cell}
-
-```{.r .cell-code}
-# FILL IN HERE
-```
-:::
-
-Based on this plot, it seems like the FEV of smokers and non-smokers *of the same height* is pretty similar. </code></pre>
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -17,7 +17,8 @@ website:
         text: "Worksheets"
       - sidebar:collabproj
       - sidebar:mda
-      - sidebar:casestudies
+      - href: webpages/casestudies.qmd
+        text: "Case Studies"
       - href: webpages/faq.qmd
         text: "FAQ"
         
@@ -87,15 +88,7 @@ website:
         - webpages/mda/mda_deliverable1.qmd
         - webpages/mda/mda_deliverable2.qmd      
    
-    - id: casestudies
-      title: "Case Studies"
-      style: "docked"
-      background: light
-      collapse-level: 2
-      contents: 
-        - webpages/casestudies/fev_datamanipulation.qmd
-        - webpages/casestudies/fev_datavis.qmd
-        - webpages/casestudies/nycflights_dates.qmd
+
   
         
 

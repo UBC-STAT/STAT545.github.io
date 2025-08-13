@@ -186,7 +186,7 @@ Post any questions you have on the Slack channel!
 
 ## Next class: FEV Case Study
 
-We will get a flavour for how you might use `ggplot2` in the wild and get in even more practice by working through [a continuation of our FEV case study from last week](https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/notes/supp-a06.Rmd).
+We will get a flavour for how you might use `ggplot2` in the wild and get in even more practice by working through [a continuation of our FEV case study from last week](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/casestudies/casestudy_datavis/casestudy_datavis.Rmd).
 
 By yourself and in small groups, work through the exercises in the case study. We will also discuss instructor answers to each exercise.
 
