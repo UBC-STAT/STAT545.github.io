@@ -1228,7 +1228,7 @@
     "href": "webpages/lectures_i/lec1b_introR.html#worksheet-a1",
     "title": "Lecture 1B: Course Introduction and R",
     "section": "Worksheet A1",
-    "text": "Worksheet A1\nNow it’s your turn to use R! Work through Worksheet A1 on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.\n\n\n\n\n\n\nNote\n\n\n\nWorksheet A1 is NOT going to be graded. However, I highly recommend going through it to practice using Jupyter Notebooks and to get a handle on R. Future worksheets will be graded.",
+    "text": "Worksheet A1\nNow it’s your turn to use R! Work through Worksheet A1 on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.\n\n\n\n\n\n\nNote\n\n\n\nWorksheet A1 is NOT going to be graded. However, I highly recommend going through it to practice using Jupyter Notebooks and to get a handle on R. Future worksheets will be graded.\n\n\nSome notes on Jupyter notebooks: - A terminal or command prompt window will pop up. Do not close it until you are finished with Jupyter. - Save often! - Sometimes OneDrive folders do not show up on Jupyter. Try saving in a folder on your Desktop if you have issues finding files. - To run code, highlight it and click the run (play) button or ctrl/cmd and enter",
     "crumbs": [
       "Lecture 1B: Course Introduction and R"
     ]
@@ -1428,7 +1428,7 @@
     "href": "webpages/lectures_ii/lec12_characterdata.html",
     "title": "Lecture 12: StringR and Regular Expressions",
     "section": "",
-    "text": "From this topic, students are anticipated to be able to:",
+    "text": "From this topic, students are anticipated to be able to:\nWe will require the following packages:\nlibrary(tidyverse) #stringr is automatically downloaded with tidyverse\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors",
     "crumbs": [
       "Lecture 12: StringR and Regular Expressions"
     ]
@@ -1447,8 +1447,8 @@
     "objectID": "webpages/lectures_ii/lec12_characterdata.html#working-with-strings",
     "href": "webpages/lectures_ii/lec12_characterdata.html#working-with-strings",
     "title": "Lecture 12: StringR and Regular Expressions",
-    "section": "Working with strings",
-    "text": "Working with strings\nOur main tools for working with strings will be the powerful stringr package in the tidyverse paired with regular expressions.",
+    "section": "Working with Strings",
+    "text": "Working with Strings\nOur main tools for working with strings will be the powerful stringr package in the tidyverse paired with regular expressions (also called regex).\nWe’ll be going through a few examples with the enron dataset, which you can download on Github. Enron is a database of 270,087 Enron emails, taken from the May 7, 2015 version of the dataset. Data was extracted from CMU. There are three columns in enron.csv:\n\nperson: The person associated with the email.\nmail_num: Identifier for each person’s email.\nemail: Each entry is a line in an email, including the email’s metadata (like subject, who it was sent to, etc.)\n\nLet’s load in the data:\n\nNon-regex String Manipulation\nWe’ll first go through some stringr functions that don’t require regular expressions.",
     "crumbs": [
       "Lecture 12: StringR and Regular Expressions"
     ]
@@ -1468,7 +1468,7 @@
     "href": "webpages/lectures_ii/lec12_characterdata.html#resources",
     "title": "Lecture 12: StringR and Regular Expressions",
     "section": "Resources",
-    "text": "Resources\nVideo lecture:\n\nRegular Expressions and stringr for Text Data (only labelled as “age restricted” because it looks at real emails within the Enron company.)\n\nWritten material:\n\nOverview tutorials similar to our worksheet:\n\nstat545.com Chapter 11: character vectors\nR4DS Chapter 15: strings.\nR4DS Chapter 16: regular expressions.\n\nThe stat545.com Chapter 11 on character vectors has an elaborate discussion on useful resources for learning more about strings.",
+    "text": "Resources\nVideo lecture:\n\nRegular Expressions and stringr for Text Data (only labelled as “age restricted” because it looks at real emails within the Enron company.)\n\nWritten material:\n\nOverview tutorials similar to our worksheet:\n\nstat545.com Chapter 11: character vectors\nR4DS Chapter 15: strings.\nR4DS Chapter 16: regular expressions.\n\nThe stat545.com Chapter 11 on character vectors has an elaborate discussion on useful resources for learning more about strings.\nRegex cheat sheet",
     "crumbs": [
       "Lecture 12: StringR and Regular Expressions"
     ]
@@ -1634,5 +1634,15 @@
     "title": "STAT545 A/B: Exploratory Data Analysis (Fall 2025)",
     "section": "This Week at a Glance",
     "text": "This Week at a Glance\nLectures:\n\nTuesday September 2: Get in-person help with installing course software\nThursday September 4th: Intro to R lecture, begin working through Worksheet A1\n\nAssessments Due This Week:\n\nNothing! Ensure you have completed all installation instructions by next week!"
+  },
+  {
+    "objectID": "webpages/lectures_ii/lec12_characterdata.html#worksheet-b2",
+    "href": "webpages/lectures_ii/lec12_characterdata.html#worksheet-b2",
+    "title": "Lecture 12: StringR and Regular Expressions",
+    "section": "Worksheet B2",
+    "text": "Worksheet B2\n\nClass 1\n\nBefore class, start working on parts I and II of Worksheet B2.\nClass will be dedicated to getting your questions answered.\nDone early? Then do the optional R4DS Strings and R4DS Regular expressions readings (linked above), and do exercises for extra practice.\n\n\n\nClass 2\n\nBefore class, start working on parts II and III of Worksheet B2.\nClass will be dedicated to getting your questions answered.\nDone early? Then do the optional R4DS Strings and R4DS Regular expressions readings (linked above), and do exercises for extra practice. Or, start Assignment B4.",
+    "crumbs": [
+      "Lecture 12: StringR and Regular Expressions"
+    ]
   }
 ]

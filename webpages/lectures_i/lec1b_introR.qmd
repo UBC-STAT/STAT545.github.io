@@ -223,6 +223,13 @@ Now it's your turn to use R! Work through Worksheet A1 on your own and reach out
 Worksheet A1 is **NOT** going to be graded. However, I highly recommend going through it to practice using Jupyter Notebooks and to get a handle on R. Future worksheets **will** be graded.
 :::
 
+Some notes on Jupyter notebooks:
+- A terminal or command prompt window will pop up. Do not close it until you are finished with Jupyter.
+- Save often!
+- Sometimes OneDrive folders do not show up on Jupyter. Try saving in a folder on your Desktop if you have issues finding files.
+- To run code, highlight it and click the run (play) button or ctrl/cmd and enter
+
+
 ## What to do when you're stuck
 
 Working with technology can be hard. Coding can be especially hard. Getting stuck is very common in both cases.
