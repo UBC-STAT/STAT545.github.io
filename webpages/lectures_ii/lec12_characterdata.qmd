@@ -14,7 +14,7 @@ From this topic, students are anticipated to be able to:
 
 We will require the following packages:
 
-```{r}
+```{r, warning = F, message = F}
 library(tidyverse) #stringr is automatically downloaded with tidyverse
 ```
 
@@ -56,13 +56,165 @@ We'll be going through a few examples with the `enron` dataset, which you can [d
 
 Let's load in the data:
 
-```{r}
+```{r, warning = F, message = F}
+enron <- read_csv("datasets/enron.csv")
+head(enron)
+```
 
+For each email sent in this data set (`mail_num`), we have the sender (`person`) along with the lines of the email in separate entries in the data frame (`email`). For now, we'll focus on the contents of the email, in the `email` column.
+
+```{r}
+enron_email <- enron$email
 ```
 
 ### Non-regex String Manipulation
 
 We'll first go through some `stringr` functions that **don't** require regular expressions.
+
+#### str_detech() and str_subset()
+
+Let's filter only on entries that contain emails. We can do this by calling `str_detect()` and finding entries that contain "From:":
+
+```{r}
+enron_email_at<- str_detect(enron_email, "@") # find all entries with "@" in the email column
+
+head(enron_email_at)
+```
+
+`str_detect` actually returns a logical vector showing whether or not "\@" was found in the email contents! To get the subset, we can use `str_subset()`:
+
+```{r}
+enron_email_at <- str_subset(enron_email, "@") #overwrite:
+head(enron_email_at)
+```
+
+#### str_split()
+
+Let's say we wanted to count the number of times the word "important" was written in an email. To do this, we can split every email line into its individual words using the `str_split()` function. Let's split by spaces to get each individual word.
+
+```{r}
+enron_email_words <- str_split(enron_email, " ")
+
+head(enron_email_words)
+```
+
+We get a list! This is because we don't know how many words each entry will contain, so a list is the most flexible option. If we *really* wanted a vector of all of the individual words (which, we do!), we can `unlist()` the list:
+
+```{r}
+enron_email_words <- unlist(enron_email_words)
+
+head(enron_email_words)
+```
+
+Now, we can subset by which words contain "important", and count the number of entries!\
+
+```{r}
+enron_emails_important <- str_subset(enron_email_words, "important")
+length(enron_emails_important)
+```
+
+91 times! But unfortunately, `str_subset()` is case sensitive... See:
+
+```{r}
+enron_emails_important <- str_subset(enron_email_words, "Important")
+length(enron_emails_important)
+```
+
+and..
+
+```{r}
+enron_emails_important <- str_subset(enron_email_words, "IMPORTANT")
+length(enron_emails_important)
+```
+
+This is where *regular expressions* come in handy! We'll discuss this in the following section.
+
+### Regular Expressions (regex)
+
+Regular expressions provide a powerful tool to extract character data through patterns! In regexes, specific characters and constructs take on special meaning in order to match multiple strings.
+
+We will go through a few common regex special characters, but refer readers to t[his Cheat Sheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://rstudio.github.io/cheatsheets/regex.pdf) by Ian Kopacka for a more in-depth review.
+
+Let's consider a simple vector of words:\
+
+```{r}
+words <- c("bat", "cat", "5at", "rats", "?at", "kittycat", "doormats", "attic", "matchstick", "hat-trick", "hattrick", "hat trick")
+```
+
+#### `.` (match any letter)
+
+The `.` in regex allows us to match any character (i.e., a number, letter, symbol (aside from a new line)) in an expression.
+
+For example, the pattern `.at` would match any word that has at least three characters, where we have some character followed by "at".
+
+```{r}
+str_subset(words, pattern = ".at")
+```
+
+#### `$, ^` (anchors)
+
+Anchors can be included in an expression to indicate where the expression must occur in a string. `^` indicates that the string must start with the phrase, and `$` indicates the string must end with it.
+
+```{r}
+str_subset(words, pattern = "^.at")
+```
+
+Notice how we **did not** select "attic","kittycat" or "doormats"
+
+```{r}
+str_subset(words, pattern = ".at$")
+```
+
+Notice how we **only** selected words ending in \<some chatacter\>at.
+
+#### `\b` and `\B` (boundaries and not a word boundary)
+
+`\b` indicates a word boundary, and `\B` indicates NOT a word boundary. To see what we mean, see the following:
+
+```{r}
+str_subset(words, pattern = "\\btrick")
+```
+
+This selected words that were separated by either a "-" or space.
+
+```{r}
+str_subset(words, pattern = "\\Btrick")
+```
+
+This selected words that did not have any separation between them.
+
+#### `*`, `+`, `?` (quantifiers)
+
+We can specify regex to match any number of characters
+
+| **Quantifier** | **Number of Characters** | **Range to Match** | **Meaning** |
+|----|----|----|----|
+| \* | 0 or more | {n} | exactly n |
+| \+ | 1 or more | {n,} | at least n |
+| ? | 0 or 1 | {,m} | at most m |
+|  |  | {n,m} | between n and m, inclusive |
+
+For example, let's match words that have 0 or more characters before "at".
+
+```{r}
+str_subset(words, pattern = ".*at")
+```
+
+All of our words contain "at" somewhere so they are all matched. What about strictly one or more characters before "at"?
+
+```{r}
+str_subset(words, pattern = ".+at")
+```
+
+All but attic. Makes sense!
+
+We can also match on specific letters. Let's select words with one or more "o"'s in it:
+
+```{r}
+str_subset(words, pattern = "o+")
+```
+
+Of course, regular expressions can be combined together to make powerful search tools, as well. For more on regular expressions, check out [Chapter 11 of the STAT545 Textbook](https://stat545.com/character-vectors.html)and the [STAT545 video lecture](https://www.youtube.com/watch?v=I0dJ1zpxAtU). We will also learn more as we work through Worksheet B2.
 
 ## **Worksheet B2**
 
@@ -100,4 +252,4 @@ Written material:
 
 -   The stat545.com Chapter 11 on character vectors [has an elaborate discussion on useful resources](https://stat545.com/character-vectors.html#resources-3) for learning more about strings.
 
--   [Regex cheat sheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://media.datacamp.com/legacy/image/upload/v1665049611/Marketing/Blog/Regular_Expressions_Cheat_Sheet.pdf)
+-   [Regex cheat sheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://rstudio.github.io/cheatsheets/regex.pdf)

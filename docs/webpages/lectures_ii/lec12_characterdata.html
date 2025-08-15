@@ -426,6 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#working-with-strings" id="toc-working-with-strings" class="nav-link" data-scroll-target="#working-with-strings">Working with Strings</a>
   <ul class="collapse">
   <li><a href="#non-regex-string-manipulation" id="toc-non-regex-string-manipulation" class="nav-link" data-scroll-target="#non-regex-string-manipulation">Non-regex String Manipulation</a></li>
+  <li><a href="#regular-expressions-regex" id="toc-regular-expressions-regex" class="nav-link" data-scroll-target="#regular-expressions-regex">Regular Expressions (regex)</a></li>
   </ul></li>
   <li><a href="#worksheet-b2" id="toc-worksheet-b2" class="nav-link" data-scroll-target="#worksheet-b2"><strong>Worksheet B2</strong></a>
   <ul class="collapse">
@@ -474,25 +475,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We will require the following packages:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#stringr is automatically downloaded with tidyverse</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.2     ✔ tibble    3.3.0
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.1.0     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
 </div>
 <section id="strings" class="level2">
 <h2 class="anchored" data-anchor-id="strings">Strings</h2>
 <p>You’ve used a bunch of strings at this point without knowing explicitly what they are: any time you surround text by <code>"</code>, you’ve been making a <em>string</em>: a storage format for text. In R, they are of type “character”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sample_string <span class="ot">&lt;-</span> <span class="st">"This is a string"</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(sample_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sample_string <span class="ot">&lt;-</span> <span class="st">"This is a string"</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(sample_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
@@ -504,8 +493,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><strong>Good to know</strong>: Constructing strings out of characters and numbers is intuitive, but there’s a gotcha involving particular symbols with special meaning in R. For example, try running <code>quote &lt;- """</code> in R; it won’t work, because the <code>"</code> symbol is interpreted as you trying to make a string! To literally include a quote in a string, you can use the <code>\</code> character to “escape” it:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>single_quote <span class="ot">&lt;-</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(single_quote)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>single_quote <span class="ot">&lt;-</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(single_quote)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>"</code></pre>
 </div>
@@ -522,9 +511,256 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><code>email</code>: Each entry is a line in an email, including the email’s metadata (like subject, who it was sent to, etc.)</p></li>
 </ul>
 <p>Let’s load in the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>enron <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"datasets/enron.csv"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(enron)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  mail_num person  email                                                    
+     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;                                                    
+1        1 allen-p Message-ID: &lt;18782981.1075855378110.JavaMail.evans@thyme&gt;
+2        1 allen-p Date: Mon, 14 May 2001 16:39:00 -0700 (PDT)              
+3        1 allen-p From: phillip.allen@enron.com                            
+4        1 allen-p To: tim.belden@enron.com                                 
+5        1 allen-p Subject:                                                 
+6        1 allen-p Mime-Version: 1.0                                        </code></pre>
+</div>
+</div>
+<p>For each email sent in this data set (<code>mail_num</code>), we have the sender (<code>person</code>) along with the lines of the email in separate entries in the data frame (<code>email</code>). For now, we’ll focus on the contents of the email, in the <code>email</code> column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>enron_email <span class="ot">&lt;-</span> enron<span class="sc">$</span>email</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="non-regex-string-manipulation" class="level3">
 <h3 class="anchored" data-anchor-id="non-regex-string-manipulation">Non-regex String Manipulation</h3>
 <p>We’ll first go through some <code>stringr</code> functions that <strong>don’t</strong> require regular expressions.</p>
+<section id="str_detech-and-str_subset" class="level4">
+<h4 class="anchored" data-anchor-id="str_detech-and-str_subset">str_detech() and str_subset()</h4>
+<p>Let’s filter only on entries that contain emails. We can do this by calling <code>str_detect()</code> and finding entries that contain “From:”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>enron_email_at<span class="ot">&lt;-</span> <span class="fu">str_detect</span>(enron_email, <span class="st">"@"</span>) <span class="co"># find all entries with "@" in the email column</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(enron_email_at)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE  TRUE  TRUE FALSE FALSE</code></pre>
+</div>
+</div>
+<p><code>str_detect</code> actually returns a logical vector showing whether or not “@” was found in the email contents! To get the subset, we can use <code>str_subset()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>enron_email_at <span class="ot">&lt;-</span> <span class="fu">str_subset</span>(enron_email, <span class="st">"@"</span>) <span class="co">#overwrite:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(enron_email_at)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Message-ID: &lt;18782981.1075855378110.JavaMail.evans@thyme&gt;"
+[2] "From: phillip.allen@enron.com"                            
+[3] "To: tim.belden@enron.com"                                 
+[4] "X-To: Tim Belden &lt;Tim Belden/Enron@EnronXGate&gt;"           
+[5] "Message-ID: &lt;15464986.1075855378456.JavaMail.evans@thyme&gt;"
+[6] "From: phillip.allen@enron.com"                            </code></pre>
+</div>
+</div>
+</section>
+<section id="str_split" class="level4">
+<h4 class="anchored" data-anchor-id="str_split">str_split()</h4>
+<p>Let’s say we wanted to count the number of times the word “important” was written in an email. To do this, we can split every email line into its individual words using the <code>str_split()</code> function. Let’s split by spaces to get each individual word.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>enron_email_words <span class="ot">&lt;-</span> <span class="fu">str_split</span>(enron_email, <span class="st">" "</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(enron_email_words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "Message-ID:"                                  
+[2] "&lt;18782981.1075855378110.JavaMail.evans@thyme&gt;"
+
+[[2]]
+[1] "Date:"    "Mon,"     "14"       "May"      "2001"     "16:39:00" "-0700"   
+[8] "(PDT)"   
+
+[[3]]
+[1] "From:"                   "phillip.allen@enron.com"
+
+[[4]]
+[1] "To:"                  "tim.belden@enron.com"
+
+[[5]]
+[1] "Subject:"
+
+[[6]]
+[1] "Mime-Version:" "1.0"          </code></pre>
+</div>
+</div>
+<p>We get a list! This is because we don’t know how many words each entry will contain, so a list is the most flexible option. If we <em>really</em> wanted a vector of all of the individual words (which, we do!), we can <code>unlist()</code> the list:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>enron_email_words <span class="ot">&lt;-</span> <span class="fu">unlist</span>(enron_email_words)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(enron_email_words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Message-ID:"                                  
+[2] "&lt;18782981.1075855378110.JavaMail.evans@thyme&gt;"
+[3] "Date:"                                        
+[4] "Mon,"                                         
+[5] "14"                                           
+[6] "May"                                          </code></pre>
+</div>
+</div>
+<p>Now, we can subset by which words contain “important”, and count the number of entries!<br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>enron_emails_important <span class="ot">&lt;-</span> <span class="fu">str_subset</span>(enron_email_words, <span class="st">"important"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(enron_emails_important)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 91</code></pre>
+</div>
+</div>
+<p>91 times! But unfortunately, <code>str_subset()</code> is case sensitive… See:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>enron_emails_important <span class="ot">&lt;-</span> <span class="fu">str_subset</span>(enron_email_words, <span class="st">"Important"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(enron_emails_important)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+</div>
+<p>and..</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>enron_emails_important <span class="ot">&lt;-</span> <span class="fu">str_subset</span>(enron_email_words, <span class="st">"IMPORTANT"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(enron_emails_important)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p>This is where <em>regular expressions</em> come in handy! We’ll discuss this in the following section.</p>
+</section>
+</section>
+<section id="regular-expressions-regex" class="level3">
+<h3 class="anchored" data-anchor-id="regular-expressions-regex">Regular Expressions (regex)</h3>
+<p>Regular expressions provide a powerful tool to extract character data through patterns! In regexes, specific characters and constructs take on special meaning in order to match multiple strings.</p>
+<p>We will go through a few common regex special characters, but refer readers to t<a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://rstudio.github.io/cheatsheets/regex.pdf">his Cheat Sheet</a> by Ian Kopacka for a more in-depth review.</p>
+<p>Let’s consider a simple vector of words:<br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"bat"</span>, <span class="st">"cat"</span>, <span class="st">"5at"</span>, <span class="st">"rats"</span>, <span class="st">"?at"</span>, <span class="st">"kittycat"</span>, <span class="st">"doormats"</span>, <span class="st">"attic"</span>, <span class="st">"matchstick"</span>, <span class="st">"hat-trick"</span>, <span class="st">"hattrick"</span>, <span class="st">"hat trick"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="match-any-letter" class="level4">
+<h4 class="anchored" data-anchor-id="match-any-letter"><code>.</code> (match any letter)</h4>
+<p>The <code>.</code> in regex allows us to match any character (i.e., a number, letter, symbol (aside from a new line)) in an expression.</p>
+<p>For example, the pattern <code>.at</code> would match any word that has at least three characters, where we have some character followed by “at”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(words, <span class="at">pattern =</span> <span class="st">".at"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "bat"        "cat"        "5at"        "rats"       "?at"       
+ [6] "kittycat"   "doormats"   "matchstick" "hat-trick"  "hattrick"  
+[11] "hat trick" </code></pre>
+</div>
+</div>
+</section>
+<section id="anchors" class="level4">
+<h4 class="anchored" data-anchor-id="anchors"><code>$, ^</code> (anchors)</h4>
+<p>Anchors can be included in an expression to indicate where the expression must occur in a string. <code>^</code> indicates that the string must start with the phrase, and <code>$</code> indicates the string must end with it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(words, <span class="at">pattern =</span> <span class="st">"^.at"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "bat"        "cat"        "5at"        "rats"       "?at"       
+[6] "matchstick" "hat-trick"  "hattrick"   "hat trick" </code></pre>
+</div>
+</div>
+<p>Notice how we <strong>did not</strong> select “attic”,“kittycat” or “doormats”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(words, <span class="at">pattern =</span> <span class="st">".at$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "bat"      "cat"      "5at"      "?at"      "kittycat"</code></pre>
+</div>
+</div>
+<p>Notice how we <strong>only</strong> selected words ending in &lt;some chatacter&gt;at.</p>
+</section>
+<section id="b-and-b-boundaries-and-not-a-word-boundary" class="level4">
+<h4 class="anchored" data-anchor-id="b-and-b-boundaries-and-not-a-word-boundary"><code>\b</code> and <code>\B</code> (boundaries and not a word boundary)</h4>
+<p><code>\b</code> indicates a word boundary, and <code>\B</code> indicates NOT a word boundary. To see what we mean, see the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(words, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">btrick"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hat-trick" "hat trick"</code></pre>
+</div>
+</div>
+<p>This selected words that were separated by either a “-” or space.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(words, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">Btrick"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hattrick"</code></pre>
+</div>
+</div>
+<p>This selected words that did not have any separation between them.</p>
+</section>
+<section id="quantifiers" class="level4">
+<h4 class="anchored" data-anchor-id="quantifiers"><code>*</code>, <code>+</code>, <code>?</code> (quantifiers)</h4>
+<p>We can specify regex to match any number of characters</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Quantifier</strong></th>
+<th><strong>Number of Characters</strong></th>
+<th><strong>Range to Match</strong></th>
+<th><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>*</td>
+<td>0 or more</td>
+<td>{n}</td>
+<td>exactly n</td>
+</tr>
+<tr class="even">
+<td>+</td>
+<td>1 or more</td>
+<td>{n,}</td>
+<td>at least n</td>
+</tr>
+<tr class="odd">
+<td>?</td>
+<td>0 or 1</td>
+<td>{,m}</td>
+<td>at most m</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>{n,m}</td>
+<td>between n and m, inclusive</td>
+</tr>
+</tbody>
+</table>
+<p>For example, let’s match words that have 0 or more characters before “at”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(words, <span class="at">pattern =</span> <span class="st">".*at"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "bat"        "cat"        "5at"        "rats"       "?at"       
+ [6] "kittycat"   "doormats"   "attic"      "matchstick" "hat-trick" 
+[11] "hattrick"   "hat trick" </code></pre>
+</div>
+</div>
+<p>All of our words contain “at” somewhere so they are all matched. What about strictly one or more characters before “at”?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(words, <span class="at">pattern =</span> <span class="st">".+at"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "bat"        "cat"        "5at"        "rats"       "?at"       
+ [6] "kittycat"   "doormats"   "matchstick" "hat-trick"  "hattrick"  
+[11] "hat trick" </code></pre>
+</div>
+</div>
+<p>All but attic. Makes sense!</p>
+<p>We can also match on specific letters. Let’s select words with one or more “o”’s in it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_subset</span>(words, <span class="at">pattern =</span> <span class="st">"o+"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "doormats"</code></pre>
+</div>
+</div>
+<p>Of course, regular expressions can be combined together to make powerful search tools, as well. For more on regular expressions, check out <a href="https://stat545.com/character-vectors.html">Chapter 11 of the STAT545 Textbook.</a> We will also learn more as we work through Worksheet B2.</p>
+</section>
 </section>
 </section>
 <section id="worksheet-b2" class="level2">
@@ -561,7 +797,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><a href="https://r4ds.hadley.nz/regexps">R4DS Chapter 16: regular expressions</a>.</p></li>
 </ul></li>
 <li><p>The stat545.com Chapter 11 on character vectors <a href="https://stat545.com/character-vectors.html#resources-3">has an elaborate discussion on useful resources</a> for learning more about strings.</p></li>
-<li><p><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://media.datacamp.com/legacy/image/upload/v1665049611/Marketing/Blog/Regular_Expressions_Cheat_Sheet.pdf">Regex cheat sheet</a></p></li>
+<li><p><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://rstudio.github.io/cheatsheets/regex.pdf">Regex cheat sheet</a></p></li>
 </ul>
 
 
