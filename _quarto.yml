@@ -3,7 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "STAT545 @ UBC"
+  title: "STAT545"
+  back-to-top-navigation: true
+  page-footer: "Copyright 2025, Grace Tompkins" 
+  favicon: images/stat545_transparent.png 
   navbar:
     background: primary
     search: true

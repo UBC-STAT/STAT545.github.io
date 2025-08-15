@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lecture 14: Websites and Slides with Quarto – STAT545 @ UBC</title>
+<title>Lecture 14: Professional Websites with Quarto – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../images/stat545_transparent.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -79,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">STAT545 @ UBC</span>
+    <span class="navbar-title">STAT545</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -187,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_ii/lec14_quarto.html">
- <span class="dropdown-text">Lecture 14: Websites and Slides with Quarto</span></a>
+ <span class="dropdown-text">Lecture 14: Professional Websites with Quarto</span></a>
   </li>  
     </ul>
   </li>
@@ -251,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_ii/lec14_quarto.html">Lecture 14: Websites and Slides with Quarto</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_ii/lec14_quarto.html">Lecture 14: Professional Websites with Quarto</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -374,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/lectures_ii/lec14_quarto.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture 14: Websites and Slides with Quarto</span></a>
+ <span class="menu-text">Lecture 14: Professional Websites with Quarto</span></a>
   </div>
 </li>
     </ul>
@@ -387,8 +388,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quarto-installation-and-basics" id="toc-quarto-installation-and-basics" class="nav-link active" data-scroll-target="#quarto-installation-and-basics">Quarto Installation and Basics</a></li>
-  <li><a href="#quarto-websites" id="toc-quarto-websites" class="nav-link" data-scroll-target="#quarto-websites">Quarto Websites</a></li>
+  <li><a href="#quarto-websites" id="toc-quarto-websites" class="nav-link active" data-scroll-target="#quarto-websites">Quarto Websites</a>
+  <ul class="collapse">
+  <li><a href="#initial-website-set-up" id="toc-initial-website-set-up" class="nav-link" data-scroll-target="#initial-website-set-up">Initial Website Set-up</a></li>
+  <li><a href="#general-tips" id="toc-general-tips" class="nav-link" data-scroll-target="#general-tips">General tips</a></li>
+  </ul></li>
+  <li><a href="#create-a-professional-website" id="toc-create-a-professional-website" class="nav-link" data-scroll-target="#create-a-professional-website">Create a Professional Website</a>
+  <ul class="collapse">
+  <li><a href="#build-the-template" id="toc-build-the-template" class="nav-link" data-scroll-target="#build-the-template">Build the Template</a></li>
+  <li><a href="#update-the-homepage" id="toc-update-the-homepage" class="nav-link" data-scroll-target="#update-the-homepage">Update the Homepage</a></li>
+  <li><a href="#add-a-headshot-and-link-your-github" id="toc-add-a-headshot-and-link-your-github" class="nav-link" data-scroll-target="#add-a-headshot-and-link-your-github">Add a Headshot and Link your GitHub</a></li>
+  <li><a href="#add-your-education" id="toc-add-your-education" class="nav-link" data-scroll-target="#add-your-education">Add your Education</a></li>
+  <li><a href="#create-another-page" id="toc-create-another-page" class="nav-link" data-scroll-target="#create-another-page">Create Another Page</a></li>
+  <li><a href="#push-your-changes-to-github" id="toc-push-your-changes-to-github" class="nav-link" data-scroll-target="#push-your-changes-to-github">Push your Changes to Github</a></li>
+  </ul></li>
+  <li><a href="#getting-fancy" id="toc-getting-fancy" class="nav-link" data-scroll-target="#getting-fancy">Getting Fancy</a>
+  <ul class="collapse">
+  <li><a href="#adding-a-search-bar" id="toc-adding-a-search-bar" class="nav-link" data-scroll-target="#adding-a-search-bar">Adding a Search Bar</a></li>
+  <li><a href="#adding-icons-to-navigation-bar" id="toc-adding-icons-to-navigation-bar" class="nav-link" data-scroll-target="#adding-icons-to-navigation-bar">Adding Icons to Navigation Bar</a></li>
+  <li><a href="#adding-a-drop-down-menu" id="toc-adding-a-drop-down-menu" class="nav-link" data-scroll-target="#adding-a-drop-down-menu">Adding a Drop-down Menu</a></li>
+  <li><a href="#add-a-github-link-on-your-navigation-bar" id="toc-add-a-github-link-on-your-navigation-bar" class="nav-link" data-scroll-target="#add-a-github-link-on-your-navigation-bar">Add a GitHub Link on your Navigation Bar</a></li>
+  <li><a href="#add-a-table-of-contents-on-each-page" id="toc-add-a-table-of-contents-on-each-page" class="nav-link" data-scroll-target="#add-a-table-of-contents-on-each-page">Add a Table of Contents on Each Page</a></li>
+  <li><a href="#add-a-favicon-website-icon-and-logo" id="toc-add-a-favicon-website-icon-and-logo" class="nav-link" data-scroll-target="#add-a-favicon-website-icon-and-logo">Add a Favicon (Website Icon) and Logo</a></li>
+  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras">Extras</a></li>
+  </ul></li>
   <li><a href="#quarto-slides" id="toc-quarto-slides" class="nav-link" data-scroll-target="#quarto-slides">Quarto Slides</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
@@ -399,7 +422,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 14: Websites and Slides with Quarto</h1>
+<h1 class="title">Lecture 14: Professional Websites with Quarto</h1>
 <p class="subtitle lead">December 2, 2025</p>
 </div>
 
@@ -412,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 11, 2025</p>
+      <p class="date-modified">August 15, 2025</p>
     </div>
   </div>
     
@@ -423,36 +446,331 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>One great thing about having html files output from Rmd? We can use Rmd as a framework for creating websites, because websites are often just html.</p>
-<p>Similarly, we can use Rmd as a framework for creating pdf slides (through the Beamer LaTeX document class) or html slides (through reveal.js).</p>
-<p>This is especially powerful when you move to the <em>next generation</em> version of Rmd, <a href="https://quarto.org/">Quarto</a>.</p>
-<p>Note that Quarto was released in 2022, so there are still some growing pains. But it seems to be the way of the future for websites and slides, so it’s what we’ll cover.</p>
-<p><strong>This topic is optional.</strong></p>
-<section id="quarto-installation-and-basics" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-installation-and-basics">Quarto Installation and Basics</h2>
-<p>Official tutorial <a href="https://quarto.org/docs/get-started/hello/rstudio.html">here</a>. It’s very straightforward to pick up if you already know Rmd. (Which we do!)</p>
-</section>
+<p>By the end of this class, students are anticipated to:</p>
+<ul>
+<li><p>Understand the basics of Quarto</p></li>
+<li><p>Build a simple, professional website</p></li>
+</ul>
 <section id="quarto-websites" class="level2">
 <h2 class="anchored" data-anchor-id="quarto-websites">Quarto Websites</h2>
 <p>Turns out, you’ve been using a Quarto website this whole semester! Our STAT545 webpage (the one you’re on right now) was build entirely using Quarto. And, this was build using no prior Quarto knowledge or fancy tools - this was actually my first website build <em>ever</em>.</p>
 <p>Let’s “learn by doing” and build a webpage together! This is a great opportunity to build a professional website (like <a href="https://grcetmpk.github.io/">mine</a>) using Quarto. We will host our website on Github to make things easy!</p>
 <p>Before continuing, ensure that you’ve installed Quarto using the tutorial in the previous sections.</p>
-<p>In RStudio, create a New Project. Select “New Directory” and then find “Quarto Website”. A simple build of a two paged website will generate.</p>
-<p>In Terminal, use <code>touch .nojekyll</code> (mac) or <code>copy NUL .nojekyll</code> to disable Jekyll.</p>
-<p>Navigate to the _quarto.yml file in your files on the right-hand side of RStudio. Under the project: preamble, add<code>output-dir: docs</code> under the project preamble.</p>
-<p>Click the Render button. A local version of this simple website will appear.</p>
+<section id="initial-website-set-up" class="level3">
+<h3 class="anchored" data-anchor-id="initial-website-set-up">Initial Website Set-up</h3>
+<p><u><strong>Step 1:</strong></u> In RStudio, create a New Project. Select “New Directory” and then find “Quarto Website”. If given an option for version control, select Git. A simple build of a two paged website will generate.</p>
+<p><u><strong>Step 2:</strong></u> In the Terminal, run <code>touch .nojekyll</code> (Mac OS) or <code>copy NUL .nojekyll</code> to disable Jekyll.</p>
+<p><u><strong>Step 3:</strong></u> Within the RStudio project, navigate to the <code>_quarto.yml</code> file in your files (right hand pane). Under the <code>project:</code> preamble, add <code>output-dir: docs</code>.</p>
+<p><u><strong>Step 4:</strong></u> Navigate back to <code>index.qmd</code>. Save and click the Render button. A local version of this simple website will appear.</p>
 <p>Now, we should send this to GitHub so we can host our website on GitHub and make changes both locally and through GitHub. To do so, we need to connect this R Project with Github.</p>
-<p>When you made this project, you should have selected to use Git as a version control. If not, head to Tools &gt; Version control &gt; Project Setup and select Git as your version control. At this time, origin should be set to <code>none</code>.</p>
-<p>On GitHub, make a new EMPTY repository. This should be named with the same name as your website (i.e., <a href="http://yourname.github.io/">yourname.github.io</a>). Ensure you UNSELECT to make a README file.</p>
-<p>Now back to RStudio. We will be working in the terminal to give commands to our computer to connect with Github. SAVE ALL FILES. In the Terminal (beside the Console in RStudio), type <code>git init</code>. Then, <code>git add .</code>. Then, commit the changes of our website to Git. Type `git commit -m “initial commit”.``</p>
-<p><code>The -m "xxx" part adds a description of your changes. After, tell github where we are pushing the changes to (i.e., the repository you just created!) using</code> git remote add origin <a href="https://github.com/yourusername/yourreponame%60" class="uri">https://github.com/yourusername/yourreponame%60</a> and filling in your username and repository name. Then, push the changes using <code>git push -u origin main</code>. Head back to github to see new files added to your repository.</p>
-<p>On Github in your repository, click the three dots and head to settings. Navigate to <code>pages</code> on the lefthand side menu. Under <code>branch</code>, select <code>main</code> as your branch and <code>/docs</code> as the folder. Select save. Give it a few minutes and refresh if you dont see a success message pointing to the website. Head to <a href="http://yourrepname.github.io">yourreponame.github.io</a> to see if it worked!</p>
-<p>Do steps from git add . onward to push changes each time.</p>
+<p><u><strong>Step 5:</strong></u> When you made this project, you should have selected to use Git as a version control. If not, head to Tools &gt; Version control &gt; Project Setup and select Git as your version control. At this time, origin should be set to <code>none</code>.</p>
+<p><u><strong>Step 6:</strong></u> On GitHub, make a new EMPTY repository. This should be named with the same name as your website (i.e., <a href="http://yourname.github.io/">yourname.github.io</a>). <strong>Ensure you UNSELECT to make a README file.</strong></p>
+<p><u><strong>Step 7:</strong></u> Now back to RStudio. We will be working in the terminal to give commands to our computer to connect with Github.</p>
+<ul>
+<li><p>SAVE ALL FILES. In the Terminal (beside the Console in RStudio)</p></li>
+<li><p>Run <code>git init</code></p></li>
+<li><p>Run <code>git add .</code></p></li>
+<li><p>Then, commit the changes of our website to Git. Type <code>git commit -m "initial commit"</code></p>
+<ul>
+<li>The <code>-m "&lt;description&gt;"</code> part adds the &lt;description&gt; of your changes.</li>
+</ul></li>
+<li><p>Now we need to tell GitHub where we are pushing our changes to (i.e., the repository you just created!) using <code>git remote add origin https://github.com/&lt;yourusername&gt;/&lt;yourreponame&gt;</code> and filling in your username and repository name.</p></li>
+<li><p>Push the changes using <code>git push -u origin main</code>. Head back to github to see new files added to your repository.</p></li>
+</ul>
+<p><u><strong>Step 8:</strong></u> See your new website</p>
+<ul>
+<li><p>On Github in your repository, click the three dots and head to settings.</p></li>
+<li><p>Navigate to <code>pages</code> on the lefthand side menu.</p></li>
+<li><p>Under <code>branch</code>, select <code>main</code> as your branch and <code>/docs</code> as the folder. Select save.</p></li>
+<li><p>Give it a few minutes and refresh if you don’t see a success message pointing to the website.</p></li>
+<li><p>Head to &lt;yourreponame&gt;.github.io to see if it worked!</p></li>
+</ul>
+<p><strong>Step 9:</strong> Edit your website and push the changes</p>
+<ul>
+<li><p>Edit your version locally, and render and save.</p></li>
+<li><p>Then, in the terminal:</p>
+<ul>
+<li><p>Run <code>git add .</code></p></li>
+<li><p>Run <code>git commit -m "&lt;description of your changes&gt;"</code></p></li>
+<li><p>Run <code>git push origin main</code></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="general-tips" class="level3">
+<h3 class="anchored" data-anchor-id="general-tips">General tips</h3>
+<ul>
+<li><p>Sometime if you change a file name or remove it, Quarto will get confused. You can go to the <code>docs</code> folder and delete the old file name/file you deleted and re-render and save.</p></li>
+<li><p>Use folders to keep things organized.</p></li>
+<li><p>For people less familiar with Markdown syntax, the “Visual” viewer is useful! It provides a more user-friendly IDE and buttons for things like titles, bold text, lists, links, images, formatting, and tables. It is directly below the Save button on RStudio. You can toggle between Source and Visual to see the Markdown version and a more visual version of your files.</p></li>
+</ul>
+</section>
+</section>
+<section id="create-a-professional-website" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-professional-website">Create a Professional Website</h2>
+<p>Let’s build on this sample Quarto website to make something more personal and professional.</p>
+<section id="build-the-template" class="level3">
+<h3 class="anchored" data-anchor-id="build-the-template">Build the Template</h3>
+<p>Open the <code>_quarto.yml</code> file. Let’s update the contents to this (fill in &lt;Your Name&gt;):</p>
+<pre><code>project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "&lt;Your Name&gt;"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css</code></pre>
+</section>
+<section id="update-the-homepage" class="level3">
+<h3 class="anchored" data-anchor-id="update-the-homepage">Update the Homepage</h3>
+<p>The homepage is our <code>index.qmd</code> file. In our <code>_quarto.yml</code> document, we named this page “Home”! You can see this in this section:</p>
+<pre><code>      - href: index.qmd
+        text: Home</code></pre>
+<p>Now that we’ve told Quarto where our homepage is, let’s update it.</p>
+</section>
+<section id="add-a-headshot-and-link-your-github" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-headshot-and-link-your-github">Add a Headshot and Link your GitHub</h3>
+<p>It’s useful to add a headshot to your website! At this point if you don’t have a nice photo of yourself or are not comfortable adding one, just grab a stock image online of your favourite animal. (<em>Side note: I’d recommend getting a professional headshot if you don’t have one! This is something on my own personal to-do list)</em></p>
+<ul>
+<li>Create an <code>images</code> folder in your directory (same place as your <code>index.qmd</code> file), and save the image you’d like to display there. I’d recommend saving the image as <code>avatar.png</code>.</li>
+</ul>
+<p>We will use the <code>jolla</code> template, which is provides a nice home page for personal websites. We’ll also add a link to your GitHub profile so people can see your projects.</p>
+<p>In your files, you should see <code>index.qmd</code>. Do not rename this file! Quarto knows that this is your “home page”.</p>
+<ul>
+<li>Open and edit the <code>index.qmd</code> file, and fill in the appropriate information indicated in &lt;&gt;:</li>
+</ul>
+<pre><code>---
+title: "&lt;Your Name&gt;"
+about:
+  template: jolla
+  image: images/avatar.png
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/&lt;yourgithubusername&gt;
+---</code></pre>
+<p>The stuff between the <code>---</code> is called the <em>Preamble</em>, which builds the foundation of the webpage.</p>
+</section>
+<section id="add-your-education" class="level3">
+<h3 class="anchored" data-anchor-id="add-your-education">Add your Education</h3>
+<ul>
+<li>Let’s add your position (Graduate Student in &lt;Department&gt;) in italics, and add our institution. This will be under our photo. Let’s add the following under our Preamble:</li>
+</ul>
+<pre><code>*Graduate Student in &lt;Department&gt;*
+
+University of British Columbia </code></pre>
+<p>Let’s also make a subsection for a more detailed look at your education. Add your current and previous education under an Education header (feel free to add or remove lines):</p>
+<pre><code>## Education
+
+Degree, School | Year
+
+Degree, School | Year
+
+Degree, School | Year</code></pre>
+</section>
+<section id="create-another-page" class="level3">
+<h3 class="anchored" data-anchor-id="create-another-page">Create Another Page</h3>
+<p>Let’s add another page that we can navigate to! First, let’s add a <code>.qmd</code> page to our directory. Click “File” &gt; “New File” &gt; “Quarto Document”. Add a title to your page, and keep all other defaults. We will be adding a page containing Courses we’ve taken at UBC as an example. An appropriate name could be simply “Courses”. We can update this later if needed.</p>
+<p>Open the new file. Update the preamble to include the date at which the page was last modified:</p>
+<pre><code>---
+title: "Courses"
+date-modified: last-modified
+---</code></pre>
+<p>Now, let’s add some information! It’s your turn to explore Quarto.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise: Add a Courses Page
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Add a subsection (##) of your current courses</p>
+<ul>
+<li><p>Add a list of courses you’re currently taking, and link them to the UBC course calendar descriptions or course website.</p></li>
+<li><p><em>HINT: try visual mode if you cannot remember how to write links or lists in Markdown</em></p></li>
+</ul></li>
+<li><p>Add a subsection (##) for past courses</p>
+<ul>
+<li>Add a list of some past courses you’re taken at UBC or another institution, and link them to the a course calendar descriptions or course website. Indicate what institution you took the courses at (i.e., STAT 200 (UBC))</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>Now, the page is ready to add to our website. Open the <code>_quarto.yml</code> file and add <code>courses.qmd</code> to the list of webpages.</p>
+<pre><code>website:
+  title: "&lt;Your Name&gt;"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - courses.qmd</code></pre>
+<p>Head back to <code>courses.qmd</code>, save all, and render. Do you see your new page in the navigation bar?</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise: Add Another Page
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Follow the previous steps to add another page to your website. Here are some ideas!</p>
+<ul>
+<li><p>Your CV</p></li>
+<li><p>Projects (course projects (linked to your GitHub repo!), publications, conference talks, poster presentations)</p></li>
+<li><p>Extracurriculars</p></li>
+<li><p>Awards</p></li>
+<li><p>Blog</p></li>
+<li><p>Miscellaneous (hobbies)</p></li>
+</ul>
+<p>Feel free to get creative. This is just practice for website building - you can always come back and update your website later. Just remember, the website is PUBLIC. Do not put any information that you do not want shared on the internet.</p>
+</div>
+</div>
+<p>Save all and render. Click through your website to ensure that everything is working!</p>
+</section>
+<section id="push-your-changes-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="push-your-changes-to-github">Push your Changes to Github</h3>
+<p>Everything you’ve done so far only exists on your local machine. Stage, commit, and push your changes (Steps 7 and 8 above). Test our your new website by visiting it using the GitHub link!</p>
+</section>
+</section>
+<section id="getting-fancy" class="level2">
+<h2 class="anchored" data-anchor-id="getting-fancy">Getting Fancy</h2>
+<p>Here are some ways you can elevate your website!</p>
+<section id="adding-a-search-bar" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-search-bar">Adding a Search Bar</h3>
+<ul>
+<li><p>Add <code>search: true</code> under your <code>navbar</code> in your <code>_quarto.yml</code> file</p>
+<p>Example:</p>
+<pre><code>website:
+  title: "STAT545 @ UBC"
+  navbar:
+    background: primary
+    search: true
+</code></pre></li>
+</ul>
+</section>
+<section id="adding-icons-to-navigation-bar" class="level3">
+<h3 class="anchored" data-anchor-id="adding-icons-to-navigation-bar">Adding Icons to Navigation Bar</h3>
+<p>Sometimes, we want to use an icon instead of a work. For example, I could change “Home” to a house icon using:</p>
+<pre><code>website:
+  title: "STAT545 @ UBC"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: " "
+        icon: house-door-fill</code></pre>
+<p>This will remove the Home text and replace it with a home icon.</p>
+</section>
+<section id="adding-a-drop-down-menu" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-drop-down-menu">Adding a Drop-down Menu</h3>
+<p>Some websites (like our STAT545 website) have so many pages that we need to condense topics into our top navigation bar. This can be achieved with a drop-down menu. I’ll show an example of how I have a drop-down menu for the two STAT545 Syllabi (A and B).</p>
+<p>I like to organize the website so that anything in a drop-down menu is in its own folder. For example, I have a <code>webpages</code> folder that contains a file (or folder) for each item I want on my navigation bar. I have my two syllabi hosted in <code>webpages/syllabus/syllabusA.qmd</code> and <code>webpages/syllabus/syllabusB.qmd</code>.</p>
+<p>To create a drop-down menu, we use <code>sidebar:</code> in the <code>_quarto.yml</code> document:</p>
+<pre><code>website:
+  title: "STAT545 @ UBC"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: " "
+        icon: house-door-fill
+      - sidebar:syllabus</code></pre>
+<p><code>-sidebar:syllabus</code> tells Quarto that I am going to have subpages, and I reference them using the <code>syllabus</code> id. For example:</p>
+<pre><code>website:
+  title: "STAT545 @ UBC"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: " "
+        icon: house-door-fill
+      - sidebar:syllabus
+        
+  sidebar:
+    - id: syllabus
+      title: "Syllabus"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - webpages/syllabus/syllabusA.qmd
+        - webpages/syllabus/syllabusB.qmd</code></pre>
+<p>This creates a section on my Navigation Bar called “Syllabus”, which drops down to contain <code>syllabusA.qmd</code> and <code>syllabusB.qmd</code>, which are regular pages like the <code>courses.qmd</code> that we created!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/syllabi.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="add-a-github-link-on-your-navigation-bar" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-github-link-on-your-navigation-bar">Add a GitHub Link on your Navigation Bar</h3>
+<p>We can add a right-hand link to GitHub with its own icon. This will appear beside the search icon. In the <code>_quarto.yml</code>, add a <code>right:</code> section linking to GitHub.</p>
+<pre><code>website:
+  title: "STAT545 @ UBC"
+  navbar:
+    background: primary
+    search: true
+    left:
+...
+...
+...
+        
+    right:
+      - href: "https://github.com/UBC-STAT/STAT545.github.io"
+        text: "GitHub"
+        icon: github</code></pre>
+</section>
+<section id="add-a-table-of-contents-on-each-page" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-table-of-contents-on-each-page">Add a Table of Contents on Each Page</h3>
+<p>If you have a lot of information on each page, adding a Table of Contents can be useful. In the <code>_quarto.yml</code>, add <code>toc: true</code></p>
+<pre><code>format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true</code></pre>
+</section>
+<section id="add-a-favicon-website-icon-and-logo" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-favicon-website-icon-and-logo">Add a Favicon (Website Icon) and Logo</h3>
+<p><em>Favicons</em> are useful ways to brand your website. These are small icons that identify your website (think Facebook with their infamous blue “F”, or Google’s rainbow “F”) that appear in browser tabs such as Google Chrome and on web searches.</p>
+<p>In the <code>_quarto.yml</code> file, we can include the following under <code>website:</code></p>
+<pre><code>website:
+      favicon: &lt;favicon.png&gt;</code></pre>
+<p>where &lt;favicon.png&gt; is the image (or path to the image, if its in a folder) that you’d like to use!</p>
+<p>You can also add a logo that appears in the top lefthand corner of your website using the <code>logo</code> command, for example:</p>
+<pre><code> navbar:
+    background: primary
+    search: true
+    logo: &lt;yourlogo&gt;.png</code></pre>
+</section>
+<section id="extras" class="level3">
+<h3 class="anchored" data-anchor-id="extras">Extras</h3>
+<p>There is SO much more that Quarto can do, and this is just scratching the surface. From aesthetics to website navigation, <a href="https://quarto.org/docs/websites/" class="uri">https://quarto.org/docs/websites/</a> has so many examples of cool things you can do with your website.</p>
+<p>If you’d like to see how THIS exact website was built, check out <a href="https://github.com/UBC-STAT/STAT545.github.io" class="uri">https://github.com/UBC-STAT/STAT545.github.io</a>.</p>
+</section>
 </section>
 <section id="quarto-slides" class="level2">
 <h2 class="anchored" data-anchor-id="quarto-slides">Quarto Slides</h2>
-<p>Official tutorial <a href="https://quarto.org/docs/presentations/">here</a>.</p>
-<p>An example of a Quarto slide deck is <a href="https://stat540-ubc.github.io/lectures/lect16-clustering/lect16-clustering-guest.html">Lucy’s guest lecture in STAT 540</a>. This uses our preferred format, <a href="https://revealjs.com/">reveal.js</a>. You can download the slide deck WITH the source <a href="https://www.dropbox.com/s/aataltxawu2qxn3/lec14-clustering.zip?dl=0">here</a>. This is a great way to make your slide deck <em>reproducible</em>.</p>
+<p>You can also build slide decks in Quarto! We won’t be getting into it in this class, but you can find the official tutorial <a href="https://quarto.org/docs/presentations/">here</a>.</p>
+<p>An example of a Quarto slide deck is <a href="https://stat540-ubc.github.io/lectures/lect16-clustering/lect16-clustering-guest.html">Lucy’s guest lecture in STAT 540</a>. This uses our preferred format, <a href="https://revealjs.com/">reveal.js</a>. You can download the slide deck WITH the source <a href="https://www.dropbox.com/s/aataltxawu2qxn3/lec14-clustering.zip?dl=0">here</a>. This is a great way to make your slide deck reproducible.</p>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
@@ -463,7 +781,7 @@ ul.task-list li input[type="checkbox"] {
 
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -882,6 +1200,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2025, Grace Tompkins</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
