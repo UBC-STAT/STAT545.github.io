@@ -37,6 +37,14 @@ date-modified: last-modified
 
     -   [STAT545A Canvas Homepage](https://canvas.ubc.ca/courses/169555) (enrolled students only)
 
+-   What to do if I'm sick?
+
+    -   [Syllabus: Part A](../webpages/syllabus/syllabusA.qmd#your-personal-health)
+
+-   What happens if I submit an assignment late?
+
+    -   [Syllabus: Part A](../webpages/syllabus/syllabusA.qmd#late-policies)
+
 ## When is the course offered?
 
 September - December of each academic year. Typical format: STAT 545A 1.5 credits in September through mid October, followed by STAT 545B 1.5 credits from mid October through early December.

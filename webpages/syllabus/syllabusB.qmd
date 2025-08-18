@@ -10,7 +10,7 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 ### Course Information
 
 |  |  |  |  |  |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
 | Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Monday/Wednesday: 9:30am - 10:50am | CEME 1202 |
 
@@ -45,7 +45,7 @@ This course will feature short lectures and in-class demonstrations so students 
 **STAT 545 B (Part II):**
 
 | Week | Date | Topic | In-class work |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | 8 | Tuesday Oct 21 | [Functions](../lectures_ii/lec8a_functions.qmd) | Worksheet B1 |
 |  | Thursday Oct 23 | [Advanced Functions](../lectures_ii/lec8b_advfunctions.qmd) | Worksheet B1, Assignment 1 |
 |  |  |  |  |
@@ -74,7 +74,7 @@ This schedule is subject to change. Any changes will be announced via the `#anno
 This course will have autograded worksheets meant to guide you through a number of exercises as well as assignments.
 
 | Assessment | Percent Grade | Note |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Worksheets | 15% | Three guided worksheets |
 | Assignments | 85% | Four assignments involving more independent analyses and tasks |
 
@@ -85,7 +85,7 @@ Worksheets are interactive assignments that allow students to get real-time feed
 Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
 | Worksheet | Release Date | Due Date (11:59PM PT) | Percentage of Final Grade |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Worksheet B1 | Monday Oct 20, 2025 | Monday Oct 27, 2025 | 5% |
 | Worksheet B2 | Friday Nov 14, 2025 | Thursday Nov 27, 2025 | 5% |
 | Worksheet B3 | Thursday Nov 27, 2025 | Thursday Dec 4, 2025 | 5% |
@@ -95,7 +95,7 @@ Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 There are four formal assignments for this course:
 
 | Assignment | Release Date | Due Date (11:59pm PT) | Percentage of Final Grade |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Assignment 1 | Tuesday Oct 21, 2025 | Friday Oct 31, 2025 | 21.25% |
 | Assignment 2 | Friday Oct 31, 2025 | Friday Nov 7, 2025 | 21.25% |
 | Assignment 3 | Friday Nov 7, 2025 | Friday Nov 21, 2025 | 21.25% |
@@ -141,7 +141,7 @@ Regrade requests must be sent to the TAs through Slack within one week of the as
 
 Worksheets (and larger assignments, if applicable) are due at 11:59pm PT on the date indicated in the course schedule. For a late submission, a 24 hour extension will be provided for the first offense. Late submissions will be given a grade of 0 for subsequent occurrences.
 
-There is a zero-tolerance policy for late projects, including the mini data analysis and the collaborative project. If you are having issues with a team member regarding any group work, reach out to the instructor directly through Slack or email.
+**There is a zero-tolerance policy for late projects, including the mini data analysis and the collaborative project. If you are having issues with a team member regarding any group work, reach out to the instructor directly through Slack or email.**
 
 #### Academic Concession
 
