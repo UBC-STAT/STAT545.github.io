@@ -255,7 +255,6 @@ Here are some ways you can elevate your website!
       navbar:
         background: primary
         search: true
-      
     ```
 
 ### Adding Icons to Navigation Bar
