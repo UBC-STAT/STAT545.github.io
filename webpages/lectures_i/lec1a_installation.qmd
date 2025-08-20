@@ -4,7 +4,7 @@ subtitle: "September 2, 2025"
 date-modified: last-modified
 ---
 
-##  Software and Troubleshooting
+## Software and Troubleshooting
 
 The goal of this lecture is to learn how to install and setup key software for use in the course.
 
@@ -112,8 +112,7 @@ Git is a version control software. Github is a cloud-based platform (built on Gi
 If you are having issues, you could use the `usethis` package in R. [See here.](https://happygitwithr.com/hello-git.html)
 
 4.  Get your Personal Access Token (PAT)
-    -   **Option 1**: Go to to <https://github.com/settings/tokens> and click “Generate token”. Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “Stat545Installation”. [Select “repo”, “user”, and “workflow” for scopes.]{.underline} Save this token somewhere so you can use it again later, such as a password manager.
-    -   **Option 2:** From R, execute `usethis::create_github_token()` (you may have to install the usethis package first by first running `install.packages("usethis")`). Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “stat545installation".
+    -   **Option 1**: Go to to <https://github.com/settings/tokens> and click “Generate token”. Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “Stat545Installation”. [Select “repo”, “user”, and “workflow” for scopes.]{.underline} Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). [**Save this token somewhere so you can use it again later, such as a password manager.**]{.underline}
+    -   **Option 2:** From R, execute `usethis::create_github_token()` (you may have to install the usethis package first by first running `install.packages("usethis")`). Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “stat545installation". Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). [**Save this token somewhere so you can use it again later, such as a password manager.**]{.underline}
 5.  From R (in the console), run `install.packages("gitcreds")` if you haven't already.
 6.  Execute `gitcreds::gitcreds_set()` and enter the PAT that you just made when prompted.
-
