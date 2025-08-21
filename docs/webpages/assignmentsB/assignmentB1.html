@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Frequently Asked Questions – STAT545</title>
+<title>Assignment B1: Making a Function in R – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/stat545_transparent.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/stat545_transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,17 +69,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">STAT545</span>
     </a>
   </div>
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
 </i> 
 <span class="menu-text"> </span></a>
   </li>  
@@ -100,11 +100,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="../webpages/syllabus/syllabusA.html">
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusA.html">
  <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/syllabus/syllabusB.html">
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusB.html">
  <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
   </li>  
     </ul>
@@ -115,85 +115,85 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec1a_installation.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec1a_installation.html">
  <span class="dropdown-text">Lecture 1A: Installation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec1b_introR.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec1b_introR.html">
  <span class="dropdown-text">Lecture 1B: Course Introduction and R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec2A_reproducibility.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec2A_reproducibility.html">
  <span class="dropdown-text">Lecture 2A: Reproducibility</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec2b_versioncontrol.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec2b_versioncontrol.html">
  <span class="dropdown-text">Lecture 2B: Version Control</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec3_dplyr.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec3_dplyr.html">
  <span class="dropdown-text">Lecture 3: Data Manipulation with dplyr</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec4_datavis.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec4_datavis.html">
  <span class="dropdown-text">Lecture 4: Data Visualization</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec5_tidydata.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec5_tidydata.html">
  <span class="dropdown-text">Lecture 5: Tidy Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec6a_modelfitting.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec6a_modelfitting.html">
  <span class="dropdown-text">Lecture 6A: Model Fitting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec6b_dates.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec6b_dates.html">
  <span class="dropdown-text">Lecture 6B: Factors and Dates</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec7a_readwritedata.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec7a_readwritedata.html">
  <span class="dropdown-text">Lecture 7A: Reading and Writing Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_i/lec7b_joiningtibbles.html">
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec7b_joiningtibbles.html">
  <span class="dropdown-text">Lecture 7B: Tibble Joins</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_ii/lec8a_functions.html">
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8a_functions.html">
  <span class="dropdown-text">Lecture 8a: Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_ii/lec8b_advfunctions.html">
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8b_advfunctions.html">
  <span class="dropdown-text">Lecture 8b: Advanced Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_ii/lec9_rpackages.html">
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec9_rpackages.html">
  <span class="dropdown-text">Lecture 9: R Packages</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_ii/lec10_shiny.html">
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec10_shiny.html">
  <span class="dropdown-text">Lecture 10: Dashboards with R Shiny</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_ii/lec11_automation.html">
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec11_automation.html">
  <span class="dropdown-text">Lecture 11: Automation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_ii/lec12_characterdata.html">
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec12_characterdata.html">
  <span class="dropdown-text">Lecture 12: StringR and Regular Expressions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_ii/lec13_listcolumns.html">
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec13_listcolumns.html">
  <span class="dropdown-text">Lecture 13: List Columns</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/lectures_ii/lec14_quarto.html">
+    <a class="dropdown-item" href="../../webpages/lectures_ii/lec14_quarto.html">
  <span class="dropdown-text">Lecture 14: Professional Websites with Quarto</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../webpages/worksheets.html"> 
+    <a class="nav-link" href="../../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -202,11 +202,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-collab-project">    
         <li>
-    <a class="dropdown-item" href="../webpages/collabproj/collabproj_deliverable1.html">
+    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/collabproj/collabproj_deliverable2.html">
+    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable2.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
   </li>  
     </ul>
@@ -217,21 +217,32 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
         <li>
-    <a class="dropdown-item" href="../webpages/mda/mda_deliverable1.html">
+    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable1.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../webpages/mda/mda_deliverable2.html">
+    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-assignments-(part-b" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Assignments (Part B)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-assignments-(part-b">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB1.html">
+ <span class="dropdown-text">Assignment B1: Making a Function in R</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../webpages/casestudies.html"> 
+    <a class="nav-link" href="../../webpages/casestudies.html"> 
 <span class="menu-text">Case Studies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../webpages/faq.html" aria-current="page"> 
+    <a class="nav-link" href="../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -247,34 +258,45 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/assignmentsB/assignmentB1.html">Assignment B1: Making a Function in R</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/assignmentsB/assignmentB1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Assignment B1: Making a Function in R</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#where-can-i-find." id="toc-where-can-i-find." class="nav-link active" data-scroll-target="#where-can-i-find.">Where can I find….</a></li>
-  <li><a href="#when-is-the-course-offered" id="toc-when-is-the-course-offered" class="nav-link" data-scroll-target="#when-is-the-course-offered">When is the course offered?</a></li>
-  <li><a href="#what-happened-to-stat-547m" id="toc-what-happened-to-stat-547m" class="nav-link" data-scroll-target="#what-happened-to-stat-547m">What happened to STAT 547M?</a></li>
-  <li><a href="#what-happened-to-the-guidebook" id="toc-what-happened-to-the-guidebook" class="nav-link" data-scroll-target="#what-happened-to-the-guidebook">What happened to the guidebook?</a></li>
-  <li><a href="#why-are-there-two-courses-instead-of-a-single-stat-545-course" id="toc-why-are-there-two-courses-instead-of-a-single-stat-545-course" class="nav-link" data-scroll-target="#why-are-there-two-courses-instead-of-a-single-stat-545-course">Why are there two courses, instead of a single “STAT 545” course?</a></li>
-  <li><a href="#i-have-taken-stat-545a-for-1.5-credits-in-the-past.-can-i-take-stat-545b" id="toc-i-have-taken-stat-545a-for-1.5-credits-in-the-past.-can-i-take-stat-545b" class="nav-link" data-scroll-target="#i-have-taken-stat-545a-for-1.5-credits-in-the-past.-can-i-take-stat-545b">I have taken STAT 545A for 1.5 credits in the past. Can I take STAT 545B?</a></li>
-  <li><a href="#can-i-just-take-the-second-half-i.e.-stat-545b" id="toc-can-i-just-take-the-second-half-i.e.-stat-545b" class="nav-link" data-scroll-target="#can-i-just-take-the-second-half-i.e.-stat-545b">Can I just take the second half, i.e.&nbsp;STAT 545B?</a></li>
-  <li><a href="#can-i-just-take-the-second-half-i.e.-stat-545b-ill-do-a-self-study-for-stat-545a." id="toc-can-i-just-take-the-second-half-i.e.-stat-545b-ill-do-a-self-study-for-stat-545a." class="nav-link" data-scroll-target="#can-i-just-take-the-second-half-i.e.-stat-545b-ill-do-a-self-study-for-stat-545a.">Can I just take the second half, i.e.&nbsp;STAT 545B? I’ll do a self-study for STAT 545A.</a></li>
-  <li><a href="#i-am-an-undergraduate.-can-i-take-this-course" id="toc-i-am-an-undergraduate.-can-i-take-this-course" class="nav-link" data-scroll-target="#i-am-an-undergraduate.-can-i-take-this-course">I am an undergraduate. Can I take this course?</a></li>
-  <li><a href="#what-if-ive-never-had-a-stats-class" id="toc-what-if-ive-never-had-a-stats-class" class="nav-link" data-scroll-target="#what-if-ive-never-had-a-stats-class">What if I’ve never had a stats class?</a></li>
-  <li><a href="#im-not-enrolled-can-i-sit-in-during-class" id="toc-im-not-enrolled-can-i-sit-in-during-class" class="nav-link" data-scroll-target="#im-not-enrolled-can-i-sit-in-during-class">I’m not enrolled – can I sit in during class?</a></li>
-  <li><a href="#id-like-to-officially-audit-can-i" id="toc-id-like-to-officially-audit-can-i" class="nav-link" data-scroll-target="#id-like-to-officially-audit-can-i">I’d like to officially audit – can I?</a></li>
-  <li><a href="#the-course-is-full-can-i-audit-instead" id="toc-the-course-is-full-can-i-audit-instead" class="nav-link" data-scroll-target="#the-course-is-full-can-i-audit-instead">The course is full – can I audit instead?</a></li>
-  <li><a href="#the-course-is-full.-is-there-a-chance-that-the-course-capacity-will-increase" id="toc-the-course-is-full.-is-there-a-chance-that-the-course-capacity-will-increase" class="nav-link" data-scroll-target="#the-course-is-full.-is-there-a-chance-that-the-course-capacity-will-increase">The course is full. Is there a chance that the course capacity will increase?</a></li>
-  <li><a href="#the-course-is-listed-as-restricted.-what-should-i-do" id="toc-the-course-is-listed-as-restricted.-what-should-i-do" class="nav-link" data-scroll-target="#the-course-is-listed-as-restricted.-what-should-i-do">The course is listed as “restricted”. What should I do?</a></li>
-  <li><a href="#can-i-take-this-course-if-im-not-a-statistics-student" id="toc-can-i-take-this-course-if-im-not-a-statistics-student" class="nav-link" data-scroll-target="#can-i-take-this-course-if-im-not-a-statistics-student">Can I take this course if I’m not a Statistics student?</a></li>
-  <li><a href="#do-i-need-a-computer" id="toc-do-i-need-a-computer" class="nav-link" data-scroll-target="#do-i-need-a-computer">Do I need a computer?</a></li>
-  <li><a href="#are-they-any-prerequisites" id="toc-are-they-any-prerequisites" class="nav-link" data-scroll-target="#are-they-any-prerequisites">Are they any prerequisites?</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#tidy-submission-15-points" id="toc-tidy-submission-15-points" class="nav-link" data-scroll-target="#tidy-submission-15-points">Tidy Submission (15 points)</a></li>
+  <li><a href="#exercise-1-make-a-function-25-points" id="toc-exercise-1-make-a-function-25-points" class="nav-link" data-scroll-target="#exercise-1-make-a-function-25-points">Exercise 1: Make a Function (25 points)</a></li>
+  <li><a href="#exercise-2-document-your-function-20-points" id="toc-exercise-2-document-your-function-20-points" class="nav-link" data-scroll-target="#exercise-2-document-your-function-20-points">Exercise 2: Document your Function (20 points)</a></li>
+  <li><a href="#exercise-3-include-examples-15-points" id="toc-exercise-3-include-examples-15-points" class="nav-link" data-scroll-target="#exercise-3-include-examples-15-points">Exercise 3: Include examples (15 points)</a></li>
+  <li><a href="#exercise-4-test-the-function-25-points" id="toc-exercise-4-test-the-function-25-points" class="nav-link" data-scroll-target="#exercise-4-test-the-function-25-points">Exercise 4: Test the Function (25 points)</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +305,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Frequently Asked Questions</h1>
+<h1 class="title">Assignment B1: Making a Function in R</h1>
+<p class="subtitle lead">Due: October 27, 11:59pm</p>
 </div>
 
 
@@ -306,124 +329,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="where-can-i-find." class="level2">
-<h2 class="anchored" data-anchor-id="where-can-i-find.">Where can I find….</h2>
+<p><strong>Total Points</strong>: 100</p>
+<p>This assignment covers making a function in R, documenting it, and testing it.</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<ol type="1">
+<li><p>Go to canvas to get your invitation to create a GitHub repository for this project. You can find this in the description of Assignment B-1. Name your repo as you wish, so long as it’s informative.</p></li>
+<li><p>Make a new Rmd file containing all of your code. Be sure to use some dialogue between code chunks.</p></li>
+</ol>
+</section>
+<section id="tidy-submission-15-points" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-submission-15-points">Tidy Submission (15 points)</h2>
+<p>Follow these steps to submit your work. Be sure to familiarize yourself with the rubric for a tidy submission below, before doing these steps.</p>
+<ol type="1">
+<li><p>Make a README file for your repository. It should be a brief document letting a visitor know what’s in this repository (at a high level) and some key things they should know about how to use the files in the repository.</p></li>
+<li><p>Tag a release in your GitHub repository corresponding to your submission before the deadline.</p></li>
+<li><p>Grab the URL corresponding to your tagged release, and submit that to canvas. Make sure the TAs and Katie can see your repository! Either it should be public or private with TAs and Katie added as collaborators.</p></li>
+</ol>
+<p><strong>Rubric</strong>:</p>
 <ul>
-<li><p>The lecture schedule and topics?</p>
-<ul>
-<li><p><a href="../webpages/syllabus/syllabusA.html#schedule-of-topics">Syllabus: Part A</a></p></li>
-<li><p><a href="../webpages/syllabus/syllabusB.html#schedule-of-topics">Syllabus: Part B</a></p></li>
-</ul></li>
-<li><p>How much assessments are worth?</p>
-<ul>
-<li><p><a href="../webpages/syllabus/syllabusA.html#assessments">Syllabus: Part A</a></p></li>
-<li><p><a href="../webpages/syllabus/syllabusB.html#assessments">Syllabus: Part B</a></p></li>
-</ul></li>
-<li><p>The course GitHub repository?</p>
-<ul>
-<li><a href="https://github.com/UBC-STAT/STAT545.github.io" class="uri">https://github.com/UBC-STAT/STAT545.github.io</a></li>
-</ul></li>
-<li><p>Worksheets?</p>
-<ul>
-<li><a href="https://github.com/UBC-STAT/STAT545.github.io/tree/main/content/worksheets_student">Our GitHub page</a></li>
-</ul></li>
-<li><p>A calendar of due dates?</p>
-<ul>
-<li><a href="https://canvas.ubc.ca/calendar">Canvas</a></li>
-</ul></li>
-<li><p>A summary of what’s going on this week?</p>
-<ul>
-<li><a href="../index.html">Our “This Week at a Glace” section on the home page!</a></li>
-</ul></li>
-<li><p>Slack posting guidelines?</p>
-<ul>
-<li><a href="../webpages/syllabus/syllabusA.html#course-communications">Syllabus</a></li>
-</ul></li>
-<li><p>The link to join Slack?</p>
-<ul>
-<li><a href="https://canvas.ubc.ca/courses/169555">STAT545A Canvas Homepage</a> (enrolled students only)</li>
-</ul></li>
-<li><p>What to do if I’m sick?</p>
-<ul>
-<li><a href="../webpages/syllabus/syllabusA.html#your-personal-health">Syllabus</a></li>
-</ul></li>
-<li><p>What happens if I submit an assignment late?</p>
-<ul>
-<li><a href="../webpages/syllabus/syllabusA.html#late-policies">Syllabus</a></li>
-</ul></li>
+<li><p>The above steps were followed.</p></li>
+<li><p>Your work must be reproducible from beginning to end, error-free.</p></li>
+<li><p>Code should adopt a consistent and easy-to-read style – ideally, the <a href="https://style.tidyverse.org/">tidyverse style</a>, although we’re certainly not looking for strict adherence.</p></li>
+<li><p>You use proper English, spelling, and grammar, and write concisely. If there’s any uncertainty in determining a grade here, the <a href="https://github.com/UBC-MDS/public/blob/master/rubric/rubric_writing.md">UBC MDS writing rubric</a> will be referred to.</p></li>
+<li><p>If there’s any further uncertainty in determining a grade for this tidy submission portion, the <a href="https://github.com/UBC-MDS/public/blob/master/rubric/rubric_mech.md">UBC MDS mechanics rubric</a> will be referred to.</p></li>
 </ul>
 </section>
-<section id="when-is-the-course-offered" class="level2">
-<h2 class="anchored" data-anchor-id="when-is-the-course-offered">When is the course offered?</h2>
-<p>September - December of each academic year. Typical format: STAT 545A 1.5 credits in September through mid October, followed by STAT 545B 1.5 credits from mid October through early December.</p>
+<section id="exercise-1-make-a-function-25-points" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-make-a-function-25-points">Exercise 1: Make a Function (25 points)</h2>
+<p>In this exercise, you’ll be making a function and fortifying it. The function need not be complicated. The function need not be “serious”, but shouldn’t be nonsense.</p>
+<p><strong>Function Ideas</strong></p>
+<ul>
+<li><p>Did you repeat any code for a data analysis in STAT 545A? If so, consider making a function for this action.</p></li>
+<li><p>Consider bundling a specific <code>group_by() %&gt;% summarise()</code> workflow.</p></li>
+<li><p>Write a <em>wrapper</em> around an existing function.</p>
+<ul>
+<li><p>For example, perhaps accepting a narrower range of inputs (like not allowing logical vectors), or providing a different output.</p></li>
+<li><p>A specific example: the <a href="https://github.com/vincenzocoia/rqdist/blob/master/R/rqdist.R#L1"><code>rqdist()</code> function</a> is a wrapper around <code>quantreg::rq()</code>, narrowing its functionality.</p></li>
+<li><p>It’s usually better to narrow a function’s focus than to broaden, so that a function doesn’t end up doing too much.</p></li>
+</ul></li>
+<li><p>Make a special plot that you’d want to repeat when exploring your data.</p></li>
+<li><p>…</p></li>
+</ul>
+<p><strong>Guidelines</strong></p>
+<ul>
+<li><p>Your function should not rely on anything from your working environment.</p></li>
+<li><p>Your function should not rely on “magic numbers” – pre-selected numbers (or options) that appear inside the function that can’t be accessed by a user of the function.</p>
+<ul>
+<li>For example, maybe <code>quantile(x, type = 1, ...)</code> appears in your function. The choice of 1 is arbitrary – unless you’re making a function like <code>quantile_type_1()</code>.</li>
+</ul></li>
+<li><p>Your function should be reasonably flexible on its inputs. Here is an example of a function that is <em>not</em> reasonably flexible: a function called <code>count_missing_values_by_group()</code> that only works when the data frame has columns that are all of type fct.</p></li>
+<li><p>The output is consistent – for example, always gives a list. An example of inconsistent output: <code>sapply(1:3, seq_len)</code> gives a list, and <code>sapply(1:3, sqrt)</code> gives an (atomic) vector.</p></li>
+<li><p>Your function includes appropriate arguments. (Do you handle NA’s appropriately? Are you using the ellipsis properly? etc.)</p></li>
+</ul>
 </section>
-<section id="what-happened-to-stat-547m" class="level2">
-<h2 class="anchored" data-anchor-id="what-happened-to-stat-547m">What happened to STAT 547M?</h2>
-<p>STAT 547M became STAT 545B in 2020, so that the course codes align. Otherwise, these are the same courses.</p>
+<section id="exercise-2-document-your-function-20-points" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-document-your-function-20-points">Exercise 2: Document your Function (20 points)</h2>
+<p>In the same code chunk where you made your function, document the function using <a href="https://roxygen2.r-lib.org/articles/rd-formatting.html">roxygen2 tags</a>. Be sure to include:</p>
+<ol type="1">
+<li><p>Title.</p></li>
+<li><p>Function description: In 1-2 brief sentences, describe what the function does.</p></li>
+<li><p>Document each argument with the <code>@param</code> tag, <em>making sure to justify why you named the parameter as you did</em>.</p>
+<ul>
+<li>(Justification for naming is not often needed, but we want to hear your reasoning.)</li>
+</ul></li>
+<li><p>What the function returns, using the <code>@return</code> tag.</p></li>
+</ol>
 </section>
-<section id="what-happened-to-the-guidebook" class="level2">
-<h2 class="anchored" data-anchor-id="what-happened-to-the-guidebook">What happened to the guidebook?</h2>
-<p>We used a guidebook in 2019/2020. It’s still available at https://stat545guidebook.netlify.app, but had become deprecated in place of worksheets and some tutorials.</p>
+<section id="exercise-3-include-examples-15-points" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-include-examples-15-points">Exercise 3: Include examples (15 points)</h2>
+<p>Demonstrate the usage of your function with a few examples. Use one or more new code chunks, describing what you’re doing.</p>
+<p>Note: If you want to deliberately show an error, you can use <code>error = TRUE</code> in your code chunk option.</p>
 </section>
-<section id="why-are-there-two-courses-instead-of-a-single-stat-545-course" class="level2">
-<h2 class="anchored" data-anchor-id="why-are-there-two-courses-instead-of-a-single-stat-545-course">Why are there two courses, instead of a single “STAT 545” course?</h2>
-<p>For several years, Jenny Bryan taught STAT 545A as a 1.5 credit course. She – and many students – felt there was a lot of great, relevant content that could go into an additional 1.5 credits.</p>
-<p>A full semester of data exploration, visualization, and all-around data wrangling was piloted in 2014/2015. It was structured as two half courses primarily so that several year’s worth of STAT 545A alums could register for the second part (then STAT 547M) and get the “missing half” of the course. And now it’s hard to break the cycle.</p>
-</section>
-<section id="i-have-taken-stat-545a-for-1.5-credits-in-the-past.-can-i-take-stat-545b" class="level2">
-<h2 class="anchored" data-anchor-id="i-have-taken-stat-545a-for-1.5-credits-in-the-past.-can-i-take-stat-545b">I have taken STAT 545A for 1.5 credits in the past. Can I take STAT 545B?</h2>
-<p>YES. But STAT 545 keeps changing to keep current with the R world. It is your responsibility to level up.</p>
-</section>
-<section id="can-i-just-take-the-second-half-i.e.-stat-545b" class="level2">
-<h2 class="anchored" data-anchor-id="can-i-just-take-the-second-half-i.e.-stat-545b">Can I just take the second half, i.e.&nbsp;STAT 545B?</h2>
-<p>NO, not unless you have taken STAT 545A previously.</p>
-</section>
-<section id="can-i-just-take-the-second-half-i.e.-stat-545b-ill-do-a-self-study-for-stat-545a." class="level2">
-<h2 class="anchored" data-anchor-id="can-i-just-take-the-second-half-i.e.-stat-545b-ill-do-a-self-study-for-stat-545a.">Can I just take the second half, i.e.&nbsp;STAT 545B? I’ll do a self-study for STAT 545A.</h2>
-<p>Unfortunately, the answer is still no. As much as we’d want to say yes to you, it just becomes too difficult for us to evaluate your level without having seen deliverables for STAT 545A.</p>
-</section>
-<section id="i-am-an-undergraduate.-can-i-take-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="i-am-an-undergraduate.-can-i-take-this-course">I am an undergraduate. Can I take this course?</h2>
-<p>Maybe, if there’s room. Contact the instructor.</p>
-</section>
-<section id="what-if-ive-never-had-a-stats-class" class="level2">
-<h2 class="anchored" data-anchor-id="what-if-ive-never-had-a-stats-class">What if I’ve never had a stats class?</h2>
-<p>There are no official pre-requisites for STAT 545A but most students will have had at least one prior statistics course or comparable experience.</p>
-</section>
-<section id="im-not-enrolled-can-i-sit-in-during-class" class="level2">
-<h2 class="anchored" data-anchor-id="im-not-enrolled-can-i-sit-in-during-class">I’m not enrolled – can I sit in during class?</h2>
-<p>Unfortunately not. The room is usually at capacity, and further, we’ve allocated TA time for the specific number of students attending the class.</p>
-</section>
-<section id="id-like-to-officially-audit-can-i" class="level2">
-<h2 class="anchored" data-anchor-id="id-like-to-officially-audit-can-i">I’d like to officially audit – can I?</h2>
-<p>Absolutely! Please take a look at what is required of auditors so that you have an understanding of your expectations coming into the course; then, fill out the form (graduate version) and send it to the instructor to get signed.</p>
-</section>
-<section id="the-course-is-full-can-i-audit-instead" class="level2">
-<h2 class="anchored" data-anchor-id="the-course-is-full-can-i-audit-instead">The course is full – can I audit instead?</h2>
-<p>You’ll still have to join the waitlist – auditing still counts as a seat in the class, so auditing is not a way around the course capacity.</p>
-<p>In all cases, I encourage you to register! Or if the course is full, join the waitlist. Alternatively, you can engage in your own self-study using our online resources.</p>
-</section>
-<section id="the-course-is-full.-is-there-a-chance-that-the-course-capacity-will-increase" class="level2">
-<h2 class="anchored" data-anchor-id="the-course-is-full.-is-there-a-chance-that-the-course-capacity-will-increase">The course is full. Is there a chance that the course capacity will increase?</h2>
-<p>Unfortunately, the course enrollment capacity will not increase. But, I encourage you to join the waitlist.</p>
-</section>
-<section id="the-course-is-listed-as-restricted.-what-should-i-do" class="level2">
-<h2 class="anchored" data-anchor-id="the-course-is-listed-as-restricted.-what-should-i-do">The course is listed as “restricted”. What should I do?</h2>
-<p>When all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types. If you are a student of that type, then go ahead and register through SSC! Otherwise, I encourage you to join the waitlist.</p>
-</section>
-<section id="can-i-take-this-course-if-im-not-a-statistics-student" class="level2">
-<h2 class="anchored" data-anchor-id="can-i-take-this-course-if-im-not-a-statistics-student">Can I take this course if I’m not a Statistics student?</h2>
-<p>This course is open to any graduate student at UBC. Students from other departments vastly outnumber those from Statistics. In fact, the most successful students are often grad students from other fields who need to analyze and visualize data for a thesis. They are highly motivated and excel.</p>
-<p>However, if you have never programmed or worked at the command line before, prepare for a shock. This will be a powerful, positive experience, but it’s a big adjustment. Come suffer through the worst part of the learning curve in good company!</p>
-</section>
-<section id="do-i-need-a-computer" class="level2">
-<h2 class="anchored" data-anchor-id="do-i-need-a-computer">Do I need a computer?</h2>
-<p>YES. You absolutely must have access to a computer on which you can install software, download data, etc. In fact, class meetings will be a mix of lecture, discussion, and live coding. Students will get the most out of this if they can bring their own laptop to class every day. If this is not possible, we will try to help you work something out.</p>
-</section>
-<section id="are-they-any-prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="are-they-any-prerequisites">Are they any prerequisites?</h2>
-<p>There are no official pre-requisites for STAT 545A, but most students will have had at least one prior statistics course or comparable experience.</p>
-<p>STAT 545B requires STAT 545A.</p>
+<section id="exercise-4-test-the-function-25-points" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4-test-the-function-25-points">Exercise 4: Test the Function (25 points)</h2>
+<p>Running examples is a good way of checking by-eye whether your function is working as expected. But, having a formal “yes or no” check is useful when you move on to other parts of your analysis.</p>
+<p>Write formal tests for your function. You should use at least three non-redundant uses of an <code>expect_()</code> function from the <code>testthat</code> package, and they should be contained in a <code>test_that()</code> function (or more than one). They should all pass.</p>
+<p>Example of non-redundant inputs:</p>
+<ul>
+<li><p>Vector with no NA’s</p></li>
+<li><p>Vector that has NA’s</p></li>
+<li><p>Vector of a different type (if relevant)</p></li>
+<li><p>Vector of length 0, like <code>numeric(0)</code>.</p></li>
+</ul>
+<p>Example of redundant inputs:</p>
+<ul>
+<li>Providing a different number (unless one of these numbers have some significance, like an extreme point – just tell us if that’s the case)</li>
+</ul>
 
 
 </section>

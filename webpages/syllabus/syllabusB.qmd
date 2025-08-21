@@ -80,28 +80,28 @@ This course will have autograded worksheets meant to guide you through a number 
 
 #### Worksheets
 
-Worksheets are interactive assignments that allow students to get real-time feedback on their code. Your grade will be based on the number of correct answers provided. There are unlimited attempts for the worksheets, and time will be given in class to work through them.
+Worksheets are interactive assignments that allow students to get real-time feedback on their code. Your grade will be based on the number of correct answers provided. There are unlimited attempts for the worksheets, and time will be given in class to work through them. Worksheets are equally weighted (each worth 5% of your final grade).
 
 Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
-| Worksheet | Release Date | Due Date (11:59PM PT) | Percentage of Final Grade |
-|----|----|----|----|
-| Worksheet B1 | Monday Oct 20, 2025 | Monday Oct 27, 2025 | 5% |
-| Worksheet B2 | Friday Nov 14, 2025 | Thursday Nov 27, 2025 | 5% |
-| Worksheet B3 | Thursday Nov 27, 2025 | Thursday Dec 4, 2025 | 5% |
+| Worksheet    | Release Date          | Due Date (11:59PM PT) |
+|--------------|-----------------------|-----------------------|
+| Worksheet B1 | Monday Oct 20, 2025   | Monday Oct 27, 2025   |
+| Worksheet B2 | Friday Nov 14, 2025   | Thursday Nov 27, 2025 |
+| Worksheet B3 | Thursday Nov 27, 2025 | Thursday Dec 4, 2025  |
 
 #### Assignments
 
-There are four formal assignments for this course:
+There are four formal assignments for this course, each equally weighted (each worth 21.25% of your final grade):
 
-| Assignment | Release Date | Due Date (11:59pm PT) | Percentage of Final Grade |
-|----|----|----|----|
-| Assignment 1 | Tuesday Oct 21, 2025 | Friday Oct 31, 2025 | 21.25% |
-| Assignment 2 | Friday Oct 31, 2025 | Friday Nov 7, 2025 | 21.25% |
-| Assignment 3 | Friday Nov 7, 2025 | Friday Nov 21, 2025 | 21.25% |
-| Assignment 4 | Friday Nov 21, 2025 | Thursday Dec 4, 2025 | 21.25% |
+| Assignment   | Release Date         | Due Date (11:59pm PT) |
+|--------------|----------------------|-----------------------|
+| Assignment 1 | Tuesday Oct 21, 2025 | Friday Oct 31, 2025   |
+| Assignment 2 | Friday Oct 31, 2025  | Friday Nov 7, 2025    |
+| Assignment 3 | Friday Nov 7, 2025   | Friday Nov 21, 2025   |
+| Assignment 4 | Friday Nov 21, 2025  | Thursday Dec 4, 2025  |
 
-Instructions will be posted on the Course Website under "Assignments"
+Instructions will be posted on the Course Website under "Assignments (Part B)"
 
 ### Auditing Students
 

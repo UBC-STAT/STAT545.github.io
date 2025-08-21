@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Syllabus: STAT 545 A (Part I) – STAT545</title>
+<title>Assignment B4: Your Choice! – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -275,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/syllabus/syllabusA.html">Syllabus: STAT 545 A (Part I)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/assignmentsB/assignmentB4.html">Assignment B4: Your Choice!</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -289,14 +289,26 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../webpages/syllabus/syllabusA.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Syllabus: STAT 545 A (Part I)</span></a>
+  <a href="../../webpages/assignmentsB/assignmentB1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment B1: Making a Function in R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../webpages/syllabus/syllabusB.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus: STAT 545 B (Part II)</span></a>
+  <a href="../../webpages/assignmentsB/assignmentB2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment B2: Making an R Package</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/assignmentsB/assignmentB3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment B3: Shiny App</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/assignmentsB/assignmentB4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Assignment B4: Your Choice!</span></a>
   </div>
 </li>
     </ul>
@@ -309,18 +321,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#acknowledgement" id="toc-acknowledgement" class="nav-link active" data-scroll-target="#acknowledgement">Acknowledgement</a></li>
-  <li><a href="#course-information" id="toc-course-information" class="nav-link" data-scroll-target="#course-information">Course Information</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#contact-and-office-hours" id="toc-contact-and-office-hours" class="nav-link" data-scroll-target="#contact-and-office-hours">Contact and Office Hours</a></li>
-  <li><a href="#course-structure" id="toc-course-structure" class="nav-link" data-scroll-target="#course-structure">Course Structure</a></li>
-  <li><a href="#schedule-of-topics" id="toc-schedule-of-topics" class="nav-link" data-scroll-target="#schedule-of-topics">Schedule of Topics</a></li>
-  <li><a href="#assessments" id="toc-assessments" class="nav-link" data-scroll-target="#assessments">Assessments</a></li>
-  <li><a href="#auditing-students" id="toc-auditing-students" class="nav-link" data-scroll-target="#auditing-students">Auditing Students</a></li>
-  <li><a href="#course-communications" id="toc-course-communications" class="nav-link" data-scroll-target="#course-communications">Course Communications</a></li>
-  <li><a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy">Privacy</a></li>
-  <li><a href="#policies" id="toc-policies" class="nav-link" data-scroll-target="#policies">Policies</a></li>
-  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright">Copyright</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#tidy-submission-25-points" id="toc-tidy-submission-25-points" class="nav-link" data-scroll-target="#tidy-submission-25-points">Tidy Submission (25 points)</a></li>
+  <li><a href="#option-a-strings-and-functional-programming-in-r" id="toc-option-a-strings-and-functional-programming-in-r" class="nav-link" data-scroll-target="#option-a-strings-and-functional-programming-in-r">Option A – Strings and functional programming in R</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-37.5-points" id="toc-exercise-1-37.5-points" class="nav-link" data-scroll-target="#exercise-1-37.5-points"><strong>Exercise 1 (37.5 points)</strong></a></li>
+  <li><a href="#exercise-2-37.5-points" id="toc-exercise-2-37.5-points" class="nav-link" data-scroll-target="#exercise-2-37.5-points"><strong>Exercise 2 (37.5 points)</strong></a></li>
+  <li><a href="#exercise-3-37.5-points" id="toc-exercise-3-37.5-points" class="nav-link" data-scroll-target="#exercise-3-37.5-points"><strong>Exercise 3 (37.5 points)</strong></a></li>
+  </ul></li>
+  <li><a href="#option-b-r-package" id="toc-option-b-r-package" class="nav-link" data-scroll-target="#option-b-r-package">Option B – R package</a>
+  <ul class="collapse">
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric"><strong>Rubric</strong></a></li>
+  </ul></li>
+  <li><a href="#option-c-shiny-app" id="toc-option-c-shiny-app" class="nav-link" data-scroll-target="#option-c-shiny-app">Option C – Shiny App</a>
+  <ul class="collapse">
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link" data-scroll-target="#before-you-start"><strong>Before you start</strong></a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements"><strong>Requirements</strong></a></li>
+  <li><a href="#rubric-1" id="toc-rubric-1" class="nav-link" data-scroll-target="#rubric-1"><strong>Rubric</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -329,7 +347,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus: STAT 545 A (Part I)</h1>
+<h1 class="title">Assignment B4: Your Choice!</h1>
+<p class="subtitle lead">Due: December 4, 11:59pm</p>
 </div>
 
 
@@ -352,443 +371,196 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="acknowledgement" class="level3">
-<h3 class="anchored" data-anchor-id="acknowledgement">Acknowledgement</h3>
-<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəyəm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.</p>
-</section>
-<section id="course-information" class="level3">
-<h3 class="anchored" data-anchor-id="course-information">Course Information</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Course Title</strong></td>
-<td><strong>Course Code</strong></td>
-<td><strong>Credit</strong> <strong>Value</strong></td>
-<td><strong>Class Times</strong></td>
-<td><strong>Class Location</strong></td>
-</tr>
-<tr class="even">
-<td>Exploratory Data Analysis Part I</td>
-<td>STAT 545 A</td>
-<td>1.5</td>
-<td>Monday/Wednesday: 9:00am - 10:20am</td>
-<td>CEME 1202</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="prerequisites" class="level3">
-<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
-<p>While there are no formal pre-requisites for STAT 545 A, students should be familiar with basic statistical analyses and have taken at least one introductory statistics course.</p>
-<p>STAT545 A is a pre-requisite for STAT545 B. No exceptions.</p>
-</section>
-<section id="contact-and-office-hours" class="level3">
-<h3 class="anchored" data-anchor-id="contact-and-office-hours">Contact and Office Hours</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 33%">
-<col style="width: 23%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Instructor</th>
-<th>Contact Details</th>
-<th>Office Location</th>
-<th>Office Hours</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Grace Tompkins</td>
-<td>grace&lt;at&gt;stat.ubc.ca</td>
-<td>ESB 3134</td>
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Teaching Assistants</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>TBD</td>
-</tr>
-<tr class="even">
-<td>TBD</td>
-</tr>
-<tr class="odd">
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="course-structure" class="level3">
-<h3 class="anchored" data-anchor-id="course-structure">Course Structure</h3>
-<p>This course will feature short lectures and in-class demonstrations so students get hands-on experience with the help of their instructor and TAs. Dedicated time will be given in lecture for students to work through assigned worksheets.</p>
-<p><strong>Please bring a charged laptop to every class.</strong> If you do not have a personal laptop, one can be borrowed through the <a href="https://wiki.ubc.ca/Library:Technology_Borrowing/Laptop_Lending">UBC library</a>.</p>
-</section>
-<section id="schedule-of-topics" class="level3">
-<h3 class="anchored" data-anchor-id="schedule-of-topics">Schedule of Topics</h3>
-<p><strong>STAT 545 A (Part I):</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Date</th>
-<th>Topic</th>
-<th>In-class work</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Tues. Sept 2</td>
-<td><a href="../../webpages/lectures_i/lec1a_installation.html">Installation</a></td>
-<td>Install Software</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs. Sept 4</td>
-<td><a href="../../webpages/lectures_i/lec1b_introR.html">Intro to STAT545 and R</a></td>
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a01.ipynb">Worksheet A1</a></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Tues. Sept 9</td>
-<td><a href="../../webpages/lectures_i/lec2A_reproducibility.html">Authoring and Reproducibility</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs. Sept 11</td>
-<td><a href="../../webpages/lectures_i/lec2b_versioncontrol.html">Version Control</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Tues. Sept 16</td>
-<td><a href="../../webpages/lectures_i/lec3_dplyr.html">Data Manipulation with <code>dplyr</code></a></td>
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a02.ipynb">Worksheet A2</a></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs. Sept 18</td>
-<td></td>
-<td>Worksheet A2</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Tues.. Sept 23</td>
-<td><a href="../../webpages/lectures_i/lec4_datavis.html">Data Visualization</a></td>
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a03.ipynb">Worksheet A3</a></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs. Sept 25</td>
-<td></td>
-<td>Worksheet A3</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Tues. Sept 30</td>
-<td><strong>*** NO CLASS ***</strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs. Oct 2</td>
-<td><a href="../../webpages/lectures_i/lec5_tidydata.html">Tidy Data</a></td>
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a04.ipynb">Worksheet A4</a></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Tues. Oct 7</td>
-<td><a href="../../webpages/lectures_i/lec6a_modelfitting.html">Model Fitting</a></td>
-<td>Worksheet A4</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs. Oct 9</td>
-<td><a href="../../webpages/lectures_i/lec6b_dates.html">Factors and Dates</a></td>
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a05.ipynb">Worksheet A5</a></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Tues. Oct 14</td>
-<td><a href="../../webpages/lectures_i/lec7a_readwritedata.html">Reading and Writing Data</a>, and <a href="../../webpages/lectures_i/lec7b_joiningtibbles.html">Tibble Joins</a></td>
-<td>Worksheet A5</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs. Oct 16</td>
-<td>Review and Work Session</td>
-<td><p>Worksheet A5</p>
-<p><a href="../../webpages/mda/mda_deliverable1.html">Mini Data Analysis (MDA)</a></p></td>
-</tr>
-</tbody>
-</table>
-<p>This schedule is subject to change. Any changes will be announced via the <code>#annoucements</code> channel on Slack, and major changes will be sent out via email.</p>
-</section>
-<section id="assessments" class="level3">
-<h3 class="anchored" data-anchor-id="assessments">Assessments</h3>
-<p>This course will have autograded, formative worksheets meant to guide you through a number of exercises.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Assessment</th>
-<th>Percent Grade</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="../../webpages/worksheets.html">Worksheets</a></td>
-<td>20%</td>
-<td>Four guided worksheets</td>
-</tr>
-<tr class="even">
-<td><a href="../../webpages/mda/mda_deliverable1.html">Mini Data Analysis</a></td>
-<td>45%</td>
-<td>Students write their own mini analysis</td>
-</tr>
-<tr class="odd">
-<td><a href="../../webpages/collabproj/collabproj_deliverable1.html">Collaborative Project</a></td>
-<td>35%</td>
-<td>Team project intended for practicing version control and collaboration</td>
-</tr>
-</tbody>
-</table>
-<section id="worksheets" class="level4">
-<h4 class="anchored" data-anchor-id="worksheets">Worksheets</h4>
-<p>Worksheets are interactive assignments that allow students to get real-time feedback on their code. Your grade will be based on the number of correct answers provided. There are unlimited attempts for the worksheets, and time will be given in class to work through them. Worksheets are equally weights (each worth 5% if your final grade)</p>
-<p>Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Worksheet</th>
-<th>Release Date</th>
-<th>Due Date (11:59PM PT)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a01.ipynb">Worksheet A1</a></td>
-<td>September 2nd, 2025</td>
-<td>NA</td>
-</tr>
-<tr class="even">
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a02.ipynb">Worksheet A2</a></td>
-<td>September 15th, 2025</td>
-<td>September 22nd, 2025</td>
-</tr>
-<tr class="odd">
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a03.ipynb">Worksheet A3</a></td>
-<td>September 22nd, 2025</td>
-<td>September 29th, 2025</td>
-</tr>
-<tr class="even">
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a04.ipynb">Worksheet A4</a></td>
-<td>September 29th, 2025</td>
-<td>October 13th, 2025</td>
-</tr>
-<tr class="odd">
-<td><a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a05.ipynb">Worksheet A5</a></td>
-<td>October 13th, 2025</td>
-<td>October 20th, 2025</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="collaborative-project" class="level4">
-<h4 class="anchored" data-anchor-id="collaborative-project">Collaborative Project</h4>
-<p>Teams will be randomly assigned. The idea behind the collaborative project is to practice using Version Control and collaborative tools on Github, troubleshoot broken R code, and rewrite code to address issues. There will be two deliverables for the project:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Collaborative Project Milestone</th>
-<th>Release Date</th>
-<th>Due Date (11:59pm PT)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="../../webpages/collabproj/collabproj_deliverable1.html">Deliverable 1</a> (100 points)</td>
-<td>September 4th, 2025</td>
-<td>September 19th, 2025</td>
-</tr>
-<tr class="even">
-<td><a href="../../webpages/collabproj/collabproj_deliverable2.html">Deliverable 2</a> (78 points)</td>
-<td>September 4th, 2025</td>
-<td>September 26th, 2025</td>
-</tr>
-</tbody>
-</table>
-<p>Instructions will be posted on the Course Website under “Collaborative Project”</p>
-</section>
-<section id="mini-data-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="mini-data-analysis">Mini Data Analysis</h4>
-<p>Conduct your own mini data analysis! The goal of this assignment is to become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as <code>tibble</code>. There are two equally weighted deliverables:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Mini Data Analysis Milestone</th>
-<th>Release Date</th>
-<th>Due Date (11:59PM PT)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="../../webpages/mda/mda_deliverable1.html">Deliverable 1</a> (36 points)</td>
-<td>September 26th, 2025</td>
-<td>October 3rd, 2025</td>
-</tr>
-<tr class="even">
-<td><a href="../../webpages/mda/mda_deliverable2.html">Deliverable 2</a> (36 points)</td>
-<td>September 26th, 2025</td>
-<td>October 22nd, 2025</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="auditing-students" class="level3">
-<h3 class="anchored" data-anchor-id="auditing-students">Auditing Students</h3>
-<p>Auditing students are expected to complete all assessments (see above). All assessments are graded on a pass/fail basis for those officially auditing.</p>
-<p>You must be registered as an auditing student to attend lectures due to capacity limitations.</p>
-</section>
-<section id="course-communications" class="level3">
-<h3 class="anchored" data-anchor-id="course-communications">Course Communications</h3>
-<p>We will be using Slack as our primary platform of all course-related communications! Students will be emailed an invite to their class’ Slack workspace.</p>
-<p>Official course communications will occur on the <code>#announcements</code> channel. You will receive an invite on the first day of classes. Please notify the instructor by email if you have not received your personal invite.</p>
-<p>Our STAT 545 team will be actively monitoring Slack during regular working hours (9am to 5pm PT, Monday to Friday). You are free to ask questions outside of this window but please keep in mind that there are no expectations for the team to answer questions outside of working hours or on weekends or holidays.</p>
-<p>To make the most out of Slack, please</p>
+<p><strong>Total Points</strong>: 100</p>
+<p>For this assignment, you will pick one of three options described below.</p>
 <ul>
-<li><p>Use the <code>#general</code> channel for clarifications, asking about course organization, or clarifying instructions. Things you post on the <code>#general</code> channel will be seen by everyone, so please do not provide information that gives away answers to assignments.</p></li>
-<li><p>Make a group chat with our TAs when you need more personalized help, or have an issue with grading. They may direct you to the <code>#general</code> channel when appropriate, or direct you to the instructor.</p></li>
-<li><p>Direct message the instructor if there is a concern that is more personal (i.e., you need to self declare an absense) or if you have already talked to the TAs about an issue and are unsatisfied. You can also direct message the instructor if you are having issues with a group member in any group-related assignments.</p></li>
-<li><p>Post in the <code>#random</code> channel if you find things related to the course that you’d like to share</p></li>
+<li><p><strong>Option A:</strong> Strings and/or Functional Programming</p></li>
+<li><p><strong>Option B:</strong> R Package</p></li>
+<li><p><strong>Option C:</strong> Shiny App</p></li>
+</ul>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p><strong>If you choose Option A</strong>, make a new repository in our homework Organization for this assignment. The link to do so can be found on Canvas in the description of Assignment B-4.</p>
+<p><strong>If you choose Option B or C</strong>, just continue your work on your R package / shiny app repository. (You tagged a release corresponding to the original assignment submission, right? If so, you can proceed to modify your repository’s contents without having to worry about your previous assignment submission. If you didn’t, please tag a release before working on this assignment, and update your previous assignment submission on canvas.)</p>
+</section>
+<section id="tidy-submission-25-points" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-submission-25-points">Tidy Submission (25 points)</h2>
+<p>Follow these steps to submit your work. Be sure to familiarize yourself with the rubric for a tidy submission below, before doing these steps.</p>
+<ul>
+<li><p>(5 pts) Your repository has a README file orienting a newcomer to your project; if one already exists, it’s updated as needed.</p></li>
+<li><p>(10 pts) RRR: Code runs without errors and it is appropriately annotated, legible, and easy to follow.</p></li>
+<li><p>(5 pts) You use proper English, spelling, and grammar throughout your repository.</p></li>
+<li><p>(5 pts) Tag a release in your assignment repository.</p></li>
+<li><p>Submit a link to your tagged release in your assignment repository to canvas.</p>
+<ul>
+<li>It is <strong>very important</strong> that you submit a link to your work on canvas. If not, we won’t be able to find your work, because each option involves working in a different repository. The link you provide should link to a tagged release in your assignment repository, corresponding to the point in time of your repository’s life that we should be grading. This repository should be viewable by the TAs and Katie - either it should be public or it should be private with TAs and Katie added as collaborators.</li>
+</ul></li>
 </ul>
 </section>
-<section id="privacy" class="level3">
-<h3 class="anchored" data-anchor-id="privacy">Privacy</h3>
-<p>Slack and GitHub are hosted on servers stored outside of Canada. Please keep this in mind.</p>
+<section id="option-a-strings-and-functional-programming-in-r" class="level1">
+<h1>Option A – Strings and functional programming in R</h1>
+<p>Complete <strong>2 of the following 3</strong> exercises using concepts and tools covered in class (i.e.&nbsp;<code>stringr</code>, <code>purrr</code>, regex, tidyverse, etc.)</p>
+<p><strong>Setup</strong>: Make a new repository if you’re going with this option, by clicking the link provided to you on canvas. Name the repository as you wish.</p>
+<section id="exercise-1-37.5-points" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-37.5-points"><strong>Exercise 1 (37.5 points)</strong></h3>
+<p>Take a Jane Austen book contained in the <code>janeaustenr</code> package, or another book from some other source, such as one of the many freely available books from <a href="https://dev.gutenberg.org/">Project Gutenberg</a> (be sure to indicate where you got the book from). Make a plot of the most common words in the book, removing “stop words” of your choosing (words like “the”, “a”, etc.) or stopwords from a pre-defined source, like the <code>stopwords</code> package or <code>tidytext::stop_words</code>.</p>
+<p>If you use any resources for helping you remove stopwords, or some other resource besides the <code>janeaustenr</code> R package for accessing your book, please indicate the source. We aren’t requiring any formal citation styles, just make sure you name the source and link to it.</p>
 </section>
-<section id="policies" class="level3">
-<h3 class="anchored" data-anchor-id="policies">Policies</h3>
-<section id="regrade-requests" class="level4">
-<h4 class="anchored" data-anchor-id="regrade-requests">Regrade Requests</h4>
-<p>Regrade requests must be sent to the TAs through Slack within one week of the assessment being returned. If required, regrade requests can be escalated to the instructor <u>only if</u> the request has already been brought up to the TA team and the student is unsatisfied. The instructor reserves the right to regrade the entire assessment, resulting in a higher or lower mark than originally provided.</p>
+<section id="exercise-2-37.5-points" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-37.5-points"><strong>Exercise 2 (37.5 points)</strong></h3>
+<p>Make a function that converts words to your own version of Pig Latin.</p>
+<p>The specific input and output that you decide upon is up to you. Don’t forget to implement good function-making hygiene: we’ll be looking for (unrendered) roxygen2-style documentation (being sure to describe your Pig Latin conversion), examples of applying the function, 3 non-redundant tests, appropriate use of arguments, and appropriate amount of checking for proper input.</p>
+<p>Your Pig Latin should incorporate two components:</p>
+<p><strong>Rearrangement component</strong></p>
+<p>The default Pig Latin rearrangement rule, <a href="https://en.wikipedia.org/wiki/Pig_Latin#Background">as per Wikipedia</a>, moves beginning letters to the end:</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li><p>For words that begin with consonant sounds, all letters before the initial vowel are placed at the end of the word sequence.</p></li>
+<li><p>When words begin with consonant clusters (multiple consonants that form one sound), the whole sound is added to the end</p></li>
+<li><p>For words beginning with vowel sounds, one removes the initial vowel(s) along with the first consonant or consonant cluster.</p></li>
+</ol>
+</blockquote>
+<p>Modify this somehow. Maybe you move letters from the end to the beginning, or you change the rules altogether, keeping a similar level of complexity.</p>
+<p><strong>Addition component</strong></p>
+<p>The default Pig Latin addition rule is to add “ay” to the end of the word, after rearranging the letters of the word. You should choose some other addition rule.</p>
 </section>
-<section id="late-policies" class="level4">
-<h4 class="anchored" data-anchor-id="late-policies">Late Policies</h4>
-<p>Worksheets (and larger assignments, if applicable) are due at 11:59pm PT on the date indicated in the course schedule. For a late submission, a 24 hour extension will be provided for the first offense. Late submissions will be given a grade of 0 for subsequent occurrences.</p>
-<p><strong>There is a zero-tolerance policy for late projects, including the mini data analysis and the collaborative project. If you are having issues with a team member regarding any group work, reach out to the instructor directly through Slack or email.</strong></p>
-</section>
-<section id="academic-concession" class="level4">
-<h4 class="anchored" data-anchor-id="academic-concession">Academic Concession</h4>
-<p>UBC no longer requires a doctor’s note (or supporting documentation) for <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,48,0,0">academic concession</a>. A self-declaration will suffice – <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://biologyprogram-2023.sites.olt.ubc.ca/files/2024/10/Academic-Concession-Form-2022W.pdf">here is a template you can use</a>. The form is also posted on our Canvas page. Please submit this to the instructor via email.</p>
-<p>Examples of “conflicting responsibility” are conference travel and time-sensitive field work.</p>
-<p>If you arrange to have an assignment submitted late, you may not be able to receive feedback from your peers.</p>
-</section>
-<section id="plagiarism" class="level4">
-<h4 class="anchored" data-anchor-id="plagiarism">Plagiarism</h4>
-<p>Plagiarism, which is intellectual theft, occurs where an individual submits or presents the oral or written work of another person as his or her own and can include:</p>
+<section id="exercise-3-37.5-points" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-37.5-points"><strong>Exercise 3 (37.5 points)</strong></h3>
+<p>For this exercise, you’ll be evaluating a model that’s fit separately for each group in some dataset. You should fit these models with some question in mind.</p>
+<p>Examples (do not use these examples):</p>
 <ul>
-<li><p>multiple students submitting the same response</p></li>
-<li><p>copying from sources without citing them</p></li>
-<li><p>copying verbatim (word-for-word) from source and citing, but failing to make it explicit that this is a quotation (quotations should be used only rarely, if at all)</p></li>
+<li><p>Maybe your model is a linear model (using <code>lm()</code>) for each country’s life expectancy over time in the <code>gapminder::gapminder</code> dataset, where you are interested in each country’s overall trend in life expectancy.</p></li>
+<li><p>Maybe your model is a distribution of body mass (using the <a href="https://distplyr.netlify.app/"><code>distplyr</code> package</a>) for each penguin species in the <code>palmerpenguins::penguins</code> dataset, so that you can produce parametric prediction intervals (such as from a Normal distribution instead of using the <code>quantile()</code> function) for each species.</p></li>
 </ul>
-<p>Students are responsible for ensuring that any work submitted does not constitute plagiarism. Students who are in any doubt as to what constitutes plagiarism should consult their instructor before handing in any assignments.</p>
-<p>For more information see the <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,959">UBC Academic Misconduct policies</a>.</p>
-</section>
-<section id="code-plagiarism" class="level4">
-<h4 class="anchored" data-anchor-id="code-plagiarism"><strong>Code Plagiarism</strong></h4>
-<p>Students must correctly cite any code that has been authored by someone else or by the student themselves for other assignments. Cases of code plagiarism may include, but are not limited to:</p>
+<p>Your tasks are as follows.</p>
+<ol type="1">
+<li><p>Make a column of model objects. Do this using the appropriate mapping function from the <code>purrr</code> package. Note: it’s possible you’ll have to make use of nesting, here.</p></li>
+<li><p>Evaluate the model in a way that interests you. But, you should evaluate something other than a single number for each group. Hint: you’ll need to use another <code>purrr</code> mapping function again.</p></li>
+<li><p>Print out this intermediate tibble for inspection (perhaps others as well, if it makes sense to do so).</p></li>
+<li><p>Unnest the resulting calculations, and print your final tibble to screen. Make sure your tibble makes sense: column names are appropriate, and you’ve gotten rid of columns that no longer make sense.</p></li>
+<li><p>Produce a plot communicating something about the result.</p></li>
+<li><p>Walk a reader through this analysis by providing an explanation as to what’s going on (in terms of a data analysis question and results, not necessarily in terms of what’s happening in the code).</p></li>
+</ol>
+<p>Grading is as follows:</p>
 <ul>
-<li><p>the reproduction (copying and pasting) of code with none or minimal reformatting (e.g., changing the name of the variables)</p></li>
-<li><p>the translation of an algorithm or a script from a language to another</p></li>
-<li><p>the generation of code by automatic code-generations software</p></li>
-</ul>
-<p>An “adequate acknowledgement” requires a detailed identification of the (parts of the) code reused and a full citation of the original source code that has been reused.</p>
-</section>
-<section id="ubcs-policies-and-resources-to-support-student-success" class="level4">
-<h4 class="anchored" data-anchor-id="ubcs-policies-and-resources-to-support-student-success">UBC’s Policies and Resources to Support Student Success</h4>
-<p>UBC provides resources to support student learning and to maintain healthy lifestyles but recognizes that sometimes crises arise and so there are additional resources to access including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious, spiritual and cultural observances. UBC values academic honesty and students are expected to acknowledge the ideas generated by others and to uphold the highest academic standards in all of their actions. Details of the policies and how to access support are available <a href="https://senate.ubc.ca/policies-resources-support-student-success">here</a>.</p>
-</section>
-<section id="your-personal-health" class="level4">
-<h4 class="anchored" data-anchor-id="your-personal-health">Your personal health</h4>
-<p><strong>If you’re sick, it’s important that you stay home – no matter what you think you may be sick with (e.g., cold, flu, other).</strong> Your precautions will help reduce risk and keep everyone safer. The structure of this class is intended to provide flexibility so that you can prioritize your health and still be able to succeed.</p>
-<p><strong>If you do miss class because of illness:</strong></p>
-<ul>
-<li><p>Consult the class resources on the course website</p></li>
-<li><p>Come to office hours on Zoom.</p></li>
-<li><p>Use Slack to carry out discussions.</p></li>
-</ul>
-<p>If you miss an assessment due to illness, see the above section on Academic Concessions, and review the UBC policy here: <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0" class="uri">http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0</a></p>
-<p>Above all, please take care of yourself and be kind to yourself and your classmates. If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, I strongly encourage you to seek support. UBC Counseling Services is here to help: call 604 822 3811 or visit their website. Consider also reaching out to a friend, faculty member, or family member you trust to help get you the support you need.</p>
-</section>
-<section id="instructor-health" class="level4">
-<h4 class="anchored" data-anchor-id="instructor-health">Instructor health</h4>
-<p>If I am ill, then I will not come to class. If that happens, here’s what you can expect:</p>
-<ul>
-<li><p>If I am well enough to teach, I will conduct virtual lectures through Zoom until I am well. If this happens, you will be tagged in an announcement via Slack with information. You can anticipate that this would very likely be a last minute announcement. Our classroom will still be available for you to sit and attend an online session, although it is recommended that you bring headphones.</p></li>
-<li><p>If I am not well enough to teach, it is possible that one or more teaching assistants will take my place. But if not, we will either try to make up for lost time, make new resources to aid in your learning, or make accommodations regarding the assessments.</p></li>
+<li><p>7.5 points: the “story” behind your data analysis.</p></li>
+<li><p>7.5 points: the plot.</p></li>
+<li><p>22.5 points: the calculations.</p></li>
 </ul>
 </section>
 </section>
-<section id="copyright" class="level3">
-<h3 class="anchored" data-anchor-id="copyright">Copyright</h3>
-<p>Course materials are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0</a>.</p>
+<section id="option-b-r-package" class="level1">
+<h1>Option B – R package</h1>
+<p>For this option, you will be updating your package to a new version, or creating an entirely new R package from scratch if you prefer.</p>
+<p>This time, we will be evaluating the <em>quality and overall design</em> of your R package. Whereas the previous R package assignment focused on component additions evaluated by functionality (such as components of an R package being present and functional), this time we will evaluate how well your product forms a complete whole, satisfying a clearly stated purpose with an effectively designed interface (“interface” being how a user interacts with the R package). See the rubric in the below section for details.</p>
+<p>In short, you will need to:</p>
+<ul>
+<li><p>Make more functions and tests, and update relevant documentation.</p></li>
+<li><p>Make a vignette.</p></li>
+<li><p>Make a package website (use <a href="https://pkgdown.r-lib.org/">pkgdown</a>, and activate it with <a href="https://docs.github.com/en/pages/quickstart">GitHub Pages</a> if your repository is public.</p>
+<ul>
+<li>Activating GitHub pages should be as easy as clicking “Settings” -&gt; “Pages” -&gt; then clicking on the main branch, perhaps also selecting the <code>docs</code> folder.</li>
+</ul></li>
+</ul>
+<section id="rubric" class="level3">
+<h3 class="anchored" data-anchor-id="rubric"><strong>Rubric</strong></h3>
+<p>Keep in mind that you must address any feedback provided by the teaching team.</p>
+<p><strong>Basic structure and functionality (15 points)</strong></p>
+<p>Following the previous R package assignment instructions and rubric may be helpful for completing this.</p>
+<ul>
+<li><p>Do you have all essential components for your R package?</p>
+<ul>
+<li><p>All functions have tests</p></li>
+<li><p>All functions and data have documentation</p></li>
+<li><p>If data was included, did you include how the data was sourced?</p></li>
+<li><p>DESCRIPTION has correct information</p></li>
+</ul></li>
+</ul>
+<p><strong>Code Mastery (25 points)</strong></p>
+<ul>
+<li><p>Is your code written efficiently?</p>
+<ul>
+<li><p>Did you use tidyverse when appropriate?</p></li>
+<li><p>Is your code easy to understand? Did you write code comments when appropriate?</p></li>
+</ul></li>
+<li><p>Are your tests good quality?</p></li>
+</ul>
+<p><strong>Package design (30 points)</strong></p>
+<ul>
+<li><p>Does your package have a clear and consistent purpose?</p>
+<ul>
+<li><p>Functions and data make sense to be packaged together</p></li>
+<li><p>e.g.&nbsp;<code>ggplot2</code> is a package all about plotting</p></li>
+</ul></li>
+<li><p>Do package functions and data have user-friendly design?</p>
+<ul>
+<li><p>Function arguments make sense</p></li>
+<li><p>Data is organized appropriately and can be easily accessed</p></li>
+<li><p>Documentation is helpful and complete</p></li>
+</ul></li>
+<li><p>High-level documentation is effective</p>
+<ul>
+<li><p>Vignette is present</p></li>
+<li><p>pkgdown website is present, at least locally.</p></li>
+<li><p>Purpose of package is clearly described</p></li>
+<li><p>Functions and datasets are demonstrated</p></li>
+<li><p>Examples should be easy to be run by users</p></li>
+<li><p><em>If developing a data package</em>, more weight will be put towards a providing a good quality vignette that showcases the data</p></li>
+</ul></li>
+</ul>
+<p><strong>Package development (5 points)</strong></p>
+<ul>
+<li><p>Did you use Github Issues, branches, and pull requests in an appropriate manner?</p></li>
+<li><p>Did you address all errors and warnings from running <code>check()</code>? “Notes” are allowed.</p></li>
+<li><p>Did you tag releases and update version numbers appropriately?</p></li>
+</ul>
+</section>
+</section>
+<section id="option-c-shiny-app" class="level1">
+<h1>Option C – Shiny App</h1>
+<p>For this option, you will be implement additional features and improvements to your shiny app that you worked on in Assignment 3b, or creating an entirely new shiny app from scratch. This time, we will be evaluating the <em>quality and overall design</em> of your shiny app.</p>
+<section id="before-you-start" class="level3">
+<h3 class="anchored" data-anchor-id="before-you-start"><strong>Before you start</strong></h3>
+<p><strong>If you are building onto assignment 3b shiny app,</strong> ensure that your assignment 3b shiny app is deployed and viewable on shinyapps.io. We will use this as a reference to mark your improved version. Complete this assignment by editing a copied version of your app. When finished deploy this on shinyapps.io as well. (If you lack space on shinyapps.io, let us know, we don’t want this to limit you.)</p>
+<p><strong>If you are starting a new app from scratch,</strong> state so in the assignment 3b README.</p>
+</section>
+<section id="requirements" class="level3">
+<h3 class="anchored" data-anchor-id="requirements"><strong>Requirements</strong></h3>
+<p>If you are building onto assignment 3-B, after addressing feedback, you should have three working features implemented. If you are starting from scratch, you’ll need to produce the equivalent of Assignment 3-B (i.e.&nbsp;have three working features) before moving on.</p>
+<p>You might find that to satisfy some of these requirements, new features will have to be implemented.</p>
+<p><strong>App design</strong></p>
+<p>This time we will be evaluating the overall app design. Your app should have a clearly defined purpose and function accordingly. The way the user interacts with the app is another important design decision. It should be easy for the user to both understand how the app is supposed to be used and also for the user to use the app.</p>
+<p><strong>Code mastery</strong></p>
+<p>Ensure that your code is of high quality. This means that a minimal amount code and dependencies are used (code efficiency). We will also look for appropriate usage of shiny-specific concepts, such as reactive expressions.</p>
+</section>
+<section id="rubric-1" class="level3">
+<h3 class="anchored" data-anchor-id="rubric-1"><strong>Rubric</strong></h3>
+<p><strong>3 features are implemented (25 points)</strong></p>
+<ul>
+<li><p>If continuing from assignment 3b, you should have fixed any issues with the original 3 features, and you should have 3 new working features</p></li>
+<li><p>If starting from scratch, you have at least 3 working features</p></li>
+</ul>
+<p><strong>User friendly design (25 points)</strong></p>
+<ul>
+<li><p>Is it easy for users to understand how to engage with the app?</p></li>
+<li><p>Were chosen widgets appropriate for each type of input?</p></li>
+<li><p>Is the writing clear?</p></li>
+<li><p>Does the layout make sense?</p></li>
+<li><p>The purpose of the app is clearly indicated</p></li>
+<li><p>The functioning of the app adequately achieves the purpose</p></li>
+<li><p>There’s enough documentation to know how to use the app. Ideally, one doesn’t <em>have</em> to read all that much to use the app at a superficial level.</p></li>
+</ul>
+<p><strong>Code quality (25 points)</strong></p>
+<ul>
+<li><p>Code is efficient</p></li>
+<li><p>Reactive expressions used appropriately</p></li>
+<li><p><code>tidyverse</code> used when appropriate</p></li>
+<li><p>Code comments are appropriately used</p></li>
+<li><p>Only essential R packages are loaded</p></li>
+</ul>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

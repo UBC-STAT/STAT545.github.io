@@ -20,6 +20,7 @@ website:
         text: "Worksheets"
       - sidebar:collabproj
       - sidebar:mda
+      - sidebar:assignments
       - href: webpages/casestudies.qmd
         text: "Case Studies"
       - href: webpages/faq.qmd
@@ -91,8 +92,17 @@ website:
         - webpages/mda/mda_deliverable1.qmd
         - webpages/mda/mda_deliverable2.qmd      
    
+    - id: assignments
+      title: "Assignments (Part B)"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - webpages/assignmentsB/assignmentB1.qmd
+        - webpages/assignmentsB/assignmentB2.qmd
+        - webpages/assignmentsB/assignmentB3.qmd
+        - webpages/assignmentsB/assignmentB4.qmd
 
-  
         
 
 format:

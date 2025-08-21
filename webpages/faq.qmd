@@ -17,6 +17,10 @@ date-modified: last-modified
 
     -   [Syllabus: Part B](../webpages/syllabus/syllabusB.qmd#assessments)
 
+-   The course GitHub repository?
+
+    -   <https://github.com/UBC-STAT/STAT545.github.io>
+
 -   Worksheets?
 
     -   [Our GitHub page](https://github.com/UBC-STAT/STAT545.github.io/tree/main/content/worksheets_student)
@@ -39,11 +43,11 @@ date-modified: last-modified
 
 -   What to do if I'm sick?
 
-    -   [Syllabus: Part A](../webpages/syllabus/syllabusA.qmd#your-personal-health)
+    -   [Syllabus](../webpages/syllabus/syllabusA.qmd#your-personal-health)
 
 -   What happens if I submit an assignment late?
 
-    -   [Syllabus: Part A](../webpages/syllabus/syllabusA.qmd#late-policies)
+    -   [Syllabus](../webpages/syllabus/syllabusA.qmd#late-policies)
 
 ## When is the course offered?
 

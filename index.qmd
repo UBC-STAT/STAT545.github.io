@@ -86,6 +86,12 @@ To make the most out of Slack, please
 
 -   Post in the `#random` channel if you find things related to the course that you’d like to share
 
+## ℹ Course Information
+
+All course information is in the Syllabus ([STAT 545 A](webpages/syllabus/syllabusA.qmd) or [STAT 545 B](webpages/syllabus/syllabusB.qmd)).
+
+Not seeing what you're looking for? Check out the [Frequently Asked Questions (FAQs)](webpages/faq.qmd) or try searching a topic or keyword in the top right-hand corner of this website!
+
 ## 📝 Attributions
 
 Many thanks to those who have contributed to the materials for STAT545 over the years. Content has been created by Albina Gibadullina, Vincenzo Coia, Jenny Bryan, Lucy Gao, Grace Tompkins, Katie Burak, Victor Yuan, and other members of the Instructional Team.
