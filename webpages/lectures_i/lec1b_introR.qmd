@@ -18,11 +18,11 @@ We will be using various technologies throughout this course which you should fa
 
 -   Slack (for communications),
 
--   RStudio (for writing R code),
+-   RStudio (for writing R code) [(Video Here!)](https://www.youtube.com/watch?v=dC2bRweVePo),
 
 -   GitHub (for version control and collaboration), and
 
--   Jupyter notebooks (for interactive worksheets).
+-   Jupyter notebooks (for interactive worksheets) [(Video Here!)](https://www.youtube.com/watch?v=-jPaI1njy3E&feature=youtu.be).
 
 If you've never used some of these before, that's absolutely OK. This course is made to guide you through the basics of many of these platforms.
 
@@ -30,7 +30,7 @@ If you've never used some of these before, that's absolutely OK. This course is 
 
 All of the important information is in the syllabus, which you can navigate to at the top of this page. There are a few items I'd like to emphasize:
 
--   STAT 545 A has frequent worksheets. These are graded based on completion. For example, if you complete all 15 questions, you will score 100% for that worksheet. Complete 14/15? You'll get a 93%. They are relatively straight forward and will guide you through the topics we talked about that week.
+-   STAT 545 A has frequent worksheets. They are relatively straight forward and will guide you through the topics we talked about that week.
 
 -   Everyone gets one "pass" for a late worksheet. After the first occurrence, a 0 will be awarded for any late worksheet.
 
@@ -44,7 +44,7 @@ All of the important information is in the syllabus, which you can navigate to a
 
 -   All communications are to be done on Slack - do not email me questions unless they are of a sensitive nature (i.e., an academic concession form).
 
--   Don't plagiarize code or assessments.
+-   Don't plagiarize code or assessments. This includes copying directly from LLM's like ChatGPT.
 
 But please - read the syllabus :)
 
@@ -52,13 +52,21 @@ But please - read the syllabus :)
 
 Lectures for STAT545 are designed to be more interactive than a traditional statistics lecture. The class will begin with a short summary of the previous class, followed by an introduction to that day's topic. For most of the lectures, we will be going through the interactive worksheets (yes, the ones that you receive marks for and yes, prior to the deadline). This will give provide you with dedicated time to work on the assessments in class with access to the instructor and the TAs.
 
+Many lectures will have an accompanying video, which will be linked on the webpage and on [our STAT545 YouTube Playlist.](https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&si=sT-h1q8rTTKxs4vg)
+
 Lectures build on top of each other and it is crucial to stay on track as we progress through this course.
+
+## Video Lecture
+
+-   [STAT545 Video Lecture on RStudio (2025)](https://www.youtube.com/watch?v=dC2bRweVePo)
 
 ## Coding in R: The Basics
 
 Let's get started! By this point, I'm assuming you've successfully installed R, RStudio, Github, and Jupyter notebooks. If you haven't, check out the previous lecture for a guide to setting up this software.
 
 Before diving into the worksheet, let's talk about R. R is an open source programming language designed for statistical computing and data analysis. It is a commonly used programming language alongside Python and SAS, which we will not be covering in this course.
+
+Check out [this YouTube video](https://www.youtube.com/watch?v=dC2bRweVePo) for a short video lecture covering the basics of R Studio and R.
 
 ### Calculations
 
