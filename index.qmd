@@ -66,7 +66,9 @@ I am joined by a wonderful group of TAs, including:
 
 ....
 
-Please reach out if you have any concerns or questions at grace\<at\>stat.ubc.ca, or through our **Slack channel.**
+Please reach out if you have any concerns or questions at grace\<at\>stat.ubc.ca, or through our **Slack channel!**
+
+I am slowly adding content to a NEW [YouTube channel for STAT 545](https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&si=82JyjqH-TcoLE9nI)! Feel free to check out the content there under the \@ProfTompkins account.
 
 ## 📲 Course Communications
 

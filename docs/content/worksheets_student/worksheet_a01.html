@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Worksheet 01A: Intro to R, R Markdown, and Reproducibility – STAT545 @ UBC</title>
+<title>Worksheet 01A: Intro to R, R Markdown, and Reproducibility – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../images/stat545_transparent.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -113,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">STAT545 @ UBC</span>
+    <span class="navbar-title">STAT545</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -221,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_ii/lec14_quarto.html">
- <span class="dropdown-text">Lecture 14: Websites and Slides with Quarto</span></a>
+ <span class="dropdown-text">Lecture 14: Professional Websites with Quarto</span></a>
   </li>  
     </ul>
   </li>
@@ -256,6 +257,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-assignments-(part-b" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Assignments (Part B)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-assignments-(part-b">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB1.html">
+ <span class="dropdown-text">Assignment B1: Making a Function in R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB2.html">
+ <span class="dropdown-text">Assignment B2: Making an R Package</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB3.html">
+ <span class="dropdown-text">Assignment B3: Shiny App</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB4.html">
+ <span class="dropdown-text">Assignment B4: Your Choice!</span></a>
   </li>  
     </ul>
   </li>
@@ -421,8 +445,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>life_university <span class="ot">&lt;-</span> <span class="dv">18</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, the variable <code>life_university</code>, stores the value 18, which is the percentage of time that I had spent at university. But prior to saving this into a variable, I had to calculate the value separately. What if I directly assigned the arithmetic expression that I used to compute my value to the variable?</p>
-<div id="example-1-3b" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;49bf4bd71637e8cbd4bfaf8fc3fdc1e6&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-e943d9cf804fdf52&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>life_university <span class="ot">&lt;-</span> (<span class="dv">2020</span> <span class="sc">-</span> <span class="dv">2016</span>) <span class="sc">/</span> (<span class="dv">2020</span> <span class="sc">-</span> <span class="dv">1998</span>) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="example-1-3b" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;76496e3d663c405ebcc23bd472d28e66&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-e943d9cf804fdf52&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>life_university <span class="ot">&lt;-</span> (<span class="dv">2025</span> <span class="sc">-</span> <span class="dv">2016</span>) <span class="sc">/</span> (<span class="dv">2025</span> <span class="sc">-</span> <span class="dv">1997</span>) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Notice that R did not print the result of my expression this time. When you use the assignment operator, R assumes that you don’t want to see the result immediately, but rather that you intend to use it for something else later on.</p>
 <p>To view the contents of the variable, you simply have to type the name of the variable - in this case, <code>life_university</code> and press Enter. Try it below!</p>
@@ -437,10 +461,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="test-1-0" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;29bd10e96f6e40c7d342156e99f3d19d&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-cebd6f6df5bdb3cc&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
+<div id="test-1-0" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;2141feca98c2bbc1d036c247b47b2e0a&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-cebd6f6df5bdb3cc&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of (my_life_university &gt; 0 &amp;&amp; my_life_university &lt; 100) is not logical"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>((my_life_university <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> my_life_university <span class="sc">&lt;</span> <span class="dv">100</span>))), <span class="st">"acf2a"</span>)), <span class="st">"be24a6e2b81fcc178d601ff0b6c39de5"</span>))</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"logical value of (my_life_university &gt; 0 &amp;&amp; my_life_university &lt; 100) is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>((my_life_university <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> my_life_university <span class="sc">&lt;</span> <span class="dv">100</span>)), <span class="st">"acf2a"</span>)), <span class="st">"0e9f7868c21feae2f244ecc45284275e"</span>))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of (my_life_university &gt; 1 &amp;&amp; my_life_university &lt; 100) is not logical"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>((my_life_university <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;&amp;</span> my_life_university <span class="sc">&lt;</span> <span class="dv">100</span>))), <span class="st">"45407"</span>)), <span class="st">"8ef3d130be9b82df017f19a19f8a701f"</span>))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"logical value of (my_life_university &gt; 1 &amp;&amp; my_life_university &lt; 100) is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>((my_life_university <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;&amp;</span> my_life_university <span class="sc">&lt;</span> <span class="dv">100</span>)), <span class="st">"45407"</span>)), <span class="st">"3b1208e2956a9eb53b1440cd65070794"</span>))</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -930,7 +954,7 @@ answer1.15b &lt;- FILL_THIS_IN(FILL_THIS_IN)</code></pre>
 </section>
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1349,6 +1373,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2025, Grace Tompkins</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

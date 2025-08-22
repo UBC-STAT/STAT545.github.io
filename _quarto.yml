@@ -28,8 +28,9 @@ website:
         
     right:
       - href: "https://github.com/UBC-STAT/STAT545.github.io"
-        text: "GitHub"
         icon: github
+      - href: "https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&si=VaWFgrlMNKHtgOHD"
+        icon: youtube
         
   sidebar:
     - id: syllabus
