@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Worksheet 01A: Intro to R, R Markdown, and Reproducibility – STAT545</title>
+<title>worksheet_a01 – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -293,10 +293,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+  <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/UBC-STAT/STAT545.github.io"> <i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text">GitHub</span></a>
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&amp;si=VaWFgrlMNKHtgOHD"> <i class="bi bi-youtube" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -314,9 +319,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-stat545" id="toc-welcome-to-stat545" class="nav-link active" data-scroll-target="#welcome-to-stat545">Welcome to STAT545!</a></li>
-  <li><a href="#an-important-note" id="toc-an-important-note" class="nav-link" data-scroll-target="#an-important-note">An important note</a></li>
-  <li><a href="#attributions" id="toc-attributions" class="nav-link" data-scroll-target="#attributions">Attributions</a></li>
+  <li><a href="#worksheet-a-01-intro-to-r-r-markdown-and-reproducibility" id="toc-worksheet-a-01-intro-to-r-r-markdown-and-reproducibility" class="nav-link active" data-scroll-target="#worksheet-a-01-intro-to-r-r-markdown-and-reproducibility">Worksheet A-01: Intro to R, R Markdown, and Reproducibility</a>
+  <ul class="collapse">
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
   <li><a href="#getting-familiar-with-r" id="toc-getting-familiar-with-r" class="nav-link" data-scroll-target="#getting-familiar-with-r">Getting Familiar with R</a>
   <ul class="collapse">
@@ -328,67 +332,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting">1.4 Subsetting</a></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">1.6 Functions</a></li>
   </ul></li>
+  <li><a href="#attributions" id="toc-attributions" class="nav-link" data-scroll-target="#attributions">Attributions</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Worksheet 01A: Intro to R, R Markdown, and Reproducibility</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p><strong>Version 3.0 (2025)</strong></p>
-<section id="welcome-to-stat545" class="level2">
-<h2 class="anchored" data-anchor-id="welcome-to-stat545">Welcome to STAT545!</h2>
-<p>We hope that you are excited to become an R pro during the next few weeks! These in-class worksheets have been designed to help you navigate this R journey. We’ll start easy, with some examples of R commands, and evolve to the more complex - and arguably cooler - syntax and structures of the R language.</p>
-</section>
-<section id="an-important-note" class="level2">
-<h2 class="anchored" data-anchor-id="an-important-note">An important note</h2>
-<p><strong>Submission of this worksheet is optional</strong>. Future worksheets <strong>must</strong> be submitted for participation marks.</p>
+<p>Name:</p>
+<p>Student Number:</p>
+<section id="worksheet-a-01-intro-to-r-r-markdown-and-reproducibility" class="level1">
+<h1>Worksheet A-01: Intro to R, R Markdown, and Reproducibility</h1>
+<p><strong>Fall 2025</strong></p>
+<p><strong>Submission of this worksheet is optional</strong>. Future worksheets <strong>must</strong> be submitted for grading.</p>
 <p>Lectures will mostly involve going through these worksheets and giving you the answers (yes, before the deadline). We suggest going through the worksheets before coming to class so that you can find out where you get stuck.</p>
-</section>
-<section id="attributions" class="level2">
-<h2 class="anchored" data-anchor-id="attributions">Attributions</h2>
-<p>This document was primarily put together by Icíar Fernández Boyano.</p>
-<p>The following resources were used as inspiration in the creation of this worksheet:</p>
-<ul>
-<li><a href="https://swirlstats.com/scn/rprog.html">Swirl R Programming Tutorial</a></li>
-<li><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R</a></li>
-<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></li>
-<li><a href="https://stat545guidebook.netlify.app/index.html">2019 STAT545 Guidebook</a></li>
-<li><a href="https://stat545.com/">Jenny Bryan’s STAT545 Guidebook</a></li>
-</ul>
-</section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>Load the required add-on packages for this assignment by running the following code chunk (or <em>cell</em>). In Jupyter, you can load the chunk by clicking on the chunk, and clicking the “Run” button (keyboard shortcut: Command + Enter on a Mac, or Control + Enter on Windows). <em>If this fails, read on…</em></p>
-<div id="cell-2" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;43dec9a2860b4cdf83996cdef5f4a598&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-e7cc0f456605c076&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(testthat)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Load the required add-on package (<code>digest</code>), and one additional package (<code>palmerpenguins</code>, for practice) for this assignment by running the following code chunk (or cell). In Jupyter, you can load the chunk by clicking on the chunk, and clicking the “Run” button (keyboard shortcut: Command + Enter on a Mac, or Control + Enter on Windows). If this fails, read on…</p>
+<div id="cell-2" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Did that fail for you? It could be that you don’t have those packages installed. The following code chunk has been unlocked for you (did you notice that you weren’t able to edit the above cells?), so you can use it to install these packages, or to generally just give you the flexibility to start this worksheet with some of your own code. To install the “testthat” package, execute the command <code>install.packages("testthat")</code>; what would you need to type to install the “digest” package?</p>
-<p><strong>Please be sure to remove any <code>install.packages</code> commands after you’ve run them</strong>: once you’ve successfully <em>installed</em> a package with <code>install.packages</code>, the package is permanently installed on your computer.</p>
-<p>To <em>load</em> the packages for use in this R session, try executing the above code chunk again.</p>
+<p>Did that fail for you? It could be that you don’t have those packages installed. The following code chunk has been unlocked for you (did you notice that you weren’t able to edit the above cells?), so you can use it to install these packages, or to generally just give you the flexibility to start this worksheet with some of your own code. To install the <code>palmerpenguins</code> package, execute the command <code>install.packages("palmerpenguins")</code>.</p>
+<p>Please be sure to remove any <code>install.packages()</code> commands after you’ve run them: once you’ve successfully installed a package with install.packages, the package is permanently installed on your computer.</p>
+<p>To load the packages for use in this R session, try executing the above code chunk again.</p>
 <div id="cell-4" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># An unlocked code chunk.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">### An unlocked code chunk to install packages, if needed.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In Episode 01A of the <a href="https://www.youtube.com/channel/UCrB-uourf2vxGeBnGjQrA0w">STAT 545 video series</a>, RStudio was mentioned as being an IDE for R. You’re probably viewing this worksheet in another IDE called <strong>jupyter</strong>. We’re using jupyter for the STAT 545 worksheets because it works well with an autograder called nbgrader.</p>
 </section>
 <section id="getting-familiar-with-r" class="level2">
 <h2 class="anchored" data-anchor-id="getting-familiar-with-r">Getting Familiar with R</h2>
@@ -516,11 +491,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>{points: 1}</p>
 <p>Your turn to give it a try. Create a new vector that contains <code>life_university</code>, <code>my_life_university</code>, and <code>25</code>. Store your result in a variable named <code>answer1.2</code></p>
 <pre><code>answer1.2 &lt;- FILL_THIS_IN(FILL_THIS_IN, FILL_THIS, FILL_THIS_IN)</code></pre>
-<div id="cell-40" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;273e22b62375ab449c19c2b006c4f2b6&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-61d5339d601052e3&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
+<div id="cell-39" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;273e22b62375ab449c19c2b006c4f2b6&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-61d5339d601052e3&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-41" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;5b5ac90782ae516943599ffcc5462073&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-57e9c5dc76061b99&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
+<div id="cell-40" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;5b5ac90782ae516943599ffcc5462073&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-57e9c5dc76061b99&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of (answer1.2[1] == life_university) is not logical"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>((answer1<span class="fl">.2</span>[<span class="dv">1</span>] <span class="sc">==</span> life_university))), <span class="st">"e52a7"</span>)), <span class="st">"aa1a30279f29c471d74412c87c047700"</span>))</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"logical value of (answer1.2[1] == life_university) is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>((answer1<span class="fl">.2</span>[<span class="dv">1</span>] <span class="sc">==</span> life_university)), <span class="st">"e52a7"</span>)), <span class="st">"215690b1623e92bd8ecd62782416f1f5"</span>))</span>
@@ -671,11 +646,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>{points: 1}</p>
 <p>Extract the third entry of the <code>times</code> vector, and store the result in a variable named <code>answer1.7</code>.</p>
 <pre><code>answer1.7 &lt;- FILL_THIS_IN[FILL_THIS_IN]</code></pre>
-<div id="cell-71" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e0eed527255169c1fc1098c273e47867&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-9c43bdaa066cf9be&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
+<div id="cell-70" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e0eed527255169c1fc1098c273e47867&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-9c43bdaa066cf9be&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-72" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;1aecc8e6dcf5a0963d5a79bb03cf4ece&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-fc4318f2c768353e&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
+<div id="cell-71" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;1aecc8e6dcf5a0963d5a79bb03cf4ece&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-fc4318f2c768353e&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of answer1.7 is not numeric"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(answer1<span class="fl">.7</span>)), <span class="st">"6b17c"</span>)), <span class="st">"4a4c02be45841cfaa8c092927b1d9b02"</span>))</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"value of answer1.7 is not correct (rounded to 2 decimal places)"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">round</span>(answer1<span class="fl">.7</span>, <span class="dv">2</span>)), <span class="st">"6b17c"</span>)), <span class="st">"b5ec80afbcd80b17e90895d521ba1496"</span>))</span>
@@ -773,7 +748,7 @@ answer1.9b &lt;- FILL_THIS_IN[FILL_THIS_IN(FILL_THIS_IN, FILL_THIS_IN)]</code></
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-87" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;99f602903e6e03995c2f7e30aca1016a&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-b58cf9a17dd5dae2&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
+<div id="cell-86" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;99f602903e6e03995c2f7e30aca1016a&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-b58cf9a17dd5dae2&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of answer1.12 is not character"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(answer1<span class="fl">.12</span>)), <span class="st">"b9619"</span>)), <span class="st">"0b727dbd2449c3549bbb2f3c24236699"</span>))</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"length of answer1.12 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">length</span>(answer1<span class="fl">.12</span>)), <span class="st">"b9619"</span>)), <span class="st">"1d8097fe0a1e0a44fb41aace9957c257"</span>))</span>
@@ -786,7 +761,7 @@ answer1.9b &lt;- FILL_THIS_IN[FILL_THIS_IN(FILL_THIS_IN, FILL_THIS_IN)]</code></
 <p>{points: 1}</p>
 <p>This is a bit of challenge, but I bet you can do it. Try using <code>[]</code> in conjunction with <code>&lt;-</code> to change the <code>times</code> objects by replacing the 2nd and 3rd entries with 2 new travel times of your choosing.</p>
 <p>(Before you do that, allow us to store the original <code>times</code> object for autograding!)</p>
-<div id="cell-89" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e005f83330f8029f46e5bd6be646ba54&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-cd7661342aaca022&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
+<div id="cell-88" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e005f83330f8029f46e5bd6be646ba54&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-cd7661342aaca022&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>times_old <span class="ot">&lt;-</span> times</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, answer away!</p>
@@ -810,7 +785,7 @@ answer1.9b &lt;- FILL_THIS_IN[FILL_THIS_IN(FILL_THIS_IN, FILL_THIS_IN)]</code></
 <span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Great! Now let’s change our times vector back to the original!</p>
-<div id="cell-94" class="cell">
+<div id="cell-93" class="cell">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#change back to original times vector for autograding</span></span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>times <span class="ot">&lt;-</span> times_old</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -834,7 +809,7 @@ answer1.9b &lt;- FILL_THIS_IN[FILL_THIS_IN(FILL_THIS_IN, FILL_THIS_IN)]</code></
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-97" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;11ec8c962d4b87d04708f9b6a5651927&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-e6eed02e488ad154&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
+<div id="cell-96" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;11ec8c962d4b87d04708f9b6a5651927&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-e6eed02e488ad154&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of sort(answer1.11) is not character"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(<span class="fu">sort</span>(answer1<span class="fl">.11</span>))), <span class="st">"15af9"</span>)), <span class="st">"4e35a7fb602d0ea37389d20e408af688"</span>))</span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"length of sort(answer1.11) is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">length</span>(<span class="fu">sort</span>(answer1<span class="fl">.11</span>))), <span class="st">"15af9"</span>)), <span class="st">"19516ab45fc9c162230ad99690c57b60"</span>))</span>
@@ -949,6 +924,21 @@ answer1.15b &lt;- FILL_THIS_IN(FILL_THIS_IN)</code></pre>
 <div id="activity-1-11" class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>That’s it! You’ve completed Worksheet A01! 🎉</p>
+<p>Please restart your kernal and run everything from top to bottom to ensure no errors persist. And, don’t forget to save your worksheet.</p>
+</section>
+</section>
+<section id="attributions" class="level2">
+<h2 class="anchored" data-anchor-id="attributions">Attributions</h2>
+<p>This document was primarily put together by Icíar Fernández Boyano.</p>
+<p>The following resources were used as inspiration in the creation of this worksheet:</p>
+<ul>
+<li><a href="https://swirlstats.com/scn/rprog.html">Swirl R Programming Tutorial</a></li>
+<li><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R</a></li>
+<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></li>
+<li><a href="https://stat545guidebook.netlify.app/index.html">2019 STAT545 Guidebook</a></li>
+<li><a href="https://stat545.com/">Jenny Bryan’s STAT545 Guidebook</a></li>
+</ul>
 
 
 </section>
