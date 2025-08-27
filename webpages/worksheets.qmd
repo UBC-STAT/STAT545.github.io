@@ -28,7 +28,7 @@ Worksheets are produced with Jupyter Notebooks. For installation instructions, s
 ### **STAT 545 A**
 
 | Worksheet | Release Date | Due Date (11:59PM PT) |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | [Worksheet A1](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a01.ipynb) | September 2nd, 2025 | NA |
 | [Worksheet A2](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a02.ipynb) | September 15th, 2025 | September 22nd, 2025 |
 | [Worksheet A3](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_a03.ipynb) | September 22nd, 2025 | September 29th, 2025 |
@@ -38,7 +38,7 @@ Worksheets are produced with Jupyter Notebooks. For installation instructions, s
 ### **STAT 545 B:**
 
 | Worksheet | Release Date | Due Date (11:59PM PT) |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | [Worksheet B1](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_b01.ipynb) | Monday Oct 20, 2025 | Monday Oct 27, 2025 |
 | [Worksheet B2](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_b02.ipynb) | Friday Nov 14, 2025 | Thursday Nov 27, 2025 |
 | [Worksheet B3](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/worksheets_student/worksheet_b03.ipynb) | Thursday Nov 27, 2025 | Thursday Dec 4, 2025 |
