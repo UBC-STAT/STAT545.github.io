@@ -21,9 +21,10 @@ date-modified: last-modified
 
 -   Thursday September 4th: Intro to R lecture, begin working through Worksheet A1
 
-**Assessments Due This Week:**
+**To Do this Week:**
 
--   Nothing! Ensure you have completed all installation instructions by next week!
+-   Ensure you have completed all [installation instructions](webpages/lectures_i/lec1a_installation.qmd) by next week
+-    Join the Slack channel ([see Canvas for the invite link](https://canvas.ubc.ca/courses/169555/pages/stat-545a-canvas-page))
 
 **Upcoming Deadlines** - Nothing!
 :::
@@ -62,9 +63,13 @@ My name is Grace Tompkins (she/her) and I'll be your course instructor. I'm a Bi
 
 ![Instructor: Grace Tompkins](images/avatar.png){fig-align="center" width="229"}
 
-I am joined by a wonderful group of TAs, including:
+I am joined by a wonderful group of TAs:
 
-....
+-   Asfar Lathif
+
+-   Erick Navarro
+
+-   Mario Gomez Camacho
 
 Please reach out if you have any concerns or questions at grace\<at\>stat.ubc.ca, or through our **Slack channel!**
 
@@ -72,7 +77,7 @@ I am slowly adding content to a NEW [YouTube channel for STAT 545](https://youtu
 
 ## 📲 Course Communications
 
-Our course communications will occur on a dedicated Slack Channel. If you're enrolled in STAT545 at UBC, head to Canvas to find your invite link. Please email the instructor if you have any issues registering.
+Our course communications will occur on a dedicated Slack Channel. If you're enrolled in STAT545 at UBC, head to [Canvas for the invite link](https://canvas.ubc.ca/courses/169555/pages/stat-545a-canvas-page). Please email the instructor if you have any issues registering.
 
 Announcements, weekly summaries, and other important information will be in the `#announcements` channel. We'll also have dedicated channels for the course topics, worksheets, and other assessments.
 
