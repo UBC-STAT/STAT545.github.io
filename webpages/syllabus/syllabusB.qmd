@@ -12,7 +12,7 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 |  |  |  |  |  |
 |---------------|---------------|---------------|---------------|---------------|
 | **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
-| Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Monday/Wednesday: 9:30am - 10:50am | CEME 1202 |
+| Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Monday/Wednesday: 9:30am - 10:50am | CHBE 102 |
 
 ::: callout-note
 STAT545 B starts half an hour later than STAT545 A!
@@ -25,14 +25,14 @@ STAT545 A is a pre-requisite for STAT545 B. No exceptions.
 ### Contact and Office Hours
 
 | Instructor | Contact Details | Office Location | Office Hours |
-|-----------------|--------------------|-----------------|-----------------|
+|------------------|--------------------|------------------|------------------|
 | Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134 | Wednesdays, 2:30pm - 3:30pm |
 
-| Teaching Assistants (TAs)  | Office Hours                 | Location          |
+| Teaching Assistants (TAs) | Office Hours                 | Location          |
 |------------------------|----------------------------|---------------------|
-| Erick Navarro              | Thursdays, 11:00am - 12:00pm | Zoom (see Canvas) |
-| Asfar Lathif               | Mondays, 3:00pm - 4:00pm     | Zoom (see Canvas) |
-| Mario Gomez Camacho        | TBD                          | TBD               |
+| Erick Navarro             | Thursdays, 11:00am - 12:00pm | Zoom (see Canvas) |
+| Asfar Lathif              | Mondays, 3:00pm - 4:00pm     | Zoom (see Canvas) |
+| Mario Gomez Camacho       | TBD                          | TBD               |
 
 ### Course Structure
 

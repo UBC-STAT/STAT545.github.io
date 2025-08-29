@@ -12,7 +12,7 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 +----------------------------------+-----------------+----------------------+------------------------------------+--------------------+
 | **Course Title**                 | **Course Code** | **Credit** **Value** | **Class Times**                    | **Class Location** |
 +----------------------------------+-----------------+----------------------+------------------------------------+--------------------+
-| Exploratory Data Analysis Part I | STAT 545 A      | 1.5                  | Monday/Wednesday: 9:00am - 10:20am | CEME 1202          |
+| Exploratory Data Analysis Part I | STAT 545 A      | 1.5                  | Monday/Wednesday: 9:00am - 10:20am | CHBE 102           |
 +----------------------------------+-----------------+----------------------+------------------------------------+--------------------+
 
 ### Prerequisites
@@ -23,11 +23,11 @@ STAT545 A is a pre-requisite for STAT545 B. No exceptions.
 
 ### Contact and Office Hours
 
-+----------------+------------------------+-----------------+------------------------------+
-| Instructor     | Contact Details        | Office Location | Office Hours                 |
-+================+========================+=================+==============================+
-| Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134        | Wednesdays, 2:30pm - 3:30pm  |
-+----------------+------------------------+-----------------+------------------------------+
++----------------+------------------------+-----------------+-----------------------------+
+| Instructor     | Contact Details        | Office Location | Office Hours                |
++================+========================+=================+=============================+
+| Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134        | Wednesdays, 2:30pm - 3:30pm |
++----------------+------------------------+-----------------+-----------------------------+
 
 +---------------------------+------------------------------+-------------------+
 | Teaching Assistants (TAs) | Office Hours                 | Location          |
@@ -101,15 +101,15 @@ This schedule is subject to change. Any changes will be announced via the `#anno
 
 This course will have autograded, formative worksheets meant to guide you through a number of exercises.
 
-+--------------------------------------------------------------------+----------------------+------------------------------------------------------------------------+
-| Assessment                                                         | Percent Grade        | Note                                                                   |
-+====================================================================+======================+========================================================================+
-| [Worksheets](../worksheets.qmd)                                    | 20%                  | Four guided worksheets                                                 |
-+--------------------------------------------------------------------+----------------------+------------------------------------------------------------------------+
-| [Mini Data Analysis](../mda/mda_deliverable1.qmd)                  | 45%                  | Students write their own mini analysis                                 |
-+--------------------------------------------------------------------+----------------------+------------------------------------------------------------------------+
-| [Collaborative Project](../collabproj/collabproj_deliverable1.qmd) | 35%                  | Team project intended for practicing version control and collaboration |
-+--------------------------------------------------------------------+----------------------+------------------------------------------------------------------------+
++--------------------------------------------------------------------+---------------+------------------------------------------------------------------------+
+| Assessment                                                         | Percent Grade | Note                                                                   |
++====================================================================+===============+========================================================================+
+| [Worksheets](../worksheets.qmd)                                    | 20%           | Four guided worksheets                                                 |
++--------------------------------------------------------------------+---------------+------------------------------------------------------------------------+
+| [Mini Data Analysis](../mda/mda_deliverable1.qmd)                  | 45%           | Students write their own mini analysis                                 |
++--------------------------------------------------------------------+---------------+------------------------------------------------------------------------+
+| [Collaborative Project](../collabproj/collabproj_deliverable1.qmd) | 35%           | Team project intended for practicing version control and collaboration |
++--------------------------------------------------------------------+---------------+------------------------------------------------------------------------+
 
 #### Worksheets
 
@@ -135,13 +135,13 @@ Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
 Teams will be randomly assigned. The idea behind the collaborative project is to practice using Version Control and collaborative tools on Github, troubleshoot broken R code, and rewrite code to address issues. There will be two deliverables for the project:
 
-+-------------------------------------------------------------------------+----------------------+-----------------------+
-| Collaborative Project Milestone                                         | Release Date         | Due Date (11:59pm PT) |
-+=========================================================================+======================+=======================+
-| [Deliverable 1](../collabproj/collabproj_deliverable1.qmd) (100 points) | September 4th, 2025  | September 19th, 2025  |
-+-------------------------------------------------------------------------+----------------------+-----------------------+
-| [Deliverable 2](../collabproj/collabproj_deliverable2.qmd) (78 points)  | September 4th, 2025  | September 26th, 2025  |
-+-------------------------------------------------------------------------+----------------------+-----------------------+
++-------------------------------------------------------------------------+---------------------+-----------------------+
+| Collaborative Project Milestone                                         | Release Date        | Due Date (11:59pm PT) |
++=========================================================================+=====================+=======================+
+| [Deliverable 1](../collabproj/collabproj_deliverable1.qmd) (100 points) | September 4th, 2025 | September 19th, 2025  |
++-------------------------------------------------------------------------+---------------------+-----------------------+
+| [Deliverable 2](../collabproj/collabproj_deliverable2.qmd) (78 points)  | September 4th, 2025 | September 26th, 2025  |
++-------------------------------------------------------------------------+---------------------+-----------------------+
 
 Instructions will be posted on the Course Website under "Collaborative Project"
 

@@ -17,14 +17,14 @@ date-modified: last-modified
 
 **Lectures:**
 
--   Tuesday September 2: Get in-person help with installing course software
+-   Tuesday September 2: (Optional) Get in-person help with installing course software
 
 -   Thursday September 4th: Intro to R lecture, begin working through Worksheet A1
 
 **To Do this Week:**
 
 -   Ensure you have completed all [installation instructions](webpages/lectures_i/lec1a_installation.qmd) by next week
--    Join the Slack channel ([see Canvas for the invite link](https://canvas.ubc.ca/courses/169555/pages/stat-545a-canvas-page))
+-   Join the Slack channel ([see Canvas for the invite link](https://canvas.ubc.ca/courses/169555/pages/stat-545a-canvas-page))
 
 **Upcoming Deadlines** - Nothing!
 :::
