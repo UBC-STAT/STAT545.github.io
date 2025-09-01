@@ -78,6 +78,8 @@ Now, we should send this to GitHub so we can host our website on GitHub and make
 
 -   Sometime if you change a file name or remove it, Quarto will get confused. You can go to the `docs` folder and delete the old file name/file you deleted and re-render and save.
 
+-   To re-render all documents, use `quarto render` in the Terminal. Then, save all. Do this before staging and committing changes to GitHub.
+
 -   Use folders to keep things organized.
 
 -   For people less familiar with Markdown syntax, the "Visual" viewer is useful! It provides a more user-friendly IDE and buttons for things like titles, bold text, lists, links, images, formatting, and tables. It is directly below the Save button on RStudio. You can toggle between Source and Visual to see the Markdown version and a more visual version of your files.
@@ -233,11 +235,15 @@ Follow the previous steps to add another page to your website. Here are some ide
 Feel free to get creative. This is just practice for website building - you can always come back and update your website later. Just remember, the website is PUBLIC. Do not put any information that you do not want shared on the internet.
 :::
 
-Save all and render. Click through your website to ensure that everything is working!
+Save all files and click the Render button. Click through your website to ensure that everything is working!
 
 ### Push your Changes to Github
 
-Everything you've done so far only exists on your local machine. Stage, commit, and push your changes (Steps 7 and 8 above). Test our your new website by visiting it using the GitHub link!
+Everything you've done so far only exists on your local machine.
+
+In the terminal, do `quarto render` to re-render all documents. Save all.
+
+Then,sStage, commit, and push your changes (Steps 7 and 8 above). Test our your new website by visiting it using the GitHub link (see Step 8).
 
 ## Getting Fancy
 
