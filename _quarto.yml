@@ -53,23 +53,23 @@ website:
       contents: 
         - webpages/lectures_i/lec1a_installation.qmd
         - webpages/lectures_i/lec1b_introR.qmd
-        - webpages/lectures_i/lec2A_reproducibility.qmd
-        - webpages/lectures_i/lec2b_versioncontrol.qmd
-        - webpages/lectures_i/lec3_dplyr.qmd
-        - webpages/lectures_i/lec4_datavis.qmd
-        - webpages/lectures_i/lec5_tidydata.qmd
-        - webpages/lectures_i/lec6a_modelfitting.qmd
-        - webpages/lectures_i/lec6b_dates.qmd
-        - webpages/lectures_i/lec7a_readwritedata.qmd
-        - webpages/lectures_i/lec7b_joiningtibbles.qmd
-        - webpages/lectures_ii/lec8a_functions.qmd
-        - webpages/lectures_ii/lec8b_advfunctions.qmd
-        - webpages/lectures_ii/lec9_rpackages.qmd
-        - webpages/lectures_ii/lec10_shiny.qmd
-        - webpages/lectures_ii/lec11_automation.qmd
-        - webpages/lectures_ii/lec12_characterdata.qmd
-        - webpages/lectures_ii/lec13_listcolumns.qmd
-        - webpages/lectures_ii/lec14_quarto.qmd
+        # - webpages/lectures_i/lec2A_reproducibility.qmd
+        # - webpages/lectures_i/lec2b_versioncontrol.qmd
+        # - webpages/lectures_i/lec3_dplyr.qmd
+        # - webpages/lectures_i/lec4_datavis.qmd
+        # - webpages/lectures_i/lec5_tidydata.qmd
+        # - webpages/lectures_i/lec6a_modelfitting.qmd
+        # - webpages/lectures_i/lec6b_dates.qmd
+        # - webpages/lectures_i/lec7a_readwritedata.qmd
+        # - webpages/lectures_i/lec7b_joiningtibbles.qmd
+        # - webpages/lectures_ii/lec8a_functions.qmd
+        # - webpages/lectures_ii/lec8b_advfunctions.qmd
+        # - webpages/lectures_ii/lec9_rpackages.qmd
+        # - webpages/lectures_ii/lec10_shiny.qmd
+        # - webpages/lectures_ii/lec11_automation.qmd
+        # - webpages/lectures_ii/lec12_characterdata.qmd
+        # - webpages/lectures_ii/lec13_listcolumns.qmd
+        # - webpages/lectures_ii/lec14_quarto.qmd
 
         
         
