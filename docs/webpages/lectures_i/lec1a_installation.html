@@ -326,7 +326,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Open the Anaconda Prompt application. Enter the following command into Anaconda Prompt: <code>cd file_path_here</code> where <code>file_path_here</code> is replaced with the location of the <code>R.exe</code> that you found.</li>
 <li>Run R from within Anaconda Prompt by entering in <code>R.exe</code>. This opens an R session inside Anaconda Prompt. From here, enter the following commands in this order:
 <ul>
-<li><code>install.packages("IRkernel")</code></li>
+<li><code>install.packages("IRkernel")</code>
+<ul>
+<li>If you get an error, try <code>install.packages("IRkernel", force = TRUE)</code></li>
+</ul></li>
 <li><code>IRkernel::installspec()</code></li>
 </ul></li>
 <li>If prompted to select a IR kernel mirror, select 12 (CANADA - MB).</li>
@@ -353,6 +356,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Install the necessary packages by entering</p>
 <p><code>install.packages(c("repr", "IRdisplay", "evaluate", "crayon", "pbdZMQ", "devtools", "uuid", "digest"))</code></p>
 <p><code>devtools::install_github("IRkernel/IRkernel")</code></p></li>
+<li><p>if you get an error, try <code>devtools::install_github("IRkernel/IRkernel", force = TRUE)</code></p></li>
 <li><p>Exit RStudio.</p></li>
 </ul></li>
 <li>Configure the IRkernel from within R
