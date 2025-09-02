@@ -223,6 +223,92 @@ We see that Grace rents a 2 bedroom apartment, with two total occupants, and the
 
 We will focus more on dataframes in a coming lecture, but I wanted to mention them here.
 
+### RStudio and Saving your R Code
+
+That's great, but do I really have to run code one line at a time? No! RStudio provides us with an Integrated Development Environment (IDE) that allows you to save R Scripts (documents containing your R code). It's free and open-source!
+
+R Studio will look like this (mine is a dark theme):
+
+![](images/clipboard-4243262791.png)
+
+I've highlighted some important pieces:
+
+**Console**
+
+● Useful for quick calculations you don’t want to save, debugging
+
+**Untitled1**
+
+● an R Script (currently unsaved/untitled)
+
+● Saves your code
+
+● (P.S., You can create an R Script by going File \> New File \> R Script)
+
+**Terminal**
+
+● Used for command line programming. We will use this later when connecting to GitHub (ignore for now but know it exists!)
+
+**Environment**
+
+-   Shows your saved variables, data structures, etc (currently empty)
+
+It's okay if your RStudio is configured differently! You can move the positions of some of these panes in the settings.
+
+For any code you'd like to save, we write it in an R Script! Let's create a file called roommates.R. In RStudio, go to File \> New File \> R Script. Now, go to File \> Save As... and save it somewhere that makes sense for you (i.e., a STAT545 folder).
+
+Instead of working line by line, let's add the following (very simple) code to roommates.R to calculate the total number of occupants in each apartment lived in:
+
+``` r
+roommates <- c(4, 2, 3, 0)
+totaloccupants <- roommates + 1
+totaloccupants
+```
+
+Save your work.
+
+Your RStudio will look something like this:
+
+![](images/clipboard-2852747679.png)
+
+To run the code, we can highlight it and click the "Run" button or click cmd/ctrl + Shift + Enter to run all code in the R Script. You will notice the code gets sent line by line to the Console, and the variables you created will now be in the Environment.
+
+![](images/clipboard-1540324873.png)
+
+Now, anytime you want to run that code you have it right there! You can also edit the code and re-run it to update the variables.
+
+The variables are stored in the environment. If you want to start fresh, you can click the broom button in the environment which will clear your variables. Then, run your code from top to bottom again.
+
+::: {.callout-important appearance="minimal" icon="false"}
+#### Exercise 1: Update roommates.R
+
+Your landlord has decided that pets count as occupants! You've lived with a pet cat since you moved into your first apartment. Update the code in your roommates.R file to reflect this, and re-run it to get the new total number of occupants in each apartment.
+
+Save the file.
+:::
+
+::: {.callout-important appearance="minimal" icon="false"}
+#### Exercise 2: Playing in the Console
+
+Out of curiosity, you wanted to see how many occupants were in your friend's apartment. You don't really want to save this code, so you go to the Console to play around with the numbers. Your friend had 5 roommates in first year, then 3 in second year, then 1 roommate in third and fourth years. You execute the following code in the R Console (not touching roommates.R):
+
+```{r}
+roommates <- c(5, 3, 1, 1)
+totaloccupants <- roommates + 1
+totaloccupants
+```
+
+Did anything in your Environment change?
+:::
+
+Well... even though you didn't touch roommates.R, you overwrote the `roommates` and `totaloccupants` variables!
+
+![](images/clipboard-2321696157.png)
+
+So remember, the console is not a separate (functionally) in R. Anything you do in the console will affect your variables in the environment. Of course, if we were to clear our environment and re-run the roommates.R file, we'd go back to our original data.
+
+Those are the basics of RStudio! You will learn more as the course progresses.
+
 ## Worksheet A1
 
 Now it's your turn to use R! Work through Worksheet A1 on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.
