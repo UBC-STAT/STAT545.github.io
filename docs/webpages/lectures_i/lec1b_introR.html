@@ -321,6 +321,7 @@ window.Quarto = {
   <li><a href="#calculations" id="toc-calculations" class="nav-link" data-scroll-target="#calculations">Calculations</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">Data Structures</a></li>
+  <li><a href="#rstudio-and-saving-your-r-code" id="toc-rstudio-and-saving-your-r-code" class="nav-link" data-scroll-target="#rstudio-and-saving-your-r-code">RStudio and Saving your R Code</a></li>
   </ul></li>
   <li><a href="#worksheet-a1" id="toc-worksheet-a1" class="nav-link" data-scroll-target="#worksheet-a1">Worksheet A1</a></li>
   <li><a href="#what-to-do-when-youre-stuck" id="toc-what-to-do-when-youre-stuck" class="nav-link" data-scroll-target="#what-to-do-when-youre-stuck">What to do when you’re stuck</a></li>
@@ -345,7 +346,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 26, 2025</p>
+      <p class="date-modified">September 2, 2025</p>
     </div>
   </div>
     
@@ -575,6 +576,78 @@ Tip
 <p>We see that Grace rents a 2 bedroom apartment, with two total occupants, and the total rent is $2700 per month in Vancouver. Mei lives in Toronto and has a 3 bedroom apartment shared between 4 people, and the total rent is $5000. Sam lives alone in a one bedroom apartment in Halifax, and pays $1900.</p>
 <p>We will focus more on dataframes in a coming lecture, but I wanted to mention them here.</p>
 </section>
+</section>
+<section id="rstudio-and-saving-your-r-code" class="level3">
+<h3 class="anchored" data-anchor-id="rstudio-and-saving-your-r-code">RStudio and Saving your R Code</h3>
+<p>That’s great, but do I really have to run code one line at a time? No! RStudio provides us with an Integrated Development Environment (IDE) that allows you to save R Scripts (documents containing your R code). It’s free and open-source!</p>
+<p>R Studio will look like this (mine is a dark theme):</p>
+<p><img src="images/clipboard-4243262791.png" class="img-fluid"></p>
+<p>I’ve highlighted some important pieces:</p>
+<p><strong>Console</strong></p>
+<p>● Useful for quick calculations you don’t want to save, debugging</p>
+<p><strong>Untitled1</strong></p>
+<p>● an R Script (currently unsaved/untitled)</p>
+<p>● Saves your code</p>
+<p>● (P.S., You can create an R Script by going File &gt; New File &gt; R Script)</p>
+<p><strong>Terminal</strong></p>
+<p>● Used for command line programming. We will use this later when connecting to GitHub (ignore for now but know it exists!)</p>
+<p><strong>Environment</strong></p>
+<ul>
+<li>Shows your saved variables, data structures, etc (currently empty)</li>
+</ul>
+<p>It’s okay if your RStudio is configured differently! You can move the positions of some of these panes in the settings.</p>
+<p>For any code you’d like to save, we write it in an R Script! Let’s create a file called roommates.R. In RStudio, go to File &gt; New File &gt; R Script. Now, go to File &gt; Save As… and save it somewhere that makes sense for you (i.e., a STAT545 folder).</p>
+<p>Instead of working line by line, let’s add the following (very simple) code to roommates.R to calculate the total number of occupants in each apartment lived in:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>roommates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>totaloccupants <span class="ot">&lt;-</span> roommates <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>totaloccupants</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Save your work.</p>
+<p>Your RStudio will look something like this:</p>
+<p><img src="images/clipboard-2852747679.png" class="img-fluid"></p>
+<p>To run the code, we can highlight it and click the “Run” button or click cmd/ctrl + Shift + Enter to run all code in the R Script. You will notice the code gets sent line by line to the Console, and the variables you created will now be in the Environment.</p>
+<p><img src="images/clipboard-1540324873.png" class="img-fluid"></p>
+<p>Now, anytime you want to run that code you have it right there! You can also edit the code and re-run it to update the variables.</p>
+<p>The variables are stored in the environment. If you want to start fresh, you can click the broom button in the environment which will clear your variables. Then, run your code from top to bottom again.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 1: Update roommates.R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your landlord has decided that pets count as occupants! You’ve lived with a pet cat since you moved into your first apartment. Update the code in your roommates.R file to reflect this, and re-run it to get the new total number of occupants in each apartment.</p>
+<p>Save the file.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 2: Playing in the Console
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Out of curiosity, you wanted to see how many occupants were in your friend’s apartment. You don’t really want to save this code, so you go to the Console to play around with the numbers. Your friend had 5 roommates in first year, then 3 in second year, then 1 roommate in third and fourth years. You execute the following code in the R Console (not touching roommates.R):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>roommates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>totaloccupants <span class="ot">&lt;-</span> roommates <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>totaloccupants</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6 4 2 2</code></pre>
+</div>
+</div>
+<p>Did anything in your Environment change?</p>
+</div>
+</div>
+<p>Well… even though you didn’t touch roommates.R, you overwrote the <code>roommates</code> and <code>totaloccupants</code> variables!</p>
+<p><img src="images/clipboard-2321696157.png" class="img-fluid"></p>
+<p>So remember, the console is not a separate (functionally) in R. Anything you do in the console will affect your variables in the environment. Of course, if we were to clear our environment and re-run the roommates.R file, we’d go back to our original data.</p>
+<p>Those are the basics of RStudio! You will learn more as the course progresses.</p>
 </section>
 </section>
 <section id="worksheet-a1" class="level2">
