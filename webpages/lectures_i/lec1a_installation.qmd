@@ -46,7 +46,7 @@ The following instructions are adapted from [Rich Pauloo](https://richpauloo.git
     -   Open the Anaconda Prompt application. Enter the following command into Anaconda Prompt: `cd file_path_here` where `file_path_here` is replaced with the location of the `R.exe` that you found.
     -   Run R from within Anaconda Prompt by entering in `R.exe`. This opens an R session inside Anaconda Prompt. From here, enter the following commands in this order:
         -   `install.packages("IRkernel")`
-        -   `IR:kernel::installspec()`
+        -   `IRkernel::installspec()`
     -   If prompted to select a IR kernel mirror, select 12 (CANADA - MB).
 3.  To verify that everything is working, open Anaconda Prompt and type `jupyter lab`. Jupyter Lab should launch and display both a Python and R kernel.
 
