@@ -10,7 +10,7 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 ### Course Information
 
 |  |  |  |  |  |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
 | Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Monday/Wednesday: 9:30am - 10:50am | CHBE 102 |
 
@@ -25,11 +25,11 @@ STAT545 A is a pre-requisite for STAT545 B. No exceptions.
 ### Contact and Office Hours
 
 | Instructor | Contact Details | Office Location | Office Hours |
-|------------------|--------------------|------------------|------------------|
+|----|----|----|----|
 | Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134 | Wednesdays, 2:30pm - 3:30pm |
 
 | Teaching Assistants (TAs) | Office Hours                 | Location          |
-|------------------------|----------------------------|---------------------|
+|---------------------------|------------------------------|-------------------|
 | Erick Navarro             | Thursdays, 11:00am - 12:00pm | Zoom (see Canvas) |
 | Asfar Lathif              | Mondays, 3:00pm - 4:00pm     | Zoom (see Canvas) |
 | Mario Gomez Camacho       | TBD                          | TBD               |
@@ -45,7 +45,7 @@ This course will feature short lectures and in-class demonstrations so students 
 **STAT 545 B (Part II):**
 
 | Week | Date | Topic | In-class work |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | 8 | Tuesday Oct 21 | [Functions](../lectures_ii/lec8a_functions.qmd) | Worksheet B1 |
 |  | Thursday Oct 23 | [Advanced Functions](../lectures_ii/lec8b_advfunctions.qmd) | Worksheet B1, Assignment 1 |
 |  |  |  |  |
@@ -74,7 +74,7 @@ This schedule is subject to change. Any changes will be announced via the `#anno
 This course will have autograded worksheets meant to guide you through a number of exercises as well as assignments.
 
 | Assessment | Percent Grade | Note |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | Worksheets | 15% | Three guided worksheets |
 | Assignments | 85% | Four assignments involving more independent analyses and tasks |
 

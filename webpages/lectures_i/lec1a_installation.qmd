@@ -74,7 +74,7 @@ Having trouble? Check the instructions here: <https://richpauloo.github.io/2018-
     -   Launch R (**NOT RSTUDIO**! This is typically found in /usr/bin/R. If you can't find it, open the Terminal application and type in `which R`. This will provide you with the path to R. Then, open a Finder window and at the top of your screen hit `Go` -\> `go to folder` and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.
     -   In the R application, run `IRkernel::installspec()`
     -   If prompted to choose a IRkernel mirror, select 12 (Canada - MB).
-4.  Launch Anaconda, and open a Jupyter Lab and you should see an R kernel available.
+4.  Launch Anaconda, and open a Jupyter Notebook and you should see an R kernel available.
 
 Having trouble? Check out <https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/>.
 
