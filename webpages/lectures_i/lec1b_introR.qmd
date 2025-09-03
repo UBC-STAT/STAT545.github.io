@@ -106,6 +106,25 @@ apartments_lived_in*2
 
 Variables can also store the results of expressions, which we will dive into in Worksheet 1.
 
+### Comments
+
+Comments are lines (or parts of lines) of code that R ignores. We specify them using `#`. Commenting can be useful for documenting what you're doing, or temporarily stopping a line from running. For example:
+
+```{r}
+
+# The following lines will run!
+x <- 4 + 7
+x
+
+# I can even comment beside executable code lines
+y <- 9*5 #here I'm muliplying 9 and 5, and saving it as y
+y
+
+# The next few lines will not run
+# z <- 4/6
+# z
+```
+
 ### Data Structures
 
 R isn't just a calculator. R can handle different *data structures* (which are just objects that contain data) including *strings*, *vectors*, and *data frames* (just to name a few). We will go over the basics of these structures in this section.
