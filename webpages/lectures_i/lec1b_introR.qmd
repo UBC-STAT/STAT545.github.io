@@ -18,7 +18,7 @@ We will be using various technologies throughout this course which you should fa
 
 -   Slack (for communications),
 
--   RStudio (for writing R code) [(Video Here!)](https://www.youtube.com/watch?v=dC2bRweVePo),
+-   RStudio (for writing R code) [(](https://www.youtube.com/watch?v=dC2bRweVePo)[Video Here](https://youtu.be/OYxDwybdlkY)[!)](https://www.youtube.com/watch?v=dC2bRweVePo),
 
 -   GitHub (for version control and collaboration), and
 
@@ -58,7 +58,7 @@ Lectures build on top of each other and it is crucial to stay on track as we pro
 
 ## Video Lecture
 
--   [STAT545 Video Lecture on RStudio (2025)](https://www.youtube.com/watch?v=dC2bRweVePo)
+-   [STAT 545 Video Lecture on R and RStudio (2025)](https://youtu.be/OYxDwybdlkY?si=BH8swDzSfguRxIl2)
 
 ## Coding in R: The Basics
 
