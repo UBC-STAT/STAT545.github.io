@@ -116,8 +116,15 @@ Git is a version control software. Github is a cloud-based platform (built on Gi
 
 5.  Get your Personal Access Token (PAT)
 
-    -   **Option 1**: Go to to <https://github.com/settings/tokens> and click “Generate token”. Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “Stat545Installation”. [Select “repo”, “user”, and “workflow” for scopes.]{.underline} Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). [**Save this token somewhere so you can use it again later, such as a password manager.**]{.underline}
-    -   **Option 2:** From R, execute `usethis::create_github_token()` (you may have to install the usethis package first by first running `install.packages("usethis")`). Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “stat545installation". Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). [**Save this token somewhere so you can use it again later, such as a password manager.**]{.underline}
+    -   **Option 1**: Go to to <https://github.com/settings/tokens> and click “Generate token”.
+        -   Choose Classic Token
+        -   Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “Stat545Installation”.
+        -   [Select “repo”, “user”, and “workflow” for scopes.]{.underline}
+        -   Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026).
+        -   [**Save this token somewhere so you can use it again later, such as a password manager.**]{.underline}
+    -   **Option 2:** From R, execute `usethis::create_github_token()` (you may have to install the usethis package first by first running `install.packages("usethis")`).
+        -   Describe the token’s purpose in the Note field, e.g. “personal-macbook” or “stat545installation".
+        -   Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). [**Save this token somewhere so you can use it again later, such as a password manager.**]{.underline}
 
 6.  From R (in the console), run `install.packages("gitcreds")` if you haven't already.
 

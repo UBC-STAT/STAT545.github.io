@@ -407,8 +407,19 @@ ul.task-list li input[type="checkbox"] {
 <p>If you are having issues, you could use the <code>usethis</code> package in R. <a href="https://happygitwithr.com/hello-git.html">See here.</a></p></li>
 <li><p>Get your Personal Access Token (PAT)</p>
 <ul>
-<li><strong>Option 1</strong>: Go to to <a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a> and click “Generate token”. Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “Stat545Installation”. <u>Select “repo”, “user”, and “workflow” for scopes.</u> Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). <u><strong>Save this token somewhere so you can use it again later, such as a password manager.</strong></u></li>
-<li><strong>Option 2:</strong> From R, execute <code>usethis::create_github_token()</code> (you may have to install the usethis package first by first running <code>install.packages("usethis")</code>). Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “stat545installation”. Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). <u><strong>Save this token somewhere so you can use it again later, such as a password manager.</strong></u></li>
+<li><strong>Option 1</strong>: Go to to <a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a> and click “Generate token”.
+<ul>
+<li>Choose Classic Token</li>
+<li>Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “Stat545Installation”.</li>
+<li><u>Select “repo”, “user”, and “workflow” for scopes.</u></li>
+<li>Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026).</li>
+<li><u><strong>Save this token somewhere so you can use it again later, such as a password manager.</strong></u></li>
+</ul></li>
+<li><strong>Option 2:</strong> From R, execute <code>usethis::create_github_token()</code> (you may have to install the usethis package first by first running <code>install.packages("usethis")</code>).
+<ul>
+<li>Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “stat545installation”.</li>
+<li>Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). <u><strong>Save this token somewhere so you can use it again later, such as a password manager.</strong></u></li>
+</ul></li>
 </ul></li>
 <li><p>From R (in the console), run <code>install.packages("gitcreds")</code> if you haven’t already.</p></li>
 <li><p>Execute <code>gitcreds::gitcreds_set()</code> and enter the PAT that you just made when prompted.</p></li>
