@@ -322,17 +322,17 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Install and setup the IR Kernel
 <ul>
-<li>Find the location of <code>R.exe</code> on your computer (the location probably looks like C:\Program Files\R\R-4.5.1\bin). If you can’t find it, launch Command Prompt (CMD) and execute <code>where R</code>. The output should be the path to the file R.exe.</li>
-<li>Open the Anaconda Prompt application. Enter the following command into Anaconda Prompt: <code>cd file_path_here</code> where <code>file_path_here</code> is replaced with the location of the <code>R.exe</code> that you found.</li>
+<li>Launch Command Prompt (CMD) and execute <code>where R</code>. The output should be the path to the file R.exe. Copy the path.</li>
+<li>Open the Anaconda Prompt application. Enter the following command into Anaconda Prompt: <code>cd file_path_here</code> where <code>file_path_here</code> is replaced with the location of the <code>R.exe</code> that you just found/copied</li>
 <li>Run R from within Anaconda Prompt by entering in <code>R.exe</code>. This opens an R session inside Anaconda Prompt. From here, enter the following commands in this order:
 <ul>
 <li><code>install.packages("IRkernel")</code>
 <ul>
 <li>If you get an error, try <code>install.packages("IRkernel", force = TRUE)</code></li>
+<li>If prompted to select a IR kernel mirror, select 12 (CANADA - MB).</li>
 </ul></li>
 <li><code>IRkernel::installspec()</code></li>
 </ul></li>
-<li>If prompted to select a IR kernel mirror, select 12 (CANADA - MB).</li>
 </ul></li>
 <li>To verify that everything is working, open Anaconda Prompt and type <code>jupyter lab</code>. Jupyter Lab should launch and display both a Python and R kernel.</li>
 </ol>
@@ -362,7 +362,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Configure the IRkernel from within R
 <ul>
 <li>It’s important that these next commands are done from within the version of R that you want to link to Jupyter Lab (R version 5.4.1, for example)</li>
-<li>Launch R (<strong>NOT RSTUDIO</strong>! This is typically found in /usr/bin/R. If you can’t find it, open the Terminal application and type in <code>which R</code>. This will provide you with the path to R. Then, open a Finder window and at the top of your screen hit <code>Go</code> -&gt; <code>go to folder</code> and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.</li>
+<li>Launch he Terminal application and type in <code>which R</code> (will probably output /usr/bin/R). Copy the path.</li>
+<li>Then, open a Finder window and at the top of your screen hit <code>Go</code> -&gt; <code>go to folder</code> and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.</li>
 <li>In the R application, run <code>IRkernel::installspec()</code></li>
 <li>If prompted to choose a IRkernel mirror, select 12 (Canada - MB).</li>
 </ul></li>

@@ -42,13 +42,13 @@ The following instructions are adapted from [Rich Pauloo](https://richpauloo.git
     -   Provide your email and an installation link will be sent to you
     -   Install the full version of Anaconda (not miniconda)
 2.  Install and setup the IR Kernel
-    -   Find the location of `R.exe` on your computer (the location probably looks like C:\\Program Files\\R\\R-4.5.1\\bin). If you can't find it, launch Command Prompt (CMD) and execute `where R`. The output should be the path to the file R.exe.
-    -   Open the Anaconda Prompt application. Enter the following command into Anaconda Prompt: `cd file_path_here` where `file_path_here` is replaced with the location of the `R.exe` that you found.
+    -   Launch Command Prompt (CMD) and execute `where R`. The output should be the path to the file R.exe. Copy the path.
+    -   Open the Anaconda Prompt application. Enter the following command into Anaconda Prompt: `cd file_path_here` where `file_path_here` is replaced with the location of the `R.exe` that you just found/copied
     -   Run R from within Anaconda Prompt by entering in `R.exe`. This opens an R session inside Anaconda Prompt. From here, enter the following commands in this order:
         -   `install.packages("IRkernel")`
             -   If you get an error, try `install.packages("IRkernel", force = TRUE)`
+            -   If prompted to select a IR kernel mirror, select 12 (CANADA - MB).
         -   `IRkernel::installspec()`
-    -   If prompted to select a IR kernel mirror, select 12 (CANADA - MB).
 3.  To verify that everything is working, open Anaconda Prompt and type `jupyter lab`. Jupyter Lab should launch and display both a Python and R kernel.
 
 Having trouble? Check the instructions here: <https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/>.
@@ -74,7 +74,8 @@ Having trouble? Check the instructions here: <https://richpauloo.github.io/2018-
     -   Exit RStudio.
 3.  Configure the IRkernel from within R
     -   It's important that these next commands are done from within the version of R that you want to link to Jupyter Lab (R version 5.4.1, for example)
-    -   Launch R (**NOT RSTUDIO**! This is typically found in /usr/bin/R. If you can't find it, open the Terminal application and type in `which R`. This will provide you with the path to R. Then, open a Finder window and at the top of your screen hit `Go` -\> `go to folder` and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.
+    -   Launch he Terminal application and type in `which R` (will probably output /usr/bin/R). Copy the path.
+    -   Then, open a Finder window and at the top of your screen hit `Go` -\> `go to folder` and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.
     -   In the R application, run `IRkernel::installspec()`
     -   If prompted to choose a IRkernel mirror, select 12 (Canada - MB).
 4.  Launch Anaconda, and open a Jupyter Notebook and you should see an R kernel available.
