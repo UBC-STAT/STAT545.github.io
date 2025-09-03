@@ -99,7 +99,7 @@ If this was easy, then try to figure out how to knit to a pdf document!
 ::: {.callout-tip appearance="minimal" icon="false"}
 ### Instructor demo: mtcars Report
 
-To follow along, download the [demonstration.Rmd](https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/notes/notes-a03/mtcars_demonstration.Rmd) file from the STAT545 GitHub and open it in RStudio.
+To follow along, download the [demonstration.Rmd](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/lecture_files/lec2a-reproducibility/mtcars_demonstration.Rmd) file from the STAT545 GitHub and open it in RStudio.
 :::
 
 #### Exploring Code Chunks

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lucy Gao">
+<meta name="dcterms.date" content="2023-08-02">
 
-<title>Lecture 2A: Reproducibility – STAT545</title>
+<title>MTCars Report – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,45 +22,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../images/stat545_transparent.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/stat545_transparent.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -88,7 +105,7 @@ div.csl-indent {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -98,7 +115,7 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">STAT545</span>
     </a>
   </div>
@@ -109,7 +126,7 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-door-fill" role="img">
 </i> 
 <span class="menu-text"> </span></a>
   </li>  
@@ -119,11 +136,11 @@ div.csl-indent {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="../../webpages/syllabus/syllabusA.html">
+    <a class="dropdown-item" href="../../../webpages/syllabus/syllabusA.html">
  <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/syllabus/syllabusB.html">
+    <a class="dropdown-item" href="../../../webpages/syllabus/syllabusB.html">
  <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
   </li>  
     </ul>
@@ -134,17 +151,17 @@ div.csl-indent {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec1a_installation.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec1a_installation.html">
  <span class="dropdown-text">Lecture 1A: Installation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec1b_introR.html">
+    <a class="dropdown-item" href="../../../webpages/lectures_i/lec1b_introR.html">
  <span class="dropdown-text">Lecture 1B: Course Introduction and R</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/worksheets.html"> 
+    <a class="nav-link" href="../../../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -153,11 +170,11 @@ div.csl-indent {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-collab-project">    
         <li>
-    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
+    <a class="dropdown-item" href="../../../webpages/collabproj/collabproj_deliverable1.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable2.html">
+    <a class="dropdown-item" href="../../../webpages/collabproj/collabproj_deliverable2.html">
  <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
   </li>  
     </ul>
@@ -168,11 +185,11 @@ div.csl-indent {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
         <li>
-    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable1.html">
+    <a class="dropdown-item" href="../../../webpages/mda/mda_deliverable1.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
+    <a class="dropdown-item" href="../../../webpages/mda/mda_deliverable2.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
     </ul>
@@ -183,29 +200,29 @@ div.csl-indent {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-assignments-(part-b">    
         <li>
-    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB1.html">
+    <a class="dropdown-item" href="../../../webpages/assignmentsB/assignmentB1.html">
  <span class="dropdown-text">Assignment B1: Making a Function in R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB2.html">
+    <a class="dropdown-item" href="../../../webpages/assignmentsB/assignmentB2.html">
  <span class="dropdown-text">Assignment B2: Making an R Package</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB3.html">
+    <a class="dropdown-item" href="../../../webpages/assignmentsB/assignmentB3.html">
  <span class="dropdown-text">Assignment B3: Shiny App</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/assignmentsB/assignmentB4.html">
+    <a class="dropdown-item" href="../../../webpages/assignmentsB/assignmentB4.html">
  <span class="dropdown-text">Assignment B4: Your Choice!</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/casestudies.html"> 
+    <a class="nav-link" href="../../../webpages/casestudies.html"> 
 <span class="menu-text">Case Studies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/faq.html"> 
+    <a class="nav-link" href="../../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -236,17 +253,9 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
-  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link" data-scroll-target="#r-markdown">R Markdown</a>
-  <ul class="collapse">
-  <li><a href="#getting-started-with-markdown" id="toc-getting-started-with-markdown" class="nav-link" data-scroll-target="#getting-started-with-markdown">Getting Started with Markdown</a></li>
-  <li><a href="#install-rmarkdown" id="toc-install-rmarkdown" class="nav-link" data-scroll-target="#install-rmarkdown">Install RMarkdown</a></li>
-  </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
-  <ul class="collapse">
-  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
-  </ul></li>
+  <li><a href="#motor-trend-car-road-tests-data" id="toc-motor-trend-car-road-tests-data" class="nav-link active" data-scroll-target="#motor-trend-car-road-tests-data">Motor Trend Car Road Tests data</a></li>
+  <li><a href="#number-of-gears-vs.-transmission" id="toc-number-of-gears-vs.-transmission" class="nav-link" data-scroll-target="#number-of-gears-vs.-transmission">Number of gears vs.&nbsp;transmission</a></li>
+  <li><a href="#horsepower-vs.-mileage" id="toc-horsepower-vs.-mileage" class="nav-link" data-scroll-target="#horsepower-vs.-mileage">Horsepower vs.&nbsp;Mileage</a></li>
   </ul>
 </nav>
     </div>
@@ -255,22 +264,27 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 2A: Reproducibility</h1>
-<p class="subtitle lead">September 9, 2025</p>
+<h1 class="title">MTCars Report</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    
-  
     <div>
-    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 3, 2025</p>
+             <p>Lucy Gao </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 2, 2023</p>
     </div>
   </div>
+  
     
   </div>
   
@@ -279,178 +293,47 @@ div.csl-indent {
 </header>
 
 
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<p>From today’s class, students are anticipated to be able to:</p>
-<ul>
-<li><p>Use basic markdown features.</p></li>
-<li><p>Write documents in markdown.</p></li>
-<li><p>Choose whether html or pdf is an appropriate output.</p></li>
-<li><p>Style an .Rmd document by editing the YAML header.</p></li>
-<li><p>Customize code chunk output using Rmd code chunk.</p></li>
-<li><p>Render your finalized document to HTML &amp; PDF.</p></li>
-</ul>
+<section id="motor-trend-car-road-tests-data" class="level2">
+<h2 class="anchored" data-anchor-id="motor-trend-car-road-tests-data">Motor Trend Car Road Tests data</h2>
+<p>The Motor Trend Car Road Tests (<code>mtcars</code>) data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).</p>
 </section>
-<section id="reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
-<p><em>Reproducibility</em> is the ability of an independent researcher to repeat an experiment using the <u>same data and workflow</u> to obtain the same results <span class="citation" data-cites="resnik2017reproducibility">[<a href="#ref-resnik2017reproducibility" role="doc-biblioref">1</a>]</span>. One way to ensure reproducible research is sharing clear details on the analysis and providing the code used to produce the results. Reproducibility is often confused with <em>replication</em>. However, replication is a separate concept where the results of a study should be validated on an independent study using new data. A “good” study is both replicable and reproducible.</p>
-<p>There are also ethical benefits to reproducible research <span class="citation" data-cites="resnik2017reproducibility">[<a href="#ref-resnik2017reproducibility" role="doc-biblioref">1</a>]</span>. Performing open research can reduce the chance of data fabrication or other ethical issues such as <em>p-hacking</em>, where a researcher tests a number of hypotheses until they find one that is statistically significant. Open, transparent research poses a sense of accountability on the researcher(s). Of course, you can’t always share data (for example, health data containing personal identifying information), but you should share as much as is possible. Always check with your ethics board or principal investigator before sharing data online.</p>
-<p>Reproducible studies can also advance research by providing the code used for analysis. Not only can we reproduce the study to make the findings more trustworthy, but we can learn more about how the analysis was performed and possibly apply it to other studies.</p>
-<p>Reproducible research can also force you to have better, more automated workflows. The first analysis I ever did in R, I was manually changing things in excel documents, and then saving them in a certain place, and then using R to fit a model, and then exporting the data, and then changing the worksheet format, and so on. I had a sticky note of instructions on how to produce the results on my desk. This was neither reproducible nor productive for my time. While automating some steps and using tools like GitHub for version control can be more work upfront, it can save you <em>a lot</em> of headaches down the road. It is something I personally wish I learned to use earlier in my career.</p>
-</section>
-<section id="r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="r-markdown">R Markdown</h2>
-<p>Using an editor like MS Word is like painting: you decorate the page with text, graphs, and tables, making sure things are positioned, sized, and coloured appropriately.</p>
-<p>This is great for a letter to a friend, but is less great for scientific work, because it hampers reproducibility and shareability.</p>
-<p>R Markdown lets you write a single “blueprint” for your analysis that includes everything - positioning/sizing/colouring/formatting, analysis/graph/table code and results, and text – and then “knit” all of those components together into a complete report with a single button press.</p>
-<p>There is a large community of R Markdown users, making it easy to find tutorials and blog posts about a ton of different types of documents. We’re going to start simple and dive right into R Markdown.</p>
-<section id="getting-started-with-markdown" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started-with-markdown">Getting Started with Markdown</h3>
-<p>In lecture, we are going to work through <a href="https://www.markdowntutorial.com/">this online Markdown tutorial together</a> in small groups. Challenge yourself to meet someone new in the class!</p>
-<p>After completing the tutorial, try making your own R Markdown document!</p>
-<ol type="1">
-<li><p>In RStudio, go to “File” -&gt; “New File” -&gt; “Markdown File”</p></li>
-<li><p>Write a Markdown document all about you that includes:</p>
-<ul>
-<li><p>A header</p></li>
-<li><p>A link to your GitHub profile</p></li>
-<li><p>A list of courses you’re taking this semester</p></li>
-</ul></li>
-<li><p>Click the “Preview” button to generate an output .html file from the source .md file.</p></li>
-</ol>
-</section>
-<section id="install-rmarkdown" class="level3">
-<h3 class="anchored" data-anchor-id="install-rmarkdown">Install RMarkdown</h3>
-<ol type="1">
-<li><p>Open a new .Rmd file in RStudio (“File” &gt; “New File” &gt; “RMarkdown…”). Add “STAT545_Lecture_2” as your title and save the other default options.</p></li>
-<li><p>To get started with using R Markdown, you’ll need to install the rmarkdown R package. You might automatically be prompted to do this; accept, if so. If not, you will have to manually install the package.</p>
-<p><code>install.packages('rmarkdown')</code></p></li>
-<li><p>After installation, install the DT package:</p>
-<p><code>install.packages('DT')</code></p></li>
-<li><p>Click “knit”.</p></li>
-</ol>
-<p><strong>Things to notice:</strong></p>
-<ul>
-<li><p>The YAML header is contained between two — at the top of the .Rmd source, and contains metadata on the document. This is where you specify the output type to be HTML.</p></li>
-<li><p>Text is formatted using Markdown. There are three chunks of R code, and knitting executes the R code and displays the output in the output file.</p></li>
-</ul>
-<p><strong>How does it all work?</strong></p>
-<p>The key drivers under the hood are <code>knitr</code>and <code>Pandoc</code>! When you press “Knit”, R Markdown passes the .<code>Rmd</code>file to <code>knitr</code>, which executes all of the code and creates a new <code>.md</code> file including the code and output. Then, that <code>.md</code> file is processed into the final output format (e.g.&nbsp;<code>.html</code>) by pandoc.</p>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise: Edit Your YAML in Small Groups:
+<section id="number-of-gears-vs.-transmission" class="level2">
+<h2 class="anchored" data-anchor-id="number-of-gears-vs.-transmission">Number of gears vs.&nbsp;transmission</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>gear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ 3  4  5 
+15 12  5 </code></pre>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Run <code>?html_document</code> from your R console and/or check out <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">Yihui Xie’s RMarkdown book</a> to:</p>
-<ul>
-<li><p>Add a floating table of contents</p></li>
-<li><p>Add a theme.</p></li>
-</ul>
-<p>If this was easy, then try to figure out how to knit to a pdf document!</p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Instructor demo: mtcars Report
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>To follow along, download the <a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/lecture_files/lec2a-reproducibility/mtcars_demonstration.Rmd">demonstration.Rmd</a> file from the STAT545 GitHub and open it in RStudio.</p>
-</div>
-</div>
-<section id="exploring-code-chunks" class="level4">
-<h4 class="anchored" data-anchor-id="exploring-code-chunks">Exploring Code Chunks</h4>
-<ol type="1">
-<li><p>Add a code chunk below the first paragraph in the “Motor Trend Car Road Tests data” section of the <code>.Rmd</code> file. Either select “Code” -&gt; “Insert Chunk”, or use a keyboard shortcut: <code>cmd + option + I</code>(MAC) / <code>ctrl + alt + i</code>(WINDOWS).</p></li>
-<li><p>In this code chunk, print out the <code>mtcars</code> data frame to explore the output. (Yes, this object comes shipped with R.)</p></li>
-<li><p>Run that chunk interactively using the green ‘play’ button.</p></li>
-<li><p>Now try out the <code>DT::datatable()</code> function on mtcars in this new chunk, and knit the file (to html, ideally).</p></li>
-<li><p>Add an in-line code chunk specifying the number of rows of the <code>mtcars</code> dataset in place of the hardcoded number “32 automobiles”. Hint: <code>nrow()</code>.</p></li>
-<li><p>Fill in the document with markdown commentary for each of the code chunks! A few notes go a long way towards improving the readability of the report.</p></li>
-</ol>
-</section>
-<section id="code-chunk-options" class="level4">
-<h4 class="anchored" data-anchor-id="code-chunk-options">Code Chunk Options</h4>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Got lost in the demonstration? No problem, just open a new .Rmd file in RStudio via “File” -&gt; “New File” -&gt; “R Markdown…”, and just press “OK”, and resume!)</p>
-</div>
-</div>
-<p>Just like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the <code>{r}</code> at the top of a code chunk, separated by commas. For a list of chunk options, check out <a href="https://yihui.org/knitr/options/">Yihui Xie’s knitr book</a>. Let’s try some:</p>
-<ol type="1">
-<li><p>Hide the code from the output with <code>echo = FALSE.</code></p></li>
-<li><p>Change the figure width and height with <code>fig.width = 5</code> and <code>fig.height = 3</code>.</p></li>
-<li><p>Knit the results. Can you spot the differences?</p></li>
-</ol>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the instructor demo, we prettied up a nice report about <code>mtcars</code> together. But suddenly, you receive an email from your collaborator who collected the <code>mtcars</code> data, who says that the data on Mazda RX4, the Valiant, and the Volvo 142E were transcribed wrong from the magazine! They’re going to work on correcting them, but in the mean time, they’d like to re-run the analysis with those three cars excluded.</p>
-<p>In small groups, prepare an updated report by updating your <code>.Rmd</code> appropriately, then re-knitting it. Then discuss: in this case, how did using the RMarkdown workflow rather than copying and pasting R output to MS Word help prevent the creation of non-reproducible results?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>am, mtcars<span class="sc">$</span>gear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   
+     3  4  5
+  0 15  4  0
+  1  0  8  5</code></pre>
 </div>
 </div>
 </section>
-</section>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<p>Here are a number of resources that may help supplement you with today’s lesson:</p>
-<ul>
-<li><p><a href="https://www.youtube.com/watch?v=ZzDSkBgt9xQ">STAT 545 Episode 3-A: Reproducible Reports with R Markdown Some additional resources that you might find useful:</a></p></li>
-<li><p><a href="https://rmarkdown.rstudio.com/lesson-1.html">The Official R Markdown Tutorial</a> from the “Introduction” up to and including the “Inline Code” section.</p></li>
-<li><p><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf">R Markdown cheat sheet</a></p></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
+<section id="horsepower-vs.-mileage" class="level2">
+<h2 class="anchored" data-anchor-id="horsepower-vs.-mileage">Horsepower vs.&nbsp;Mileage</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mtcars_demonstration_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Many cheat sheets can be found from RStudio: go to “Help” -&gt; “Cheatsheets”.</p>
 </div>
-</div>
-<section id="attribution" class="level3">
-<h3 class="anchored" data-anchor-id="attribution">Attribution</h3>
-<p><em>Demonstration by Icíar Fernández Boyano. Inspiration for activity ideas drawn from Nicholas Tierney’s R Markdown for Scientists book, the R Markdown for Medicine workshop materials, and the UBC MDS program.</em></p>
-
 
 
 </section>
-</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-resnik2017reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Resnik DB, Shamoo AE (2017) Reproducibility and research integrity. Accountability in research 24(2):116–123</div>
-</div>
-</div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

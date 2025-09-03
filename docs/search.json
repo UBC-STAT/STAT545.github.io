@@ -1732,5 +1732,33 @@
     "title": "Lecture 14: Professional Websites with Quarto",
     "section": "Resources",
     "text": "Resources\n\nOfficial tutorial for Quarto website building here."
+  },
+  {
+    "objectID": "content/lecture_files/lec2a-reproducibility/mtcars_demonstration.html",
+    "href": "content/lecture_files/lec2a-reproducibility/mtcars_demonstration.html",
+    "title": "MTCars Report",
+    "section": "",
+    "text": "The Motor Trend Car Road Tests (mtcars) data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models)."
+  },
+  {
+    "objectID": "content/lecture_files/lec2a-reproducibility/mtcars_demonstration.html#motor-trend-car-road-tests-data",
+    "href": "content/lecture_files/lec2a-reproducibility/mtcars_demonstration.html#motor-trend-car-road-tests-data",
+    "title": "MTCars Report",
+    "section": "",
+    "text": "The Motor Trend Car Road Tests (mtcars) data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models)."
+  },
+  {
+    "objectID": "content/lecture_files/lec2a-reproducibility/mtcars_demonstration.html#number-of-gears-vs.-transmission",
+    "href": "content/lecture_files/lec2a-reproducibility/mtcars_demonstration.html#number-of-gears-vs.-transmission",
+    "title": "MTCars Report",
+    "section": "Number of gears vs. transmission",
+    "text": "Number of gears vs. transmission\n\ntable(mtcars$gear)\n\n\n 3  4  5 \n15 12  5 \n\n\n\ntable(mtcars$am, mtcars$gear)\n\n   \n     3  4  5\n  0 15  4  0\n  1  0  8  5"
+  },
+  {
+    "objectID": "content/lecture_files/lec2a-reproducibility/mtcars_demonstration.html#horsepower-vs.-mileage",
+    "href": "content/lecture_files/lec2a-reproducibility/mtcars_demonstration.html#horsepower-vs.-mileage",
+    "title": "MTCars Report",
+    "section": "Horsepower vs. Mileage",
+    "text": "Horsepower vs. Mileage\n\nplot(mtcars$mpg, mtcars$hp)"
   }
 ]
