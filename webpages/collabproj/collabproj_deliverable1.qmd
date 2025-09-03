@@ -187,7 +187,7 @@ Be sure to include at least the following two aspects of working together:
 
 **9 points**
 
-1.  Put the [`troubleshooting-1.Rmd` document](https://raw.githubusercontent.com/UBC-STAT/stat545.stat.ubc.ca/master/content/collaborative-project/milestone1/troubleshooting-1.Rmd) in your repository. (You can either download this file, or just copy and paste its contents into a new file that you call `troubleshooting-1.Rmd`.)
+1.  Put the [`troubleshooting-1.Rmd` document](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/collaborative-project/milestone1/troubleshooting-1.Rmd) in your repository. (You can either download this file, or just copy and paste its contents into a new file that you call `troubleshooting-1.Rmd`.)
 
 2.  Fix all three errors in the `troubleshooting-1.Rmd` document, as outlined in the document. (**2 points per error**)
 
