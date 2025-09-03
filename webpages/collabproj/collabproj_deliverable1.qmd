@@ -61,7 +61,7 @@ For both collaborative project milestones, you’ll be working with your teammat
 
 **15 points**
 
-*Read this exercise, but do it last*.
+*Read this exercise, but come back to do it later!*
 
 Between your `README.md` and `TEAMWORK.md` files, showcase at least five functionalities of GitHub-flavoured markdown (so, you don’t need to consider this exercise until you begin writing these files, as described in other exercises). The [markdown cheatsheet](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf) might help here, or, the *Help* menu in RStudio will bring up a Markdown Quick Reference at any time.
 
@@ -81,7 +81,7 @@ Between your `README.md` and `TEAMWORK.md` files, showcase at least five functio
 
 **30 points**
 
-*Read this exercise, but do it last*.
+*Read this exercise, but come back to do it later!*
 
 Every teammate should submit at least one pull request for this milestone, and have a **different** teammate merge the pull request after reviewing the contents of the pull request. So, like the previous exercise on Markdown Formatting, this exercise is not stand-alone. You’ll need to decide who will work on what (more on this when you make your teamwork document).
 
