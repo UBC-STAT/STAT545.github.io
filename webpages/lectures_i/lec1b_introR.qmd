@@ -254,19 +254,19 @@ I've highlighted some important pieces:
 
 **Console**
 
-● Useful for quick calculations you don’t want to save, debugging
+-   Useful for quick calculations you don’t want to save, debugging
 
 **Untitled1**
 
-● an R Script (currently unsaved/untitled)
+-   an R Script (currently unsaved/untitled)
 
-● Saves your code
+-   Saves your code
 
-● (P.S., You can create an R Script by going File \> New File \> R Script)
+-   (P.S., You can create an R Script by going File \> New File \> R Script)
 
 **Terminal**
 
-● Used for command line programming. We will use this later when connecting to GitHub (ignore for now but know it exists!)
+-   Used for command line programming. We will use this later when connecting to GitHub (ignore for now but know it exists!)
 
 **Environment**
 
