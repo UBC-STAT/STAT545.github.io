@@ -304,7 +304,7 @@
     "href": "webpages/collabproj/collabproj_deliverable2.html",
     "title": "Collaborative Project: Deliverable 2",
     "section": "",
-    "text": "Deliverable 2 will be posted on September 5th, 2025\n\n\nDue September 26th, 2025 at 11:59pm PT\nThere is ZERO tolerance for late project submissions. Please contact the instructor for extenuating circumstances.\n\n\n\n\n Back to top",
+    "text": "Due September 26th, 2025 at 11:59pm PT\nThere is ZERO tolerance for late project submissions. Please contact the instructor for extenuating circumstances.",
     "crumbs": [
       "Collaborative Project: Deliverable 2"
     ]
@@ -1636,5 +1636,55 @@
     "title": "STAT 545A Troubleshooting Exercise for Milestone 1",
     "section": "Attribution",
     "text": "Attribution\nThanks to Icíar Fernández Boyano for coming up with most of this worksheet."
+  },
+  {
+    "objectID": "webpages/collabproj/collabproj_deliverable2.html#exercise-0-merge-one-pull-request-per-teammate",
+    "href": "webpages/collabproj/collabproj_deliverable2.html#exercise-0-merge-one-pull-request-per-teammate",
+    "title": "Collaborative Project: Deliverable 2",
+    "section": "Exercise 0: Merge one Pull Request per teammate",
+    "text": "Exercise 0: Merge one Pull Request per teammate\n30 points\nRead this exercise, but do it last. This exercise is identical to the one in Milestone 1.\nEvery teammate should submit at least one pull request for this milestone, and have a different teammate merge the pull request after reviewing the contents of the pull request. So, like the previous exercise on Markdown Formatting, this exercise is not stand-alone. You’ll need to decide who will work on what (more on this when you make your teamwork document).\nAs a reminder, in order to make a pull request, you’ll need to:\n\nMake a new branch, before you start working on your tasks! (So that you capture your work within the branch.)\n\n\nYou can do this either on GitHub, or on your own computer using git.\n\n\nMake changes to some files on the new branch.\n\n\nYou can do this either on GitHub or on your own computer (locally), but if you do this locally, you’ll need to remember to push your work (on the branch) to GitHub.\n\n\nStart a pull request on GitHub, by going to “Pull Requests” -&gt; “New Pull Request”, and selecting the branch you intend to merge to the main branch. In your pull request, include a comment and title indicating (at a high level) what this change you made is about.\nAlso in the comments, include some indication as to which teammate will be responsible for checking and merging the new work contained in the pull request.\n\nPerhaps you’ve already decided up front who will be reviewing who’s work.\nOr perhaps (and more realistically), in your comment, you may ask the group at large who would like to volunteer, and then someone will respond.\nHow you work this out should go in your teamwork document (as described in another exercise).\n\nThe teammate responsible for reviewing and merging the pull request does so, being sure to add to the discussion happening in the pull request by adding a comment.\n\nThe comment could be as simple as something like “I’ve reviewed these changes, and everything looks great.” Or, it could highlight some issues that were found, in which case the team should work towards resolving the issue.\n\n\nHere are some ideas of things you can merge:\n\nYour initial draft of the README document or TEAMWORK document.\nYour changes to the troubleshooting exercise.\nModifications to any document.\n\nNote 1: Work together as a team to get this done. If one of your teammates is having trouble with this procedure, help them out! Sometimes a merge conflict will happen, and it’s best to work as a team to figure out how to resolve these issues.\nNote 2: Please indicate to the TAs which PRs you would like to be graded by adding “(GRADED)” to the PR name.\nGrading:\n\n4 points awarded for the creation of a complete set of pull requests (i.e., one pull request per teammate).\n14 points awarded for the successful merging of a complete set of pull requests.\n4 points awarded for the comment(s) kicking off the pull request.\n4 points awarded for the follow-up comment(s) from a reviewer.\n4 points awarded if each teammate gets the chance to act as a reviewer/merger of someone else’s pull request.\nPenalty of up to 4 points if the total amount of work contained in pull requests does not amount to much. We just want to make sure that, when you’re working on this project, you’re largely working on branches. It’s OK to commit directly to the main branch without a pull request, but this should be the exception, not the norm.\nPenalty of 1 point if you have not indicated to the TAs which PRs you would like to be graded by adding “(GRADED)” to the PR name.",
+    "crumbs": [
+      "Collaborative Project: Deliverable 2"
+    ]
+  },
+  {
+    "objectID": "webpages/collabproj/collabproj_deliverable2.html#exercise-1-troubleshooting-document",
+    "href": "webpages/collabproj/collabproj_deliverable2.html#exercise-1-troubleshooting-document",
+    "title": "Collaborative Project: Deliverable 2",
+    "section": "Exercise 1: Troubleshooting document",
+    "text": "Exercise 1: Troubleshooting document\n58 points\n\nPut the troubleshooting-2.Rmd document in your repository. (You can either download this file, or just copy and paste its contents into a new file that you call troubleshooting-2.Rmd.)\nFix all the errors in the troubleshooting-2.Rmd document, as outlined in the document. (55 points, errors are equally weighed)\nKnit the document to an md file (just click “knit” in RStudio). (3 points; only 1 point if the document is not up-to-date with its Rmd source.)",
+    "crumbs": [
+      "Collaborative Project: Deliverable 2"
+    ]
+  },
+  {
+    "objectID": "webpages/collabproj/collabproj_deliverable2.html#exercise-2-readme-file-and-tidy-submission",
+    "href": "webpages/collabproj/collabproj_deliverable2.html#exercise-2-readme-file-and-tidy-submission",
+    "title": "Collaborative Project: Deliverable 2",
+    "section": "Exercise 2: README file and tidy submission",
+    "text": "Exercise 2: README file and tidy submission\n10 points\n\nUpdate your README file to reflect any changes that have happened in your repository. This will probably only be a very small change, and that’s OK. (5 points for all changes reflected in the README; 4 points if at least one change is not reflected in the README; 0 points if there are changes and none of them are reflected in the README.)\nYour repository is clean and organized. For example, there aren’t any “old” files, and there are no relics (such as, if you once output to html, but no longer, then if present, that html file is an unnecessary relic). (5 points total: 1 point for general organization, 2 points for no relic files, 2 points for all output files being up to date.)",
+    "crumbs": [
+      "Collaborative Project: Deliverable 2"
+    ]
+  },
+  {
+    "objectID": "webpages/collabproj/collabproj_deliverable2.html#exercise-3-submitting-this-milestone",
+    "href": "webpages/collabproj/collabproj_deliverable2.html#exercise-3-submitting-this-milestone",
+    "title": "Collaborative Project: Deliverable 2",
+    "section": "Exercise 3: Submitting this Milestone",
+    "text": "Exercise 3: Submitting this Milestone\n2 points\nTo submit this Milestone, you’ll be tagging a release on your GitHub repository, and adding a link to the release on canvas.\nHow to tag a release:\n\nNavigate to the main page (root) of your collaborative GitHub repository.\nThere should be a small link on the right-hand-side of your page that says “Create a new release”. Click that.\n\n\nYou might also be able to get to the same place by clicking on the “tags” link beside where your branches are listed.\n\n\nFor the tag version, put m2.0 (for “milestone 2.0”).\nChoose a release title and description (this is less important).\nDo not check off “This is a pre-release”.\nClick “Publish Release”.\nPut a link to that release as a submission on the Collaborative Project Milestone 1\n\nYou won’t lose marks for not submitting your link to canvas, but it would really help us out if you do this! Thank you!\n\n\nIf you want to “re-tag” your release:\nIf you want to change your submission after tagging a release, you can still do this if it’s before the deadline. Just increase the secondary version number by one – so, make the tag version m2.1, then m2.2, etc.\nGrading: 2 points awarded for tagging a release.",
+    "crumbs": [
+      "Collaborative Project: Deliverable 2"
+    ]
+  },
+  {
+    "objectID": "webpages/collabproj/collabproj_deliverable2.html#exercise-3-submitting-this-deliverable",
+    "href": "webpages/collabproj/collabproj_deliverable2.html#exercise-3-submitting-this-deliverable",
+    "title": "Collaborative Project: Deliverable 2",
+    "section": "Exercise 3: Submitting this Deliverable",
+    "text": "Exercise 3: Submitting this Deliverable\n2 points\nTo submit this Deliverable, you’ll be tagging a release on your GitHub repository, and adding a link to the release on canvas.\nHow to tag a release:\n\nNavigate to the main page (root) of your collaborative GitHub repository.\nThere should be a small link on the right-hand-side of your page that says “Create a new release”. Click that.\n\n\nYou might also be able to get to the same place by clicking on the “tags” link beside where your branches are listed.\n\n\nFor the tag version, put m2.0 (for “milestone 2.0”).\nChoose a release title and description (this is less important).\nDo not check off “This is a pre-release”.\nClick “Publish Release”.\nPut a link to that release as a submission on the Collaborative Project Deliverable 2\n\nYou won’t lose marks for not submitting your link to canvas, but it would really help us out if you do this! Thank you!\n\n\nIf you want to “re-tag” your release:\nIf you want to change your submission after tagging a release, you can still do this if it’s before the deadline. Just increase the secondary version number by one – so, make the tag version m2.1, then m2.2, etc.\nGrading: 2 points awarded for tagging a release.",
+    "crumbs": [
+      "Collaborative Project: Deliverable 2"
+    ]
   }
 ]
