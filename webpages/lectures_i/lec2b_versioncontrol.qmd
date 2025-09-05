@@ -31,7 +31,7 @@ A *repository* stores files and the history of the files; the usual convention i
 
 **Example 1:** [Grace's GitHub page](https://github.com/grcetmpk)
 
-**Example 1**: [The STAT 545 webpage](https://github.com/UBC-STAT/STAT545.github.io)
+**Example 1**: [The STAT 545 GitHub page](https://github.com/UBC-STAT/STAT545.github.io)
 
 The first repository lives under Grace's personal Github account. The second repository lives under the [UBC-STAT](https://github.com/UBC-STAT) organization. Organizations are useful if you have lots of different projects with a common theme which lots of people are collaborating on.
 
@@ -45,11 +45,11 @@ We will spend some time exploring some GitHub basics, with some real examples of
 
 ### **Useful Github tips for the course**
 
--   All of your projects in this class will live in the [STAT 545 \@ UBC Organization](https://github.com/stat545ubc-2024).
+-   All of your projects in this class will live in the [STAT 545 \@ UBC Organization](https://github.com/stat545ubc-2025).
 
 -   When you watch a Github repo, you get notifications when things happen in them. So if you “Watch” the STAT 545 webpage repo, then you will get email notifications when I update the site!
 
--   The Issues page on a Github repo is a forum where Github users can bring up issues related to the repository. Our [commmunication guidelines](https://stat545.stat.ubc.ca/slack_communication) suggest that you post an Issue on your homework repo if you have concerns about your grade.
+
 
 
 ## Create Your Own Repository
@@ -71,7 +71,7 @@ Try making your own Github repository and editing it on Github! (This exercise i
 
     -   Your name
 
-    -   What kind of scientist do you tell people you are at dinner parties?
+    -   Your program and department at UBC
 
 6.  Commit your changes: click the commit changes button, and briefly summarize the changes you’ve made in the Commit message.
 
@@ -120,7 +120,7 @@ STAT 777 @ UBC
 >>>>>>> 526363991d21ed20e7e0c57b5e99d944ac5ce5aa
 ```
 
-3.  The stuff below the `<<<<<<<` and above the `=======` is what was in your local version; the stuff above the `>>>>>>>` and below the `=======` is what was in the remote conflicting version. Decide what you want to have on the offending line (e.g. “STAT 555 \@ UBC"), and replace the whole block of text above with that.
+3.  The stuff below the `<<<<<<<` and above the `=======` is what was in your local version; the stuff above the `>>>>>>>` and below the `=======` is what was in the remote conflicting version. Decide what you want to have on the offending line (e.g. “STAT 555 \@ UBC"), and replace the whole block of text above with that.
 
 4.  Save and commit the file. (An informative message here might be “Fixing a merge conflict.”) You should now be able to successfully push!
 
@@ -130,7 +130,7 @@ STAT 777 @ UBC
 
 Find a partner. In this exercise, we will learn how to have different team members save their work separately on *branches*, and how to *merge* those changes to the *main* project branch.
 
-1.  Teammate A adds Teammate B to their `stat545-demo` repository as a collaborator. (Go to Settings from the main repo page, then Access =\> Collaborators). This should send Teammate B an email with a collaboration invitation; accept that invitation.
+1.  Teammate A adds Teammate B to their `stat545-demo` repository as a collaborator. (Go to Settings from the main repo page, then Access > Collaborators). This should send Teammate B an email with a collaboration invitation; accept that invitation.
 
 2.  Teammate B clones Teammate A’s `stat545-demo` repository.
 

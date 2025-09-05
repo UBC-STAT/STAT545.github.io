@@ -22,6 +22,10 @@ From today’s class, students are anticipated to be able to:
 
 -   Render your finalized document to HTML & PDF.
 
+## Video Lecture
+
+-   [RMarkdown and Reproducibility](https://youtu.be/tS0nXW6Hfbk)
+
 ## Reproducibility
 
 *Reproducibility* is the ability of an independent researcher to repeat an experiment using the [same data and workflow]{.underline} to obtain the same results [@resnik2017reproducibility]. One way to ensure reproducible research is sharing clear details on the analysis and providing the code used to produce the results. Reproducibility is often confused with *replication*. However, replication is a separate concept where the results of a study should be validated on an independent study using new data. A "good" study is both replicable and reproducible.
@@ -62,17 +66,20 @@ After completing the tutorial, try making your own R Markdown document!
 
 ### Install RMarkdown
 
-1.  Open a new .Rmd file in RStudio ("File" \> "New File" \> "RMarkdown..."). Add "STAT545_Lecture_2" as your title and save the other default options.
+1.  To get started with using R Markdown, you’ll need to install the `rmarkdown` and `DT` R packages package.
 
-2.  To get started with using R Markdown, you’ll need to install the rmarkdown R package. You might automatically be prompted to do this; accept, if so. If not, you will have to manually install the package.
+    ``` R
+    install.packages('rmarkdown')
+    install.packages('DT')
+    ```
 
-    `install.packages('rmarkdown')`
+<!-- -->
 
-3.  After installation, install the DT package:
+3.  Create an R Markdown file by going to File \> New File \> R Markdown..
 
-    `install.packages('DT')`
+    -   Change the title to "STAT545 Lecture 2a" and save the defaults. Click OK.
 
-4.  Click “knit”.
+4.  Click the "Knit" button to generate the default document.
 
 **Things to notice:**
 
@@ -84,6 +91,17 @@ After completing the tutorial, try making your own R Markdown document!
 
 The key drivers under the hood are `knitr`and `Pandoc`! When you press “Knit”, R Markdown passes the .`Rmd`file to `knitr`, which executes all of the code and creates a new `.md` file including the code and output. Then, that `.md` file is processed into the final output format (e.g. `.html`) by pandoc.
 
+**What if I want a PDF?**
+
+You'll need to install LaTeX and set the document type as a PDF document. TinyTeX is recommended:
+
+``` R
+install.packages('tinytex')
+tinytex::install_tinytex()  # install TinyTeX
+```
+
+For this lecture, we will be knitting to HTML.
+
 ::: {.callout-warning appearance="minimal" icon="false"}
 ### Exercise: Edit Your YAML in Small Groups:
 
@@ -92,8 +110,6 @@ Run `?html_document` from your R console and/or check out [Yihui Xie’s RMarkdo
 -   Add a floating table of contents
 
 -   Add a theme.
-
-If this was easy, then try to figure out how to knit to a pdf document!
 :::
 
 ::: {.callout-tip appearance="minimal" icon="false"}

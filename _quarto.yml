@@ -53,7 +53,7 @@ website:
       contents: 
         - webpages/lectures_i/lec1a_installation.qmd
         - webpages/lectures_i/lec1b_introR.qmd
-        # - webpages/lectures_i/lec2A_reproducibility.qmd
+        - webpages/lectures_i/lec2A_reproducibility.qmd
         # - webpages/lectures_i/lec2b_versioncontrol.qmd
         # - webpages/lectures_i/lec3_dplyr.qmd
         # - webpages/lectures_i/lec4_datavis.qmd
