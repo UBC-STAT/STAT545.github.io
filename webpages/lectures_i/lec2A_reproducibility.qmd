@@ -1,5 +1,5 @@
 ---
-title: "Lecture 2A: Reproducibility"
+title: "Lecture 2A: Reproducibility with RMarkdown"
 subtitle: "September 9, 2025"
 date-modified: last-modified
 bibliography: ../bibliography.bib
@@ -68,7 +68,7 @@ After completing the tutorial, try making your own R Markdown document!
 
 1.  To get started with using R Markdown, you’ll need to install the `rmarkdown` and `DT` R packages package.
 
-    ``` R
+    ``` r
     install.packages('rmarkdown')
     install.packages('DT')
     ```
@@ -95,7 +95,7 @@ The key drivers under the hood are `knitr`and `Pandoc`! When you press “Knit�
 
 You'll need to install LaTeX and set the document type as a PDF document. TinyTeX is recommended:
 
-``` R
+``` r
 install.packages('tinytex')
 tinytex::install_tinytex()  # install TinyTeX
 ```

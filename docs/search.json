@@ -685,61 +685,61 @@
   {
     "objectID": "webpages/lectures_i/lec2A_reproducibility.html",
     "href": "webpages/lectures_i/lec2A_reproducibility.html",
-    "title": "Lecture 2A: Reproducibility",
+    "title": "Lecture 2A: Reproducibility with RMarkdown",
     "section": "",
     "text": "From today’s class, students are anticipated to be able to:\n\nUse basic markdown features.\nWrite documents in markdown.\nChoose whether html or pdf is an appropriate output.\nStyle an .Rmd document by editing the YAML header.\nCustomize code chunk output using Rmd code chunk.\nRender your finalized document to HTML & PDF.",
     "crumbs": [
-      "Lecture 2A: Reproducibility"
+      "Lecture 2A: Reproducibility with RMarkdown"
     ]
   },
   {
     "objectID": "webpages/lectures_i/lec2A_reproducibility.html#learning-objectives",
     "href": "webpages/lectures_i/lec2A_reproducibility.html#learning-objectives",
-    "title": "Lecture 2A: Reproducibility",
+    "title": "Lecture 2A: Reproducibility with RMarkdown",
     "section": "",
     "text": "From today’s class, students are anticipated to be able to:\n\nUse basic markdown features.\nWrite documents in markdown.\nChoose whether html or pdf is an appropriate output.\nStyle an .Rmd document by editing the YAML header.\nCustomize code chunk output using Rmd code chunk.\nRender your finalized document to HTML & PDF.",
     "crumbs": [
-      "Lecture 2A: Reproducibility"
+      "Lecture 2A: Reproducibility with RMarkdown"
     ]
   },
   {
     "objectID": "webpages/lectures_i/lec2A_reproducibility.html#video-lecture",
     "href": "webpages/lectures_i/lec2A_reproducibility.html#video-lecture",
-    "title": "Lecture 2A: Reproducibility",
+    "title": "Lecture 2A: Reproducibility with RMarkdown",
     "section": "Video Lecture",
     "text": "Video Lecture\n\nRMarkdown and Reproducibility",
     "crumbs": [
-      "Lecture 2A: Reproducibility"
+      "Lecture 2A: Reproducibility with RMarkdown"
     ]
   },
   {
     "objectID": "webpages/lectures_i/lec2A_reproducibility.html#reproducibility",
     "href": "webpages/lectures_i/lec2A_reproducibility.html#reproducibility",
-    "title": "Lecture 2A: Reproducibility",
+    "title": "Lecture 2A: Reproducibility with RMarkdown",
     "section": "Reproducibility",
     "text": "Reproducibility\nReproducibility is the ability of an independent researcher to repeat an experiment using the same data and workflow to obtain the same results [1]. One way to ensure reproducible research is sharing clear details on the analysis and providing the code used to produce the results. Reproducibility is often confused with replication. However, replication is a separate concept where the results of a study should be validated on an independent study using new data. A “good” study is both replicable and reproducible.\nThere are also ethical benefits to reproducible research [1]. Performing open research can reduce the chance of data fabrication or other ethical issues such as p-hacking, where a researcher tests a number of hypotheses until they find one that is statistically significant. Open, transparent research poses a sense of accountability on the researcher(s). Of course, you can’t always share data (for example, health data containing personal identifying information), but you should share as much as is possible. Always check with your ethics board or principal investigator before sharing data online.\nReproducible studies can also advance research by providing the code used for analysis. Not only can we reproduce the study to make the findings more trustworthy, but we can learn more about how the analysis was performed and possibly apply it to other studies.\nReproducible research can also force you to have better, more automated workflows. The first analysis I ever did in R, I was manually changing things in excel documents, and then saving them in a certain place, and then using R to fit a model, and then exporting the data, and then changing the worksheet format, and so on. I had a sticky note of instructions on how to produce the results on my desk. This was neither reproducible nor productive for my time. While automating some steps and using tools like GitHub for version control can be more work upfront, it can save you a lot of headaches down the road. It is something I personally wish I learned to use earlier in my career.",
     "crumbs": [
-      "Lecture 2A: Reproducibility"
+      "Lecture 2A: Reproducibility with RMarkdown"
     ]
   },
   {
     "objectID": "webpages/lectures_i/lec2A_reproducibility.html#r-markdown",
     "href": "webpages/lectures_i/lec2A_reproducibility.html#r-markdown",
-    "title": "Lecture 2A: Reproducibility",
+    "title": "Lecture 2A: Reproducibility with RMarkdown",
     "section": "R Markdown",
     "text": "R Markdown\nUsing an editor like MS Word is like painting: you decorate the page with text, graphs, and tables, making sure things are positioned, sized, and coloured appropriately.\nThis is great for a letter to a friend, but is less great for scientific work, because it hampers reproducibility and shareability.\nR Markdown lets you write a single “blueprint” for your analysis that includes everything - positioning/sizing/colouring/formatting, analysis/graph/table code and results, and text – and then “knit” all of those components together into a complete report with a single button press.\nThere is a large community of R Markdown users, making it easy to find tutorials and blog posts about a ton of different types of documents. We’re going to start simple and dive right into R Markdown.\n\nGetting Started with Markdown\nIn lecture, we are going to work through this online Markdown tutorial together in small groups. Challenge yourself to meet someone new in the class!\nAfter completing the tutorial, try making your own R Markdown document!\n\nIn RStudio, go to “File” -&gt; “New File” -&gt; “Markdown File”\nWrite a Markdown document all about you that includes:\n\nA header\nA link to your GitHub profile\nA list of courses you’re taking this semester\n\nClick the “Preview” button to generate an output .html file from the source .md file.\n\n\n\nInstall RMarkdown\n\nTo get started with using R Markdown, you’ll need to install the rmarkdown and DT R packages package.\ninstall.packages('rmarkdown')\ninstall.packages('DT')\n\n\n\nCreate an R Markdown file by going to File &gt; New File &gt; R Markdown..\n\nChange the title to “STAT545 Lecture 2a” and save the defaults. Click OK.\n\nClick the “Knit” button to generate the default document.\n\nThings to notice:\n\nThe YAML header is contained between two — at the top of the .Rmd source, and contains metadata on the document. This is where you specify the output type to be HTML.\nText is formatted using Markdown. There are three chunks of R code, and knitting executes the R code and displays the output in the output file.\n\nHow does it all work?\nThe key drivers under the hood are knitrand Pandoc! When you press “Knit”, R Markdown passes the .Rmdfile to knitr, which executes all of the code and creates a new .md file including the code and output. Then, that .md file is processed into the final output format (e.g. .html) by pandoc.\nWhat if I want a PDF?\nYou’ll need to install LaTeX and set the document type as a PDF document. TinyTeX is recommended:\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX\nFor this lecture, we will be knitting to HTML.\n\n\n\n\n\n\nExercise: Edit Your YAML in Small Groups:\n\n\n\nRun ?html_document from your R console and/or check out Yihui Xie’s RMarkdown book to:\n\nAdd a floating table of contents\nAdd a theme.\n\n\n\n\n\n\n\n\n\nInstructor demo: mtcars Report\n\n\n\nTo follow along, download the demonstration.Rmd file from the STAT545 GitHub and open it in RStudio.\n\n\n\nExploring Code Chunks\n\nAdd a code chunk below the first paragraph in the “Motor Trend Car Road Tests data” section of the .Rmd file. Either select “Code” -&gt; “Insert Chunk”, or use a keyboard shortcut: cmd + option + I(MAC) / ctrl + alt + i(WINDOWS).\nIn this code chunk, print out the mtcars data frame to explore the output. (Yes, this object comes shipped with R.)\nRun that chunk interactively using the green ‘play’ button.\nNow try out the DT::datatable() function on mtcars in this new chunk, and knit the file (to html, ideally).\nAdd an in-line code chunk specifying the number of rows of the mtcars dataset in place of the hardcoded number “32 automobiles”. Hint: nrow().\nFill in the document with markdown commentary for each of the code chunks! A few notes go a long way towards improving the readability of the report.\n\n\n\nCode Chunk Options\n\n\n\n\n\n\nTip\n\n\n\nGot lost in the demonstration? No problem, just open a new .Rmd file in RStudio via “File” -&gt; “New File” -&gt; “R Markdown…”, and just press “OK”, and resume!)\n\n\nJust like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the {r} at the top of a code chunk, separated by commas. For a list of chunk options, check out Yihui Xie’s knitr book. Let’s try some:\n\nHide the code from the output with echo = FALSE.\nChange the figure width and height with fig.width = 5 and fig.height = 3.\nKnit the results. Can you spot the differences?\n\n\n\n\n\n\n\nExercise 2\n\n\n\nIn the instructor demo, we prettied up a nice report about mtcars together. But suddenly, you receive an email from your collaborator who collected the mtcars data, who says that the data on Mazda RX4, the Valiant, and the Volvo 142E were transcribed wrong from the magazine! They’re going to work on correcting them, but in the mean time, they’d like to re-run the analysis with those three cars excluded.\nIn small groups, prepare an updated report by updating your .Rmd appropriately, then re-knitting it. Then discuss: in this case, how did using the RMarkdown workflow rather than copying and pasting R output to MS Word help prevent the creation of non-reproducible results?",
     "crumbs": [
-      "Lecture 2A: Reproducibility"
+      "Lecture 2A: Reproducibility with RMarkdown"
     ]
   },
   {
     "objectID": "webpages/lectures_i/lec2A_reproducibility.html#resources",
     "href": "webpages/lectures_i/lec2A_reproducibility.html#resources",
-    "title": "Lecture 2A: Reproducibility",
+    "title": "Lecture 2A: Reproducibility with RMarkdown",
     "section": "Resources",
     "text": "Resources\nHere are a number of resources that may help supplement you with today’s lesson:\n\nSTAT 545 Episode 3-A: Reproducible Reports with R Markdown Some additional resources that you might find useful:\nThe Official R Markdown Tutorial from the “Introduction” up to and including the “Inline Code” section.\nR Markdown cheat sheet\n\n\n\n\n\n\n\nTip\n\n\n\nMany cheat sheets can be found from RStudio: go to “Help” -&gt; “Cheatsheets”.\n\n\n\nAttribution\nDemonstration by Icíar Fernández Boyano. Inspiration for activity ideas drawn from Nicholas Tierney’s R Markdown for Scientists book, the R Markdown for Medicine workshop materials, and the UBC MDS program.",
     "crumbs": [
-      "Lecture 2A: Reproducibility"
+      "Lecture 2A: Reproducibility with RMarkdown"
     ]
   },
   {
