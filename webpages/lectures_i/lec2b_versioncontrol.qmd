@@ -8,20 +8,64 @@ date-modified: last-modified
 
 From today’s topic, students are anticipated to be able to:
 
--   use git on their own computer (locally).
+-   create an R Project,
 
--   connect between a local git repository and that repository on GitHub, using RStudio.
+-   use git on their own computer (locally),
 
--   make commits in git using RStudio.
+-   connect between a local git repository and that repository on GitHub, using RStudio,
 
--   make a branch in git using RStudio or GitHub.
+-   make commits in git using RStudio,
+
+-   make a branch in git using RStudio or GitHub, and
 
 -   use collaborative GitHub features such as Issues and pull requests.
 
 After this class, you should be able to start working on your Collaborative Project.
 
 
-## Get Acquainted with GitHub
+## R Projects
+
+While Git and GitHub can be useful for more than just R, we will demonstrate how Git and GitHub can be used within an R Project.
+
+R Projects are useful for organizing files and resources specific to a project in a self-contained directory. R Projects allow for more reproducible workflows, and allow users to resume exactly where they left off within a project by keeping variables in the environment even after the session has closed. It also allows us to integrate version control with Git. 
+
+**To create an R Project**:
+
+1. Open RStudio.
+
+2. Go to "File" > "New R Project...". 
+
+3. Select "New Directory", "New Project", and enter a name for your project. For our example, I'll be creating "STAT545_Example_Project". Select "Browse" and find a location where you'd like to save your project (a new folder the same name as your project will be created). I chose the Desktop as an example. Ensure "Create a Git Repository" is selected. Click "Create Project".
+
+![](images/NewRProject.png){width=400 fig-align="center"}
+
+RStudio will refresh. You will now see at the top of RStudio that the name of your project is displayed. 
+
+
+
+**To add a new R Script to your R Project**, go to "File" > "New File" > "R Script". Write your code. "File" > "Save as" and name your file and ensure it's saved in your project folder. Let's add one called `analysis.R` with some simple code: 
+
+```
+# view the first few rows of mtcars dataset
+head(mtcars)
+
+# calculate the average mpg among all cars, save it as a variable
+mean_mpg <- mean(mtcars$mpg)
+
+# print the mean mpg
+mean_mpg
+```
+
+After running this code, you'll notice `mean_mpg` is in your environment. The cool thing about R Projects is that the next time you open your project, you'll continue exactly where you're left off! All variables you created will have been saved, as if you never closed R Studio. 
+
+
+You can add multiple files to projects, and save things like images/pdfs of plots, multiple R Scripts (code), and data sets. Really, anything that you can save in the R Project folder will be contained in the R Project.
+
+
+
+## Get Acquainted with Git and GitHub
+
+"Git" is a version control system designed to track changes. This is what GitHub uses! Git essentially creates "snapshots" of your work as you progress through a project. 
 
 ### **Repositories, Organizations, and Personal Accounts**
 
@@ -36,11 +80,130 @@ A *repository* stores files and the history of the files; the usual convention i
 The first repository lives under Grace's personal Github account. The second repository lives under the [UBC-STAT](https://github.com/UBC-STAT) organization. Organizations are useful if you have lots of different projects with a common theme which lots of people are collaborating on.
 
 
-::: {.callout-tip icon="false" appearance="minimal"}
-### Instructor Demo: GitHub
 
-We will spend some time exploring some GitHub basics, with some real examples of repositories.
-:::
+
+## Create a GitHub Repository for your R Project
+
+Syncing your R Project to GitHub is a smart idea! You can work on the project on multiple machines, back up your work, see previous versions of your work, and collaborate easily with others. 
+
+In this lecture, we will assume an R Project already exists and we want to create a new GitHub repository for it. Previously, we created an R Project "STAT545_Example_Project" with the R Script `analysis.R`. Let's sync this project to GitHub!
+
+1. In the R Console, load in the `usethis` package by calling `library(usethis)`
+
+2. In the R Console, call `use_git()`. When asked if it's okay to commit some changes, select an option that means yes (it could be "OK" or "For sure" or "Yes", for example) by writing the number in the console and hitting Enter. If it prompts you to restart RStudio, you can do so. 
+
+3. If you restarted RStudio, call `library(usethis)` again. Then, in the Console call `use_github()`. A new repository on your GitHub account should be created! You should see your code `analysis.R` as one of the items in your repository. 
+
+*If you have issues, see the last section of [Lecture 1A: Installation](lec1a_installation.qmd) to set up your GitHub credentials on RStudio.*
+
+
+
+
+## Syncing Your R Project with GitHub
+
+You've created a repository for your R Project - but what happens when we edit our project on our computer? Well, we need to send those changes to our GitHub repository (it's not automatic). To do so, we need to learn about Git a little bit more. 
+
+
+### Git States and Lingo
+
+To use Git, we should first understand the primary states that files can be in. These are:
+
+* **Modified**: you've changed something in the files, but Git hasn't accounted for them yet.
+* **Staged**: Git has tracked the changes you've made, but they haven't been accounted for in the latest snapshot of your work. 
+* **Committed**: the changes you've made have been stored and updated as the latest snapshot of your project. 
+
+After changes are committed locally (on your computer), we can **push** them to a GitHub repository. This sends the changes and updates the most recent version of your project on GitHub. We can also **pull** changes from GitHub to your local machine. This is useful when multiple people (or perhaps one person on multiple devices) are working on a project. 
+
+Other useful Git features include:
+
+* **Cloning a repository**: copying an existing GitHub repository to your local machine. You can push and pull changes after cloning.
+* **Using Branches**: creating a separate line of development within your repository, allowing for isolated work on new features. This is a safe way to ensure you aren't overwriting the main repository branch. Branches can be merged together later in development
+* **Pull Requests**: Git's way of proposing changes to the repository's main branch. 
+
+
+
+
+## Pushing Changes to GitHub
+
+Let's make some changes to our STAT545_Example_Project! Adding a README file could be a nice addition. Whatever is written in this file will appear on the home page of our repository and can provide useful information about our repository. 
+
+Let's create an Markdown (**NOT RMARKDOWN**!) document called "README.md" ("File" > "New File" > "Markdown File"). Set the title to "README". 
+
+Let's add the following to the file:
+
+```
+## STAT545 Example Project
+
+This is my first R Project, synced to GitHub! It follows the lecture notes at <https://ubc-stat.github.io/STAT545.github.io/webpages/lectures_i/lec2b_versioncontrol.html>
+
+```
+
+Save this file as "README.md".
+
+Let's also change something in our `analysis.R` file. Let's add the following to our file:
+
+```
+# plot wt vs mpg
+plot(mtcars$wt, mtcars$mpg)
+```
+
+Save the changes. 
+
+### From RStudio's "Git" Tab
+
+When you navigate to the "Git" tab in RStudio, you will see that `README.Rmd` and `analysis.R` are listed. This is because these files have changes! `README.Rmd` was added, and `analysis.R` was modified. 
+
+
+![](images/gitpane.png){width=400 fig-align="center"}
+
+We need to stage the files, commit the changes, and then push the changes to the remote GitHub version.  
+
+1. **Stage Files**: Select the files you want to stage by selecting them. You will see symbols beside them - "A" stands for "Added" and "M" stands for "modified". If you were to delete a file, you would see a red "D". 
+
+![](images/staging.png){width=400 fig-align="center"}
+
+
+2. **Commit Changes**: Click the Commit button. In the pop-up, you can scan through and see the changes (additions, deletions, modifications) for each file that has been staged in Step 1. Add a message explaining the changes, and click Commit. You will get a message that says 2 files have changed. Close this. 
+
+![](images/commit.png){width=400 fig-align="center"}
+
+3. **Push**: You now have nothing to commit, as all changes have been tracked. You will see an information message saying "Your branch is ahead of "origin/main" by 1 commit. Time to Push! Click the Push button. If successful, the following message will appear:
+```
+>>> /usr/bin/git push origin HEAD:refs/heads/main
+To https://github.com/<yourGitHubusername/STAT545_Example_Project.git
+   37b4ec8..7b32df4  HEAD -> main
+```
+Close this pop-up, and the "GitHub interface. "Review Changes" pop-up.
+
+
+Now, when you go to your GitHub account, you should see some changes to your STAT545_Example_Project repository! You can see when the changes were pushed, and now a README appears below the files!
+
+![](images/repowithchanges.png){width=400 fig-align="center"}
+
+We can also Pull from the repository using the "Pull" button on the Git pane. 
+
+
+### From RStudio's Terminal
+
+Instead of using the Git pane, we can write out commands for Git in the Terminal.
+
+
+1. **Stage Changes**: `git add . ` stages **all** of your modified files (can also just name the files you want to commit instead of using `.`)
+
+2. **Commit Changes**: `git commit -m "some message"` commits your changes, along with a message summarizing the changes
+
+3. **Push Changes**: `git push origin main` pushes your changes to the GitHub repo (main branch, which is typically the default)
+
+
+Other useful Terminal commands include:
+
+* `git status`: see which of your changes have been tracked, staged, and committed
+* `git checkout`: see what branch you're on, or change branches
+* `git pull`: pull changes from the remote repository (GitHub)
+
+
+
+
 
 
 ### **Useful Github tips for the course**
@@ -59,7 +222,7 @@ We will spend some time exploring some GitHub basics, with some real examples of
 
 Try making your own Github repository and editing it on Github! (This exercise is slightly adapted from [Data Carpentries](https://datacarpentry.org/rr-version-control/02-git-in-github/index.html).)
 
-1.  Go to your GitHub profile. Eg. Mine is <https://github.com/katieburak>.
+1.  Go to your GitHub profile. Eg. Mine is <https://github.com/grcetmpk>.
 
 2.  Create a new GitHub repository by clicking the `+` symbol in the top bar and using the dropdown menu to create a new repository.
 

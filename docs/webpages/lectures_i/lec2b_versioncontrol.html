@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_i/lec2A_reproducibility.html">
- <span class="dropdown-text">Lecture 2A: Reproducibility</span></a>
+ <span class="dropdown-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
   </li>  
     </ul>
   </li>
@@ -222,9 +222,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#get-acquainted-with-github" id="toc-get-acquainted-with-github" class="nav-link" data-scroll-target="#get-acquainted-with-github">Get Acquainted with GitHub</a>
+  <li><a href="#r-projects" id="toc-r-projects" class="nav-link" data-scroll-target="#r-projects">R Projects</a></li>
+  <li><a href="#get-acquainted-with-git-and-github" id="toc-get-acquainted-with-git-and-github" class="nav-link" data-scroll-target="#get-acquainted-with-git-and-github">Get Acquainted with Git and GitHub</a>
   <ul class="collapse">
   <li><a href="#repositories-organizations-and-personal-accounts" id="toc-repositories-organizations-and-personal-accounts" class="nav-link" data-scroll-target="#repositories-organizations-and-personal-accounts"><strong>Repositories, Organizations, and Personal Accounts</strong></a></li>
+  </ul></li>
+  <li><a href="#create-a-github-repository-for-your-r-project" id="toc-create-a-github-repository-for-your-r-project" class="nav-link" data-scroll-target="#create-a-github-repository-for-your-r-project">Create a GitHub Repository for your R Project</a></li>
+  <li><a href="#syncing-your-r-project-with-github" id="toc-syncing-your-r-project-with-github" class="nav-link" data-scroll-target="#syncing-your-r-project-with-github">Syncing Your R Project with GitHub</a>
+  <ul class="collapse">
+  <li><a href="#git-states-and-lingo" id="toc-git-states-and-lingo" class="nav-link" data-scroll-target="#git-states-and-lingo">Git States and Lingo</a></li>
+  </ul></li>
+  <li><a href="#pushing-changes-to-github" id="toc-pushing-changes-to-github" class="nav-link" data-scroll-target="#pushing-changes-to-github">Pushing Changes to GitHub</a>
+  <ul class="collapse">
+  <li><a href="#from-rstudios-git-tab" id="toc-from-rstudios-git-tab" class="nav-link" data-scroll-target="#from-rstudios-git-tab">From RStudio’s “Git” Tab</a></li>
+  <li><a href="#from-rstudios-terminal" id="toc-from-rstudios-terminal" class="nav-link" data-scroll-target="#from-rstudios-terminal">From RStudio’s Terminal</a></li>
   <li><a href="#useful-github-tips-for-the-course" id="toc-useful-github-tips-for-the-course" class="nav-link" data-scroll-target="#useful-github-tips-for-the-course"><strong>Useful Github tips for the course</strong></a></li>
   </ul></li>
   <li><a href="#create-your-own-repository" id="toc-create-your-own-repository" class="nav-link" data-scroll-target="#create-your-own-repository">Create Your Own Repository</a></li>
@@ -251,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 5, 2025</p>
+      <p class="date-modified">September 7, 2025</p>
     </div>
   </div>
     
@@ -266,16 +277,46 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <p>From today’s topic, students are anticipated to be able to:</p>
 <ul>
-<li><p>use git on their own computer (locally).</p></li>
-<li><p>connect between a local git repository and that repository on GitHub, using RStudio.</p></li>
-<li><p>make commits in git using RStudio.</p></li>
-<li><p>make a branch in git using RStudio or GitHub.</p></li>
+<li><p>create an R Project,</p></li>
+<li><p>use git on their own computer (locally),</p></li>
+<li><p>connect between a local git repository and that repository on GitHub, using RStudio,</p></li>
+<li><p>make commits in git using RStudio,</p></li>
+<li><p>make a branch in git using RStudio or GitHub, and</p></li>
 <li><p>use collaborative GitHub features such as Issues and pull requests.</p></li>
 </ul>
 <p>After this class, you should be able to start working on your Collaborative Project.</p>
 </section>
-<section id="get-acquainted-with-github" class="level2">
-<h2 class="anchored" data-anchor-id="get-acquainted-with-github">Get Acquainted with GitHub</h2>
+<section id="r-projects" class="level2">
+<h2 class="anchored" data-anchor-id="r-projects">R Projects</h2>
+<p>While Git and GitHub can be useful for more than just R, we will demonstrate how Git and GitHub can be used within an R Project.</p>
+<p>R Projects are useful for organizing files and resources specific to a project in a self-contained directory. R Projects allow for more reproducible workflows, and allow users to resume exactly where they left off within a project by keeping variables in the environment even after the session has closed. It also allows us to integrate version control with Git.</p>
+<p><strong>To create an R Project</strong>:</p>
+<ol type="1">
+<li><p>Open RStudio.</p></li>
+<li><p>Go to “File” &gt; “New R Project…”.</p></li>
+<li><p>Select “New Directory”, “New Project”, and enter a name for your project. For our example, I’ll be creating “STAT545_Example_Project”. Select “Browse” and find a location where you’d like to save your project (a new folder the same name as your project will be created). I chose the Desktop as an example. Ensure “Create a Git Repository” is selected. Click “Create Project”.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/NewRProject.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+<p>RStudio will refresh. You will now see at the top of RStudio that the name of your project is displayed.</p>
+<p><strong>To add a new R Script to your R Project</strong>, go to “File” &gt; “New File” &gt; “R Script”. Write your code. “File” &gt; “Save as” and name your file and ensure it’s saved in your project folder. Let’s add one called <code>analysis.R</code> with some simple code:</p>
+<pre><code># view the first few rows of mtcars dataset
+head(mtcars)
+
+# calculate the average mpg among all cars, save it as a variable
+mean_mpg &lt;- mean(mtcars$mpg)
+
+# print the mean mpg
+mean_mpg</code></pre>
+<p>After running this code, you’ll notice <code>mean_mpg</code> is in your environment. The cool thing about R Projects is that the next time you open your project, you’ll continue exactly where you’re left off! All variables you created will have been saved, as if you never closed R Studio.</p>
+<p>You can add multiple files to projects, and save things like images/pdfs of plots, multiple R Scripts (code), and data sets. Really, anything that you can save in the R Project folder will be contained in the R Project.</p>
+</section>
+<section id="get-acquainted-with-git-and-github" class="level2">
+<h2 class="anchored" data-anchor-id="get-acquainted-with-git-and-github">Get Acquainted with Git and GitHub</h2>
+<p>“Git” is a version control system designed to track changes. This is what GitHub uses! Git essentially creates “snapshots” of your work as you progress through a project.</p>
 <section id="repositories-organizations-and-personal-accounts" class="level3">
 <h3 class="anchored" data-anchor-id="repositories-organizations-and-personal-accounts"><strong>Repositories, Organizations, and Personal Accounts</strong></h3>
 <p>A <em>repository</em> stores files and the history of the files; the usual convention is to use a single repository to organize a single project.</p>
@@ -283,19 +324,95 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Example 1:</strong> <a href="https://github.com/grcetmpk">Grace’s GitHub page</a></p>
 <p><strong>Example 1</strong>: <a href="https://github.com/UBC-STAT/STAT545.github.io">The STAT 545 GitHub page</a></p>
 <p>The first repository lives under Grace’s personal Github account. The second repository lives under the <a href="https://github.com/UBC-STAT">UBC-STAT</a> organization. Organizations are useful if you have lots of different projects with a common theme which lots of people are collaborating on.</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+</section>
+</section>
+<section id="create-a-github-repository-for-your-r-project" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-github-repository-for-your-r-project">Create a GitHub Repository for your R Project</h2>
+<p>Syncing your R Project to GitHub is a smart idea! You can work on the project on multiple machines, back up your work, see previous versions of your work, and collaborate easily with others.</p>
+<p>In this lecture, we will assume an R Project already exists and we want to create a new GitHub repository for it. Previously, we created an R Project “STAT545_Example_Project” with the R Script <code>analysis.R</code>. Let’s sync this project to GitHub!</p>
+<ol type="1">
+<li><p>In the R Console, load in the <code>usethis</code> package by calling <code>library(usethis)</code></p></li>
+<li><p>In the R Console, call <code>use_git()</code>. When asked if it’s okay to commit some changes, select an option that means yes (it could be “OK” or “For sure” or “Yes”, for example) by writing the number in the console and hitting Enter. If it prompts you to restart RStudio, you can do so.</p></li>
+<li><p>If you restarted RStudio, call <code>library(usethis)</code> again. Then, in the Console call <code>use_github()</code>. A new repository on your GitHub account should be created! You should see your code <code>analysis.R</code> as one of the items in your repository.</p></li>
+</ol>
+<p><em>If you have issues, see the last section of <a href="../../webpages/lectures_i/lec1a_installation.html">Lecture 1A: Installation</a> to set up your GitHub credentials on RStudio.</em></p>
+</section>
+<section id="syncing-your-r-project-with-github" class="level2">
+<h2 class="anchored" data-anchor-id="syncing-your-r-project-with-github">Syncing Your R Project with GitHub</h2>
+<p>You’ve created a repository for your R Project - but what happens when we edit our project on our computer? Well, we need to send those changes to our GitHub repository (it’s not automatic). To do so, we need to learn about Git a little bit more.</p>
+<section id="git-states-and-lingo" class="level3">
+<h3 class="anchored" data-anchor-id="git-states-and-lingo">Git States and Lingo</h3>
+<p>To use Git, we should first understand the primary states that files can be in. These are:</p>
+<ul>
+<li><strong>Modified</strong>: you’ve changed something in the files, but Git hasn’t accounted for them yet.</li>
+<li><strong>Staged</strong>: Git has tracked the changes you’ve made, but they haven’t been accounted for in the latest snapshot of your work.</li>
+<li><strong>Committed</strong>: the changes you’ve made have been stored and updated as the latest snapshot of your project.</li>
+</ul>
+<p>After changes are committed locally (on your computer), we can <strong>push</strong> them to a GitHub repository. This sends the changes and updates the most recent version of your project on GitHub. We can also <strong>pull</strong> changes from GitHub to your local machine. This is useful when multiple people (or perhaps one person on multiple devices) are working on a project.</p>
+<p>Other useful Git features include:</p>
+<ul>
+<li><strong>Cloning a repository</strong>: copying an existing GitHub repository to your local machine. You can push and pull changes after cloning.</li>
+<li><strong>Using Branches</strong>: creating a separate line of development within your repository, allowing for isolated work on new features. This is a safe way to ensure you aren’t overwriting the main repository branch. Branches can be merged together later in development</li>
+<li><strong>Pull Requests</strong>: Git’s way of proposing changes to the repository’s main branch.</li>
+</ul>
+</section>
+</section>
+<section id="pushing-changes-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="pushing-changes-to-github">Pushing Changes to GitHub</h2>
+<p>Let’s make some changes to our STAT545_Example_Project! Adding a README file could be a nice addition. Whatever is written in this file will appear on the home page of our repository and can provide useful information about our repository.</p>
+<p>Let’s create an Markdown (<strong>NOT RMARKDOWN</strong>!) document called “README.md” (“File” &gt; “New File” &gt; “Markdown File”). Set the title to “README”.</p>
+<p>Let’s add the following to the file:</p>
+<pre><code>## STAT545 Example Project
+
+This is my first R Project, synced to GitHub! It follows the lecture notes at &lt;https://ubc-stat.github.io/STAT545.github.io/webpages/lectures_i/lec2b_versioncontrol.html&gt;
+</code></pre>
+<p>Save this file as “README.md”.</p>
+<p>Let’s also change something in our <code>analysis.R</code> file. Let’s add the following to our file:</p>
+<pre><code># plot wt vs mpg
+plot(mtcars$wt, mtcars$mpg)</code></pre>
+<p>Save the changes.</p>
+<section id="from-rstudios-git-tab" class="level3">
+<h3 class="anchored" data-anchor-id="from-rstudios-git-tab">From RStudio’s “Git” Tab</h3>
+<p>When you navigate to the “Git” tab in RStudio, you will see that <code>README.Rmd</code> and <code>analysis.R</code> are listed. This is because these files have changes! <code>README.Rmd</code> was added, and <code>analysis.R</code> was modified.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gitpane.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-Instructor Demo: GitHub
+<p>We need to stage the files, commit the changes, and then push the changes to the remote GitHub version.</p>
+<ol type="1">
+<li><strong>Stage Files</strong>: Select the files you want to stage by selecting them. You will see symbols beside them - “A” stands for “Added” and “M” stands for “modified”. If you were to delete a file, you would see a red “D”.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/staging.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
 </div>
+<ol start="2" type="1">
+<li><strong>Commit Changes</strong>: Click the Commit button. In the pop-up, you can scan through and see the changes (additions, deletions, modifications) for each file that has been staged in Step 1. Add a message explaining the changes, and click Commit. You will get a message that says 2 files have changed. Close this.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/commit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
 </div>
-<div class="callout-body-container callout-body">
-<p>We will spend some time exploring some GitHub basics, with some real examples of repositories.</p>
-</div>
-</div>
+<ol start="3" type="1">
+<li><strong>Push</strong>: You now have nothing to commit, as all changes have been tracked. You will see an information message saying “Your branch is ahead of”origin/main” by 1 commit. Time to Push! Click the Push button. If successful, the following message will appear:</li>
+</ol>
+<pre><code>&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main
+To https://github.com/&lt;yourGitHubusername/STAT545_Example_Project.git
+   37b4ec8..7b32df4  HEAD -&gt; main</code></pre>
+<p>Close this pop-up, and the “GitHub interface.”Review Changes” pop-up.</p>
+<p>Now, when you go to GitHub,</p>
+</section>
+<section id="from-rstudios-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="from-rstudios-terminal">From RStudio’s Terminal</h3>
+<p>For those working on a project only from one local machine, a typical workflow for using Git and GitHub is to make changes locally (in RStudio, perhaps) and then perform the following in RStudio’s Terminal: 1. <code>git add .</code>: stage <strong>all</strong> of your modified files (can also just name the files you want to commit instead of using <code>.</code>)</p>
+<ol start="2" type="1">
+<li><p><code>git commit -m "some message"</code>: commit your changes, along with a message summarizing the changes</p></li>
+<li><p><code>git push origin main</code>: push your changes to the GitHub repo (main branch, which is typically the defaul)</p></li>
+</ol>
+<p>If you prefer, we can also use the “Git” tab in RStudio or GitHub Desktop to do these steps! I will show you three ways to do this workflow in this YouTube video and the Instructor Demo in class.</p>
 </section>
 <section id="useful-github-tips-for-the-course" class="level3">
 <h3 class="anchored" data-anchor-id="useful-github-tips-for-the-course"><strong>Useful Github tips for the course</strong></h3>
@@ -319,7 +436,7 @@ Exercise
 <div class="callout-body-container callout-body">
 <p>Try making your own Github repository and editing it on Github! (This exercise is slightly adapted from <a href="https://datacarpentry.org/rr-version-control/02-git-in-github/index.html">Data Carpentries</a>.)</p>
 <ol type="1">
-<li><p>Go to your GitHub profile. Eg. Mine is <a href="https://github.com/katieburak" class="uri">https://github.com/katieburak</a>.</p></li>
+<li><p>Go to your GitHub profile. Eg. Mine is <a href="https://github.com/grcetmpk" class="uri">https://github.com/grcetmpk</a>.</p></li>
 <li><p>Create a new GitHub repository by clicking the <code>+</code> symbol in the top bar and using the dropdown menu to create a new repository.</p></li>
 <li><p>Name your repository <code>stat-545-demo-YOUR-NAME</code>. In the description write “STAT 545 Demo”. Check the box for initializing the repository for adding a README file.</p></li>
 <li><p>You are now redirected to the repository main page. The repository page tells you you have 1 commit. Click on it to get to the history page. This tells you all the changes that have been tracked for the files in the repository so far.</p></li>
