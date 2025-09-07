@@ -23,6 +23,76 @@ From today’s topic, students are anticipated to be able to:
 After this class, you should be able to start working on your Collaborative Project.
 
 
+
+## Get Acquainted with Git and GitHub
+
+"Git" is a version control system designed to track changes. This is what GitHub uses! Git essentially creates "snapshots" of your work as you progress through a project. 
+
+
+
+
+
+### **Repositories, Organizations, and Personal Accounts**
+
+A *repository* stores files and the history of the files; the usual convention is to use a single repository to organize a single project.
+
+**GitHub** is a place where repositories can live online. Being online provides us a way to share and collaborate on projects. It also serves as a backup for your project.
+
+**Example 1:** [Grace's GitHub page](https://github.com/grcetmpk)
+
+**Example 1**: [The STAT 545 GitHub page](https://github.com/UBC-STAT/STAT545.github.io)
+
+The first repository lives under Grace's personal Github account. The second repository lives under the [UBC-STAT](https://github.com/UBC-STAT) organization. Organizations are useful if you have lots of different projects with a common theme which lots of people are collaborating on.
+
+
+
+### Git States and Lingo
+
+To use Git, we should first understand the primary states that files can be in. These are:
+
+* **Modified**: you've changed something in the files, but Git hasn't accounted for them yet.
+* **Staged**: Git has tracked the changes you've made, but they haven't been accounted for in the latest snapshot of your work. 
+* **Committed**: the changes you've made have been stored and updated as the latest snapshot of your project. 
+
+After changes are committed locally (on your computer), we can **push** them to a GitHub repository. This sends the changes and updates the most recent version of your project on GitHub. We can also **pull** changes from GitHub to your local machine. This is useful when multiple people (or perhaps one person on multiple devices) are working on a project. 
+
+Other useful Git features include:
+
+* **Cloning a repository**: copying an existing GitHub repository to your local machine. You can push and pull changes after cloning.
+* **Using Branches**: creating a separate line of development within your repository, allowing for isolated work on new features. This is a safe way to ensure you aren't overwriting the main repository branch. Branches can be merged together later in development
+* **Pull Requests**: Git's way of proposing changes to the repository's main branch. 
+
+
+
+
+::: {.callout-warning appearance="minimal" icon="false"}
+### Exercise 1 
+
+Go to your GitHub profile (mine is https://github.com/grcetmpk)
+
+Create a new GitHub repository by clicking the + symbol in the top bar and using the dropdown menu to create a new repository.
+
+Name your repository stat-545-demo-YOUR-NAME. In the description write “STAT 545 Demo”. Check the box for adding a README file.
+
+You are now redirected to the repository main page. The repository page tells you you have 1 commit. Click on it to get to the history page. This tells you all the changes that have been tracked for the files in the repository so far.
+
+Go back to your repository main page. Click on README.md, then click the pencil icon (“Edit this file”_. Add the following information into the README.md file:
+
+* Your Name
+
+* Your Program
+
+
+Commit your changes: click the commit changes button, and briefly summarize the changes you’ve made in the Commit message.
+
+Check out the Github commit history again. Has anything changed?
+
+:::
+
+
+
+
+
 ## R Projects
 
 While Git and GitHub can be useful for more than just R, we will demonstrate how Git and GitHub can be used within an R Project.
@@ -62,27 +132,7 @@ After running this code, you'll notice `mean_mpg` is in your environment. The co
 You can add multiple files to projects, and save things like images/pdfs of plots, multiple R Scripts (code), and data sets. Really, anything that you can save in the R Project folder will be contained in the R Project.
 
 
-
-## Get Acquainted with Git and GitHub
-
-"Git" is a version control system designed to track changes. This is what GitHub uses! Git essentially creates "snapshots" of your work as you progress through a project. 
-
-### **Repositories, Organizations, and Personal Accounts**
-
-A *repository* stores files and the history of the files; the usual convention is to use a single repository to organize a single project.
-
-**GitHub** is a place where repositories can live online. Being online provides us a way to share and collaborate on projects. It also serves as a backup for your project.
-
-**Example 1:** [Grace's GitHub page](https://github.com/grcetmpk)
-
-**Example 1**: [The STAT 545 GitHub page](https://github.com/UBC-STAT/STAT545.github.io)
-
-The first repository lives under Grace's personal Github account. The second repository lives under the [UBC-STAT](https://github.com/UBC-STAT) organization. Organizations are useful if you have lots of different projects with a common theme which lots of people are collaborating on.
-
-
-
-
-## Create a GitHub Repository for your R Project
+## Create a GitHub Repository for your Existing (Local) R Project 
 
 Syncing your R Project to GitHub is a smart idea! You can work on the project on multiple machines, back up your work, see previous versions of your work, and collaborate easily with others. 
 
@@ -97,33 +147,30 @@ In this lecture, we will assume an R Project already exists and we want to creat
 *If you have issues, see the last section of [Lecture 1A: Installation](lec1a_installation.qmd) to set up your GitHub credentials on RStudio.*
 
 
+## Clone a GitHub Repository (GitHub Repository Exists Remotely)
 
+What if you want to use an existing R Project that is on GitHub in a repository? We can clone it!
+
+1. In RStudio, go to “File > New Project”
+
+2. Click on “Version Control: Checkout a project from a version control repository”
+
+3. Click on “Git: Clone a project from a repository”
+
+4. Fill in the info:
+      URL: use HTTPS address (found on GitHub when clicking the green "Code" button)
+      Create as a subdirectory of: Browse to where you would like to save this repository on your machine (creates a new folder in the location you select)
+
+![](images/githubclonehttps.png){width=600 fig-align="center"}
+
+Now you have a local version of this project! You can interact with it using the instructions in the following section.
+
+*Side note: you can clone any public project, however you need to be added as a collaborator to push those changes to GitHub. If you'd like to play around with existing repositories, you could "Fork" it. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. More info here: <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo>. 
 
 ## Syncing Your R Project with GitHub
 
-You've created a repository for your R Project - but what happens when we edit our project on our computer? Well, we need to send those changes to our GitHub repository (it's not automatic). To do so, we need to learn about Git a little bit more. 
+You've created a repository for your R Project - but what happens when we edit our project on our computer? Well, we need to send those changes to our GitHub repository (it's not automatic). 
 
-
-### Git States and Lingo
-
-To use Git, we should first understand the primary states that files can be in. These are:
-
-* **Modified**: you've changed something in the files, but Git hasn't accounted for them yet.
-* **Staged**: Git has tracked the changes you've made, but they haven't been accounted for in the latest snapshot of your work. 
-* **Committed**: the changes you've made have been stored and updated as the latest snapshot of your project. 
-
-After changes are committed locally (on your computer), we can **push** them to a GitHub repository. This sends the changes and updates the most recent version of your project on GitHub. We can also **pull** changes from GitHub to your local machine. This is useful when multiple people (or perhaps one person on multiple devices) are working on a project. 
-
-Other useful Git features include:
-
-* **Cloning a repository**: copying an existing GitHub repository to your local machine. You can push and pull changes after cloning.
-* **Using Branches**: creating a separate line of development within your repository, allowing for isolated work on new features. This is a safe way to ensure you aren't overwriting the main repository branch. Branches can be merged together later in development
-* **Pull Requests**: Git's way of proposing changes to the repository's main branch. 
-
-
-
-
-## Pushing Changes to GitHub
 
 Let's make some changes to our STAT545_Example_Project! Adding a README file could be a nice addition. Whatever is written in this file will appear on the home page of our repository and can provide useful information about our repository. 
 
@@ -148,6 +195,16 @@ plot(mtcars$wt, mtcars$mpg)
 ```
 
 Save the changes. 
+
+
+Now, there are two ways that I'll show you how to interact with GitHub through RStudio.
+
+* Using RStudio's "Git" Tab
+
+* Using the Terminal
+
+* (Secret third option: using GitHub Desktop. I won't show this in detail but it is an option!)
+
 
 ### From RStudio's "Git" Tab
 
@@ -199,53 +256,10 @@ Other useful Terminal commands include:
 
 * `git status`: see which of your changes have been tracked, staged, and committed
 * `git checkout`: see what branch you're on, or change branches
-* `git pull`: pull changes from the remote repository (GitHub)
+* `git pull`: pull changes from the remote repository (GitHub) to your local computer
 
 
 
-
-
-
-### **Useful Github tips for the course**
-
--   All of your projects in this class will live in the [STAT 545 \@ UBC Organization](https://github.com/stat545ubc-2025).
-
--   When you watch a Github repo, you get notifications when things happen in them. So if you “Watch” the STAT 545 webpage repo, then you will get email notifications when I update the site!
-
-
-
-
-## Create Your Own Repository
-
-::: {.callout-warning icon="false" appearance="minimal"}
-### Exercise
-
-Try making your own Github repository and editing it on Github! (This exercise is slightly adapted from [Data Carpentries](https://datacarpentry.org/rr-version-control/02-git-in-github/index.html).)
-
-1.  Go to your GitHub profile. Eg. Mine is <https://github.com/grcetmpk>.
-
-2.  Create a new GitHub repository by clicking the `+` symbol in the top bar and using the dropdown menu to create a new repository.
-
-3.  Name your repository `stat-545-demo-YOUR-NAME`. In the description write “STAT 545 Demo”. Check the box for initializing the repository for adding a README file.
-
-4.  You are now redirected to the repository main page. The repository page tells you you have 1 commit. Click on it to get to the history page. This tells you all the changes that have been tracked for the files in the repository so far.
-
-5.  Go back to your repository main page. Click on `README.md`, then click “edit this file”. Add the following information into the `README.md` file:
-
-    -   Your name
-
-    -   Your program and department at UBC
-
-6.  Commit your changes: click the commit changes button, and briefly summarize the changes you’ve made in the Commit message.
-
-7.  Check out the Github commit history again. Has anything changed?
-:::
-
-
-
-##Working Locally, and Synchronizing with Github
-
-We will go through the [Data Carpentries tutorial](https://datacarpentry.org/rr-version-control/03-git-in-rstudio/) for this together. This demonstrates how to keep and work on the project files in a *local* repository on your machine, and how to keep it in sync with a *remote* Github repository.
 
 ## Merging Conflicts
 
@@ -288,14 +302,15 @@ STAT 777 @ UBC
 4.  Save and commit the file. (An informative message here might be “Fixing a merge conflict.”) You should now be able to successfully push!
 
 ::: {.callout-warning icon="false" appearance="minimal"}
-### Exercise
 
+### Exercise
 
 Find a partner. In this exercise, we will learn how to have different team members save their work separately on *branches*, and how to *merge* those changes to the *main* project branch.
 
-1.  Teammate A adds Teammate B to their `stat545-demo` repository as a collaborator. (Go to Settings from the main repo page, then Access > Collaborators). This should send Teammate B an email with a collaboration invitation; accept that invitation.
 
-2.  Teammate B clones Teammate A’s `stat545-demo` repository.
+1.  Teammate A adds Teammate B to their "stat545-demo" repository as a collaborator. (Go to Settings from the main repo page, then Access > Collaborators). This should send Teammate B an email with a collaboration invitation; accept that invitation.
+
+2.  Teammate B clones Teammate A’s "stat545-demo" repository.
 
 3.  On their own computer, Teammate B will make a new branch in Teammate A’s `stat545-demo` repository. You can do this either on Github by clicking on “1 branch” on the repo homepage then the green “New branch” button, or on your own computer in R Studio with the “New Branch” button.
 
@@ -305,9 +320,18 @@ Find a partner. In this exercise, we will learn how to have different team membe
 
 6.  Teammate A will follow the instructions [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request) to merge the pull request.
 
-Too easy? Then either switch roles, or try creating a pull request that causes a merge conflict and resolving it!
 
 :::
+
+
+
+
+
+### **Useful Github tips for the course**
+
+-   All of your projects in this class will live in the [STAT 545 \@ UBC Organization](https://github.com/stat545ubc-2025).
+
+-   When you watch a Github repo, you get notifications when things happen in them. So if you “Watch” the STAT 545 webpage repo, then you will get email notifications when I update the site!
 
 
 ## Resources
