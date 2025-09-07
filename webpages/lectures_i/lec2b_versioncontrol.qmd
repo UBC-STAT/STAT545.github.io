@@ -161,11 +161,11 @@ What if you want to use an existing R Project that is on GitHub in a repository?
       URL: use HTTPS address (found on GitHub when clicking the green "Code" button)
       Create as a subdirectory of: Browse to where you would like to save this repository on your machine (creates a new folder in the location you select)
 
-![](images/githubclonehttps.png){width=600 fig-align="center"}
+![](images/gitclonehttps.png){width=800 fig-align="center"}
 
 Now you have a local version of this project! You can interact with it using the instructions in the following section.
 
-*Side note: you can clone any public project, however you need to be added as a collaborator to push those changes to GitHub. If you'd like to play around with existing repositories, you could "Fork" it. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. More info here: <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo>. 
+*Side note: you can clone any public project, however you need to be added as a collaborator to push those changes to GitHub. If you'd like to play around with existing repositories, you could "Fork" it. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. More info here: <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo>.* 
 
 ## Syncing Your R Project with GitHub
 
@@ -222,7 +222,7 @@ We need to stage the files, commit the changes, and then push the changes to the
 
 2. **Commit Changes**: Click the Commit button. In the pop-up, you can scan through and see the changes (additions, deletions, modifications) for each file that has been staged in Step 1. Add a message explaining the changes, and click Commit. You will get a message that says 2 files have changed. Close this. 
 
-![](images/commit.png){width=400 fig-align="center"}
+![](images/commit.png){width=800 fig-align="center"}
 
 3. **Push**: You now have nothing to commit, as all changes have been tracked. You will see an information message saying "Your branch is ahead of "origin/main" by 1 commit. Time to Push! Click the Push button. If successful, the following message will appear:
 ```
@@ -235,7 +235,7 @@ Close this pop-up, and the "GitHub interface. "Review Changes" pop-up.
 
 Now, when you go to your GitHub account, you should see some changes to your STAT545_Example_Project repository! You can see when the changes were pushed, and now a README appears below the files!
 
-![](images/repowithchanges.png){width=400 fig-align="center"}
+![](images/repowithchanges.png){width=600 fig-align="center"}
 
 We can also Pull from the repository using the "Pull" button on the Git pane. 
 
@@ -328,6 +328,8 @@ Find a partner. In this exercise, we will learn how to have different team membe
 
 
 ### **Useful Github tips for the course**
+
+- Commit changes OFTEN! Commit them as often as you would save your work!
 
 -   All of your projects in this class will live in the [STAT 545 \@ UBC Organization](https://github.com/stat545ubc-2025).
 
