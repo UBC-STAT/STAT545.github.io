@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -125,6 +125,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_i/lec2A_reproducibility.html">
  <span class="dropdown-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec2b_versioncontrol.html">
+ <span class="dropdown-text">Lecture 2B: Version Control</span></a>
   </li>  
     </ul>
   </li>
@@ -211,10 +215,51 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_i/lec2b_versioncontrol.html">Lecture 2B: Version Control</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec1a_installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1A: Installation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec1b_introR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1B: Course Introduction and R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec2A_reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec2b_versioncontrol.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 2B: Version Control</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -237,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#merging-conflicts" id="toc-merging-conflicts" class="nav-link" data-scroll-target="#merging-conflicts">Merging Conflicts</a>
   <ul class="collapse">
-  <li><a href="#useful-github-tips-for-the-course" id="toc-useful-github-tips-for-the-course" class="nav-link" data-scroll-target="#useful-github-tips-for-the-course"><strong>Useful Github tips for the course</strong></a></li>
+  <li><a href="#github-tips" id="toc-github-tips" class="nav-link" data-scroll-target="#github-tips">GitHub Tips</a></li>
   </ul></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
@@ -261,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 7, 2025</p>
+      <p class="date-modified">September 8, 2025</p>
     </div>
   </div>
     
@@ -520,10 +565,11 @@ Exercise
 </ol>
 </div>
 </div>
-<section id="useful-github-tips-for-the-course" class="level3">
-<h3 class="anchored" data-anchor-id="useful-github-tips-for-the-course"><strong>Useful Github tips for the course</strong></h3>
+<section id="github-tips" class="level3">
+<h3 class="anchored" data-anchor-id="github-tips">GitHub Tips</h3>
 <ul>
 <li><p>Commit changes OFTEN! Commit them as often as you would save your work!</p></li>
+<li><p>Be careful when working with data containing personal identifying information (PII). This should NOT be stored on GitHub.</p></li>
 <li><p>All of your projects in this class will live in the <a href="https://github.com/stat545ubc-2025">STAT 545 @ UBC Organization</a>.</p></li>
 <li><p>When you watch a Github repo, you get notifications when things happen in them. So if you “Watch” the STAT 545 webpage repo, then you will get email notifications when I update the site!</p></li>
 </ul>

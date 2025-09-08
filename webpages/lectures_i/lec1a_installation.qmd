@@ -12,7 +12,7 @@ The goal of this lecture is to learn how to install and setup key software for u
 
 ### Note on PC vs Mac
 
-You may encounter some material that implicitly assumes that you are using a Mac. For example, they might point you to a Terminal app, or ask you to use Unix commands like which or ls. [Here is a cheatsheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://static-bcrf.biochem.wisc.edu/tutorials/unix/basic_unix/dos_and_unix_commands.pdf) that helps you convert between Windows command line (“DOS”) and Mac command line (“UNIX”). One thing that’s missing is the equivalent to Unix’s which; the closest equivalent in DOS is where.
+You may encounter some material that implicitly assumes that you are using a Mac. For example, they might point you to a Terminal app, or ask you to use Unix commands like `which` or `ls`. [Here is a cheatsheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://static-bcrf.biochem.wisc.edu/tutorials/unix/basic_unix/dos_and_unix_commands.pdf) that helps you convert between Windows command line (“DOS”) and Mac command line (“UNIX”). One thing that’s missing is the equivalent to Unix’s which; the closest equivalent in DOS is where.
 
 ### Step 1: Install R and RStudio
 

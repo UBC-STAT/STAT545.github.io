@@ -327,9 +327,11 @@ Find a partner. In this exercise, we will learn how to have different team membe
 
 
 
-### **Useful Github tips for the course**
+### GitHub Tips
 
 - Commit changes OFTEN! Commit them as often as you would save your work!
+
+- Be careful when working with data containing personal identifying information (PII). This should NOT be stored on GitHub. 
 
 -   All of your projects in this class will live in the [STAT 545 \@ UBC Organization](https://github.com/stat545ubc-2025).
 

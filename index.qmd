@@ -17,16 +17,16 @@ date-modified: last-modified
 
 **Lectures:**
 
--   Tuesday September 2: (Optional) Get in-person help with installing course software
+-   Tuesday September 2: RMarkdown and Reproducibility
 
--   Thursday September 4th: Intro to R lecture, begin working through Worksheet A1
+-   Thursday September 4th: GitHub and Version Control (HIGHLY recommend attending)
 
 **To Do this Week:**
 
--   Ensure you have completed all [installation instructions](webpages/lectures_i/lec1a_installation.qmd) by next week
--   Join the Slack channel ([see Canvas for the invite link](https://canvas.ubc.ca/courses/169555/pages/stat-545a-canvas-page))
+-   Ensure you have completed all [installation instructions](webpages/lectures_i/lec1a_installation.qmd)! Please contact the teaching team if you are having issues
+-   Join the Slack (see Canvas)
 
-**Upcoming Deadlines** - Nothing!
+**Upcoming Deadlines** - Nothing! You can start working on the Collaborative Project after Thursday's lecture.
 :::
 ::::
 :::::::
