@@ -17,9 +17,9 @@ date-modified: last-modified
 
 **Lectures:**
 
--   Tuesday September 2: RMarkdown and Reproducibility
+-   Tuesday September 9th: RMarkdown and Reproducibility
 
--   Thursday September 4th: GitHub and Version Control (HIGHLY recommend attending)
+-   Thursday September 11th: GitHub and Version Control (HIGHLY recommend attending)
 
 **To Do this Week:**
 
