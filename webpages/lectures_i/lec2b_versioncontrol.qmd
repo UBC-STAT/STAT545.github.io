@@ -24,7 +24,7 @@ After this class, you should be able to start working on your Collaborative Proj
 
 ## Video Lecture
 
-- [Grace's YouTube video on RStudio and GitHub](https://youtu.be/2n7gEbQGkzQ)
+- [Grace's YouTube video on RStudio and GitHub](https://youtu.be/FT_ViY6sgs4)
 
 
 
