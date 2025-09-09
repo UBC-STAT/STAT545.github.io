@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Lucy Gao">
-<meta name="dcterms.date" content="2023-08-02">
+<meta name="author" content="Grace">
+<meta name="dcterms.date" content="2025-09-09">
 
-<title>MTCars Report – STAT545</title>
+<title>Report – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -257,9 +257,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#motor-trend-car-road-tests-data" id="toc-motor-trend-car-road-tests-data" class="nav-link active" data-scroll-target="#motor-trend-car-road-tests-data">Motor Trend Car Road Tests data</a></li>
-  <li><a href="#number-of-gears-vs.-transmission" id="toc-number-of-gears-vs.-transmission" class="nav-link" data-scroll-target="#number-of-gears-vs.-transmission">Number of gears vs.&nbsp;transmission</a></li>
-  <li><a href="#horsepower-vs.-mileage" id="toc-horsepower-vs.-mileage" class="nav-link" data-scroll-target="#horsepower-vs.-mileage">Horsepower vs.&nbsp;Mileage</a></li>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link active" data-scroll-target="#summary-statistics">Summary Statistics</a></li>
+  <li><a href="#examination-of-car-weight-vs-mpg" id="toc-examination-of-car-weight-vs-mpg" class="nav-link" data-scroll-target="#examination-of-car-weight-vs-mpg">Examination of Car Weight vs MPG</a></li>
   </ul>
 </nav>
     </div>
@@ -268,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MTCars Report</h1>
+<h1 class="title">Report</h1>
 </div>
 
 
@@ -278,14 +277,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Lucy Gao </p>
+             <p>Grace </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 2, 2023</p>
+      <p class="date">September 9, 2025</p>
     </div>
   </div>
   
@@ -297,38 +296,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="motor-trend-car-road-tests-data" class="level2">
-<h2 class="anchored" data-anchor-id="motor-trend-car-road-tests-data">Motor Trend Car Road Tests data</h2>
-<p>The Motor Trend Car Road Tests (<code>mtcars</code>) data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).</p>
+<!-- my stupid supervisors want me to remove the first row omg -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#remove the first row</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> mtcars[<span class="sc">-</span><span class="dv">1</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="summary-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h2>
+<p>There are 31 cars included in the analysis. The mean mpg across the 31 cars is 20.0612903.</p>
 </section>
-<section id="number-of-gears-vs.-transmission" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-gears-vs.-transmission">Number of gears vs.&nbsp;transmission</h2>
+<section id="examination-of-car-weight-vs-mpg" class="level2">
+<h2 class="anchored" data-anchor-id="examination-of-car-weight-vs-mpg">Examination of Car Weight vs MPG</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>gear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
- 3  4  5 
-15 12  5 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>am, mtcars<span class="sc">$</span>gear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   
-     3  4  5
-  0 15  4  0
-  1  0  8  5</code></pre>
-</div>
-</div>
-</section>
-<section id="horsepower-vs.-mileage" class="level2">
-<h2 class="anchored" data-anchor-id="horsepower-vs.-mileage">Horsepower vs.&nbsp;Mileage</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> mtcars<span class="sc">$</span>wt, <span class="at">y =</span> mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="mtcars_demonstration_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="mtcars_demonstration_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

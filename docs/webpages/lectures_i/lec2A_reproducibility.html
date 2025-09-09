@@ -317,10 +317,7 @@ div.csl-indent {
   <li><a href="#getting-started-with-markdown" id="toc-getting-started-with-markdown" class="nav-link" data-scroll-target="#getting-started-with-markdown">Getting Started with Markdown</a></li>
   <li><a href="#install-rmarkdown" id="toc-install-rmarkdown" class="nav-link" data-scroll-target="#install-rmarkdown">Install RMarkdown</a></li>
   </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
-  <ul class="collapse">
-  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
-  </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -342,7 +339,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 5, 2025</p>
+      <p class="date-modified">September 9, 2025</p>
     </div>
   </div>
     
@@ -453,55 +450,18 @@ Instructor demo: mtcars Report
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To follow along, download the <a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/lecture_files/lec2a-reproducibility/mtcars_demonstration.Rmd">demonstration.Rmd</a> file from the STAT545 GitHub and open it in RStudio.</p>
+<p>To follow along, download the <a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/lecture_files/lec2a-reproducibility/mtcars_demonstration.Rmd">mtcars_demonstration.Rmd</a> file from the STAT545 GitHub and open it in RStudio. You can also refer back to <a href="https://www.youtube.com/watch?v=tS0nXW6Hfbk&amp;t=6s">this YouTube video</a> to follow along!</p>
 </div>
 </div>
-<section id="exploring-code-chunks" class="level4">
-<h4 class="anchored" data-anchor-id="exploring-code-chunks">Exploring Code Chunks</h4>
-<ol type="1">
-<li><p>Add a code chunk below the first paragraph in the “Motor Trend Car Road Tests data” section of the <code>.Rmd</code> file. Either select “Code” -&gt; “Insert Chunk”, or use a keyboard shortcut: <code>cmd + option + I</code>(MAC) / <code>ctrl + alt + i</code>(WINDOWS).</p></li>
-<li><p>In this code chunk, print out the <code>mtcars</code> data frame to explore the output. (Yes, this object comes shipped with R.)</p></li>
-<li><p>Run that chunk interactively using the green ‘play’ button.</p></li>
-<li><p>Now try out the <code>DT::datatable()</code> function on mtcars in this new chunk, and knit the file (to html, ideally).</p></li>
-<li><p>Add an in-line code chunk specifying the number of rows of the <code>mtcars</code> dataset in place of the hardcoded number “32 automobiles”. Hint: <code>nrow()</code>.</p></li>
-<li><p>Fill in the document with markdown commentary for each of the code chunks! A few notes go a long way towards improving the readability of the report.</p></li>
-</ol>
-</section>
 <section id="code-chunk-options" class="level4">
 <h4 class="anchored" data-anchor-id="code-chunk-options">Code Chunk Options</h4>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Got lost in the demonstration? No problem, just open a new .Rmd file in RStudio via “File” -&gt; “New File” -&gt; “R Markdown…”, and just press “OK”, and resume!)</p>
-</div>
-</div>
+<p>As we saw in the demo, we can add code chunks using by selecting “Code” &gt; “Insert Chunk”, or use a keyboard shortcut: <code>cmd + option + I</code>(MAC) / <code>ctrl + alt + i</code>(WINDOWS). We can also toggle to Visual view to add a code chunk using the “Insert” &gt; “Executable Cell” option.</p>
 <p>Just like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the <code>{r}</code> at the top of a code chunk, separated by commas. For a list of chunk options, check out <a href="https://yihui.org/knitr/options/">Yihui Xie’s knitr book</a>. Let’s try some:</p>
 <ol type="1">
 <li><p>Hide the code from the output with <code>echo = FALSE.</code></p></li>
 <li><p>Change the figure width and height with <code>fig.width = 5</code> and <code>fig.height = 3</code>.</p></li>
 <li><p>Knit the results. Can you spot the differences?</p></li>
 </ol>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the instructor demo, we prettied up a nice report about <code>mtcars</code> together. But suddenly, you receive an email from your collaborator who collected the <code>mtcars</code> data, who says that the data on Mazda RX4, the Valiant, and the Volvo 142E were transcribed wrong from the magazine! They’re going to work on correcting them, but in the mean time, they’d like to re-run the analysis with those three cars excluded.</p>
-<p>In small groups, prepare an updated report by updating your <code>.Rmd</code> appropriately, then re-knitting it. Then discuss: in this case, how did using the RMarkdown workflow rather than copying and pasting R output to MS Word help prevent the creation of non-reproducible results?</p>
-</div>
-</div>
 </section>
 </section>
 </section>
@@ -526,13 +486,9 @@ Tip
 <p>Many cheat sheets can be found from RStudio: go to “Help” -&gt; “Cheatsheets”.</p>
 </div>
 </div>
-<section id="attribution" class="level3">
-<h3 class="anchored" data-anchor-id="attribution">Attribution</h3>
-<p><em>Demonstration by Icíar Fernández Boyano. Inspiration for activity ideas drawn from Nicholas Tierney’s R Markdown for Scientists book, the R Markdown for Medicine workshop materials, and the UBC MDS program.</em></p>
 
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">

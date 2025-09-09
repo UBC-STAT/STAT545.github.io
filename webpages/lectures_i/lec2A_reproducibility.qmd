@@ -115,28 +115,12 @@ Run `?html_document` from your R console and/or check out [Yihui Xie’s RMarkdo
 ::: {.callout-tip appearance="minimal" icon="false"}
 ### Instructor demo: mtcars Report
 
-To follow along, download the [demonstration.Rmd](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/lecture_files/lec2a-reproducibility/mtcars_demonstration.Rmd) file from the STAT545 GitHub and open it in RStudio.
+To follow along, download the [mtcars_demonstration.Rmd](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/lecture_files/lec2a-reproducibility/mtcars_demonstration.Rmd) file from the STAT545 GitHub and open it in RStudio. You can also refer back to [this YouTube video](https://www.youtube.com/watch?v=tS0nXW6Hfbk&t=6s) to follow along!
 :::
-
-#### Exploring Code Chunks
-
-1.  Add a code chunk below the first paragraph in the “Motor Trend Car Road Tests data” section of the `.Rmd` file. Either select “Code” -\> “Insert Chunk”, or use a keyboard shortcut: `cmd + option + I`(MAC) / `ctrl + alt + i`(WINDOWS).
-
-2.  In this code chunk, print out the `mtcars` data frame to explore the output. (Yes, this object comes shipped with R.)
-
-3.  Run that chunk interactively using the green ‘play’ button.
-
-4.  Now try out the `DT::datatable()` function on mtcars in this new chunk, and knit the file (to html, ideally).
-
-5.  Add an in-line code chunk specifying the number of rows of the `mtcars` dataset in place of the hardcoded number “32 automobiles”. Hint: `nrow()`.
-
-6.  Fill in the document with markdown commentary for each of the code chunks! A few notes go a long way towards improving the readability of the report.
 
 #### Code Chunk Options
 
-::: callout-tip
-Got lost in the demonstration? No problem, just open a new .Rmd file in RStudio via “File” -\> “New File” -\> “R Markdown…”, and just press “OK”, and resume!)
-:::
+As we saw in the demo, we can add code chunks using by selecting “Code” \> “Insert Chunk”, or use a keyboard shortcut: `cmd + option + I`(MAC) / `ctrl + alt + i`(WINDOWS). We can also toggle to Visual view to add a code chunk using the "Insert" \> "Executable Cell" option.
 
 Just like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the `{r}` at the top of a code chunk, separated by commas. For a list of chunk options, check out [Yihui Xie’s knitr book](https://yihui.org/knitr/options/). Let’s try some:
 
@@ -145,14 +129,6 @@ Just like YAML is metadata for the Rmd document, code chunk options are metadata
 2.  Change the figure width and height with `fig.width = 5` and `fig.height = 3`.
 
 3.  Knit the results. Can you spot the differences?
-
-::: {.callout-warning appearance="minimal" icon="false"}
-### Exercise 2
-
-In the instructor demo, we prettied up a nice report about `mtcars` together. But suddenly, you receive an email from your collaborator who collected the `mtcars` data, who says that the data on Mazda RX4, the Valiant, and the Volvo 142E were transcribed wrong from the magazine! They’re going to work on correcting them, but in the mean time, they’d like to re-run the analysis with those three cars excluded.
-
-In small groups, prepare an updated report by updating your `.Rmd` appropriately, then re-knitting it. Then discuss: in this case, how did using the RMarkdown workflow rather than copying and pasting R output to MS Word help prevent the creation of non-reproducible results?
-:::
 
 ## Resources
 
@@ -167,7 +143,3 @@ Here are a number of resources that may help supplement you with today's lesson:
 ::: callout-tip
 Many cheat sheets can be found from RStudio: go to "Help" -\> "Cheatsheets".
 :::
-
-### Attribution
-
-*Demonstration by Icíar Fernández Boyano. Inspiration for activity ideas drawn from Nicholas Tierney’s R Markdown for Scientists book, the R Markdown for Medicine workshop materials, and the UBC MDS program.*

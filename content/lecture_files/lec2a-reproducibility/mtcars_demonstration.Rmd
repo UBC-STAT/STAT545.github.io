@@ -1,34 +1,29 @@
 ---
-title: "MTCars Report"
-author: "Lucy Gao"
-date: "2023-08-02"
-output: 
-  html_document:
-    toc: yes
-    toc_float: yes
-    theme: cerulean
+title: "Report"
+author: "Grace"
+date: "2025-09-09"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Motor Trend Car Road Tests data
 
-The Motor Trend Car Road Tests (`mtcars`) data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
-
-## Number of gears vs. transmission 
+<!-- my stupid supervisors want me to remove the first row omg -->
 
 ```{r}
-table(mtcars$gear)
+#remove the first row
+mtcars <- mtcars[-1, ]
 ```
 
-```{r} 
-table(mtcars$am, mtcars$gear)
-```
 
-## Horsepower vs. Mileage
+## Summary Statistics
 
-```{r} 
-plot(mtcars$mpg, mtcars$hp)
+There are `r nrow(mtcars)` cars included in the analysis. The mean mpg across the `r nrow(mtcars)` cars is `r mean(mtcars$mpg)`.
+
+## Examination of Car Weight vs MPG
+
+```{r}
+plot(x = mtcars$wt, y = mtcars$mpg)
 ```
