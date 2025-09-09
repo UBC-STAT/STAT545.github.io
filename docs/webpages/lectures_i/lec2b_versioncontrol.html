@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -125,6 +125,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../webpages/lectures_i/lec2A_reproducibility.html">
  <span class="dropdown-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/lectures_i/lec2b_versioncontrol.html">
+ <span class="dropdown-text">Lecture 2B: Version Control</span></a>
   </li>  
     </ul>
   </li>
@@ -211,10 +215,51 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_i/lec2b_versioncontrol.html">Lecture 2B: Version Control</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec1a_installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1A: Installation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec1b_introR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1B: Course Introduction and R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec2A_reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec2b_versioncontrol.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 2B: Version Control</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -222,6 +267,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#video-lecture" id="toc-video-lecture" class="nav-link" data-scroll-target="#video-lecture">Video Lecture</a></li>
   <li><a href="#get-acquainted-with-git-and-github" id="toc-get-acquainted-with-git-and-github" class="nav-link" data-scroll-target="#get-acquainted-with-git-and-github">Get Acquainted with Git and GitHub</a>
   <ul class="collapse">
   <li><a href="#repositories-organizations-and-personal-accounts" id="toc-repositories-organizations-and-personal-accounts" class="nav-link" data-scroll-target="#repositories-organizations-and-personal-accounts"><strong>Repositories, Organizations, and Personal Accounts</strong></a></li>
@@ -261,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 8, 2025</p>
+      <p class="date-modified">September 9, 2025</p>
     </div>
   </div>
     
@@ -284,6 +330,12 @@ ul.task-list li input[type="checkbox"] {
 <li><p>use collaborative GitHub features such as Issues and pull requests.</p></li>
 </ul>
 <p>After this class, you should be able to start working on your Collaborative Project.</p>
+</section>
+<section id="video-lecture" class="level2">
+<h2 class="anchored" data-anchor-id="video-lecture">Video Lecture</h2>
+<ul>
+<li><a href="https://youtu.be/2n7gEbQGkzQ">Grace’s YouTube video on RStudio and GitHub</a></li>
+</ul>
 </section>
 <section id="get-acquainted-with-git-and-github" class="level2">
 <h2 class="anchored" data-anchor-id="get-acquainted-with-git-and-github">Get Acquainted with Git and GitHub</h2>
@@ -451,7 +503,7 @@ To https://github.com/&lt;yourGitHubusername/STAT545_Example_Project.git
 <p><img src="images/repowithchanges.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
 </figure>
 </div>
-<p>We can also Pull from the repository using the “Pull” button on the Git pane.</p>
+<p>We can also Pull from the repository using the “Pull” button on the Git pane. This allows us to sync changes that are in our GitHub repository but not on out local machine (yet!). Simply use the “Pull” button in the Git pane on RStudio.</p>
 </section>
 <section id="from-rstudios-terminal" class="level3">
 <h3 class="anchored" data-anchor-id="from-rstudios-terminal">From RStudio’s Terminal</h3>
@@ -534,7 +586,7 @@ Exercise
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <p>Today’s class is a digest of the following resources:</p>
 <ul>
-<li><p>Video lecture <a href="https://youtu.be/l2ftm-YwJs8">STAT 545 Episode 2-A: Git and GitHub for an Organized Project</a></p></li>
+<li><p>Grace’s Video Lecture: <a href="https://youtu.be/2n7gEbQGkzQ" class="uri">https://youtu.be/2n7gEbQGkzQ</a></p></li>
 <li><p>Online tutorials:</p>
 <ul>
 <li><p>The basic version control workflow (without branching): <a href="https://happygitwithr.com/git-basics.html">Happy git w R: Chapter 20</a>.</p></li>

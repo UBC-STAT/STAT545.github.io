@@ -22,6 +22,10 @@ From today’s topic, students are anticipated to be able to:
 
 After this class, you should be able to start working on your Collaborative Project.
 
+## Video Lecture
+
+- [Grace's YouTube video on RStudio and GitHub](https://youtu.be/2n7gEbQGkzQ)
+
 
 
 ## Get Acquainted with Git and GitHub
@@ -237,7 +241,7 @@ Now, when you go to your GitHub account, you should see some changes to your STA
 
 ![](images/repowithchanges.png){width=600 fig-align="center"}
 
-We can also Pull from the repository using the "Pull" button on the Git pane. 
+We can also Pull from the repository using the "Pull" button on the Git pane. This allows us to sync changes that are in our GitHub repository but not on out local machine (yet!). Simply use the "Pull" button in the Git pane on RStudio. 
 
 
 ### From RStudio's Terminal
@@ -342,7 +346,7 @@ Find a partner. In this exercise, we will learn how to have different team membe
 
 Today’s class is a digest of the following resources:
 
--   Video lecture [STAT 545 Episode 2-A: Git and GitHub for an Organized Project](https://youtu.be/l2ftm-YwJs8)
+- Grace's Video Lecture: <https://youtu.be/2n7gEbQGkzQ>
 
 -   Online tutorials:
 
