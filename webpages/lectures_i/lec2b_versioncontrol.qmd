@@ -33,9 +33,6 @@ After this class, you should be able to start working on your Collaborative Proj
 "Git" is a version control system designed to track changes. This is what GitHub uses! Git essentially creates "snapshots" of your work as you progress through a project. 
 
 
-
-
-
 ### **Repositories, Organizations, and Personal Accounts**
 
 A *repository* stores files and the history of the files; the usual convention is to use a single repository to organize a single project.
@@ -48,6 +45,10 @@ A *repository* stores files and the history of the files; the usual convention i
 
 The first repository lives under Grace's personal Github account. The second repository lives under the [UBC-STAT](https://github.com/UBC-STAT) organization. Organizations are useful if you have lots of different projects with a common theme which lots of people are collaborating on.
 
+
+We can interact with and send data between GitHub and RStudio using Git.
+
+![](images/GitHubBasic.png){width=800 fig-align="center"} 
 
 
 ### Git States and Lingo
@@ -242,6 +243,10 @@ Now, when you go to your GitHub account, you should see some changes to your STA
 ![](images/repowithchanges.png){width=600 fig-align="center"}
 
 We can also Pull from the repository using the "Pull" button on the Git pane. This allows us to sync changes that are in our GitHub repository but not on out local machine (yet!). Simply use the "Pull" button in the Git pane on RStudio. 
+
+
+![](images/GitHubFullFlow.png){width=800 fig-align="center"}
+
 
 
 ### From RStudio's Terminal
