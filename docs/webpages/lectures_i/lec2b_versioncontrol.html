@@ -273,17 +273,22 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#repositories-organizations-and-personal-accounts" id="toc-repositories-organizations-and-personal-accounts" class="nav-link" data-scroll-target="#repositories-organizations-and-personal-accounts"><strong>Repositories, Organizations, and Personal Accounts</strong></a></li>
   <li><a href="#git-states-and-lingo" id="toc-git-states-and-lingo" class="nav-link" data-scroll-target="#git-states-and-lingo">Git States and Lingo</a></li>
   </ul></li>
-  <li><a href="#r-projects" id="toc-r-projects" class="nav-link" data-scroll-target="#r-projects">R Projects</a></li>
+  <li><a href="#r-projects" id="toc-r-projects" class="nav-link" data-scroll-target="#r-projects">R Projects</a>
+  <ul class="collapse">
+  <li><a href="#create-an-r-project" id="toc-create-an-r-project" class="nav-link" data-scroll-target="#create-an-r-project">Create an R Project</a></li>
   <li><a href="#create-a-github-repository-for-your-existing-local-r-project" id="toc-create-a-github-repository-for-your-existing-local-r-project" class="nav-link" data-scroll-target="#create-a-github-repository-for-your-existing-local-r-project">Create a GitHub Repository for your Existing (Local) R Project</a></li>
-  <li><a href="#clone-a-github-repository-github-repository-exists-remotely" id="toc-clone-a-github-repository-github-repository-exists-remotely" class="nav-link" data-scroll-target="#clone-a-github-repository-github-repository-exists-remotely">Clone a GitHub Repository (GitHub Repository Exists Remotely)</a></li>
+  <li><a href="#clone-a-github-repository-github-repository-already-exists-remotely" id="toc-clone-a-github-repository-github-repository-already-exists-remotely" class="nav-link" data-scroll-target="#clone-a-github-repository-github-repository-already-exists-remotely">Clone a GitHub Repository (GitHub Repository Already Exists Remotely)</a></li>
+  </ul></li>
   <li><a href="#syncing-your-r-project-with-github" id="toc-syncing-your-r-project-with-github" class="nav-link" data-scroll-target="#syncing-your-r-project-with-github">Syncing Your R Project with GitHub</a>
   <ul class="collapse">
   <li><a href="#from-rstudios-git-tab" id="toc-from-rstudios-git-tab" class="nav-link" data-scroll-target="#from-rstudios-git-tab">From RStudio’s “Git” Tab</a></li>
   <li><a href="#from-rstudios-terminal" id="toc-from-rstudios-terminal" class="nav-link" data-scroll-target="#from-rstudios-terminal">From RStudio’s Terminal</a></li>
   </ul></li>
-  <li><a href="#merging-conflicts" id="toc-merging-conflicts" class="nav-link" data-scroll-target="#merging-conflicts">Merging Conflicts</a>
+  <li><a href="#more-on-git" id="toc-more-on-git" class="nav-link" data-scroll-target="#more-on-git">More on Git</a>
   <ul class="collapse">
-  <li><a href="#github-tips" id="toc-github-tips" class="nav-link" data-scroll-target="#github-tips">GitHub Tips</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#merging-conflicts" id="toc-merging-conflicts" class="nav-link" data-scroll-target="#merging-conflicts">Merging Conflicts</a></li>
+  <li><a href="#other-tips" id="toc-other-tips" class="nav-link" data-scroll-target="#other-tips">Other Tips</a></li>
   </ul></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
@@ -307,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 9, 2025</p>
+      <p class="date-modified">September 10, 2025</p>
     </div>
   </div>
     
@@ -334,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="video-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="video-lecture">Video Lecture</h2>
 <ul>
-<li><a href="https://youtu.be/FT_ViY6sgs4">Grace’s YouTube video on RStudio and GitHub</a></li>
+<li><a href="https://youtu.be/TigD_OxpGao">Grace’s YouTube video on RStudio and GitHub</a></li>
 </ul>
 </section>
 <section id="get-acquainted-with-git-and-github" class="level2">
@@ -398,7 +403,8 @@ Exercise 1
 <h2 class="anchored" data-anchor-id="r-projects">R Projects</h2>
 <p>While Git and GitHub can be useful for more than just R, we will demonstrate how Git and GitHub can be used within an R Project.</p>
 <p>R Projects are useful for organizing files and resources specific to a project in a self-contained directory. R Projects allow for more reproducible workflows, and allow users to resume exactly where they left off within a project by keeping variables in the environment even after the session has closed. It also allows us to integrate version control with Git.</p>
-<p><strong>To create an R Project</strong>:</p>
+<section id="create-an-r-project" class="level3">
+<h3 class="anchored" data-anchor-id="create-an-r-project">Create an R Project</h3>
 <ol type="1">
 <li><p>Open RStudio.</p></li>
 <li><p>Go to “File” &gt; “New R Project…”.</p></li>
@@ -422,8 +428,8 @@ mean_mpg</code></pre>
 <p>After running this code, you’ll notice <code>mean_mpg</code> is in your environment. The cool thing about R Projects is that the next time you open your project, you’ll continue exactly where you’re left off! All variables you created will have been saved, as if you never closed R Studio.</p>
 <p>You can add multiple files to projects, and save things like images/pdfs of plots, multiple R Scripts (code), and data sets. Really, anything that you can save in the R Project folder will be contained in the R Project.</p>
 </section>
-<section id="create-a-github-repository-for-your-existing-local-r-project" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-github-repository-for-your-existing-local-r-project">Create a GitHub Repository for your Existing (Local) R Project</h2>
+<section id="create-a-github-repository-for-your-existing-local-r-project" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-github-repository-for-your-existing-local-r-project">Create a GitHub Repository for your Existing (Local) R Project</h3>
 <p>Syncing your R Project to GitHub is a smart idea! You can work on the project on multiple machines, back up your work, see previous versions of your work, and collaborate easily with others.</p>
 <p>In this lecture, we will assume an R Project already exists and we want to create a new GitHub repository for it. Previously, we created an R Project “STAT545_Example_Project” with the R Script <code>analysis.R</code>. Let’s sync this project to GitHub!</p>
 <ol type="1">
@@ -433,8 +439,8 @@ mean_mpg</code></pre>
 </ol>
 <p><em>If you have issues, see the last section of <a href="../../webpages/lectures_i/lec1a_installation.html">Lecture 1A: Installation</a> to set up your GitHub credentials on RStudio.</em></p>
 </section>
-<section id="clone-a-github-repository-github-repository-exists-remotely" class="level2">
-<h2 class="anchored" data-anchor-id="clone-a-github-repository-github-repository-exists-remotely">Clone a GitHub Repository (GitHub Repository Exists Remotely)</h2>
+<section id="clone-a-github-repository-github-repository-already-exists-remotely" class="level3">
+<h3 class="anchored" data-anchor-id="clone-a-github-repository-github-repository-already-exists-remotely">Clone a GitHub Repository (GitHub Repository Already Exists Remotely)</h3>
 <p>What if you want to use an existing R Project that is on GitHub in a repository? We can clone it!</p>
 <ol type="1">
 <li><p>In RStudio, go to “File &gt; New Project”</p></li>
@@ -449,6 +455,7 @@ mean_mpg</code></pre>
 </div>
 <p>Now you have a local version of this project! You can interact with it using the instructions in the following section.</p>
 <p><em>Side note: you can clone any public project, however you need to be added as a collaborator to push those changes to GitHub. If you’d like to play around with existing repositories, you could “Fork” it. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. More info here: <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo" class="uri">https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo</a>.</em></p>
+</section>
 </section>
 <section id="syncing-your-r-project-with-github" class="level2">
 <h2 class="anchored" data-anchor-id="syncing-your-r-project-with-github">Syncing Your R Project with GitHub</h2>
@@ -532,8 +539,43 @@ To https://github.com/&lt;yourGitHubusername/STAT545_Example_Project.git
 </ul>
 </section>
 </section>
-<section id="merging-conflicts" class="level2">
-<h2 class="anchored" data-anchor-id="merging-conflicts">Merging Conflicts</h2>
+<section id="more-on-git" class="level2">
+<h2 class="anchored" data-anchor-id="more-on-git">More on Git</h2>
+<section id="branches" class="level3">
+<h3 class="anchored" data-anchor-id="branches">Branches</h3>
+<p>Branches allow for parallel development within a repository. Branches are also a safe way to test out new features, fix bugs, or experiment with new ideas.</p>
+<p>When creating a repository, a default branch is created. This is typically named “main” (or in older repositories, “master”). The default branch is the branch that GitHub displays when anyone visits your repository. The default branch is also the initial branch that Git checks out locally when someone clones the repository. Unless you specify a different branch, the default branch in a repository is the base branch for new pull requests and code commits.</p>
+<p>To create a new branch, you can either navigate to the Git pane and click the icon with two purple rectangles connected to a white diamond. Here, you can create a new branch and name it. Then, you can switch between branches using the drop down menu beside it (see below).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/createbranch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/switchbranch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+<p>You can make changes on your new branch, and push them to GitHub.</p>
+<ul>
+<li>NOTE: if using Terminal, you can create a new branch using <code>git checkout -b &lt;new-branch-name&gt;</code> and switch branches using <code>git checkout &lt;new-branch-name&gt;</code>. You can push changes to the new branch using <code>git push origin &lt;new-branch-name&gt;</code>, where <code>&lt;new-branch-name&gt;</code> is the name of your branch)</li>
+</ul>
+<p>After pushing changes to a branch, you will see a message on GitHub.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/githubmessage.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+<p><strong>If this message does not appear, click “main” and switch the branch to the new one you just made. You will see a message that says “this branch is one commit ahead of main”). Click that message.</strong></p>
+<ul>
+<li><p>Click “Compare and pull request”. Here, you can see the changes between the main and new branch.</p></li>
+<li><p>If you’re satisfied with the changes, you can click “Create pull request” to begin the merge the changes from your new branch to main.</p></li>
+<li><p>If no conflicts exist, click “Merge pull request”. Now, the changes will be on the main (default) branch!</p></li>
+<li><p>Click “Confirm merge”.</p></li>
+</ul>
+</section>
+<section id="merging-conflicts" class="level3">
+<h3 class="anchored" data-anchor-id="merging-conflicts">Merging Conflicts</h3>
 <p>Merge conflicts happen when we’ve created multiple versions of files that can’t be obviously combined into one definitive version.</p>
 <p>Here is an example of something that would not cause a merge conflict:</p>
 <ul>
@@ -583,8 +625,9 @@ Exercise
 </ol>
 </div>
 </div>
-<section id="github-tips" class="level3">
-<h3 class="anchored" data-anchor-id="github-tips">GitHub Tips</h3>
+</section>
+<section id="other-tips" class="level3">
+<h3 class="anchored" data-anchor-id="other-tips">Other Tips</h3>
 <ul>
 <li><p>Commit changes OFTEN! Commit them as often as you would save your work!</p></li>
 <li><p>Be careful when working with data containing personal identifying information (PII). This should NOT be stored on GitHub.</p></li>
@@ -597,7 +640,7 @@ Exercise
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <p>Today’s class is a digest of the following resources:</p>
 <ul>
-<li><p>Grace’s Video Lecture: <a href="https://youtu.be/2n7gEbQGkzQ" class="uri">https://youtu.be/2n7gEbQGkzQ</a></p></li>
+<li><p>Grace’s Video Lecture: <a href="https://youtu.be/TigD_OxpGao" class="uri">https://youtu.be/TigD_OxpGao</a></p></li>
 <li><p>Online tutorials:</p>
 <ul>
 <li><p>The basic version control workflow (without branching): <a href="https://happygitwithr.com/git-basics.html">Happy git w R: Chapter 20</a>.</p></li>

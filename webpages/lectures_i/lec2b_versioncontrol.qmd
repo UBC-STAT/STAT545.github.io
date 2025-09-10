@@ -24,7 +24,7 @@ After this class, you should be able to start working on your Collaborative Proj
 
 ## Video Lecture
 
-- [Grace's YouTube video on RStudio and GitHub](https://youtu.be/FT_ViY6sgs4)
+- [Grace's YouTube video on RStudio and GitHub](https://youtu.be/TigD_OxpGao)
 
 
 
@@ -104,7 +104,7 @@ While Git and GitHub can be useful for more than just R, we will demonstrate how
 
 R Projects are useful for organizing files and resources specific to a project in a self-contained directory. R Projects allow for more reproducible workflows, and allow users to resume exactly where they left off within a project by keeping variables in the environment even after the session has closed. It also allows us to integrate version control with Git. 
 
-**To create an R Project**:
+### Create an R Project
 
 1. Open RStudio.
 
@@ -137,7 +137,7 @@ After running this code, you'll notice `mean_mpg` is in your environment. The co
 You can add multiple files to projects, and save things like images/pdfs of plots, multiple R Scripts (code), and data sets. Really, anything that you can save in the R Project folder will be contained in the R Project.
 
 
-## Create a GitHub Repository for your Existing (Local) R Project 
+### Create a GitHub Repository for your Existing (Local) R Project 
 
 Syncing your R Project to GitHub is a smart idea! You can work on the project on multiple machines, back up your work, see previous versions of your work, and collaborate easily with others. 
 
@@ -152,7 +152,7 @@ In this lecture, we will assume an R Project already exists and we want to creat
 *If you have issues, see the last section of [Lecture 1A: Installation](lec1a_installation.qmd) to set up your GitHub credentials on RStudio.*
 
 
-## Clone a GitHub Repository (GitHub Repository Exists Remotely)
+### Clone a GitHub Repository (GitHub Repository Already Exists Remotely)
 
 What if you want to use an existing R Project that is on GitHub in a repository? We can clone it!
 
@@ -268,9 +268,43 @@ Other useful Terminal commands include:
 * `git pull`: pull changes from the remote repository (GitHub) to your local computer
 
 
+## More on Git
+
+### Branches
+
+Branches allow for parallel development within a repository. Branches are also a safe way to test out new features, fix bugs, or experiment with new ideas. 
+
+When creating a repository, a default branch is created. This is typically named "main" (or in older repositories, "master"). The default branch is the branch that GitHub displays when anyone visits your repository. The default branch is also the initial branch that Git checks out locally when someone clones the repository. Unless you specify a different branch, the default branch in a repository is the base branch for new pull requests and code commits.
+
+To create a new branch, you can either navigate to the Git pane and click the icon with two purple rectangles connected to a white diamond. Here, you can create a new branch and name it. Then, you can switch between branches using the drop down menu beside it (see below). 
 
 
-## Merging Conflicts
+![](images/createbranch.png){width=800 fig-align="center"}
+
+
+![](images/switchbranch.png){width=800 fig-align="center"}
+
+You can make changes on your new branch, and push them to GitHub. 
+
+* NOTE: if using Terminal, you can create a new branch using ` git checkout -b <new-branch-name>` and switch branches using `git checkout <new-branch-name>`. You can push changes to the new branch using `git push origin <new-branch-name>`, where `<new-branch-name>` is the name of your branch)
+
+After pushing changes to a branch, you will see a message on GitHub. 
+
+![](images/githubmessage.png){width=800 fig-align="center"}
+
+**If this message does not appear, click "main" and switch the branch to the new one you just made. You will see a message that says "this branch is one commit ahead of main"). Click that message.** 
+
+* Click "Compare and pull request". Here, you can see the changes between the main and new branch. 
+
+* If you're satisfied with the changes, you can click "Create pull request" to begin the merge the changes from your new branch to main. 
+
+* If no conflicts exist, click "Merge pull request". Now, the changes will be on the main (default) branch!
+
+* Click "Confirm merge".
+
+
+
+### Merging Conflicts
 
 Merge conflicts happen when we’ve created multiple versions of files that can’t be obviously combined into one definitive version.
 
@@ -336,7 +370,7 @@ Find a partner. In this exercise, we will learn how to have different team membe
 
 
 
-### GitHub Tips
+### Other Tips
 
 - Commit changes OFTEN! Commit them as often as you would save your work!
 
@@ -351,9 +385,9 @@ Find a partner. In this exercise, we will learn how to have different team membe
 
 Today’s class is a digest of the following resources:
 
-- Grace's Video Lecture: <https://youtu.be/2n7gEbQGkzQ>
+- Grace's Video Lecture: <https://youtu.be/TigD_OxpGao>
 
--   Online tutorials:
+- Online tutorials:
 
     -   The basic version control workflow (without branching): [Happy git w R: Chapter 20](https://happygitwithr.com/git-basics.html).
 
