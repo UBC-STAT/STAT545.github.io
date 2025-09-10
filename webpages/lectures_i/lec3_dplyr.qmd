@@ -274,5 +274,3 @@ We will conclude class by going over instructor solutions.
 -   “R for Data Science” is another great resource for learning data wrangling. Take a look at:
 
 -   [dplyr’s introductory vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) is useful for orienting you to the package.
-
-
