@@ -379,7 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We can see that the tibble can store different data types (here we have both numeric data (“dbl” is short for double) and character data (“chr” is short for character).</p>
-<p>We can also change an R data frame to a dibble. For example, the <code>mtcars</code> data set is available in the <code>datasets</code> package in R as a dataframe. We can load it as a tibble using:</p>
+<p>We can also change an R data frame to a tibble. For example, the <code>mtcars</code> data set is available in the <code>datasets</code> package in R as a dataframe. We can load it as a tibble using:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasets)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -670,7 +670,7 @@ Note
 <li><p>reorder the rows by descending order of 2025 rents</p>
 <ul>
 <li><p>The <code>arrange()</code> function can change the order of rows.</p></li>
-<li><p><code>arrange(desc(column_name))</code> will arrange the roms in descending order for the <code>column_name</code> given. See more <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html#:~:text=Arrange%20rows%20with%20arrange()">here</a>!</p></li>
+<li><p><code>arrange(desc(column_name))</code> will arrange the rows in descending order for the <code>column_name</code> given. See more <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html#:~:text=Arrange%20rows%20with%20arrange()">here</a>!</p></li>
 </ul></li>
 </ul>
 <p>To do all of these tasks, the pipe operator allows us to write clear and readable code:</p>

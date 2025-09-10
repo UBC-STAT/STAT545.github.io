@@ -64,7 +64,7 @@ housingdata
 
 We can see that the tibble can store different data types (here we have both numeric data ("dbl" is short for double) and character data ("chr" is short for character).
 
-We can also change an R data frame to a dibble. For example, the `mtcars` data set is available in the `datasets` package in R as a dataframe. We can load it as a tibble using:
+We can also change an R data frame to a tibble. For example, the `mtcars` data set is available in the `datasets` package in R as a dataframe. We can load it as a tibble using:
 
 ```{r}
 library(datasets)
@@ -217,7 +217,7 @@ While it may not be obvious from this first example why the pipe operator is com
 
     -   The `arrange()` function can change the order of rows.
 
-    -   `arrange(desc(column_name))` will arrange the roms in descending order for the `column_name` given. See more [here](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html#:~:text=Arrange%20rows%20with%20arrange())!
+    -   `arrange(desc(column_name))` will arrange the rows in descending order for the `column_name` given. See more [here](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html#:~:text=Arrange%20rows%20with%20arrange())!
 
 To do all of these tasks, the pipe operator allows us to write clear and readable code:
 
