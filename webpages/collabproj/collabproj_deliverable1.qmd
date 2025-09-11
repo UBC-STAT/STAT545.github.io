@@ -31,7 +31,7 @@ For both collaborative project milestones, you’ll be working with your teammat
 
 1.  Create a Group Chat on our Slack Team with all of your members in it (see Canvas for the link to join if you haven't already done so)
 
-2.  Have one group member make a repository on GitHub, by following the steps found on canvas in the entry called [Collaborative Project: Create a repository for your team](https://canvas.ubc.ca/courses/169555/pages/collaborative-project-create-a-repository-for-your-team).
+2.  Have one group member make a repository on GitHub, by following the steps found on the [Collaborative Project assignment on Canvas.](https://canvas.ubc.ca/courses/169555/assignments/2225471)
 
     -   Your team name should be your group number.
 
