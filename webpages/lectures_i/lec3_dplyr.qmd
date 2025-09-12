@@ -53,6 +53,15 @@ As mentioned in Lecture 1A, *data frames* are useful tools for storing data. You
 library(tibble)
 ```
 
+```{r, echo = F, warning = F}
+
+# quarto wasn't showing decimal places, need to allow larger number of significant figures using pillar package
+
+library(pillar)
+options(pillar.sigfig = 8)
+
+```
+
 Tibbles typically said to be more user friendly than standard R dataframes, and are easily used with *tidyverse* functions. More on that in a bit!
 
 We can either load in pre-existing data frames (like from a `.csv` file or an R package), or create a tibble manually using the `tibble()` function. For example, we could use
@@ -249,7 +258,7 @@ Another thing to note is that the pipe operator creates a new tibble and does no
 housingdata <- housingdata %>% 
     filter(rent_2025 > 2500) %>%
     select(-name) %>%
-    mutate(rent_per_room_2025 = round(rent_2025/numrooms,2)) %>%
+    mutate(rent_per_room_2025 = round(rent_2025/numrooms, digits = 2)) %>%
     arrange(desc(rent_2025))
 
 housingdata
