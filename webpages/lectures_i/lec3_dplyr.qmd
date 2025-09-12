@@ -18,6 +18,16 @@ From this topic, students are anticipated to be able to:
 
 We will spend two classes on this topic.
 
+## Video Lectures:
+
+-   Intro to `dplyr` (Part 1) : <https://www.youtube.com/watch?v=ZYAVQ14IaTs>
+
+    -    `select()`, `filter()`, `mutate`, and piping (`%>%`)
+
+-   Leveling up with `dplyr`:
+
+    -   `tidyselect`, `arrange()`
+
 ## Why Data Manipulation?
 
 You have a shiny new data set - great! You might be tempted to dive right in and start making pretty graphs and fitting cool models to your data. Not so fast! In practice, it’s very rare that you have the data in the exact right form to make the graph you want, or fit the model you want. You will need to start by *manipulating* your data into the right form: creating new variables, subsetting rows, renaming columns, etc.

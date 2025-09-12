@@ -18,6 +18,55 @@ From this topic, students are anticipated to be able to:
 
 -   Choose an appropriate plot type for analysis, based on an understanding of what makes a graph effective.
 
+
+## Motivating Example
+
+Tables are a convenient way to display information. Oftentimes, we are tempted to include tables in papers and presentations to emphasize relationships between variables in a data set as tables are relatively simple to create. 
+
+Let's look at a table that one could create to show the relationship between the number of cylinders, miles per gallon, and horsepower in the `mtcars` data set:
+
+
+```{r, echo = F, warning=F, message = F}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(RColorBrewer)
+
+
+mtcars %>% select(cyl, mpg, hp) %>%
+  group_by(cyl) %>%
+  arrange(cyl, mpg) %>%
+  knitr::kable(col.names = c("Number of Cylinders", "Miles per Gallon", "Horsepower"), 
+               align = "c", format = "html",  
+               table.attr = 'data-quarto-disable-processing="true"') %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"),
+                    full_width = FALSE, font_size = 14 ) %>%
+  kableExtra::collapse_rows(columns = 1, latex_hline = "major", valign = "top")
+
+```
+
+
+Was it easy to figure out the relationship I was trying to convey? I'm sure you would eventually be able to figure it out, but I'd bet it took some time. What about now?:
+
+```{r, echo = F, fig.align="center"}
+
+mtcars %>% select(cyl, mpg, hp) %>%
+  group_by(cyl) %>%
+  arrange(mpg) %>%
+  ggplot(aes(x = mpg, y = hp, color = as.factor(cyl), shape = as.factor(cyl))) + 
+    geom_point() +
+    labs(color = "Number of Cylinders", shape = "Number of Cylinders") +
+    xlab("Miles per Gallon") + ylab("Horsepower") + 
+    ggtitle("Relationship between Number of Cylinders, Miles per Gallon, \nand Horsepower on the mtcars Dataset") +
+  scale_color_brewer(palette = "Set2")
+  
+  
+```
+
+You can very clearly see that as the miles per gallon increase, horsepower tends to decrease. Further, we see that cars with higher number of cylinders tend to have higher horse power AND lower miles per gallon than cars with lower numbers of cylinders. That was a lot easier to deduce than when we were reading numbers off of a large table.  
+
+
 ## Effective Data Visualization
 
 Plots and other forms of data visualization are powerful tools for conveying complex relationships. While tables can be useful, data visualizations are often preferred to aid with identify patterns and relationships and emphasizing important findings in a research projects. This is especially true for presentations, where the audience may not have time to digest a large table of numbers. Jenny Bryan's Challenger Example ([https://speakerdeck.com/jennybc/ggplot2-tutorial](https://speakerdeck.com/jennybc/ggplot2-tutorial?slide=22)) is a great example of why we may want to visualize data.
@@ -36,7 +85,7 @@ We need to convey the message using a data visualization while removing as much 
 
 -   Ensure the text, symbols, lines, etc., on your visualization are big enough to be easily read.
 
--   Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).ß
+-   Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).
 
 -   Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry [@deeb2005molecular]). For example, [ColorBrewer](https://colorbrewer2.org/) and [the `RColorBrewer` R package](https://cran.r-project.org/web/packages/RColorBrewer/index.html) [@neuwirth2014rcolorbrewer] provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a [color blindness simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/).
 

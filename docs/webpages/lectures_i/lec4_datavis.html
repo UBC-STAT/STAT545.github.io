@@ -120,6 +120,8 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -279,6 +281,7 @@ div.csl-indent {
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#motivating-example" id="toc-motivating-example" class="nav-link" data-scroll-target="#motivating-example">Motivating Example</a></li>
   <li><a href="#effective-data-visualization" id="toc-effective-data-visualization" class="nav-link" data-scroll-target="#effective-data-visualization">Effective Data Visualization</a></li>
   <li><a href="#ggplot2-and-the-grammar-of-graphics" id="toc-ggplot2-and-the-grammar-of-graphics" class="nav-link" data-scroll-target="#ggplot2-and-the-grammar-of-graphics"><code>ggplot2</code> and the Grammar of Graphics</a>
   <ul class="collapse">
@@ -310,7 +313,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 13, 2025</p>
+      <p class="date-modified">September 12, 2025</p>
     </div>
   </div>
     
@@ -331,6 +334,198 @@ div.csl-indent {
 <li><p>Choose an appropriate plot type for analysis, based on an understanding of what makes a graph effective.</p></li>
 </ul>
 </section>
+<section id="motivating-example" class="level2">
+<h2 class="anchored" data-anchor-id="motivating-example">Motivating Example</h2>
+<p>Tables are a convenient way to display information. Oftentimes, we are tempted to include tables in papers and presentations to emphasize relationships between variables in a data set as tables are relatively simple to create.</p>
+<p>Let’s look at a table that one could create to show the relationship between the number of cylinders, miles per gallon, and horsepower in the <code>mtcars</code> data set:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-disable-processing="true" class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Number of Cylinders </th>
+   <th style="text-align:center;"> Miles per Gallon </th>
+   <th style="text-align:center;"> Horsepower </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;vertical-align: top !important;" rowspan="11"> 4 </td>
+   <td style="text-align:center;"> 21.4 </td>
+   <td style="text-align:center;"> 109 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 21.5 </td>
+   <td style="text-align:center;"> 97 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 22.8 </td>
+   <td style="text-align:center;"> 93 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 22.8 </td>
+   <td style="text-align:center;"> 95 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 24.4 </td>
+   <td style="text-align:center;"> 62 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 26.0 </td>
+   <td style="text-align:center;"> 91 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 27.3 </td>
+   <td style="text-align:center;"> 66 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 30.4 </td>
+   <td style="text-align:center;"> 52 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 30.4 </td>
+   <td style="text-align:center;"> 113 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 32.4 </td>
+   <td style="text-align:center;"> 66 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 33.9 </td>
+   <td style="text-align:center;"> 65 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;vertical-align: top !important;" rowspan="7"> 6 </td>
+   <td style="text-align:center;"> 17.8 </td>
+   <td style="text-align:center;"> 123 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 18.1 </td>
+   <td style="text-align:center;"> 105 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 19.2 </td>
+   <td style="text-align:center;"> 123 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 19.7 </td>
+   <td style="text-align:center;"> 175 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 21.0 </td>
+   <td style="text-align:center;"> 110 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 21.0 </td>
+   <td style="text-align:center;"> 110 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 21.4 </td>
+   <td style="text-align:center;"> 110 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;vertical-align: top !important;" rowspan="14"> 8 </td>
+   <td style="text-align:center;"> 10.4 </td>
+   <td style="text-align:center;"> 205 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 10.4 </td>
+   <td style="text-align:center;"> 215 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 13.3 </td>
+   <td style="text-align:center;"> 245 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 14.3 </td>
+   <td style="text-align:center;"> 245 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 14.7 </td>
+   <td style="text-align:center;"> 230 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 15.0 </td>
+   <td style="text-align:center;"> 335 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 15.2 </td>
+   <td style="text-align:center;"> 180 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 15.2 </td>
+   <td style="text-align:center;"> 150 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 15.5 </td>
+   <td style="text-align:center;"> 150 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 15.8 </td>
+   <td style="text-align:center;"> 264 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 16.4 </td>
+   <td style="text-align:center;"> 180 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 17.3 </td>
+   <td style="text-align:center;"> 180 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 18.7 </td>
+   <td style="text-align:center;"> 175 </td>
+  </tr>
+  <tr>
+   
+   <td style="text-align:center;"> 19.2 </td>
+   <td style="text-align:center;"> 175 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>Was it easy to figure out the relationship I was trying to convey? I’m sure you would eventually be able to figure it out, but I’d bet it took some time. What about now?:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You can very clearly see that as the miles per gallon increase, horsepower tends to decrease. Further, we see that cars with higher number of cylinders tend to have higher horse power AND lower miles per gallon than cars with lower numbers of cylinders. That was a lot easier to deduce than when we were reading numbers off of a large table.</p>
+</section>
 <section id="effective-data-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="effective-data-visualization">Effective Data Visualization</h2>
 <p>Plots and other forms of data visualization are powerful tools for conveying complex relationships. While tables can be useful, data visualizations are often preferred to aid with identify patterns and relationships and emphasizing important findings in a research projects. This is especially true for presentations, where the audience may not have time to digest a large table of numbers. Jenny Bryan’s Challenger Example (<a href="https://speakerdeck.com/jennybc/ggplot2-tutorial?slide=22">https://speakerdeck.com/jennybc/ggplot2-tutorial</a>) is a great example of why we may want to visualize data.</p>
@@ -344,7 +539,7 @@ div.csl-indent {
 <li><p>Make sure the visualization answers the question you have asked most simply and plainly as possible.</p></li>
 <li><p>Use legends and labels so that your visualization is understandable without reading the surrounding text.</p></li>
 <li><p>Ensure the text, symbols, lines, etc., on your visualization are big enough to be easily read.</p></li>
-<li><p>Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).ß</p></li>
+<li><p>Ensure the data are clearly visible; don’t hide the shape/distribution of the data behind other objects (e.g., a bar).</p></li>
 <li><p>Make sure to use color schemes that are understandable by those with colorblindness (a surprisingly large fraction of the overall population—from about 1% to 10%, depending on sex and ancestry <span class="citation" data-cites="deeb2005molecular">[<a href="#ref-deeb2005molecular" role="doc-biblioref">2</a>]</span>). For example, <a href="https://colorbrewer2.org/">ColorBrewer</a> and <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">the <code>RColorBrewer</code> R package</a> <span class="citation" data-cites="neuwirth2014rcolorbrewer">[<a href="#ref-neuwirth2014rcolorbrewer" role="doc-biblioref">3</a>]</span> provide the ability to pick such color schemes, and you can check your visualizations after you have created them by uploading to online tools such as a <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/">color blindness simulator</a>.</p></li>
 <li><p>Redundancy can be helpful; sometimes conveying the same message in multiple ways reinforces it for the audience.</p></li>
 </ul>
@@ -427,7 +622,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -439,7 +634,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -451,7 +646,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -465,7 +660,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -480,7 +675,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lec4_datavis_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
