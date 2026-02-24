@@ -3,8 +3,12 @@ project:
   output-dir: docs
   
 website:
+  cookie-consent:
+    google-analytics: "G-R34R67VEVH"
+    type: express
+    
   title: "STAT545"
-  google-analytics: "G-R34R67VEVH"
+
   back-to-top-navigation: true
   page-footer: "Copyright 2025, Grace Tompkins. *Built with [Quarto](https://quarto.org)*" 
   favicon: images/stat545_transparent.png 
