@@ -1,0 +1,99 @@
+<style>
+  #cookie-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 320px;
+    background-color: #ffffff;
+    /* This padding creates the space between the edge and the content */
+    padding: 25px; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid #eee;
+    z-index: 9999;
+    font-family: sans-serif;
+    display: none; /* Hidden by default, shown by logic below */
+  }
+
+  #cookie-popup p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .popup-button-container {
+    display: flex;
+    gap: 10px; /* Space between the two buttons */
+  }
+
+  .btn-accept {
+    flex: 1;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .btn-decline {
+    flex: 1;
+    background-color: #f8f9fa;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .btn-accept:hover { background-color: #0056b3; }
+  .btn-decline:hover { background-color: #e2e6ea; }
+</style>
+
+<div id="cookie-popup">
+  <h4> We value your privacy. </h4>
+  <p>Do you consent to the use of cookies to analyse website traffic? No personal indentifying information is stored. See our <a href="/privacy/privacy.html" style="color: #007bff; text-decoration: underline;">privacy policy here</a></p>
+  <div class="popup-button-container">
+    <button class="btn-accept" onclick="acceptCookies()">Accept</button>
+    <button class="btn-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    const consent = localStorage.getItem('cookieConsent');
+    // Only show if the user hasn't made a choice yet
+    if (!consent) {
+      document.getElementById('cookie-popup').style.display = 'block';
+    } else if (consent === 'granted') {
+      // If already granted, run the analytics logic
+      activateAnalytics();
+    }
+  };
+
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'granted');
+    activateAnalytics();
+    closePopup();
+  }
+
+  function declineCookies() {
+    localStorage.setItem('cookieConsent', 'denied');
+    closePopup();
+  }
+
+  function closePopup() {
+    document.getElementById('cookie-popup').style.display = 'none';
+  }
+
+  function activateAnalytics() {
+    // This calls the gtag consent update from your google-analytics.html
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+  }
+</script>

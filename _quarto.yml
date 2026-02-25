@@ -3,10 +3,7 @@ project:
   output-dir: docs
   
 website:
-  cookie-consent:
-    google-analytics: "G-R34R67VEVH"
-    type: express
-    
+
   title: "STAT545"
 
   back-to-top-navigation: true
@@ -121,6 +118,7 @@ format:
       - brand
     css: styles.css
     toc: true
-
+    include-in-header: privacy/google-analytics.html
+    include-after-body: privacy/custom-popup.html
 
 

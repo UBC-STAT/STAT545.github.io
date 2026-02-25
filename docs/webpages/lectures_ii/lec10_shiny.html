@@ -65,8 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../images/stat545_transparent.png" rel="icon" type="image/png">
-<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,24 +101,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-<script type="text/javascript" charset="UTF-8">
-document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({
-  "notice_banner_type":"simple",
-  "consent_type":"express",
-  "palette":"light",
-  "language":"en",
-  "page_load_consent_levels":["strictly-necessary"],
-  "notice_banner_reject_button_hide":false,
-  "preferences_center_close_button_hide":false,
-  "website_name":""
-  ,
-"language":"en"
-  });
-});
-</script> 
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R34R67VEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
   
+  // Default to 'denied' if you want to be GDPR compliant
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-R34R67VEVH');
+
+  // Function to trigger when user accepts
+  function acceptCookies() {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted'
+    });
+    // Hide your pop-up logic here
+    document.getElementById('cookie-popup').style.display = 'none';
+    localStorage.setItem('cookieConsent', 'granted');
+  }
+</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -441,7 +444,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 24, 2026</p>
+      <p class="date-modified">February 25, 2026</p>
     </div>
   </div>
     
@@ -677,6 +680,105 @@ Note
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<style>
+  #cookie-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 320px;
+    background-color: #ffffff;
+    /* This padding creates the space between the edge and the content */
+    padding: 25px; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid #eee;
+    z-index: 9999;
+    font-family: sans-serif;
+    display: none; /* Hidden by default, shown by logic below */
+  }
+
+  #cookie-popup p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .popup-button-container {
+    display: flex;
+    gap: 10px; /* Space between the two buttons */
+  }
+
+  .btn-accept {
+    flex: 1;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .btn-decline {
+    flex: 1;
+    background-color: #f8f9fa;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .btn-accept:hover { background-color: #0056b3; }
+  .btn-decline:hover { background-color: #e2e6ea; }
+</style>
+
+<div id="cookie-popup">
+  <h4> We value your privacy. </h4>
+  <p>Do you consent to the use of cookies to analyse website traffic? No personal indentifying information is stored. See our <a href="../../privacy/privacy.html" style="color: #007bff; text-decoration: underline;">privacy policy here</a></p>
+  <div class="popup-button-container">
+    <button class="btn-accept" onclick="acceptCookies()">Accept</button>
+    <button class="btn-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    const consent = localStorage.getItem('cookieConsent');
+    // Only show if the user hasn't made a choice yet
+    if (!consent) {
+      document.getElementById('cookie-popup').style.display = 'block';
+    } else if (consent === 'granted') {
+      // If already granted, run the analytics logic
+      activateAnalytics();
+    }
+  };
+
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'granted');
+    activateAnalytics();
+    closePopup();
+  }
+
+  function declineCookies() {
+    localStorage.setItem('cookieConsent', 'denied');
+    closePopup();
+  }
+
+  function closePopup() {
+    document.getElementById('cookie-popup').style.display = 'none';
+  }
+
+  function activateAnalytics() {
+    // This calls the gtag consent update from your google-analytics.html
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+  }
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1102,7 +1204,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Copyright 2025, Grace Tompkins. <em>Built with <a href="https://quarto.org">Quarto</a></em></p>
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
