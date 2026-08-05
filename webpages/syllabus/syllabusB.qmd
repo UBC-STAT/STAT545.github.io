@@ -2,9 +2,17 @@
 title: "Syllabus: STAT 545 B (Part II)"
 subtitle: "October 27 2026 to Dec 03 2026"
 date-modified: last-modified
+format:
+  html: default
+  pdf: default
 ---
 
-**IMPORTANT: please see [the academic integrity section](#academic-integrity) for this course's AI policy**.
+
+::: callout-important
+Please see [the academic integrity section](#academic-integrity) for this course's AI policy.
+:::
+
+\vspace{1cm}
 
 ### Acknowledgement
 
@@ -12,10 +20,11 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 
 ### Course Information
 
-|  |  |  |  |  |
-|---------------|---------------|---------------|---------------|---------------|
 | **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
-| Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Tues/Thurs: 9:30am - 10:50am | CHEM D300 |
+|---------------|---------------|---------------|---------------|---------------|
+| Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Tues/Thurs: 9:30am - 10:50am | See Workday |
+
+: {.hover}
 
 ::: callout-note
 STAT545 B starts half an hour later than STAT545 A!
@@ -28,14 +37,18 @@ STAT545 A is a pre-requisite for STAT545 B. No exceptions.
 ### Contact and Office Hours
 
 | Instructor     | Contact Details        | Office Location | Office Hours |
-|----------------|------------------------|-----------------|--------------|
-| Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134        |              |
+|----------------|----------------------|-------------|--------------|
+| [Dr. Grace Tompkins](https://grcetmpk.github.io/) | grace\<at\>stat.ubc.ca | ESB 3134        |              |
+: {.hover}
+
 
 | Teaching Assistants (TAs) | Office Hours | Location |
 |---------------------------|--------------|----------|
 |                           |              |          |
 |                           |              |          |
 |                           |              |          |
+: {.hover}
+
 
 ### Course Structure
 
@@ -52,9 +65,10 @@ See schedule [here](../lectures.qmd).
 This course will have autograded worksheets meant to guide you through a number of exercises as well as assignments.
 
 | Assessment | Percent Grade | Note |
-|------------------------|------------------------|------------------------|
+|--------------|----------|------------------------|
 | [Worksheets](../worksheets.qmd) | 15% | Three guided worksheets |
 | [Assignments]((../assignmentspartB/index.qmd)) | 85% | Four assignments involving more independent analyses and tasks |
+: {.hover}
 
 #### Worksheets
 
@@ -132,7 +146,7 @@ In this course, Generative AI can be used in the following ways:
 
 Generative AI **CANNOT** be used to generate text or code from scratch. Assessments suspected of having AI-generated text and/or code will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.
 
-**Any use of Generative AI must be disclosed. Students will be asked to submit an AI statement for the mini data analyses disclosing any use**
+**Any use of Generative AI must be disclosed. Students will be asked to submit an AI Declaration Statement disclosing their use on any assessments**
 
 For more information see the [UBC Academic Misconduct policies](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,959).
 

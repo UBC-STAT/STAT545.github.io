@@ -228,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright">Copyright</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="syllabusA.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -259,11 +259,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>IMPORTANT: please see <a href="#academic-integrity">the academic integrity section</a> for this course’s AI policy</strong>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please see <a href="#academic-integrity">the academic integrity section</a> for this course’s AI policy.</p>
+</div>
+</div>
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəyəm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.</p>
 <section id="course-information" class="level3">
 <h3 class="anchored" data-anchor-id="course-information">Course Information</h3>
-<table class="caption-top table">
+<table class="table-hover caption-top table">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
@@ -271,20 +283,22 @@ ul.task-list li input[type="checkbox"] {
 <col style="width: 20%">
 <col style="width: 20%">
 </colgroup>
+<thead>
+<tr class="header">
+<th><strong>Course Title</strong></th>
+<th><strong>Course Code</strong></th>
+<th><strong>Credit</strong> <strong>Value</strong></th>
+<th><strong>Class Times</strong></th>
+<th><strong>Class Location</strong></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><strong>Course Title</strong></td>
-<td><strong>Course Code</strong></td>
-<td><strong>Credit</strong> <strong>Value</strong></td>
-<td><strong>Class Times</strong></td>
-<td><strong>Class Location</strong></td>
-</tr>
-<tr class="even">
 <td>Exploratory Data Analysis Part I</td>
 <td>STAT 545 A</td>
 <td>1.5</td>
 <td>Tues/Thurs: 9:00am - 10:20am</td>
-<td>CHEM D300</td>
+<td>See Workday</td>
 </tr>
 </tbody>
 </table>
@@ -296,13 +310,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="contact-and-office-hours" class="level3">
 <h3 class="anchored" data-anchor-id="contact-and-office-hours">Contact and Office Hours</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 33%">
-<col style="width: 23%">
-<col style="width: 19%">
-</colgroup>
+<table class="table-hover caption-top table">
 <thead>
 <tr class="header">
 <th>Instructor</th>
@@ -313,14 +321,14 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Grace Tompkins</td>
+<td><a href="https://grcetmpk.github.io/">Dr.&nbsp;Grace Tompkins</a></td>
 <td>grace&lt;at&gt;stat.ubc.ca</td>
 <td>ESB 3134</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="table-hover caption-top">
 <thead>
 <tr class="header">
 <th>Teaching Assistants (TAs)</th>
@@ -339,12 +347,17 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="schedule-of-topics" class="level3">
 <h3 class="anchored" data-anchor-id="schedule-of-topics">Schedule of Topics</h3>
-<p>See schedule <a href="../../webpages/lectures.html">here</a>.</p>
+<p>See schedule <a href="https://ubc-stat.github.io/stat545/webpages/lectures.html">here</a>.</p>
 </section>
 <section id="assessments" class="level3">
 <h3 class="anchored" data-anchor-id="assessments">Assessments</h3>
 <p>This course will have autograded, formative worksheets meant to guide you through a number of exercises.</p>
-<table class="caption-top table">
+<table class="table-hover caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 20%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Assessment</th>
@@ -354,17 +367,17 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="../../webpages/worksheets.html">Worksheets</a></td>
+<td>Worksheets</td>
 <td>20%</td>
 <td>Five guided worksheets</td>
 </tr>
 <tr class="even">
-<td><a href="../../webpages/assignmentspartA/index.html">Collaborative Project</a></td>
+<td>Collaborative Project</td>
 <td>35%</td>
 <td>Team project intended for practicing version control and collaboration</td>
 </tr>
 <tr class="odd">
-<td><a href="../../webpages/assignmentspartA/index.html">Mini Data Analysis</a></td>
+<td>Mini Data Analysis</td>
 <td>45%</td>
 <td>Students write their own mini analysis</td>
 </tr>
@@ -374,17 +387,17 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="worksheets">Worksheets</h4>
 <p>Worksheets are interactive assignments that allow students to get real-time feedback on their code. Your grade will be based on the number of correct answers provided. There are unlimited attempts for the worksheets, and time will be given in class to work through them. Each worksheet is worth 4% of your final grade.</p>
 <p>Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.</p>
-<p>See <a href="../../webpages/worksheets.html">Worksheets</a> for the schedule.</p>
+<p>See <a href="https://ubc-stat.github.io/stat545/webpages/worksheets.html">Worksheets</a> for the schedule.</p>
 </section>
 <section id="collaborative-project" class="level4">
 <h4 class="anchored" data-anchor-id="collaborative-project">Collaborative Project</h4>
 <p>Students will practice using Version Control and collaborative tools on Github, troubleshoot broken R code, and rewrite code to address issues. Teams will be randomly assigned.</p>
-<p>See <a href="../../webpages/assignmentspartA/index.html">Assignments (Part A)</a> for due dates and assignment details.</p>
+<p>See <a href="https://ubc-stat.github.io/stat545/webpages/assignmentspartA/index.html">Assignments (Part A)</a> for due dates and assignment details.</p>
 </section>
 <section id="mini-data-analysis" class="level4">
 <h4 class="anchored" data-anchor-id="mini-data-analysis">Mini Data Analysis</h4>
 <p>Students will become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as <code>tibble</code>. This analysis is done individually. There are two equally weighted deliverables.</p>
-<p>See <a href="../../webpages/assignmentspartA/index.html">Assignments (Part A)</a> for due dates and assignment details.</p>
+<p>See <a href="https://ubc-stat.github.io/stat545/webpages/assignmentspartA/index.html">Assignments (Part A)</a> for due dates and assignment details.</p>
 </section>
 </section>
 <section id="auditing-students" class="level3">
@@ -436,7 +449,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>debugging code that students wrote and attempted to debug on their own</p></li>
 </ul>
 <p>Generative AI <strong>CANNOT</strong> be used to generate text or code from scratch. Assessments suspected of having AI-generated text and/or code will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.</p>
-<p><strong>Any use of Generative AI must be disclosed. Students will be asked to submit an AI statement for the mini data analyses disclosing any use</strong></p>
+<p><strong>Any use of Generative AI must be disclosed. Students will be asked to submit an AI Declaration Statement disclosing their use on any assessments</strong></p>
 <p>For more information see the <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,959">UBC Academic Misconduct policies</a>.</p>
 </section>
 <section id="health-and-support" class="level2">

@@ -2,19 +2,25 @@
 title: "Syllabus: STAT 545 A (Part I)"
 subtitle: "Sept 7 2026 to October 23 2026"
 date-modified: last-modified
+format:
+  html: default
+  pdf: default
 ---
 
-**IMPORTANT: please see [the academic integrity section](#academic-integrity) for this course's AI policy**.
+:::{.callout-important}
+Please see [the academic integrity section](#academic-integrity) for this course's AI policy.
+:::
 
+\vspace{1cm}
 
 UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəyəm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
 
 ### Course Information
 
-|  |  |  |  |  |
-|---------------|---------------|---------------|---------------|---------------|
 | **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
-| Exploratory Data Analysis Part I | STAT 545 A | 1.5 | Tues/Thurs: 9:00am - 10:20am | CHEM D300 |
+|---------------|---------------|---------------|---------------|---------------|
+| Exploratory Data Analysis Part I | STAT 545 A | 1.5 | Tues/Thurs: 9:00am - 10:20am | See Workday |
+: {.hover}
 
 ### Prerequisites
 
@@ -25,11 +31,13 @@ STAT545 A is a pre-requisite for STAT545 B. No exceptions.
 ### Contact and Office Hours
 
 | Instructor     | Contact Details        | Office Location | Office Hours |
-|----------------|------------------------|-----------------|--------------|
-| Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134        |              |
+|----------------|----------------------|-------------|--------------|
+| [Dr. Grace Tompkins](https://grcetmpk.github.io/) | grace\<at\>stat.ubc.ca | ESB 3134        |              |
+: {.hover}
 
 | Teaching Assistants (TAs) | Office Hours | Location |
 |---------------------------|--------------|----------|
+: {.hover}
 
 ### Course Structure
 
@@ -39,18 +47,18 @@ This course will feature short lectures and in-class demonstrations so students 
 
 ### Schedule of Topics
 
-See schedule [here](../lectures.qmd).
+See schedule [here](https://ubc-stat.github.io/stat545/webpages/lectures.html).
 
 ### Assessments
 
 This course will have autograded, formative worksheets meant to guide you through a number of exercises.
 
 | Assessment | Percent Grade | Note |
-|------------------------|------------------------|------------------------|
-| [Worksheets](../worksheets.qmd) | 20% | Five guided worksheets |
-| [Collaborative Project](../assignmentspartA/index.qmd) | 35% | Team project intended for practicing version control and collaboration |
-| [Mini Data Analysis](../assignmentspartA/index.qmd) | 45% | Students write their own mini analysis |
-
+|--------------|----------|------------------------|
+|Worksheets | 20% | Five guided worksheets |
+| Collaborative Project | 35% | Team project intended for practicing version control and collaboration |
+| Mini Data Analysis  | 45% | Students write their own mini analysis |
+: {.hover}
 
 #### Worksheets
 
@@ -58,19 +66,19 @@ Worksheets are interactive assignments that allow students to get real-time feed
 
 Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
-See [Worksheets](../worksheets.qmd) for the schedule. 
+See [Worksheets](https://ubc-stat.github.io/stat545/webpages/worksheets.html) for the schedule. 
 
 #### Collaborative Project
 
 Students will practice using Version Control and collaborative tools on Github, troubleshoot broken R code, and rewrite code to address issues. Teams will be randomly assigned.
 
-See [Assignments (Part A)](../assignmentspartA/index.qmd) for due dates and assignment details. 
+See [Assignments (Part A)](https://ubc-stat.github.io/stat545/webpages/assignmentspartA/index.html) for due dates and assignment details. 
 
 #### Mini Data Analysis
 
 Students will become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as `tibble`. This analysis is done individually. There are two equally weighted deliverables.
 
-See [Assignments (Part A)](../assignmentspartA/index.qmd) for due dates and assignment details. 
+See [Assignments (Part A)](https://ubc-stat.github.io/stat545/webpages/assignmentspartA/index.html) for due dates and assignment details. 
 
 ### Auditing Students
 
@@ -132,7 +140,7 @@ In this course, Generative AI can be used in the following ways:
 
 Generative AI **CANNOT** be used to generate text or code from scratch. Assessments suspected of having AI-generated text and/or code will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.
 
-**Any use of Generative AI must be disclosed. Students will be asked to submit an AI statement for the mini data analyses disclosing any use**
+**Any use of Generative AI must be disclosed. Students will be asked to submit an AI Declaration Statement disclosing their use on any assessments**
 
 For more information see the [UBC Academic Misconduct policies](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,959).
 
