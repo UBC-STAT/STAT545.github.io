@@ -4791,7 +4791,7 @@
     "href": "webpages/assignmentspartB/index.html",
     "title": "Assignments (Part B)",
     "section": "",
-    "text": "There are three major assignments for STAT545 B. The links to these assignments will be released on the indicated date, and can be found on this page.\n\n\n\n\n\n\n\n\nAssignment\nRelease Date\nDue Date\n\n\n\n\nCreate a Function\nThurs September 22, 2026\nThurs November 05, 2026\n\n\nCreate an R Package\nTues November 03, 2026\nTues November 17, 2026\n\n\nCreate a Dashboard\nTues November 17, 2026\nThurs November 26, 2026\n\n\nCreate a Website\nTues December 01, 2026\nTues December 15, 2026\n\n\n\n\n\n\n Back to top"
+    "text": "There are three major assignments for STAT545 B. The links to these assignments will be released on the indicated date, and can be found on this page.\n\n\n\n\n\n\n\n\nAssignment\nRelease Date\nDue Date\n\n\n\n\nCreate a Function\nThurs September 22, 2026\nThurs November 05, 2026\n\n\nCreate an R Package\nTues November 03, 2026\nTues November 17, 2026\n\n\nCreate a Dashboard\nTues November 17, 2026\nThurs November 26, 2026\n\n\nCreate a Website\nTues December 01, 2026\nTues December 15, 2026"
   },
   {
     "objectID": "webpages/assignmentspartB/assignmentB2.html",
@@ -4872,5 +4872,33 @@
     "crumbs": [
       "Assignment B2: Making an R Package"
     ]
+  },
+  {
+    "objectID": "webpages/assignmentspartA/index.html#generative-ai-disclosure",
+    "href": "webpages/assignmentspartA/index.html#generative-ai-disclosure",
+    "title": "Assignments (Part A)",
+    "section": "Generative AI Disclosure",
+    "text": "Generative AI Disclosure\nIn this course, Generative AI can be used in the following ways:\n\nto clarify concepts discussed in class\nas an “advanced search engine” (i.e., searching error codes)\ndebugging code that students wrote and attempted to debug on their own\n\nGenerative AI CANNOT be used to generate text or code (including comments) from scratch.\nAny use of Generative AI must be disclosed.\nTo disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details [in square brackkets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck\nHere is an example of a specific, explicit debug:\n\n“I had the error attempt to apply non-function after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a *, i.e. (2)(3) instead of 2*3.”\n\n\n## Generative AI Statement \n\nGenerative AI (through [LIST MODELS USED, i.e. ChatGPT, CoPilot)] was used to \nhelp me complete  this assignment in the following ways. \n\n1. [Describe here]\n\n2. [Describe here]\n\n...\n\nI affirm that Generative AI was not used to generate text, code, or comments for \nmy assessments. \nIf you did not use Generative AI, you do not need to include this in the README.\nAssessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade."
+  },
+  {
+    "objectID": "webpages/assignmentspartA/index.html#worksheets",
+    "href": "webpages/assignmentspartA/index.html#worksheets",
+    "title": "Assignments (Part A)",
+    "section": "",
+    "text": "Worksheets are guided exercises that are meant to supplement lectures, and will be graded as part of your final mark in STAT545. Time will be given in lecture to work on these formative assessments.\nWorksheets are produced with Jupyter Notebooks. For installation instructions, see Lecture 1A (Installation) or check out this YouTube video!\n\n\n\nWorksheet\nRelease Date\nDue Date (11:59PM PT)\n\n\n\n\nWorksheet A1\nSeptember 8th, 2026\nSeptember 15th, 2026\n\n\nWorksheet A2\nSeptember 15th, 2026\nSeptember 22nd, 2026\n\n\nWorksheet A3\nSeptember 29th, 2026\nOctober 6th, 2026\n\n\nWorksheet A4\nOctober 6th, 2026\nOctober 15th, 2026\n\n\nWorksheet A5\nOctober 15th, 2026\nOctober 23rd, 2026\n\n\n\n\n\n\n\n\nWorksheet\nRelease Date\nDue Date (11:59PM PT)\n\n\n\n\nWorksheet B1\nOct 27, 2026\nNov 3, 2026\n\n\nWorksheet B2\nNov 12, 2026\nNov 19, 2026\n\n\nWorksheet B3\nNov 24, 2026\nDec 3, 2026\n\n\n\nWorksheet Tips and Tricks:\n\nDownload the .ipynb file from GitHub and save it on your personal computer.\nOnly edit cells where prompted. If you accidentally click on a text-only cell, hit the play button and it should re-render.\nYou can check your answers prior to submitting! If you see a “Success!” message, you got the question right. Otherwise, a detailed error message will help you diagnose what went wrong.\nSave your work frequently.\nPrior to submitting, restart your kernel and run all to ensure that no errors persist. Save again.\nSubmit the .ipynb file to Canvas with the file name “worksheet_a##”.\nWe’re here to help along the way on Slack, so don’t be shy to ask for help if you need it."
+  },
+  {
+    "objectID": "webpages/assignmentspartB/index.html#assignments",
+    "href": "webpages/assignmentspartB/index.html#assignments",
+    "title": "Assignments (Part B)",
+    "section": "",
+    "text": "There are three major assignments for STAT545 B. The links to these assignments will be released on the indicated date, and can be found on this page.\n\n\n\n\n\n\n\n\nAssignment\nRelease Date\nDue Date\n\n\n\n\nCreate a Function\nThurs September 22, 2026\nThurs November 05, 2026\n\n\nCreate an R Package\nTues November 03, 2026\nTues November 17, 2026\n\n\nCreate a Dashboard\nTues November 17, 2026\nThurs November 26, 2026\n\n\nCreate a Website\nTues December 01, 2026\nTues December 15, 2026"
+  },
+  {
+    "objectID": "webpages/assignmentspartB/index.html#generative-ai-disclosure",
+    "href": "webpages/assignmentspartB/index.html#generative-ai-disclosure",
+    "title": "Assignments (Part B)",
+    "section": "Generative AI Disclosure",
+    "text": "Generative AI Disclosure\nIn this course, Generative AI can be used in the following ways:\n\nto clarify concepts discussed in class\nas an “advanced search engine” (i.e., searching error codes)\ndebugging code that students wrote and attempted to debug on their own\n\nGenerative AI CANNOT be used to generate text or code (including comments) from scratch.\nAny use of Generative AI must be disclosed.\nTo disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details [in square brackkets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck\nHere is an example of a specific, explicit debug:\n\n“I had the error attempt to apply non-function after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a *, i.e. (2)(3) instead of 2*3.”\n\n\n## Generative AI Statement \n\nGenerative AI (through [LIST MODELS USED, i.e. ChatGPT, CoPilot)] was used to \nhelp me complete  this assignment in the following ways. \n\n1. [Describe here]\n\n2. [Describe here]\n\n...\n\nI affirm that Generative AI was not used to generate text, code, or comments for \nmy assessments. \nIf you did not use Generative AI, you do not need to include this in the README.\nAssessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade."
   }
 ]

@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -184,6 +219,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#collaborative-project" id="toc-collaborative-project" class="nav-link active" data-scroll-target="#collaborative-project">Collaborative Project</a></li>
   <li><a href="#mini-data-analysis" id="toc-mini-data-analysis" class="nav-link" data-scroll-target="#mini-data-analysis">Mini Data Analysis</a></li>
+  <li><a href="#generative-ai-disclosure" id="toc-generative-ai-disclosure" class="nav-link" data-scroll-target="#generative-ai-disclosure">Generative AI Disclosure</a></li>
   </ul>
 </nav>
     </div>
@@ -264,6 +300,38 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
+<section id="generative-ai-disclosure" class="level2">
+<h2 class="anchored" data-anchor-id="generative-ai-disclosure">Generative AI Disclosure</h2>
+<p>In this course, Generative AI can be used in the following ways:</p>
+<ul>
+<li><p>to clarify concepts discussed in class</p></li>
+<li><p>as an “advanced search engine” (i.e., searching error codes)</p></li>
+<li><p>debugging code that students wrote and attempted to debug on their own</p></li>
+</ul>
+<p>Generative AI <strong>CANNOT</strong> be used to generate text or code (including comments) from scratch.</p>
+<p>Any use of Generative AI must be disclosed.</p>
+<p><strong>To disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details</strong> [in square brackkets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck</p>
+<p>Here is an example of a specific, explicit debug:</p>
+<blockquote class="blockquote">
+<p>“I had the error <code>attempt to apply non-function</code> after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a <code>*</code>, i.e.&nbsp;<code>(2)(3)</code> instead of <code>2*3</code>.”</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generative AI Statement </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Generative AI (through <span class="co">[</span><span class="ot">LIST MODELS USED, i.e. ChatGPT, CoPilot)</span><span class="co">]</span> was used to </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>help me complete  this assignment in the following ways. </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="co">[</span><span class="ot">Describe here</span><span class="co">]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="co">[</span><span class="ot">Describe here</span><span class="co">]</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>I affirm that Generative AI was not used to generate text, code, or comments for </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>my assessments. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you did not use Generative AI, you do not need to include this in the README.</p>
+<p>Assessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.</p>
 
 
 </section>
