@@ -1,0 +1,23 @@
+---
+title: "Assignments (Part A)"
+format: html
+---
+
+The major assignments for STAT545 A include a collaborative project and mini data analysis. The links to these projects will be released on the indicated date, and can be found on this page.
+
+## Collaborative Project
+
+The purpose of this project is to allow students to gain confidence using collaborative version control tools, such as Git and GitHub. Groups will be randomly assigned by the instructor. There is one deliverable.
+
+| Deliverable           | Release Date            | Due Date               |
+|-----------------------|-------------------------|------------------------|
+| Collaborative Project | Tues September 22, 2026 | Thurs October 01, 2026 |
+
+## Mini Data Analysis
+
+In this two-part assignment, students will become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as `ggplot2`. This analysis is done individually. There are two equally weighted deliverables.
+
+| Deliverable | Release Date | Due Date |
+|--------------------------|-----------------------|-----------------------|
+| Mini Data Analysis - Milestone 1 | Thurs October 01, 2026 | Tues October 20, 2026 |
+| Mini Data Analysis - Milestone 2 | Thurs October 01, 2026 | Tues October 27, 2026 |

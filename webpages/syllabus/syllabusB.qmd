@@ -1,7 +1,10 @@
 ---
 title: "Syllabus: STAT 545 B (Part II)"
+subtitle: "October 27 2026 to Dec 03 2026"
 date-modified: last-modified
 ---
+
+**IMPORTANT: please see [the academic integrity section](#academic-integrity) for this course's AI policy**.
 
 ### Acknowledgement
 
@@ -12,28 +15,27 @@ UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded 
 |  |  |  |  |  |
 |---------------|---------------|---------------|---------------|---------------|
 | **Course Title** | **Course Code** | **Credit** **Value** | **Class Times** | **Class Location** |
-| Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Tuesday/Thursday: 9:30am - 10:50am | ORCH 1001 |
+| Exploratory Data Analysis Part II | STAT 545 B | 1.5 | Tues/Thurs: 9:30am - 10:50am | CHEM D300 |
 
 ::: callout-note
-STAT545 B starts half an hour later than STAT545 A and is in a different room!
+STAT545 B starts half an hour later than STAT545 A!
 :::
 
 ### Prerequisites
 
 STAT545 A is a pre-requisite for STAT545 B. No exceptions.
 
-
 ### Contact and Office Hours
 
-| Instructor | Contact Details | Office Location | Office Hours |
-|------------------|------------------|------------------|------------------|
-| Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134 | Wednesdays, 2:30pm - 3:30pm |
+| Instructor     | Contact Details        | Office Location | Office Hours |
+|----------------|------------------------|-----------------|--------------|
+| Grace Tompkins | grace\<at\>stat.ubc.ca | ESB 3134        |              |
 
-| Teaching Assistants (TAs) | Office Hours                 | Location          |
-|--------------------------|----------------------------|------------------|
-| Erick Navarro             | Thursdays, 11:00am - 12:00pm | Zoom (see Canvas) |
-| Asfar Lathif              | Mondays, 3:00pm - 4:00pm     | Zoom (see Canvas) |
-| Mario Gomez Camacho       | TBD                          | TBD               |
+| Teaching Assistants (TAs) | Office Hours | Location |
+|---------------------------|--------------|----------|
+|                           |              |          |
+|                           |              |          |
+|                           |              |          |
 
 ### Course Structure
 
@@ -43,32 +45,7 @@ This course will feature short lectures and in-class demonstrations so students 
 
 ### Schedule of Topics
 
-**STAT 545 B (Part II):**
-
-| Week | Date | Topic | In-class work |
-|------------------|------------------|------------------|------------------|
-| 8 | Tuesday Oct 21 | [Functions](../lectures_ii/lec8a_functions.qmd) | Worksheet B1 |
-|  | Thursday Oct 23 | [Advanced Functions](../lectures_ii/lec8b_advfunctions.qmd) | Worksheet B1, Assignment 1 |
-|  |  |  |  |
-| 9 | Tuesday Oct 28 | [R Packages](../lectures_ii/lec9_rpackages.qmd) |  |
-|  | Thursday Oct 30 |  | Assignment 1 |
-|  |  |  |  |
-| 10 | Tuesday Nov 4 | [Dashboards with R Shiny](../lectures_ii/lec10_shiny.qmd) |  |
-|  | Thursday Nov 6 |  | Assignment 2 |
-|  |  |  |  |
-| 11 | Tuesday Nov 11 | **NO LECTURE: REMEMBRANCE DAY** |  |
-|  | Thursday Nov 13 | [Automation (ASYNCHRONOUS ONLINE LECTURE)](../lectures_ii/lec11_automation.qmd) |  |
-|  |  |  |  |
-| 12 | Tuesday Nov 18 | [StringR and Regular Expressions](../lectures_ii/lec12_characterdata.qmd) | Worksheet B2 |
-|  | Thursday Nov 20 |  | Worksheet B2 |
-|  |  |  |  |
-| 13 | Tuesday Nov 25 | [Iteration with `purrr`](../lectures_ii/lec13_purrr.qmd) | Worksheet B3 |
-|  | Thursday Nov 27 | | Worksheet B3 |
-|  |  |  |  |
-| 14 | Tuesday Dec 2 | [Quarto Websites and Slides](../lectures_ii/lec14_quarto.qmd) |  |
-|  | Thursday Dec 4 | Review and Work Session | Worksheet B3, Assignment 3 |
-
-This schedule is subject to change. Any changes will be announced via the `#annoucements` channel on Slack, and major changes will be sent out via email.
+See schedule [here](../lectures.qmd).
 
 ### Assessments
 
@@ -76,35 +53,26 @@ This course will have autograded worksheets meant to guide you through a number 
 
 | Assessment | Percent Grade | Note |
 |------------------------|------------------------|------------------------|
-| Worksheets | 15% | Three guided worksheets |
-| Assignments | 85% | Three assignments involving more independent analyses and tasks |
+| [Worksheets](../worksheets.qmd) | 15% | Three guided worksheets |
+| [Assignments]((../assignmentspartB/index.qmd)) | 85% | Four assignments involving more independent analyses and tasks |
 
 #### Worksheets
 
-Worksheets are interactive assignments that allow students to get real-time feedback on their code. Your grade will be based on the number of correct answers provided. There are unlimited attempts for the worksheets, and time will be given in class to work through them. Worksheets are equally weighted (each worth 5% of your final grade).
+Worksheets are interactive assignments that allow students to get real-time feedback on their code. Your grade will be based on the number of correct answers provided. There are unlimited attempts for the worksheets, and time will be given in class to work through them. Each worksheet is worth 4% of your final grade.
 
 Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
-| Worksheet    | Release Date         | Due Date (11:59PM PT) |
-|--------------|----------------------|-----------------------|
-| Worksheet B1 | Monday Oct 20, 2025  | Monday Oct 27, 2025   |
-| Worksheet B2 | Friday Nov 14, 2025  | Monday Nov 24, 2025   |
-| Worksheet B3 | Tuesday Nov 25, 2025 | Thursday Dec 4, 2025  |
+See [Worksheets](../worksheets.qmd) for the schedule.
 
 #### Assignments
 
-There are three formal assignments for this course, each equally weighted (each worth 21.25% of your final grade):
+There are four formal assignments for this course, each equally weighted (each worth 21.25% of your final grade).
 
-| Assignment   | Release Date          | Due Date (11:59pm PT) |
-|--------------|-----------------------|-----------------------|
-| Assignment 1 | Tuesday Oct 21, 2025  | Tuesday Nov 4, 2025   |
-| Assignment 2 | Tuesday Nov 4, 2025   | Tuesday Nov 18, 2025  |
-| Assignment 3 | Thursday Nov 18, 2025 | Thursday Dec 4, 2025  |
-
+See [Assignments (Part B)](../assignmentspartB/index.qmd) for due dates and assignment details.
 
 ### Auditing Students
 
-Auditing students are expected to complete all assessments (see above). All assessments are graded on a pass/fail basis for those officially auditing.
+Auditing students are expected to pass all assessments (worksheets and assignments). All assessments are graded on a pass/fail basis for those officially auditing.
 
 You must be registered as an auditing student to attend lectures due to capacity limitations.
 
@@ -150,59 +118,42 @@ Examples of “conflicting responsibility” are conference travel and time-sens
 
 If you arrange to have an assignment submitted late, you may not be able to receive feedback from your peers.
 
-#### Plagiarism
+### Academic Integrity {#academic-integrity}
 
-Plagiarism, which is intellectual theft, occurs where an individual submits or presents the oral or written work of another person as his or her own and can include:
+Plagiarism includes submitting the same response as another student, copying without citation, or copying from generative AI (ChatGPT, Gemini, etc.). Students are responsible for ensuring that any work submitted does not constitute plagiarism. Students who are in any doubt as to what constitutes plagiarism should consult their instructor before handing in any assignments.
 
--   multiple students submitting the same response
+In this course, Generative AI can be used in the following ways:
 
--   copying from sources without citing them
+-   to clarify concepts discussed in class
 
--   copying verbatim (word-for-word) from source and citing, but failing to make it explicit that this is a quotation (quotations should be used only rarely, if at all)
+-   as an "advanced search engine" (i.e., searching error codes)
 
-Students are responsible for ensuring that any work submitted does not constitute plagiarism. Students who are in any doubt as to what constitutes plagiarism should consult their instructor before handing in any assignments.
+-   debugging code that students wrote and attempted to debug on their own
+
+Generative AI **CANNOT** be used to generate text or code from scratch. Assessments suspected of having AI-generated text and/or code will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.
+
+**Any use of Generative AI must be disclosed. Students will be asked to submit an AI statement for the mini data analyses disclosing any use**
 
 For more information see the [UBC Academic Misconduct policies](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,959).
 
-#### **Code Plagiarism**
+## Health and Support
 
-Students must correctly cite any code that has been authored by someone else or by the student themselves for other assignments. Cases of code plagiarism may include, but are not limited to:
+-   **If you are sick:** Stay home. Access annotated slides on Canvas and use Piazza for discussion.
+-   **Instructor health:** If the instructor is ill but well enough to teach, lectures will move to Zoom. If not well enough, a TA may take over or accommodations will be made.
 
--   the reproduction (copying and pasting) of code with none or minimal reformatting (e.g., changing the name of the variables)
+### More UBC resources for student success
 
--   the translation of an algorithm or a script from a language to another
+-   [Academic and learning resources](https://students.ubc.ca/enrolment/academic-learning-resources)
 
--   the generation of code by automatic code-generations software
+-   [Academic Concessions](https://students.ubc.ca/enrolment/academic-learning-resources/academic-concessions)
 
-An “adequate acknowledgement” requires a detailed identification of the (parts of the) code reused and a full citation of the original source code that has been reused.
+-   [Academic Honesty and Standards](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-honesty-and-standards)
 
-#### UBC’s Policies and Resources to Support Student Success
+-   [Attendance](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/attendance)
 
-UBC provides resources to support student learning and to maintain healthy lifestyles but recognizes that sometimes crises arise and so there are additional resources to access including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious, spiritual and cultural observances. UBC values academic honesty and students are expected to acknowledge the ideas generated by others and to uphold the highest academic standards in all of their actions. Details of the policies and how to access support are available [here](https://senate.ubc.ca/policies-resources-support-student-success).
+-   [Student Conduct and Discipline](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/student-conduct-and-discipline)
 
-#### Your personal health
-
-**If you’re sick, it’s important that you stay home – no matter what you think you may be sick with (e.g., cold, flu, other).** Your precautions will help reduce risk and keep everyone safer. The structure of this class is intended to provide flexibility so that you can prioritize your health and still be able to succeed.
-
-**If you do miss class because of illness:**
-
--   Consult the class resources on the course website
-
--   Come to office hours on Zoom.
-
--   Use Slack to carry out discussions.
-
-If you miss an assessment due to illness, see the above section on Academic Concessions, and review the UBC policy here: <http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0>
-
-Above all, please take care of yourself and be kind to yourself and your classmates. If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, I strongly encourage you to seek support. UBC Counseling Services is here to help: call 604 822 3811 or visit their website. Consider also reaching out to a friend, faculty member, or family member you trust to help get you the support you need.
-
-#### Instructor health
-
-If I am ill, then I will not come to class. If that happens, here’s what you can expect:
-
--   If I am well enough to teach, I will conduct virtual lectures through Zoom until I am well. If this happens, you will be tagged in an announcement via Slack with information. You can anticipate that this would very likely be a last minute announcement. Our classroom will still be available for you to sit and attend an online session, although it is recommended that you bring headphones.
-
--   If I am not well enough to teach, it is possible that one or more teaching assistants will take my place. But if not, we will either try to make up for lost time, make new resources to aid in your learning, or make accommodations regarding the assessments.
+-   [Viewing Marked Work](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-assessment/viewing-marked-work)
 
 ### Copyright
 

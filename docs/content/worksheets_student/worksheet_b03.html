@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -65,15 +66,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../images/stat545_transparent.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-f55b795d08b5ec9c46d466a81ca0990b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ba3d7e3108b965ef4c6892bc29f4f97a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -129,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -166,153 +169,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-notes-(a" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Notes (A)</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-notes-(a">    
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec1a_installation.html">
- <span class="dropdown-text">Lecture 1A: Installation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec1b_introR.html">
- <span class="dropdown-text">Lecture 1B: Course Introduction and R</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec2A_reproducibility.html">
- <span class="dropdown-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec2b_versioncontrol.html">
- <span class="dropdown-text">Lecture 2B: Version Control</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec3_dplyr.html">
- <span class="dropdown-text">Lecture 3: Data Manipulation with dplyr</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec4_datavis.html">
- <span class="dropdown-text">Lecture 4: Data Visualization</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec5_tidydata.html">
- <span class="dropdown-text">Lecture 5: Tidy Data and the Tidyverse</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec6a_modelfitting.html">
- <span class="dropdown-text">Lecture 6A: Model Fitting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec6b_factorsanddates.html">
- <span class="dropdown-text">Lecture 6B: Factors</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec7a_readwritedata.html">
- <span class="dropdown-text">Lecture 7A: Reading and Writing Data</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_i/lec7b_joiningtibbles.html">
- <span class="dropdown-text">Lecture 7B: Tibble Joins</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-notes-(b" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Notes (B)</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-notes-(b">    
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8a_functions.html">
- <span class="dropdown-text">Lecture 8A: Functions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec8b_advfunctions.html">
- <span class="dropdown-text">Lecture 8b: Advanced Functions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec9_rpackages.html">
- <span class="dropdown-text">Lecture 9: R Packages</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec10_shiny.html">
- <span class="dropdown-text">Lecture 10: Dashboards with R Shiny</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec11_automation.html">
- <span class="dropdown-text">Lecture 11: Automation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec12_characterdata.html">
- <span class="dropdown-text">Lecture 12: StringR and Regular Expressions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec13_purrr.html">
- <span class="dropdown-text">Lecture 13: Lists, Iterations, and <code>purrr</code></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/lectures_ii/lec14_quarto.html">
- <span class="dropdown-text">Lecture 14: Professional Websites with Quarto</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../webpages/slides/slides.html"> 
-<span class="menu-text">Slides</span></a>
+    <a class="nav-link" href="../../webpages/lectures.html"> 
+<span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collab-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Collab Project</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-collab-project">    
-        <li>
-    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable1.html">
- <span class="dropdown-text">Collaborative Project: Deliverable 1</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../webpages/assignmentspartA/index.html"> 
+<span class="menu-text">Assignments (Part A)</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/collabproj/collabproj_deliverable2.html">
- <span class="dropdown-text">Collaborative Project: Deliverable 2</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../webpages/assignmentspartB/index.html"> 
+<span class="menu-text">Assignments (Part B)</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mini-data-analysis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Mini Data Analysis</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-data-analysis">    
-        <li>
-    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable1.html">
- <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/mda/mda_deliverable2.html">
- <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-assignments-(part-b" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Assignments (Part B)</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-assignments-(part-b">    
-        <li>
-    <a class="dropdown-item" href="../../webpages/assignmentspartB/assignmentB1.html">
- <span class="dropdown-text">Assignment B1: Making a Function in R</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/assignmentspartB/assignmentB2.html">
- <span class="dropdown-text">Assignment B2: Making an R Package</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../webpages/assignmentspartB/assignmentB3.html">
- <span class="dropdown-text">Assignment B3: Shiny App</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
@@ -394,19 +266,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Apply list columns to cases in data analysis: columns of models, columns of nested lists (JSON-style data), and operating on entire groups within a tibble.</li>
 </ul>
 <p>Load the worksheet requirements:</p>
-<div id="cell-2" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e9cdd0397d1848459e69155e90a7722a&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-04b3e77f6b2aa884&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(testthat))</span>
+<div id="cell-2" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e9cdd0397d1848459e69155e90a7722a&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-04b3e77f6b2aa884&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(testthat))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(digest))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(palmerpenguins))</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(glue))</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(gapminder))</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(broom))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(repurrrsive))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(repurrrsive))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The following code chunk has been unlocked, to give you the flexibility to start this document with some of your own code. Remember, it’s bad manners to keep a call to <code>install.packages()</code> in your source code, so don’t forget to delete these lines if you ever need to run them.</p>
 <div id="cell-4" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># An unlocked code chunk.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># An unlocked code chunk.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="part-1-exploring-purrr-fundamentals" class="level1">
@@ -425,24 +297,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="question-1">QUESTION 1</h2>
 <p>{points: 1}</p>
 <p>Without using vectorization, take the square root of the following vector:</p>
-<div id="cell-7" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;b9fd99c626cde4c068997118d3a65d68&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-cf14f37393dfb8aa&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-7" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;b9fd99c626cde4c068997118d3a65d68&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-cf14f37393dfb8aa&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The result should be a list of the calculations. Store your answer in <code>answer1</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>answer1 <span class="ot">&lt;-</span> <span class="fu">map</span>(FILL_THIS_IN, FILL_THIS_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-9" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;0baa83c880dc41e0e19ffd73efb8af73&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-6284b5e7fedca3b9&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>answer1 <span class="ot">&lt;-</span> <span class="fu">map</span>(FILL_THIS_IN, FILL_THIS_IN)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;0baa83c880dc41e0e19ffd73efb8af73&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-6284b5e7fedca3b9&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>answer1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>answer1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-10" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;45fbda919a74edf52a417057806ca794&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-24f033554d4e73c0&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-10" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;45fbda919a74edf52a417057806ca794&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-24f033554d4e73c0&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of answer1 is not list"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(answer1)), <span class="st">"e8e68"</span>)), <span class="st">"302b38335cbe54a6393db9763130b7e6"</span>))</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"length of answer1 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">length</span>(answer1)), <span class="st">"e8e68"</span>)), <span class="st">"6d9f5a67a6c6b27f19b2a64b4932925a"</span>))</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values of answer1 names are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">c</span>(<span class="fu">names</span>(answer1)))), <span class="st">"e8e68"</span>)), <span class="st">"930bdb47de00be1e31d6243f87c51b06"</span>))</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"order of elements of answer1 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(answer1), <span class="st">"e8e68"</span>)), <span class="st">"354c3ca562580b223349727dcbebb217"</span>))</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-2" class="level2">
@@ -450,21 +322,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>{points: 1}</p>
 <p>In Question 1, we used the generic <code>map</code> function, and got a list. Let’s use a more specific <code>map_*</code> function this time.</p>
 <p>Again without using vectorization, square each component of <code>x</code>. The result should be a numeric vector. Store your answer in <code>answer2</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>answer2 <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(FILL_THIS_IN, FILL_THIS_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>answer2 <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(FILL_THIS_IN, FILL_THIS_IN)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Hint:</em> The last <code>FILL_THIS_IN</code> corresponds to an anonymous function!</p>
-<div id="cell-12" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;088407d7039474dbf36c2e616aedcfb0&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-7ef5e38acec39a45&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;088407d7039474dbf36c2e616aedcfb0&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-7ef5e38acec39a45&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-13" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;78fe237672500341cf3f168db8959469&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-e973a44a4a26e248&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-13" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;78fe237672500341cf3f168db8959469&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-e973a44a4a26e248&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of answer2 is not numeric"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(answer2)), <span class="st">"1c1a8"</span>)), <span class="st">"d71412e05e24332596cc591b22c8a0e3"</span>))</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"value of answer2 is not correct (rounded to 2 decimal places)"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">round</span>(answer2, <span class="dv">2</span>)), <span class="st">"1c1a8"</span>)), <span class="st">"a9236d4df4d673160b85bee34baaed61"</span>))</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"length of answer2 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">length</span>(answer2)), <span class="st">"1c1a8"</span>)), <span class="st">"6e3afaeffc96949462a4937a3746957d"</span>))</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values of answer2 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">round</span>(answer2, <span class="dv">2</span>))), <span class="st">"1c1a8"</span>)), <span class="st">"a9236d4df4d673160b85bee34baaed61"</span>))</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we’ve used both <code>map</code> and a more specific <code>map_dbl</code>. Now you can see how they differ, and how the use of one is better justified than the other for our purpose. Now it’s your turn to choose! Remember to use the <a href="https://github.com/rstudio/cheatsheets/blob/master/purrr.pdf">cheatsheet</a> if you need it!</p>
 </section>
@@ -472,83 +344,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="question-3">QUESTION 3</h2>
 <p>{points: 1}</p>
 <p>Below is sample code that computes the mean of every column in the <code>mtcars</code> dataset. Use the appropriate <code>purrr</code> function to vectorize this task.</p>
-<div id="cell-15" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;f4aae378ca91f36516266b3ea5c5871d&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-d19221d660e2569f&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mtcars_means <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
+<div id="cell-15" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;f4aae378ca91f36516266b3ea5c5871d&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-d19221d660e2569f&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mtcars_means <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (c <span class="cf">in</span> <span class="fu">seq_along</span>(mtcars)){</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  mtcars_means[[c]] <span class="ot">&lt;-</span> <span class="fu">mean</span>(mtcars[[c]])</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>mtcars_means</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>mtcars_means</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Store your answer in <code>answer3</code>; as above, your answer should be a vector. <em>Hint</em>: remember that a tibble / data frame is just a list, where each entry is a column (a vector).</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>answer3 <span class="ot">&lt;-</span> <span class="fu">FILL_THIS_IN</span>(datasets<span class="sc">::</span>mtcars, FILL_THIS_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-17" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;b8f773d13f9b6239b96ab669bd40750f&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-57149cc846945d50&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>answer3 <span class="ot">&lt;-</span> <span class="fu">FILL_THIS_IN</span>(datasets<span class="sc">::</span>mtcars, FILL_THIS_IN)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;b8f773d13f9b6239b96ab669bd40750f&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-57149cc846945d50&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-18" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;d2fe15343673bcb96ac2d7098c21ad66&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-4bee819e10679644&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-18" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;d2fe15343673bcb96ac2d7098c21ad66&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-4bee819e10679644&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of answer3 is not numeric"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(answer3)), <span class="st">"a22de"</span>)), <span class="st">"d5baa49d105e133b02797d0995291f75"</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"value of answer3 is not correct (rounded to 2 decimal places)"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">round</span>(answer3, <span class="dv">2</span>)), <span class="st">"a22de"</span>)), <span class="st">"a88eddb0705c304d3fc768d339bb4a40"</span>))</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"length of answer3 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">length</span>(answer3)), <span class="st">"a22de"</span>)), <span class="st">"93364ff92443b7362d8bec3343246e6b"</span>))</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values of answer3 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">round</span>(answer3, <span class="dv">2</span>))), <span class="st">"a22de"</span>)), <span class="st">"fdb874ead188b87e5a0197f43d4f8a0b"</span>))</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">QUESTION 4</h2>
 <p>{points: 1}</p>
 <p>Below is sample code that computes the number of unique values in each column of <code>mtcars</code> as a named vector, using for-loops. Use the appropriate <code>purrr</code> function to vectorize this task.</p>
-<div id="cell-20" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;28f025daf9b2193125503ff10f0d7e6c&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-575f9f96064b2ff8&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mtcars_unique <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
+<div id="cell-20" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;28f025daf9b2193125503ff10f0d7e6c&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-575f9f96064b2ff8&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mtcars_unique <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (c <span class="cf">in</span> <span class="fu">seq_along</span>(datasets<span class="sc">::</span>mtcars)){</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  mtcars_unique[[c]] <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(datasets<span class="sc">::</span>mtcars[[c]]))</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mtcars_unique) <span class="ot">&lt;-</span> <span class="fu">names</span>(datasets<span class="sc">::</span>mtcars)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>mtcars_unique</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>mtcars_unique</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Store your answer in <code>answer4</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>answer4 <span class="ot">&lt;-</span> datasets<span class="sc">::</span>mtcars <span class="sc">%&gt;%</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>answer4 <span class="ot">&lt;-</span> datasets<span class="sc">::</span>mtcars <span class="sc">%&gt;%</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">FILL_THIS_IN</span>(FILL_THIS_IN) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">FILL_THIS_IN</span>(FILL_THIS_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-22" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;41181934f8753da5b79840bdf5612b97&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-bf6e549fb1e34216&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">FILL_THIS_IN</span>(FILL_THIS_IN)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;41181934f8753da5b79840bdf5612b97&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-bf6e549fb1e34216&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-23" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;12b04fdbedbd4cbf20c1275991050a51&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-01d694fdcf1ee07a&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-23" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;12b04fdbedbd4cbf20c1275991050a51&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-01d694fdcf1ee07a&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of answer4 is not numeric"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(answer4)), <span class="st">"604b5"</span>)), <span class="st">"75dc2536842deb5b78c409e5926e32a7"</span>))</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"value of answer4 is not correct (rounded to 2 decimal places)"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">round</span>(answer4, <span class="dv">2</span>)), <span class="st">"604b5"</span>)), <span class="st">"8d82833db264c8c68a5ca0fd27d243f6"</span>))</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"length of answer4 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">length</span>(answer4)), <span class="st">"604b5"</span>)), <span class="st">"2b96a626d378caa9d0f7b8dd5f5d58f0"</span>))</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values of answer4 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">round</span>(answer4, <span class="dv">2</span>))), <span class="st">"604b5"</span>)), <span class="st">"e764cb129241c889021e9397d839b91b"</span>))</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-5" class="level2">
 <h2 class="anchored" data-anchor-id="question-5">QUESTION 5</h2>
 <p>{points: 1}</p>
 <p>Below is sample code that divides the values in each column of the <code>mtcars</code> dataset by the maximum in that column.</p>
-<div id="cell-25" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e97a58d1fef9764ad8a6843e43769e33&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-0b06d241b2c23867&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(mtcars)){</span>
+<div id="cell-25" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e97a58d1fef9764ad8a6843e43769e33&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-0b06d241b2c23867&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(mtcars)){</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  mtcars[[c]] <span class="ot">&lt;-</span> mtcars[[i]] <span class="sc">/</span> <span class="fu">max</span>(mtcars[[i]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Find a way to do this without a loop. Store your answer in <code>answer5</code>:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>answer5 <span class="ot">&lt;-</span> datasets<span class="sc">::</span>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">FILL_THIS_IN</span>(FILL_THIS_IN, FILL_THIS_IN))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>answer5 <span class="ot">&lt;-</span> datasets<span class="sc">::</span>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">FILL_THIS_IN</span>(FILL_THIS_IN, FILL_THIS_IN))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Hint</em>: The last <code>FILL_THIS_IN</code> corresponds to an anonymous function.</p>
 <p><em>Food for thought</em>: Here is some sample code that divides the values in each column of the <code>mtcars</code> dataset by the maximum in that column using <code>purrr</code> instead of a loop or using <code>mutate</code>: <code>map(mtcars, function(x) x/max(x))</code>. How and why is the output of this code different from <code>answer5</code>?</p>
-<div id="cell-27" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;15481fa8846ac5a7281b2a843f839b6c&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-b23dda8894947ec3&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div id="cell-27" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;15481fa8846ac5a7281b2a843f839b6c&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-b23dda8894947ec3&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(answer5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(answer5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-28" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;408141d4c44137af91d1d9295cdfad06&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-e910c3a832bde7db&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-28" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;408141d4c44137af91d1d9295cdfad06&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-e910c3a832bde7db&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer5 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer5)), <span class="st">"5fdac"</span>)), <span class="st">"b138db9e9fb17ac221e14cc4d3e4dd2b"</span>))</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer5 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer5)), <span class="st">"5fdac"</span>)), <span class="st">"63f2618f8414aecf23f332b84f71b150"</span>))</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer5 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer5))), <span class="st">"5fdac"</span>)), <span class="st">"3f329c375e864091d94b3ab305b605f3"</span>))</span>
@@ -557,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer5 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer5, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer5[<span class="fu">sapply</span>(answer5, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"5fdac"</span>)), <span class="st">"f177b27b1423c5c4440f0a91ebf11d5f"</span>))</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer5 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer5, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer5[, <span class="fu">sapply</span>(answer5, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"5fdac"</span>)), <span class="st">"f177b27b1423c5c4440f0a91ebf11d5f"</span>))</span>
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-6-map2" class="level2">
@@ -565,33 +437,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>{points: 1}</p>
 <p>Let’s use <code>purrr</code> to calculate some probabilities from negative binomial distributions. One parameterization of the negative binomial distribution has a mean parameter and a dispersion parameter - this parameterization is often used to model highly variable count-valued data.</p>
 <p>We would like to calculate the probability of observing a count of 0 and the probability of observing a count of 1 for a bunch of negative binomial distributions. Here’s a function to do this for a single negative binomial distribution:</p>
-<div id="cell-30" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;0b4cbcaf8647faa7eeaaedb915605428&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-299dd9f3ce5f21a9&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>prob_01_neg_bin <span class="ot">&lt;-</span> <span class="cf">function</span>(mean, disp) { </span>
+<div id="cell-30" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;0b4cbcaf8647faa7eeaaedb915605428&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-299dd9f3ce5f21a9&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>prob_01_neg_bin <span class="ot">&lt;-</span> <span class="cf">function</span>(mean, disp) { </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dnbinom</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">mu=</span>mean, <span class="at">size=</span>disp) </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">prob_01_neg_bin</span>(<span class="dv">1</span>, <span class="dv">1</span>) <span class="co"># calculates probability of observing 0 count and probability of observing 1 count</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">prob_01_neg_bin</span>(<span class="dv">1</span>, <span class="dv">1</span>) <span class="co"># calculates probability of observing 0 count and probability of observing 1 count</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <code>prob_01_neg_bin()</code> function has two arguments corresponding to the two parameters of the negative binomial distribution, so to calculate probabilities for a bunch of negative binomial distributions, we’d need a <code>purrr</code> function to plug in the two parameters. Here are the parameters we would like to plug in:</p>
-<div id="cell-32" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;42f9112f85ff3d779faedd5875d7f20f&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-4c98a73fa96ac4a0&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>mean_params <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>disp_params <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-32" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;42f9112f85ff3d779faedd5875d7f20f&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-4c98a73fa96ac4a0&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>mean_params <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>disp_params <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Store your answer in <code>answer6</code>. It should be a list of probabilities.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>answer6 <span class="ot">&lt;-</span> <span class="fu">map2</span>(FILL_THIS_IN, FILL_THIS_IN, FILL_THIS_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-34" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;16cf1db61d3c7394731ef64121691fd7&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-2bcd05dc3ff9bfa9&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>answer6 <span class="ot">&lt;-</span> <span class="fu">map2</span>(FILL_THIS_IN, FILL_THIS_IN, FILL_THIS_IN)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;16cf1db61d3c7394731ef64121691fd7&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-2bcd05dc3ff9bfa9&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer6)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-35" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;d0a5da95a47a78d94ebdfa6c862962b2&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-4f59cc325554b20f&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-35" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;d0a5da95a47a78d94ebdfa6c862962b2&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-4f59cc325554b20f&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of answer6 is not list"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(answer6)), <span class="st">"6b5fb"</span>)), <span class="st">"6c2d958b04498e99fc24d54e38df0f00"</span>))</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"length of answer6 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">length</span>(answer6)), <span class="st">"6b5fb"</span>)), <span class="st">"b65a0989e0fff0fb3fc05fc85230c4cf"</span>))</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values of answer6 names are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">c</span>(<span class="fu">names</span>(answer6)))), <span class="st">"6b5fb"</span>)), <span class="st">"979ea974d13f5ac962e4d63b8e85ff30"</span>))</span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"order of elements of answer6 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(answer6), <span class="st">"6b5fb"</span>)), <span class="st">"a47fb1822e6d28f69c123c143e84028f"</span>))</span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-7" class="level2">
@@ -600,25 +472,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Introducing the Big Bang <code>!!!</code> and <code>rlang::exec()</code>.</p>
 <p>Using the <code>palmerpenguins::penguins</code> tibble:</p>
 <p>Let’s use the <code>recode()</code> function from the <code>dplyr</code> package to rename the levels of the <code>island</code> factor variable. The straightforward way to do this would be to do:</p>
-<div id="cell-37" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;ee265b6fc3cd5ac0f6950fe4a5772684&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-2dec91428b3dc3d1&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">island =</span> </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">recode</span>(island, <span class="at">Biscoe =</span> <span class="st">"B"</span>, <span class="at">Dream =</span> <span class="st">"D"</span>, <span class="at">Torgersen =</span> <span class="st">"T"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-37" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;ee265b6fc3cd5ac0f6950fe4a5772684&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-2dec91428b3dc3d1&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">island =</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">recode</span>(island, <span class="at">Biscoe =</span> <span class="st">"B"</span>, <span class="at">Dream =</span> <span class="st">"D"</span>, <span class="at">Torgersen =</span> <span class="st">"T"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>But what if you wanted to specify the levels to be renamed and their new names via a list?</p>
-<div id="cell-39" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;2969a395e830ff25ea9e4852aaaa2dd1&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-6307c11180165611&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>island_level_key <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Biscoe =</span> <span class="st">"B"</span>, <span class="at">Dream =</span> <span class="st">"D"</span>, <span class="at">Torgersen =</span> <span class="st">"T"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-39" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;2969a395e830ff25ea9e4852aaaa2dd1&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-6307c11180165611&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>island_level_key <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Biscoe =</span> <span class="st">"B"</span>, <span class="at">Dream =</span> <span class="st">"D"</span>, <span class="at">Torgersen =</span> <span class="st">"T"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Inputting the list itself via <code>penguins %&gt;% mutate(island = recode(island, island_level_key))</code> throws an error, because <code>dplyr::recode()</code> is not expecting a list input. What’s the alternative?</p>
 <p>Your task: use the big bang operator (<code>!!!</code>) in front of the list argument, to get the desired result. This effectively takes the arguments of a list, and puts them as arguments to a function.</p>
 <pre><code>answer12 &lt;- penguins %&gt;% mutate(island = recode(island, FILL_THIS_IN))</code></pre>
 <p><strong>FYI</strong>: Conveniently, <code>dplyr::recode()</code> recognizes the big bang operator. If you have a function that doesn’t recognize it (like <code>sum()</code>), use <code>rlang::exec(function, !!!list_of_arguments)</code> instead.</p>
-<div id="cell-41" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e5aeee95d2ef6a4df4d71f4027d85644&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-dad1190a6db2507f&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div id="cell-41" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e5aeee95d2ef6a4df4d71f4027d85644&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-dad1190a6db2507f&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer7)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-42" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e51506c5cecb113ac39b1a9e3fe04f6c&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-0439d034ce2a106f&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-42" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e51506c5cecb113ac39b1a9e3fe04f6c&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-0439d034ce2a106f&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer7 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer7)), <span class="st">"5f6c2"</span>)), <span class="st">"b39c77a998021d8db7fb364d95551061"</span>))</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer7 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer7)), <span class="st">"5f6c2"</span>)), <span class="st">"6416b57caa3680d2cecf64e1bceff981"</span>))</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer7 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer7))), <span class="st">"5f6c2"</span>)), <span class="st">"62f1dbc919a235ece6536c7535c82f1b"</span>))</span>
@@ -627,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer7 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer7, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer7[<span class="fu">sapply</span>(answer7, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"5f6c2"</span>)), <span class="st">"7a0a9ee4dc11dd2381143aac16ef84dd"</span>))</span>
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer7 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer7, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer7[, <span class="fu">sapply</span>(answer7, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"5f6c2"</span>)), <span class="st">"83743bdfcd168d5191e61660307af13b"</span>))</span>
 <span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -638,15 +510,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="question-8">QUESTION 8</h2>
 <p>{points: 1}</p>
 <p>Create a tibble that bundles everything in <code>gapminder</code> except for <code>country</code> and <code>continent</code> into a list-column. Name your list column <code>other</code> (without using <code>rename()</code> or <code>mutate()</code>). Store your answer in <code>answer8</code>.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>answer8 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">nest</span>(<span class="at">FILL_THIS_IN =</span> FILL_THIS_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-45" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;7395a871dc4f4f72f29767eb803e203d&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-3a01a9b84f3cf2e5&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>answer8 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">nest</span>(<span class="at">FILL_THIS_IN =</span> FILL_THIS_IN)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-45" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;7395a871dc4f4f72f29767eb803e203d&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-3a01a9b84f3cf2e5&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(answer8, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(answer8, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-46" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;f2fab7cd328364eaa90301595a8a3f05&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-36f1c148426a4e9b&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-46" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;f2fab7cd328364eaa90301595a8a3f05&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-36f1c148426a4e9b&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer8 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer8)), <span class="st">"b9b72"</span>)), <span class="st">"0d58b201418ea7ec6b7bd8a3d88cd382"</span>))</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer8 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer8)), <span class="st">"b9b72"</span>)), <span class="st">"489670ae32b2356ae7ff709e5c89f6aa"</span>))</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer8 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer8))), <span class="st">"b9b72"</span>)), <span class="st">"f745727f8ef4f917410c1b93f1847125"</span>))</span>
@@ -655,25 +527,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer8 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer8, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer8[<span class="fu">sapply</span>(answer8, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"b9b72"</span>)), <span class="st">"bd39c8036a5e2e3fd16fd332486decfb"</span>))</span>
 <span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer8 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer8, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer8[, <span class="fu">sapply</span>(answer8, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"b9b72"</span>)), <span class="st">"8823a034b870354ae6ca03d7afab3086"</span>))</span>
 <span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-9" class="level2">
 <h2 class="anchored" data-anchor-id="question-9">QUESTION 9</h2>
 <p>{points: 1}</p>
 <p><em>Reproducibly</em> sample 5 countries in the <code>gapminder</code> tibble at random. Store your answer in <code>answer9</code>, and set the seed as 123.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">FILL_THIS_IN</span>(<span class="dv">123</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">FILL_THIS_IN</span>(<span class="dv">123</span>)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>answer9 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">nest</span>(<span class="at">FILL_THIS_IN =</span> FILL_THIS_IN) <span class="sc">%&gt;%</span> </span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(FILL_THIS_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-48" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;f6eee804daba3bfffd86bccdd397aab8&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-7d3cc906a94b6b46&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(FILL_THIS_IN)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-48" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;f6eee804daba3bfffd86bccdd397aab8&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-7d3cc906a94b6b46&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(answer9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(answer9)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-49" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e4ab43138b17f4a444f6680c64911920&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-7e8ef7ae30e0fd6a&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-49" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e4ab43138b17f4a444f6680c64911920&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-7e8ef7ae30e0fd6a&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer9 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer9)), <span class="st">"599b7"</span>)), <span class="st">"48c0a34216d17e6057d16828c2683fd3"</span>))</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer9 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer9)), <span class="st">"599b7"</span>)), <span class="st">"7e5ef29e4b2110d9bfd6c770c912d4a9"</span>))</span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer9 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer9))), <span class="st">"599b7"</span>)), <span class="st">"bed94b3894b648557ecedd631d4dafd7"</span>))</span>
@@ -682,24 +554,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer9 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer9, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer9[<span class="fu">sapply</span>(answer9, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"599b7"</span>)), <span class="st">"062be694296c582dfa7dc052d658785a"</span>))</span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer9 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer9, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer9[, <span class="fu">sapply</span>(answer9, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"599b7"</span>)), <span class="st">"4ac8eeae0c116537e6df975c907f1f84"</span>))</span>
 <span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-10" class="level2">
 <h2 class="anchored" data-anchor-id="question-10">QUESTION 10</h2>
 <p>{points: 1}</p>
 <p>For each <code>gapminder</code> continent, fit a linear model of <code>lifeExp</code> from <code>log(gdpPercap)</code> and put this as a new column. Store your answer into <code>answer10</code>:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>answer10 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>answer10 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(continent, gdpPercap, lifeExp) <span class="sc">%&gt;%</span> </span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nest</span>(<span class="at">data =</span> <span class="fu">c</span>(FILL_THIS_IN, FILL_THIS_IN)) <span class="sc">%&gt;%</span> </span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">FILL_THIS_IN</span>(data, <span class="sc">~</span> <span class="fu">lm</span>(FILL_THIS_IN <span class="sc">~</span> FILL_THIS_IN, <span class="at">data =</span> FILL_THIS_IN)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-51" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;cd65f2bed13d416d0aca1efa3ea1f8be&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-cc531935edea8760&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">FILL_THIS_IN</span>(data, <span class="sc">~</span> <span class="fu">lm</span>(FILL_THIS_IN <span class="sc">~</span> FILL_THIS_IN, <span class="at">data =</span> FILL_THIS_IN)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-51" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;cd65f2bed13d416d0aca1efa3ea1f8be&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-cc531935edea8760&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer10)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-52" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;bf3b271b90a92907484da2742c093444&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-4e29da44162c2305&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-52" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;bf3b271b90a92907484da2742c093444&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-4e29da44162c2305&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer10 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer10)), <span class="st">"7f1ee"</span>)), <span class="st">"9b17cc48215922e7ce47ee8edf7b57ee"</span>))</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer10 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer10)), <span class="st">"7f1ee"</span>)), <span class="st">"677b28431407039b1bccc870cd6ccbd8"</span>))</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer10 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer10))), <span class="st">"7f1ee"</span>)), <span class="st">"aa869a55bd83acdf3868e6dd20a2bbca"</span>))</span>
@@ -708,23 +580,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer10 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer10, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer10[<span class="fu">sapply</span>(answer10, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"7f1ee"</span>)), <span class="st">"581f8324613cf725720df97b30a2350a"</span>))</span>
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer10 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer10, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer10[, <span class="fu">sapply</span>(answer10, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"7f1ee"</span>)), <span class="st">"1922c5af8711f19a557c13e7887936f6"</span>))</span>
 <span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-11" class="level2">
 <h2 class="anchored" data-anchor-id="question-11">QUESTION 11</h2>
 <p>{points: 1}</p>
 <p>Using your model from Question 10, make predictions using <code>augment()</code> from the <code>broom</code> package, and then <code>unnest</code>. Store your answer in <code>answer11</code>:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>answer11 <span class="ot">&lt;-</span> answer10 <span class="sc">%&gt;%</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>answer11 <span class="ot">&lt;-</span> answer10 <span class="sc">%&gt;%</span> </span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(continent, <span class="at">yhat =</span> <span class="fu">map</span>(FILL_THIS_IN, FILL_THIS_IN), <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(FILL_THIS_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-54" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;301b63d8b8eebf3cdf1f30ca99396f5a&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-5f6d32b6e1be426a&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(FILL_THIS_IN)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-54" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;301b63d8b8eebf3cdf1f30ca99396f5a&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-5f6d32b6e1be426a&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer11)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer11)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-55" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;486bfd39455ea90f2af69fd983add91b&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-b3e5f2ec8ef04b91&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-55" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;486bfd39455ea90f2af69fd983add91b&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-b3e5f2ec8ef04b91&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer11 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer11)), <span class="st">"b1656"</span>)), <span class="st">"42799cbfc1005613567643475d326d57"</span>))</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer11 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer11)), <span class="st">"b1656"</span>)), <span class="st">"e8ab4506966d8aa8d5c6969b1b4be504"</span>))</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer11 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer11))), <span class="st">"b1656"</span>)), <span class="st">"aecf523d94ad853496e068f2e890bae5"</span>))</span>
@@ -733,15 +605,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer11 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer11, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer11[<span class="fu">sapply</span>(answer11, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"b1656"</span>)), <span class="st">"010da7c27c1c5d77b8b2ba0135016795"</span>))</span>
 <span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer11 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer11, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer11[, <span class="fu">sapply</span>(answer11, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"b1656"</span>)), <span class="st">"45cb8b49ff2019614de5f62e7e59d191"</span>))</span>
 <span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-12-pmap" class="level2">
 <h2 class="anchored" data-anchor-id="question-12-pmap">Question 12: <code>pmap</code></h2>
 <p>{points: 1}</p>
 <p>Using the <code>palmerpenguins::penguins</code> tibble, calculate a 95% confidence interval based on the one-sample t-test for the mean body mass in grams of each penguin species. Here is code to do this for the Adelie penguins:</p>
-<div id="cell-57" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;6ef45b1fa80fbb292e6d3c8568bab256&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-80754c8f02205791&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>get_adelie_stats <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<div id="cell-57" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;6ef45b1fa80fbb292e6d3c8568bab256&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-80754c8f02205791&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>get_adelie_stats <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
@@ -753,7 +625,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">lower_95p_ci =</span> mean <span class="sc">-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df=</span>n<span class="dv">-1</span>), <span class="at">upper_95p_ci =</span> mean <span class="sc">+</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df=</span>n<span class="dv">-1</span>))  </span>
 <span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="fu">make_95p_conf_int_t</span>(get_adelie_stats<span class="sc">$</span>mean, get_adelie_stats<span class="sc">$</span>var, get_adelie_stats<span class="sc">$</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="fu">make_95p_conf_int_t</span>(get_adelie_stats<span class="sc">$</span>mean, get_adelie_stats<span class="sc">$</span>var, get_adelie_stats<span class="sc">$</span>n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To do this for all three species of penguins, we will need a <code>purrr</code> function to plug the three parameters of <code>make_95p_conf_int_t()</code> into.</p>
 <p>Starter code:</p>
@@ -764,13 +636,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             n = n()) %&gt;% 
   mutate(ci = pmap(FILL_THIS_IN, FILL_THIS_IN))</code></pre>
 <p>Your answer should be a tibble with five columns named <code>species</code>, <code>mean</code>, <code>sd</code>, <code>n</code>, and <code>ci</code>.</p>
-<div id="cell-59" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;ae98b77b848619bb4bb0b60d7fe5dbc9&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-faf81ee09a07a4b4&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div id="cell-59" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;ae98b77b848619bb4bb0b60d7fe5dbc9&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-faf81ee09a07a4b4&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer12)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer12)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-60" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;56dad176e6b9fa11f73221af3f2d8aad&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-7fcc013763786e41&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-60" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;56dad176e6b9fa11f73221af3f2d8aad&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-7fcc013763786e41&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer12 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer12)), <span class="st">"1c223"</span>)), <span class="st">"86d198252f75b8982df5ed641b59bec0"</span>))</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer12 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer12)), <span class="st">"1c223"</span>)), <span class="st">"aa9de852789b2abec1efa4f2019e976a"</span>))</span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer12 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer12))), <span class="st">"1c223"</span>)), <span class="st">"4317a2a9127e000f298cdd68ebbf0593"</span>))</span>
@@ -779,7 +651,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer12 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer12, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer12[<span class="fu">sapply</span>(answer12, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"1c223"</span>)), <span class="st">"ddf6c55a5b4cbcf483f4627444cad21d"</span>))</span>
 <span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer12 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer12, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer12[, <span class="fu">sapply</span>(answer12, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"1c223"</span>)), <span class="st">"9c4f8fd655fb80934ca32ca185f8fffe"</span>))</span>
 <span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-13-unnest" class="level2">
@@ -788,13 +660,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>unnest()</code> need not always be paired with <code>nest()</code>. Make a tibble <code>answer13</code> that is a longer version of <code>answer12</code> where the column <code>ci</code> is of double type.</p>
 <p>Starter code:</p>
 <pre><code>answer13 &lt;- answer12 %&gt;% unnest(FILL_THIS_IN)</code></pre>
-<div id="cell-62" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;a858a696b3ad20b3235c2f89ea89a262&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-a00906f5aec894e4&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div id="cell-62" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;a858a696b3ad20b3235c2f89ea89a262&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-a00906f5aec894e4&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer13)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer13)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-63" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;960bfa38e810abe1e53fc2f66570458c&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-fe3f5c4c2615d264&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-63" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;960bfa38e810abe1e53fc2f66570458c&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-fe3f5c4c2615d264&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer13 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer13)), <span class="st">"87c96"</span>)), <span class="st">"ad72bc4fa83d1ce9e6516e67f6f71e79"</span>))</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer13 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer13)), <span class="st">"87c96"</span>)), <span class="st">"a359feb4008b2a82d0654958fcb5e1ff"</span>))</span>
 <span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer13 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer13))), <span class="st">"87c96"</span>)), <span class="st">"d4a0318aad0b7b5ea302d3baeaf6f3f0"</span>))</span>
@@ -803,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer13 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer13, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer13[<span class="fu">sapply</span>(answer13, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"87c96"</span>)), <span class="st">"9f69111fd5a130f61f4ee5dfc6540689"</span>))</span>
 <span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer13 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer13, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer13[, <span class="fu">sapply</span>(answer13, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"87c96"</span>)), <span class="st">"6e5c65b7e07466a2a094049a3f4f3e4b"</span>))</span>
 <span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-14" class="level2">
@@ -815,19 +687,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>answer14 &lt;- gapminder %&gt;% 
     nest(FILL_THIS_IN) %&gt;% 
     FILL_THIS_IN()</code></pre>
-<div id="cell-65" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;507dbbbd851bc85e81570405ac69755c&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-059b832f92f8512e&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div id="cell-65" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;507dbbbd851bc85e81570405ac69755c&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-059b832f92f8512e&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer14)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer14)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-66" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;4f296c2b222ba5eabeaa2478ca430936&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-8af823c5c35e01e1&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-66" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;4f296c2b222ba5eabeaa2478ca430936&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-8af823c5c35e01e1&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of answer14 is not list"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>(answer14)), <span class="st">"de4e"</span>)), <span class="st">"9ed367519f53843c1cdfe34a4253b5b8"</span>))</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"length of answer14 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">length</span>(answer14)), <span class="st">"de4e"</span>)), <span class="st">"8a0e33a92d7fdf5e8c7e2a4f07e9cc60"</span>))</span>
 <span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values of answer14 names are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">c</span>(<span class="fu">names</span>(answer14)))), <span class="st">"de4e"</span>)), <span class="st">"082005a2d5d104975ae338ea0c5fd414"</span>))</span>
 <span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"order of elements of answer14 is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(answer14), <span class="st">"de4e"</span>)), <span class="st">"06a1942655a9c28e513f20e84ee5a4eb"</span>))</span>
 <span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="question-15" class="level2">
@@ -837,20 +709,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For the list of tibbles made in the above question, save each one to file using the appropriate purrr function, using the names as the file names.</p>
 <p>Starter code:</p>
 <pre><code>answer15 &lt;- FILL_THIS_IN(answer14, ~ write_csv(FILL_THIS_IN, glue::glue(FILL_THIS_IN, ".csv")))</code></pre>
-<div id="cell-68" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;1b9f45df4b237f0cc7d7ac95193f260d&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-614dfd0842b259c8&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div id="cell-68" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;1b9f45df4b237f0cc7d7ac95193f260d&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-614dfd0842b259c8&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-69" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e0b71c218a7dbadd4dcfefd2f6085e24&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-abc180f44f0aabb7&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-69" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e0b71c218a7dbadd4dcfefd2f6085e24&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-abc180f44f0aabb7&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of (test_that(</span><span class="sc">\"</span><span class="st">Question 15</span><span class="sc">\"</span><span class="st">, {expect_true(</span><span class="sc">\"</span><span class="st">Africa.csv</span><span class="sc">\"</span><span class="st"> %in% dir())}) == TRUE) is not logical"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>((<span class="fu">test_that</span>(<span class="st">"Question 15"</span>, {<span class="fu">expect_true</span>(<span class="st">"Africa.csv"</span> <span class="sc">%in%</span> <span class="fu">dir</span>())}) <span class="sc">==</span> <span class="cn">TRUE</span>))), <span class="st">"b77bf"</span>)), <span class="st">"712a549f79be2e43a4d4016acb7c2f49"</span>))</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"logical value of (test_that(</span><span class="sc">\"</span><span class="st">Question 15</span><span class="sc">\"</span><span class="st">, {expect_true(</span><span class="sc">\"</span><span class="st">Africa.csv</span><span class="sc">\"</span><span class="st"> %in% dir())}) == TRUE) is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>((<span class="fu">test_that</span>(<span class="st">"Question 15"</span>, {<span class="fu">expect_true</span>(<span class="st">"Africa.csv"</span> <span class="sc">%in%</span> <span class="fu">dir</span>())}) <span class="sc">==</span> <span class="cn">TRUE</span>)), <span class="st">"b77bf"</span>)), <span class="st">"88647aaa2cfa568eba49a0c0c1abd8c9"</span>))</span>
 <span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"type of (test_that(</span><span class="sc">\"</span><span class="st">Question 15</span><span class="sc">\"</span><span class="st">, {expect_true(</span><span class="sc">\"</span><span class="st">Oceania.csv</span><span class="sc">\"</span><span class="st"> %in% dir())}) == TRUE) is not logical"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">class</span>((<span class="fu">test_that</span>(<span class="st">"Question 15"</span>, {<span class="fu">expect_true</span>(<span class="st">"Oceania.csv"</span> <span class="sc">%in%</span> <span class="fu">dir</span>())}) <span class="sc">==</span> <span class="cn">TRUE</span>))), <span class="st">"b77c0"</span>)), <span class="st">"c6b75d8799cbe154e114041aa8e8464d"</span>))</span>
 <span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"logical value of (test_that(</span><span class="sc">\"</span><span class="st">Question 15</span><span class="sc">\"</span><span class="st">, {expect_true(</span><span class="sc">\"</span><span class="st">Oceania.csv</span><span class="sc">\"</span><span class="st"> %in% dir())}) == TRUE) is not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>((<span class="fu">test_that</span>(<span class="st">"Question 15"</span>, {<span class="fu">expect_true</span>(<span class="st">"Oceania.csv"</span> <span class="sc">%in%</span> <span class="fu">dir</span>())}) <span class="sc">==</span> <span class="cn">TRUE</span>)), <span class="st">"b77c0"</span>)), <span class="st">"40c639a1a5a1fc04bab04a7bb8c5b4bf"</span>))</span>
 <span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -861,23 +733,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="question-16-unnest_wider-and-unnest_longer">Question 16: <code>unnest_wider()</code> and <code>unnest_longer()</code></h2>
 <p>{points: 1}</p>
 <p>Explore the <code>repurrrsive::got_chars</code> nested list. It contains information about Game of Thrones characters.</p>
-<div id="cell-71" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;3a96aaf242fd3a16c1b94196fa61dca3&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c37d34ac0130b86c&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(got_chars, <span class="at">list.len =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-71" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;3a96aaf242fd3a16c1b94196fa61dca3&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c37d34ac0130b86c&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(got_chars, <span class="at">list.len =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Put the list in a tibble:</p>
-<div id="cell-73" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;ed020a751cb363019a1e5151c1bd8f5b&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c66bef51ab12f7d8&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>got_chars_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">character =</span> repurrrsive<span class="sc">::</span>got_chars)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(got_chars_tbl, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-73" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;ed020a751cb363019a1e5151c1bd8f5b&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c66bef51ab12f7d8&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>got_chars_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">character =</span> repurrrsive<span class="sc">::</span>got_chars)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(got_chars_tbl, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Would widening the list column work best, or lengthening? Do it.</p>
 <pre><code>answer16 &lt;- FILL_THIS_IN(got_chars_tbl, character)</code></pre>
-<div id="cell-75" class="cell" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;3b658b59c62c9f028ae3cf6db1ef6524&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c2c0d6d323c4f08a&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<div id="cell-75" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;3b658b59c62c9f028ae3cf6db1ef6524&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c2c0d6d323c4f08a&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fail</span>() <span class="co"># No Answer - remove if you provide an answer</span></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer16, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(answer16, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-76" class="cell" data-editable="false" data-nbgrader="{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;9744bdbc971ab972d5e6fa8b07384ac3&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-94e5bbb953c5b136&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
+<div id="cell-76" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;9744bdbc971ab972d5e6fa8b07384ac3&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-94e5bbb953c5b136&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digest)</span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"answer16 should be a data frame"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="st">'data.frame'</span> <span class="sc">%in%</span> <span class="fu">class</span>(answer16)), <span class="st">"932c4"</span>)), <span class="st">"beed9247bace4e0d2f54dda84048d1c5"</span>))</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"dimensions of answer16 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">dim</span>(answer16)), <span class="st">"932c4"</span>)), <span class="st">"01107d73b7437fcd2642c0e822e33f44"</span>))</span>
 <span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"column names of answer16 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="fu">sort</span>(<span class="fu">colnames</span>(answer16))), <span class="st">"932c4"</span>)), <span class="st">"d6603b5915dc048f4ef487b2ff3efa25"</span>))</span>
@@ -886,7 +758,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more character columns in answer16 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer16, is.character))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer16[<span class="fu">sapply</span>(answer16, is.character)], <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"932c4"</span>)), <span class="st">"c665790db2076c499c3df2e6c25b6a0c"</span>))</span>
 <span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"values in one or more factor columns in answer16 are not correct"</span><span class="ot">=</span> <span class="fu">setequal</span>(<span class="fu">digest</span>(<span class="fu">paste</span>(<span class="fu">toString</span>(<span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(answer16, is.factor))) <span class="fu">sum</span>(<span class="fu">sapply</span>(answer16[, <span class="fu">sapply</span>(answer16, is.factor)], <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)))) <span class="cf">else</span> <span class="dv">0</span>), <span class="st">"932c4"</span>)), <span class="st">"8671c94ed835509da2697454c129fa5d"</span>))</span>
 <span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Success!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Final worksheet completed! 🤩</p>
 <p>Restart, run all, save, and submit to canvas!</p>
@@ -996,236 +868,243 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1233,185 +1112,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

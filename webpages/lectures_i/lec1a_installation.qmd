@@ -1,6 +1,5 @@
 ---
 title: "Lecture 1A: Installation"
-subtitle: "September 2, 2025"
 date-modified: last-modified
 ---
 
@@ -8,7 +7,7 @@ date-modified: last-modified
 
 The goal of this lecture is to learn how to install and setup key software for use in the course.
 
-**TAs are available in class on Imagine Day from 9am-10:30am on Tuesday September 2nd to aid with installation. I highly recommend you join if you haven't used RStudio, Jupyter, or GitHub before.**
+**TAs are available in class on Imagine Day from 9am-10:30am on Tuesday September 8th to aid with installation. I highly recommend you join if you haven't used RStudio, Jupyter, or GitHub before.**
 
 ### Note on PC vs Mac
 

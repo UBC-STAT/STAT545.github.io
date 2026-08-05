@@ -17,15 +17,14 @@ website:
         text: " "
         icon: house-door-fill
       - sidebar:syllabus
-      - sidebar:lectures_i
-      - sidebar:lectures_ii
-      - href: webpages/slides/slides.qmd
-        text: "Slides"
+      - href: webpages/lectures.qmd
+        text: "Lectures"
       - href: webpages/worksheets.qmd
         text: "Worksheets"
-      - sidebar:collabproj
-      - sidebar:mda
-      - sidebar:assignmentsB
+      - href: webpages/assignmentspartA/index.qmd
+        text: "Assignments (Part A)"
+      - href: webpages/assignmentspartB/index.qmd
+        text: "Assignments (Part B)"
       - href: webpages/faq.qmd
         text: "FAQ"
         
