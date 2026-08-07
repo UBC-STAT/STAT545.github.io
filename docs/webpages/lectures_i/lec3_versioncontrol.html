@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -136,20 +136,27 @@ ul.task-list li input[type="checkbox"] {
   </li>
   <li class="nav-item">
     <a class="nav-link" href="../../webpages/lectures.html"> 
-<span class="menu-text">Lectures</span></a>
+<span class="menu-text">Content and Schedule</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../webpages/assignmentspartA/index.html"> 
-<span class="menu-text">Assignments (Part A)</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-assessments-(part-a" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Assessments (Part A)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-assessments-(part-a">    
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentspartA/mda/mda_deliverable1.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../webpages/assignmentspartB/index.html"> 
-<span class="menu-text">Assignments (Part B)</span></a>
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentspartA/mda/mda_deliverable2.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
@@ -172,10 +179,93 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_i/lec3_versioncontrol.html">Lecture 2B: Version Control</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec1a_installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1A: Installation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec1b_introR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1B: Course Introduction and R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec2a_reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec2b_dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Data Manipulation with dplyr</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec3_versioncontrol.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 2B: Version Control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec4_datavis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Data Visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec5_tidydata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Tidy Data and the Tidyverse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec6a_modelfitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6A: Model Fitting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec6b_factorsanddates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6B: Factors</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec7a_readwritedata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7A: Reading and Writing Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/lectures_i/lec7b_joiningtibbles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7B: Tibble Joins</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -216,7 +306,6 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lecture 2B: Version Control</h1>
-<p class="subtitle lead">September 11, 2025</p>
 </div>
 
 
@@ -228,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 4, 2026</p>
+      <p class="date-modified">August 7, 2026</p>
     </div>
   </div>
     
@@ -352,6 +441,21 @@ mean_mpg</code></pre>
 <li><p>If you restarted RStudio, call <code>library(usethis)</code> again. Then, in the Console call <code>use_github()</code>. A new repository on your GitHub account should be created! You should see your code <code>analysis.R</code> as one of the items in your repository.</p></li>
 </ol>
 <p><em>If you have issues, see the last section of <a href="../../webpages/lectures_i/lec1a_installation.html">Lecture 1A: Installation</a> to set up your GitHub credentials on RStudio.</em></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🚨 I need your GitHub username to add you to our STAT545 GitHub organization! 🚨</p>
+<p><strong>PLEASE INPUT YOUR GITHUB USERNAME INTO <a href="https://canvas.ubc.ca/courses/193398/assignments/2518781">THIS CANVAS ASSIGNMENT BOX</a> NOW</strong></p>
+<p>Thanks 😊</p>
+</div>
+</div>
 </section>
 <section id="clone-a-github-repository-github-repository-already-exists-remotely" class="level3">
 <h3 class="anchored" data-anchor-id="clone-a-github-repository-github-repository-already-exists-remotely">Clone a GitHub Repository (GitHub Repository Already Exists Remotely)</h3>

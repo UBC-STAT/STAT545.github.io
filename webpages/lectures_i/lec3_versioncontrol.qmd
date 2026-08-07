@@ -1,6 +1,5 @@
 ---
 title: "Lecture 2B: Version Control"
-subtitle: "September 11, 2025"
 date-modified: last-modified
 ---
 
@@ -152,6 +151,20 @@ In this lecture, we will assume an R Project already exists and we want to creat
 3. If you restarted RStudio, call `library(usethis)` again. Then, in the Console call `use_github()`. A new repository on your GitHub account should be created! You should see your code `analysis.R` as one of the items in your repository. 
 
 *If you have issues, see the last section of [Lecture 1A: Installation](lec1a_installation.qmd) to set up your GitHub credentials on RStudio.*
+
+
+
+:::{.callout-important}
+
+🚨 I need your GitHub username to add you to our STAT545 GitHub organization! 🚨
+
+**PLEASE INPUT YOUR GITHUB USERNAME INTO [THIS CANVAS ASSIGNMENT BOX](https://canvas.ubc.ca/courses/193398/assignments/2518781) NOW**
+
+Thanks 😊
+
+
+:::
+
 
 
 ### Clone a GitHub Repository (GitHub Repository Already Exists Remotely)
