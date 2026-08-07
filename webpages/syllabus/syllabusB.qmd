@@ -58,7 +58,8 @@ This course will feature short lectures and in-class demonstrations so students 
 
 ### Schedule of Topics
 
-See schedule [here](../lectures.qmd).
+See schedule and tentative due dates [here](https://ubc-stat.github.io/stat545/webpages/lectures.html).
+
 
 ### Assessments
 
@@ -76,13 +77,11 @@ Worksheets are interactive assignments that allow students to get real-time feed
 
 Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
-See [Worksheets](../worksheets.qmd) for the schedule.
 
 #### Assignments
 
 There are four formal assignments for this course, each equally weighted (each worth 21.25% of your final grade).
 
-See [Assignments (Part B)](../assignmentspartB/index.qmd) for due dates and assignment details.
 
 ### Auditing Students
 

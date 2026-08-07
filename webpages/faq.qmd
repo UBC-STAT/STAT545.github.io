@@ -3,63 +3,21 @@ title: "Frequently Asked Questions"
 date-modified: last-modified
 ---
 
-## Where can I find....
+**Not finding what you're looking for? Try the search bar at the top right-hand side of this website!**
 
--   The lecture schedule and topics?
+## I'm having issues enrolling - who do I contact about registration?
 
-    -   [Syllabus: Part A](../webpages/syllabus/syllabusA.qmd#schedule-of-topics)
-
-    -   [Syllabus: Part B](../webpages/syllabus/syllabusB.qmd#schedule-of-topics)
-
--   How much assessments are worth?
-
-    -   [Syllabus: Part A](../webpages/syllabus/syllabusA.qmd#assessments)
-
-    -   [Syllabus: Part B](../webpages/syllabus/syllabusB.qmd#assessments)
-
--   The course GitHub repository?
-
-    -   <https://github.com/UBC-STAT/STAT545.github.io>
-
--   Worksheets?
-
-    -   [Our GitHub page](https://github.com/UBC-STAT/STAT545.github.io/tree/main/content/worksheets_student)
-
--   A calendar of due dates?
-
-    -   [Canvas](https://canvas.ubc.ca/calendar)
-
--   A summary of what's going on this week?
-
-    -   [Our "This Week at a Glace" section on the home page!](../index.qmd)
-
--   Slack posting guidelines?
-
-    -   [Syllabus](../webpages/syllabus/syllabusA.qmd#course-communications)
-
--   The link to join Slack?
-
-    -   [STAT545A Canvas Homepage](https://canvas.ubc.ca/courses/169555) (enrolled students only)
-
--   What to do if I'm sick?
-
-    -   [Syllabus](../webpages/syllabus/syllabusA.qmd#your-personal-health)
-
--   What happens if I submit an assignment late?
-
-    -   [Syllabus](../webpages/syllabus/syllabusA.qmd#late-policies)
+Please email [our Graduate Program Manager](https://www.stat.ubc.ca/users/mairead-roche). The instructor does not have any control over registration, nor any access to the registration system.
 
 ## When is the course offered?
 
 September - December of each academic year. Typical format: STAT 545A 1.5 credits in September through mid October, followed by STAT 545B 1.5 credits from mid October through early December.
 
-## What happened to STAT 547M?
 
-STAT 547M became STAT 545B in 2020, so that the course codes align. Otherwise, these are the same courses.
+## I can only register for STAT545A on Workday, but not STAT545B! Am I doing something wrong?
 
-## What happened to the guidebook?
+No, since STAT545A is a prerequisite for STAT545B, you'll only be able to register for part B in October. Don't worry - there will still be space for you! 
 
-We used a guidebook in 2019/2020. It’s still available at https://stat545guidebook.netlify.app, but had become deprecated in place of worksheets and some tutorials.
 
 ## Why are there two courses, instead of a single “STAT 545” course?
 
@@ -81,7 +39,7 @@ Unfortunately, the answer is still no. As much as we’d want to say yes to you,
 
 ## I am an undergraduate. Can I take this course?
 
-Maybe, if there’s room. Contact the instructor.
+Only in special circumstances. Contact an advisor.
 
 ## What if I’ve never had a stats class?
 
@@ -93,7 +51,7 @@ Unfortunately not. The room is usually at capacity, and further, we’ve allocat
 
 ## I’d like to officially audit – can I?
 
-Absolutely! Please take a look at what is required of auditors so that you have an understanding of your expectations coming into the course; then, fill out the form (graduate version) and send it to the instructor to get signed.
+Absolutely! Please take a look at the syllabus to see what is required of auditors so that you have an understanding of your expectations coming into the course; then, fill out the form (graduate version) and send it to the instructor to get signed.
 
 ## The course is full – can I audit instead?
 
@@ -107,13 +65,11 @@ Unfortunately, the course enrollment capacity will not increase. But, I encourag
 
 ## The course is listed as “restricted”. What should I do?
 
-When all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types. If you are a student of that type, then go ahead and register through SSC! Otherwise, I encourage you to join the waitlist.
+When all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types. If you are a student of that type, then go ahead and register through Workday! Otherwise, I encourage you to join the waitlist.
 
 ## Can I take this course if I'm not a Statistics student?
 
-This course is open to any graduate student at UBC. Students from other departments vastly outnumber those from Statistics. In fact, the most successful students are often grad students from other fields who need to analyze and visualize data for a thesis. They are highly motivated and excel.
-
-However, if you have never programmed or worked at the command line before, prepare for a shock. This will be a powerful, positive experience, but it’s a big adjustment. Come suffer through the worst part of the learning curve in good company!
+This course is designed for students outside of the Department of Statistics! All are welcome. 
 
 ## Do I need a computer?
 

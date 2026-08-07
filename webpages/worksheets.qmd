@@ -17,7 +17,7 @@ Worksheets are produced with Jupyter Notebooks. For installation instructions, s
 | Worksheet A2 | September 15th, 2026 | September 22nd, 2026 |
 | Worksheet A3 | September 29th, 2026 | October 6th, 2026 |
 | Worksheet A4 | October 6th, 2026 | October 15th, 2026 |
-| Worksheet A5 | October 15th, 2026 | October 23rd, 2026 |
+| Worksheet A5 | October 15th, 2026 | October 22nd, 2026 |
 
 ### **STAT 545 B:**
 

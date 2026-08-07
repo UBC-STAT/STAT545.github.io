@@ -9,7 +9,7 @@ There are three major assignments for STAT545 B. The links to these assignments 
 
 | Assignment          | Release Date             | Due Date                |
 |---------------------|--------------------------|-------------------------|
-| Create a Function   | Thurs September 22, 2026 | Thurs November 05, 2026 |
+| Create a Function   | Tues October 27, 2026 | Thurs November 05, 2026 |
 | Create an R Package | Tues November 03, 2026   | Tues November 17, 2026  |
 | Create a Dashboard  | Tues November 17, 2026   | Thurs November 26, 2026 |
 | Create a Website    | Tues December 01, 2026   | Tues December 15, 2026  |

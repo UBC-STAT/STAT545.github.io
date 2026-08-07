@@ -1,42 +1,48 @@
 ---
-title: "Lectures and Notes"
+title: "Content and Schedule"
 format: html
 ---
 
-The schedule is subject to change at the discretion of the instructor. Any classes without a topic listed are working sessions with the TAs.\
+The schedule is subject to change at the discretion of the instructor. Any classes without a topic listed are working sessions with the TAs.
+
+All due dates are at 11:59pm PT (local time, Vancouver). \
 \
 **STAT 545 A**
 
-| Week | Date | Notes | Slides |
-|----|----|----|----|
+| Week | Date | Topic | Assessments Due |
+|------------------|------------------|------------------|--------------------|
 | 1 | Tues Sept 8 | (Optional) [Installation Help Session](lectures_i/lec1a_installation.qmd) |  |
 |  | Thurs Sept 10 | [Introduction to R](lectures_i/lec1b_introR.qmd) |  |
-| 2 | Tues Sept 15 | Data Cleaning with `dplyr` |  |
+| 2 | Tues Sept 15 | Data Cleaning with `dplyr` | Worksheet A1 |
 |  | Thus Sept 17 | RMarkdown and Reproducibility |  |
-| 3 | Tues Sept 22 | Version Control I |  |
+| 3 | Tues Sept 22 | Version Control I | Worksheet A2 |
 |  | Thurs Sept 24 | Version Control II |  |
 | 4 | Tues Sept 29 | Data Visualization I |  |
-|  | Thurs Oct 01 | Data Visualization II |  |
-| 5 | Tues Oct 06 | Tidy Data |  |
+|  | Thurs Oct 01 | Data Visualization II | Collaborative Project |
+| 5 | Tues Oct 06 | Tidy Data | Worksheet A3 |
 |  | Thurs Oct 08 | Model Fitting |  |
-| 6 | Tues Oct 13 | Factors |  |
-|  | Thurs Oct 15 |  |  |
+| 6 | Tues Oct 13 | Factors | Mini Data Analysis I |
+|  | Thurs Oct 15 |  | Worksheet A4 |
 | 7 | Tues Oct 20 | Reading/Writing, Tibble Joins |  |
-|  | Thurs Oct 22 |  |  |
+|  | Thurs Oct 22 |  | Worksheet A5 |
+|  | Tuesday Oct 27 |  | Mini Data Analysis II |
+|  |  |  |  |
 
 **STAT 545 B**
 
-| Week | Date            | Topic                              |
-|------|-----------------|------------------------------------|
-| 1    | Tues Oct 27     | Functions                          |
-|      | Thurs Oct 29    | Advanced Functions                 |
-| 2    | Tues Nov 03     | R Packages                         |
-|      | Thus Nov 05     | Advances R Packages                |
-| 3    | ~~Tues Nov 10~~ | ~~**NO CLASS**~~                   |
-|      | Thurs Nov 12    | Regular Expressions with `stringr` |
-| 4    | Tues Nov 17     | Dashboards with `RShiny`           |
-|      | Thurs Nov 19    |                                    |
-| 5    | Tues Nov 24     | Iteration                          |
-|      | Thurs Nov 26    |                                    |
-| 6    | Tues Dec 01     | Websites with `quarto`             |
-|      | Thurs Dec 03    |                                    |
+| Week | Date | Topic | Assessments Due |
+|----|----|----|----|
+| 1 | Tues Oct 27 | Functions |  |
+|  | Thurs Oct 29 | Advanced Functions |  |
+| 2 | Tues Nov 03 | R Packages | Worksheet B1 |
+|  | Thus Nov 05 | Advances R Packages | Assignment 1 (Functions) |
+| 3 | ~~Tues Nov 10~~ | ~~**NO CLASS**~~ |  |
+|  | Thurs Nov 12 | Regular Expressions with `stringr` |  |
+| 4 | Tues Nov 17 | Dashboards with `RShiny` | Assignment 2 (R Package) |
+|  | Thurs Nov 19 |  | Worksheet B2 |
+| 5 | Tues Nov 24 | Iteration |  |
+|  | Thurs Nov 26 |  | Assignment 3 (Dashboard) |
+| 6 | Tues Dec 01 | Websites with `quarto` |  |
+|  | Thurs Dec 03 |  | Worksheet B3 |
+|  | ... |  |  |
+|  | Tues Dec 15 |  | Assignment 4 (Website) |

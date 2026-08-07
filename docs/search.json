@@ -152,9 +152,9 @@
   {
     "objectID": "webpages/lectures.html",
     "href": "webpages/lectures.html",
-    "title": "Lectures and Notes",
+    "title": "Content and Schedule",
     "section": "",
-    "text": "The schedule is subject to change at the discretion of the instructor. Any classes without a topic listed are working sessions with the TAs.\n\nSTAT 545 A\n\n\n\nWeek\nDate\nNotes\nSlides\n\n\n\n\n1\nTues Sept 8\n(Optional) Installation Help Session\n\n\n\n\nThurs Sept 10\nIntroduction to R\n\n\n\n2\nTues Sept 15\nData Cleaning with dplyr\n\n\n\n\nThus Sept 17\nRMarkdown and Reproducibility\n\n\n\n3\nTues Sept 22\nVersion Control I\n\n\n\n\nThurs Sept 24\nVersion Control II\n\n\n\n4\nTues Sept 29\nData Visualization I\n\n\n\n\nThurs Oct 01\nData Visualization II\n\n\n\n5\nTues Oct 06\nTidy Data\n\n\n\n\nThurs Oct 08\nModel Fitting\n\n\n\n6\nTues Oct 13\nFactors\n\n\n\n\nThurs Oct 15\n\n\n\n\n7\nTues Oct 20\nReading/Writing, Tibble Joins\n\n\n\n\nThurs Oct 22\n\n\n\n\n\nSTAT 545 B\n\n\n\nWeek\nDate\nTopic\n\n\n\n\n1\nTues Oct 27\nFunctions\n\n\n\nThurs Oct 29\nAdvanced Functions\n\n\n2\nTues Nov 03\nR Packages\n\n\n\nThus Nov 05\nAdvances R Packages\n\n\n3\nTues Nov 10\nNO CLASS\n\n\n\nThurs Nov 12\nRegular Expressions with stringr\n\n\n4\nTues Nov 17\nDashboards with RShiny\n\n\n\nThurs Nov 19\n\n\n\n5\nTues Nov 24\nIteration\n\n\n\nThurs Nov 26\n\n\n\n6\nTues Dec 01\nWebsites with quarto\n\n\n\nThurs Dec 03\n\n\n\n\n\n\n\n Back to top"
+    "text": "The schedule is subject to change at the discretion of the instructor. Any classes without a topic listed are working sessions with the TAs.\nAll due dates are at 11:59pm PT (local time, Vancouver).\n\nSTAT 545 A\n\n\n\nWeek\nDate\nTopic\nAssessments Due\n\n\n\n\n1\nTues Sept 8\n(Optional) Installation Help Session\n\n\n\n\nThurs Sept 10\nIntroduction to R\n\n\n\n2\nTues Sept 15\nData Cleaning with dplyr\nWorksheet A1\n\n\n\nThus Sept 17\nRMarkdown and Reproducibility\n\n\n\n3\nTues Sept 22\nVersion Control I\nWorksheet A2\n\n\n\nThurs Sept 24\nVersion Control II\n\n\n\n4\nTues Sept 29\nData Visualization I\n\n\n\n\nThurs Oct 01\nData Visualization II\nCollaborative Project\n\n\n5\nTues Oct 06\nTidy Data\nWorksheet A3\n\n\n\nThurs Oct 08\nModel Fitting\n\n\n\n6\nTues Oct 13\nFactors\nMini Data Analysis I\n\n\n\nThurs Oct 15\n\nWorksheet A4\n\n\n7\nTues Oct 20\nReading/Writing, Tibble Joins\n\n\n\n\nThurs Oct 22\n\nWorksheet A5\n\n\n\nTuesday Oct 27\n\nMini Data Analysis II\n\n\n\n\n\n\n\n\n\nSTAT 545 B\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nAssessments Due\n\n\n\n\n1\nTues Oct 27\nFunctions\n\n\n\n\nThurs Oct 29\nAdvanced Functions\n\n\n\n2\nTues Nov 03\nR Packages\nWorksheet B1\n\n\n\nThus Nov 05\nAdvances R Packages\nAssignment 1 (Functions)\n\n\n3\nTues Nov 10\nNO CLASS\n\n\n\n\nThurs Nov 12\nRegular Expressions with stringr\n\n\n\n4\nTues Nov 17\nDashboards with RShiny\nAssignment 2 (R Package)\n\n\n\nThurs Nov 19\n\nWorksheet B2\n\n\n5\nTues Nov 24\nIteration\n\n\n\n\nThurs Nov 26\n\nAssignment 3 (Dashboard)\n\n\n6\nTues Dec 01\nWebsites with quarto\n\n\n\n\nThurs Dec 03\n\nWorksheet B3\n\n\n\n…\n\n\n\n\n\nTues Dec 15\n\nAssignment 4 (Website)\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "webpages/lectures_ii/lec14_quarto.html",
@@ -956,7 +956,7 @@
     "href": "webpages/worksheets.html",
     "title": "Worksheets",
     "section": "",
-    "text": "Worksheets are guided exercises that are meant to supplement lectures, and will be graded as part of your final mark in STAT545. Time will be given in lecture to work on these formative assessments.\nWorksheets are produced with Jupyter Notebooks. For installation instructions, see Lecture 1A (Installation) or check out this YouTube video!\nWorksheets will be posted on the dates given on the table!\n\nSTAT 545 A\n\n\n\nWorksheet\nRelease Date\nDue Date (11:59PM PT)\n\n\n\n\nWorksheet A1\nSeptember 8th, 2026\nSeptember 15th, 2026\n\n\nWorksheet A2\nSeptember 15th, 2026\nSeptember 22nd, 2026\n\n\nWorksheet A3\nSeptember 29th, 2026\nOctober 6th, 2026\n\n\nWorksheet A4\nOctober 6th, 2026\nOctober 15th, 2026\n\n\nWorksheet A5\nOctober 15th, 2026\nOctober 23rd, 2026\n\n\n\n\n\nSTAT 545 B:\n\n\n\nWorksheet\nRelease Date\nDue Date (11:59PM PT)\n\n\n\n\nWorksheet B1\nOct 27, 2026\nNov 3, 2026\n\n\nWorksheet B2\nNov 12, 2026\nNov 19, 2026\n\n\nWorksheet B3\nNov 24, 2026\nDec 3, 2026\n\n\n\nWorksheet Tips and Tricks:\n\nDownload the .ipynb file from GitHub and save it on your personal computer.\nOnly edit cells where prompted. If you accidentally click on a text-only cell, hit the play button and it should re-render.\nYou can check your answers prior to submitting! If you see a “Success!” message, you got the question right. Otherwise, a detailed error message will help you diagnose what went wrong.\nSave your work frequently.\nPrior to submitting, restart your kernel and run all to ensure that no errors persist. Save again.\nSubmit the .ipynb file to Canvas with the file name “worksheet_a##”.\nWe’re here to help along the way on Slack, so don’t be shy to ask for help if you need it.\n\n\n\n\n\n Back to top"
+    "text": "Worksheets are guided exercises that are meant to supplement lectures, and will be graded as part of your final mark in STAT545. Time will be given in lecture to work on these formative assessments.\nWorksheets are produced with Jupyter Notebooks. For installation instructions, see Lecture 1A (Installation) or check out this YouTube video!\nWorksheets will be posted on the dates given on the table!\n\nSTAT 545 A\n\n\n\nWorksheet\nRelease Date\nDue Date (11:59PM PT)\n\n\n\n\nWorksheet A1\nSeptember 8th, 2026\nSeptember 15th, 2026\n\n\nWorksheet A2\nSeptember 15th, 2026\nSeptember 22nd, 2026\n\n\nWorksheet A3\nSeptember 29th, 2026\nOctober 6th, 2026\n\n\nWorksheet A4\nOctober 6th, 2026\nOctober 15th, 2026\n\n\nWorksheet A5\nOctober 15th, 2026\nOctober 22nd, 2026\n\n\n\n\n\nSTAT 545 B:\n\n\n\nWorksheet\nRelease Date\nDue Date (11:59PM PT)\n\n\n\n\nWorksheet B1\nOct 27, 2026\nNov 3, 2026\n\n\nWorksheet B2\nNov 12, 2026\nNov 19, 2026\n\n\nWorksheet B3\nNov 24, 2026\nDec 3, 2026\n\n\n\nWorksheet Tips and Tricks:\n\nDownload the .ipynb file from GitHub and save it on your personal computer.\nOnly edit cells where prompted. If you accidentally click on a text-only cell, hit the play button and it should re-render.\nYou can check your answers prior to submitting! If you see a “Success!” message, you got the question right. Otherwise, a detailed error message will help you diagnose what went wrong.\nSave your work frequently.\nPrior to submitting, restart your kernel and run all to ensure that no errors persist. Save again.\nSubmit the .ipynb file to Canvas with the file name “worksheet_a##”.\nWe’re here to help along the way on Slack, so don’t be shy to ask for help if you need it.\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "webpages/assignmentspartA/mda/mda_deliverable2.html",
@@ -977,77 +977,110 @@
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html",
     "title": "Collaborative Project: Deliverable 1",
     "section": "",
-    "text": "Due September 19th, 2025 at 11:59pm PT\nThere is ZERO tolerance for late project submissions. Please contact the instructor for extenuating circumstances.\nPoints: 100"
+    "text": "Due September 19th, 2025 at 11:59pm PT\nThere is ZERO tolerance for late project submissions. Please contact the instructor for extenuating circumstances.\nPoints: 100",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#welcome-to-the-collaborative-project",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#welcome-to-the-collaborative-project",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Welcome to the Collaborative Project!",
-    "text": "Welcome to the Collaborative Project!\nBy completing this project, students are expected to be able to:\n\nCollaborate on a project using the git + GitHub workflow.\nTroubleshoot broken R code.\nRewrite code to address instructions.\n\nThis is the first of two milestones for completing this project.\n\n\n\n\n\n\nImportant\n\n\n\nRead through the project in its entirety to ensure you’ve made a plan for all of the components to be completed! Many tasks are not “standalone”. For example, we require at least one pull request per person that is relevant to the project. You’ll need to decide in advance who does what!"
+    "text": "Welcome to the Collaborative Project!\nBy completing this project, students are expected to be able to:\n\nCollaborate on a project using the git + GitHub workflow.\nTroubleshoot broken R code.\nRewrite code to address instructions.\n\nThis is the first of two milestones for completing this project.\n\n\n\n\n\n\nImportant\n\n\n\nRead through the project in its entirety to ensure you’ve made a plan for all of the components to be completed! Many tasks are not “standalone”. For example, we require at least one pull request per person that is relevant to the project. You’ll need to decide in advance who does what!",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-1-getting-setup",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-1-getting-setup",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Exercise 1: Getting Setup",
-    "text": "Exercise 1: Getting Setup\n5 points\nWe will be assigning students to teams randomly. Team assignments are on Canvas and can be viewed in the People &gt; Collaborative Assignment section.\nFor both collaborative project milestones, you’ll be working with your teammate(s) on the same GitHub repository (or “repo”). One person in the team will need to make the repository; the other(s) can then join that repo.\n\nCreate a Group Chat on our Slack Team with all of your members in it (see Canvas for the link to join if you haven’t already done so)\nHave one group member make a repository on GitHub, by following the steps found on the Collaborative Project assignment on Canvas.\n\nYour team name should be your group number.\nOnce completed, your repository should be in the GitHub classroom.\nYou may want to save the link to this repository so you can access it later.\n\nThat same group member must now add their teammates to the repository as collaborators. To do this:\n\nGo to your repository’s homepage.\nGo to “Settings” -&gt; “Manage Access”\nClick the green “Invite teams or people” button.\nInput one teammate’s GitHub username (you’ll have to do one at a time).\nWhen asked to “choose a role”, click “Admin” (because each teammate should have full access to the repository).\nMake sure you’ve added everyone in your team.\n\n\nGrading:\nAll points go towards the existence of the repository, with all teammates involved as collaborators."
+    "text": "Exercise 1: Getting Setup\n5 points\nWe will be assigning students to teams randomly. Team assignments are on Canvas and can be viewed in the People &gt; Collaborative Assignment section.\nFor both collaborative project milestones, you’ll be working with your teammate(s) on the same GitHub repository (or “repo”). One person in the team will need to make the repository; the other(s) can then join that repo.\n\nCreate a Group Chat on our Slack Team with all of your members in it (see Canvas for the link to join if you haven’t already done so)\nHave one group member make a repository on GitHub, by following the steps found on the Collaborative Project assignment on Canvas.\n\nYour team name should be your group number.\nOnce completed, your repository should be in the GitHub classroom.\nYou may want to save the link to this repository so you can access it later.\n\nThat same group member must now add their teammates to the repository as collaborators. To do this:\n\nGo to your repository’s homepage.\nGo to “Settings” -&gt; “Manage Access”\nClick the green “Invite teams or people” button.\nInput one teammate’s GitHub username (you’ll have to do one at a time).\nWhen asked to “choose a role”, click “Admin” (because each teammate should have full access to the repository).\nMake sure you’ve added everyone in your team.\n\n\nGrading:\nAll points go towards the existence of the repository, with all teammates involved as collaborators.",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-2-markdown-formatting",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-2-markdown-formatting",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Exercise 2: Markdown Formatting",
-    "text": "Exercise 2: Markdown Formatting\n15 points\nBetween your README.md and TEAMWORK.md files, showcase at least five functionalities of GitHub-flavoured markdown (so, you don’t need to consider this exercise until you begin writing these files, as described in other exercises). The markdown cheatsheet might help here, or, the Help menu in RStudio will bring up a Markdown Quick Reference at any time.\nGrading:\n\n1 markdown feature: 4 points\n2 markdown features: 7 points\n3 markdown features: 10 points\n4 or 5 markdown features: 13 points\n5 markdown features, with at least two being “GitHub-Flavoured”: 15 points"
+    "text": "Exercise 2: Markdown Formatting\n15 points\nBetween your README.md and TEAMWORK.md files, showcase at least five functionalities of GitHub-flavoured markdown (so, you don’t need to consider this exercise until you begin writing these files, as described in other exercises). The markdown cheatsheet might help here, or, the Help menu in RStudio will bring up a Markdown Quick Reference at any time.\nGrading:\n\n1 markdown feature: 4 points\n2 markdown features: 7 points\n3 markdown features: 10 points\n4 or 5 markdown features: 13 points\n5 markdown features, with at least two being “GitHub-Flavoured”: 15 points",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-3-merge-one-pull-request-per-teammate",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-3-merge-one-pull-request-per-teammate",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Exercise 3: Merge one Pull Request per Teammate",
-    "text": "Exercise 3: Merge one Pull Request per Teammate\n30 points\nEvery teammate should submit at least one pull request for this milestone, and have a different teammate merge the pull request after reviewing the contents of the pull request. Each pull request will require a number of components (listed below). TAs will grade one pull request per person, and it’s up to you to ensure you’ve indicated which one is to be graded by adding “(GRADED)” to your pull request name.\nSo, like the previous exercise on Markdown Formatting, this exercise is not stand-alone. You’ll need to decide who will work on what (more on this when you make your teamwork document).\nAs a reminder, in order to make a pull request, you’ll need to:\n\nMake a new branch, before you start working on your tasks! (So that you capture your work within the branch.)\n\nYou can do this either on GitHub, or on your own computer using RStudio.\n\nMake changes to some files on the new branch.\n\nYou can do this either on GitHub or on your own computer (locally), but if you do this locally, you’ll need to remember to push your work (on the branch) to GitHub.\n\nStart a pull request on GitHub, by going to “Pull Requests” -&gt; “New Pull Request”, and selecting the branch you intend to merge to the main branch. In your pull request, include a comment and title indicating (at a high level) what this change you made is about.\n\n\nIn the comments, include some indication as to which teammate will be responsible for checking and merging the new work contained in the pull request.\n\nPerhaps you’ve already decided up front who will be reviewing who’s work.\nOr perhaps (and more realistically), in your comment, you may ask the group at large who would like to volunteer, and then someone will respond.\nHow you work this out should go in your teamwork document (as described in another exercise).\n\nThe teammate responsible for reviewing and merging the pull request does so, being sure to add to the discussion happening in the pull request by adding a comment.\n\nThe comment could be as simple as something like “I’ve reviewed these changes, and everything looks great.” Or, it could highlight some issues that were found, in which case the team should work towards resolving the issue.\n\n\nHere are some ideas of things you can merge:\n\nYour initial draft of the README document or TEAMWORK document.\nYour changes to the troubleshooting exercise.\nModifications to any document.\n\nNote 1: Work together as a team to get this done. If one of your teammates is having trouble with this procedure, help them out! Sometimes a merge conflict will happen, and it’s best to work as a team to figure out how to resolve these issues.\nNote 2: Please indicate to the TAs which Pull Requests you would like to be graded by adding “(GRADED)” to the PR name. Every team member should have exactly one pull request labelled “(GRADED)”.\nGrading:\n\n4 points awarded for the creation of a complete set of pull requests (i.e., one pull request per teammate).\n14 points awarded for the successful merging of a complete set of pull requests.\n4 points awarded for the comment(s) kicking off the pull request.\n4 points awarded for the follow-up comment(s) from a reviewer.\n4 points awarded if each teammate gets the chance to act as a reviewer/merger of someone else’s pull request.\nPenalty of up to 4 points if the total amount of work contained in pull requests does not amount to much. We just want to make sure that, when you’re working on this project, you’re largely working on branches. It’s OK to commit directly to the main branch without a pull request, but this should be the exception, not the norm.\nPenalty of 1 point if you have not indicated to the TAs which PRs you would like to be graded by adding “(GRADED)” to the PR name."
+    "text": "Exercise 3: Merge one Pull Request per Teammate\n30 points\nEvery teammate should submit at least one pull request for this milestone, and have a different teammate merge the pull request after reviewing the contents of the pull request. Each pull request will require a number of components (listed below). TAs will grade one pull request per person, and it’s up to you to ensure you’ve indicated which one is to be graded by adding “(GRADED)” to your pull request name.\nSo, like the previous exercise on Markdown Formatting, this exercise is not stand-alone. You’ll need to decide who will work on what (more on this when you make your teamwork document).\nAs a reminder, in order to make a pull request, you’ll need to:\n\nMake a new branch, before you start working on your tasks! (So that you capture your work within the branch.)\n\nYou can do this either on GitHub, or on your own computer using RStudio.\n\nMake changes to some files on the new branch.\n\nYou can do this either on GitHub or on your own computer (locally), but if you do this locally, you’ll need to remember to push your work (on the branch) to GitHub.\n\nStart a pull request on GitHub, by going to “Pull Requests” -&gt; “New Pull Request”, and selecting the branch you intend to merge to the main branch. In your pull request, include a comment and title indicating (at a high level) what this change you made is about.\n\n\nIn the comments, include some indication as to which teammate will be responsible for checking and merging the new work contained in the pull request.\n\nPerhaps you’ve already decided up front who will be reviewing who’s work.\nOr perhaps (and more realistically), in your comment, you may ask the group at large who would like to volunteer, and then someone will respond.\nHow you work this out should go in your teamwork document (as described in another exercise).\n\nThe teammate responsible for reviewing and merging the pull request does so, being sure to add to the discussion happening in the pull request by adding a comment.\n\nThe comment could be as simple as something like “I’ve reviewed these changes, and everything looks great.” Or, it could highlight some issues that were found, in which case the team should work towards resolving the issue.\n\n\nHere are some ideas of things you can merge:\n\nYour initial draft of the README document or TEAMWORK document.\nYour changes to the troubleshooting exercise.\nModifications to any document.\n\nNote 1: Work together as a team to get this done. If one of your teammates is having trouble with this procedure, help them out! Sometimes a merge conflict will happen, and it’s best to work as a team to figure out how to resolve these issues.\nNote 2: Please indicate to the TAs which Pull Requests you would like to be graded by adding “(GRADED)” to the PR name. Every team member should have exactly one pull request labelled “(GRADED)”.\nGrading:\n\n4 points awarded for the creation of a complete set of pull requests (i.e., one pull request per teammate).\n14 points awarded for the successful merging of a complete set of pull requests.\n4 points awarded for the comment(s) kicking off the pull request.\n4 points awarded for the follow-up comment(s) from a reviewer.\n4 points awarded if each teammate gets the chance to act as a reviewer/merger of someone else’s pull request.\nPenalty of up to 4 points if the total amount of work contained in pull requests does not amount to much. We just want to make sure that, when you’re working on this project, you’re largely working on branches. It’s OK to commit directly to the main branch without a pull request, but this should be the exception, not the norm.\nPenalty of 1 point if you have not indicated to the TAs which PRs you would like to be graded by adding “(GRADED)” to the PR name.",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-4-github-issues",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-4-github-issues",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Exercise 4: GitHub Issues",
-    "text": "Exercise 4: GitHub Issues\n15 points\nGitHub Issues are a useful way to communicate with your team. They should be used for messages about your project that deserve some permanence and reference.\nExamples of messages that might not be best for GitHub Issues:\n\n“Can you remind me where to find the instructions for this milestone?”\n“I think I need a nap – I might be a couple hours late with the pull request.”\n“So, what do you think about this crazy weather we’ve been having??”\n\nExamples of messages that do belong on GitHub Issues:\n\n“I noticed a problem with how we worked on Milestone 1. How can we go about fixing these?”\n“Here are my ideas for things to include in the README file – do you have any other ideas?”\nMeeting agendas\n\nYour task in this milestone is to introduce yourself in a GitHub Issue:\n\nEach team member should write a new Issue introducing themselves briefly. Tag each of your teammates in the body of your Issue. (12 points for a complete set of introductions)\nEach team member should respond to everyone’s introduction Issue. (3 points for a complete set of responses; 2 if not many are missing; 1 if more than half are missing)"
+    "text": "Exercise 4: GitHub Issues\n15 points\nGitHub Issues are a useful way to communicate with your team. They should be used for messages about your project that deserve some permanence and reference.\nExamples of messages that might not be best for GitHub Issues:\n\n“Can you remind me where to find the instructions for this milestone?”\n“I think I need a nap – I might be a couple hours late with the pull request.”\n“So, what do you think about this crazy weather we’ve been having??”\n\nExamples of messages that do belong on GitHub Issues:\n\n“I noticed a problem with how we worked on Milestone 1. How can we go about fixing these?”\n“Here are my ideas for things to include in the README file – do you have any other ideas?”\nMeeting agendas\n\nYour task in this milestone is to introduce yourself in a GitHub Issue:\n\nEach team member should write a new Issue introducing themselves briefly. Tag each of your teammates in the body of your Issue. (12 points for a complete set of introductions)\nEach team member should respond to everyone’s introduction Issue. (3 points for a complete set of responses; 2 if not many are missing; 1 if more than half are missing)",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-5-teamwork-contract",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-5-teamwork-contract",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Exercise 5: Teamwork Contract",
-    "text": "Exercise 5: Teamwork Contract\n15 points\nWhenever you embark on a project with a team, it’s always a good idea to establish a teamwork contract so that you can establish your expectations and get the team on the same page. This should be a living document – your team should revisit the teamwork contract as you establish a better or more realistic way of working together.\n\nMake a new document in the root of your repository called TEAMWORK.md. (5 points for the file’s existence)\nFill in the document with guidelines as to how you will work together. (10 points awarded for thoughtfulness and clarity)\n\nBe sure to include at least the following two aspects of working together:\n\nDivision of Labour: How will you divide the work required for this milestone? Be sure to include what work will be done individually, so that the work in each teammate’s pull request has been identified.\nTiming: When will you each aim to submit your pull requests, keeping in mind that another teammate will need to review your work? Warning: Do not submit your part of the project last-minute. Your teammate’s review of your work may not be trivial: if there are errors, your team will need time to debug them.\nCommunication: How will you communicate with each other? For example, will you be using both Slack and GitHub Issues? For what, exactly? How long will it realistically take you to respond to a message? Will you hold a regular meeting, or rely exclusively on asynchronous communication?"
+    "text": "Exercise 5: Teamwork Contract\n15 points\nWhenever you embark on a project with a team, it’s always a good idea to establish a teamwork contract so that you can establish your expectations and get the team on the same page. This should be a living document – your team should revisit the teamwork contract as you establish a better or more realistic way of working together.\n\nMake a new document in the root of your repository called TEAMWORK.md. (5 points for the file’s existence)\nFill in the document with guidelines as to how you will work together. (10 points awarded for thoughtfulness and clarity)\n\nBe sure to include at least the following two aspects of working together:\n\nDivision of Labour: How will you divide the work required for this milestone? Be sure to include what work will be done individually, so that the work in each teammate’s pull request has been identified.\nTiming: When will you each aim to submit your pull requests, keeping in mind that another teammate will need to review your work? Warning: Do not submit your part of the project last-minute. Your teammate’s review of your work may not be trivial: if there are errors, your team will need time to debug them.\nCommunication: How will you communicate with each other? For example, will you be using both Slack and GitHub Issues? For what, exactly? How long will it realistically take you to respond to a message? Will you hold a regular meeting, or rely exclusively on asynchronous communication?",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-6-troubleshooting-document",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-6-troubleshooting-document",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Exercise 6: Troubleshooting document",
-    "text": "Exercise 6: Troubleshooting document\n9 points\n\nPut the troubleshooting-1.Rmd document in your repository. (You can either download this file, or just copy and paste its contents into a new file that you call troubleshooting-1.Rmd.)\nFix all three errors in the troubleshooting-1.Rmd document, as outlined in the document. (2 points per error)\nKnit the document to an md file (just click “knit” in RStudio). (3 points; only 1 point if the document is not up-to-date with its Rmd source.)"
+    "text": "Exercise 6: Troubleshooting document\n9 points\n\nPut the troubleshooting-1.Rmd document in your repository. (You can either download this file, or just copy and paste its contents into a new file that you call troubleshooting-1.Rmd.)\nFix all three errors in the troubleshooting-1.Rmd document, as outlined in the document. (2 points per error)\nKnit the document to an md file (just click “knit” in RStudio). (3 points; only 1 point if the document is not up-to-date with its Rmd source.)",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-7-readme-file",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-7-readme-file",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Exercise 7: README file",
-    "text": "Exercise 7: README file\n9 points\nIn the root of every project should be a README file that provides context and how-to instructions for the project. To write one of these, imagine that you stumble upon this project in 2 years from now; or, imagine that you’re about to hire someone to come on board the project, and they’ve just opened up your project folder. What are the things that future-you or future-teammate must know about this project? These sort of things go in the README.\n\nYour repository should already be seeded with a blank README.md file. In this file, include a brief description of the repository + project by including at least these three elements:\n\nWhat is this project?\nWhat files are in the project folder / GitHub repository, at a high level?\nHow can they run code that appears in your folder / GitHub repository? Again, at a high level.\n\n\nYour README file might be about the length of a paragraph in total.\nGrading: 3 points awarded for how well each element efficiently orients a newcomer to your project."
+    "text": "Exercise 7: README file\n9 points\nIn the root of every project should be a README file that provides context and how-to instructions for the project. To write one of these, imagine that you stumble upon this project in 2 years from now; or, imagine that you’re about to hire someone to come on board the project, and they’ve just opened up your project folder. What are the things that future-you or future-teammate must know about this project? These sort of things go in the README.\n\nYour repository should already be seeded with a blank README.md file. In this file, include a brief description of the repository + project by including at least these three elements:\n\nWhat is this project?\nWhat files are in the project folder / GitHub repository, at a high level?\nHow can they run code that appears in your folder / GitHub repository? Again, at a high level.\n\n\nYour README file might be about the length of a paragraph in total.\nGrading: 3 points awarded for how well each element efficiently orients a newcomer to your project.",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-8-submitting-this-milestone",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#exercise-8-submitting-this-milestone",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Exercise 8: Submitting this Milestone",
-    "text": "Exercise 8: Submitting this Milestone\n2 points\nTo submit this Milestone, you’ll be tagging a release on your GitHub repository, and adding a link to the release on canvas.\nHow to tag a release:\n\nNavigate to the main page (root) of your collaborative GitHub repository.\nThere should be a small link on the right-hand-side of your page that says “Create a new release”. Click that.\n\n\nYou might also be able to get to the same place by clicking on the “tags” link beside where your branches are listed.\n\n\nFor the tag version, put m1.0 (for “milestone 1.0”).\n\n\nChoose a release title and description (this is less important).\nDo not check off “This is a pre-release”.\nClick “Publish Release”.\nPut a link to that release as a submission on the Collaborative Project Milestone 1\n\nYou won’t lose marks for not submitting your link to canvas, but it would really help us out if you do this! Thank you!\n\n\nIf you want to “re-tag” your release:\nIf you want to change your submission after tagging a release, you can still do this if it’s before the deadline. Just increase the secondary version number by one – so, make the tag version m1.1, then m1.2, etc.\nGrading: 2 points awarded for tagging a release."
+    "text": "Exercise 8: Submitting this Milestone\n2 points\nTo submit this Milestone, you’ll be tagging a release on your GitHub repository, and adding a link to the release on canvas.\nHow to tag a release:\n\nNavigate to the main page (root) of your collaborative GitHub repository.\nThere should be a small link on the right-hand-side of your page that says “Create a new release”. Click that.\n\n\nYou might also be able to get to the same place by clicking on the “tags” link beside where your branches are listed.\n\n\nFor the tag version, put m1.0 (for “milestone 1.0”).\n\n\nChoose a release title and description (this is less important).\nDo not check off “This is a pre-release”.\nClick “Publish Release”.\nPut a link to that release as a submission on the Collaborative Project Milestone 1\n\nYou won’t lose marks for not submitting your link to canvas, but it would really help us out if you do this! Thank you!\n\n\nIf you want to “re-tag” your release:\nIf you want to change your submission after tagging a release, you can still do this if it’s before the deadline. Just increase the secondary version number by one – so, make the tag version m1.1, then m1.2, etc.\nGrading: 2 points awarded for tagging a release.",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#attribution",
     "href": "webpages/assignmentspartA/collabproj/collabproj_deliverable1.html#attribution",
     "title": "Collaborative Project: Deliverable 1",
     "section": "Attribution",
-    "text": "Attribution\nThanks to Icíar Fernández Boyano for coming up with much of the ideas behind this collaborative project."
+    "text": "Attribution\nThanks to Icíar Fernández Boyano for coming up with much of the ideas behind this collaborative project.",
+    "crumbs": [
+      "Collaborative Project: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/lectures_i/lec7b_joiningtibbles.html",
@@ -3463,21 +3496,27 @@
     "href": "webpages/assignmentspartA/index.html#mini-data-analysis",
     "title": "Assignments (Part A)",
     "section": "Mini Data Analysis",
-    "text": "Mini Data Analysis\nIn this two-part assignment, students will become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as ggplot2. This analysis is done individually. There are two equally weighted deliverables.\n\n\n\n\n\n\n\n\nDeliverable\nRelease Date\nDue Date\n\n\n\n\nMini Data Analysis - Milestone 1\nThurs October 01, 2026\nTues October 20, 2026\n\n\nMini Data Analysis - Milestone 2\nThurs October 01, 2026\nTues October 27, 2026"
+    "text": "Mini Data Analysis\nIn this two-part assignment, students will become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as ggplot2. This analysis is done individually. There are two equally weighted deliverables.\n\n\n\n\n\n\n\n\nDeliverable\nRelease Date\nDue Date\n\n\n\n\nMini Data Analysis - Milestone 1\nThurs October 01, 2026\nTues October 13, 2026\n\n\nMini Data Analysis - Milestone 2\nThurs October 01, 2026\nTues October 27, 2026"
   },
   {
     "objectID": "webpages/assignmentspartA/mda/mda_deliverable1.html",
     "href": "webpages/assignmentspartA/mda/mda_deliverable1.html",
     "title": "Mini Data Analysis: Deliverable 1",
     "section": "",
-    "text": "This project includes two deliverables, each with explicit tasks. Tasks that are more challenging will often be allocated more points.\nEach deliverable will be also graded for reproducibility, cleanliness, and coherence of the overall Github submission. While the two deliverables will be submitted as independent assessments, the analysis itself is a continuum - think of it as two chapters to a story. Each chapter, or in this case, portion of your analysis, should be easily followed through by someone unfamiliar with the content. Here is a good resource for what constitutes “good code”. Learning good coding practices early in your career will save you hassle later on!"
+    "text": "This project includes two deliverables, each with explicit tasks. Tasks that are more challenging will often be allocated more points.\nEach deliverable will be also graded for reproducibility, cleanliness, and coherence of the overall Github submission. While the two deliverables will be submitted as independent assessments, the analysis itself is a continuum - think of it as two chapters to a story. Each chapter, or in this case, portion of your analysis, should be easily followed through by someone unfamiliar with the content. Here is a good resource for what constitutes “good code”. Learning good coding practices early in your career will save you hassle later on!",
+    "crumbs": [
+      "Mini Data Analysis: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartA/mda/mda_deliverable1.html#deliverable-1-will-be-due-on-friday-october-3rd-2025-at-1159pm-pt.",
     "href": "webpages/assignmentspartA/mda/mda_deliverable1.html#deliverable-1-will-be-due-on-friday-october-3rd-2025-at-1159pm-pt.",
     "title": "Mini Data Analysis: Deliverable 1",
     "section": "",
-    "text": "This project includes two deliverables, each with explicit tasks. Tasks that are more challenging will often be allocated more points.\nEach deliverable will be also graded for reproducibility, cleanliness, and coherence of the overall Github submission. While the two deliverables will be submitted as independent assessments, the analysis itself is a continuum - think of it as two chapters to a story. Each chapter, or in this case, portion of your analysis, should be easily followed through by someone unfamiliar with the content. Here is a good resource for what constitutes “good code”. Learning good coding practices early in your career will save you hassle later on!"
+    "text": "This project includes two deliverables, each with explicit tasks. Tasks that are more challenging will often be allocated more points.\nEach deliverable will be also graded for reproducibility, cleanliness, and coherence of the overall Github submission. While the two deliverables will be submitted as independent assessments, the analysis itself is a continuum - think of it as two chapters to a story. Each chapter, or in this case, portion of your analysis, should be easily followed through by someone unfamiliar with the content. Here is a good resource for what constitutes “good code”. Learning good coding practices early in your career will save you hassle later on!",
+    "crumbs": [
+      "Mini Data Analysis: Deliverable 1"
+    ]
   },
   {
     "objectID": "webpages/slides/slidefiles/lec13_purrr_slides.html#learning-outcomes",
@@ -4358,7 +4397,7 @@
     "href": "webpages/faq.html",
     "title": "Frequently Asked Questions",
     "section": "",
-    "text": "The lecture schedule and topics?\n\nSyllabus: Part A\nSyllabus: Part B\n\nHow much assessments are worth?\n\nSyllabus: Part A\nSyllabus: Part B\n\nThe course GitHub repository?\n\nhttps://github.com/UBC-STAT/STAT545.github.io\n\nWorksheets?\n\nOur GitHub page\n\nA calendar of due dates?\n\nCanvas\n\nA summary of what’s going on this week?\n\nOur “This Week at a Glace” section on the home page!\n\nSlack posting guidelines?\n\nSyllabus\n\nThe link to join Slack?\n\nSTAT545A Canvas Homepage (enrolled students only)\n\nWhat to do if I’m sick?\n\nSyllabus\n\nWhat happens if I submit an assignment late?\n\nSyllabus"
+    "text": "Not finding what you’re looking for? Try the search bar at the top right-hand side of this website!"
   },
   {
     "objectID": "webpages/faq.html#where-can-i-find.",
@@ -4421,7 +4460,7 @@
     "href": "webpages/faq.html#i-am-an-undergraduate.-can-i-take-this-course",
     "title": "Frequently Asked Questions",
     "section": "I am an undergraduate. Can I take this course?",
-    "text": "I am an undergraduate. Can I take this course?\nMaybe, if there’s room. Contact the instructor."
+    "text": "I am an undergraduate. Can I take this course?\nOnly in special circumstances. Contact an advisor."
   },
   {
     "objectID": "webpages/faq.html#what-if-ive-never-had-a-stats-class",
@@ -4442,7 +4481,7 @@
     "href": "webpages/faq.html#id-like-to-officially-audit-can-i",
     "title": "Frequently Asked Questions",
     "section": "I’d like to officially audit – can I?",
-    "text": "I’d like to officially audit – can I?\nAbsolutely! Please take a look at what is required of auditors so that you have an understanding of your expectations coming into the course; then, fill out the form (graduate version) and send it to the instructor to get signed."
+    "text": "I’d like to officially audit – can I?\nAbsolutely! Please take a look at the syllabus to see what is required of auditors so that you have an understanding of your expectations coming into the course; then, fill out the form (graduate version) and send it to the instructor to get signed."
   },
   {
     "objectID": "webpages/faq.html#the-course-is-full-can-i-audit-instead",
@@ -4463,14 +4502,14 @@
     "href": "webpages/faq.html#the-course-is-listed-as-restricted.-what-should-i-do",
     "title": "Frequently Asked Questions",
     "section": "The course is listed as “restricted”. What should I do?",
-    "text": "The course is listed as “restricted”. What should I do?\nWhen all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types. If you are a student of that type, then go ahead and register through SSC! Otherwise, I encourage you to join the waitlist."
+    "text": "The course is listed as “restricted”. What should I do?\nWhen all the open seats are taken, the course is listed as “restricted”, as the remaining seats can only be taken by students of specific types. If you are a student of that type, then go ahead and register through Workday! Otherwise, I encourage you to join the waitlist."
   },
   {
     "objectID": "webpages/faq.html#can-i-take-this-course-if-im-not-a-statistics-student",
     "href": "webpages/faq.html#can-i-take-this-course-if-im-not-a-statistics-student",
     "title": "Frequently Asked Questions",
     "section": "Can I take this course if I’m not a Statistics student?",
-    "text": "Can I take this course if I’m not a Statistics student?\nThis course is open to any graduate student at UBC. Students from other departments vastly outnumber those from Statistics. In fact, the most successful students are often grad students from other fields who need to analyze and visualize data for a thesis. They are highly motivated and excel.\nHowever, if you have never programmed or worked at the command line before, prepare for a shock. This will be a powerful, positive experience, but it’s a big adjustment. Come suffer through the worst part of the learning curve in good company!"
+    "text": "Can I take this course if I’m not a Statistics student?\nThis course is designed for students outside of the Department of Statistics! All are welcome."
   },
   {
     "objectID": "webpages/faq.html#do-i-need-a-computer",
@@ -4791,7 +4830,11 @@
     "href": "webpages/assignmentspartB/index.html",
     "title": "Assignments (Part B)",
     "section": "",
-    "text": "There are three major assignments for STAT545 B. The links to these assignments will be released on the indicated date, and can be found on this page.\n\n\n\n\n\n\n\n\nAssignment\nRelease Date\nDue Date\n\n\n\n\nCreate a Function\nThurs September 22, 2026\nThurs November 05, 2026\n\n\nCreate an R Package\nTues November 03, 2026\nTues November 17, 2026\n\n\nCreate a Dashboard\nTues November 17, 2026\nThurs November 26, 2026\n\n\nCreate a Website\nTues December 01, 2026\nTues December 15, 2026"
+    "text": "There are three major assignments for STAT545 B. The links to these assignments will be released on the indicated date, and can be found on this page.\n\n\n\n\n\n\n\n\nAssignment\nRelease Date\nDue Date\n\n\n\n\nCreate a Function\nTues October 27, 2026\nThurs November 05, 2026\n\n\nCreate an R Package\nTues November 03, 2026\nTues November 17, 2026\n\n\nCreate a Dashboard\nTues November 17, 2026\nThurs November 26, 2026\n\n\nCreate a Website\nTues December 01, 2026\nTues December 15, 2026",
+    "crumbs": [
+      "Assignments (Part A)",
+      "Assignments (Part B)"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartB/assignmentB2.html",
@@ -4892,13 +4935,35 @@
     "href": "webpages/assignmentspartB/index.html#assignments",
     "title": "Assignments (Part B)",
     "section": "",
-    "text": "There are three major assignments for STAT545 B. The links to these assignments will be released on the indicated date, and can be found on this page.\n\n\n\n\n\n\n\n\nAssignment\nRelease Date\nDue Date\n\n\n\n\nCreate a Function\nThurs September 22, 2026\nThurs November 05, 2026\n\n\nCreate an R Package\nTues November 03, 2026\nTues November 17, 2026\n\n\nCreate a Dashboard\nTues November 17, 2026\nThurs November 26, 2026\n\n\nCreate a Website\nTues December 01, 2026\nTues December 15, 2026"
+    "text": "There are three major assignments for STAT545 B. The links to these assignments will be released on the indicated date, and can be found on this page.\n\n\n\n\n\n\n\n\nAssignment\nRelease Date\nDue Date\n\n\n\n\nCreate a Function\nTues October 27, 2026\nThurs November 05, 2026\n\n\nCreate an R Package\nTues November 03, 2026\nTues November 17, 2026\n\n\nCreate a Dashboard\nTues November 17, 2026\nThurs November 26, 2026\n\n\nCreate a Website\nTues December 01, 2026\nTues December 15, 2026",
+    "crumbs": [
+      "Assignments (Part A)",
+      "Assignments (Part B)"
+    ]
   },
   {
     "objectID": "webpages/assignmentspartB/index.html#generative-ai-disclosure",
     "href": "webpages/assignmentspartB/index.html#generative-ai-disclosure",
     "title": "Assignments (Part B)",
     "section": "Generative AI Disclosure",
-    "text": "Generative AI Disclosure\nIn this course, Generative AI can be used in the following ways:\n\nto clarify concepts discussed in class\nas an “advanced search engine” (i.e., searching error codes)\ndebugging code that students wrote and attempted to debug on their own\n\nGenerative AI CANNOT be used to generate text or code (including comments) from scratch.\nAny use of Generative AI must be disclosed.\nTo disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details [in square brackkets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck\nHere is an example of a specific, explicit debug:\n\n“I had the error attempt to apply non-function after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a *, i.e. (2)(3) instead of 2*3.”\n\n\n## Generative AI Statement \n\nGenerative AI (through [LIST MODELS USED, i.e. ChatGPT, CoPilot)] was used to \nhelp me complete  this assignment in the following ways. \n\n1. [Describe here]\n\n2. [Describe here]\n\n...\n\nI affirm that Generative AI was not used to generate text, code, or comments for \nmy assessments. \nIf you did not use Generative AI, you do not need to include this in the README.\nAssessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade."
+    "text": "Generative AI Disclosure\nIn this course, Generative AI can be used in the following ways:\n\nto clarify concepts discussed in class\nas an “advanced search engine” (i.e., searching error codes)\ndebugging code that students wrote and attempted to debug on their own\n\nGenerative AI CANNOT be used to generate text or code (including comments) from scratch.\nAny use of Generative AI must be disclosed.\nTo disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details [in square brackkets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck\nHere is an example of a specific, explicit debug:\n\n“I had the error attempt to apply non-function after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a *, i.e. (2)(3) instead of 2*3.”\n\n\n## Generative AI Statement \n\nGenerative AI (through [LIST MODELS USED, i.e. ChatGPT, CoPilot)] was used to \nhelp me complete  this assignment in the following ways. \n\n1. [Describe here]\n\n2. [Describe here]\n\n...\n\nI affirm that Generative AI was not used to generate text, code, or comments for \nmy assessments. \nIf you did not use Generative AI, you do not need to include this in the README.\nAssessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.",
+    "crumbs": [
+      "Assignments (Part A)",
+      "Assignments (Part B)"
+    ]
+  },
+  {
+    "objectID": "webpages/faq.html#im-having-issues-enrolling---who-do-i-contact-about-registration",
+    "href": "webpages/faq.html#im-having-issues-enrolling---who-do-i-contact-about-registration",
+    "title": "Frequently Asked Questions",
+    "section": "I’m having issues enrolling - who do I contact about registration?",
+    "text": "I’m having issues enrolling - who do I contact about registration?\nPlease email our Graduate Program Manager. The instructor does not have any control over registration, nor any access to the registration system."
+  },
+  {
+    "objectID": "webpages/faq.html#i-can-only-register-for-stat545a-on-workday-but-not-stat545b-am-i-doing-something-wrong",
+    "href": "webpages/faq.html#i-can-only-register-for-stat545a-on-workday-but-not-stat545b-am-i-doing-something-wrong",
+    "title": "Frequently Asked Questions",
+    "section": "I can only register for STAT545A on Workday, but not STAT545B! Am I doing something wrong?",
+    "text": "I can only register for STAT545A on Workday, but not STAT545B! Am I doing something wrong?\nNo, since STAT545A is a prerequisite for STAT545B, you’ll only be able to register for part B in October. Don’t worry - there will still be space for you!"
   }
 ]

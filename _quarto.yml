@@ -18,13 +18,11 @@ website:
         icon: house-door-fill
       - sidebar:syllabus
       - href: webpages/lectures.qmd
-        text: "Lectures"
+        text: "Content and Schedule"
       - href: webpages/worksheets.qmd
         text: "Worksheets"
-      - href: webpages/assignmentspartA/index.qmd
-        text: "Assignments (Part A)"
-      - href: webpages/assignmentspartB/index.qmd
-        text: "Assignments (Part B)"
+      - sidebar:assignmentsA
+#      - sidebar:assignmentsB
       - href: webpages/faq.qmd
         text: "FAQ"
         
@@ -79,36 +77,26 @@ website:
         - webpages/lectures_ii/lec13_purrr.qmd
         - webpages/lectures_ii/lec14_quarto.qmd
         
+   
+    - id: assignmentsA
+      title: "Assessments (Part A)"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - webpages/assignmentspartA/collabproj/collabproj_deliverable1.qmd
+        - webpages/assignmentspartA/mda/mda_deliverable1.qmd
+        - webpages/assignmentspartA/mda/mda_deliverable2.qmd
 
         
-    - id: collabproj
-      title: "Collab Project"
-      style: "docked"
-      background: light
-      collapse-level: 2
-      contents: 
-        - webpages/collabproj/collabproj_deliverable1.qmd
-        - webpages/collabproj/collabproj_deliverable2.qmd
-                
-    - id: mda
-      title: "Mini Data Analysis"
-      style: "docked"
-      background: light
-      collapse-level: 2
-      contents: 
-        - webpages/mda/mda_deliverable1.qmd
-        - webpages/mda/mda_deliverable2.qmd      
-   
-    - id: assignmentsB
-      title: "Assignments (Part B)"
-      style: "docked"
-      background: light
-      collapse-level: 2
-      contents: 
-        - webpages/assignmentspartB/assignmentB1.qmd
-        - webpages/assignmentspartB/assignmentB2.qmd
-        - webpages/assignmentspartB/assignmentB3.qmd       
-   
+    # - id: assignmentsB
+    #   title: "Assessments (Part B)"
+    #   style: "docked"
+    #   background: light
+    #   collapse-level: 2
+    #   contents: 
+    #      - webpages/assignmentspartA/collabproj/collabproj_deliverable1.qmd
+    # 
    
 format:
   html:

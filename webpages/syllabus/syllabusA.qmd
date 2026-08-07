@@ -47,7 +47,7 @@ This course will feature short lectures and in-class demonstrations so students 
 
 ### Schedule of Topics
 
-See schedule [here](https://ubc-stat.github.io/stat545/webpages/lectures.html).
+See schedule and tentative due dates [here](https://ubc-stat.github.io/stat545/webpages/lectures.html).
 
 ### Assessments
 
@@ -66,19 +66,16 @@ Worksheets are interactive assignments that allow students to get real-time feed
 
 Worksheets are produced with Jupyter Notebooks, and will be submitted on Canvas.
 
-See [Worksheets](https://ubc-stat.github.io/stat545/webpages/worksheets.html) for the schedule. 
 
 #### Collaborative Project
 
 Students will practice using Version Control and collaborative tools on Github, troubleshoot broken R code, and rewrite code to address issues. Teams will be randomly assigned.
 
-See [Assignments (Part A)](https://ubc-stat.github.io/stat545/webpages/assignmentspartA/index.html) for due dates and assignment details. 
 
 #### Mini Data Analysis
 
 Students will become more familiar with R and generate a reproducible report using RMarkdown and various packages, such as `tibble`. This analysis is done individually. There are two equally weighted deliverables.
 
-See [Assignments (Part A)](https://ubc-stat.github.io/stat545/webpages/assignmentspartA/index.html) for due dates and assignment details. 
 
 ### Auditing Students
 

@@ -19,7 +19,7 @@ In this two-part assignment, students will become more familiar with R and gener
 
 | Deliverable | Release Date | Due Date |
 |--------------------------|-----------------------|-----------------------|
-| Mini Data Analysis - Milestone 1 | Thurs October 01, 2026 | Tues October 20, 2026 |
+| Mini Data Analysis - Milestone 1 | Thurs October 01, 2026 | Tues October 13, 2026 |
 | Mini Data Analysis - Milestone 2 | Thurs October 01, 2026 | Tues October 27, 2026 |
 
 
