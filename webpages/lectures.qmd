@@ -5,12 +5,12 @@ format: html
 
 The schedule is subject to change at the discretion of the instructor. Any classes without a topic listed are working sessions with the TAs.
 
-All due dates are at 11:59pm PT (local time, Vancouver). \
+All due dates are at 11:59pm PT (local time, Vancouver).\
 \
 **STAT 545 A**
 
 | Week | Date | Topic | Assessments Due |
-|------------------|------------------|------------------|--------------------|
+|----|----|----|----|
 | 1 | Tues Sept 8 | (Optional) [Installation Help Session](lectures_i/lec1a_installation.qmd) |  |
 |  | Thurs Sept 10 | [Introduction to R](lectures_i/lec1b_introR.qmd) |  |
 | 2 | Tues Sept 15 | Data Cleaning with `dplyr` | Worksheet A1 |
