@@ -2,21 +2,26 @@
 title: "Mini Data Analysis: Deliverable 2"
 date-modified: last-modified
 ---
-## Deliverable 2 will be due on Wednesday October 22nd, 2025 at 11:59pm PT
+## Deliverable 2 will be due on October 27nd, 2026 at 11:59pm PT
 
-There is ZERO tolerance for late project submissions. Please contact the instructor for extenuating circumstances. 
 
-*To complete this milestone, you can edit [this `.rmd` file](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/mini-data-analysis/mini-project-2.Rmd) directly. Fill in the sections that are commented out with `<!--- start your work here--->`. When you are done, make sure to knit to an `.md` file by changing the output in the YAML header to `github_document`, before submitting a tagged release on canvas.*
+Download the following file and add it to your Mini Data Analysis Repository (the same one you used for Deliverable 1). Follow the directions in the file!
 
-# Welcome to the rest of your mini data analysis project!
+<div style="text-align: center;">
 
-In Milestone 1, you explored your data. and came up with research questions. This time, we will finish up our mini data analysis and obtain results for your data by: 
+```{r}
+#| echo: false
 
-- Making summary tables and graphs 
-- Manipulating special data types in R: factors and/or dates and times.
--   Fitting a model object to your data, and extract a result.
--   Reading and writing data as separate files.
+library(downloadthis)
+download_file(path = "mdatemplates/mda_deliverable2.Rmd",
+              output_name = "mda_deliverable2",
+              output_extension = ".Rmd",
+              button_label = "Download .Rmd File",
+              button_type = "primary",
+              has_icon = TRUE,
+              icon = "fa fa-save")  
+```
 
-We will also explore more in depth the concept of *tidy data.* 
+</div>
 
-**NOTE**: The main purpose of the mini data analysis is to integrate what you learn in class in an analysis. Although each milestone provides a framework for you to conduct your analysis, it's possible that you might find the instructions too rigid for your data set. If this is the case, you may deviate from the instructions -- just make sure you're demonstrating a wide range of tools and techniques taught in this class, and indicate *why* you had to deviate. Feel free to contact the instructor in these cases. 
+<br>

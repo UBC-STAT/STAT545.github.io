@@ -3,168 +3,54 @@ title: "Mini Data Analysis: Deliverable 1"
 date-modified: last-modified
 ---
 
-## Deliverable 1 will be due on Friday October 3rd, 2025 at 11:59pm PT.
+## Deliverable 1 will be due on Friday October 13th, 2026 at 11:59pm PT.
 
-This project includes two deliverables, each with explicit tasks. Tasks that are more challenging will often be allocated more points.
+This project includes two deliverables, each with explicit tasks. 
 
 Each deliverable will be also graded for reproducibility, cleanliness, and coherence of the overall Github submission. While the two deliverables will be submitted as independent assessments, the analysis itself is a continuum - think of it as two chapters to a story. Each chapter, or in this case, portion of your analysis, should be easily followed through by someone unfamiliar with the content. [Here](https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R.html) is a good resource for what constitutes "good code". Learning good coding practices early in your career will save you hassle later on!
 
-# Learning Objectives
 
-By the end of this deliverable, you should:
-
--   Become familiar with your dataset of choosing
-
--   Select 4 questions that you would like to answer with your data
-
--   Generate a reproducible and clear report using R Markdown
-
--   Become familiar with manipulating and summarizing your data in tibbles using `dplyr`, with a research question in mind.
 
 # Instructions
 
-### Download Datasets
+### Create a Copy of the GitHub Repository Template
 
-1.  In RStudio, install the [`datateachr`](https://github.com/UBC-MDS/datateachr) package by typing the following into your **R terminal**:
+You will begin by creating a copy of this template repository within our STAT545 organization. 
 
-```         
-install.packages("devtools")
-devtools::install_github("UBC-MDS/datateachr")
+-  Use the following naming convention for your repository: `mda-firstname-lastname`
+
+-  Set the owner as `UBC-STAT545-F2026`
+
+Next, clone the repository so you can access it on your local machine! 
+
+### Complete the Assignment
+
+You will be working on the `mda-deliverable1.Rmd` file for this assessment.
+
+Fill in the sections that are tagged with `<!--- start your work below --->`.
+
+<!---
+To complete this deliverable, download the template below:
+
+<div style="text-align: center;">
+
+```{r}
+#| echo: false
+
+library(downloadthis)
+download_file(path = "mdatemplates/mda_deliverable1.Rmd",
+              output_name = "mda_deliverable1",
+              output_extension = ".Rmd",
+              button_label = "Download .Rmd Template",
+              button_type = "primary",
+              has_icon = TRUE,
+              icon = "fa fa-save")  
 ```
 
-2.  Load the packages below.
+</div>
 
-```{r, eval = F}
-library(datateachr)
-library(tidyverse)
-```
+<br>
 
-3.  Make a repository in our GitHub classroom. You can do this by following the steps found on canvas in the entry called [MDA: Create a repository](https://canvas.ubc.ca/courses/169555/pages/mda-create-a-repository). One completed, your repository should automatically be listed as part of the stat545ubc-2025 Organization.
 
-### Download RMarkdown Report
+--->
 
-**To complete this deliverable**, download and edit the [mini-project-1.Rmd](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/mini-data-analysis/mini-project-1.Rmd) directly. Follow the instructions given in the .Rmd file. Fill in the sections that are tagged with `<!--- start your work below --->`.
-
-**To submit this deliverable**, make sure to knit this `.Rmd` file to an `.md` file by changing the YAML output settings from `output: html_document` to `output: github_document`. Commit and push all of your work to the mini-analysis GitHub repository you made earlier, and tag a release on GitHub. Then, submit a link to your tagged release on canvas.
-
-**Points**: This deliverable is worth 36 points: 30 for your analysis, and 6 for overall reproducibility, cleanliness, and coherence of the Github submission.
-
-**Mini Data Analysis Project: Milestone 1**
-
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Criteria          | Ratings                                                                                                                                                                                                                                         | Total Pts |
-+===================+=================================================================================================================================================================================================================================================+===========+
-| Task 1.1          | **1 pts: Full Marks**                                                                                                                                                                                                                           | 1 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Chose 4 data sets and clearly communicated their choice.**                                                                                                                                                                                |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **0.5 pts: Partial Marks**                                                                                                                                                                                                                      |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Chose 4 data sets, but there were communciation issues, or chose less than 4 data sets.**                                                                                                                                                 |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **0 pts: No Marks**                                                                                                                                                                                                                             |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Task 1.2          | **6 pts: Full Marks**                                                                                                                                                                                                                           | 6 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Used a least 3 different dplyr to find 3 or more attributes about each of the 4 data sets from Task 1.1.**                                                                                                                                |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **6 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **0.5-1 point deduction for insufficient use of dplyr.**                                                                                                                                                                                    |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **0.5 point deduction per missing attribute. (Recall that full marks goes to 3\*4 = 12 attributes.)**                                                                                                                                       |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Task 1.3          | **1 pts: Full Marks**                                                                                                                                                                                                                           | 1 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Chose a data set, clearly communicated which, and clearly explained the reasoning behind the choice.**                                                                                                                                    |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **1 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Up to 0.5 point deduction for communication clarity issues or missing explanation of choices.**                                                                                                                                           |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Task 1.4          | **2 pts: Full Marks**                                                                                                                                                                                                                           | 2 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Provided a clear and concise question for the data set chosen in Task 1.3.**                                                                                                                                                              |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **2 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Up to 1 point deduction for lack of clarity or conciseness in question statement.**                                                                                                                                                       |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Task 2.1          | **12 pts: Full Marks**                                                                                                                                                                                                                          | 12 pts\   |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Completed 4 exercises using ggplot2 and dplyr.**                                                                                                                                                                                          |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **12 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                          |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **1 point deduction per exercise for a base R solution.**                                                                                                                                                                                   |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Task 2.2          | **4 pts: Full Marks**                                                                                                                                                                                                                           | 4 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Clearly and concisely explained why it made sense to choose each of the 4 exercises in relationship to the data.**                                                                                                                        |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Clearly and concisely explained the reasoning and code.**                                                                                                                                                                                 |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **4 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Up to 0.5 point deduction per exercise for clarity issues, brevity issues, or insufficient explanation behind reasoning and code.**                                                                                                       |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Task 3            | **4 pts: Full Marks**                                                                                                                                                                                                                           | 4 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Chose 4 research questions and clearly communicated their choice.**                                                                                                                                                                       |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **4 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Up to 0.5 point deduction per question for clarity issues, brevity issues, or insufficient explanation behind reasoning and code.**                                                                                                       |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Overall Coherence | **0.5 pts: Full Marks**                                                                                                                                                                                                                         | 0.5 pts\  |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **The document should read sensibly from top to bottom, with no major continuity errors. An example of a major continuity error is having a data set listed for Task 3 that is not part of one of the data sets listed in Task 1.**         |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **0 pts: No Marks**                                                                                                                                                                                                                             |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **At least one major continuity error.**                                                                                                                                                                                                    |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Error-free code   | **3 pts: Full Marks**                                                                                                                                                                                                                           | 3 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **All code in the document runs without error.**                                                                                                                                                                                            |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **3 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **1 point deduction if most code runs without error,**                                                                                                                                                                                      |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **2 points deduction if more than 50% of the code throws an error.**                                                                                                                                                                        |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Main README       | **1 pts: Full Marks**                                                                                                                                                                                                                           | 1 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **There is a file named README.md at the top level of the repository that clearly and concisely describes what the repository is for, what each file is, and how to engage with the repository (i.e., how to reproduce the final report).** |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **1 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **0.5 point deduction for clarity issues**                                                                                                                                                                                                  |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **0.5 point deduction if a "README" type document exists, but is not named README.md.**                                                                                                                                                     |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Output            | **1 pts: Full Marks**                                                                                                                                                                                                                           | 1 pts\    |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **All output is readable, recent, and relevant.**                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **1 to \>0 pts: Partial or No Marks**                                                                                                                                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **0.5 point deduction if any of the following criteria are not met, and 1 point deduction if most or all of the following criteria are not met:**                                                                                           |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   |     -   **All Rmd files are knitted to output md**                                                                                                                                                                                              |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   |     -   **All md files are viewable without issue on Github**                                                                                                                                                                                   |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   |     -   **All output files are up-to-date with their source**                                                                                                                                                                                   |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| Tagged release    | **0.5 pts: Full Marks**                                                                                                                                                                                                                         | 0.5 pts\  |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **Tagged a release on Github.**                                                                                                                                                                                                             |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | **0 pts: No Marks**                                                                                                                                                                                                                             |           |
-|                   |                                                                                                                                                                                                                                                 |           |
-|                   | -   **No tagged release.**                                                                                                                                                                                                                      |           |
-+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-
-Total Points: 36

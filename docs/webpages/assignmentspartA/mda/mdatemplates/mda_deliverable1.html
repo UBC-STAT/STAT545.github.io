@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mini Data-Analysis: Deliverable 1 – STAT545</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../../images/stat545_transparent.png" rel="icon" type="image/png">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-ba3d7e3108b965ef4c6892bc29f4f97a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R34R67VEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Default to 'denied' if you want to be GDPR compliant
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-R34R67VEVH');
+
+  // Function to trigger when user accepts
+  function acceptCookies() {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted'
+    });
+    // Hide your pop-up logic here
+    document.getElementById('cookie-popup').style.display = 'none';
+    localStorage.setItem('cookieConsent', 'granted');
+  }
+</script>
+
+
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">STAT545</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html"> <i class="bi bi-house-door-fill" role="img">
+</i> 
+<span class="menu-text"> </span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Syllabus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
+        <li>
+    <a class="dropdown-item" href="../../../../webpages/syllabus/syllabusA.html">
+ <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../webpages/syllabus/syllabusB.html">
+ <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../webpages/lectures.html"> 
+<span class="menu-text">Content and Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../webpages/worksheets.html"> 
+<span class="menu-text">Worksheets</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-assessments-(part-a" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Assessments (Part A)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-assessments-(part-a">    
+        <li>
+    <a class="dropdown-item" href="../../../../webpages/assignmentspartA/collabproj/collaborativeproject.html">
+ <span class="dropdown-text">Collaborative Project</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../webpages/assignmentspartA/mda/mda_deliverable1.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../webpages/faq.html"> 
+<span class="menu-text">FAQ</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/UBC-STAT/STAT545.github.io"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&amp;si=VaWFgrlMNKHtgOHD"> <i class="bi bi-youtube" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-0-getting-set-up" id="toc-part-0-getting-set-up" class="nav-link active" data-scroll-target="#part-0-getting-set-up">Part 0: Getting Set Up</a></li>
+  <li><a href="#task-1-choose-a-data-set-and-research-question" id="toc-task-1-choose-a-data-set-and-research-question" class="nav-link" data-scroll-target="#task-1-choose-a-data-set-and-research-question">Task 1: Choose a Data Set and Research Question</a>
+  <ul class="collapse">
+  <li><a href="#choose-2-data-sets-2-points" id="toc-choose-2-data-sets-2-points" class="nav-link" data-scroll-target="#choose-2-data-sets-2-points">1.1: Choose 2 data sets <strong>(2 points)</strong></a></li>
+  <li><a href="#explore-the-data-12-points" id="toc-explore-the-data-12-points" class="nav-link" data-scroll-target="#explore-the-data-12-points">1.2: Explore the Data <strong>(12 points)</strong></a></li>
+  <li><a href="#choose-1-data-set-2-points" id="toc-choose-1-data-set-2-points" class="nav-link" data-scroll-target="#choose-1-data-set-2-points">1.3: Choose 1 Data Set <strong>(2 points)</strong></a></li>
+  <li><a href="#research-question-4-points" id="toc-research-question-4-points" class="nav-link" data-scroll-target="#research-question-4-points">1.4: Research Question <strong>(4 points)</strong></a></li>
+  <li><a href="#commit-2-points" id="toc-commit-2-points" class="nav-link" data-scroll-target="#commit-2-points">1.5: Commit <strong>(2 points)</strong></a></li>
+  </ul></li>
+  <li><a href="#task-2-further-exploring-your-chosen-data-set" id="toc-task-2-further-exploring-your-chosen-data-set" class="nav-link" data-scroll-target="#task-2-further-exploring-your-chosen-data-set">Task 2: Further Exploring Your Chosen Data Set</a>
+  <ul class="collapse">
+  <li><a href="#missing-data-6-points" id="toc-missing-data-6-points" class="nav-link" data-scroll-target="#missing-data-6-points">2.1: Missing Data <strong>(6 points)</strong></a></li>
+  <li><a href="#missing-data-again-6-points" id="toc-missing-data-again-6-points" class="nav-link" data-scroll-target="#missing-data-again-6-points">2.2: Missing Data (Again) <strong>(6 points)</strong></a></li>
+  <li><a href="#tidy-your-data-10-points" id="toc-tidy-your-data-10-points" class="nav-link" data-scroll-target="#tidy-your-data-10-points">2.3: Tidy your Data <strong>(10 points)</strong></a></li>
+  <li><a href="#create-a-table-10-points" id="toc-create-a-table-10-points" class="nav-link" data-scroll-target="#create-a-table-10-points">2.4: Create a Table (10 points)</a></li>
+  <li><a href="#summarize-over-levels-of-a-categorical-variable-8-points" id="toc-summarize-over-levels-of-a-categorical-variable-8-points" class="nav-link" data-scroll-target="#summarize-over-levels-of-a-categorical-variable-8-points">2.5: Summarize Over Levels of a Categorical Variable <strong>(8 points)</strong></a></li>
+  <li><a href="#plot-distributions-8-points" id="toc-plot-distributions-8-points" class="nav-link" data-scroll-target="#plot-distributions-8-points">2.6: Plot Distributions (8 points)</a></li>
+  <li><a href="#commit-2-points-1" id="toc-commit-2-points-1" class="nav-link" data-scroll-target="#commit-2-points-1">2.7: Commit <strong>(2 points)</strong></a></li>
+  </ul></li>
+  <li><a href="#task-3-tidy-your-submission-overall" id="toc-task-3-tidy-your-submission-overall" class="nav-link" data-scroll-target="#task-3-tidy-your-submission-overall">Task 3: Tidy Your Submission Overall</a>
+  <ul class="collapse">
+  <li><a href="#coherence-2-points" id="toc-coherence-2-points" class="nav-link" data-scroll-target="#coherence-2-points">3.1: Coherence <strong>(2 points)</strong></a></li>
+  <li><a href="#error-free-code-2-points" id="toc-error-free-code-2-points" class="nav-link" data-scroll-target="#error-free-code-2-points">3.2: Error-free code <strong>(2 points)</strong></a></li>
+  <li><a href="#readme-6-points" id="toc-readme-6-points" class="nav-link" data-scroll-target="#readme-6-points">3.3 README <strong>(6 points)</strong></a></li>
+  <li><a href="#output-4-points" id="toc-output-4-points" class="nav-link" data-scroll-target="#output-4-points">3.4 Output <strong>(4 points)</strong></a></li>
+  </ul></li>
+  <li><a href="#step-4-submission" id="toc-step-4-submission" class="nav-link" data-scroll-target="#step-4-submission">Step 4: Submission</a>
+  <ul class="collapse">
+  <li><a href="#tag-a-release-1-point" id="toc-tag-a-release-1-point" class="nav-link" data-scroll-target="#tag-a-release-1-point">4.1: Tag a Release <strong>(1 point)</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Mini Data-Analysis: Deliverable 1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Total points available: 87</p>
+<section id="part-0-getting-set-up" class="level1">
+<h1>Part 0: Getting Set Up</h1>
+<p>Let’s get ready to work on this assignment!</p>
+<p><strong>0.1: Install Packages</strong></p>
+<ul>
+<li>Install the <a href="https://diverse-data-hub.github.io/"><code>diversedata</code></a> package by typing the following into your <strong>R console</strong>:</li>
+</ul>
+<pre><code>install.packages("pak")
+library(pak)
+pak::pak("diverse-data-hub/diversedata")</code></pre>
+<p><strong>0.2: Load Packages</strong></p>
+<p>Typically, R Packages are loaded in at the very beginning of the analysis. If you later want to use other packages, please come back and add them here:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datateachr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(diversedata)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#--- Add any other packages below this line ---#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="task-1-choose-a-data-set-and-research-question" class="level1">
+<h1>Task 1: Choose a Data Set and Research Question</h1>
+<p>The following data sets can be used for this project from <code>diversedatahub</code>:</p>
+<ul>
+<li><p><strong>wildfire</strong>: This data set contains information on wildfires in Canada, compiled from official government sources under the Open Government Licence – Alberta. The data was gathered to monitor, assess, and respond to wildfire risks across different regions. Wildfires have far-reaching environmental, social, and economic consequences. From an equity and inclusion perspective, analyzing wildfire data can reveal geographic and resource-based disparities in detection and containment efforts, and highlight how certain populations face greater risks due to climate change and limited infrastructure. There are 26551 rows and 35 columns.</p></li>
+<li><p><strong>genderassessment</strong>: Collected in 2023, the data allows for comparative evaluation across countries, sectors, and ownership types (e.g., Public, Private, Government). Each record represents a company and its corresponding evaluation across 28 detailed gender related indicators, offering a comprehensive snapshot of corporate gender equity worldwide. There are 2000 rows and 29 variables</p></li>
+<li><p><strong>globalrights</strong>: This data set provides yearly, country-level information on LGBTQ+ rights, economic indicators, and education spending from 2001 to 2023. It is compiled from Our World in Data, with primary sources including Equaldex, the World Bank, and other open-access data sets.The data enables cross-country and temporal comparisons of LGBTQ+ rights and economic/education metrics, exploration of relationships between rights and economic development, and identification of regional and temporal trends. There are 2125 rows and 10 columns, with a lot of missing data.</p></li>
+<li><p><strong>hcmst</strong>: This data set is adapted from the original data set <a href="https://data.stanford.edu/hcmst2017">How Couples Meet and Stay Together 2017, 2022</a>. This study, led by researchers from Stanford University, surveyed 1,722 U.S. adults in 2022 to explore how relationships form and change with time and focused on dating habits and the impact of the COVID-19 pandemic on relationships. This adapted data set focuses on variables that may affect the quality of the relationship, considering demographic characteristics of the subjects, couple dynamics, as well as COVID-19-related variables. The COVID-19 pandemic had a <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10009005/">significant impact</a> on romantic relationships in the United States. This data set enables exploration of how external factors, like the health of the subjects and changes in income, as well as personal behaviors, like conflict and intimate dynamics, relate to an individual’s perception of the quality of the relationship. There are 1328 rows and 21 columns.</p></li>
+<li><p><strong>womensmarchmadness</strong>: This adapted data set contains historical records of every NCAA Division I Women’s Basketball Tournament appearance since the tournament began in 1982 up until 2018, capturing tournament results across more than four decades of collegiate women’s basketball. All data is sourced from the NCAA and contains the data behind the story <a href="https://fivethirtyeight.com/features/louisiana-tech-was-the-uconn-of-the-80s/">The Rise and Fall Of Women’s NCAA Tournament Dynasties</a>. The rise in popularity of the NCAA Women’s March Madness, fueled by athletes like Caitlin Clark and Paige Bueckers, reflects a broader cultural shift in the recognition of women’s sports. Beyond entertainment and athletic achievement, women’s participation in sport has social and professional benefits. There are 2092 rows and 20 columns.</p></li>
+</ul>
+<p><em>Note: We encourage you to use the ones in the <code>diversedata</code> package, but if you have a data set that you’d really like to use, please check with a member of the teaching team to see whether the data set is of appropriate complexity. If approved, please add a brief description of the data here.</em></p>
+<section id="choose-2-data-sets-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="choose-2-data-sets-2-points">1.1: Choose 2 data sets <strong>(2 points)</strong></h3>
+<p>Out of the 5 data sets listed above, choose <strong>2</strong> that appeal to you based on their description. Write your choices below:</p>
+<!-------------------------- Start your work below ---------------------------->
+<p>1: Write 1st choice here</p>
+<p>2: Write 2nd choice here</p>
+<!----------------------------------------------------------------------------->
+</section>
+<section id="explore-the-data-12-points" class="level3">
+<h3 class="anchored" data-anchor-id="explore-the-data-12-points">1.2: Explore the Data <strong>(12 points)</strong></h3>
+<p>One way to narrowing down your selection is to <em>explore</em> the data sets. Use your knowledge of <code>dplyr</code> to summarize three variables in each of the data sets (for example, listing what levels of a categorical variable exist, or calculating the mean of a continuous variable of interest). Write a sentence that describes your findings for each variable explored. You may use multiple R code chunks if preferred.</p>
+<!-------------------------- Start your work below ---------------------------->
+<section id="data-set-1" class="level4">
+<h4 class="anchored" data-anchor-id="data-set-1">Data Set 1</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Explore 3 variables of data set 1 </span><span class="al">###</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Write your findings here.</p>
+</section>
+<section id="data-set-2" class="level4">
+<h4 class="anchored" data-anchor-id="data-set-2">Data Set 2</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Explore 3 variables of data set 2 </span><span class="al">###</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Write your findings here.</p>
+<!----------------------------------------------------------------------------->
+</section>
+</section>
+<section id="choose-1-data-set-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="choose-1-data-set-2-points">1.3: Choose 1 Data Set <strong>(2 points)</strong></h3>
+<p>It’s time to choose only one data set. State the data set that you’ve chosen, and why you’ve chosen it.</p>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="research-question-4-points" class="level3">
+<h3 class="anchored" data-anchor-id="research-question-4-points">1.4: Research Question <strong>(4 points)</strong></h3>
+<p>Let’s choose a primary and a secondary research question to explore.</p>
+<p>Write your research questions <strong>as questions</strong>, and be specific. You can change it later if needed.</p>
+<blockquote class="blockquote">
+<p>For example, if I had chosen a <code>titanic</code> data set for my project, I might ask, “(Primary) Is there a relationship between survival and the class of the passengers? (Secondary) Does this relationship differ by gender?”</p>
+</blockquote>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="commit-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="commit-2-points">1.5: Commit <strong>(2 points)</strong></h3>
+<p>Commit your work and push it to GitHub. Include an informative commit message, and include “(1.5)” in the message.</p>
+</section>
+</section>
+<section id="task-2-further-exploring-your-chosen-data-set" class="level1">
+<h1>Task 2: Further Exploring Your Chosen Data Set</h1>
+<section id="missing-data-6-points" class="level3">
+<h3 class="anchored" data-anchor-id="missing-data-6-points">2.1: Missing Data <strong>(6 points)</strong></h3>
+<p>Missing data is inevitable, and can complicate analyses. Let’s see what variables (if any) have missing data in your chosen data set.</p>
+<p>Your task is to create a table that calculates the proportion of missing values per variable. Be sure to output the table.</p>
+<!-------------------------- Start your work below ---------------------------->
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Explore missingness here </span><span class="al">###</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!----------------------------------------------------------------------------->
+</section>
+<section id="missing-data-again-6-points" class="level3">
+<h3 class="anchored" data-anchor-id="missing-data-again-6-points">2.2: Missing Data (Again) <strong>(6 points)</strong></h3>
+<p>Based on your research question, will this missingness pose an issue? For the purposes of this class (and this class only!), we will consider missingness a problem <strong>if there is more than 20% of a single variable (that is of interest) is missing</strong>.</p>
+<blockquote class="blockquote">
+<p>For example, let’s assume I wanted to explore the following research questions: “Is there a relationship between survival and the class of the passengers? Does this relationship vary by gender?”. If the variable indicating whether or not a person survived was missing for 20% or more of the passengers, then this would be a problem. However, if a variable indicating the colour of shirt a passenger was wearing was missing, this probably wouldn’t be an issue as that variable is quite irrelevant to my analysis!</p>
+</blockquote>
+<p>Based on this definition, is missingness an issue for your analysis? If so, describe how you will address this (pivoting your research question, for example). If you will continue with a new research question, write it here! <strong>Do not go back to Task 1 and redo the analysis.</strong> ).</p>
+<p>If missingness is not an issue, describe why.</p>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="tidy-your-data-10-points" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-your-data-10-points">2.3: Tidy your Data <strong>(10 points)</strong></h3>
+<p>Produce a tidy data set that could be used to answer your research questions. <strong>Please ensure you have at least one quantitative (numeric) and one categorical variable in your data set. It’s okay you need to include a less relevant variable in your tidied data to ensure this.</strong></p>
+<p>To tidy your data, you should:</p>
+<ul>
+<li><p>Create new variables (if needed)</p></li>
+<li><p>Transform the data into a tidy form (if needed)</p></li>
+<li><p>Remove irrelevant columns (if needed)</p></li>
+<li><p>Comment your code throughout</p></li>
+</ul>
+<p>Show the first 6 rows of the tidied data.</p>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="create-a-table-10-points" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-table-10-points">2.4: Create a Table (10 points)</h3>
+<p>Use any functions from the <code>tidyverse</code> to create one table that outputs the mean, minimum, and maximum of all numeric columns in your data, dropping the missing values if they exist.</p>
+<p>Show the outputted table.</p>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="summarize-over-levels-of-a-categorical-variable-8-points" class="level3">
+<h3 class="anchored" data-anchor-id="summarize-over-levels-of-a-categorical-variable-8-points">2.5: Summarize Over Levels of a Categorical Variable <strong>(8 points)</strong></h3>
+<p>Use your <code>tidyverse</code> knowledge to create one table that calculates mean of one numeric variable for each of the levels of another categorical variable (for example, the mean age of each class in the titanic data).</p>
+<p>Show the outputted table.</p>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="plot-distributions-8-points" class="level3">
+<h3 class="anchored" data-anchor-id="plot-distributions-8-points">2.6: Plot Distributions (8 points)</h3>
+<ul>
+<li><p><strong>2.6.1</strong> Use <code>ggplot</code> to plot the distribution of one of the numeric variables in your tidied data set.</p></li>
+<li><p><strong>2.6.2</strong> Use <code>ggplot</code> to create a visualization showing the relative proportions of each category/level for one of categorical variable in your tidied data set.</p></li>
+</ul>
+<p>Clearly label the variable that is being plotted in each plot. Make sure the output is as clear as possible, provide an English title along with readable x and y column names</p>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="commit-2-points-1" class="level3">
+<h3 class="anchored" data-anchor-id="commit-2-points-1">2.7: Commit <strong>(2 points)</strong></h3>
+<p>Commit your work and push it to GitHub. , and include “(2.7)” in the message.</p>
+</section>
+</section>
+<section id="task-3-tidy-your-submission-overall" class="level1">
+<h1>Task 3: Tidy Your Submission Overall</h1>
+<p>Check over your document and GitHub repository for the following:</p>
+<section id="coherence-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="coherence-2-points">3.1: Coherence <strong>(2 points)</strong></h3>
+<p>The document should read sensibly from top to bottom, with no major continuity errors. An example of a major continuity error is having a data set listed for Task 3 that is not part of one of the data sets listed in Task 1.</p>
+</section>
+<section id="error-free-code-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="error-free-code-2-points">3.2: Error-free code <strong>(2 points)</strong></h3>
+<p>For full marks, all code in the document should run without error and be completely reproducible.</p>
+</section>
+<section id="readme-6-points" class="level3">
+<h3 class="anchored" data-anchor-id="readme-6-points">3.3 README <strong>(6 points)</strong></h3>
+<p>There should be a file named <code>README.md</code> at the top level of your repository. Its contents should automatically appear when you visit the repository on GitHub.</p>
+<p>Minimum contents of the README file:</p>
+<ul>
+<li>In a sentence or two, explains what this repository is, so that future-you or someone else stumbling on your repository can be oriented to the repository.</li>
+<li>List the files/folders contained in the repository</li>
+<li>In a sentence or two, briefly explains how to engage with the repository. You can assume the person reading knows the material from STAT 545A. Basically, if a visitor to your repository wants to explore your project, what should they know? How can they reproduce your report?</li>
+</ul>
+</section>
+<section id="output-4-points" class="level3">
+<h3 class="anchored" data-anchor-id="output-4-points">3.4 Output <strong>(4 points)</strong></h3>
+<p>All output on GitHub is readable, recent and relevant:</p>
+<ul>
+<li>All <code>.Rmd</code> files have been <code>knit</code>ted to their output <code>.md</code> files.</li>
+<li>All knitted <code>.md</code> files are viewable without errors on Github. Examples of errors: Missing plots, “Sorry about that, but we can’t show files that are this big right now” messages, error messages from broken R code</li>
+<li>All of these output files are up-to-date – that is, they haven’t fallen behind after the source (<code>.Rmd</code>) files have been updated.</li>
+<li>There should be no relic output files. For example, if you were knitting an <code>.Rmd</code> to <code>.html</code>, but then changed the output to be only a markdown file, then the <code>.html</code> file is a relic and should be deleted.</li>
+</ul>
+</section>
+</section>
+<section id="step-4-submission" class="level1">
+<h1>Step 4: Submission</h1>
+<section id="tag-a-release-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="tag-a-release-1-point">4.1: Tag a Release <strong>(1 point)</strong></h3>
+<p>To submit this milestone, tag a release on GitHub and submit the link to Canvas.</p>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<style>
+  #cookie-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 320px;
+    background-color: #ffffff;
+    /* This padding creates the space between the edge and the content */
+    padding: 25px; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid #eee;
+    z-index: 9999;
+    font-family: sans-serif;
+    display: none; /* Hidden by default, shown by logic below */
+  }
+
+  #cookie-popup p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .popup-button-container {
+    display: flex;
+    gap: 10px; /* Space between the two buttons */
+  }
+
+  .btn-accept {
+    flex: 1;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .btn-decline {
+    flex: 1;
+    background-color: #f8f9fa;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .btn-accept:hover { background-color: #0056b3; }
+  .btn-decline:hover { background-color: #e2e6ea; }
+</style>
+
+<div id="cookie-popup">
+  <h4> We value your privacy. </h4>
+  <p>Do you consent to the use of cookies to analyse website traffic? No personal indentifying information is stored. See our <a href="../../../../privacy/privacy.html" style="color: #007bff; text-decoration: underline;">privacy policy here</a></p>
+  <div class="popup-button-container">
+    <button class="btn-accept" onclick="acceptCookies()">Accept</button>
+    <button class="btn-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    const consent = localStorage.getItem('cookieConsent');
+    // Only show if the user hasn't made a choice yet
+    if (!consent) {
+      document.getElementById('cookie-popup').style.display = 'block';
+    } else if (consent === 'granted') {
+      // If already granted, run the analytics logic
+      activateAnalytics();
+    }
+  };
+
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'granted');
+    activateAnalytics();
+    closePopup();
+  }
+
+  function declineCookies() {
+    localStorage.setItem('cookieConsent', 'denied');
+    closePopup();
+  }
+
+  function closePopup() {
+    document.getElementById('cookie-popup').style.display = 'none';
+  }
+
+  function activateAnalytics() {
+    // This calls the gtag consent update from your google-analytics.html
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+  }
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2025, Grace Tompkins. <em>Built with <a href="https://quarto.org">Quarto</a></em></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
