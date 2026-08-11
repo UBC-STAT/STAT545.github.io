@@ -3,7 +3,7 @@ title: "Mini Data-Analysis: Deliverable 1"
 output: github_document
 ---
 
-Total points available: 87
+Total points available: 74
 
 
 # Part 0: Getting Set Up
@@ -27,7 +27,6 @@ Typically, R Packages are loaded in at the very beginning of the analysis. If yo
 
 ```{r, warning = F, message = F}
 library(tidyverse)
-library(datateachr)
 library(diversedata)
 
 #--- Add any other packages below this line ---#
@@ -235,45 +234,7 @@ Show the outputted table.
 
 <!----------------------------------------------------------------------------->
 
-
-### 2.5:  Summarize Over Levels of a Categorical Variable **(8 points)**
-
-Use your `tidyverse` knowledge to create one table that calculates mean of one numeric variable for each of the levels of another categorical variable (for example, the mean age of each class in the titanic data).
-
-Show the outputted table.
-
-<!-------------------------- Start your work below ---------------------------->
-```{r}
-
-
-
-
-```
-
-<!----------------------------------------------------------------------------->
-
-
-### 2.6: Plot Distributions (8 points)
-
-
--  **2.6.1** Use `ggplot` to plot the distribution of one of the numeric variables in your tidied data set.
-
--  **2.6.2** Use `ggplot` to create a visualization showing the relative proportions of each category/level for one of categorical variable in your tidied data set.
-
-Clearly label the variable that is being plotted in each plot. Make sure the output is as clear as possible, provide an English title along with readable x and y column names
-
-<!-------------------------- Start your work below ---------------------------->
-```{r}
-
-
-
-
-```
-
-<!----------------------------------------------------------------------------->
-
-
-### 2.7: Commit  **(2 points)**
+### 2.5: Commit  **(2 points)**
 
 Commit your work and push it to GitHub. , and include "(2.7)" in the message. 
 
@@ -305,7 +266,61 @@ Minimum contents of the README file:
 
 
 
-### 3.4 Output **(4 points)**
+
+### 3.4 Generative AI Disclosure **(3 points)**
+
+In this course, Generative AI can be used in the following ways:
+
+-   to clarify concepts discussed in class
+
+-   as an "advanced search engine" (i.e., searching error codes)
+
+-   debugging code that students wrote and attempted to debug on their own
+
+Generative AI **CANNOT** be used to generate text or code (including comments) from scratch. 
+
+Any use of Generative AI must be disclosed. 
+
+**To disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details** [in square brackets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck 
+
+Here is an example of a specific, explicit debug: 
+
+> "I had the error `attempt to apply non-function` after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a `*`, i.e. `(2)(3)` instead of `2*3`." 
+
+```markdown
+
+## Generative AI Statement 
+
+Generative AI (through [LIST MODELS USED, i.e. ChatGPT, CoPilot)] was used to 
+help me complete  this assignment in the following ways. 
+
+1. [Describe here]
+
+2. [Describe here]
+
+...
+
+I affirm that Generative AI was not used to generate text, code, or comments for 
+my assessments. 
+```
+
+If you did not use Generative AI, please include the following in your README:
+
+```markdown
+
+## Generative AI Statement 
+
+Generative AI was not used in any way throughout this assignment.
+
+```
+
+
+Assessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.
+
+
+
+
+### 3.5 Output **(4 points)**
 
 All output on GitHub is readable, recent and relevant:
 

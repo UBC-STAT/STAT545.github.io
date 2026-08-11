@@ -84,9 +84,9 @@ website:
       background: light
       collapse-level: 2
       contents: 
-        - webpages/assignmentspartA/collabproj/collaborativeproject.qmd
-        - webpages/assignmentspartA/mda/mda_deliverable1.qmd
-        #- webpages/assignmentspartA/mda/mda_deliverable2.qmd
+        - webpages/assignmentspartA/collaborativeproject.qmd
+        - webpages/assignmentspartA/mda_deliverable1.qmd
+        - webpages/assignmentspartA/mda_deliverable2.qmd
 
         
     # - id: assignmentsB

@@ -1,0 +1,98 @@
+---
+title: "Mini Data Analysis: Deliverable 1"
+date-modified: last-modified
+---
+
+## Deliverable 1 will be due on Friday October 13th, 2026 at 11:59pm PT.
+
+This project includes two deliverables, each with explicit tasks. 
+
+Each deliverable will be also graded for reproducibility, cleanliness, and coherence of the overall Github submission. While the two deliverables will be submitted as independent assessments, the analysis itself is a continuum - think of it as two chapters to a story. Each chapter, or in this case, portion of your analysis, should be easily followed through by someone unfamiliar with the content. [Here](https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R.html) is a good resource for what constitutes "good code". Learning good coding practices early in your career will save you hassle later on!
+
+
+
+
+:::{.callout-warning}
+
+In this course, Generative AI can be used in the following ways:
+
+-   to clarify concepts discussed in class
+
+-   as an "advanced search engine" (i.e., searching error codes)
+
+-   debugging code that students wrote and attempted to debug on their own
+
+Generative AI **CANNOT** be used to generate text or code (including comments) from scratch. 
+
+Any use of Generative AI must be disclosed. 
+
+**To disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details** [in square brackets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck 
+
+Here is an example of a specific, explicit debug: 
+
+> "I had the error `attempt to apply non-function` after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a `*`, i.e. `(2)(3)` instead of `2*3`." 
+
+```markdown
+
+## Generative AI Statement 
+
+Generative AI (through [LIST MODELS USED, i.e. ChatGPT, CoPilot)] was used to 
+help me complete  this assignment in the following ways. 
+
+1. [Describe here]
+
+2. [Describe here]
+
+...
+
+I affirm that Generative AI was not used to generate text, code, or comments for 
+my assessments. 
+```
+
+If you did not use Generative AI, please include the following in your README:
+
+```markdown
+
+## Generative AI Statement 
+
+Generative AI was not used in any way throughout this assignment.
+
+```
+
+
+Assessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.
+
+**Fill out Task 3.4 as you go through your assignment if you do opt to use Generative AI.**
+
+:::
+
+
+
+
+
+
+# Instructions
+
+### Create a Copy of the GitHub Repository Template
+
+You will begin by creating a copy of [this template repository](https://github.com/UBC-STAT545-F2026/mda-template) within our STAT545 organization. 
+
+-  Click the green "Use this template" button and select "Create a new repository"
+
+-  Use the following naming convention for your repository: `mda-firstname-lastname`
+
+-  Set the owner as `UBC-STAT545-F2026`.
+
+-  Leave all other settings as default. 
+
+-  Click the green "Create repository" button
+
+-  Clone the repository so you can access it on your local machine! 
+
+### Complete the Assignment
+
+You will be working on the `mda-deliverable1.Rmd` file for this assessment.
+
+Fill in the sections that are tagged with `<!--- start your work below --->`.
+
+

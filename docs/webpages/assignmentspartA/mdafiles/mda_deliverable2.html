@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mini Data Analysis: Deliverable 2 – STAT545</title>
+<title>Mini Data-Analysis: Deliverable 2 – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -92,7 +127,6 @@ ul.task-list li input[type="checkbox"] {
     localStorage.setItem('cookieConsent', 'granted');
   }
 </script>
-<script src="../../../site_libs/font-awesome-6.7.2/js/script.js"></script>
 
 
 <link rel="stylesheet" href="../../../styles.css">
@@ -149,12 +183,16 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-assessments-(part-a">    
         <li>
-    <a class="dropdown-item" href="../../../webpages/assignmentspartA/collabproj/collaborativeproject.html">
+    <a class="dropdown-item" href="../../../webpages/assignmentspartA/collaborativeproject.html">
  <span class="dropdown-text">Collaborative Project</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../webpages/assignmentspartA/mda/mda_deliverable1.html">
+    <a class="dropdown-item" href="../../../webpages/assignmentspartA/mda_deliverable1.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../webpages/assignmentspartA/mda_deliverable2.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
     </ul>
   </li>
@@ -190,7 +228,39 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt" id="toc-deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt" class="nav-link active" data-scroll-target="#deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt">Deliverable 2 will be due on October 27nd, 2026 at 11:59pm PT</a></li>
+  <li><a href="#task-0-setup" id="toc-task-0-setup" class="nav-link active" data-scroll-target="#task-0-setup">Task 0: Setup</a></li>
+  <li><a href="#task-1-your-research-questions" id="toc-task-1-your-research-questions" class="nav-link" data-scroll-target="#task-1-your-research-questions">Task 1: Your Research Questions</a>
+  <ul class="collapse">
+  <li><a href="#write-research-questions-1-point" id="toc-write-research-questions-1-point" class="nav-link" data-scroll-target="#write-research-questions-1-point">1.1: Write Research Questions (1 point)</a></li>
+  </ul></li>
+  <li><a href="#task-2-summarizing-your-data" id="toc-task-2-summarizing-your-data" class="nav-link" data-scroll-target="#task-2-summarizing-your-data">Task 2: Summarizing Your Data</a>
+  <ul class="collapse">
+  <li><a href="#summarize-over-levels-of-a-categorical-variable-8-points" id="toc-summarize-over-levels-of-a-categorical-variable-8-points" class="nav-link" data-scroll-target="#summarize-over-levels-of-a-categorical-variable-8-points">2.1: Summarize Over Levels of a Categorical Variable <strong>(8 points)</strong></a></li>
+  <li><a href="#plot-distributions-8-points" id="toc-plot-distributions-8-points" class="nav-link" data-scroll-target="#plot-distributions-8-points">2.2: Plot Distributions (8 points)</a></li>
+  </ul></li>
+  <li><a href="#task-3-exploring-relationships" id="toc-task-3-exploring-relationships" class="nav-link" data-scroll-target="#task-3-exploring-relationships">Task 3: Exploring Relationships</a>
+  <ul class="collapse">
+  <li><a href="#visualize-relationships-12-points" id="toc-visualize-relationships-12-points" class="nav-link" data-scroll-target="#visualize-relationships-12-points">3.1: Visualize Relationships <strong>(12 points)</strong></a></li>
+  <li><a href="#fit-a-model-3-points" id="toc-fit-a-model-3-points" class="nav-link" data-scroll-target="#fit-a-model-3-points">3.2: Fit a Model <strong>(3 points)</strong></a></li>
+  <li><a href="#investigate-your-model-3-points" id="toc-investigate-your-model-3-points" class="nav-link" data-scroll-target="#investigate-your-model-3-points">3.3: Investigate Your Model (3 points)</a></li>
+  </ul></li>
+  <li><a href="#task-4-reading-and-writing-data" id="toc-task-4-reading-and-writing-data" class="nav-link" data-scroll-target="#task-4-reading-and-writing-data">Task 4: Reading and writing data</a>
+  <ul class="collapse">
+  <li><a href="#output-using-here-3-points" id="toc-output-using-here-3-points" class="nav-link" data-scroll-target="#output-using-here-3-points">4.1 Output Using <code>here()</code> (3 points)</a></li>
+  <li><a href="#input-using-here-3-points" id="toc-input-using-here-3-points" class="nav-link" data-scroll-target="#input-using-here-3-points">4.2 Input Using <code>here()</code> (3 points)</a></li>
+  </ul></li>
+  <li><a href="#task-5-tidy-your-submission-overall" id="toc-task-5-tidy-your-submission-overall" class="nav-link" data-scroll-target="#task-5-tidy-your-submission-overall">Task 5: Tidy Your Submission Overall</a>
+  <ul class="collapse">
+  <li><a href="#coherence-2-points" id="toc-coherence-2-points" class="nav-link" data-scroll-target="#coherence-2-points">5.1: Coherence <strong>(2 points)</strong></a></li>
+  <li><a href="#error-free-code-2-points" id="toc-error-free-code-2-points" class="nav-link" data-scroll-target="#error-free-code-2-points">5.2: Error-free code <strong>(2 points)</strong></a></li>
+  <li><a href="#readme-6-points" id="toc-readme-6-points" class="nav-link" data-scroll-target="#readme-6-points">5.3 README <strong>(6 points)</strong></a></li>
+  <li><a href="#generative-ai-disclosure-3-points" id="toc-generative-ai-disclosure-3-points" class="nav-link" data-scroll-target="#generative-ai-disclosure-3-points">5.4 Generative AI Disclosure <strong>(3 points)</strong></a></li>
+  <li><a href="#output-4-points" id="toc-output-4-points" class="nav-link" data-scroll-target="#output-4-points">5.5 Output <strong>(4 points)</strong></a></li>
+  </ul></li>
+  <li><a href="#step-4-submission" id="toc-step-4-submission" class="nav-link" data-scroll-target="#step-4-submission">Step 4: Submission</a>
+  <ul class="collapse">
+  <li><a href="#tag-a-release-1-point" id="toc-tag-a-release-1-point" class="nav-link" data-scroll-target="#tag-a-release-1-point">4.1: Tag a Release <strong>(1 point)</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -199,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mini Data Analysis: Deliverable 2</h1>
+<h1 class="title">Mini Data-Analysis: Deliverable 2</h1>
 </div>
 
 
@@ -208,12 +278,6 @@ ul.task-list li input[type="checkbox"] {
 
     
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 11, 2026</p>
-    </div>
-  </div>
     
   </div>
   
@@ -222,44 +286,207 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt" class="level2">
-<h2 class="anchored" data-anchor-id="deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt">Deliverable 2 will be due on October 27nd, 2026 at 11:59pm PT</h2>
-<p>Download the following file and add it to your Mini Data Analysis Repository (the same one you used for Deliverable 1). Follow the directions in the file!</p>
-<div style="text-align: center;">
+<p>Total points available: 61</p>
+<section id="task-0-setup" class="level1">
+<h1>Task 0: Setup</h1>
+<p>Begin by loading your data and the tidyverse package below:</p>
+<p><strong>0.1: Load Packages</strong></p>
+<p>Typically, R Packages are loaded in at the very beginning of the analysis. If you later want to use other packages, please come back and add them here:</p>
 <div class="cell">
-<div class="cell-output-display">
-<button class="btn btn-primary" onclick="
-    async function downloadFile(event) {
-      event.preventDefault();
-      try {
-        const response = await fetch('data:text/x-markdown;base64,LS0tCnRpdGxlOiAiTWluaSBEYXRhIEFuYWx5c2lzIE1pbGVzdG9uZSAyIgpvdXRwdXQ6IGh0bWxfZG9jdW1lbnQKLS0tCgoqVG8gY29tcGxldGUgdGhpcyBtaWxlc3RvbmUsIHlvdSBjYW4gZWRpdCBbdGhpcyBgLnJtZGAgZmlsZV0oaHR0cHM6Ly9naXRodWIuY29tL1VCQy1TVEFUL1NUQVQ1NDUuZ2l0aHViLmlvL2Jsb2IvbWFpbi9jb250ZW50L21pbmktZGF0YS1hbmFseXNpcy9taW5pLXByb2plY3QtMi5SbWQpIGRpcmVjdGx5LiBGaWxsIGluIHRoZSBzZWN0aW9ucyB0aGF0IGFyZSBjb21tZW50ZWQgb3V0IHdpdGggYDwhLS0tIHN0YXJ0IHlvdXIgd29yayBoZXJlLS0tPmAuIFdoZW4geW91IGFyZSBkb25lLCBtYWtlIHN1cmUgdG8ga25pdCB0byBhbiBgLm1kYCBmaWxlIGJ5IGNoYW5naW5nIHRoZSBvdXRwdXQgaW4gdGhlIFlBTUwgaGVhZGVyIHRvIGBnaXRodWJfZG9jdW1lbnRgLCBiZWZvcmUgc3VibWl0dGluZyBhIHRhZ2dlZCByZWxlYXNlIG9uIGNhbnZhcy4qCgojIFdlbGNvbWUgdG8gdGhlIHJlc3Qgb2YgeW91ciBtaW5pIGRhdGEgYW5hbHlzaXMgcHJvamVjdCEKCkluIE1pbGVzdG9uZSAxLCB5b3UgZXhwbG9yZWQgeW91ciBkYXRhLiBhbmQgY2FtZSB1cCB3aXRoIHJlc2VhcmNoIHF1ZXN0aW9ucy4gVGhpcyB0aW1lLCB3ZSB3aWxsIGZpbmlzaCB1cCBvdXIgbWluaSBkYXRhIGFuYWx5c2lzIGFuZCBvYnRhaW4gcmVzdWx0cyBmb3IgeW91ciBkYXRhIGJ5OgoKLSAgIE1ha2luZyBzdW1tYXJ5IHRhYmxlcyBhbmQgZ3JhcGhzCi0gICBNYW5pcHVsYXRpbmcgc3BlY2lhbCBkYXRhIHR5cGVzIGluIFI6IGZhY3RvcnMgYW5kL29yIGRhdGVzIGFuZCB0aW1lcy4KLSAgIEZpdHRpbmcgYSBtb2RlbCBvYmplY3QgdG8geW91ciBkYXRhLCBhbmQgZXh0cmFjdCBhIHJlc3VsdC4KLSAgIFJlYWRpbmcgYW5kIHdyaXRpbmcgZGF0YSBhcyBzZXBhcmF0ZSBmaWxlcy4KCldlIHdpbGwgYWxzbyBleHBsb3JlIG1vcmUgaW4gZGVwdGggdGhlIGNvbmNlcHQgb2YgKnRpZHkgZGF0YS4qCgoqKk5PVEUqKjogVGhlIG1haW4gcHVycG9zZSBvZiB0aGUgbWluaSBkYXRhIGFuYWx5c2lzIGlzIHRvIGludGVncmF0ZSB3aGF0IHlvdSBsZWFybiBpbiBjbGFzcyBpbiBhbiBhbmFseXNpcy4gQWx0aG91Z2ggZWFjaCBtaWxlc3RvbmUgcHJvdmlkZXMgYSBmcmFtZXdvcmsgZm9yIHlvdSB0byBjb25kdWN0IHlvdXIgYW5hbHlzaXMsIGl0J3MgcG9zc2libGUgdGhhdCB5b3UgbWlnaHQgZmluZCB0aGUgaW5zdHJ1Y3Rpb25zIHRvbyByaWdpZCBmb3IgeW91ciBkYXRhIHNldC4gSWYgdGhpcyBpcyB0aGUgY2FzZSwgeW91IG1heSBkZXZpYXRlIGZyb20gdGhlIGluc3RydWN0aW9ucyAtLSBqdXN0IG1ha2Ugc3VyZSB5b3UncmUgZGVtb25zdHJhdGluZyBhIHdpZGUgcmFuZ2Ugb2YgdG9vbHMgYW5kIHRlY2huaXF1ZXMgdGF1Z2h0IGluIHRoaXMgY2xhc3MsIGFuZCBpbmRpY2F0ZSAqd2h5KiB5b3UgaGFkIHRvIGRldmlhdGUuIEZlZWwgZnJlZSB0byBjb250YWN0IHRoZSBpbnN0cnVjdG9yIGluIHRoZXNlIGNhc2VzLgoKIyBJbnN0cnVjdGlvbnMKCioqVG8gY29tcGxldGUgdGhpcyBtaWxlc3RvbmUqKiwgZWRpdCB0aGlzIC5SbWQgZGlyZWN0bHkuIEZpbGwgaW4gdGhlIHNlY3Rpb25zIHRoYXQgYXJlIHRhZ2dlZCB3aXRoIGA8IS0tLSBzdGFydCB5b3VyIHdvcmsgaGVyZS0tLT5gLgoKKipUbyBzdWJtaXQgdGhpcyBtaWxlc3RvbmUqKiwgbWFrZSBzdXJlIHRvIGtuaXQgdGhpcyBgLlJtZGAgZmlsZSB0byBhbiBgLm1kYCBmaWxlIGJ5IGNoYW5naW5nIHRoZSBZQU1MIG91dHB1dCBzZXR0aW5ncyBmcm9tIGBvdXRwdXQ6IGh0bWxfZG9jdW1lbnRgIHRvIGBvdXRwdXQ6IGdpdGh1Yl9kb2N1bWVudGAuIENvbW1pdCBhbmQgcHVzaCBhbGwgb2YgeW91ciB3b3JrIHRvIHlvdXIgbWluaS1hbmFseXNpcyBHaXRIdWIgcmVwb3NpdG9yeSwgYW5kIHRhZyBhIHJlbGVhc2Ugb24gR2l0SHViLiBUaGVuLCBzdWJtaXQgYSBsaW5rIHRvIHlvdXIgdGFnZ2VkIHJlbGVhc2Ugb24gY2FudmFzLgoKKipQb2ludHMqKjogVGhpcyBtaWxlc3RvbmUgaXMgd29ydGggNTAgcG9pbnRzOiA0NSBmb3IgeW91ciBhbmFseXNpcywgYW5kIDUgZm9yIG92ZXJhbGwgcmVwcm9kdWNpYmlsaXR5LCBjbGVhbmxpbmVzcywgYW5kIGNvaGVyZW5jZSBvZiB0aGUgR2l0aHViIHN1Ym1pc3Npb24uCgoqKlJlc2VhcmNoIFF1ZXN0aW9ucyoqOiBJbiBNaWxlc3RvbmUgMSwgeW91IGNob3NlIGZvdXIgcmVzZWFyY2ggcXVlc3Rpb25zIHRvIGZvY3VzIG9uLiBXaGVyZXZlciByZWFsaXN0aWMsIHlvdXIgd29yayBpbiB0aGlzIG1pbGVzdG9uZSBzaG91bGQgcmVsYXRlIHRvIHRoZXNlIHJlc2VhcmNoIHF1ZXN0aW9ucyB3aGVuZXZlciB3ZSBhc2sgZm9yIGp1c3RpZmljYXRpb24gYmVoaW5kIHlvdXIgd29yay4gSW4gdGhlIGNhc2UgdGhhdCBzb21lIHRhc2tzIGluIHRoaXMgbWlsZXN0b25lIGRvbid0IGFsaWduIHdlbGwgd2l0aCBvbmUgb2YgeW91ciByZXNlYXJjaCBxdWVzdGlvbnMsIGZlZWwgZnJlZSB0byBkaXNjdXNzIHlvdXIgcmVzdWx0cyBpbiB0aGUgY29udGV4dCBvZiBhIGRpZmZlcmVudCByZXNlYXJjaCBxdWVzdGlvbi4KCiMgTGVhcm5pbmcgT2JqZWN0aXZlcwoKQnkgdGhlIGVuZCBvZiB0aGlzIG1pbGVzdG9uZSwgeW91IHNob3VsZDoKCi0gICBVbmRlcnN0YW5kIHdoYXQgKnRpZHkqIGRhdGEgaXMsIGFuZCBob3cgdG8gY3JlYXRlIGl0IHVzaW5nIGB0aWR5cmAuCi0gICBHZW5lcmF0ZSBhIHJlcHJvZHVjaWJsZSBhbmQgY2xlYXIgcmVwb3J0IHVzaW5nIFIgTWFya2Rvd24uCi0gICBNYW5pcHVsYXRpbmcgc3BlY2lhbCBkYXRhIHR5cGVzIGluIFI6IGZhY3RvcnMgYW5kL29yIGRhdGVzIGFuZCB0aW1lcy4KLSAgIEZpdHRpbmcgYSBtb2RlbCBvYmplY3QgdG8geW91ciBkYXRhLCBhbmQgZXh0cmFjdCBhIHJlc3VsdC4KLSAgIFJlYWRpbmcgYW5kIHdyaXRpbmcgZGF0YSBhcyBzZXBhcmF0ZSBmaWxlcy4KCiMgU2V0dXAKCkJlZ2luIGJ5IGxvYWRpbmcgeW91ciBkYXRhIGFuZCB0aGUgdGlkeXZlcnNlIHBhY2thZ2UgYmVsb3c6CgpgYGB7ciwgbWVzc2FnZSA9IEZBTFNFfQpsaWJyYXJ5KGRhdGF0ZWFjaHIpICMgPC0gbWlnaHQgY29udGFpbiB0aGUgZGF0YSB5b3UgcGlja2VkIQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgojIFRhc2sgMTogUHJvY2VzcyBhbmQgc3VtbWFyaXplIHlvdXIgZGF0YQoKRnJvbSBNaWxlc3RvbmUgMSwgeW91IHNob3VsZCBoYXZlIGFuIGlkZWEgb2YgdGhlIGJhc2ljIHN0cnVjdHVyZSBvZiB5b3VyIGRhdGFzZXQgKGUuZy4gbnVtYmVyIG9mIHJvd3MgYW5kIGNvbHVtbnMsIGNsYXNzIHR5cGVzLCBldGMuKS4gSGVyZSwgd2Ugd2lsbCBzdGFydCBpbnZlc3RpZ2F0aW5nIHlvdXIgZGF0YSBtb3JlIGluLWRlcHRoIHVzaW5nIHZhcmlvdXMgZGF0YSBtYW5pcHVsYXRpb24gZnVuY3Rpb25zLgoKIyMjIDEuMTogV3JpdGUgUmVzZWFyY2ggUXVlc3Rpb25zICgxIHBvaW50KQoKRmlyc3QsIHdyaXRlIG91dCB0aGUgNCByZXNlYXJjaCBxdWVzdGlvbnMgeW91IGRlZmluZWQgaW4gTWlsZXN0b25lIDEgd2VyZS4gSWYgeW91J2QgbGlrZSB0byByZWZpbmUgdGhlbSwgeW91IGNhbiBkbyBzb21lIGhlcmUgYW5kIGp1c3Qgd3JpdGUgdGhlIG5ldyBxdWVzdGlvbi4gVGhpcyB3aWxsIGd1aWRlIHlvdXIgd29yayB0aHJvdWdoIE1pbGVzdG9uZSAyOgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBTdGFydCB5b3VyIHdvcmsgYmVsb3cgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCjEuICAqRklMTF9USElTX0lOKgoKMi4gICpGSUxMX1RISVNfSU4qCgozLiAgKkZJTExfVEhJU19JTioKCjQuICAqRklMTF9USElTX0lOKgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCiMjIyAxLjI6IFBlcmZvcm0gMiBUYXNrcyBQZXIgUmVzZWFyY2ggUXVlc3Rpb24gKDggcG9pbnRzKQoKTm93LCBmb3IgKmVhY2gqIG9mIHlvdXIgZm91ciByZXNlYXJjaCBxdWVzdGlvbnMsIGNob29zZSBvbmUgdGFzayBpbiB0aGUgU3VtbWFyaXppbmcgY2F0ZWdvcnksIGFuZCBvbmUgb3RoZXIgdGFzayBmcm9tIEdyYXBoaW5nLiBZb3Ugc2hvdWxkIGhhdmUgMiB0YXNrcyBkb25lIGZvciBlYWNoIHJlc2VhcmNoIHF1ZXN0aW9uICg4IHRvdGFsKS4gTWFrZSBzdXJlIGl0IG1ha2VzIHNlbnNlIHRvIGRvIHRoZW0hIChlLmcuIGRvbid0IHVzZSBhIG51bWVyaWNhbCB2YXJpYWJsZXMgZm9yIGEgdGFzayB0aGF0IG5lZWRzIGEgY2F0ZWdvcmljYWwgdmFyaWFibGUuKS4gQmUgZXhwbGljaXQgd2l0aCB3aGljaCB0YXNrIHlvdSBhcmUgcGVyZm9ybWluZyBhbmQgY29tbWVudCBvbiB3aHkgZWFjaCB0YXNrIGhlbHBzIChvciBkb2Vzbid0ISkgYW5zd2VyIHRoZSBjb3JyZXNwb25kaW5nIHJlc2VhcmNoIHF1ZXN0aW9uLgoKRW5zdXJlIHRoYXQgdGhlIG91dHB1dCBvZiBlYWNoIG9wZXJhdGlvbiBpcyBwcmludGVkIQoKQWxzbyBtYWtlIHN1cmUgdGhhdCB5b3UncmUgdXNpbmcgYGRwbHlyYCBhbmQgYGdncGxvdDJgIHJhdGhlciB0aGFuIGJhc2UgUi4gT3V0c2lkZSBvZiB0aGlzIHByb2plY3QsIHlvdSBtYXkgZmluZCB0aGF0IHlvdSBwcmVmZXIgdXNpbmcgYmFzZSBSIGZ1bmN0aW9ucyBmb3IgY2VydGFpbiB0YXNrcywgYW5kIHRoYXQncyBqdXN0IGZpbmUhIEJ1dCBwYXJ0IG9mIHRoaXMgcHJvamVjdCBpcyBmb3IgeW91IHRvIHByYWN0aWNlIHRoZSB0b29scyB3ZSBsZWFybmVkIGluIGNsYXNzLCB3aGljaCBpcyBkcGx5ciBhbmQgZ2dwbG90Mi4KCioqU3VtbWFyaXppbmc6KioKCi0gICBTMS4gQ29tcHV0ZSB0aGUgKnJhbmdlKiwgKm1lYW4qLCBhbmQgKnR3byBvdGhlciBzdW1tYXJ5IHN0YXRpc3RpY3MqIG9mICoqb25lIG51bWVyaWNhbCB2YXJpYWJsZSoqIGFjcm9zcyB0aGUgZ3JvdXBzIG9mICoqb25lIGNhdGVnb3JpY2FsIHZhcmlhYmxlKiogZnJvbSB5b3VyIGRhdGEuCgotICAgUzIuIENvbXB1dGUgdGhlIG51bWJlciBvZiBvYnNlcnZhdGlvbnMgZm9yIGF0IGxlYXN0IG9uZSBvZiB5b3VyIGNhdGVnb3JpY2FsIHZhcmlhYmxlcy4gRG8gbm90IHVzZSB0aGUgZnVuY3Rpb24gYHRhYmxlKClgIQoKLSAgIFMzLiBDcmVhdGUgYSBjYXRlZ29yaWNhbCB2YXJpYWJsZSB3aXRoIDMgb3IgbW9yZSBncm91cHMgZnJvbSBhbiBleGlzdGluZyBudW1lcmljYWwgdmFyaWFibGUuIFlvdSBjYW4gdXNlIHRoaXMgbmV3IHZhcmlhYmxlIGluIHRoZSBvdGhlciB0YXNrcyEgKEV4YW1wbGU6IHR1cm4gYWdlIGluIHllYXJzIGludG8gImNoaWxkLCB0ZWVuLCBhZHVsdCwgc2VuaW9yIi4pCgotICAgUzQuIENyZWF0ZSBhIGNhdGVnb3JpY2FsIHZhcmlhYmxlIHRoYXQgY29uZGVuc2VzIGFuIGV4aXN0aW5nIGNhdGVnb3JpY2FsIHZhcmlhYmxlIChFeDogZ3JvdXAgZ3JhZGVzIDEgLSAxMiBpbnRvICJlbGVtZW50YXJ5IiwgIm1pZGRsZSIsICJoaWdoIHNjaG9vbCIpCgotICAgUzUuIENvbXB1dGUgdGhlIHByb3BvcnRpb24gYW5kIGNvdW50cyBpbiBlYWNoIGNhdGVnb3J5IG9mIG9uZSBjYXRlZ29yaWNhbCB2YXJpYWJsZSBhY3Jvc3MgdGhlIGdyb3VwcyBvZiBhbm90aGVyIGNhdGVnb3JpY2FsIHZhcmlhYmxlIGZyb20geW91ciBkYXRhLiBEbyBub3QgdXNlIHRoZSBmdW5jdGlvbiBgdGFibGUoKWAhCgoqKkdyYXBoaW5nOioqCgotICAgRzEuIENyZWF0ZSBhIGdyYXBoIG9mIHlvdXIgY2hvb3NpbmcsIG1ha2Ugb25lIG9mIHRoZSBheGVzIGxvZ2FyaXRobWljLCBhbmQgZm9ybWF0IHRoZSBheGVzIGxhYmVscyBzbyB0aGF0IHRoZXkgYXJlIGVhc2llciB0byByZWFkIGJ1dCBzdGlsbCBzYXkgd2hhdCBpcyBiZWluZyBtZWFzdXJlZCAobG9nLXNjYWxlZCkuCgotICAgRzIuIE1ha2UgYSBncmFwaCB3aGVyZSBpdCBtYWtlcyBzZW5zZSB0byBjdXN0b21pemUgdGhlIGFscGhhIHRyYW5zcGFyZW5jeS4KCi0gICBHMy4gQ3JlYXRlIGEgZ3JhcGggdGhhdCBoYXMgYXQgbGVhc3QgdHdvIGdlb20gbGF5ZXJzLgoKLSAgIEc0LiBDcmVhdGUgMyBoaXN0b2dyYW1zLCB3aXRoIGVhY2ggaGlzdG9ncmFtIGhhdmluZyBkaWZmZXJlbnQgc2l6ZWQgYmlucy4gUGljayB0aGUgImJlc3QiIG9uZSBhbmQgZXhwbGFpbiB3aHkgaXQgaXMgdGhlIGJlc3QuCgotICAgRzU6IENyZWF0ZSBhIGdyYXBoIHdoZXJlIHlvdSB1c2UgYSBjb2xvdXJibGluZC1mcmllbmRseSBwYWxldHRlIEc2OiBDcmVhdGUgYSBwbG90IHRoYXQgaW52b2x2ZXMgZmFjZXRzIChzdWItcGFuZWxzKQoKTWFrZSBzdXJlIGl0J3MgY2xlYXIgd2hhdCB0YXNrcyB5b3UgYXJlIGRvaW5nIGZvciBlYWNoIHJlc2VhcmNoIHF1ZXN0aW9uIQoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFN0YXJ0IHlvdXIgd29yayBiZWxvdyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCioqUmVzZWFyY2ggUXVlc3Rpb24gMToqKgoKVGFzazoKClRhc2s6CgpgYGB7cn0KCmBgYAoKKipSZXNlYXJjaCBRdWVzdGlvbiAyOioqCgpUYXNrOgoKVGFzazoKCmBgYHtyfQoKYGBgCgoqKlJlc2VhcmNoIFF1ZXN0aW9uIDM6KioKClRhc2s6CgpUYXNrOgoKYGBge3J9CgpgYGAKCioqUmVzZWFyY2ggUXVlc3Rpb24gNDoqKgoKVGFzazoKClRhc2s6CgpgYGB7cn0KCmBgYAoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCiMjIyAxLjMgUmVmaW5pbmcgWW91ciBSZXNlYXJjaCBRdWVzdGlvbnMgKDIgcG9pbnRzKQoKQmFzZWQgb24gdGhlIG9wZXJhdGlvbnMgdGhhdCB5b3UndmUgY29tcGxldGVkLCBob3cgbXVjaCBjbG9zZXIgYXJlIHlvdSB0byBhbnN3ZXJpbmcgeW91ciByZXNlYXJjaCBxdWVzdGlvbnM/IFRoaW5rIGFib3V0IHdoYXQgYXNwZWN0cyBvZiB5b3VyIHJlc2VhcmNoIHF1ZXN0aW9ucyByZW1haW4gdW5jbGVhci4gQ2FuIHlvdXIgcmVzZWFyY2ggcXVlc3Rpb25zIGJlIHJlZmluZWQsIG5vdyB0aGF0IHlvdSd2ZSBpbnZlc3RpZ2F0ZWQgeW91ciBkYXRhIGEgYml0IG1vcmU/IFdoaWNoIHJlc2VhcmNoIHF1ZXN0aW9ucyBhcmUgeWllbGRpbmcgaW50ZXJlc3RpbmcgcmVzdWx0cz8KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBXcml0ZSB5b3VyIGFuc3dlciBoZXJlIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+Cgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKIyBUYXNrIDI6IFRpZHkgeW91ciBkYXRhCgpJbiB0aGlzIHRhc2ssIHdlIHdpbGwgZG8gc2V2ZXJhbCBleGVyY2lzZXMgdG8gcmVzaGFwZSBvdXIgZGF0YS4gVGhlIGdvYWwgaGVyZSBpcyB0byB1bmRlcnN0YW5kIGhvdyB0byBkbyB0aGlzIHJlc2hhcGluZyB3aXRoIHRoZSBgdGlkeXJgIHBhY2thZ2UuCgpBIHJlbWluZGVyIG9mIHRoZSBkZWZpbml0aW9uIG9mICp0aWR5KiBkYXRhOgoKLSAgIEVhY2ggcm93IGlzIGFuICoqb2JzZXJ2YXRpb24qKgotICAgRWFjaCBjb2x1bW4gaXMgYSAqKnZhcmlhYmxlKioKLSAgIEVhY2ggY2VsbCBpcyBhICoqdmFsdWUqKgoKIyMjIDIuMSAoMiBwb2ludHMpCgpZb3UgbWF5IGhhdmUgbWFuaXB1bGF0ZWQgYW5kIGNsZWFuZWQgeW91ciBkYXRhIHVwIHRvIHRoaXMgcG9pbnQuIFNvLCB1c2luZyBhbnkgdmVyc2lvbiBvZiB5b3VyIGRhdGEsIHNlbGVjdCA4IGNvbHVtbnMgKGlmIHlvdXIgZGF0YSBoYXMgbGVzcywgdXNlIHRoZSBlbnRpcmUgZGF0YSBzZXQpLiBTaG93IGEgZmV3IHJvd3Mgb2YgdGhlIHJlZHVjZWQgZGF0YXNldCB1c2luZyBgaGVhZCgpYC4KCkJhc2VkIG9uIHRoZSBkZWZpbml0aW9uIGFib3ZlLCBjYW4geW91IGlkZW50aWZ5IGlmIHRoaXMgZGF0YXNldCBpcyB0aWR5IG9yIHVudGlkeT8gR28gdGhyb3VnaCBhbGwgdGhlIGNvbHVtbnMsIGFuZCBleHBsYWluIHdoZXRoZXIgdGhlIGRhdGEgaXMgdW50aWR5IG9yIHRpZHkgaW4gdGhlIGNvbnRleHQgb2YgeW91ciByZXNlYXJjaCBxdWVzdGlvbi4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFN0YXJ0IHlvdXIgd29yayBiZWxvdyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+Cgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKIyMjIDIuMiBUaWR5aW5nL1VudGlkeWluZyAoNCBwb2ludHMpCgpOb3csIGlmIHlvdXIgZGF0YSBpcyB0aWR5LCB1bnRpZHkgaXQhIFRoZW4sIHRpZHkgaXQgYmFjayB0byBpdCdzIG9yaWdpbmFsIHN0YXRlLgoKSWYgeW91ciBkYXRhIGlzIHVudGlkeSwgdGhlbiB0aWR5IGl0ISBUaGVuLCB1bnRpZHkgaXQgYmFjayB0byBpdCdzIG9yaWdpbmFsIHN0YXRlLgoKQmUgc3VyZSB0byBleHBsYWluIHlvdXIgcmVhc29uaW5nIGZvciB0aGlzIHRhc2suIFNob3cgdXMgdGhlICJiZWZvcmUiIGFuZCAiYWZ0ZXIiLgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgojIyMgMi4zIE5hcnJvdyBZb3VyIFJlc2VhcmNoIFF1ZXN0aW9ucyAoNCBwb2ludHMpCgpOb3csIHlvdSBzaG91bGQgYmUgbW9yZSBmYW1pbGlhciB3aXRoIHlvdXIgZGF0YSwgYW5kIGFsc28gaGF2ZSBtYWRlIHByb2dyZXNzIGluIGFuc3dlcmluZyB5b3VyIHJlc2VhcmNoIHF1ZXN0aW9ucy4gQmFzZWQgb24geW91ciBpbnRlcmVzdCwgYW5kIHlvdXIgYW5hbHlzZXMsIHBpY2sgMiBvZiB0aGUgNCByZXNlYXJjaCBxdWVzdGlvbnMgdG8gY29udGludWUgeW91ciBhbmFseXNpcyBpbiB0aGUgcmVtYWluaW5nIHRhc2tzOgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBTdGFydCB5b3VyIHdvcmsgYmVsb3cgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCjEuICAqRklMTF9USElTX0lOKgoyLiAgKkZJTExfVEhJU19JTioKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgpFeHBsYWluIHlvdXIgZGVjaXNpb24gZm9yIGNob29zaW5nIHRoZSBhYm92ZSB0d28gcmVzZWFyY2ggcXVlc3Rpb25zLgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgpOb3csIHRyeSB0byBjcmVhdGUgYSB2ZXJzaW9uIG9mIHlvdXIgZGF0YSB0aGF0IHlvdSB0aGluayB3aWxsIGJlIGFwcHJvcHJpYXRlIHRvIGFuc3dlciB0aGVzZSAyIHF1ZXN0aW9ucyAoaS5lLiBieSBmaWx0ZXJpbmcsIGNsZWFuaW5nLCB0aWR5J2luZywgZHJvcHBpbmcgaXJyZWxldmFudCBjb2x1bW5zLCBldGMuKS4gSWYgeW91IGRvbid0IG5lZWQgdG8gZG8gYW55dGhpbmcsIGV4cGxhaW4gd2h5LgoKKElmIGl0IG1ha2VzIG1vcmUgc2Vuc2UsIHRoZW4geW91IGNhbiBtYWtlL3BpY2sgdHdvIHZlcnNpb25zIG9mIHlvdXIgZGF0YSwgb25lIGZvciBlYWNoIHJlc2VhcmNoIHF1ZXN0aW9uLikKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFN0YXJ0IHlvdXIgd29yayBiZWxvdyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+Cgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKIyBUYXNrIDM6IE1vZGVsbGluZwoKIyMjIDMuMDogU2VsZWN0IE9uZSBSZXNlYXJjaCBRdWVzdGlvbiAobm8gcG9pbnRzKQoKUGljayBhIHJlc2VhcmNoIHF1ZXN0aW9uIGZyb20gMS4yLCBhbmQgcGljayBhIHZhcmlhYmxlIG9mIGludGVyZXN0ICh3ZSdsbCBjYWxsIGl0ICJZIikgdGhhdCdzIHJlbGV2YW50IHRvIHRoZSByZXNlYXJjaCBxdWVzdGlvbi4gSW5kaWNhdGUgdGhlc2UuCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFN0YXJ0IHlvdXIgd29yayBiZWxvdyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKKipSZXNlYXJjaCBRdWVzdGlvbioqOiBGSUxMX1RISVNfSU4KCioqVmFyaWFibGUgb2YgaW50ZXJlc3QqKjogRklMTF9USElTX0lOCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKIyMjIDMuMTogRml0IGEgTW9kZWwgKDMgcG9pbnRzKQoKRml0IGEgbW9kZWwgb3IgcnVuIGEgaHlwb3RoZXNpcyB0ZXN0IHRoYXQgcHJvdmlkZXMgaW5zaWdodCBvbiB0aGlzIHZhcmlhYmxlIHdpdGggcmVzcGVjdCB0byB0aGUgcmVzZWFyY2ggcXVlc3Rpb24uIFN0b3JlIHRoZSBtb2RlbCBvYmplY3QgYXMgYSB2YXJpYWJsZSwgYW5kIHByaW50IGl0cyBvdXRwdXQgdG8gc2NyZWVuLiBXZSdsbCBvbWl0IGhhdmluZyB0byBqdXN0aWZ5IHlvdXIgY2hvaWNlLCBiZWNhdXNlIHdlIGRvbid0IGV4cGVjdCB5b3UgdG8ga25vdyBhYm91dCBtb2RlbCBzcGVjaWZpY3MgaW4gU1RBVCA1NDUuCgotICAgKipOb3RlKio6IEl0J3MgT0sgaWYgeW91IGRvbid0IGtub3cgaG93IHRoZXNlIG1vZGVscy90ZXN0cyB3b3JrLiBIZXJlIGFyZSBzb21lIGV4YW1wbGVzIG9mIHRoaW5ncyB5b3UgY2FuIGRvIGhlcmUsIGJ1dCB0aGUgc2t5J3MgdGhlIGxpbWl0LgoKICAgIC0gICBZb3UgY291bGQgZml0IGEgbW9kZWwgdGhhdCBtYWtlcyBwcmVkaWN0aW9ucyBvbiBZIHVzaW5nIGFub3RoZXIgdmFyaWFibGUsIGJ5IHVzaW5nIHRoZSBgbG0oKWAgZnVuY3Rpb24uCiAgICAtICAgWW91IGNvdWxkIHRlc3Qgd2hldGhlciB0aGUgbWVhbiBvZiBZIGVxdWFscyAwIHVzaW5nIGB0LnRlc3QoKWAsIG9yIG1heWJlIHRoZSBtZWFuIGFjcm9zcyB0d28gZ3JvdXBzIGFyZSBkaWZmZXJlbnQgdXNpbmcgYHQudGVzdCgpYCwgb3IgbWF5YmUgdGhlIG1lYW4gYWNyb3NzIG11bHRpcGxlIGdyb3VwcyBhcmUgZGlmZmVyZW50IHVzaW5nIGBhbm92YSgpYCAoeW91IG1heSBoYXZlIHRvIHBpdm90IHlvdXIgZGF0YSBmb3IgdGhlIGxhdHRlciB0d28pLgogICAgLSAgIFlvdSBjb3VsZCB1c2UgYGxtKClgIHRvIHRlc3QgZm9yIHNpZ25pZmljYW5jZSBvZiByZWdyZXNzaW9uIGNvZWZmaWNpZW50cy4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+Cgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKIyMjIDMuMjogSW52ZXN0aWdhdGUgWW91ciBNb2RlbCAoMyBwb2ludHMpCgpQcm9kdWNlIHNvbWV0aGluZyByZWxldmFudCBmcm9tIHlvdXIgZml0dGVkIG1vZGVsOiBlaXRoZXIgcHJlZGljdGlvbnMgb24gWSwgb3IgYSBzaW5nbGUgdmFsdWUgbGlrZSBhIHJlZ3Jlc3Npb24gY29lZmZpY2llbnQgb3IgYSBwLXZhbHVlLgoKLSAgIEJlIHN1cmUgdG8gaW5kaWNhdGUgaW4gd3JpdGluZyB3aGF0IHlvdSBjaG9zZSB0byBwcm9kdWNlLgotICAgWW91ciBjb2RlIHNob3VsZCBlaXRoZXIgb3V0cHV0IGEgdGliYmxlIChpbiB3aGljaCBjYXNlIHlvdSBzaG91bGQgaW5kaWNhdGUgdGhlIGNvbHVtbiB0aGF0IGNvbnRhaW5zIHRoZSB0aGluZyB5b3UncmUgbG9va2luZyBmb3IpLCBvciB0aGUgdGhpbmcgeW91J3JlIGxvb2tpbmcgZm9yIGl0c2VsZi4KLSAgIE9idGFpbiB5b3VyIHJlc3VsdHMgdXNpbmcgdGhlIGBicm9vbWAgcGFja2FnZSBpZiBwb3NzaWJsZS4gSWYgeW91ciBtb2RlbCBpcyBub3QgY29tcGF0aWJsZSB3aXRoIHRoZSBicm9vbSBmdW5jdGlvbiB5b3UncmUgbmVlZGluZywgdGhlbiB5b3UgY2FuIG9idGFpbiB5b3VyIHJlc3VsdHMgYnkgc29tZSBvdGhlciBtZWFucywgYnV0IGZpcnN0IGluZGljYXRlIHdoaWNoIGJyb29tIGZ1bmN0aW9uIGlzIG5vdCBjb21wYXRpYmxlLgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBTdGFydCB5b3VyIHdvcmsgYmVsb3cgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgojIFRhc2sgNDogUmVhZGluZyBhbmQgd3JpdGluZyBkYXRhCgpHZXQgc2V0IHVwIGZvciB0aGlzIGV4ZXJjaXNlIGJ5IG1ha2luZyBhIGZvbGRlciBjYWxsZWQgYG91dHB1dGAgaW4gdGhlIHRvcCBsZXZlbCBvZiB5b3VyIHByb2plY3QgZm9sZGVyIC8gcmVwb3NpdG9yeS4gWW91J2xsIGJlIHNhdmluZyB0aGluZ3MgdGhlcmUuCgojIyMgNC4xIE91dHB1dCBVc2luZyBgaGVyZSgpYCAoMyBwb2ludHMpCgpUYWtlIGEgc3VtbWFyeSB0YWJsZSB0aGF0IHlvdSBtYWRlIGZyb20gVGFzayAxLCBhbmQgd3JpdGUgaXQgYXMgYSBjc3YgZmlsZSBpbiB5b3VyIGBvdXRwdXRgIGZvbGRlci4gVXNlIHRoZSBgaGVyZTo6aGVyZSgpYCBmdW5jdGlvbi4KCi0gICAqKlJvYnVzdG5lc3MgY3JpdGVyaWEqKjogWW91IHNob3VsZCBiZSBhYmxlIHRvIG1vdmUgeW91ciBNaW5pIFByb2plY3QgcmVwb3NpdG9yeSAvIHByb2plY3QgZm9sZGVyIHRvIHNvbWUgb3RoZXIgbG9jYXRpb24gb24geW91ciBjb21wdXRlciwgb3IgbW92ZSB0aGlzIHZlcnkgUm1kIGZpbGUgdG8gYW5vdGhlciBsb2NhdGlvbiB3aXRoaW4geW91ciBwcm9qZWN0IHJlcG9zaXRvcnkgLyBmb2xkZXIsIGFuZCB5b3VyIGNvZGUgc2hvdWxkIHN0aWxsIHdvcmsuCi0gICAqKlJlcHJvZHVjaWJpbGl0eSBjcml0ZXJpYSoqOiBZb3Ugc2hvdWxkIGJlIGFibGUgdG8gZGVsZXRlIHRoZSBjc3YgZmlsZSwgYW5kIHJlbWFrZSBpdCBzaW1wbHkgYnkga25pdHRpbmcgdGhpcyBSbWQgZmlsZS4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+Cgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKIyMjIDQuMiBJbnB1dCBVc2luZyBgaGVyZSgpYCAoMyBwb2ludHMpCgpXcml0ZSB5b3VyIG1vZGVsIG9iamVjdCBmcm9tIFRhc2sgMyB0byBhbiBSIGJpbmFyeSBmaWxlIChhbiBSRFMpLCBhbmQgbG9hZCBpdCBhZ2Fpbi4gQmUgc3VyZSB0byBzYXZlIHRoZSBiaW5hcnkgZmlsZSBpbiB5b3VyIGBvdXRwdXRgIGZvbGRlci4gVXNlIHRoZSBmdW5jdGlvbnMgYHNhdmVSRFMoKWAgYW5kIGByZWFkUkRTKClgLgoKLSAgIFRoZSBzYW1lIHJvYnVzdG5lc3MgYW5kIHJlcHJvZHVjaWJpbGl0eSBjcml0ZXJpYSBhcyBpbiA0LjEgYXBwbHkgaGVyZS4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+Cgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKIyBPdmVyYWxsIFJlcHJvZHVjaWJpbGl0eS9DbGVhbmxpbmVzcy9Db2hlcmVuY2UgQ2hlY2tsaXN0CgpIZXJlIGFyZSB0aGUgY3JpdGVyaWEgd2UncmUgbG9va2luZyBmb3IuCgojIyMgQ29oZXJlbmNlICgwLjUgcG9pbnRzKQoKVGhlIGRvY3VtZW50IHNob3VsZCByZWFkIHNlbnNpYmx5IGZyb20gdG9wIHRvIGJvdHRvbSwgd2l0aCBubyBtYWpvciBjb250aW51aXR5IGVycm9ycy4KClRoZSBSRUFETUUgZmlsZSBzaG91bGQgc3RpbGwgc2F0aXNmeSB0aGUgY3JpdGVyaWEgZnJvbSB0aGUgbGFzdCBtaWxlc3RvbmUsIGkuZS4gaXQgaGFzIGJlZW4gdXBkYXRlZCB0byBtYXRjaCB0aGUgY2hhbmdlcyB0byB0aGUgcmVwb3NpdG9yeSBtYWRlIGluIHRoaXMgbWlsZXN0b25lLgoKIyMjIEZpbGUgYW5kIGZvbGRlciBzdHJ1Y3R1cmUgKDEgcG9pbnRzKQoKWW91IHNob3VsZCBoYXZlIGF0IGxlYXN0IHRocmVlIGZvbGRlcnMgaW4gdGhlIHRvcCBsZXZlbCBvZiB5b3VyIHJlcG9zaXRvcnk6IG9uZSBmb3IgZWFjaCBtaWxlc3RvbmUsIGFuZCBvbmUgb3V0cHV0IGZvbGRlci4gSWYgdGhlcmUgYXJlIGFueSBvdGhlciBmb2xkZXJzLCB0aGVzZSBhcmUgZXhwbGFpbmVkIGluIHRoZSBtYWluIFJFQURNRS4KCkVhY2ggbWlsZXN0b25lIGRvY3VtZW50IGlzIGNvbnRhaW5lZCBpbiBpdHMgcmVzcGVjdGl2ZSBmb2xkZXIsIGFuZCBub3doZXJlIGVsc2UuCgpFdmVyeSBsZXZlbC0xIGZvbGRlciAodGhhdCBpcywgdGhlIG9uZXMgc3RvcmVkIGluIHRoZSB0b3AgbGV2ZWwsIGxpa2UgIk1pbGVzdG9uZTEiIGFuZCAib3V0cHV0IikgaGFzIGEgYFJFQURNRWAgZmlsZSwgZXhwbGFpbmluZyBpbiBhIHNlbnRlbmNlIG9yIHR3byB3aGF0IGlzIGluIHRoZSBmb2xkZXIsIGluIHBsYWluIGxhbmd1YWdlIChpdCdzIGVub3VnaCB0byBzYXkgc29tZXRoaW5nIGxpa2UgIlRoaXMgZm9sZGVyIGNvbnRhaW5zIHRoZSBzb3VyY2UgZm9yIE1pbGVzdG9uZSAxIikuCgojIyMgT3V0cHV0ICgxIHBvaW50KQoKQWxsIG91dHB1dCBpcyByZWNlbnQgYW5kIHJlbGV2YW50OgoKLSAgIEFsbCBSbWQgZmlsZXMgaGF2ZSBiZWVuIGBrbml0YHRlZCB0byB0aGVpciBvdXRwdXQgbWQgZmlsZXMuCi0gICBBbGwga25pdHRlZCBtZCBmaWxlcyBhcmUgdmlld2FibGUgd2l0aG91dCBlcnJvcnMgb24gR2l0aHViLiBFeGFtcGxlcyBvZiBlcnJvcnM6IE1pc3NpbmcgcGxvdHMsICJTb3JyeSBhYm91dCB0aGF0LCBidXQgd2UgY2FuJ3Qgc2hvdyBmaWxlcyB0aGF0IGFyZSB0aGlzIGJpZyByaWdodCBub3ciIG1lc3NhZ2VzLCBlcnJvciBtZXNzYWdlcyBmcm9tIGJyb2tlbiBSIGNvZGUKLSAgIEFsbCBvZiB0aGVzZSBvdXRwdXQgZmlsZXMgYXJlIHVwLXRvLWRhdGUgLS0gdGhhdCBpcywgdGhleSBoYXZlbid0IGZhbGxlbiBiZWhpbmQgYWZ0ZXIgdGhlIHNvdXJjZSAoUm1kKSBmaWxlcyBoYXZlIGJlZW4gdXBkYXRlZC4KLSAgIFRoZXJlIHNob3VsZCBiZSBubyByZWxpYyBvdXRwdXQgZmlsZXMuIEZvciBleGFtcGxlLCBpZiB5b3Ugd2VyZSBrbml0dGluZyBhbiBSbWQgdG8gaHRtbCwgYnV0IHRoZW4gY2hhbmdlZCB0aGUgb3V0cHV0IHRvIGJlIG9ubHkgYSBtYXJrZG93biBmaWxlLCB0aGVuIHRoZSBodG1sIGZpbGUgaXMgYSByZWxpYyBhbmQgc2hvdWxkIGJlIGRlbGV0ZWQuCgpPdXIgcmVjb21tZW5kYXRpb246IGRlbGV0ZSBhbGwgb3V0cHV0IGZpbGVzLCBhbmQgcmUta25pdCBlYWNoIG1pbGVzdG9uZSdzIFJtZCBmaWxlLCBzbyB0aGF0IGV2ZXJ5dGhpbmcgaXMgdXAgdG8gZGF0ZSBhbmQgcmVsZXZhbnQuCgojIyMgVGFnZ2VkIHJlbGVhc2UgKDAuNSBwb2ludCkKCllvdSd2ZSB0YWdnZWQgYSByZWxlYXNlIGZvciBNaWxlc3RvbmUgMi4K');
-        if (!response.ok) throw new Error('Network response failed');
-        const blob = await response.blob();
-        const blobUrl = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = blobUrl;
-        a.download = 'mda_deliverable2.Rmd';
-        a.style.display = 'none';
-        document.body.appendChild(a);
-        a.dispatchEvent(new MouseEvent('click'));
-        document.body.removeChild(a);
-        setTimeout(() => {
-          window.URL.revokeObjectURL(blobUrl);
-        }, 100);
-        return false;
-      } catch (error) {
-        console.error('Download failed:', error);
-        alert('Download failed. Please try again.');
-      }
-    }
-    downloadFile(event);
-  " output_extension=".Rmd"><i class="fa fa-save"></i> Download .Rmd Template</button>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(diversedata)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#--- Add any other packages below this line ---#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="task-1-your-research-questions" class="level1">
+<h1>Task 1: Your Research Questions</h1>
+<section id="write-research-questions-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="write-research-questions-1-point">1.1: Write Research Questions (1 point)</h3>
+<p>First, write out the two research questions you defined in Milestone 1. If you’d like to refine them, you can do so here and just write the new question. This will guide your work through Milestone 2:</p>
+<!-------------------------- Start your work below ---------------------------->
+<p>Q1 (Primary): <em>FILL_THIS_IN</em></p>
+<p>Q2 (Secondary): <em>FILL_THIS_IN</em></p>
+<!----------------------------------------------------------------------------->
+</section>
+</section>
+<section id="task-2-summarizing-your-data" class="level1">
+<h1>Task 2: Summarizing Your Data</h1>
+<section id="summarize-over-levels-of-a-categorical-variable-8-points" class="level3">
+<h3 class="anchored" data-anchor-id="summarize-over-levels-of-a-categorical-variable-8-points">2.1: Summarize Over Levels of a Categorical Variable <strong>(8 points)</strong></h3>
+<p>Use your <code>tidyverse</code> knowledge to create one table that calculates mean of one numeric variable for each of the levels of another categorical variable (for example, the mean age of each class in the titanic data).</p>
+<p>Show the outputted table.</p>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="plot-distributions-8-points" class="level3">
+<h3 class="anchored" data-anchor-id="plot-distributions-8-points">2.2: Plot Distributions (8 points)</h3>
+<ul>
+<li><p><strong>2.2.1</strong> Use <code>ggplot</code> to plot the distribution of one of the numeric variables in your tidied data set.</p></li>
+<li><p><strong>2.2.2</strong> Use <code>ggplot</code> to create a visualization showing the relative proportions of each category/level for one of categorical variable in your tidied data set.</p></li>
+</ul>
+<p>Clearly label the variable that is being plotted in each plot. Make sure the output is as clear as possible, provide an English title along with readable x and y column names</p>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+</section>
+<section id="task-3-exploring-relationships" class="level1">
+<h1>Task 3: Exploring Relationships</h1>
+<section id="visualize-relationships-12-points" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-relationships-12-points">3.1: Visualize Relationships <strong>(12 points)</strong></h3>
+<p>Now, for <em>each</em> of your research questions, choose one Graphing Task. Discuss the results (does this help answer your research question, or point toward more things to further explore?).</p>
+<p>Ensure that the output of each operation is printed!</p>
+<p>Also make sure that you’re using <code>dplyr</code> and <code>ggplot2</code> rather than base R. Outside of this project, you may find that you prefer using base R functions for certain tasks, and that’s just fine! But part of this project is for you to practice the tools we learned in class, which is dplyr and ggplot2.</p>
+<p><strong>Graphing Tasks:</strong></p>
+<ul>
+<li><p>G1. Create a graph of your choosing, make one of the axes logarithmic, and format the axes labels so that they are easier to read but still say what is being measured (log-scaled).</p></li>
+<li><p>G2. Make a graph where it makes sense to customize the alpha transparency.</p></li>
+<li><p>G3. Create a graph that has at least two geom_* layers.</p></li>
+<li><p>G4. Create 3 histograms, with each histogram having different sized bins. Pick the “best” one and explain why it is the best.</p></li>
+<li><p>G5: Create a graph where you map the colour of a line/point/plot to the level of categorical variable, using a colourblind-friendly palette</p></li>
+<li><p>G6: Create a plot that involves facets (sub-panels)</p></li>
+</ul>
+<p>All of your plots should follow the guidelines presented in class with clear axis labels, titles, etc.</p>
+<!------------------------- Start your work below ----------------------------->
+<p><strong>Primary Question:</strong></p>
+<p>Task:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>Discussion:</p>
+<p><strong>Secondary Question:</strong></p>
+<p>Task:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><br></p>
+<p>Discussion:</p>
+<!----------------------------------------------------------------------------->
+</section>
+<section id="fit-a-model-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="fit-a-model-3-points">3.2: Fit a Model <strong>(3 points)</strong></h3>
+<p>Fit a model or run a hypothesis test that provides insight on this variable with respect to the research question. Store the model object as a variable, and print its output to screen. We’ll omit having to justify your choice, because we don’t expect you to know about model specifics in STAT 545.</p>
+<ul>
+<li><p><strong>Note</strong>: It’s OK if you don’t know how these models/tests work. Here are some examples of things you can do here, but the sky’s the limit.</p>
+<ul>
+<li>You could fit a model that makes predictions on Y using another variable, by using the <code>lm()</code> function.</li>
+<li>You could test whether the mean of Y equals 0 using <code>t.test()</code>, or maybe the mean across two groups are different using <code>t.test()</code>, or maybe the mean across multiple groups are different using <code>anova()</code> (you may have to pivot your data for the latter two).</li>
+<li>You could use <code>lm()</code> to test for significance of regression coefficients.</li>
+</ul></li>
+</ul>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="investigate-your-model-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="investigate-your-model-3-points">3.3: Investigate Your Model (3 points)</h3>
+<p>Produce something relevant from your fitted model: either predictions on Y, or a single value like a regression coefficient or a p-value.</p>
+<ul>
+<li>Be sure to indicate in writing what you chose to produce.</li>
+<li>Your code should either output a tibble (in which case you should indicate the column that contains the thing you’re looking for), or the thing you’re looking for itself.</li>
+<li>Obtain your results using the <code>broom</code> package if possible. If your model is not compatible with the broom function you’re needing, then you can obtain your results by some other means, but first indicate which broom function is not compatible.</li>
+</ul>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+</section>
+<section id="task-4-reading-and-writing-data" class="level1">
+<h1>Task 4: Reading and writing data</h1>
+<p>Get set up for this exercise by making a folder called <code>output</code> in the top level of your project folder / repository. You’ll be saving things there.</p>
+<section id="output-using-here-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="output-using-here-3-points">4.1 Output Using <code>here()</code> (3 points)</h3>
+<p>Take a summary table that you made from Task 2.1, and write it as a csv file in your <code>output</code> folder. Use the <code>here::here()</code> function.</p>
+<ul>
+<li><strong>Robustness criteria</strong>: You should be able to move your Mini Project repository / project folder to some other location on your computer, or move this very Rmd file to another location within your project repository / folder, and your code should still work.</li>
+<li><strong>Reproducibility criteria</strong>: You should be able to delete the csv file, and remake it simply by knitting this Rmd file.</li>
+</ul>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+<section id="input-using-here-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="input-using-here-3-points">4.2 Input Using <code>here()</code> (3 points)</h3>
+<p>Write your model object from Task 3.2 to an R binary file (an RDS), and load it again. Be sure to save the binary file in your <code>output</code> folder. Use the functions <code>saveRDS()</code> and <code>readRDS()</code>.</p>
+<ul>
+<li>The same robustness and reproducibility criteria as in 4.1 apply here.</li>
+</ul>
+<!-------------------------- Start your work below ---------------------------->
+<!----------------------------------------------------------------------------->
+</section>
+</section>
+<section id="task-5-tidy-your-submission-overall" class="level1">
+<h1>Task 5: Tidy Your Submission Overall</h1>
+<p>Check over your document and GitHub repository for the following:</p>
+<section id="coherence-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="coherence-2-points">5.1: Coherence <strong>(2 points)</strong></h3>
+<p>The document should read sensibly from top to bottom, with no major continuity errors. An example of a major continuity error is having a data set listed for Task 3 that is not part of one of the data sets listed in Task 1.</p>
+</section>
+<section id="error-free-code-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="error-free-code-2-points">5.2: Error-free code <strong>(2 points)</strong></h3>
+<p>For full marks, all code in the document should run without error and be completely reproducible.</p>
+</section>
+<section id="readme-6-points" class="level3">
+<h3 class="anchored" data-anchor-id="readme-6-points">5.3 README <strong>(6 points)</strong></h3>
+<p>There should be a file named <code>README.md</code> at the top level of your repository. Its contents should automatically appear when you visit the repository on GitHub.</p>
+<p>Minimum contents of the README file:</p>
+<ul>
+<li>In a sentence or two, explains what this repository is, so that future-you or someone else stumbling on your repository can be oriented to the repository.</li>
+<li>List the files/folders contained in the repository</li>
+<li>In a sentence or two, briefly explains how to engage with the repository. You can assume the person reading knows the material from STAT 545A. Basically, if a visitor to your repository wants to explore your project, what should they know? How can they reproduce your report?</li>
+</ul>
+</section>
+<section id="generative-ai-disclosure-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="generative-ai-disclosure-3-points">5.4 Generative AI Disclosure <strong>(3 points)</strong></h3>
+<p>In this course, Generative AI can be used in the following ways:</p>
+<ul>
+<li><p>to clarify concepts discussed in class</p></li>
+<li><p>as an “advanced search engine” (i.e., searching error codes)</p></li>
+<li><p>debugging code that students wrote and attempted to debug on their own</p></li>
+</ul>
+<p>Generative AI <strong>CANNOT</strong> be used to generate text or code (including comments) from scratch.</p>
+<p>Any use of Generative AI must be disclosed.</p>
+<p><strong>To disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details</strong> [in square brackets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck</p>
+<p>Here is an example of a specific, explicit debug:</p>
+<blockquote class="blockquote">
+<p>“I had the error <code>attempt to apply non-function</code> after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a <code>*</code>, i.e.&nbsp;<code>(2)(3)</code> instead of <code>2*3</code>.”</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generative AI Statement </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Generative AI (through <span class="co">[</span><span class="ot">LIST MODELS USED, i.e. ChatGPT, CoPilot)</span><span class="co">]</span> was used to </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>help me complete  this assignment in the following ways. </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="co">[</span><span class="ot">Describe here</span><span class="co">]</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="co">[</span><span class="ot">Describe here</span><span class="co">]</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>I affirm that Generative AI was not used to generate text, code, or comments for </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>my assessments. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you did not use Generative AI, please include the following in your README:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generative AI Statement </span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>Generative AI was not used in any way throughout this assignment.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Assessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.</p>
+</section>
+<section id="output-4-points" class="level3">
+<h3 class="anchored" data-anchor-id="output-4-points">5.5 Output <strong>(4 points)</strong></h3>
+<p>All output on GitHub is readable, recent and relevant:</p>
+<ul>
+<li>All <code>.Rmd</code> files have been <code>knit</code>ted to their output <code>.md</code> files.</li>
+<li>All knitted <code>.md</code> files are viewable without errors on Github. Examples of errors: Missing plots, “Sorry about that, but we can’t show files that are this big right now” messages, error messages from broken R code</li>
+<li>All of these output files are up-to-date – that is, they haven’t fallen behind after the source (<code>.Rmd</code>) files have been updated.</li>
+<li>There should be no relic output files. For example, if you were knitting an <code>.Rmd</code> to <code>.html</code>, but then changed the output to be only a markdown file, then the <code>.html</code> file is a relic and should be deleted.</li>
+</ul>
+</section>
+</section>
+<section id="step-4-submission" class="level1">
+<h1>Step 4: Submission</h1>
+<section id="tag-a-release-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="tag-a-release-1-point">4.1: Tag a Release <strong>(1 point)</strong></h3>
+<p>To submit this milestone, tag a release on GitHub and submit the link to Canvas.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

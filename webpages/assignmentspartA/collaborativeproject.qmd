@@ -12,7 +12,7 @@ date-modified: last-modified
 By completing this project, students are expected to be able to collaborate on a project using the git + GitHub workflow.
 
 ::: callout-warning
-Before beginning, ensure [have sent Grace your GitHub username on Canvas!](https://canvas.ubc.ca/courses/193398/assignments/2518781)
+Before beginning, ensure you [have sent Grace your GitHub username on Canvas!](https://canvas.ubc.ca/courses/193398/assignments/2518781)
 :::
 
 ::: callout-important
@@ -24,7 +24,7 @@ A few other things to note:
 
 -   Deductions may be made for continually pushing to `main`. You should only be pushing to your branch
 
--   A full grading rubric can be found on \[Canvas\]()<https://canvas.ubc.ca/courses/193398/assignments/2518773>)
+-   A full grading rubric can be found on [Canvas](<https://canvas.ubc.ca/courses/193398/assignments/2518773>)
 
 -   It is okay to go back a redo exercises, and have more commits - just provide a commit message of what has changed.
 :::
@@ -39,7 +39,7 @@ For both collaborative project milestones, you’ll be working with your teammat
 
 **1.2** Have one group member make a copy of the template repository. To do this:
 
--   Navigate to [the template repository in our UBC-STAT-545-F2026 Organization](https://github.com/UBC-STAT545-F2026/collab-project)
+-   Navigate to [the template repository in our UBC-STAT-545-F2026 Organization](https://github.com/UBC-STAT545-F2026/collab-project-template)
 
 -   Click "Use this template" and select "Create a new repository"
 

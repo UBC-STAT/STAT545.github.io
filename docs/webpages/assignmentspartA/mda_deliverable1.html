@@ -20,28 +20,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../images/stat545_transparent.png" rel="icon" type="image/png">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-ba3d7e3108b965ef4c6892bc29f4f97a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/stat545_transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-ba3d7e3108b965ef4c6892bc29f4f97a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -92,10 +127,9 @@ ul.task-list li input[type="checkbox"] {
     localStorage.setItem('cookieConsent', 'granted');
   }
 </script>
-<script src="../../../site_libs/font-awesome-6.7.2/js/script.js"></script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -105,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">STAT545</span>
     </a>
   </div>
@@ -116,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
 </i> 
 <span class="menu-text"> </span></a>
   </li>  
@@ -126,21 +160,21 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="../../../webpages/syllabus/syllabusA.html">
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusA.html">
  <span class="dropdown-text">Syllabus: STAT 545 A (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../webpages/syllabus/syllabusB.html">
+    <a class="dropdown-item" href="../../webpages/syllabus/syllabusB.html">
  <span class="dropdown-text">Syllabus: STAT 545 B (Part II)</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../webpages/lectures.html"> 
+    <a class="nav-link" href="../../webpages/lectures.html"> 
 <span class="menu-text">Content and Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../webpages/worksheets.html"> 
+    <a class="nav-link" href="../../webpages/worksheets.html"> 
 <span class="menu-text">Worksheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -149,17 +183,21 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-assessments-(part-a">    
         <li>
-    <a class="dropdown-item" href="../../../webpages/assignmentspartA/collabproj/collaborativeproject.html">
+    <a class="dropdown-item" href="../../webpages/assignmentspartA/collaborativeproject.html">
  <span class="dropdown-text">Collaborative Project</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../webpages/assignmentspartA/mda/mda_deliverable1.html">
+    <a class="dropdown-item" href="../../webpages/assignmentspartA/mda_deliverable1.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentspartA/mda_deliverable2.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../webpages/faq.html"> 
+    <a class="nav-link" href="../../webpages/faq.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -185,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../webpages/assignmentspartA/mda/mda_deliverable1.html">Mini Data Analysis: Deliverable 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/assignmentspartA/mda_deliverable1.html">Mini Data Analysis: Deliverable 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -199,14 +237,20 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../webpages/assignmentspartA/collabproj/collaborativeproject.html" class="sidebar-item-text sidebar-link">
+  <a href="../../webpages/assignmentspartA/collaborativeproject.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collaborative Project</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../webpages/assignmentspartA/mda/mda_deliverable1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../webpages/assignmentspartA/mda_deliverable1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Mini Data Analysis: Deliverable 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/assignmentspartA/mda_deliverable2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mini Data Analysis: Deliverable 2</span></a>
   </div>
 </li>
     </ul>
@@ -220,7 +264,6 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#deliverable-1-will-be-due-on-friday-october-13th-2026-at-1159pm-pt." id="toc-deliverable-1-will-be-due-on-friday-october-13th-2026-at-1159pm-pt." class="nav-link active" data-scroll-target="#deliverable-1-will-be-due-on-friday-october-13th-2026-at-1159pm-pt.">Deliverable 1 will be due on Friday October 13th, 2026 at 11:59pm PT.</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a>
   <ul class="collapse">
   <li><a href="#create-a-copy-of-the-github-repository-template" id="toc-create-a-copy-of-the-github-repository-template" class="nav-link" data-scroll-target="#create-a-copy-of-the-github-repository-template">Create a Copy of the GitHub Repository Template</a></li>
@@ -261,55 +304,71 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="deliverable-1-will-be-due-on-friday-october-13th-2026-at-1159pm-pt.">Deliverable 1 will be due on Friday October 13th, 2026 at 11:59pm PT.</h2>
 <p>This project includes two deliverables, each with explicit tasks.</p>
 <p>Each deliverable will be also graded for reproducibility, cleanliness, and coherence of the overall Github submission. While the two deliverables will be submitted as independent assessments, the analysis itself is a continuum - think of it as two chapters to a story. Each chapter, or in this case, portion of your analysis, should be easily followed through by someone unfamiliar with the content. <a href="https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R.html">Here</a> is a good resource for what constitutes “good code”. Learning good coding practices early in your career will save you hassle later on!</p>
-</section>
-<section id="learning-objectives" class="level1">
-<h1>Learning Objectives</h1>
-<p>By the end of this deliverable, you should:</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this course, Generative AI can be used in the following ways:</p>
 <ul>
-<li><p>Become familiar with your dataset of choosing</p></li>
-<li><p>Select 4 questions that you would like to answer with your data</p></li>
-<li><p>Generate a reproducible and clear report using R Markdown</p></li>
-<li><p>Become familiar with manipulating and summarizing your data in tibbles using <code>dplyr</code>, with a research question in mind.</p></li>
+<li><p>to clarify concepts discussed in class</p></li>
+<li><p>as an “advanced search engine” (i.e., searching error codes)</p></li>
+<li><p>debugging code that students wrote and attempted to debug on their own</p></li>
 </ul>
+<p>Generative AI <strong>CANNOT</strong> be used to generate text or code (including comments) from scratch.</p>
+<p>Any use of Generative AI must be disclosed.</p>
+<p><strong>To disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details</strong> [in square brackets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck</p>
+<p>Here is an example of a specific, explicit debug:</p>
+<blockquote class="blockquote">
+<p>“I had the error <code>attempt to apply non-function</code> after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a <code>*</code>, i.e.&nbsp;<code>(2)(3)</code> instead of <code>2*3</code>.”</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generative AI Statement </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Generative AI (through <span class="co">[</span><span class="ot">LIST MODELS USED, i.e. ChatGPT, CoPilot)</span><span class="co">]</span> was used to </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>help me complete  this assignment in the following ways. </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="co">[</span><span class="ot">Describe here</span><span class="co">]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="co">[</span><span class="ot">Describe here</span><span class="co">]</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>I affirm that Generative AI was not used to generate text, code, or comments for </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>my assessments. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you did not use Generative AI, please include the following in your README:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generative AI Statement </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Generative AI was not used in any way throughout this assignment.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Assessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.</p>
+<p><strong>Fill out Task 3.4 as you go through your assignment if you do opt to use Generative AI.</strong></p>
+</div>
+</div>
 </section>
 <section id="instructions" class="level1">
 <h1>Instructions</h1>
 <section id="create-a-copy-of-the-github-repository-template" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-copy-of-the-github-repository-template">Create a Copy of the GitHub Repository Template</h3>
-<p>You will begin by creating a copy of this template repository within our STAT545 organization.</p>
+<p>You will begin by creating a copy of <a href="https://github.com/UBC-STAT545-F2026/mda-template">this template repository</a> within our STAT545 organization.</p>
 <ul>
+<li><p>Click the green “Use this template” button and select “Create a new repository”</p></li>
 <li><p>Use the following naming convention for your repository: <code>mda-firstname-lastname</code></p></li>
-<li><p>Set the owner as <code>UBC-STAT545-F2026</code></p></li>
+<li><p>Set the owner as <code>UBC-STAT545-F2026</code>.</p></li>
+<li><p>Leave all other settings as default.</p></li>
+<li><p>Click the green “Create repository” button</p></li>
+<li><p>Clone the repository so you can access it on your local machine!</p></li>
 </ul>
-<p>Next, clone the repository so you can access it on your local machine!</p>
 </section>
 <section id="complete-the-assignment" class="level3">
 <h3 class="anchored" data-anchor-id="complete-the-assignment">Complete the Assignment</h3>
 <p>You will be working on the <code>mda-deliverable1.Rmd</code> file for this assessment.</p>
 <p>Fill in the sections that are tagged with <code>&lt;!--- start your work below ---&gt;</code>.</p>
-<!---
-To complete this deliverable, download the template below:
-
-<div style="text-align: center;">
-
-
-::: {.cell}
-::: {.cell-output-display}
-
-```{=html}
-<button class="btn btn-primary" onclick="&#10;    async function downloadFile(event) {&#10;      event.preventDefault();&#10;      try {&#10;        const response = await fetch(&#39;data:text/x-markdown;base64,LS0tCnRpdGxlOiAiTWluaSBEYXRhLUFuYWx5c2lzOiBEZWxpdmVyYWJsZSAxIgpvdXRwdXQ6IGdpdGh1Yl9kb2N1bWVudAotLS0KClRvdGFsIHBvaW50cyBhdmFpbGFibGU6IDg3CgoKIyBQYXJ0IDA6IEdldHRpbmcgU2V0IFVwCgpMZXQncyBnZXQgcmVhZHkgdG8gd29yayBvbiB0aGlzIGFzc2lnbm1lbnQhCgoKKiowLjE6IEluc3RhbGwgUGFja2FnZXMqKiAKCi0gSW5zdGFsbCB0aGUgW2BkaXZlcnNlZGF0YWBdKGh0dHBzOi8vZGl2ZXJzZS1kYXRhLWh1Yi5naXRodWIuaW8vKSBwYWNrYWdlIGJ5IHR5cGluZyB0aGUgZm9sbG93aW5nIGludG8geW91ciAqKlIgY29uc29sZSoqOgoKYGBgICAgICAgICAgCmluc3RhbGwucGFja2FnZXMoInBhayIpCmxpYnJhcnkocGFrKQpwYWs6OnBhaygiZGl2ZXJzZS1kYXRhLWh1Yi9kaXZlcnNlZGF0YSIpCmBgYAoKKiowLjI6IExvYWQgUGFja2FnZXMqKgoKVHlwaWNhbGx5LCBSIFBhY2thZ2VzIGFyZSBsb2FkZWQgaW4gYXQgdGhlIHZlcnkgYmVnaW5uaW5nIG9mIHRoZSBhbmFseXNpcy4gSWYgeW91IGxhdGVyIHdhbnQgdG8gdXNlIG90aGVyIHBhY2thZ2VzLCBwbGVhc2UgY29tZSBiYWNrIGFuZCBhZGQgdGhlbSBoZXJlOgoKYGBge3IsIHdhcm5pbmcgPSBGLCBtZXNzYWdlID0gRn0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoZGF0YXRlYWNocikKbGlicmFyeShkaXZlcnNlZGF0YSkKCiMtLS0gQWRkIGFueSBvdGhlciBwYWNrYWdlcyBiZWxvdyB0aGlzIGxpbmUgLS0tIwoKCmBgYAoKCgojIFRhc2sgMTogQ2hvb3NlIGEgRGF0YSBTZXQgYW5kIFJlc2VhcmNoIFF1ZXN0aW9uCgpUaGUgZm9sbG93aW5nIGRhdGEgc2V0cyBjYW4gYmUgdXNlZCBmb3IgdGhpcyBwcm9qZWN0IGZyb20gYGRpdmVyc2VkYXRhaHViYDogCgoKLSAgKip3aWxkZmlyZSoqOiBUaGlzIGRhdGEgc2V0IGNvbnRhaW5zIGluZm9ybWF0aW9uIG9uIHdpbGRmaXJlcyBpbiBDYW5hZGEsIGNvbXBpbGVkIGZyb20gb2ZmaWNpYWwgZ292ZXJubWVudCBzb3VyY2VzIHVuZGVyIHRoZSBPcGVuIEdvdmVybm1lbnQgTGljZW5jZSDigJMgQWxiZXJ0YS4gVGhlIGRhdGEgd2FzIGdhdGhlcmVkIHRvIG1vbml0b3IsIGFzc2VzcywgYW5kIHJlc3BvbmQgdG8gd2lsZGZpcmUgcmlza3MgYWNyb3NzIGRpZmZlcmVudCByZWdpb25zLiBXaWxkZmlyZXMgaGF2ZSBmYXItcmVhY2hpbmcgZW52aXJvbm1lbnRhbCwgc29jaWFsLCBhbmQgZWNvbm9taWMgY29uc2VxdWVuY2VzLiBGcm9tIGFuIGVxdWl0eSBhbmQgaW5jbHVzaW9uIHBlcnNwZWN0aXZlLCBhbmFseXppbmcgd2lsZGZpcmUgZGF0YSBjYW4gcmV2ZWFsIGdlb2dyYXBoaWMgYW5kIHJlc291cmNlLWJhc2VkIGRpc3Bhcml0aWVzIGluIGRldGVjdGlvbiBhbmQgY29udGFpbm1lbnQgZWZmb3J0cywgYW5kIGhpZ2hsaWdodCBob3cgY2VydGFpbiBwb3B1bGF0aW9ucyBmYWNlIGdyZWF0ZXIgcmlza3MgZHVlIHRvIGNsaW1hdGUgY2hhbmdlIGFuZCBsaW1pdGVkIGluZnJhc3RydWN0dXJlLiBUaGVyZSBhcmUgMjY1NTEgcm93cyBhbmQgMzUgY29sdW1ucy4gCgotICAgKipnZW5kZXJhc3Nlc3NtZW50Kio6IENvbGxlY3RlZCBpbiAyMDIzLCB0aGUgZGF0YSBhbGxvd3MgZm9yIGNvbXBhcmF0aXZlIGV2YWx1YXRpb24gYWNyb3NzIGNvdW50cmllcywgc2VjdG9ycywgYW5kIG93bmVyc2hpcCB0eXBlcyAoZS5nLiwgUHVibGljLCBQcml2YXRlLCBHb3Zlcm5tZW50KS4gRWFjaCByZWNvcmQgcmVwcmVzZW50cyBhIGNvbXBhbnkgYW5kIGl0cyBjb3JyZXNwb25kaW5nIGV2YWx1YXRpb24gYWNyb3NzIDI4IGRldGFpbGVkIGdlbmRlciByZWxhdGVkIGluZGljYXRvcnMsIG9mZmVyaW5nIGEgY29tcHJlaGVuc2l2ZSBzbmFwc2hvdCBvZiBjb3Jwb3JhdGUgZ2VuZGVyIGVxdWl0eSB3b3JsZHdpZGUuIFRoZXJlIGFyZSAyMDAwIHJvd3MgYW5kIDI5IHZhcmlhYmxlcwoKLSAgKipnbG9iYWxyaWdodHMqKjogVGhpcyBkYXRhIHNldCBwcm92aWRlcyB5ZWFybHksIGNvdW50cnktbGV2ZWwgaW5mb3JtYXRpb24gb24gTEdCVFErIHJpZ2h0cywgZWNvbm9taWMgaW5kaWNhdG9ycywgYW5kIGVkdWNhdGlvbiBzcGVuZGluZyBmcm9tIDIwMDEgdG8gMjAyMy4gSXQgaXMgY29tcGlsZWQgZnJvbSBPdXIgV29ybGQgaW4gRGF0YSwgd2l0aCBwcmltYXJ5IHNvdXJjZXMgaW5jbHVkaW5nIEVxdWFsZGV4LCB0aGUgV29ybGQgQmFuaywgYW5kIG90aGVyIG9wZW4tYWNjZXNzIGRhdGEgc2V0cy5UaGUgZGF0YSBlbmFibGVzIGNyb3NzLWNvdW50cnkgYW5kIHRlbXBvcmFsIGNvbXBhcmlzb25zIG9mIExHQlRRKyByaWdodHMgYW5kIGVjb25vbWljL2VkdWNhdGlvbiBtZXRyaWNzLCBleHBsb3JhdGlvbiBvZiByZWxhdGlvbnNoaXBzIGJldHdlZW4gcmlnaHRzIGFuZCBlY29ub21pYyBkZXZlbG9wbWVudCwgYW5kIGlkZW50aWZpY2F0aW9uIG9mIHJlZ2lvbmFsIGFuZCB0ZW1wb3JhbCB0cmVuZHMuIFRoZXJlIGFyZSAyMTI1IHJvd3MgYW5kIDEwIGNvbHVtbnMsIHdpdGggYSBsb3Qgb2YgbWlzc2luZyBkYXRhLiAKCgotICAqKmhjbXN0Kio6IFRoaXMgZGF0YSBzZXQgaXMgYWRhcHRlZCBmcm9tIHRoZSBvcmlnaW5hbCBkYXRhIHNldCBbSG93IENvdXBsZXMgTWVldCBhbmQgU3RheSBUb2dldGhlciAyMDE3LCAyMDIyXShodHRwczovL2RhdGEuc3RhbmZvcmQuZWR1L2hjbXN0MjAxNykuIFRoaXMgc3R1ZHksIGxlZCBieSByZXNlYXJjaGVycyBmcm9tIFN0YW5mb3JkIFVuaXZlcnNpdHksIHN1cnZleWVkIDEsNzIyIFUuUy4gYWR1bHRzIGluIDIwMjIgdG8gZXhwbG9yZSBob3cgcmVsYXRpb25zaGlwcyBmb3JtIGFuZCBjaGFuZ2Ugd2l0aCB0aW1lIGFuZCBmb2N1c2VkIG9uIGRhdGluZyBoYWJpdHMgYW5kIHRoZSBpbXBhY3Qgb2YgdGhlIENPVklELTE5IHBhbmRlbWljIG9uIHJlbGF0aW9uc2hpcHMuICBUaGlzIGFkYXB0ZWQgZGF0YSBzZXQgZm9jdXNlcyBvbiB2YXJpYWJsZXMgdGhhdCBtYXkgYWZmZWN0IHRoZSBxdWFsaXR5IG9mIHRoZSByZWxhdGlvbnNoaXAsIGNvbnNpZGVyaW5nIGRlbW9ncmFwaGljIGNoYXJhY3RlcmlzdGljcyBvZiB0aGUgc3ViamVjdHMsIGNvdXBsZSBkeW5hbWljcywgYXMgd2VsbCBhcyBDT1ZJRC0xOS1yZWxhdGVkIHZhcmlhYmxlcy4gVGhlIENPVklELTE5IHBhbmRlbWljIGhhZCBhIFtzaWduaWZpY2FudCBpbXBhY3RdKGh0dHBzOi8vcG1jLm5jYmkubmxtLm5paC5nb3YvYXJ0aWNsZXMvUE1DMTAwMDkwMDUvKSBvbiByb21hbnRpYyByZWxhdGlvbnNoaXBzIGluIHRoZSBVbml0ZWQgU3RhdGVzLiBUaGlzIGRhdGEgc2V0IGVuYWJsZXMgZXhwbG9yYXRpb24gb2YgaG93IGV4dGVybmFsIGZhY3RvcnMsIGxpa2UgdGhlIGhlYWx0aCBvZiB0aGUgc3ViamVjdHMgYW5kIGNoYW5nZXMgaW4gaW5jb21lLCBhcyB3ZWxsIGFzIHBlcnNvbmFsIGJlaGF2aW9ycywgbGlrZSBjb25mbGljdCBhbmQgaW50aW1hdGUgZHluYW1pY3MsIHJlbGF0ZSB0byBhbiBpbmRpdmlkdWFsJ3MgcGVyY2VwdGlvbiBvZiB0aGUgcXVhbGl0eSBvZiB0aGUgcmVsYXRpb25zaGlwLiBUaGVyZSBhcmUgMTMyOCByb3dzIGFuZCAyMSBjb2x1bW5zLiAKCi0gICoqd29tZW5zbWFyY2htYWRuZXNzKio6IFRoaXMgYWRhcHRlZCBkYXRhIHNldCBjb250YWlucyBoaXN0b3JpY2FsIHJlY29yZHMgb2YgZXZlcnkgTkNBQSBEaXZpc2lvbiBJIFdvbWVu4oCZcyBCYXNrZXRiYWxsIFRvdXJuYW1lbnQgYXBwZWFyYW5jZSBzaW5jZSB0aGUgdG91cm5hbWVudCBiZWdhbiBpbiAxOTgyIHVwIHVudGlsIDIwMTgsIGNhcHR1cmluZyB0b3VybmFtZW50IHJlc3VsdHMgYWNyb3NzIG1vcmUgdGhhbiBmb3VyIGRlY2FkZXMgb2YgY29sbGVnaWF0ZSB3b21lbuKAmXMgYmFza2V0YmFsbC4gQWxsIGRhdGEgaXMgc291cmNlZCBmcm9tIHRoZSBOQ0FBIGFuZCBjb250YWlucyB0aGUgZGF0YSBiZWhpbmQgdGhlIHN0b3J5IFtUaGUgUmlzZSBhbmQgRmFsbCBPZiBXb21lbidzIE5DQUEgVG91cm5hbWVudCBEeW5hc3RpZXNdKGh0dHBzOi8vZml2ZXRoaXJ0eWVpZ2h0LmNvbS9mZWF0dXJlcy9sb3Vpc2lhbmEtdGVjaC13YXMtdGhlLXVjb25uLW9mLXRoZS04MHMvKS4gVGhlIHJpc2UgaW4gcG9wdWxhcml0eSBvZiB0aGUgTkNBQSBXb21lbuKAmXMgTWFyY2ggTWFkbmVzcywgZnVlbGVkIGJ5IGF0aGxldGVzIGxpa2UgQ2FpdGxpbiBDbGFyayBhbmQgUGFpZ2UgQnVlY2tlcnMsIHJlZmxlY3RzIGEgYnJvYWRlciBjdWx0dXJhbCBzaGlmdCBpbiB0aGUgcmVjb2duaXRpb24gb2Ygd29tZW7igJlzIHNwb3J0cy4gQmV5b25kIGVudGVydGFpbm1lbnQgYW5kIGF0aGxldGljIGFjaGlldmVtZW50LCB3b21lbuKAmXMgcGFydGljaXBhdGlvbiBpbiBzcG9ydCBoYXMgc29jaWFsIGFuZCBwcm9mZXNzaW9uYWwgYmVuZWZpdHMuIFRoZXJlIGFyZSAyMDkyIHJvd3MgYW5kIDIwIGNvbHVtbnMuIAoKCgoKKk5vdGU6IFdlIGVuY291cmFnZSB5b3UgdG8gdXNlIHRoZSBvbmVzIGluIHRoZSBgZGl2ZXJzZWRhdGFgIHBhY2thZ2UsIGJ1dCBpZiB5b3UgaGF2ZSBhIGRhdGEgc2V0IHRoYXQgeW91J2QgcmVhbGx5IGxpa2UgdG8gdXNlLCBwbGVhc2UgY2hlY2sgd2l0aCBhIG1lbWJlciBvZiB0aGUgdGVhY2hpbmcgdGVhbSB0byBzZWUgd2hldGhlciB0aGUgZGF0YSBzZXQgaXMgb2YgYXBwcm9wcmlhdGUgY29tcGxleGl0eS4gSWYgYXBwcm92ZWQsIHBsZWFzZSBhZGQgYSBicmllZiBkZXNjcmlwdGlvbiBvZiB0aGUgZGF0YSBoZXJlLioKCgoKIyMjIDEuMTogQ2hvb3NlIDIgZGF0YSBzZXRzICoqKDIgcG9pbnRzKSoqCgpPdXQgb2YgdGhlIDUgZGF0YSBzZXRzIGxpc3RlZCBhYm92ZSwgY2hvb3NlICoqMioqIHRoYXQgYXBwZWFsIHRvIHlvdSBiYXNlZCBvbiB0aGVpciBkZXNjcmlwdGlvbi4gV3JpdGUgeW91ciBjaG9pY2VzIGJlbG93OgoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgoxOiBXcml0ZSAxc3QgY2hvaWNlIGhlcmUKCjI6IFdyaXRlIDJuZCBjaG9pY2UgaGVyZQoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgojIyMgMS4yOiBFeHBsb3JlIHRoZSBEYXRhICoqKDEyIHBvaW50cykqKgoKT25lIHdheSB0byBuYXJyb3dpbmcgZG93biB5b3VyIHNlbGVjdGlvbiBpcyB0byAqZXhwbG9yZSogdGhlIGRhdGEgc2V0cy4gVXNlIHlvdXIga25vd2xlZGdlIG9mIGBkcGx5cmAgdG8gc3VtbWFyaXplIHRocmVlIHZhcmlhYmxlcyBpbiBlYWNoIG9mIHRoZSBkYXRhIHNldHMgKGZvciBleGFtcGxlLCBsaXN0aW5nIHdoYXQgbGV2ZWxzIG9mIGEgY2F0ZWdvcmljYWwgdmFyaWFibGUgZXhpc3QsIG9yIGNhbGN1bGF0aW5nIHRoZSBtZWFuIG9mIGEgY29udGludW91cyB2YXJpYWJsZSBvZiBpbnRlcmVzdCkuIFdyaXRlIGEgc2VudGVuY2UgdGhhdCBkZXNjcmliZXMgeW91ciBmaW5kaW5ncyBmb3IgZWFjaCB2YXJpYWJsZSBleHBsb3JlZC4gWW91IG1heSB1c2UgbXVsdGlwbGUgUiBjb2RlIGNodW5rcyBpZiBwcmVmZXJyZWQuIAoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgojIyMjIERhdGEgU2V0IDEKYGBge3J9CiMjIyBFeHBsb3JlIDMgdmFyaWFibGVzIG9mIGRhdGEgc2V0IDEgIyMjCgpgYGAKCgpXcml0ZSB5b3VyIGZpbmRpbmdzIGhlcmUuCgoKCgojIyMjIERhdGEgU2V0IDIKYGBge3J9CiMjIyBFeHBsb3JlIDMgdmFyaWFibGVzIG9mIGRhdGEgc2V0IDIgIyMjCgpgYGAKCldyaXRlIHlvdXIgZmluZGluZ3MgaGVyZS4KCgoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgoKCgoKCgojIyMgMS4zOiBDaG9vc2UgMSBEYXRhIFNldCAqKigyIHBvaW50cykqKgoKSXQncyB0aW1lIHRvIGNob29zZSBvbmx5IG9uZSBkYXRhIHNldC4gU3RhdGUgdGhlIGRhdGEgc2V0IHRoYXQgeW91J3ZlIGNob3NlbiwgYW5kIHdoeSB5b3UndmUgY2hvc2VuIGl0LiAKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgoKIyMjIDEuNDogUmVzZWFyY2ggUXVlc3Rpb24gICoqKDQgcG9pbnRzKSoqCgpMZXQncyBjaG9vc2UgYSBwcmltYXJ5IGFuZCBhIHNlY29uZGFyeSByZXNlYXJjaCBxdWVzdGlvbiB0byBleHBsb3JlLiAKCldyaXRlIHlvdXIgcmVzZWFyY2ggcXVlc3Rpb25zICoqYXMgcXVlc3Rpb25zKiosIGFuZCBiZSBzcGVjaWZpYy4gWW91IGNhbiBjaGFuZ2UgaXQgbGF0ZXIgaWYgbmVlZGVkLiAKCj4gRm9yIGV4YW1wbGUsIGlmIEkgaGFkIGNob3NlbiBhIGB0aXRhbmljYCBkYXRhIHNldCBmb3IgbXkgcHJvamVjdCwgSSBtaWdodCBhc2ssICIoUHJpbWFyeSkgSXMgdGhlcmUgYSByZWxhdGlvbnNoaXAgYmV0d2VlbiBzdXJ2aXZhbCBhbmQgdGhlIGNsYXNzIG9mIHRoZSBwYXNzZW5nZXJzPyAoU2Vjb25kYXJ5KSBEb2VzIHRoaXMgcmVsYXRpb25zaGlwIGRpZmZlciBieSBnZW5kZXI/IgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBTdGFydCB5b3VyIHdvcmsgYmVsb3cgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCgoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgoKCiMjIyAxLjU6IENvbW1pdCAgKiooMiBwb2ludHMpKioKCkNvbW1pdCB5b3VyIHdvcmsgYW5kIHB1c2ggaXQgdG8gR2l0SHViLiBJbmNsdWRlIGFuIGluZm9ybWF0aXZlIGNvbW1pdCBtZXNzYWdlLCBhbmQgaW5jbHVkZSAiKDEuNSkiIGluIHRoZSBtZXNzYWdlLiAKCgoKIyBUYXNrIDI6IEZ1cnRoZXIgRXhwbG9yaW5nIFlvdXIgQ2hvc2VuIERhdGEgU2V0IAoKCgojIyMgMi4xOiBNaXNzaW5nIERhdGEgKiooNiBwb2ludHMpKioKCk1pc3NpbmcgZGF0YSBpcyBpbmV2aXRhYmxlLCBhbmQgY2FuIGNvbXBsaWNhdGUgYW5hbHlzZXMuIExldCdzIHNlZSB3aGF0IHZhcmlhYmxlcyAoaWYgYW55KSBoYXZlIG1pc3NpbmcgZGF0YSBpbiB5b3VyIGNob3NlbiBkYXRhIHNldC4gCgpZb3VyIHRhc2sgaXMgdG8gY3JlYXRlIGEgdGFibGUgdGhhdCBjYWxjdWxhdGVzIHRoZSBwcm9wb3J0aW9uIG9mIG1pc3NpbmcgdmFsdWVzIHBlciB2YXJpYWJsZS4gQmUgc3VyZSB0byBvdXRwdXQgdGhlIHRhYmxlLiAKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgpgYGB7cn0KIyMjIEV4cGxvcmUgbWlzc2luZ25lc3MgaGVyZSAjIyMKCmBgYAoKCgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCgoKCiMjIyAyLjI6IE1pc3NpbmcgRGF0YSAoQWdhaW4pICoqKDYgcG9pbnRzKSoqCgpCYXNlZCBvbiB5b3VyIHJlc2VhcmNoIHF1ZXN0aW9uLCB3aWxsIHRoaXMgbWlzc2luZ25lc3MgcG9zZSBhbiBpc3N1ZT8gRm9yIHRoZSBwdXJwb3NlcyBvZiB0aGlzIGNsYXNzIChhbmQgdGhpcyBjbGFzcyBvbmx5ISksIHdlIHdpbGwgY29uc2lkZXIgbWlzc2luZ25lc3MgYSBwcm9ibGVtICoqaWYgdGhlcmUgaXMgbW9yZSB0aGFuIDIwJSBvZiBhIHNpbmdsZSB2YXJpYWJsZSAodGhhdCBpcyBvZiBpbnRlcmVzdCkgaXMgbWlzc2luZyoqLiAKCj4gRm9yIGV4YW1wbGUsIGxldCdzIGFzc3VtZSBJIHdhbnRlZCB0byBleHBsb3JlIHRoZSBmb2xsb3dpbmcgcmVzZWFyY2ggcXVlc3Rpb25zOiAiSXMgdGhlcmUgYSByZWxhdGlvbnNoaXAgYmV0d2VlbiBzdXJ2aXZhbCBhbmQgdGhlIGNsYXNzIG9mIHRoZSBwYXNzZW5nZXJzPyBEb2VzIHRoaXMgcmVsYXRpb25zaGlwIHZhcnkgYnkgZ2VuZGVyPyIuIElmIHRoZSB2YXJpYWJsZSBpbmRpY2F0aW5nIHdoZXRoZXIgb3Igbm90IGEgcGVyc29uIHN1cnZpdmVkIHdhcyBtaXNzaW5nIGZvciAyMCUgb3IgbW9yZSBvZiB0aGUgcGFzc2VuZ2VycywgdGhlbiB0aGlzIHdvdWxkIGJlIGEgcHJvYmxlbS4gSG93ZXZlciwgaWYgYSB2YXJpYWJsZSBpbmRpY2F0aW5nIHRoZSBjb2xvdXIgb2Ygc2hpcnQgYSBwYXNzZW5nZXIgd2FzIHdlYXJpbmcgd2FzIG1pc3NpbmcsIHRoaXMgcHJvYmFibHkgd291bGRuJ3QgYmUgYW4gaXNzdWUgYXMgdGhhdCB2YXJpYWJsZSBpcyBxdWl0ZSBpcnJlbGV2YW50IHRvIG15IGFuYWx5c2lzIQoKQmFzZWQgb24gdGhpcyBkZWZpbml0aW9uLCBpcyBtaXNzaW5nbmVzcyBhbiBpc3N1ZSBmb3IgeW91ciBhbmFseXNpcz8gSWYgc28sIGRlc2NyaWJlIGhvdyB5b3Ugd2lsbCBhZGRyZXNzIHRoaXMgKHBpdm90aW5nIHlvdXIgcmVzZWFyY2ggcXVlc3Rpb24sIGZvciBleGFtcGxlKS4gSWYgeW91IHdpbGwgY29udGludWUgd2l0aCBhIG5ldyByZXNlYXJjaCBxdWVzdGlvbiwgd3JpdGUgaXQgaGVyZSEgKipEbyBub3QgZ28gYmFjayB0byBUYXNrIDEgYW5kIHJlZG8gdGhlIGFuYWx5c2lzLioqICkuIAoKCklmIG1pc3NpbmduZXNzIGlzIG5vdCBhbiBpc3N1ZSwgZGVzY3JpYmUgd2h5LiAKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgoKCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKCgoKIyMjIDIuMzogVGlkeSB5b3VyIERhdGEgKiooMTAgcG9pbnRzKSoqCgpQcm9kdWNlIGEgdGlkeSBkYXRhIHNldCB0aGF0IGNvdWxkIGJlIHVzZWQgdG8gYW5zd2VyIHlvdXIgcmVzZWFyY2ggcXVlc3Rpb25zLiAqKlBsZWFzZSBlbnN1cmUgeW91IGhhdmUgYXQgbGVhc3Qgb25lIHF1YW50aXRhdGl2ZSAobnVtZXJpYykgYW5kIG9uZSBjYXRlZ29yaWNhbCB2YXJpYWJsZSBpbiB5b3VyIGRhdGEgc2V0LiBJdCdzIG9rYXkgeW91IG5lZWQgdG8gaW5jbHVkZSBhIGxlc3MgcmVsZXZhbnQgdmFyaWFibGUgaW4geW91ciB0aWRpZWQgZGF0YSB0byBlbnN1cmUgdGhpcy4qKgoKVG8gdGlkeSB5b3VyIGRhdGEsIHlvdSBzaG91bGQ6CgotICBDcmVhdGUgbmV3IHZhcmlhYmxlcyAoaWYgbmVlZGVkKQoKLSAgVHJhbnNmb3JtIHRoZSBkYXRhIGludG8gYSB0aWR5IGZvcm0gKGlmIG5lZWRlZCkKCi0gIFJlbW92ZSBpcnJlbGV2YW50IGNvbHVtbnMgKGlmIG5lZWRlZCkKCi0gIENvbW1lbnQgeW91ciBjb2RlIHRocm91Z2hvdXQKClNob3cgdGhlIGZpcnN0IDYgcm93cyBvZiB0aGUgdGlkaWVkIGRhdGEuCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFN0YXJ0IHlvdXIgd29yayBiZWxvdyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgpgYGB7cn0KCgoKCmBgYAoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCgojIyMgMi40OiBDcmVhdGUgYSBUYWJsZSAoMTAgcG9pbnRzKQoKVXNlIGFueSBmdW5jdGlvbnMgZnJvbSB0aGUgYHRpZHl2ZXJzZWAgdG8gY3JlYXRlIG9uZSB0YWJsZSB0aGF0IG91dHB1dHMgdGhlIG1lYW4sIG1pbmltdW0sIGFuZCBtYXhpbXVtIG9mIGFsbCBudW1lcmljIGNvbHVtbnMgaW4geW91ciBkYXRhLCBkcm9wcGluZyB0aGUgbWlzc2luZyB2YWx1ZXMgaWYgdGhleSBleGlzdC4KClNob3cgdGhlIG91dHB1dHRlZCB0YWJsZS4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CmBgYHtyfQoKCgoKYGBgCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKCiMjIyAyLjU6ICBTdW1tYXJpemUgT3ZlciBMZXZlbHMgb2YgYSBDYXRlZ29yaWNhbCBWYXJpYWJsZSAqKig4IHBvaW50cykqKgoKVXNlIHlvdXIgYHRpZHl2ZXJzZWAga25vd2xlZGdlIHRvIGNyZWF0ZSBvbmUgdGFibGUgdGhhdCBjYWxjdWxhdGVzIG1lYW4gb2Ygb25lIG51bWVyaWMgdmFyaWFibGUgZm9yIGVhY2ggb2YgdGhlIGxldmVscyBvZiBhbm90aGVyIGNhdGVnb3JpY2FsIHZhcmlhYmxlIChmb3IgZXhhbXBsZSwgdGhlIG1lYW4gYWdlIG9mIGVhY2ggY2xhc3MgaW4gdGhlIHRpdGFuaWMgZGF0YSkuCgpTaG93IHRoZSBvdXRwdXR0ZWQgdGFibGUuCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFN0YXJ0IHlvdXIgd29yayBiZWxvdyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgpgYGB7cn0KCgoKCmBgYAoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCgojIyMgMi42OiBQbG90IERpc3RyaWJ1dGlvbnMgKDggcG9pbnRzKQoKCi0gICoqMi42LjEqKiBVc2UgYGdncGxvdGAgdG8gcGxvdCB0aGUgZGlzdHJpYnV0aW9uIG9mIG9uZSBvZiB0aGUgbnVtZXJpYyB2YXJpYWJsZXMgaW4geW91ciB0aWRpZWQgZGF0YSBzZXQuCgotICAqKjIuNi4yKiogVXNlIGBnZ3Bsb3RgIHRvIGNyZWF0ZSBhIHZpc3VhbGl6YXRpb24gc2hvd2luZyB0aGUgcmVsYXRpdmUgcHJvcG9ydGlvbnMgb2YgZWFjaCBjYXRlZ29yeS9sZXZlbCBmb3Igb25lIG9mIGNhdGVnb3JpY2FsIHZhcmlhYmxlIGluIHlvdXIgdGlkaWVkIGRhdGEgc2V0LgoKQ2xlYXJseSBsYWJlbCB0aGUgdmFyaWFibGUgdGhhdCBpcyBiZWluZyBwbG90dGVkIGluIGVhY2ggcGxvdC4gTWFrZSBzdXJlIHRoZSBvdXRwdXQgaXMgYXMgY2xlYXIgYXMgcG9zc2libGUsIHByb3ZpZGUgYW4gRW5nbGlzaCB0aXRsZSBhbG9uZyB3aXRoIHJlYWRhYmxlIHggYW5kIHkgY29sdW1uIG5hbWVzCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFN0YXJ0IHlvdXIgd29yayBiZWxvdyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgpgYGB7cn0KCgoKCmBgYAoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCgojIyMgMi43OiBDb21taXQgICoqKDIgcG9pbnRzKSoqCgpDb21taXQgeW91ciB3b3JrIGFuZCBwdXNoIGl0IHRvIEdpdEh1Yi4gLCBhbmQgaW5jbHVkZSAiKDIuNykiIGluIHRoZSBtZXNzYWdlLiAKCgoKCgojIFRhc2sgMzogVGlkeSBZb3VyIFN1Ym1pc3Npb24gT3ZlcmFsbCAKCkNoZWNrIG92ZXIgeW91ciBkb2N1bWVudCBhbmQgR2l0SHViIHJlcG9zaXRvcnkgZm9yIHRoZSBmb2xsb3dpbmc6IAoKIyMjIDMuMTogQ29oZXJlbmNlICoqKDIgcG9pbnRzKSoqCgpUaGUgZG9jdW1lbnQgc2hvdWxkIHJlYWQgc2Vuc2libHkgZnJvbSB0b3AgdG8gYm90dG9tLCB3aXRoIG5vIG1ham9yIGNvbnRpbnVpdHkgZXJyb3JzLiBBbiBleGFtcGxlIG9mIGEgbWFqb3IgY29udGludWl0eSBlcnJvciBpcyBoYXZpbmcgYSBkYXRhIHNldCBsaXN0ZWQgZm9yIFRhc2sgMyB0aGF0IGlzIG5vdCBwYXJ0IG9mIG9uZSBvZiB0aGUgZGF0YSBzZXRzIGxpc3RlZCBpbiBUYXNrIDEuIAoKIyMjIDMuMjogRXJyb3ItZnJlZSBjb2RlICoqKDIgcG9pbnRzKSoqCgpGb3IgZnVsbCBtYXJrcywgYWxsIGNvZGUgaW4gdGhlIGRvY3VtZW50IHNob3VsZCBydW4gd2l0aG91dCBlcnJvciBhbmQgYmUgY29tcGxldGVseSByZXByb2R1Y2libGUuIAoKIyMjIDMuMyBSRUFETUUgKiooNiBwb2ludHMpKioKClRoZXJlIHNob3VsZCBiZSBhIGZpbGUgbmFtZWQgYFJFQURNRS5tZGAgYXQgdGhlIHRvcCBsZXZlbCBvZiB5b3VyIHJlcG9zaXRvcnkuIEl0cyBjb250ZW50cyBzaG91bGQgYXV0b21hdGljYWxseSBhcHBlYXIgd2hlbiB5b3UgdmlzaXQgdGhlIHJlcG9zaXRvcnkgb24gR2l0SHViLgoKTWluaW11bSBjb250ZW50cyBvZiB0aGUgUkVBRE1FIGZpbGU6CgotICAgSW4gYSBzZW50ZW5jZSBvciB0d28sIGV4cGxhaW5zIHdoYXQgdGhpcyByZXBvc2l0b3J5IGlzLCBzbyB0aGF0IGZ1dHVyZS15b3Ugb3Igc29tZW9uZSBlbHNlIHN0dW1ibGluZyBvbiB5b3VyIHJlcG9zaXRvcnkgY2FuIGJlIG9yaWVudGVkIHRvIHRoZSByZXBvc2l0b3J5LgotICAgTGlzdCB0aGUgZmlsZXMvZm9sZGVycyBjb250YWluZWQgaW4gdGhlIHJlcG9zaXRvcnkKLSAgIEluIGEgc2VudGVuY2Ugb3IgdHdvLCBicmllZmx5IGV4cGxhaW5zIGhvdyB0byBlbmdhZ2Ugd2l0aCB0aGUgcmVwb3NpdG9yeS4gWW91IGNhbiBhc3N1bWUgdGhlIHBlcnNvbiByZWFkaW5nIGtub3dzIHRoZSBtYXRlcmlhbCBmcm9tIFNUQVQgNTQ1QS4gQmFzaWNhbGx5LCBpZiBhIHZpc2l0b3IgdG8geW91ciByZXBvc2l0b3J5IHdhbnRzIHRvIGV4cGxvcmUgeW91ciBwcm9qZWN0LCB3aGF0IHNob3VsZCB0aGV5IGtub3c/IEhvdyBjYW4gdGhleSByZXByb2R1Y2UgeW91ciByZXBvcnQ/CgoKCiMjIyAzLjQgT3V0cHV0ICoqKDQgcG9pbnRzKSoqCgpBbGwgb3V0cHV0IG9uIEdpdEh1YiBpcyByZWFkYWJsZSwgcmVjZW50IGFuZCByZWxldmFudDoKCi0gICBBbGwgYC5SbWRgIGZpbGVzIGhhdmUgYmVlbiBga25pdGB0ZWQgdG8gdGhlaXIgb3V0cHV0IGAubWRgIGZpbGVzLiAKLSAgIEFsbCBrbml0dGVkIGAubWRgIGZpbGVzIGFyZSB2aWV3YWJsZSB3aXRob3V0IGVycm9ycyBvbiBHaXRodWIuIEV4YW1wbGVzIG9mIGVycm9yczogTWlzc2luZyBwbG90cywgIlNvcnJ5IGFib3V0IHRoYXQsIGJ1dCB3ZSBjYW4ndCBzaG93IGZpbGVzIHRoYXQgYXJlIHRoaXMgYmlnIHJpZ2h0IG5vdyIgbWVzc2FnZXMsIGVycm9yIG1lc3NhZ2VzIGZyb20gYnJva2VuIFIgY29kZQotICAgQWxsIG9mIHRoZXNlIG91dHB1dCBmaWxlcyBhcmUgdXAtdG8tZGF0ZSAtLSB0aGF0IGlzLCB0aGV5IGhhdmVuJ3QgZmFsbGVuIGJlaGluZCBhZnRlciB0aGUgc291cmNlIChgLlJtZGApIGZpbGVzIGhhdmUgYmVlbiB1cGRhdGVkLgotICAgVGhlcmUgc2hvdWxkIGJlIG5vIHJlbGljIG91dHB1dCBmaWxlcy4gRm9yIGV4YW1wbGUsIGlmIHlvdSB3ZXJlIGtuaXR0aW5nIGFuIGAuUm1kYCB0byBgLmh0bWxgLCBidXQgdGhlbiBjaGFuZ2VkIHRoZSBvdXRwdXQgdG8gYmUgb25seSBhIG1hcmtkb3duIGZpbGUsIHRoZW4gdGhlIGAuaHRtbGAgZmlsZSBpcyBhIHJlbGljIGFuZCBzaG91bGQgYmUgZGVsZXRlZC4KCgoKCiMgU3RlcCA0OiBTdWJtaXNzaW9uIAoKIyMjIDQuMTogVGFnIGEgUmVsZWFzZSAqKigxIHBvaW50KSoqCgpUbyBzdWJtaXQgdGhpcyBtaWxlc3RvbmUsIHRhZyBhIHJlbGVhc2Ugb24gR2l0SHViIGFuZCBzdWJtaXQgdGhlIGxpbmsgdG8gQ2FudmFzLiAK&#39;);&#10;        if (!response.ok) throw new Error(&#39;Network response failed&#39;);&#10;        const blob = await response.blob();&#10;        const blobUrl = window.URL.createObjectURL(blob);&#10;        const a = document.createElement(&#39;a&#39;);&#10;        a.href = blobUrl;&#10;        a.download = &#39;mda_deliverable1.Rmd&#39;;&#10;        a.style.display = &#39;none&#39;;&#10;        document.body.appendChild(a);&#10;        a.dispatchEvent(new MouseEvent(&#39;click&#39;));&#10;        document.body.removeChild(a);&#10;        setTimeout(() =&gt; {&#10;          window.URL.revokeObjectURL(blobUrl);&#10;        }, 100);&#10;        return false;&#10;      } catch (error) {&#10;        console.error(&#39;Download failed:&#39;, error);&#10;        alert(&#39;Download failed. Please try again.&#39;);&#10;      }&#10;    }&#10;    downloadFile(event);&#10;  " output_extension=".Rmd"><i class="fa fa-save"></i> Download .Rmd Template</button>
-```
-
-:::
-:::
-
-
-</div>
-
-<br>
-
-
---->
 
 
 </section>
@@ -372,7 +431,7 @@ To complete this deliverable, download the template below:
 
 <div id="cookie-popup">
   <h4> We value your privacy. </h4>
-  <p>Do you consent to the use of cookies to analyse website traffic? No personal indentifying information is stored. See our <a href="../../../privacy/privacy.html" style="color: #007bff; text-decoration: underline;">privacy policy here</a></p>
+  <p>Do you consent to the use of cookies to analyse website traffic? No personal indentifying information is stored. See our <a href="../../privacy/privacy.html" style="color: #007bff; text-decoration: underline;">privacy policy here</a></p>
   <div class="popup-button-container">
     <button class="btn-accept" onclick="acceptCookies()">Accept</button>
     <button class="btn-decline" onclick="declineCookies()">Decline</button>

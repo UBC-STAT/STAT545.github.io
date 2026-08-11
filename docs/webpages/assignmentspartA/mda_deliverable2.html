@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mini Data-Analysis Deliverable 1 – STAT545</title>
+<title>Mini Data Analysis: Deliverable 2 – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,12 +127,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     localStorage.setItem('cookieConsent', 'granted');
   }
 </script>
+<script src="../../site_libs/font-awesome-6.7.2/js/script.js"></script>
 
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -183,12 +184,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-assessments-(part-a">    
         <li>
-    <a class="dropdown-item" href="../../webpages/assignmentspartA/collabproj/collaborativeproject.html">
+    <a class="dropdown-item" href="../../webpages/assignmentspartA/collaborativeproject.html">
  <span class="dropdown-text">Collaborative Project</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../webpages/assignmentspartA/mda/mda_deliverable1.html">
+    <a class="dropdown-item" href="../../webpages/assignmentspartA/mda_deliverable1.html">
  <span class="dropdown-text">Mini Data Analysis: Deliverable 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../webpages/assignmentspartA/mda_deliverable2.html">
+ <span class="dropdown-text">Mini Data Analysis: Deliverable 2</span></a>
   </li>  
     </ul>
   </li>
@@ -214,48 +219,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/assignmentspartA/mda_deliverable2.html">Mini Data Analysis: Deliverable 2</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/assignmentspartA/collaborativeproject.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collaborative Project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/assignmentspartA/mda_deliverable1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mini Data Analysis: Deliverable 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../webpages/assignmentspartA/mda_deliverable2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Mini Data Analysis: Deliverable 2</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-your-maybe-first-ever-data-analysis-project" id="toc-welcome-to-your-maybe-first-ever-data-analysis-project" class="nav-link active" data-scroll-target="#welcome-to-your-maybe-first-ever-data-analysis-project">Welcome to your (maybe) first-ever data analysis project!</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a>
-  <ul class="collapse">
-  <li><a href="#for-both-milestones" id="toc-for-both-milestones" class="nav-link" data-scroll-target="#for-both-milestones">For Both Milestones</a></li>
-  <li><a href="#for-milestone-1" id="toc-for-milestone-1" class="nav-link" data-scroll-target="#for-milestone-1">For Milestone 1</a></li>
-  </ul></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#task-1-choose-your-favorite-dataset" id="toc-task-1-choose-your-favorite-dataset" class="nav-link" data-scroll-target="#task-1-choose-your-favorite-dataset">Task 1: Choose your favorite dataset</a>
-  <ul class="collapse">
-  <li><a href="#choose-4-datasets-1-point" id="toc-choose-4-datasets-1-point" class="nav-link" data-scroll-target="#choose-4-datasets-1-point">1.1: Choose 4 Datasets <strong>(1 point)</strong></a></li>
-  <li><a href="#explore-the-data-6-points" id="toc-explore-the-data-6-points" class="nav-link" data-scroll-target="#explore-the-data-6-points">1.2: Explore the Data <strong>(6 points)</strong></a></li>
-  <li><a href="#choose-1-dataset-1-point" id="toc-choose-1-dataset-1-point" class="nav-link" data-scroll-target="#choose-1-dataset-1-point">1.3: Choose 1 Dataset <strong>(1 point)</strong></a></li>
-  <li><a href="#research-question-2-points" id="toc-research-question-2-points" class="nav-link" data-scroll-target="#research-question-2-points">1.4: Research Question <strong>(2 points)</strong></a></li>
-  </ul></li>
-  <li><a href="#important-note" id="toc-important-note" class="nav-link" data-scroll-target="#important-note">Important note</a></li>
-  <li><a href="#task-2-further-exploring-your-chosen-dataset" id="toc-task-2-further-exploring-your-chosen-dataset" class="nav-link" data-scroll-target="#task-2-further-exploring-your-chosen-dataset">Task 2: Further Exploring Your Chosen Dataset</a>
-  <ul class="collapse">
-  <li><a href="#complete-4-tasks-12-points" id="toc-complete-4-tasks-12-points" class="nav-link" data-scroll-target="#complete-4-tasks-12-points">2.1: Complete 4 Tasks <strong>(12 points)</strong></a></li>
-  <li><a href="#explain-the-four-chosen-tasks-4-points" id="toc-explain-the-four-chosen-tasks-4-points" class="nav-link" data-scroll-target="#explain-the-four-chosen-tasks-4-points">2.2: Explain the Four Chosen Tasks <strong>(4 points)</strong></a></li>
-  </ul></li>
-  <li><a href="#task-3-narrow-your-research-topic" id="toc-task-3-narrow-your-research-topic" class="nav-link" data-scroll-target="#task-3-narrow-your-research-topic">Task 3: Narrow Your Research Topic</a>
-  <ul class="collapse">
-  <li><a href="#choose-4-research-questions-4-points" id="toc-choose-4-research-questions-4-points" class="nav-link" data-scroll-target="#choose-4-research-questions-4-points">3.0: Choose 4 Research Questions <strong>(4 points)</strong></a></li>
-  </ul></li>
-  <li><a href="#overall-reproducibilitycleanlinesscoherence-checklist" id="toc-overall-reproducibilitycleanlinesscoherence-checklist" class="nav-link" data-scroll-target="#overall-reproducibilitycleanlinesscoherence-checklist">Overall reproducibility/Cleanliness/Coherence Checklist</a>
-  <ul class="collapse">
-  <li><a href="#coherence-0.5-points" id="toc-coherence-0.5-points" class="nav-link" data-scroll-target="#coherence-0.5-points">Coherence (0.5 points)</a></li>
-  <li><a href="#error-free-code-3-points" id="toc-error-free-code-3-points" class="nav-link" data-scroll-target="#error-free-code-3-points">Error-free code (3 points)</a></li>
-  <li><a href="#main-readme-1-point" id="toc-main-readme-1-point" class="nav-link" data-scroll-target="#main-readme-1-point">Main README (1 point)</a></li>
-  <li><a href="#output-1-point" id="toc-output-1-point" class="nav-link" data-scroll-target="#output-1-point">Output (1 point)</a></li>
-  <li><a href="#tagged-release-0.5-points" id="toc-tagged-release-0.5-points" class="nav-link" data-scroll-target="#tagged-release-0.5-points">Tagged release (0.5 points)</a></li>
-  </ul></li>
+  <li><a href="#deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt" id="toc-deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt" class="nav-link active" data-scroll-target="#deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt">Deliverable 2 will be due on October 27nd, 2026 at 11:59pm PT</a></li>
   </ul>
 </nav>
     </div>
@@ -264,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mini Data-Analysis Deliverable 1</h1>
+<h1 class="title">Mini Data Analysis: Deliverable 2</h1>
 </div>
 
 
@@ -273,6 +282,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">August 11, 2026</p>
+    </div>
+  </div>
     
   </div>
   
@@ -281,229 +296,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="welcome-to-your-maybe-first-ever-data-analysis-project" class="level1">
-<h1>Welcome to your (maybe) first-ever data analysis project!</h1>
-<p>And hopefully the first of many. Let’s get started:</p>
-<ol type="1">
-<li>Install the <a href="https://github.com/UBC-MDS/datateachr"><code>datateachr</code></a> package by typing the following into your <strong>R terminal</strong>:</li>
-</ol>
-<!-- -->
-<pre><code>install.packages("devtools")
-devtools::install_github("UBC-MDS/datateachr")</code></pre>
-<ol start="2" type="1">
-<li>Load the packages below.</li>
-</ol>
+<section id="deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt" class="level2">
+<h2 class="anchored" data-anchor-id="deliverable-2-will-be-due-on-october-27nd-2026-at-1159pm-pt">Deliverable 2 will be due on October 27nd, 2026 at 11:59pm PT</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this course, Generative AI can be used in the following ways:</p>
+<ul>
+<li><p>to clarify concepts discussed in class</p></li>
+<li><p>as an “advanced search engine” (i.e., searching error codes)</p></li>
+<li><p>debugging code that students wrote and attempted to debug on their own</p></li>
+</ul>
+<p>Generative AI <strong>CANNOT</strong> be used to generate text or code (including comments) from scratch.</p>
+<p>Any use of Generative AI must be disclosed.</p>
+<p><strong>To disclose your use, please copy and paste the following template into the README of your GitHub Repository and fill out the relevant details</strong> [in square brackets]. BE SPECIFIC. Saying you used it to debug your code is not enough. Explicitly describe where you got stuck</p>
+<p>Here is an example of a specific, explicit debug:</p>
+<blockquote class="blockquote">
+<p>“I had the error <code>attempt to apply non-function</code> after running my code. I used Claude to help me identify that this error was due to me attempting to multiply two numbers together without the use of a <code>*</code>, i.e.&nbsp;<code>(2)(3)</code> instead of <code>2*3</code>.”</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generative AI Statement </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Generative AI (through <span class="co">[</span><span class="ot">LIST MODELS USED, i.e. ChatGPT, CoPilot)</span><span class="co">]</span> was used to </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>help me complete  this assignment in the following ways. </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="co">[</span><span class="ot">Describe here</span><span class="co">]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="co">[</span><span class="ot">Describe here</span><span class="co">]</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>I affirm that Generative AI was not used to generate text, code, or comments for </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>my assessments. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you did not use Generative AI, please include the following in your README:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generative AI Statement </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Generative AI was not used in any way throughout this assignment.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Assessments suspected of having AI-generated text and/or code, or assignments where the Generative AI use was not disclosed, will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.</p>
+<p><strong>Fill out Task 3.4 as you go through your assignment if you do opt to use Generative AI.</strong></p>
+</div>
+</div>
+<p>Download the following file and add it to your Mini Data Analysis Repository (the same one you used for Deliverable 1). Follow the directions in the file!</p>
+<div style="text-align: center;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datateachr)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.5.2</code></pre>
+<div class="cell-output-display">
+<button class="btn btn-primary" onclick="
+    async function downloadFile(event) {
+      event.preventDefault();
+      try {
+        const response = await fetch('data:text/x-markdown;base64,LS0tCnRpdGxlOiAiTWluaSBEYXRhLUFuYWx5c2lzOiBEZWxpdmVyYWJsZSAyIgpvdXRwdXQ6IGdpdGh1Yl9kb2N1bWVudAotLS0KClRvdGFsIHBvaW50cyBhdmFpbGFibGU6IDYxCgoKIyBUYXNrIDA6IFNldHVwCgpCZWdpbiBieSBsb2FkaW5nIHlvdXIgZGF0YSBhbmQgdGhlIHRpZHl2ZXJzZSBwYWNrYWdlIGJlbG93OgoKCioqMC4xOiBMb2FkIFBhY2thZ2VzKioKClR5cGljYWxseSwgUiBQYWNrYWdlcyBhcmUgbG9hZGVkIGluIGF0IHRoZSB2ZXJ5IGJlZ2lubmluZyBvZiB0aGUgYW5hbHlzaXMuIElmIHlvdSBsYXRlciB3YW50IHRvIHVzZSBvdGhlciBwYWNrYWdlcywgcGxlYXNlIGNvbWUgYmFjayBhbmQgYWRkIHRoZW0gaGVyZToKCmBgYHtyLCB3YXJuaW5nID0gRiwgbWVzc2FnZSA9IEZ9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGRpdmVyc2VkYXRhKQoKIy0tLSBBZGQgYW55IG90aGVyIHBhY2thZ2VzIGJlbG93IHRoaXMgbGluZSAtLS0jCgoKYGBgCgoKIyBUYXNrIDE6IFlvdXIgUmVzZWFyY2ggUXVlc3Rpb25zCgoKIyMjIDEuMTogV3JpdGUgUmVzZWFyY2ggUXVlc3Rpb25zICgxIHBvaW50KQoKRmlyc3QsIHdyaXRlIG91dCB0aGUgdHdvIHJlc2VhcmNoIHF1ZXN0aW9ucyB5b3UgZGVmaW5lZCBpbiBNaWxlc3RvbmUgMS4gSWYgeW91J2QgbGlrZSB0byByZWZpbmUgdGhlbSwgeW91IGNhbiBkbyBzbyBoZXJlIGFuZCBqdXN0IHdyaXRlIHRoZSBuZXcgcXVlc3Rpb24uIFRoaXMgd2lsbCBndWlkZSB5b3VyIHdvcmsgdGhyb3VnaCBNaWxlc3RvbmUgMjoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgpRMSAoUHJpbWFyeSk6ICAqRklMTF9USElTX0lOKgoKUTIgKFNlY29uZGFyeSk6ICAqRklMTF9USElTX0lOKgoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgoKCgoKIyBUYXNrIDI6IFN1bW1hcml6aW5nIFlvdXIgRGF0YQoKIyMjIDIuMTogIFN1bW1hcml6ZSBPdmVyIExldmVscyBvZiBhIENhdGVnb3JpY2FsIFZhcmlhYmxlICoqKDggcG9pbnRzKSoqCgpVc2UgeW91ciBgdGlkeXZlcnNlYCBrbm93bGVkZ2UgdG8gY3JlYXRlIG9uZSB0YWJsZSB0aGF0IGNhbGN1bGF0ZXMgbWVhbiBvZiBvbmUgbnVtZXJpYyB2YXJpYWJsZSBmb3IgZWFjaCBvZiB0aGUgbGV2ZWxzIG9mIGFub3RoZXIgY2F0ZWdvcmljYWwgdmFyaWFibGUgKGZvciBleGFtcGxlLCB0aGUgbWVhbiBhZ2Ugb2YgZWFjaCBjbGFzcyBpbiB0aGUgdGl0YW5pYyBkYXRhKS4KClNob3cgdGhlIG91dHB1dHRlZCB0YWJsZS4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CmBgYHtyfQoKCgoKYGBgCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKCiMjIyAyLjI6IFBsb3QgRGlzdHJpYnV0aW9ucyAoOCBwb2ludHMpCgoKLSAgKioyLjIuMSoqIFVzZSBgZ2dwbG90YCB0byBwbG90IHRoZSBkaXN0cmlidXRpb24gb2Ygb25lIG9mIHRoZSBudW1lcmljIHZhcmlhYmxlcyBpbiB5b3VyIHRpZGllZCBkYXRhIHNldC4KCi0gICoqMi4yLjIqKiBVc2UgYGdncGxvdGAgdG8gY3JlYXRlIGEgdmlzdWFsaXphdGlvbiBzaG93aW5nIHRoZSByZWxhdGl2ZSBwcm9wb3J0aW9ucyBvZiBlYWNoIGNhdGVnb3J5L2xldmVsIGZvciBvbmUgb2YgY2F0ZWdvcmljYWwgdmFyaWFibGUgaW4geW91ciB0aWRpZWQgZGF0YSBzZXQuCgpDbGVhcmx5IGxhYmVsIHRoZSB2YXJpYWJsZSB0aGF0IGlzIGJlaW5nIHBsb3R0ZWQgaW4gZWFjaCBwbG90LiBNYWtlIHN1cmUgdGhlIG91dHB1dCBpcyBhcyBjbGVhciBhcyBwb3NzaWJsZSwgcHJvdmlkZSBhbiBFbmdsaXNoIHRpdGxlIGFsb25nIHdpdGggcmVhZGFibGUgeCBhbmQgeSBjb2x1bW4gbmFtZXMKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CmBgYHtyfQoKCgoKYGBgCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKCgoKIyBUYXNrIDM6IEV4cGxvcmluZyBSZWxhdGlvbnNoaXBzCgojIyMgMy4xOiBWaXN1YWxpemUgUmVsYXRpb25zaGlwcyAqKigxMiBwb2ludHMpKioKCk5vdywgZm9yICplYWNoKiBvZiB5b3VyIHJlc2VhcmNoIHF1ZXN0aW9ucywgY2hvb3NlIG9uZSBHcmFwaGluZyBUYXNrLiBEaXNjdXNzIHRoZSByZXN1bHRzIChkb2VzIHRoaXMgaGVscCBhbnN3ZXIgeW91ciByZXNlYXJjaCBxdWVzdGlvbiwgb3IgcG9pbnQgdG93YXJkIG1vcmUgdGhpbmdzIHRvIGZ1cnRoZXIgZXhwbG9yZT8pLiAKCkVuc3VyZSB0aGF0IHRoZSBvdXRwdXQgb2YgZWFjaCBvcGVyYXRpb24gaXMgcHJpbnRlZCEKCkFsc28gbWFrZSBzdXJlIHRoYXQgeW91J3JlIHVzaW5nIGBkcGx5cmAgYW5kIGBnZ3Bsb3QyYCByYXRoZXIgdGhhbiBiYXNlIFIuIE91dHNpZGUgb2YgdGhpcyBwcm9qZWN0LCB5b3UgbWF5IGZpbmQgdGhhdCB5b3UgcHJlZmVyIHVzaW5nIGJhc2UgUiBmdW5jdGlvbnMgZm9yIGNlcnRhaW4gdGFza3MsIGFuZCB0aGF0J3MganVzdCBmaW5lISBCdXQgcGFydCBvZiB0aGlzIHByb2plY3QgaXMgZm9yIHlvdSB0byBwcmFjdGljZSB0aGUgdG9vbHMgd2UgbGVhcm5lZCBpbiBjbGFzcywgd2hpY2ggaXMgZHBseXIgYW5kIGdncGxvdDIuCgoqKkdyYXBoaW5nIFRhc2tzOioqCgotICAgRzEuIENyZWF0ZSBhIGdyYXBoIG9mIHlvdXIgY2hvb3NpbmcsIG1ha2Ugb25lIG9mIHRoZSBheGVzIGxvZ2FyaXRobWljLCBhbmQgZm9ybWF0IHRoZSBheGVzIGxhYmVscyBzbyB0aGF0IHRoZXkgYXJlIGVhc2llciB0byByZWFkIGJ1dCBzdGlsbCBzYXkgd2hhdCBpcyBiZWluZyBtZWFzdXJlZCAobG9nLXNjYWxlZCkuCgotICAgRzIuIE1ha2UgYSBncmFwaCB3aGVyZSBpdCBtYWtlcyBzZW5zZSB0byBjdXN0b21pemUgdGhlIGFscGhhIHRyYW5zcGFyZW5jeS4KCi0gICBHMy4gQ3JlYXRlIGEgZ3JhcGggdGhhdCBoYXMgYXQgbGVhc3QgdHdvIGdlb21fKiBsYXllcnMuCgotICAgRzQuIENyZWF0ZSAzIGhpc3RvZ3JhbXMsIHdpdGggZWFjaCBoaXN0b2dyYW0gaGF2aW5nIGRpZmZlcmVudCBzaXplZCBiaW5zLiBQaWNrIHRoZSAiYmVzdCIgb25lIGFuZCBleHBsYWluIHdoeSBpdCBpcyB0aGUgYmVzdC4KCi0gICBHNTogQ3JlYXRlIGEgZ3JhcGggd2hlcmUgeW91IG1hcCB0aGUgY29sb3VyIG9mIGEgbGluZS9wb2ludC9wbG90IHRvIHRoZSBsZXZlbCBvZiBjYXRlZ29yaWNhbCB2YXJpYWJsZSwgdXNpbmcgYSBjb2xvdXJibGluZC1mcmllbmRseSBwYWxldHRlIAoKLSAgIEc2OiBDcmVhdGUgYSBwbG90IHRoYXQgaW52b2x2ZXMgZmFjZXRzIChzdWItcGFuZWxzKQoKQWxsIG9mIHlvdXIgcGxvdHMgc2hvdWxkIGZvbGxvdyB0aGUgZ3VpZGVsaW5lcyBwcmVzZW50ZWQgaW4gY2xhc3Mgd2l0aCBjbGVhciBheGlzIGxhYmVscywgdGl0bGVzLCBldGMuIAoKCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBTdGFydCB5b3VyIHdvcmsgYmVsb3cgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgoqKlByaW1hcnkgUXVlc3Rpb246KioKClRhc2s6CgoKYGBge3J9CiMgUGxvdCAxCgpgYGAKCgpEaXNjdXNzaW9uOgoKKipTZWNvbmRhcnkgUXVlc3Rpb246KioKClRhc2s6CgoKYGBge3J9CiMgUGxvdCAyCmBgYAoKRGlzY3Vzc2lvbjoKCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKCgojIyMgMy4yOiBGaXQgYSBNb2RlbCAqKigzIHBvaW50cykqKgoKRml0IGEgbW9kZWwgb3IgcnVuIGEgaHlwb3RoZXNpcyB0ZXN0IHRoYXQgcHJvdmlkZXMgaW5zaWdodCBvbiB0aGlzIHZhcmlhYmxlIHdpdGggcmVzcGVjdCB0byB0aGUgcmVzZWFyY2ggcXVlc3Rpb24uIFN0b3JlIHRoZSBtb2RlbCBvYmplY3QgYXMgYSB2YXJpYWJsZSwgYW5kIHByaW50IGl0cyBvdXRwdXQgdG8gc2NyZWVuLiBXZSdsbCBvbWl0IGhhdmluZyB0byBqdXN0aWZ5IHlvdXIgY2hvaWNlLCBiZWNhdXNlIHdlIGRvbid0IGV4cGVjdCB5b3UgdG8ga25vdyBhYm91dCBtb2RlbCBzcGVjaWZpY3MgaW4gU1RBVCA1NDUuCgotICAgKipOb3RlKio6IEl0J3MgT0sgaWYgeW91IGRvbid0IGtub3cgaG93IHRoZXNlIG1vZGVscy90ZXN0cyB3b3JrLiBIZXJlIGFyZSBzb21lIGV4YW1wbGVzIG9mIHRoaW5ncyB5b3UgY2FuIGRvIGhlcmUsIGJ1dCB0aGUgc2t5J3MgdGhlIGxpbWl0LgoKICAgIC0gICBZb3UgY291bGQgZml0IGEgbW9kZWwgdGhhdCBtYWtlcyBwcmVkaWN0aW9ucyBvbiBZIHVzaW5nIGFub3RoZXIgdmFyaWFibGUsIGJ5IHVzaW5nIHRoZSBgbG0oKWAgZnVuY3Rpb24uCiAgICAtICAgWW91IGNvdWxkIHRlc3Qgd2hldGhlciB0aGUgbWVhbiBvZiBZIGVxdWFscyAwIHVzaW5nIGB0LnRlc3QoKWAsIG9yIG1heWJlIHRoZSBtZWFuIGFjcm9zcyB0d28gZ3JvdXBzIGFyZSBkaWZmZXJlbnQgdXNpbmcgYHQudGVzdCgpYCwgb3IgbWF5YmUgdGhlIG1lYW4gYWNyb3NzIG11bHRpcGxlIGdyb3VwcyBhcmUgZGlmZmVyZW50IHVzaW5nIGBhbm92YSgpYCAoeW91IG1heSBoYXZlIHRvIHBpdm90IHlvdXIgZGF0YSBmb3IgdGhlIGxhdHRlciB0d28pLgogICAgLSAgIFlvdSBjb3VsZCB1c2UgYGxtKClgIHRvIHRlc3QgZm9yIHNpZ25pZmljYW5jZSBvZiByZWdyZXNzaW9uIGNvZWZmaWNpZW50cy4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU3RhcnQgeW91ciB3b3JrIGJlbG93IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+Cgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKIyMjIDMuMzogSW52ZXN0aWdhdGUgWW91ciBNb2RlbCAoMyBwb2ludHMpCgpQcm9kdWNlIHNvbWV0aGluZyByZWxldmFudCBmcm9tIHlvdXIgZml0dGVkIG1vZGVsOiBlaXRoZXIgcHJlZGljdGlvbnMgb24gWSwgb3IgYSBzaW5nbGUgdmFsdWUgbGlrZSBhIHJlZ3Jlc3Npb24gY29lZmZpY2llbnQgb3IgYSBwLXZhbHVlLgoKLSAgIEJlIHN1cmUgdG8gaW5kaWNhdGUgaW4gd3JpdGluZyB3aGF0IHlvdSBjaG9zZSB0byBwcm9kdWNlLgotICAgWW91ciBjb2RlIHNob3VsZCBlaXRoZXIgb3V0cHV0IGEgdGliYmxlIChpbiB3aGljaCBjYXNlIHlvdSBzaG91bGQgaW5kaWNhdGUgdGhlIGNvbHVtbiB0aGF0IGNvbnRhaW5zIHRoZSB0aGluZyB5b3UncmUgbG9va2luZyBmb3IpLCBvciB0aGUgdGhpbmcgeW91J3JlIGxvb2tpbmcgZm9yIGl0c2VsZi4KLSAgIE9idGFpbiB5b3VyIHJlc3VsdHMgdXNpbmcgdGhlIGBicm9vbWAgcGFja2FnZSBpZiBwb3NzaWJsZS4gSWYgeW91ciBtb2RlbCBpcyBub3QgY29tcGF0aWJsZSB3aXRoIHRoZSBicm9vbSBmdW5jdGlvbiB5b3UncmUgbmVlZGluZywgdGhlbiB5b3UgY2FuIG9idGFpbiB5b3VyIHJlc3VsdHMgYnkgc29tZSBvdGhlciBtZWFucywgYnV0IGZpcnN0IGluZGljYXRlIHdoaWNoIGJyb29tIGZ1bmN0aW9uIGlzIG5vdCBjb21wYXRpYmxlLgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBTdGFydCB5b3VyIHdvcmsgYmVsb3cgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgojIFRhc2sgNDogUmVhZGluZyBhbmQgd3JpdGluZyBkYXRhCgpHZXQgc2V0IHVwIGZvciB0aGlzIGV4ZXJjaXNlIGJ5IG1ha2luZyBhIGZvbGRlciBjYWxsZWQgYG91dHB1dGAgaW4gdGhlIHRvcCBsZXZlbCBvZiB5b3VyIHByb2plY3QgZm9sZGVyIC8gcmVwb3NpdG9yeS4gWW91J2xsIGJlIHNhdmluZyB0aGluZ3MgdGhlcmUuCgojIyMgNC4xIE91dHB1dCBVc2luZyBgaGVyZSgpYCAoMyBwb2ludHMpCgpUYWtlIGEgc3VtbWFyeSB0YWJsZSB0aGF0IHlvdSBtYWRlIGZyb20gVGFzayAyLjEsIGFuZCB3cml0ZSBpdCBhcyBhIGNzdiBmaWxlIGluIHlvdXIgYG91dHB1dGAgZm9sZGVyLiBVc2UgdGhlIGBoZXJlOjpoZXJlKClgIGZ1bmN0aW9uLgoKLSAgICoqUm9idXN0bmVzcyBjcml0ZXJpYSoqOiBZb3Ugc2hvdWxkIGJlIGFibGUgdG8gbW92ZSB5b3VyIE1pbmkgUHJvamVjdCByZXBvc2l0b3J5IC8gcHJvamVjdCBmb2xkZXIgdG8gc29tZSBvdGhlciBsb2NhdGlvbiBvbiB5b3VyIGNvbXB1dGVyLCBvciBtb3ZlIHRoaXMgdmVyeSBSbWQgZmlsZSB0byBhbm90aGVyIGxvY2F0aW9uIHdpdGhpbiB5b3VyIHByb2plY3QgcmVwb3NpdG9yeSAvIGZvbGRlciwgYW5kIHlvdXIgY29kZSBzaG91bGQgc3RpbGwgd29yay4KLSAgICoqUmVwcm9kdWNpYmlsaXR5IGNyaXRlcmlhKio6IFlvdSBzaG91bGQgYmUgYWJsZSB0byBkZWxldGUgdGhlIGNzdiBmaWxlLCBhbmQgcmVtYWtlIGl0IHNpbXBseSBieSBrbml0dGluZyB0aGlzIFJtZCBmaWxlLgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBTdGFydCB5b3VyIHdvcmsgYmVsb3cgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCjwhLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+CgojIyMgNC4yIElucHV0IFVzaW5nIGBoZXJlKClgICgzIHBvaW50cykKCldyaXRlIHlvdXIgbW9kZWwgb2JqZWN0IGZyb20gVGFzayAzLjIgdG8gYW4gUiBiaW5hcnkgZmlsZSAoYW4gUkRTKSwgYW5kIGxvYWQgaXQgYWdhaW4uIEJlIHN1cmUgdG8gc2F2ZSB0aGUgYmluYXJ5IGZpbGUgaW4geW91ciBgb3V0cHV0YCBmb2xkZXIuIFVzZSB0aGUgZnVuY3Rpb25zIGBzYXZlUkRTKClgIGFuZCBgcmVhZFJEUygpYC4KCi0gICBUaGUgc2FtZSByb2J1c3RuZXNzIGFuZCByZXByb2R1Y2liaWxpdHkgY3JpdGVyaWEgYXMgaW4gNC4xIGFwcGx5IGhlcmUuCgo8IS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFN0YXJ0IHlvdXIgd29yayBiZWxvdyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPgoKPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLT4KCgoKCiMgVGFzayA1OiBUaWR5IFlvdXIgU3VibWlzc2lvbiBPdmVyYWxsIAoKQ2hlY2sgb3ZlciB5b3VyIGRvY3VtZW50IGFuZCBHaXRIdWIgcmVwb3NpdG9yeSBmb3IgdGhlIGZvbGxvd2luZzogCgojIyMgNS4xOiBDb2hlcmVuY2UgKiooMiBwb2ludHMpKioKClRoZSBkb2N1bWVudCBzaG91bGQgcmVhZCBzZW5zaWJseSBmcm9tIHRvcCB0byBib3R0b20sIHdpdGggbm8gbWFqb3IgY29udGludWl0eSBlcnJvcnMuIEFuIGV4YW1wbGUgb2YgYSBtYWpvciBjb250aW51aXR5IGVycm9yIGlzIGhhdmluZyBhIGRhdGEgc2V0IGxpc3RlZCBmb3IgVGFzayAzIHRoYXQgaXMgbm90IHBhcnQgb2Ygb25lIG9mIHRoZSBkYXRhIHNldHMgbGlzdGVkIGluIFRhc2sgMS4gCgojIyMgNS4yOiBFcnJvci1mcmVlIGNvZGUgKiooMiBwb2ludHMpKioKCkZvciBmdWxsIG1hcmtzLCBhbGwgY29kZSBpbiB0aGUgZG9jdW1lbnQgc2hvdWxkIHJ1biB3aXRob3V0IGVycm9yIGFuZCBiZSBjb21wbGV0ZWx5IHJlcHJvZHVjaWJsZS4gCgojIyMgNS4zIFJFQURNRSAqKig2IHBvaW50cykqKgoKVGhlcmUgc2hvdWxkIGJlIGEgZmlsZSBuYW1lZCBgUkVBRE1FLm1kYCBhdCB0aGUgdG9wIGxldmVsIG9mIHlvdXIgcmVwb3NpdG9yeS4gSXRzIGNvbnRlbnRzIHNob3VsZCBhdXRvbWF0aWNhbGx5IGFwcGVhciB3aGVuIHlvdSB2aXNpdCB0aGUgcmVwb3NpdG9yeSBvbiBHaXRIdWIuCgpNaW5pbXVtIGNvbnRlbnRzIG9mIHRoZSBSRUFETUUgZmlsZToKCi0gICBJbiBhIHNlbnRlbmNlIG9yIHR3bywgZXhwbGFpbnMgd2hhdCB0aGlzIHJlcG9zaXRvcnkgaXMsIHNvIHRoYXQgZnV0dXJlLXlvdSBvciBzb21lb25lIGVsc2Ugc3R1bWJsaW5nIG9uIHlvdXIgcmVwb3NpdG9yeSBjYW4gYmUgb3JpZW50ZWQgdG8gdGhlIHJlcG9zaXRvcnkuCi0gICBMaXN0IHRoZSBmaWxlcy9mb2xkZXJzIGNvbnRhaW5lZCBpbiB0aGUgcmVwb3NpdG9yeQotICAgSW4gYSBzZW50ZW5jZSBvciB0d28sIGJyaWVmbHkgZXhwbGFpbnMgaG93IHRvIGVuZ2FnZSB3aXRoIHRoZSByZXBvc2l0b3J5LiBZb3UgY2FuIGFzc3VtZSB0aGUgcGVyc29uIHJlYWRpbmcga25vd3MgdGhlIG1hdGVyaWFsIGZyb20gU1RBVCA1NDVBLiBCYXNpY2FsbHksIGlmIGEgdmlzaXRvciB0byB5b3VyIHJlcG9zaXRvcnkgd2FudHMgdG8gZXhwbG9yZSB5b3VyIHByb2plY3QsIHdoYXQgc2hvdWxkIHRoZXkga25vdz8gSG93IGNhbiB0aGV5IHJlcHJvZHVjZSB5b3VyIHJlcG9ydD8KCgoKCiMjIyA1LjQgR2VuZXJhdGl2ZSBBSSBEaXNjbG9zdXJlICAqKigzIHBvaW50cykqKgoKSW4gdGhpcyBjb3Vyc2UsIEdlbmVyYXRpdmUgQUkgY2FuIGJlIHVzZWQgaW4gdGhlIGZvbGxvd2luZyB3YXlzOgoKLSAgIHRvIGNsYXJpZnkgY29uY2VwdHMgZGlzY3Vzc2VkIGluIGNsYXNzCgotICAgYXMgYW4gImFkdmFuY2VkIHNlYXJjaCBlbmdpbmUiIChpLmUuLCBzZWFyY2hpbmcgZXJyb3IgY29kZXMpCgotICAgZGVidWdnaW5nIGNvZGUgdGhhdCBzdHVkZW50cyB3cm90ZSBhbmQgYXR0ZW1wdGVkIHRvIGRlYnVnIG9uIHRoZWlyIG93bgoKR2VuZXJhdGl2ZSBBSSAqKkNBTk5PVCoqIGJlIHVzZWQgdG8gZ2VuZXJhdGUgdGV4dCBvciBjb2RlIChpbmNsdWRpbmcgY29tbWVudHMpIGZyb20gc2NyYXRjaC4gCgpBbnkgdXNlIG9mIEdlbmVyYXRpdmUgQUkgbXVzdCBiZSBkaXNjbG9zZWQuIAoKKipUbyBkaXNjbG9zZSB5b3VyIHVzZSwgcGxlYXNlIGNvcHkgYW5kIHBhc3RlIHRoZSBmb2xsb3dpbmcgdGVtcGxhdGUgaW50byB0aGUgUkVBRE1FIG9mIHlvdXIgR2l0SHViIFJlcG9zaXRvcnkgYW5kIGZpbGwgb3V0IHRoZSByZWxldmFudCBkZXRhaWxzKiogW2luIHNxdWFyZSBicmFja2V0c10uIEJFIFNQRUNJRklDLiBTYXlpbmcgeW91IHVzZWQgaXQgdG8gZGVidWcgeW91ciBjb2RlIGlzIG5vdCBlbm91Z2guIEV4cGxpY2l0bHkgZGVzY3JpYmUgd2hlcmUgeW91IGdvdCBzdHVjayAKCkhlcmUgaXMgYW4gZXhhbXBsZSBvZiBhIHNwZWNpZmljLCBleHBsaWNpdCBkZWJ1ZzogCgo+ICJJIGhhZCB0aGUgZXJyb3IgYGF0dGVtcHQgdG8gYXBwbHkgbm9uLWZ1bmN0aW9uYCBhZnRlciBydW5uaW5nIG15IGNvZGUuIEkgdXNlZCBDbGF1ZGUgdG8gaGVscCBtZSBpZGVudGlmeSB0aGF0IHRoaXMgZXJyb3Igd2FzIGR1ZSB0byBtZSBhdHRlbXB0aW5nIHRvIG11bHRpcGx5IHR3byBudW1iZXJzIHRvZ2V0aGVyIHdpdGhvdXQgdGhlIHVzZSBvZiBhIGAqYCwgaS5lLiBgKDIpKDMpYCBpbnN0ZWFkIG9mIGAyKjNgLiIgCgpgYGBtYXJrZG93bgoKIyMgR2VuZXJhdGl2ZSBBSSBTdGF0ZW1lbnQgCgpHZW5lcmF0aXZlIEFJICh0aHJvdWdoIFtMSVNUIE1PREVMUyBVU0VELCBpLmUuIENoYXRHUFQsIENvUGlsb3QpXSB3YXMgdXNlZCB0byAKaGVscCBtZSBjb21wbGV0ZSAgdGhpcyBhc3NpZ25tZW50IGluIHRoZSBmb2xsb3dpbmcgd2F5cy4gCgoxLiBbRGVzY3JpYmUgaGVyZV0KCjIuIFtEZXNjcmliZSBoZXJlXQoKLi4uCgpJIGFmZmlybSB0aGF0IEdlbmVyYXRpdmUgQUkgd2FzIG5vdCB1c2VkIHRvIGdlbmVyYXRlIHRleHQsIGNvZGUsIG9yIGNvbW1lbnRzIGZvciAKbXkgYXNzZXNzbWVudHMuIApgYGAKCklmIHlvdSBkaWQgbm90IHVzZSBHZW5lcmF0aXZlIEFJLCBwbGVhc2UgaW5jbHVkZSB0aGUgZm9sbG93aW5nIGluIHlvdXIgUkVBRE1FOgoKYGBgbWFya2Rvd24KCiMjIEdlbmVyYXRpdmUgQUkgU3RhdGVtZW50IAoKR2VuZXJhdGl2ZSBBSSB3YXMgbm90IHVzZWQgaW4gYW55IHdheSB0aHJvdWdob3V0IHRoaXMgYXNzaWdubWVudC4KCmBgYAoKCkFzc2Vzc21lbnRzIHN1c3BlY3RlZCBvZiBoYXZpbmcgQUktZ2VuZXJhdGVkIHRleHQgYW5kL29yIGNvZGUsIG9yIGFzc2lnbm1lbnRzIHdoZXJlIHRoZSBHZW5lcmF0aXZlIEFJIHVzZSB3YXMgbm90IGRpc2Nsb3NlZCwgd2lsbCBiZSBmbGFnZ2VkIGFuZCB0ZW1wb3JhcmlseSBhc3NpZ25lZCBhIGdyYWRlIG9mIHplcm8uIFN0dWRlbnRzIHdpbGwgYmUgcmVxdWlyZWQgdG8gbWVldCB3aXRoIHRoZSBpbnN0cnVjdG9yIHRvIHJlY2VpdmUgYSBncmFkZS4KCgoKCiMjIyA1LjUgT3V0cHV0ICoqKDQgcG9pbnRzKSoqCgpBbGwgb3V0cHV0IG9uIEdpdEh1YiBpcyByZWFkYWJsZSwgcmVjZW50IGFuZCByZWxldmFudDoKCi0gICBBbGwgYC5SbWRgIGZpbGVzIGhhdmUgYmVlbiBga25pdGB0ZWQgdG8gdGhlaXIgb3V0cHV0IGAubWRgIGZpbGVzLiAKLSAgIEFsbCBrbml0dGVkIGAubWRgIGZpbGVzIGFyZSB2aWV3YWJsZSB3aXRob3V0IGVycm9ycyBvbiBHaXRodWIuIEV4YW1wbGVzIG9mIGVycm9yczogTWlzc2luZyBwbG90cywgIlNvcnJ5IGFib3V0IHRoYXQsIGJ1dCB3ZSBjYW4ndCBzaG93IGZpbGVzIHRoYXQgYXJlIHRoaXMgYmlnIHJpZ2h0IG5vdyIgbWVzc2FnZXMsIGVycm9yIG1lc3NhZ2VzIGZyb20gYnJva2VuIFIgY29kZQotICAgQWxsIG9mIHRoZXNlIG91dHB1dCBmaWxlcyBhcmUgdXAtdG8tZGF0ZSAtLSB0aGF0IGlzLCB0aGV5IGhhdmVuJ3QgZmFsbGVuIGJlaGluZCBhZnRlciB0aGUgc291cmNlIChgLlJtZGApIGZpbGVzIGhhdmUgYmVlbiB1cGRhdGVkLgotICAgVGhlcmUgc2hvdWxkIGJlIG5vIHJlbGljIG91dHB1dCBmaWxlcy4gRm9yIGV4YW1wbGUsIGlmIHlvdSB3ZXJlIGtuaXR0aW5nIGFuIGAuUm1kYCB0byBgLmh0bWxgLCBidXQgdGhlbiBjaGFuZ2VkIHRoZSBvdXRwdXQgdG8gYmUgb25seSBhIG1hcmtkb3duIGZpbGUsIHRoZW4gdGhlIGAuaHRtbGAgZmlsZSBpcyBhIHJlbGljIGFuZCBzaG91bGQgYmUgZGVsZXRlZC4KCgoKCiMgU3RlcCA0OiBTdWJtaXNzaW9uIAoKIyMjIDQuMTogVGFnIGEgUmVsZWFzZSAqKigxIHBvaW50KSoqCgpUbyBzdWJtaXQgdGhpcyBtaWxlc3RvbmUsIHRhZyBhIHJlbGVhc2Ugb24gR2l0SHViIGFuZCBzdWJtaXQgdGhlIGxpbmsgdG8gQ2FudmFzLiAK');
+        if (!response.ok) throw new Error('Network response failed');
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = 'mda_deliverable2.Rmd';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.dispatchEvent(new MouseEvent('click'));
+        document.body.removeChild(a);
+        setTimeout(() => {
+          window.URL.revokeObjectURL(blobUrl);
+        }, 100);
+        return false;
+      } catch (error) {
+        console.error('Download failed:', error);
+        alert('Download failed. Please try again.');
+      }
+    }
+    downloadFile(event);
+  " output_extension=".Rmd"><i class="fa fa-save"></i> Download .Rmd File</button>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.1     ✔ stringr   1.5.1
-✔ ggplot2   4.0.2     ✔ tibble    3.3.0
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.1.0     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
-<ol start="3" type="1">
-<li>Make a repository in our Github Classroom Organization. You can do this by following the steps found on canvas in the entry called <a href="https://canvas.ubc.ca/courses/158528/pages/mda-create-a-repository">MDA: Create a repository</a>. One completed, your repository should automatically be listed as part of the stat545ubc-2025 Organization.</li>
-</ol>
-</section>
-<section id="instructions" class="level1">
-<h1>Instructions</h1>
-<section id="for-both-milestones" class="level3">
-<h3 class="anchored" data-anchor-id="for-both-milestones">For Both Milestones</h3>
-<ul>
-<li><p>Each milestone has explicit tasks. Tasks that are more challenging will often be allocated more points.</p></li>
-<li><p>Each milestone will be also graded for reproducibility, cleanliness, and coherence of the overall Github submission.</p></li>
-<li><p>While the two milestones will be submitted as independent deliverables, the analysis itself is a continuum - think of it as two chapters to a story. Each chapter, or in this case, portion of your analysis, should be easily followed through by someone unfamiliar with the content. <a href="https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R.html">Here</a> is a good resource for what constitutes “good code”. Learning good coding practices early in your career will save you hassle later on!</p></li>
-<li><p>The milestones will be equally weighted.</p></li>
-</ul>
-</section>
-<section id="for-milestone-1" class="level3">
-<h3 class="anchored" data-anchor-id="for-milestone-1">For Milestone 1</h3>
-<p><strong>To complete this milestone</strong>, edit this .Rmd file directly. Fill in the sections that are tagged with <code>&lt;!--- start your work below ---&gt;</code>.</p>
-<p><strong>To submit this milestone</strong>, make sure to knit this <code>.Rmd</code> file to an <code>.md</code> file by changing the YAML output settings from <code>output: html_document</code> to <code>output: github_document</code>. Commit and push all of your work to the mini-analysis GitHub repository you made earlier, and tag a release on GitHub. Then, submit a link to your tagged release on canvas.</p>
-<p><strong>Points</strong>: This milestone is worth 36 points: 30 for your analysis, and 6 for overall reproducibility, cleanliness, and coherence of the Github submission.</p>
-</section>
-</section>
-<section id="learning-objectives" class="level1">
-<h1>Learning Objectives</h1>
-<p>By the end of this milestone, you should:</p>
-<ul>
-<li>Become familiar with your dataset of choosing</li>
-<li>Select 4 questions that you would like to answer with your data</li>
-<li>Generate a reproducible and clear report using R Markdown</li>
-<li>Become familiar with manipulating and summarizing your data in tibbles using <code>dplyr</code>, with a research question in mind.</li>
-</ul>
-</section>
-<section id="task-1-choose-your-favorite-dataset" class="level1">
-<h1>Task 1: Choose your favorite dataset</h1>
-<p>The <code>datateachr</code> package by Hayley Boyce and Jordan Bourak currently composed of 7 semi-tidy datasets for educational purposes. Here is a brief description of each dataset:</p>
-<ul>
-<li><p><em>apt_buildings</em>: Acquired courtesy of The City of Toronto’s Open Data Portal. It currently has 3455 rows and 37 columns.</p></li>
-<li><p><em>building_permits</em>: Acquired courtesy of The City of Vancouver’s Open Data Portal. It currently has 20680 rows and 14 columns.</p></li>
-<li><p><em>cancer_sample</em>: Acquired courtesy of UCI Machine Learning Repository. It currently has 569 rows and 32 columns.</p></li>
-<li><p><em>flow_sample</em>: Acquired courtesy of The Government of Canada’s Historical Hydrometric Database. It currently has 218 rows and 7 columns.</p></li>
-<li><p><em>parking_meters</em>: Acquired courtesy of The City of Vancouver’s Open Data Portal. It currently has 10032 rows and 22 columns.</p></li>
-<li><p><em>steam_games</em>: Acquired courtesy of Kaggle. It currently has 40833 rows and 21 columns.</p></li>
-<li><p><em>vancouver_trees</em>: Acquired courtesy of The City of Vancouver’s Open Data Portal. It currently has 146611 rows and 20 columns.</p></li>
-</ul>
-<p><strong>Things to keep in mind</strong></p>
-<ul>
-<li><p>We hope that this project will serve as practice for carrying our your own <em>independent</em> data analysis. Remember to comment your code, be explicit about what you are doing, and write notes in this markdown document when you feel that context is required. As you advance in the project, prompts and hints to do this will be diminished - it’ll be up to you!</p></li>
-<li><p>Before choosing a dataset, you should always keep in mind <strong>your goal</strong>, or in other ways, <em>what you wish to achieve with this data</em>. This mini data-analysis project focuses on <em>data wrangling</em>, <em>tidying</em>, and <em>visualization</em>. In short, it’s a way for you to get your feet wet with exploring data on your own.</p></li>
-</ul>
-<p>And that is exactly the first thing that you will do!</p>
-<section id="choose-4-datasets-1-point" class="level3">
-<h3 class="anchored" data-anchor-id="choose-4-datasets-1-point">1.1: Choose 4 Datasets <strong>(1 point)</strong></h3>
-<p>Out of the 7 datasets available in the <code>datateachr</code> package, choose <strong>4</strong> that appeal to you based on their description. Write your choices below:</p>
-<p><strong>Note</strong>: We encourage you to use the ones in the <code>datateachr</code> package, but if you have a dataset that you’d really like to use, you can include it here. But, please check with a member of the teaching team to see whether the dataset is of appropriate complexity. Also, include a <strong>brief</strong> description of the dataset here to help the teaching team understand your data.</p>
-<!-------------------------- Start your work below ---------------------------->
-<p>1: Write 1st choice here 2: Write 2nd choice here 3: Write 3rd choice here 4: Write 4th choice here</p>
-<!----------------------------------------------------------------------------->
-</section>
-<section id="explore-the-data-6-points" class="level3">
-<h3 class="anchored" data-anchor-id="explore-the-data-6-points">1.2: Explore the Data <strong>(6 points)</strong></h3>
-<p>One way to narrowing down your selection is to <em>explore</em> the datasets. Use your knowledge of <code>dplyr</code> to find out at least <em>1</em> attribute about each of these datasets (an attribute is something such as number of rows, variables, class types of variables…), and summarize two variables (for example, looking at the levels, or calculating the mean). Write a sentence or two that states the attribute you found, and the summaries of the variables you calculated.</p>
-<p>You must use at least one <code>dplyr</code> function for each task. You can repeat tasks across the data sets.</p>
-<!-------------------------- Start your work below ---------------------------->
-<section id="dataset-1" class="level4">
-<h4 class="anchored" data-anchor-id="dataset-1">Dataset 1</h4>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### EXPLORE DATASET 1 HERE </span><span class="al">###</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="dataset-2" class="level4">
-<h4 class="anchored" data-anchor-id="dataset-2">Dataset 2</h4>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### EXPLORE DATASET 2 HERE </span><span class="al">###</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="dataset-3" class="level4">
-<h4 class="anchored" data-anchor-id="dataset-3">Dataset 3</h4>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">### EXPLORE DATASET 3 HERE </span><span class="al">###</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="dataset-4" class="level4">
-<h4 class="anchored" data-anchor-id="dataset-4">Dataset 4</h4>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">### EXPLORE DATASET 4 HERE </span><span class="al">###</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<!----------------------------------------------------------------------------->
-</section>
-</section>
-<section id="choose-1-dataset-1-point" class="level3">
-<h3 class="anchored" data-anchor-id="choose-1-dataset-1-point">1.3: Choose 1 Dataset <strong>(1 point)</strong></h3>
-<p>Now that you’ve explored the 4 datasets that you were initially most interested in, let’s narrow it down to 1. What lead you to choose this one? Briefly explain your choice below.</p>
-<!-------------------------- Start your work below ---------------------------->
-<!----------------------------------------------------------------------------->
-</section>
-<section id="research-question-2-points" class="level3">
-<h3 class="anchored" data-anchor-id="research-question-2-points">1.4: Research Question <strong>(2 points)</strong></h3>
-<p>Time for a final decision! Going back to the beginning, it’s important to have an <em>end goal</em> in mind. For example, if I had chosen a <code>titanic</code> dataset for my project, I might’ve wanted to explore the relationship between survival and other variables. Try to think of 1 research question that you would want to answer with your dataset. Note it down below. You can change it later.</p>
-<!-------------------------- Start your work below ---------------------------->
-<!----------------------------------------------------------------------------->
-</section>
-</section>
-<section id="important-note" class="level1">
-<h1>Important note</h1>
-<p>Read Tasks 2 and 3 <em>fully</em> before starting to complete either of them. Probably also a good point to grab a coffee to get ready for the fun part!</p>
-<p>This project is semi-guided, but meant to be <em>independent</em>. For this reason, you will complete tasks 2 and 3 below (under the <strong>START HERE</strong> mark) as if you were writing your own exploratory data analysis report, and this guidance never existed! Feel free to add a brief introduction section to your project, format the document with markdown syntax as you deem appropriate, and structure the analysis as you deem appropriate. If you feel lost, you can find a sample data analysis <a href="https://www.kaggle.com/headsortails/tidy-titarnic">here</a> to have a better idea. However, bear in mind that it is <strong>just an example</strong> and you will not be required to have that level of complexity in your project.</p>
-</section>
-<section id="task-2-further-exploring-your-chosen-dataset" class="level1">
-<h1>Task 2: Further Exploring Your Chosen Dataset</h1>
-<p>If we rewind and go back to the learning objectives, you’ll see that by the end of this deliverable, you should have formulated <em>4</em> research questions about your data that you may want to answer during your project. However, it may be handy to do some more exploration on your dataset of choice before creating these questions - by looking at the data, you may get more ideas. <strong>Before you start this task, read all instructions carefully until you reach START HERE under Task 3</strong>.</p>
-<section id="complete-4-tasks-12-points" class="level3">
-<h3 class="anchored" data-anchor-id="complete-4-tasks-12-points">2.1: Complete 4 Tasks <strong>(12 points)</strong></h3>
-<p>Complete <em>4 out of the following 8 exercises</em> to dive deeper into your data. All datasets are different and therefore, not all of these tasks may make sense for your data - which is why you should only answer <em>4</em>.</p>
-<p>Make sure that you’re using <code>dplyr</code> and <code>ggplot2</code> rather than base R for this task. Outside of this project, you may find that you prefer using base R functions for certain tasks, and that’s just fine! But part of this project is for you to practice the tools we learned in class, which is dplyr and ggplot2.</p>
-<ol type="A">
-<li>Plot the distribution of a numeric variable using a histogram.</li>
-<li>Create a new variable based on other variables in your data (only if it makes sense)</li>
-<li>Investigate how many missing values there are per variable.</li>
-<li>Explore the relationship between 2 variables in a scatterplot.</li>
-<li>Filter observations in your data according to your own criteria. Think of what you’d like to explore - again, if this was the <code>titanic</code> dataset, I may want to narrow my search down to passengers born in a particular year…</li>
-<li>Create a table of the counts of each level within a categorical variable</li>
-<li>Make a new tibble with a subset of your data, with variables and observations that you are interested in exploring.</li>
-<li>Summarize the mean of a numeric variable across the levels of another categorical variable</li>
-<li>Create a plot of the counts of each level within a categorical variable (a different variable than used in F) using a bar chart.</li>
-</ol>
-<p>Task 1: Option [FILLMEIN] <!-------------------------- Start your work below ----------------------------></p>
-<!----------------------------------------------------------------------------->
-<p>Task 2: Option [FILLMEIN] <!-------------------------- Start your work below ----------------------------></p>
-<!----------------------------------------------------------------------------->
-<p>Task 3: Option [FILLMEIN] <!-------------------------- Start your work below ----------------------------></p>
-<!----------------------------------------------------------------------------->
-<p>Task 4: Option [FILLMEIN] <!-------------------------- Start your work below ----------------------------></p>
-<!----------------------------------------------------------------------------->
-</section>
-<section id="explain-the-four-chosen-tasks-4-points" class="level3">
-<h3 class="anchored" data-anchor-id="explain-the-four-chosen-tasks-4-points">2.2: Explain the Four Chosen Tasks <strong>(4 points)</strong></h3>
-<p>For each of the 4 exercises that you complete, provide a <em>brief explanation</em> (a sentence or two) of why you chose that exercise in relation to your data (in other words, why does it make sense to do that?).</p>
-</section>
-</section>
-<section id="task-3-narrow-your-research-topic" class="level1">
-<h1>Task 3: Narrow Your Research Topic</h1>
-<section id="choose-4-research-questions-4-points" class="level3">
-<h3 class="anchored" data-anchor-id="choose-4-research-questions-4-points">3.0: Choose 4 Research Questions <strong>(4 points)</strong></h3>
-<p>So far, you have chosen a dataset and gotten familiar with it through exploring the data. You have also brainstormed one research question that interested you (Task 1.4). Now it’s time to pick 4 research questions that you would like to explore in Milestone 2! Write the 4 questions and any additional comments below.</p>
-<!--- *****START HERE***** --->
-<ol type="1">
-<li></li>
-<li></li>
-<li></li>
-<li><!-----------------------------></li>
-</ol>
-</section>
-</section>
-<section id="overall-reproducibilitycleanlinesscoherence-checklist" class="level1">
-<h1>Overall reproducibility/Cleanliness/Coherence Checklist</h1>
-<section id="coherence-0.5-points" class="level3">
-<h3 class="anchored" data-anchor-id="coherence-0.5-points">Coherence (0.5 points)</h3>
-<p>The document should read sensibly from top to bottom, with no major continuity errors. An example of a major continuity error is having a data set listed for Task 3 that is not part of one of the data sets listed in Task 1.</p>
-</section>
-<section id="error-free-code-3-points" class="level3">
-<h3 class="anchored" data-anchor-id="error-free-code-3-points">Error-free code (3 points)</h3>
-<p>For full marks, all code in the document should run without error. 1 point deduction if most code runs without error, and 2 points deduction if more than 50% of the code throws an error.</p>
-</section>
-<section id="main-readme-1-point" class="level3">
-<h3 class="anchored" data-anchor-id="main-readme-1-point">Main README (1 point)</h3>
-<p>There should be a file named <code>README.md</code> at the top level of your repository. Its contents should automatically appear when you visit the repository on GitHub.</p>
-<p>Minimum contents of the README file:</p>
-<ul>
-<li>In a sentence or two, explains what this repository is, so that future-you or someone else stumbling on your repository can be oriented to the repository.</li>
-<li>List the files contained in the repository</li>
-<li>In a sentence or two, briefly explains how to engage with the repository. You can assume the person reading knows the material from STAT 545A. Basically, if a visitor to your repository wants to explore your project, what should they know?</li>
-</ul>
-<p>Once you get in the habit of making README files, and seeing more README files in other projects, you’ll wonder how you ever got by without them! They are tremendously helpful.</p>
-</section>
-<section id="output-1-point" class="level3">
-<h3 class="anchored" data-anchor-id="output-1-point">Output (1 point)</h3>
-<p>All output is readable, recent and relevant:</p>
-<ul>
-<li>All Rmd files have been <code>knit</code>ted to their output md files.</li>
-<li>All knitted md files are viewable without errors on Github. Examples of errors: Missing plots, “Sorry about that, but we can’t show files that are this big right now” messages, error messages from broken R code</li>
-<li>All of these output files are up-to-date – that is, they haven’t fallen behind after the source (Rmd) files have been updated.</li>
-<li>There should be no relic output files. For example, if you were knitting an Rmd to html, but then changed the output to be only a markdown file, then the html file is a relic and should be deleted.</li>
-</ul>
-<p>(0.5 point deduction if any of the above criteria are not met. 1 point deduction if most or all of the above criteria are not met.)</p>
-<p>Our recommendation: right before submission, delete all output files, and re-knit each milestone’s Rmd file, so that everything is up to date and relevant. Then, after your final commit and push to Github, CHECK on Github to make sure that everything looks the way you intended!</p>
-</section>
-<section id="tagged-release-0.5-points" class="level3">
-<h3 class="anchored" data-anchor-id="tagged-release-0.5-points">Tagged release (0.5 points)</h3>
-<p>You’ve tagged a release for Milestone 1.</p>
+<p><br></p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
