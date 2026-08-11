@@ -1,6 +1,12 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "**/*.qmd"
+    - "!webpages/worksheets/worksheets_blank/"     # don't render anything in this folder
+  resources:
+    - "webpages/worksheets/worksheets_blank/*.ipynb"
   
 website:
 
@@ -19,7 +25,7 @@ website:
       - sidebar:syllabus
       - href: webpages/lectures.qmd
         text: "Content and Schedule"
-      - href: webpages/worksheets.qmd
+      - href: webpages/worksheets/index.qmd
         text: "Worksheets"
       - sidebar:assignmentsA
 #      - sidebar:assignmentsB

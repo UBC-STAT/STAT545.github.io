@@ -91,7 +91,7 @@ You will begin by creating a copy of [this template repository](https://github.c
 
 ### Complete the Assignment
 
-You will be working on the `mda-deliverable1.Rmd` file for this assessment.
+You will be working on the `mda_deliverable1.Rmd` file for this assessment.
 
 Fill in the sections that are tagged with `<!--- start your work below --->`.
 

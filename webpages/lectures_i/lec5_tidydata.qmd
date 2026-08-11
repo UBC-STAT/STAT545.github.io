@@ -335,6 +335,13 @@ As we’ve seen, tidy data is often very helpful. But there are also times when 
 
 In summary, tidiness is a very useful concept, and tidying data is often useful. But we should remember that absolutes are few and far between in data science and statistics. Just because tidying data is *often* useful, doesn’t mean it’s *always* useful.
 
+
+## Case Study (Optional)
+
+If you'd like to see a worked-through example of tidying data, check out [this case study on the Great British Bakeoff](lecture_files/bakeoff_solution.Rmd) 
+
+
+
 ## Worksheet A4
 
 Spend the rest of this class and next class working through Worksheet A4.

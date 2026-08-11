@@ -329,7 +329,7 @@ Those are the basics of RStudio! You will learn more as the course progresses.
 
 ## Worksheet A1
 
-Now it's your turn to use R! Work through Worksheet A1 on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.
+Now it's your turn to use R! Work through [Worksheet A1](../worksheets/index.qmd) on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.
 
 
 Some notes on Jupyter notebooks: 
@@ -354,7 +354,7 @@ Try:
 
 -   Googling the problem (i.e., R dataframe can't rename columns)
 
--   Search [Stackoverflow](http://stackoverflow.com/) and include the `[r]` tag. Or the `[ggplot2]` tag. Or the `[plyr]` tag. You get the idea.
+-   Search [StackOverflow](http://stackoverflow.com/) and include the `[r]` tag. Or the `[ggplot2]` tag. Or the `[plyr]` tag. You get the idea.
 
 ::: callout-caution
 **Beware of AI tools: sometimes they're helpful, and sometimes they're not.**
