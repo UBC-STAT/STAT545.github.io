@@ -1,59 +1,8 @@
 ---
-title: "Lecture 1B: Course Introduction and R"
+title: "Lecture 1B: Intro to R"
 date-modified: last-modified
 ---
 
-## Welcome to STAT545!
-
-For today's lecture, we are going to go through the some important information related to the course and jump right into some coding in R using an interactive worksheet and Jupyter Notebooks.
-
-### Course Platforms
-
-We will be using various technologies throughout this course which you should familiarize yourself with. The main platforms we'll be using are;
-
--   The course website (this one!),
-
--   Canvas (for submitting assignments),
-
--   Slack (for communications),
-
--   RStudio (for writing R code) [(](https://www.youtube.com/watch?v=dC2bRweVePo)[Video Here!](https://youtu.be/OYxDwybdlkY)[!)](https://www.youtube.com/watch?v=dC2bRweVePo),
-
--   GitHub (for version control and collaboration), and
-
--   Jupyter notebooks (for interactive worksheets) [(Video Here!)](https://youtu.be/CdISUthp8dk).
-
-If you've never used some of these before, that's absolutely OK. This course is made to guide you through the basics of many of these platforms.
-
-### Important Course Information
-
-All of the important information is in the syllabus, which you can navigate to at the top of this page. There are a few items I'd like to emphasize:
-
--   STAT 545 A has frequent worksheets. They are relatively straight forward and will guide you through the topics we talked about that week.
-
--   Everyone gets one "pass" for a late worksheet. After the first occurrence, a 0 will be awarded for any late worksheet.
-
--   STAT 545 A has a mini data analysis and collaborative project worth most of your marks. These are not graded on the basis of how sophisticated your statistical analysis is, but on the quality of your code and workflow. A grading rubric will be posted for each.
-
--   There is a zero tolerance policy for late projects and analyses.
-
--   Stay home if you're sick. Fill out an Academic Concession Self Declaration form (linked on Canvas) if you miss an assessment due to illness. Accommodations will be given on a case-by-case basis.
-
--   Bring a charged laptop to class!
-
--   All communications are to be done on Slack - do not email me questions unless they are of a sensitive nature (i.e., an academic concession form).
-
--   Don't plagiarize code or assessments. This includes copying directly from LLM's like ChatGPT.
-
-But please - read the syllabus :)
-
-### Lecture Flow
-
-Lectures for STAT545 are designed to be more interactive than a traditional statistics lecture. The class will begin with a short summary of the previous class, followed by an introduction to that day's topic. For most of the lectures, we will be going through the interactive worksheets (yes, the ones that you receive marks for and yes, prior to the deadline). This will give provide you with dedicated time to work on the assessments in class with access to the instructor and the TAs.
-
-Many lectures will have an accompanying video, which will be linked on the webpage and on [our STAT545 YouTube Playlist.](https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&si=sT-h1q8rTTKxs4vg)
-
-Lectures build on top of each other and it is crucial to stay on track as we progress through this course.
 
 ## Video Lecture
 

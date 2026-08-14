@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lecture 1B: Course Introduction and R – STAT545</title>
+<title>Lecture 1B: Intro to R – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -252,7 +252,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_i/lec1b_introR.html">Lecture 1B: Course Introduction and R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_i/lec1b_introR.html">Lecture 1B: Intro to R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -273,21 +273,15 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/lectures_i/lec1b_introR.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture 1B: Course Introduction and R</span></a>
+ <span class="menu-text">Lecture 1B: Intro to R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec2a_reproducibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
-  </div>
-</li>
+ <span class="menu-text">webpages/lectures_i/lec2a_reproducibility.qmd</span>
+  </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec2b_dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 3: Data Manipulation with dplyr</span></a>
-  </div>
-</li>
+ <span class="menu-text">webpages/lectures_i/lec2b_dplyr.qmd</span>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../webpages/lectures_i/lec3_versioncontrol.html" class="sidebar-item-text sidebar-link">
@@ -340,13 +334,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-stat545" id="toc-welcome-to-stat545" class="nav-link active" data-scroll-target="#welcome-to-stat545">Welcome to STAT545!</a>
-  <ul class="collapse">
-  <li><a href="#course-platforms" id="toc-course-platforms" class="nav-link" data-scroll-target="#course-platforms">Course Platforms</a></li>
-  <li><a href="#important-course-information" id="toc-important-course-information" class="nav-link" data-scroll-target="#important-course-information">Important Course Information</a></li>
-  <li><a href="#lecture-flow" id="toc-lecture-flow" class="nav-link" data-scroll-target="#lecture-flow">Lecture Flow</a></li>
-  </ul></li>
-  <li><a href="#video-lecture" id="toc-video-lecture" class="nav-link" data-scroll-target="#video-lecture">Video Lecture</a></li>
+  <li><a href="#video-lecture" id="toc-video-lecture" class="nav-link active" data-scroll-target="#video-lecture">Video Lecture</a></li>
   <li><a href="#coding-in-r-the-basics" id="toc-coding-in-r-the-basics" class="nav-link" data-scroll-target="#coding-in-r-the-basics">Coding in R: The Basics</a>
   <ul class="collapse">
   <li><a href="#calculations" id="toc-calculations" class="nav-link" data-scroll-target="#calculations">Calculations</a></li>
@@ -365,7 +353,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 1B: Course Introduction and R</h1>
+<h1 class="title">Lecture 1B: Intro to R</h1>
 </div>
 
 
@@ -377,7 +365,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 11, 2026</p>
+      <p class="date-modified">August 14, 2026</p>
     </div>
   </div>
     
@@ -388,44 +376,6 @@ window.Quarto = {
 </header>
 
 
-<section id="welcome-to-stat545" class="level2">
-<h2 class="anchored" data-anchor-id="welcome-to-stat545">Welcome to STAT545!</h2>
-<p>For today’s lecture, we are going to go through the some important information related to the course and jump right into some coding in R using an interactive worksheet and Jupyter Notebooks.</p>
-<section id="course-platforms" class="level3">
-<h3 class="anchored" data-anchor-id="course-platforms">Course Platforms</h3>
-<p>We will be using various technologies throughout this course which you should familiarize yourself with. The main platforms we’ll be using are;</p>
-<ul>
-<li><p>The course website (this one!),</p></li>
-<li><p>Canvas (for submitting assignments),</p></li>
-<li><p>Slack (for communications),</p></li>
-<li><p>RStudio (for writing R code) <a href="https://www.youtube.com/watch?v=dC2bRweVePo">(</a><a href="https://youtu.be/OYxDwybdlkY">Video Here!</a><a href="https://www.youtube.com/watch?v=dC2bRweVePo">!)</a>,</p></li>
-<li><p>GitHub (for version control and collaboration), and</p></li>
-<li><p>Jupyter notebooks (for interactive worksheets) <a href="https://youtu.be/CdISUthp8dk">(Video Here!)</a>.</p></li>
-</ul>
-<p>If you’ve never used some of these before, that’s absolutely OK. This course is made to guide you through the basics of many of these platforms.</p>
-</section>
-<section id="important-course-information" class="level3">
-<h3 class="anchored" data-anchor-id="important-course-information">Important Course Information</h3>
-<p>All of the important information is in the syllabus, which you can navigate to at the top of this page. There are a few items I’d like to emphasize:</p>
-<ul>
-<li><p>STAT 545 A has frequent worksheets. They are relatively straight forward and will guide you through the topics we talked about that week.</p></li>
-<li><p>Everyone gets one “pass” for a late worksheet. After the first occurrence, a 0 will be awarded for any late worksheet.</p></li>
-<li><p>STAT 545 A has a mini data analysis and collaborative project worth most of your marks. These are not graded on the basis of how sophisticated your statistical analysis is, but on the quality of your code and workflow. A grading rubric will be posted for each.</p></li>
-<li><p>There is a zero tolerance policy for late projects and analyses.</p></li>
-<li><p>Stay home if you’re sick. Fill out an Academic Concession Self Declaration form (linked on Canvas) if you miss an assessment due to illness. Accommodations will be given on a case-by-case basis.</p></li>
-<li><p>Bring a charged laptop to class!</p></li>
-<li><p>All communications are to be done on Slack - do not email me questions unless they are of a sensitive nature (i.e., an academic concession form).</p></li>
-<li><p>Don’t plagiarize code or assessments. This includes copying directly from LLM’s like ChatGPT.</p></li>
-</ul>
-<p>But please - read the syllabus :)</p>
-</section>
-<section id="lecture-flow" class="level3">
-<h3 class="anchored" data-anchor-id="lecture-flow">Lecture Flow</h3>
-<p>Lectures for STAT545 are designed to be more interactive than a traditional statistics lecture. The class will begin with a short summary of the previous class, followed by an introduction to that day’s topic. For most of the lectures, we will be going through the interactive worksheets (yes, the ones that you receive marks for and yes, prior to the deadline). This will give provide you with dedicated time to work on the assessments in class with access to the instructor and the TAs.</p>
-<p>Many lectures will have an accompanying video, which will be linked on the webpage and on <a href="https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&amp;si=sT-h1q8rTTKxs4vg">our STAT545 YouTube Playlist.</a></p>
-<p>Lectures build on top of each other and it is crucial to stay on track as we progress through this course.</p>
-</section>
-</section>
 <section id="video-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="video-lecture">Video Lecture</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/OYxDwybdlkY?si=BH8swDzSfguRxIl2" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>

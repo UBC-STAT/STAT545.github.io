@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lecture 2A: Reproducibility with RMarkdown – STAT545</title>
+<title>Lecture 10: Dashboards with R Shiny – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,26 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -151,7 +132,7 @@ div.csl-indent {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -237,108 +218,29 @@ div.csl-indent {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_i/lec2a_reproducibility.html">Lecture 2A: Reproducibility with RMarkdown</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec1a_installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 1A: Installation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec1b_introR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 1B: Course Introduction and R</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec2a_reproducibility.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture 2A: Reproducibility with RMarkdown</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec2b_dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 3: Data Manipulation with dplyr</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec3_versioncontrol.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 2B: Version Control</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec4_datavis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 4: Data Visualization</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec5_tidydata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 5: Tidy Data and the Tidyverse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec6a_modelfitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 6A: Model Fitting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec6b_factorsanddates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 6B: Factors</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec7a_readwritedata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 7A: Reading and Writing Data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec7b_joiningtibbles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 7B: Tibble Joins</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#video-lecture" id="toc-video-lecture" class="nav-link" data-scroll-target="#video-lecture">Video Lecture</a></li>
-  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
-  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link" data-scroll-target="#r-markdown">R Markdown</a>
+  <li><a href="#video-lecture" id="toc-video-lecture" class="nav-link active" data-scroll-target="#video-lecture">Video Lecture</a></li>
+  <li><a href="#lecture-slides" id="toc-lecture-slides" class="nav-link" data-scroll-target="#lecture-slides">Lecture Slides</a></li>
+  <li><a href="#why-dashboards" id="toc-why-dashboards" class="nav-link" data-scroll-target="#why-dashboards">Why Dashboards?</a></li>
+  <li><a href="#r-shiny" id="toc-r-shiny" class="nav-link" data-scroll-target="#r-shiny">R Shiny</a>
   <ul class="collapse">
-  <li><a href="#getting-started-with-markdown" id="toc-getting-started-with-markdown" class="nav-link" data-scroll-target="#getting-started-with-markdown">Getting Started with Markdown</a></li>
-  <li><a href="#install-rmarkdown" id="toc-install-rmarkdown" class="nav-link" data-scroll-target="#install-rmarkdown">Install RMarkdown</a></li>
+  <li><a href="#initialize-the-shiny-app" id="toc-initialize-the-shiny-app" class="nav-link" data-scroll-target="#initialize-the-shiny-app">Initialize the Shiny App</a></li>
+  <li><a href="#build-the-ui" id="toc-build-the-ui" class="nav-link" data-scroll-target="#build-the-ui">Build the UI</a></li>
+  <li><a href="#build-the-server" id="toc-build-the-server" class="nav-link" data-scroll-target="#build-the-server">Build the Server</a></li>
+  <li><a href="#generate-the-app" id="toc-generate-the-app" class="nav-link" data-scroll-target="#generate-the-app">Generate the App</a></li>
   </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#demo-bc-liquor-store-prices" id="toc-demo-bc-liquor-store-prices" class="nav-link" data-scroll-target="#demo-bc-liquor-store-prices">Demo: BC Liquor Store Prices</a></li>
+  <li><a href="#deploy-the-app-to-shinyapps.io" id="toc-deploy-the-app-to-shinyapps.io" class="nav-link" data-scroll-target="#deploy-the-app-to-shinyapps.io">Deploy the App to Shinyapps.io</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -347,8 +249,8 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 2A: Reproducibility with RMarkdown</h1>
-<p class="subtitle lead">September 9, 2025</p>
+<h1 class="title">Lecture 10: Dashboards with R Shiny</h1>
+<p class="subtitle lead">November 4, 2025</p>
 </div>
 
 
@@ -371,150 +273,231 @@ div.csl-indent {
 </header>
 
 
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<p>From today’s class, students are anticipated to be able to:</p>
+<p>This topic aims to provide you with a foundation for making a shiny app. From this topic, students are anticipated to be able to:</p>
 <ul>
-<li><p>Use basic markdown features.</p></li>
-<li><p>Write documents in markdown.</p></li>
-<li><p>Choose whether html or pdf is an appropriate output.</p></li>
-<li><p>Style an .Rmd document by editing the YAML header.</p></li>
-<li><p>Customize code chunk output using Rmd code chunk.</p></li>
-<li><p>Render your finalized document to HTML &amp; PDF.</p></li>
+<li><p>develop the user interface of a shiny app from scratch,</p></li>
+<li><p>develop interactivity using widgets in a shiny app,</p></li>
+<li><p>deploy a shiny app to shinyapps.io,</p></li>
+<li><p>create interactive Shiny R Markdown documents (embed shiny features within an Rmd file).</p></li>
 </ul>
-</section>
+<p>And possibly:</p>
+<ul>
+<li><p>Make an interactive plot with plotly</p></li>
+<li><p>Make an interactive data table with the <code>DT</code> package</p></li>
+</ul>
+<p>We will spend two classes creating a Shiny dashboard together.</p>
 <section id="video-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="video-lecture">Video Lecture</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/tS0nXW6Hfbk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/VTI84Pqk3SI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
-<p><em>Reproducibility</em> is the ability of an independent researcher to repeat an experiment using the <u>same data and workflow</u> to obtain the same results <span class="citation" data-cites="resnik2017reproducibility">[<a href="#ref-resnik2017reproducibility" role="doc-biblioref">1</a>]</span>. One way to ensure reproducible research is sharing clear details on the analysis and providing the code used to produce the results. Reproducibility is often confused with <em>replication</em>. However, replication is a separate concept where the results of a study should be validated on an independent study using new data. A “good” study is both replicable and reproducible.</p>
-<p>There are also ethical benefits to reproducible research <span class="citation" data-cites="resnik2017reproducibility">[<a href="#ref-resnik2017reproducibility" role="doc-biblioref">1</a>]</span>. Performing open research can reduce the chance of data fabrication or other ethical issues such as <em>p-hacking</em>, where a researcher tests a number of hypotheses until they find one that is statistically significant. Open, transparent research poses a sense of accountability on the researcher(s). Of course, you can’t always share data (for example, health data containing personal identifying information), but you should share as much as is possible. Always check with your ethics board or principal investigator before sharing data online.</p>
-<p>Reproducible studies can also advance research by providing the code used for analysis. Not only can we reproduce the study to make the findings more trustworthy, but we can learn more about how the analysis was performed and possibly apply it to other studies.</p>
-<p>Reproducible research can also force you to have better, more automated workflows. The first analysis I ever did in R, I was manually changing things in excel documents, and then saving them in a certain place, and then using R to fit a model, and then exporting the data, and then changing the worksheet format, and so on. I had a sticky note of instructions on how to produce the results on my desk. This was neither reproducible nor productive for my time. While automating some steps and using tools like GitHub for version control can be more work upfront, it can save you <em>a lot</em> of headaches down the road. It is something I personally wish I learned to use earlier in my career.</p>
-</section>
-<section id="r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="r-markdown">R Markdown</h2>
-<p>Using an editor like MS Word is like painting: you decorate the page with text, graphs, and tables, making sure things are positioned, sized, and coloured appropriately.</p>
-<p>This is great for a letter to a friend, but is less great for scientific work, because it hampers reproducibility and shareability.</p>
-<p>R Markdown lets you write a single “blueprint” for your analysis that includes everything - positioning/sizing/colouring/formatting, analysis/graph/table code and results, and text – and then “knit” all of those components together into a complete report with a single button press.</p>
-<p>There is a large community of R Markdown users, making it easy to find tutorials and blog posts about a ton of different types of documents. We’re going to start simple and dive right into R Markdown.</p>
-<section id="getting-started-with-markdown" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started-with-markdown">Getting Started with Markdown</h3>
-<p>In lecture, we are going to work through <a href="https://www.markdowntutorial.com/">this online Markdown tutorial together</a> in small groups. Challenge yourself to meet someone new in the class!</p>
-<p>After completing the tutorial, try making your own R Markdown document!</p>
-<ol type="1">
-<li><p>In RStudio, go to “File” -&gt; “New File” -&gt; “Markdown File”</p></li>
-<li><p>Write a Markdown document all about you that includes:</p>
+<section id="lecture-slides" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-slides">Lecture Slides</h2>
 <ul>
-<li><p>A header</p></li>
-<li><p>A link to your GitHub profile</p></li>
-<li><p>A list of courses you’re taking this semester</p></li>
-</ul></li>
-<li><p>Click the “Preview” button to generate an output .html file from the source .md file.</p></li>
-</ol>
-</section>
-<section id="install-rmarkdown" class="level3">
-<h3 class="anchored" data-anchor-id="install-rmarkdown">Install RMarkdown</h3>
-<ol type="1">
-<li><p>To get started with using R Markdown, you’ll need to install the <code>rmarkdown</code> and <code>DT</code> R packages package.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'rmarkdown'</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'DT'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ol>
-<!-- -->
-<ol start="3" type="1">
-<li><p>Create an R Markdown file by going to File &gt; New File &gt; R Markdown..</p>
-<ul>
-<li>Change the title to “STAT545 Lecture 2a” and save the defaults. Click OK.</li>
-</ul></li>
-<li><p>Click the “Knit” button to generate the default document.</p></li>
-</ol>
-<p><strong>Things to notice:</strong></p>
-<ul>
-<li><p>The YAML header is contained between two — at the top of the .Rmd source, and contains metadata on the document. This is where you specify the output type to be HTML.</p></li>
-<li><p>Text is formatted using Markdown. There are three chunks of R code, and knitting executes the R code and displays the output in the output file.</p></li>
+<li><a href="../../webpages/slides/slidefiles/lec10_shiny_slides.html">Lecture 10 - Dashboards with R Shiny</a></li>
 </ul>
-<p><strong>How does it all work?</strong></p>
-<p>The key drivers under the hood are <code>knitr</code>and <code>Pandoc</code>! When you press “Knit”, R Markdown passes the .<code>Rmd</code>file to <code>knitr</code>, which executes all of the code and creates a new <code>.md</code> file including the code and output. Then, that <code>.md</code> file is processed into the final output format (e.g.&nbsp;<code>.html</code>) by pandoc.</p>
-<p><strong>What if I want a PDF?</strong></p>
-<p>You’ll need to install LaTeX and set the document type as a PDF document. TinyTeX is recommended:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For this lecture, we will be knitting to HTML.</p>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Exercise: Edit Your YAML in Small Groups:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Run <code>?html_document</code> from your R console and/or check out <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">Yihui Xie’s RMarkdown book</a> to:</p>
+</section>
+<section id="why-dashboards" class="level2">
+<h2 class="anchored" data-anchor-id="why-dashboards">Why Dashboards?</h2>
+<p>Dashboards allow users to get real time (and often customizable) overviews of information. Dashboards can be used for monitoring, measuring, analyzing, and presenting data.</p>
+</section>
+<section id="r-shiny" class="level2">
+<h2 class="anchored" data-anchor-id="r-shiny">R Shiny</h2>
+<p>Shiny is an open-source R package that allows users to create interactive web applications directly from R without needing to learn traditional web development languages like HTML, CSS, or JavaScript.</p>
+<p>Here are some examples of R Shiny Dashboards:</p>
 <ul>
-<li><p>Add a floating table of contents</p></li>
-<li><p>Add a theme.</p></li>
+<li><p><a href="http://showmeshiny.com">http://ShowMeShiny.com</a></p></li>
+<li><p><a href="http://letsrun.com/shoes" class="uri">http://letsrun.com/shoes</a></p></li>
+<li><p><a href="http://daattali.com/shiny/cancer-data/" class="uri">http://daattali.com/shiny/cancer-data/</a><br>
+</p></li>
 </ul>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Instructor demo: mtcars Report
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>To follow along, download the <a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/lecture_files/lec2a-reproducibility/mtcars_demonstration.Rmd">mtcars_demonstration.Rmd</a> file from the STAT545 GitHub and open it in RStudio. You can also refer back to <a href="https://www.youtube.com/watch?v=tS0nXW6Hfbk&amp;t=6s">this YouTube video</a> to follow along!</p>
-</div>
-</div>
-<section id="code-chunk-options" class="level4">
-<h4 class="anchored" data-anchor-id="code-chunk-options">Code Chunk Options</h4>
-<p>As we saw in the demo, we can add code chunks using by selecting “Code” &gt; “Insert Chunk”, or use a keyboard shortcut: <code>cmd + option + I</code>(MAC) / <code>ctrl + alt + i</code>(WINDOWS). We can also toggle to Visual view to add a code chunk using the “Insert” &gt; “Executable Cell” option.</p>
-<p>Just like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the <code>{r}</code> at the top of a code chunk, separated by commas. For a list of chunk options, check out <a href="https://yihui.org/knitr/options/">Yihui Xie’s knitr book</a>. Let’s try some:</p>
-<ol type="1">
-<li><p>Hide the code from the output with <code>echo = FALSE.</code></p></li>
-<li><p>Change the figure width and height with <code>fig.width = 5</code> and <code>fig.height = 3</code>.</p></li>
-<li><p>Knit the results. Can you spot the differences?</p></li>
-</ol>
-</section>
-</section>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<p>Here are a number of resources that may help supplement you with today’s lesson:</p>
+<p>Today, we’ll be replicating this dashboard to explore BS Liquor Store prices, from Dean Attali:</p>
 <ul>
-<li><p><a href="https://www.youtube.com/watch?v=ZzDSkBgt9xQ">STAT 545 Episode 3-A: Reproducible Reports with R Markdown Some additional resources that you might find useful:</a></p></li>
-<li><p><a href="https://rmarkdown.rstudio.com/lesson-1.html">The Official R Markdown Tutorial</a> from the “Introduction” up to and including the “Inline Code” section.</p></li>
-<li><p><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf">R Markdown cheat sheet</a></p></li>
+<li><a href="http://daattali.com/shiny/bcl/" class="uri">http://daattali.com/shiny/bcl/</a></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>To use Shiny, install it in your R Console with <code>install.packages("shiny")</code>.</p>
+<section id="initialize-the-shiny-app" class="level3">
+<h3 class="anchored" data-anchor-id="initialize-the-shiny-app">Initialize the Shiny App</h3>
+<p>There are three basic components to a Shiny app:</p>
+<ul>
+<li><p>the user interface (UI) (the appearance of the app)</p></li>
+<li><p>a server (which does the app’s computations)</p></li>
+<li><p>the app (assembles the app combining the UI and the server)</p></li>
+</ul>
+<p>A basic Shiny app may take the following form:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server) <span class="co">#do not include code past this point</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To generate a Shiny App, you can either go to “File” &gt; “New File” &gt; “Shiny Web App” in RStudio which will generate a template for you with a working example, or you can save the above code in a single file called “app.R”.</p>
+<p>If you generated the template using R Studio, the following code will appear:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define UI for application that draws a histogram</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Application title</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">titlePanel</span>(<span class="st">"Old Faithful Geyser Data"</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sidebar with a slider input for number of bins </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarPanel</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sliderInput</span>(<span class="st">"bins"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of bins:"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">value =</span> <span class="dv">30</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Show a plot of the generated distribution</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>           <span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic required to draw a histogram</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># generate bins based on input$bins from ui.R</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        x    <span class="ot">&lt;-</span> faithful[, <span class="dv">2</span>]</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x), <span class="fu">max</span>(x), <span class="at">length.out =</span> input<span class="sc">$</span>bins <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># draw the histogram with the specified number of bins</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="fu">hist</span>(x, <span class="at">breaks =</span> bins, <span class="at">col =</span> <span class="st">'darkgray'</span>, <span class="at">border =</span> <span class="st">'white'</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>             <span class="at">xlab =</span> <span class="st">'Waiting time to next eruption (in mins)'</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">'Histogram of waiting times'</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the application </span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can click the “Run App” button to explore the demo. We see that there is a slider which the user can manipulate which changes the number of bins used to produce a histogram, which is updated live!</p>
+<p>For example, if you set the number of bins to 8, you will see:</p>
+<p><img src="images/shiny1.png" class="img-fluid" alt="Shiny App demonstrating a histogram with 8 bins"></p>
+<p>Or you can slide the number of bins to 30 and you should see:</p>
+<p><img src="images/shiny2.png" class="img-fluid" alt="Shiny Demo where slider indicating number of bins is increased to 30"></p>
+<p>We will go through the basics of this demo app, and then build another from scratch.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Many cheat sheets can be found from RStudio: go to “Help” -&gt; “Cheatsheets”.</p>
+<p>For more complex apps, you can save the UI and server separately so long as they exist in the same directory. <a href="https://docs.google.com/presentation/d/1dXhqqsD7dPOOdcC5Y7RW--dEU7UfU52qlb0YD3kKeLw/edit?slide=id.gd565d6fc7_0_192#slide=id.gd565d6fc7_0_192">More info here</a>.</p>
 </div>
 </div>
-
+</section>
+<section id="build-the-ui" class="level3">
+<h3 class="anchored" data-anchor-id="build-the-ui">Build the UI</h3>
+<p>Inside of the <code>fluidPage()</code> function, you can define and format different elements that will be used to build your Shiny app. For example, in the pre-generated example provided by R Studio, we have the following:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define UI for application that draws a histogram</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Application title</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">titlePanel</span>(<span class="st">"Old Faithful Geyser Data"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sidebar with a slider input for number of bins </span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarPanel</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sliderInput</span>(<span class="st">"bins"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of bins:"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                        <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                        <span class="at">value =</span> <span class="dv">30</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Show a plot of the generated distribution</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>           <span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We see that within the <code>fluidPage()</code> function, we’ve defined a title and a sidebar with a slider that the user can manipulate the change around the number of bins in the histogram we wish to generate (this is an <strong>input</strong> that we will use to produce a plot). In the main panel (the main part of the app where the plot is shown in the images above), we are going to <strong>output</strong> a plot, which we will define in the <code>server()</code> function later. Here, we are just telling Shiny what goes where, but not calculating anything. There are more options for the UI that we will explore in our demo later.</p>
+</section>
+<section id="build-the-server" class="level3">
+<h3 class="anchored" data-anchor-id="build-the-server">Build the Server</h3>
+<p>As stated previously, we’ve set up the UI of the app but we haven’t really calculated anything. Recall the code from the R Studio template:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic required to draw a histogram</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># generate bins based on input$bins from ui.R</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        x    <span class="ot">&lt;-</span> faithful[, <span class="dv">2</span>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x), <span class="fu">max</span>(x), <span class="at">length.out =</span> input<span class="sc">$</span>bins <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># draw the histogram with the specified number of bins</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">hist</span>(x, <span class="at">breaks =</span> bins, <span class="at">col =</span> <span class="st">'darkgray'</span>, <span class="at">border =</span> <span class="st">'white'</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">xlab =</span> <span class="st">'Waiting time to next eruption (in mins)'</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">'Histogram of waiting times'</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We have a function that takes some <strong>input</strong> (in our case, the number of bins the user chose via the slider), and it <strong>outputs</strong> a histogram using the selected number of bins. Here, <code>hist()</code> is generating a histogram - the default is just not using <code>ggplot2</code> like we’ve used before in this class.</p>
+</section>
+<section id="generate-the-app" class="level3">
+<h3 class="anchored" data-anchor-id="generate-the-app">Generate the App</h3>
+<p>The final part of the code is</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the application </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>which combines everything together and allows you to interact with the app!</p>
+</section>
+</section>
+<section id="demo-bc-liquor-store-prices" class="level2">
+<h2 class="anchored" data-anchor-id="demo-bc-liquor-store-prices">Demo: BC Liquor Store Prices</h2>
+<p>We will now follow along with <a href="https://deanattali.com/blog/building-shiny-apps-tutorial/">this tutorial by Dean Attali</a> that creates a dashboard exploring alcohol prices and alcohol content. We will be slowly building this app from scratch to get a better sense of Shiny.</p>
+</section>
+<section id="deploy-the-app-to-shinyapps.io" class="level2">
+<h2 class="anchored" data-anchor-id="deploy-the-app-to-shinyapps.io">Deploy the App to Shinyapps.io</h2>
+<p>Shinyapps.io allows you to host Shiny apps online! Here’s how to do it:</p>
+<ol type="1">
+<li><p>Run <code>install.packages('rsconnect')</code> and <code>library(rsconnect)</code> in your Console.</p></li>
+<li><p>Go to <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a> and create an account (click Sign Up). Follow the instructions. You can use the same username as your GitHub account if you’d like to be consistent.</p></li>
+<li><p>Click Show Secret, and copy the Account Authorization into your R Console, with <secret> filled in</secret></p>
+<pre><code>rsconnect::setAccountInfo(name='grcetmpk',
+              token='E60FD358D5080B343605C63AE78C7858',
+              secret='&lt;SECRET&gt;')</code></pre></li>
+<li><p>Deploy the app by running in your Console:</p>
+<pre><code>rsconnect::deployApp('[PATH TO YOUR APP FOLDER]')</code></pre></li>
+</ol>
+<ul>
+<li><p>for example, to deploy my BC Liquor demo app, I’d insert the path <code>/Users/gracetompkins/Desktop/BCLiquor</code> (which is the folder where app.R exists).</p></li>
+<li><p>This may take a few minutes.</p></li>
+</ul>
+<p>On your shinyapps.io profile, you should see a dashboard of your apps, and see that yours has been deployed.</p>
+<p><strong><em>Tip</em></strong>: Include a clickable link to your app in the README so others can easily try it out (i.e., “The app can be viewed at [<a href="https://grcetmpk.shinyapps.io/bcliquor/" class="uri">https://grcetmpk.shinyapps.io/bcliquor/</a>])<a href="https://grcetmpk.shinyapps.io/bcliquor/" class="uri">https://grcetmpk.shinyapps.io/bcliquor/</a>)”.</p>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li>Video lecture: <a href="https://www.youtube.com/watch?v=rB4SJGyaGls">How to Make a Shiny App in R</a></li>
+<li><a href="https://mastering-shiny.org/">“Mastering Shiny”</a> by Hadley Wickham gives a more comprehensive treatment.</li>
+<li>The <a href="https://shiny.rstudio.com/">official shiny site</a> has tutorials, a gallery, and other goodies.</li>
+<li>For deploying shiny apps, check out <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a></li>
+<li>For shiny documents (= R Markdown + shiny), see <a href="https://bookdown.org/yihui/rmarkdown/shiny-documents.html">Chapter 19 of Yihui’s R Markdown book</a>.</li>
+<li>For testing your shiny app, check out the <a href="https://rstudio.github.io/shinytest/">shinytest</a> and <a href="https://github.com/rstudio/reactlog">reactlog</a> packages.</li>
+<li>For further cutting down on code repetition by “functionizing” your shiny app, check out <a href="https://emilyriederer.netlify.app/post/shiny-modules/">Emily Riederer’s beginner’s guide to Shiny modules</a> for a gentle introduction and <a href="https://mastering-shiny.org/scaling-modules.html">Chapter 19 of the “Mastering Shiny” book</a> for a full treatment.</li>
+</ul>
+<p>Other dashboard tools besides Shiny (but not in R):</p>
+<ul>
+<li><p>With python: plotly dash. Check out the <a href="https://plotly.com/dash/">main website</a>, or <a href="https://medium.com/plotly/introducing-dash-5ecf7191b503">this Medium post</a> introducing the tool.</p></li>
+<li><p>With javascript: <a href="https://d3js.org/">D3</a>, a tremendously powerful tool with a steep learning curve (especially if you don’t know javascript).</p></li>
+</ul>
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-resnik2017reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Resnik DB, Shamoo AE (2017) Reproducibility and research integrity. Accountability in research 24(2):116–123</div>
-</div>
-</div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <style>
   #cookie-popup {
     position: fixed;

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lecture 1A: Installation – STAT545</title>
+<title>Lecture 2A: Reproducibility with RMarkdown – STAT545</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -97,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -183,100 +237,25 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../webpages/lectures_i/lec1a_installation.html">Lecture 1A: Installation</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec1a_installation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture 1A: Installation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec1b_introR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 1B: Intro to R</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
- <span class="menu-text">webpages/lectures_i/lec2a_reproducibility.qmd</span>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text">webpages/lectures_i/lec2b_dplyr.qmd</span>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec3_versioncontrol.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 2B: Version Control</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec4_datavis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 4: Data Visualization</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec5_tidydata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 5: Tidy Data and the Tidyverse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec6a_modelfitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 6A: Model Fitting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec6b_factorsanddates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 6B: Factors</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec7a_readwritedata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 7A: Reading and Writing Data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../webpages/lectures_i/lec7b_joiningtibbles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 7B: Tibble Joins</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#software-and-troubleshooting" id="toc-software-and-troubleshooting" class="nav-link active" data-scroll-target="#software-and-troubleshooting">Software and Troubleshooting</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#video-lecture" id="toc-video-lecture" class="nav-link" data-scroll-target="#video-lecture">Video Lecture</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
+  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link" data-scroll-target="#r-markdown">R Markdown</a>
   <ul class="collapse">
-  <li><a href="#note-on-pc-vs-mac" id="toc-note-on-pc-vs-mac" class="nav-link" data-scroll-target="#note-on-pc-vs-mac">Note on PC vs Mac</a></li>
-  <li><a href="#step-1-install-r-and-rstudio" id="toc-step-1-install-r-and-rstudio" class="nav-link" data-scroll-target="#step-1-install-r-and-rstudio">Step 1: Install R and RStudio</a></li>
-  <li><a href="#step-2-install-jupyter-and-r-kernel" id="toc-step-2-install-jupyter-and-r-kernel" class="nav-link" data-scroll-target="#step-2-install-jupyter-and-r-kernel">Step 2: Install Jupyter and R Kernel</a></li>
-  <li><a href="#step-3-configure-git-and-github" id="toc-step-3-configure-git-and-github" class="nav-link" data-scroll-target="#step-3-configure-git-and-github">Step 3: Configure Git and GitHub</a></li>
+  <li><a href="#getting-started-with-markdown" id="toc-getting-started-with-markdown" class="nav-link" data-scroll-target="#getting-started-with-markdown">Getting Started with Markdown</a></li>
+  <li><a href="#install-rmarkdown" id="toc-install-rmarkdown" class="nav-link" data-scroll-target="#install-rmarkdown">Install RMarkdown</a></li>
   </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -285,7 +264,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 1A: Installation</h1>
+<h1 class="title">Lecture 2A: Reproducibility with RMarkdown</h1>
+<p class="subtitle lead">September 9, 2025</p>
 </div>
 
 
@@ -297,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 5, 2026</p>
+      <p class="date-modified">August 4, 2026</p>
     </div>
   </div>
     
@@ -308,152 +288,150 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="software-and-troubleshooting" class="level2">
-<h2 class="anchored" data-anchor-id="software-and-troubleshooting">Software and Troubleshooting</h2>
-<p>The goal of this lecture is to learn how to install and setup key software for use in the course.</p>
-<p><strong>TAs are available in class on Imagine Day from 9am-10:30am on Tuesday September 8th to aid with installation. I highly recommend you join if you haven’t used RStudio, Jupyter, or GitHub before.</strong></p>
-<section id="note-on-pc-vs-mac" class="level3">
-<h3 class="anchored" data-anchor-id="note-on-pc-vs-mac">Note on PC vs Mac</h3>
-<p>You may encounter some material that implicitly assumes that you are using a Mac. For example, they might point you to a Terminal app, or ask you to use Unix commands like <code>which</code> or <code>ls</code>. <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://static-bcrf.biochem.wisc.edu/tutorials/unix/basic_unix/dos_and_unix_commands.pdf">Here is a cheatsheet</a> that helps you convert between Windows command line (“DOS”) and Mac command line (“UNIX”). One thing that’s missing is the equivalent to Unix’s which; the closest equivalent in DOS is where.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>From today’s class, students are anticipated to be able to:</p>
+<ul>
+<li><p>Use basic markdown features.</p></li>
+<li><p>Write documents in markdown.</p></li>
+<li><p>Choose whether html or pdf is an appropriate output.</p></li>
+<li><p>Style an .Rmd document by editing the YAML header.</p></li>
+<li><p>Customize code chunk output using Rmd code chunk.</p></li>
+<li><p>Render your finalized document to HTML &amp; PDF.</p></li>
+</ul>
 </section>
-<section id="step-1-install-r-and-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-install-r-and-rstudio">Step 1: Install R and RStudio</h3>
-<p>R and RStudio The main programming language used in the class is R and our main IDE (a text editor with helpful features for writing and running code) is RStudio. The following instructions are adapted from <a href="https://happygitwithr.com/install-r-rstudio.html">Chapter 5 of Jenny Bryan’s “happy git” book</a>.</p>
-<ol type="1">
-<li><p>Install (or update to) the latest release R on your computer (4.5.1 currently):</p>
-<ul>
-<li><p>Windows: <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a></p></li>
-<li><p>Mac: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a></p></li>
-</ul></li>
-<li><p>Install RStudio</p>
-<ul>
-<li><a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
-</ul></li>
-</ol>
-<p><strong>Even if you already have R/RStudio, please update them to the most recent version!</strong></p>
+<section id="video-lecture" class="level2">
+<h2 class="anchored" data-anchor-id="video-lecture">Video Lecture</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/tS0nXW6Hfbk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="step-2-install-jupyter-and-r-kernel" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-install-jupyter-and-r-kernel">Step 2: Install Jupyter and R Kernel</h3>
-<p>You will need another IDE for R (Jupyter Notebook) and an R kernel called ‘IR Kernel’ (needed to run R code within Jupyter) to work on the autograded worksheets. This is because the autograder we use plays well with Jupyter.</p>
-<p>The following instructions are adapted from <a href="https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/">Rich Pauloo</a>.</p>
-<p><strong>PC Installation:</strong></p>
-<ol type="1">
-<li>Install Anaconda from <a href="https://www.anaconda.com/download" class="uri">https://www.anaconda.com/download</a>
-<ul>
-<li>Provide your email and an installation link will be sent to you</li>
-<li>Install the full version of Anaconda (not miniconda)</li>
-</ul></li>
-<li>Install and setup the IR Kernel
-<ul>
-<li>Launch Command Prompt (CMD) and execute <code>where R</code>. The output should be the path to the file R.exe. Copy the path.</li>
-<li>Open the Anaconda Prompt application. Enter the following command into Anaconda Prompt: <code>cd file_path_here</code> where <code>file_path_here</code> is replaced with the location of the <code>R.exe</code> that you just found/copied</li>
-<li>Run R from within Anaconda Prompt by entering in <code>R.exe</code>. This opens an R session inside Anaconda Prompt. From here, enter the following commands in this order:
-<ul>
-<li><code>install.packages("IRkernel")</code>
-<ul>
-<li>If you get an error, try <code>install.packages("IRkernel", force = TRUE)</code></li>
-<li>If prompted to select a IR kernel mirror, select 12 (CANADA - MB).</li>
-</ul></li>
-<li><code>IRkernel::installspec()</code></li>
-</ul></li>
-</ul></li>
-<li>To verify that everything is working, open Anaconda Prompt and type <code>jupyter lab</code>. Jupyter Lab should launch and display both a Python and R kernel.</li>
-</ol>
-<p>Having trouble? Check the instructions here: <a href="https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/" class="uri">https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/</a>.</p>
-<p><strong>Mac OS Installation:</strong></p>
-<ol type="1">
-<li>Install Anaconda from <a href="https://www.anaconda.com/download" class="uri">https://www.anaconda.com/download</a>
-<ul>
-<li>Provide your email and an installation link will be sent to you</li>
-<li>Install the full version of Anaconda (not miniconda)</li>
-</ul></li>
-<li>Install and setup the IR Kernel
-<ul>
-<li><p>Open R and navigate to the Console (see below).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/rconsole.png" class="img-fluid figure-img" width="400"></p>
-<figcaption>Your console may have a different appearance! Mine’s in dark mode.</figcaption>
-</figure>
-</div></li>
-<li><p>Install the necessary packages by entering</p>
-<p><code>install.packages(c("repr", "IRdisplay", "evaluate", "crayon", "pbdZMQ", "devtools", "uuid", "digest"))</code></p>
-<p><code>devtools::install_github("IRkernel/IRkernel")</code></p></li>
-<li><p>if you get an error, try <code>devtools::install_github("IRkernel/IRkernel", force = TRUE)</code></p></li>
-<li><p>Exit RStudio.</p></li>
-</ul></li>
-<li>Configure the IRkernel from within R
-<ul>
-<li>It’s important that these next commands are done from within the version of R that you want to link to Jupyter Lab (R version 5.4.1, for example)</li>
-<li>Launch he Terminal application and type in <code>which R</code> (will probably output /usr/bin/R). Copy the path.</li>
-<li>Then, open a Finder window and at the top of your screen hit <code>Go</code> -&gt; <code>go to folder</code> and paste everything in the path except R (i.e., /usr/bin/). Scroll through and find R and open it.</li>
-<li>In the R application, run <code>IRkernel::installspec()</code></li>
-<li>If prompted to choose a IRkernel mirror, select 12 (Canada - MB).</li>
-</ul></li>
-<li>Launch Anaconda, and open a Jupyter Notebook and you should see an R kernel available.</li>
-</ol>
-<p>Having trouble? Check out <a href="https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/" class="uri">https://richpauloo.github.io/2018-05-16-Installing-the-R-kernel-in-Jupyter-Lab/</a>.</p>
+<section id="reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
+<p><em>Reproducibility</em> is the ability of an independent researcher to repeat an experiment using the <u>same data and workflow</u> to obtain the same results <span class="citation" data-cites="resnik2017reproducibility">[<a href="#ref-resnik2017reproducibility" role="doc-biblioref">1</a>]</span>. One way to ensure reproducible research is sharing clear details on the analysis and providing the code used to produce the results. Reproducibility is often confused with <em>replication</em>. However, replication is a separate concept where the results of a study should be validated on an independent study using new data. A “good” study is both replicable and reproducible.</p>
+<p>There are also ethical benefits to reproducible research <span class="citation" data-cites="resnik2017reproducibility">[<a href="#ref-resnik2017reproducibility" role="doc-biblioref">1</a>]</span>. Performing open research can reduce the chance of data fabrication or other ethical issues such as <em>p-hacking</em>, where a researcher tests a number of hypotheses until they find one that is statistically significant. Open, transparent research poses a sense of accountability on the researcher(s). Of course, you can’t always share data (for example, health data containing personal identifying information), but you should share as much as is possible. Always check with your ethics board or principal investigator before sharing data online.</p>
+<p>Reproducible studies can also advance research by providing the code used for analysis. Not only can we reproduce the study to make the findings more trustworthy, but we can learn more about how the analysis was performed and possibly apply it to other studies.</p>
+<p>Reproducible research can also force you to have better, more automated workflows. The first analysis I ever did in R, I was manually changing things in excel documents, and then saving them in a certain place, and then using R to fit a model, and then exporting the data, and then changing the worksheet format, and so on. I had a sticky note of instructions on how to produce the results on my desk. This was neither reproducible nor productive for my time. While automating some steps and using tools like GitHub for version control can be more work upfront, it can save you <em>a lot</em> of headaches down the road. It is something I personally wish I learned to use earlier in my career.</p>
 </section>
-<section id="step-3-configure-git-and-github" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-configure-git-and-github">Step 3: Configure Git and GitHub</h3>
-<p>Git is a version control software. Github is a cloud-based platform (built on Git) for sharing code.</p>
+<section id="r-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="r-markdown">R Markdown</h2>
+<p>Using an editor like MS Word is like painting: you decorate the page with text, graphs, and tables, making sure things are positioned, sized, and coloured appropriately.</p>
+<p>This is great for a letter to a friend, but is less great for scientific work, because it hampers reproducibility and shareability.</p>
+<p>R Markdown lets you write a single “blueprint” for your analysis that includes everything - positioning/sizing/colouring/formatting, analysis/graph/table code and results, and text – and then “knit” all of those components together into a complete report with a single button press.</p>
+<p>There is a large community of R Markdown users, making it easy to find tutorials and blog posts about a ton of different types of documents. We’re going to start simple and dive right into R Markdown.</p>
+<section id="getting-started-with-markdown" class="level3">
+<h3 class="anchored" data-anchor-id="getting-started-with-markdown">Getting Started with Markdown</h3>
+<p>In lecture, we are going to work through <a href="https://www.markdowntutorial.com/">this online Markdown tutorial together</a> in small groups. Challenge yourself to meet someone new in the class!</p>
+<p>After completing the tutorial, try making your own R Markdown document!</p>
 <ol type="1">
-<li><p>Register a Github account at github.com (if you don’t already have one).</p>
+<li><p>In RStudio, go to “File” -&gt; “New File” -&gt; “Markdown File”</p></li>
+<li><p>Write a Markdown document all about you that includes:</p>
 <ul>
-<li>Create a username that uses your actual name. Shorter is better! For example, mine is grcetmpk. <a href="https://happygitwithr.com/github-acct.html">See this for more information.</a></li>
-<li>You don’t need to download any apps.</li>
+<li><p>A header</p></li>
+<li><p>A link to your GitHub profile</p></li>
+<li><p>A list of courses you’re taking this semester</p></li>
 </ul></li>
-<li><p>Install Git (more info <a href="https://happygitwithr.com/install-git">here</a>)</p>
-<ul>
-<li>See if Git is already installed. For Mac OS, on the Terminal (Mac) type <code>which git</code>. For Windows, go to Command Prompt and type <code>where git</code>. If you get an error of <code>git: command not found</code>, you do not have git installed yet.</li>
-<li><strong>Windows:</strong>
-<ul>
-<li>Install Git for Windows (<a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a>)</li>
-<li>When asked about “Adjusting your PATH environment”, make sure to select “Git from the command line and also from 3rd-party software”. Otherwise, keep the defaults.</li>
-</ul></li>
-<li><strong>Mac OS:</strong>
-<ul>
-<li>Install XCode Command Line Tools by opening Terminal and typing <code>xcode-select --install</code> (more info <a href="https://www.freecodecamp.org/news/install-xcode-command-line-tools/">here</a>)</li>
-<li>In Terminal, enter <code>git config</code>. Click install.</li>
-</ul></li>
-</ul></li>
-<li><p>Configure Git: In RStudio, navigate to the Terminal or Shell (see below).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/rterminal.png" class="img-fluid figure-img" width="400"></p>
-<figcaption>If using Windows, you will have a Shell, not a Terminal.</figcaption>
-</figure>
-</div></li>
-<li><p>within the Terminal (Mac) or Shell (Windows) (Tools &gt; Terminal/Shell) do:</p>
-<p><code>git config --global user.name "your_github_username"</code></p>
-<p><code>git config --global user.email "your_email_you_used_for_github@example.com"</code></p>
-<p><code>git config --global --list</code></p>
-<p>If you are having issues, you could use the <code>usethis</code> package in R. <a href="https://happygitwithr.com/hello-git.html">See here.</a></p></li>
-<li><p>Get your Personal Access Token (PAT)</p>
-<ul>
-<li><strong>Option 1</strong>: Go to to <a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a> and click “Generate token”.
-<ul>
-<li>Choose Classic Token</li>
-<li>Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “Stat545Installation”.</li>
-<li><u>Select “repo”, “user”, and “workflow” for scopes.</u></li>
-<li>Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026).</li>
-<li><u><strong>Save this token somewhere so you can use it again later, such as a password manager.</strong></u></li>
-</ul></li>
-<li><strong>Option 2:</strong> From R, execute <code>usethis::create_github_token()</code> (you may have to install the usethis package first by first running <code>install.packages("usethis")</code>).
-<ul>
-<li>Describe the token’s purpose in the Note field, e.g.&nbsp;“personal-macbook” or “stat545installation”.</li>
-<li>Ensure the token is valid for the entire semester (i.e., set the expiration for sometime in 2026). <u><strong>Save this token somewhere so you can use it again later, such as a password manager.</strong></u></li>
-</ul></li>
-</ul></li>
-<li><p>From R (in the console), run <code>install.packages("gitcreds")</code> if you haven’t already.</p></li>
-<li><p>Execute <code>gitcreds::gitcreds_set()</code> and enter the PAT that you just made when prompted.</p></li>
+<li><p>Click the “Preview” button to generate an output .html file from the source .md file.</p></li>
 </ol>
+</section>
+<section id="install-rmarkdown" class="level3">
+<h3 class="anchored" data-anchor-id="install-rmarkdown">Install RMarkdown</h3>
+<ol type="1">
+<li><p>To get started with using R Markdown, you’ll need to install the <code>rmarkdown</code> and <code>DT</code> R packages package.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'rmarkdown'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'DT'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<!-- -->
+<ol start="3" type="1">
+<li><p>Create an R Markdown file by going to File &gt; New File &gt; R Markdown..</p>
+<ul>
+<li>Change the title to “STAT545 Lecture 2a” and save the defaults. Click OK.</li>
+</ul></li>
+<li><p>Click the “Knit” button to generate the default document.</p></li>
+</ol>
+<p><strong>Things to notice:</strong></p>
+<ul>
+<li><p>The YAML header is contained between two — at the top of the .Rmd source, and contains metadata on the document. This is where you specify the output type to be HTML.</p></li>
+<li><p>Text is formatted using Markdown. There are three chunks of R code, and knitting executes the R code and displays the output in the output file.</p></li>
+</ul>
+<p><strong>How does it all work?</strong></p>
+<p>The key drivers under the hood are <code>knitr</code>and <code>Pandoc</code>! When you press “Knit”, R Markdown passes the .<code>Rmd</code>file to <code>knitr</code>, which executes all of the code and creates a new <code>.md</code> file including the code and output. Then, that <code>.md</code> file is processed into the final output format (e.g.&nbsp;<code>.html</code>) by pandoc.</p>
+<p><strong>What if I want a PDF?</strong></p>
+<p>You’ll need to install LaTeX and set the document type as a PDF document. TinyTeX is recommended:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For this lecture, we will be knitting to HTML.</p>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Exercise: Edit Your YAML in Small Groups:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Run <code>?html_document</code> from your R console and/or check out <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">Yihui Xie’s RMarkdown book</a> to:</p>
+<ul>
+<li><p>Add a floating table of contents</p></li>
+<li><p>Add a theme.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Instructor demo: mtcars Report
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To follow along, download the <a href="https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/lecture_files/lec2a-reproducibility/mtcars_demonstration.Rmd">mtcars_demonstration.Rmd</a> file from the STAT545 GitHub and open it in RStudio. You can also refer back to <a href="https://www.youtube.com/watch?v=tS0nXW6Hfbk&amp;t=6s">this YouTube video</a> to follow along!</p>
+</div>
+</div>
+<section id="code-chunk-options" class="level4">
+<h4 class="anchored" data-anchor-id="code-chunk-options">Code Chunk Options</h4>
+<p>As we saw in the demo, we can add code chunks using by selecting “Code” &gt; “Insert Chunk”, or use a keyboard shortcut: <code>cmd + option + I</code>(MAC) / <code>ctrl + alt + i</code>(WINDOWS). We can also toggle to Visual view to add a code chunk using the “Insert” &gt; “Executable Cell” option.</p>
+<p>Just like YAML is metadata for the Rmd document, code chunk options are metadata for the code chunk. Specify them within the <code>{r}</code> at the top of a code chunk, separated by commas. For a list of chunk options, check out <a href="https://yihui.org/knitr/options/">Yihui Xie’s knitr book</a>. Let’s try some:</p>
+<ol type="1">
+<li><p>Hide the code from the output with <code>echo = FALSE.</code></p></li>
+<li><p>Change the figure width and height with <code>fig.width = 5</code> and <code>fig.height = 3</code>.</p></li>
+<li><p>Knit the results. Can you spot the differences?</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>Here are a number of resources that may help supplement you with today’s lesson:</p>
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=ZzDSkBgt9xQ">STAT 545 Episode 3-A: Reproducible Reports with R Markdown Some additional resources that you might find useful:</a></p></li>
+<li><p><a href="https://rmarkdown.rstudio.com/lesson-1.html">The Official R Markdown Tutorial</a> from the “Introduction” up to and including the “Inline Code” section.</p></li>
+<li><p><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf">R Markdown cheat sheet</a></p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Many cheat sheets can be found from RStudio: go to “Help” -&gt; “Cheatsheets”.</p>
+</div>
+</div>
+
 
 
 </section>
-</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-resnik2017reproducibility" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Resnik DB, Shamoo AE (2017) Reproducibility and research integrity. Accountability in research 24(2):116–123</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <style>
   #cookie-popup {
     position: fixed;
