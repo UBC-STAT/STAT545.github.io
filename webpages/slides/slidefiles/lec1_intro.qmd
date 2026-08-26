@@ -11,11 +11,7 @@ format:
       width: wide
 webr:
   packages:
-    - dplyr
-    - tidyverse
     - knitr
-    - RColorBrewer
-    - ggplot2
   persist: true
 editor: visual
 execute:
@@ -135,6 +131,379 @@ Generative AI **CANNOT** be used to generate text or code from scratch. Assessme
 
 
 # Intro to R
+
+
+
+
+## R Basics
+
+-  R is an open source programming language designed for statistical computing and data analysis. 
+
+-  In its simplest form, R is a *calculator*. For example, we can type `1 + 2` in the console of R (we will be using RStudio) will spit out the answer of 3.
+
+```{webr}
+1 + 2
+```
+
+(The `[1]` in the answer can be ignored for now)
+
+## R Basics
+
+-  R can also be used to do more complex expressions, such as $(450 - 15)^2/(5 + 7\times4)$, which we would write in R with:
+
+```{webr}
+(450-15)^2/(5+7*4)
+```
+
+## Variables
+
+-  R can also be used to store values as a *variable*. 
+
+-  To assign a value to a variable in R, we use the `<-` symbol (the less than symbol followed by the minus sign). 
+
+-  For example, if I wanted to store the number of apartments I've lived in since moving out for university, I could assign this to a variable called `apartments_lived_in` by:
+
+```{webr}
+apartments_lived_in <- 4
+```
+
+## Variables
+
+Then, if I later wanted to use this value, I could simply execute
+
+```{webr}
+apartments_lived_in
+```
+
+which you can see stores the value of 4! I can also do math on this variable, for example multiplying it by 2:
+
+```{webr}
+apartments_lived_in*2
+```
+
+Variables can also store the results of expressions, which we will dive into in Worksheet A1.
+
+## Comments
+
+-  Comments are lines (or parts of lines) of code that R ignores.
+
+-  We specify them using `#`. Commenting can be useful for documenting what you're doing, or temporarily stopping a line from running. For example:
+
+```{webr}
+
+# The following lines will run! My comment will not
+x <- 4 + 7
+x
+
+# I can even comment beside executable code lines
+y <- 9*5 #here I'm muliplying 9 and 5, and saving it as y
+y
+
+# The next few lines will not run
+# z <- 4/6
+# z
+```
+
+## Data Structures
+
+-  R can handle different *data structures* (which are just objects that contain data) including:
+
+    -  *strings*
+    -  *vectors*
+    -  data frames* (just to name a few). 
+    
+We will go over the basics of these structures in this section.
+
+## Strings
+
+-  A string is a R (often called character data) is a string of characters enclosed in quotations. For example, I could store my name in a variable called `name`:
+
+```{webr}
+name <- "Grace"
+```
+
+and access it later by typing `name`
+
+```{webr}
+name
+```
+
+## Strings
+
+Strings can also have white spaces and punctuation, such as
+
+```{webr}
+manifestation <- "I'm a great R coder!"
+manifestation
+```
+
+You can use single `'` or double `"` quotation marks to wrap around the string - just be consistent!
+
+
+::: callout-tip
+In some worksheets, questions are multiple choice. Ensure that you type your answer as a string, i.e., `my_answer <- "A".`
+:::
+
+## Numeric Vectors
+
+-  A *vector* is an ordered list of items of the same type. A *numeric vector* is an ordered list of numbers.
+
+-  Vectors are created in R using the `c()` function, with elements separated by commas. 
+
+-  For example, suppose someone wanted to store the number of roommates they lived with in their four apartments. They had 4 roommates in their first apartment, then 2 in their next, followed by 3, and finally lived alone with 0 roommates. We can save this information in a vector named `roommates` using the following code:
+
+```{webr}
+roommates <- c(4, 2, 3, 0)
+
+# see contents
+roommates 
+```
+
+## Numeric Vectors
+
+-  We can access each element of the vector by indexing it with `[]`. 
+
+-  In R, unlike some other programming languages, the index starts at 1. So if you'd like to access the first element of the vector, you can use `[1]`. For example, to see the number of roommates in my first apartment, I could use
+
+```{webr}
+roommates[1]
+```
+
+Or view the number of roommates in my third apartment using:
+
+```{webr}
+roommates[3]
+```
+
+## Numeric Vectors
+
+-  We can also perform math on vectors! 
+
+-  Suppose we wanted to calculate the total number of occupants in each apartment (including myself). I need to add one person to each apartment! To do so, I can make a new variable called `totaloccupants` which is equal to `roommates` plus one:
+
+```{webr}
+totaloccupants <- roommates + 1
+totaloccupants
+```
+
+We will dive more into math (functions) on vectors in Worksheet 1.
+
+## Logical Vectors
+
+-  A *logical vector* is a vector where the elements are a logical statement containing `TRUE` or `FALSE`. 
+
+-  Let's see how we can create a vector indicating whether or not there were more than two roommates in a given apartment. We can store this as a variable, named `more_than_two_roommates using`
+
+```{webr}
+more_than_two_roommates <- roommates > 2
+more_than_two_roommates
+```
+
+From the output, you can see that this statement is true for apartments 1 and 3, indicating there were more than two roommates for these apartments.
+
+## Other useful functions on vectors
+
+-  R has a number of built in functions that are useful for exploring vectors. 
+
+-  We can check the length (number of elements) of a vector using the `length()` function:
+
+```{webr}
+length(roommates)
+```
+
+This answer makes sense as we had data for four apartments. 
+
+## Other useful functions on vectors
+
+-  We can also look at the types of data stored in vectors using the `typeof` function
+
+```{webr}
+typeof(roommates)
+typeof(totaloccupants)
+typeof(more_than_two_roommates)
+```
+
+`double` is a type of numeric data. `logical` is the type of data that stores TRUE/FALSE.
+
+## Dataframes
+
+-  Dataframes are a powerful tool for storing *multidimensional* data. 
+
+-  For example, we could have data on housing for multiple people, including the rent paid, number of roommates, city, etc. Dataframes are a convenient way to store such information. 
+
+-  Suppose we have data on three individuals stored in the dataframe `housingdata`.
+
+```{webr}
+#| echo: false
+# don't worry about this code for now - just the output!
+
+housingdata <- data.frame(rbind(c("Grace", 2, 2, 2700, "Vancouver"),
+                     c("Mei", 3, 4, 5000, "Toronto"),
+                     c("Sam", 1, 1, 1900, "Halifax")))
+colnames(housingdata) <- c("Name", "NumRooms", "NumOccupants", "Rent", "City")
+```
+
+```{webr}
+housingdata
+```
+
+We see that Grace rents a 2 bedroom apartment, with two total occupants, and the total rent is \$2700 per month in Vancouver. Mei lives in Toronto and has a 3 bedroom apartment shared between 4 people, and the total rent is \$5000. Sam lives alone in a one bedroom apartment in Halifax, and pays \$1900.
+
+(We will focus more on dataframes in a coming lecture, but I wanted to mention them here)
+
+## RStudio and Saving your R Code {.nostretch .scrollable}
+
+RStudio provides us with an Integrated Development Environment (IDE) that allows you to save R Scripts (documents containing your R code). It's free and open-source!
+
+R Studio will look like this (mine is a dark theme):
+
+![](../../lectures_i/images/clipboard-4243262791.png)
+
+I've highlighted some important pieces:
+
+**Console**
+
+-   Useful for quick calculations you don’t want to save, debugging
+
+**Untitled1**
+
+-   an R Script (currently unsaved/untitled)
+
+-   Saves your code
+
+-   (P.S., You can create an R Script by going File \> New File \> R Script)
+
+**Terminal**
+
+-   Used for command line programming. We will use this later when connecting to GitHub (ignore for now but know it exists!)
+
+**Environment**
+
+-   Shows your saved variables, data structures, etc (currently empty)
+
+
+## RStudio and Saving your R Code {.scrollable .nostretch}
+
+-  It's okay if your RStudio is configured differently! You can move the positions of some of these panes in the settings.
+
+-  For any code you'd like to save, we write it in an R Script! Let's create a file called "roommates.R". In RStudio, go to File \> New File \> R Script. Now, go to File \> Save As... and save it somewhere that makes sense for you (i.e., a STAT545 folder).
+
+-  Instead of working line by line, let's add the following (very simple) code to a new file called roommates.R to calculate the total number of occupants in each apartment lived in:
+
+``` r
+roommates <- c(4, 2, 3, 0)
+totaloccupants <- roommates + 1
+totaloccupants
+```
+
+Save your work.
+
+Your RStudio will look something like this:
+
+![](../../lectures_i/images/clipboard-2852747679.png)
+
+## RStudio and Saving your R Code
+
+To run the code, we can highlight it and click the "Run" button or click cmd/ctrl + Shift + Enter to run all code in the R Script. You will notice the code gets sent line by line to the Console, and the variables you created will now be in the Environment.
+
+![](../../lectures_i/images/clipboard-1540324873.png)
+## RStudio and Saving your R Code
+
+
+Now, anytime you want to run that code you have it right there! You can also edit the code and re-run it to update the variables.
+
+The variables are stored in the environment. If you want to start fresh, you can click the broom button in the environment which will clear your variables. Then, run your code from top to bottom again.
+
+## RStudio and Saving your R Code
+
+
+::: {.callout-important appearance="minimal" icon="false"}
+#### Exercise 1: Update roommates.R
+:::
+
+Create an R file that creates the `housingdata` dataset:
+
+
+```{r}
+housingdata <- data.frame(rbind(c("Grace", 2, 2, 2700, "Vancouver"),
+                     c("Mei", 3, 4, 5000, "Toronto"),
+                     c("Sam", 1, 1, 1900, "Halifax")))
+colnames(housingdata) <- c("Name", "NumRooms", "NumOccupants", "Rent", "City")
+```
+
+Your landlord has decided that pets count as occupants! You've lived with a pet cat since you moved into your first apartment. Update the code in your roommates.R file to reflect this, and re-run it to get the new total number of occupants in each apartment.
+
+Save the file.
+
+
+## RStudio and Saving your R Code
+
+
+::: {.callout-important appearance="minimal" icon="false"}
+#### Exercise 2: Playing in the Console
+:::
+
+Out of curiosity, you wanted to see how many occupants were in your friend's apartment. You don't really want to save this code, so you go to the Console to play around with the numbers. Your friend had 5 roommates in first year, then 3 in second year, then 1 roommate in third and fourth years. You execute the following code in the R Console (not touching roommates.R):
+
+```{r}
+roommates <- c(5, 3, 1, 1)
+totaloccupants <- roommates + 1
+totaloccupants
+```
+
+Did anything in your Environment change?
+
+
+
+## RStudio and Saving your R Code
+
+
+Well... even though you didn't touch roommates.R, you overwrote the `roommates` and `totaloccupants` variables!
+
+![](../../lectures_i/images/clipboard-2321696157.png)
+
+So remember, the console is not separate (functionally) in R. Anything you do in the console will affect your variables in the environment. Of course, if we were to clear our environment and re-run the roommates.R file, we'd go back to our original data.
+
+Those are the basics of RStudio! You will learn more as the course progresses.
+
+
+## What to do when you're stuck
+
+Working with technology can be hard. Coding can be especially hard. Getting stuck is very common in both cases.
+
+Before running to Slack, try searching for the answer yourself. This is an extremely important real-world skill! When you're conducting your own analyses down the road, you may not have anyone to directly ask for help.
+
+Try:
+
+-   Googling your error codes (removing highly specific information like variable names)
+
+-   Googling the problem (i.e., R dataframe can't rename columns)
+
+-   Search [StackOverflow](http://stackoverflow.com/) and include the `[r]` tag. Or the `[ggplot2]` tag. Or the `[plyr]` tag. You get the idea.
+
+::: callout-caution
+**Beware of AI tools: sometimes they're helpful, and sometimes they're not.**
+:::
+
+While I encourage you to search for answers on your own, don't fret if you're stuck. We're here to help on Slack! Review the posting guidelines on the Syllabus so your questions go to the appropriate channel.
+
+
+## Worksheet A1
+
+Now it's your turn to use R! Work through [Worksheet A1](../worksheets/index.qmd) on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.
+
+
+Some notes on Jupyter notebooks: 
+
+-  A terminal or command prompt window will pop up. Do not close it until you are finished with Jupyter. - Save often! 
+
+-  Sometimes OneDrive folders do not show up on Jupyter. Try saving in a folder on your Desktop if you have issues finding files. 
+
+-  To run code, highlight it and click the run (play) button or ctrl/cmd and enter
+
+For more on Jupyter Notebooks and our worksheets, see [this YouTube video!](https://www.youtube.com/watch?v=-jPaI1njy3E)
+
+
 
 ## To Save These Slides With Your Code
 

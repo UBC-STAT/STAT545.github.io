@@ -67,8 +67,8 @@ This course will have autograded worksheets meant to guide you through a number 
 
 | Assessment | Percent Grade | Note |
 |--------------|----------|------------------------|
-| [Worksheets](../worksheets.qmd) | 15% | Three guided worksheets |
-| [Assignments]((../assignmentspartB/index.qmd)) | 85% | Four assignments involving more independent analyses and tasks |
+| Worksheets | 15% | Three guided worksheets |
+| Assignments | 85% | Four assignments involving more independent analyses and tasks |
 : {.hover}
 
 #### Worksheets

@@ -3,10 +3,14 @@ title: "Lecture 1B: Intro to R"
 date-modified: last-modified
 ---
 
+## Lecture Slides
+
+[Lecture 1 - Intro to R](../slides/slidefiles/lec1_intro.qmd)
 
 ## Video Lecture
 
 {{< video https://youtu.be/OYxDwybdlkY?si=BH8swDzSfguRxIl2 >}}
+
 
 ## Coding in R: The Basics
 

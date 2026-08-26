@@ -5,7 +5,7 @@ date-modified: last-modified
 
 Worksheets are guided exercises that are meant to supplement lectures, and will be graded as part of your final mark in STAT545. Time will be given in lecture to work on these formative assessments.
 
-Worksheets are produced with Jupyter Notebooks. For installation instructions, see [Lecture 1A (Installation)](lectures_i/lec1a_installation.qmd) or check out [this YouTube video](https://www.youtube.com/watch?v=CdISUthp8dk) (**ignore the instructions for downloading from GitHub! You can now download directly by clicking the Worksheet name below**). 
+Worksheets are produced with Jupyter Notebooks. For installation instructions, see [Lecture 1A (Installation)](../lectures_i/lec1a_installation.qmd) or check out [this YouTube video](https://www.youtube.com/watch?v=CdISUthp8dk) (**ignore the instructions for downloading from GitHub! You can now download directly by clicking the Worksheet name below**). 
 
 
 :::{.callout-note}

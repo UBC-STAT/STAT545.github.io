@@ -552,6 +552,167 @@
     "text": "Lecture Flow\n\nLectures for STAT545 are designed to be more interactive than a traditional statistics lecture.\nThe class will begin with a short summary of the previous class, followed by an introduction to that day’s topic. For most of the lectures, we will be going through the interactive worksheets (yes, the ones that you receive marks for and yes, prior to the deadline). This will give provide you with dedicated time to work on the assessments in class with access to the instructor and the TAs.\nMany lectures will have an accompanying video, which will be linked on the webpage and on our STAT545 YouTube Playlist.\nLectures build on top of each other and it is crucial to stay on track as we progress through this course."
   },
   {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#r-basics",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#r-basics",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "R Basics",
+    "text": "R Basics\n\nR is an open source programming language designed for statistical computing and data analysis.\nIn its simplest form, R is a calculator. For example, we can type 1 + 2 in the console of R (we will be using RStudio) will spit out the answer of 3.\n\n\n\n\n\n\n\n\n\n(The [1] in the answer can be ignored for now)"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#r-basics-1",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#r-basics-1",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "R Basics",
+    "text": "R Basics\n\nR can also be used to do more complex expressions, such as \\((450 - 15)^2/(5 + 7\\times4)\\), which we would write in R with:"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#variables",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#variables",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Variables",
+    "text": "Variables\n\nR can also be used to store values as a variable.\nTo assign a value to a variable in R, we use the &lt;- symbol (the less than symbol followed by the minus sign).\nFor example, if I wanted to store the number of apartments I’ve lived in since moving out for university, I could assign this to a variable called apartments_lived_in by:"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#variables-1",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#variables-1",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Variables",
+    "text": "Variables\nThen, if I later wanted to use this value, I could simply execute\n\n\n\n\n\n\n\n\nwhich you can see stores the value of 4! I can also do math on this variable, for example multiplying it by 2:\n\n\n\n\n\n\n\n\nVariables can also store the results of expressions, which we will dive into in Worksheet A1."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#comments",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#comments",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Comments",
+    "text": "Comments\n\nComments are lines (or parts of lines) of code that R ignores.\nWe specify them using #. Commenting can be useful for documenting what you’re doing, or temporarily stopping a line from running. For example:"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#data-structures",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#data-structures",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Data Structures",
+    "text": "Data Structures\n\nR can handle different data structures (which are just objects that contain data) including:\n\nstrings\nvectors\ndata frames* (just to name a few).\n\n\nWe will go over the basics of these structures in this section."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#strings",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#strings",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Strings",
+    "text": "Strings\n\nA string is a R (often called character data) is a string of characters enclosed in quotations. For example, I could store my name in a variable called name:\n\n\n\n\n\n\n\n\n\nand access it later by typing name"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#strings-1",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#strings-1",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Strings",
+    "text": "Strings\nStrings can also have white spaces and punctuation, such as\n\n\n\n\n\n\n\n\nYou can use single ' or double \" quotation marks to wrap around the string - just be consistent!\n\n\n\n\n\n\nTip\n\n\nIn some worksheets, questions are multiple choice. Ensure that you type your answer as a string, i.e., my_answer &lt;- \"A\"."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#numeric-vectors",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#numeric-vectors",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Numeric Vectors",
+    "text": "Numeric Vectors\n\nA vector is an ordered list of items of the same type. A numeric vector is an ordered list of numbers.\nVectors are created in R using the c() function, with elements separated by commas.\nFor example, suppose someone wanted to store the number of roommates they lived with in their four apartments. They had 4 roommates in their first apartment, then 2 in their next, followed by 3, and finally lived alone with 0 roommates. We can save this information in a vector named roommates using the following code:"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#numeric-vectors-1",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#numeric-vectors-1",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Numeric Vectors",
+    "text": "Numeric Vectors\n\nWe can access each element of the vector by indexing it with [].\nIn R, unlike some other programming languages, the index starts at 1. So if you’d like to access the first element of the vector, you can use [1]. For example, to see the number of roommates in my first apartment, I could use\n\n\n\n\n\n\n\n\n\nOr view the number of roommates in my third apartment using:"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#numeric-vectors-2",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#numeric-vectors-2",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Numeric Vectors",
+    "text": "Numeric Vectors\n\nWe can also perform math on vectors!\nSuppose we wanted to calculate the total number of occupants in each apartment (including myself). I need to add one person to each apartment! To do so, I can make a new variable called totaloccupants which is equal to roommates plus one:\n\n\n\n\n\n\n\n\n\nWe will dive more into math (functions) on vectors in Worksheet 1."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#logical-vectors",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#logical-vectors",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Logical Vectors",
+    "text": "Logical Vectors\n\nA logical vector is a vector where the elements are a logical statement containing TRUE or FALSE.\nLet’s see how we can create a vector indicating whether or not there were more than two roommates in a given apartment. We can store this as a variable, named more_than_two_roommates using\n\n\n\n\n\n\n\n\n\nFrom the output, you can see that this statement is true for apartments 1 and 3, indicating there were more than two roommates for these apartments."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#other-useful-functions-on-vectors",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#other-useful-functions-on-vectors",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Other useful functions on vectors",
+    "text": "Other useful functions on vectors\n\nR has a number of built in functions that are useful for exploring vectors.\nWe can check the length (number of elements) of a vector using the length() function:\n\n\n\n\n\n\n\n\n\nThis answer makes sense as we had data for four apartments."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#other-useful-functions-on-vectors-1",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#other-useful-functions-on-vectors-1",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Other useful functions on vectors",
+    "text": "Other useful functions on vectors\n\nWe can also look at the types of data stored in vectors using the typeof function\n\n\n\n\n\n\n\n\n\ndouble is a type of numeric data. logical is the type of data that stores TRUE/FALSE."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#dataframes",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#dataframes",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Dataframes",
+    "text": "Dataframes\n\nDataframes are a powerful tool for storing multidimensional data.\nFor example, we could have data on housing for multiple people, including the rent paid, number of roommates, city, etc. Dataframes are a convenient way to store such information.\nSuppose we have data on three individuals stored in the dataframe housingdata.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe see that Grace rents a 2 bedroom apartment, with two total occupants, and the total rent is $2700 per month in Vancouver. Mei lives in Toronto and has a 3 bedroom apartment shared between 4 people, and the total rent is $5000. Sam lives alone in a one bedroom apartment in Halifax, and pays $1900.\n(We will focus more on dataframes in a coming lecture, but I wanted to mention them here)"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "RStudio and Saving your R Code",
+    "text": "RStudio and Saving your R Code\nRStudio provides us with an Integrated Development Environment (IDE) that allows you to save R Scripts (documents containing your R code). It’s free and open-source!\nR Studio will look like this (mine is a dark theme):\n\nI’ve highlighted some important pieces:\nConsole\n\nUseful for quick calculations you don’t want to save, debugging\n\nUntitled1\n\nan R Script (currently unsaved/untitled)\nSaves your code\n(P.S., You can create an R Script by going File &gt; New File &gt; R Script)\n\nTerminal\n\nUsed for command line programming. We will use this later when connecting to GitHub (ignore for now but know it exists!)\n\nEnvironment\n\nShows your saved variables, data structures, etc (currently empty)"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-1",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-1",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "RStudio and Saving your R Code",
+    "text": "RStudio and Saving your R Code\n\nIt’s okay if your RStudio is configured differently! You can move the positions of some of these panes in the settings.\nFor any code you’d like to save, we write it in an R Script! Let’s create a file called “roommates.R”. In RStudio, go to File &gt; New File &gt; R Script. Now, go to File &gt; Save As… and save it somewhere that makes sense for you (i.e., a STAT545 folder).\nInstead of working line by line, let’s add the following (very simple) code to a new file called roommates.R to calculate the total number of occupants in each apartment lived in:\n\nroommates &lt;- c(4, 2, 3, 0)\ntotaloccupants &lt;- roommates + 1\ntotaloccupants\nSave your work.\nYour RStudio will look something like this:"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-2",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-2",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "RStudio and Saving your R Code",
+    "text": "RStudio and Saving your R Code\nTo run the code, we can highlight it and click the “Run” button or click cmd/ctrl + Shift + Enter to run all code in the R Script. You will notice the code gets sent line by line to the Console, and the variables you created will now be in the Environment.\n ## RStudio and Saving your R Code\nNow, anytime you want to run that code you have it right there! You can also edit the code and re-run it to update the variables.\nThe variables are stored in the environment. If you want to start fresh, you can click the broom button in the environment which will clear your variables. Then, run your code from top to bottom again."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-3",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-3",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "RStudio and Saving your R Code",
+    "text": "RStudio and Saving your R Code\n\n\n\nExercise 1: Update roommates.R\n\n\n\n\n\n\nCreate an R file that creates the housingdata dataset:\n\nhousingdata &lt;- data.frame(rbind(c(\"Grace\", 2, 2, 2700, \"Vancouver\"),\n                     c(\"Mei\", 3, 4, 5000, \"Toronto\"),\n                     c(\"Sam\", 1, 1, 1900, \"Halifax\")))\ncolnames(housingdata) &lt;- c(\"Name\", \"NumRooms\", \"NumOccupants\", \"Rent\", \"City\")\n\nYour landlord has decided that pets count as occupants! You’ve lived with a pet cat since you moved into your first apartment. Update the code in your roommates.R file to reflect this, and re-run it to get the new total number of occupants in each apartment.\nSave the file."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-4",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-4",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "RStudio and Saving your R Code",
+    "text": "RStudio and Saving your R Code\n\n\n\nExercise 2: Playing in the Console\n\n\n\n\n\n\nOut of curiosity, you wanted to see how many occupants were in your friend’s apartment. You don’t really want to save this code, so you go to the Console to play around with the numbers. Your friend had 5 roommates in first year, then 3 in second year, then 1 roommate in third and fourth years. You execute the following code in the R Console (not touching roommates.R):\n\nroommates &lt;- c(5, 3, 1, 1)\ntotaloccupants &lt;- roommates + 1\ntotaloccupants\n\n[1] 6 4 2 2\n\n\nDid anything in your Environment change?"
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-5",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#rstudio-and-saving-your-r-code-5",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "RStudio and Saving your R Code",
+    "text": "RStudio and Saving your R Code\nWell… even though you didn’t touch roommates.R, you overwrote the roommates and totaloccupants variables!\n\nSo remember, the console is not separate (functionally) in R. Anything you do in the console will affect your variables in the environment. Of course, if we were to clear our environment and re-run the roommates.R file, we’d go back to our original data.\nThose are the basics of RStudio! You will learn more as the course progresses."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#what-to-do-when-youre-stuck",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#what-to-do-when-youre-stuck",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "What to do when you’re stuck",
+    "text": "What to do when you’re stuck\nWorking with technology can be hard. Coding can be especially hard. Getting stuck is very common in both cases.\nBefore running to Slack, try searching for the answer yourself. This is an extremely important real-world skill! When you’re conducting your own analyses down the road, you may not have anyone to directly ask for help.\nTry:\n\nGoogling your error codes (removing highly specific information like variable names)\nGoogling the problem (i.e., R dataframe can’t rename columns)\nSearch StackOverflow and include the [r] tag. Or the [ggplot2] tag. Or the [plyr] tag. You get the idea.\n\n\n\n\n\n\n\nCaution\n\n\nBeware of AI tools: sometimes they’re helpful, and sometimes they’re not.\n\n\n\nWhile I encourage you to search for answers on your own, don’t fret if you’re stuck. We’re here to help on Slack! Review the posting guidelines on the Syllabus so your questions go to the appropriate channel."
+  },
+  {
+    "objectID": "webpages/slides/slidefiles/lec1_intro.html#worksheet-a1",
+    "href": "webpages/slides/slidefiles/lec1_intro.html#worksheet-a1",
+    "title": "Lecture 1: Welcome and Intro to R",
+    "section": "Worksheet A1",
+    "text": "Worksheet A1\nNow it’s your turn to use R! Work through Worksheet A1 on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.\nSome notes on Jupyter notebooks:\n\nA terminal or command prompt window will pop up. Do not close it until you are finished with Jupyter. - Save often!\nSometimes OneDrive folders do not show up on Jupyter. Try saving in a folder on your Desktop if you have issues finding files.\nTo run code, highlight it and click the run (play) button or ctrl/cmd and enter\n\nFor more on Jupyter Notebooks and our worksheets, see this YouTube video!"
+  },
+  {
     "objectID": "webpages/slides/slidefiles/lec1_intro.html#to-save-these-slides-with-your-code",
     "href": "webpages/slides/slidefiles/lec1_intro.html#to-save-these-slides-with-your-code",
     "title": "Lecture 1: Welcome and Intro to R",
@@ -1942,7 +2103,37 @@
     "href": "webpages/lectures.html",
     "title": "Content and Schedule",
     "section": "",
-    "text": "The schedule is subject to change at the discretion of the instructor. Any classes without a topic listed are working sessions with the TAs.\nAll due dates are at 11:59pm PT (local time, Vancouver).\nSTAT 545 A\n\n\n\nWeek\nDate\nTopic\nAssessments Due\n\n\n\n\n1\nTues Sept 8\n(Optional) Installation Help Session\n\n\n\n\nThurs Sept 10\nIntroduction to R\n\n\n\n2\nTues Sept 15\nData Cleaning with dplyr\nWorksheet A1\n\n\n\nThus Sept 17\nRMarkdown and Reproducibility\n\n\n\n3\nTues Sept 22\nVersion Control I\nWorksheet A2\n\n\n\nThurs Sept 24\nVersion Control II\n\n\n\n4\nTues Sept 29\nData Visualization I\n\n\n\n\nThurs Oct 01\nData Visualization II\nCollaborative Project\n\n\n5\nTues Oct 06\nTidy Data\nWorksheet A3\n\n\n\nThurs Oct 08\nModel Fitting\n\n\n\n6\nTues Oct 13\nFactors\nMini Data Analysis I\n\n\n\nThurs Oct 15\n\nWorksheet A4\n\n\n7\nTues Oct 20\nReading/Writing , Tibble Joins\n\n\n\n\nThurs Oct 22\n\nWorksheet A5\n\n\n\nTuesday Oct 27\n\nMini Data Analysis II\n\n\n\n\n\n\n\n\n\nSTAT 545 B\n\n\n\nWeek\nDate\nTopic\nAssessments Due\n\n\n\n\n1\nTues Oct 27\nFunctions\n\n\n\n\nThurs Oct 29\nAdvanced Functions\n\n\n\n2\nTues Nov 03\nR Packages\nWorksheet B1\n\n\n\nThus Nov 05\nAdvanced R Packages\nAssignment 1 (Functions)\n\n\n3\nTues Nov 10\nNO CLASS\n\n\n\n\nThurs Nov 12\nRegular Expressions with stringr\n\n\n\n4\nTues Nov 17\nDashboards with RShiny\nAssignment 2 (R Package)\n\n\n\nThurs Nov 19\n\nWorksheet B2\n\n\n5\nTues Nov 24\nIteration\n\n\n\n\nThurs Nov 26\n\nAssignment 3 (Dashboard)\n\n\n6\nTues Dec 01\nWebsites with quarto\n\n\n\n\nThurs Dec 03\n\nWorksheet B3\n\n\n\n…\n\n\n\n\n\nTues Dec 15\n\nAssignment 4 (Website)\n\n\n\n\n\n\n Back to top"
+    "text": "The schedule is subject to change at the discretion of the instructor. Any classes without a topic listed are working sessions with the TAs.\nAll due dates are at 11:59pm PT (local time, Vancouver).\nSTAT 545 A\n\n\n\nWeek\nDate\nNotes\nAssessments Due\n\n\n\n\n1\nTues Sept 8\n(Optional) Installation Help Session\n\n\n\n\nThurs Sept 10\nIntroduction to R\n\n\n\n2\nTues Sept 15\nData Cleaning with dplyr\nWorksheet A1\n\n\n\nThus Sept 17\nRMarkdown and Reproducibility\n\n\n\n3\nTues Sept 22\nVersion Control I\nWorksheet A2\n\n\n\nThurs Sept 24\nVersion Control II\n\n\n\n4\nTues Sept 29\nData Visualization I\n\n\n\n\nThurs Oct 01\nData Visualization II\nCollaborative Project\n\n\n5\nTues Oct 06\nTidy Data\nWorksheet A3\n\n\n\nThurs Oct 08\nModel Fitting\n\n\n\n6\nTues Oct 13\nFactors\nMini Data Analysis I\n\n\n\nThurs Oct 15\n\nWorksheet A4\n\n\n7\nTues Oct 20\nReading/Writing , Tibble Joins\n\n\n\n\nThurs Oct 22\n\nWorksheet A5\n\n\n\nTuesday Oct 27\n\nMini Data Analysis II\n\n\n\n\n\n\n\n\n\nSTAT 545 B\n\n\n\nWeek\nDate\nTopic\nAssessments Due\n\n\n\n\n1\nTues Oct 27\nFunctions\n\n\n\n\nThurs Oct 29\nAdvanced Functions\n\n\n\n2\nTues Nov 03\nR Packages\nWorksheet B1\n\n\n\nThus Nov 05\nAdvanced R Packages\nAssignment 1 (Functions)\n\n\n3\nTues Nov 10\nNO CLASS\n\n\n\n\nThurs Nov 12\nRegular Expressions with stringr\n\n\n\n4\nTues Nov 17\nDashboards with RShiny\nAssignment 2 (R Package)\n\n\n\nThurs Nov 19\n\nWorksheet B2\n\n\n5\nTues Nov 24\nIteration\n\n\n\n\nThurs Nov 26\n\nAssignment 3 (Dashboard)\n\n\n6\nTues Dec 01\nWebsites with quarto\n\n\n\n\nThurs Dec 03\n\nWorksheet B3\n\n\n\n…\n\n\n\n\n\nTues Dec 15\n\nAssignment 4 (Website)\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "webpages/lectures_i/lec1b_introR.html",
+    "href": "webpages/lectures_i/lec1b_introR.html",
+    "title": "Lecture 1B: Intro to R",
+    "section": "",
+    "text": "Lecture 1 - Intro to R",
+    "crumbs": [
+      "Lecture 1B: Intro to R"
+    ]
+  },
+  {
+    "objectID": "webpages/lectures_i/lec1b_introR.html#lecture-slides",
+    "href": "webpages/lectures_i/lec1b_introR.html#lecture-slides",
+    "title": "Lecture 1B: Intro to R",
+    "section": "",
+    "text": "Lecture 1 - Intro to R",
+    "crumbs": [
+      "Lecture 1B: Intro to R"
+    ]
+  },
+  {
+    "objectID": "webpages/lectures_i/lec1b_introR.html#video-lecture",
+    "href": "webpages/lectures_i/lec1b_introR.html#video-lecture",
+    "title": "Lecture 1B: Intro to R",
+    "section": "Video Lecture",
+    "text": "Video Lecture",
+    "crumbs": [
+      "Lecture 1B: Intro to R"
+    ]
   },
   {
     "objectID": "webpages/lectures_i/lec1b_introR.html#coding-in-r-the-basics",
@@ -2579,7 +2770,7 @@
     "href": "webpages/lectures_ii/lec8b_advfunctions.html#default-parameters",
     "title": "Lecture 8b: Advanced Functions",
     "section": "Default Parameters",
-    "text": "Default Parameters\nRecall the dice-rolling example from the previous lecture. Sometimes you want to use a function frequently without re-writing the same parameters over and over again. Let’s make a more flexible function that allows us to change the number of faces on the dice being rolled.\n\n#' @details\n#' Simulates rolling `num_dice` number of dice with `n_sides` sides and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run\n#'\n#' @param num_dice integer representing number of dice to be rolled\n#' @param n_sides integer representing the number of sides of each dice\n#' @return the sum of the dice rolled\n  \nroll_dice &lt;- function(n_sides, num_dice) { \n  \n    # throw an error if num_dice (the input) is not an integer\n  \n    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0\n      stop(\"num_dice must be an integer\") #throw this error message and stop the function\n    }\n  \n    #if the num_dice is an integer, continue with the function:\n    sum(sample(1:n_sides, num_dice, replace=TRUE)) #sample two numbers from one to n_sides with replacement, return sum\n}\n\nNotice now that in this function, there are two parameters (the new one is n_sides). We now sample from 1:nsides (instead of 1:10) to make the function more flexible. I also renamed the function to roll_dice as we are not necessarily rolling 10 sided dice.\nSo to roll two 10-sided dice, I can call:\n\nroll_dice(n_sides = 10, num_dice = 2)\n\n[1] 11\n\n\nNow, perhaps I often want to roll ten-sided dice. To avoid having to type n_sides = 10, I can simply make the default number of sides to 10!\n\n#' @details\n#' Simulates rolling `num_dice` number of dice with `n_sides` sides and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run\n#'\n#' @param num_dice integer representing number of dice to be rolled\n#' @param n_sides integer representing the number of sides of each dice. Default is 10.\n#' @return the sum of the dice rolled\n  \nroll_dice &lt;- function(n_sides = 10, num_dice) { #NEW: n_sides default is 10\n  \n    # throw an error if num_dice (the input) is not an integer\n  \n    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0\n      stop(\"num_dice must be an integer\") #throw this error message and stop the function\n    }\n  \n    #if the num_dice is an integer, continue with the function:\n    sum(sample(1:n_sides, num_dice, replace=TRUE)) #sample two numbers from one to n_sides with replacement, return sum\n}\n\nWe have set n_sides = 10 as the default. This means the function will assume we have a 10 sided dice unless otherwise specified. Let’s roll 3 dice using 10 sided dice (the default):\n\nroll_dice(num_dice = 3)\n\n[1] 9\n\n\nI didn’t need to include n_sides = 10 in my function call! But I can if I want to change it to a number other than 10. Let’s roll 3 standard 6-sided dice\n\nroll_dice(n_sides = 6, num_dice = 3)\n\n[1] 6\n\n\n\n\n\n\n\n\nWarningExercise: Default Values\n\n\n\nMake a new argument for the summarizeby_fun() we made previously called columns that allows you to input a vector containing which columns you wish to look at missing values for (these can be written as strings). Set the default to everything().\n\n\n\n\n\n\n\n\nWarningClick to reveal the solution!\n\n\n\n\n\n\nsummarizeby_fun &lt;- function(data, groups, columns = everything()){\n  data %&gt;%\n    group_by({{groups}}) %&gt;%\n    summarize(across(columns, ~ sum(is.na(.x))))\n}\n\nsummarizeby_fun(penguins, species)\n\nWarning: There was 1 warning in `summarize()`.\nℹ In argument: `across(columns, ~sum(is.na(.x)))`.\nCaused by warning:\n! Using an external vector in selections was deprecated in tidyselect 1.1.0.\nℹ Please use `all_of()` or `any_of()` instead.\n  # Was:\n  data %&gt;% select(columns)\n\n  # Now:\n  data %&gt;% select(all_of(columns))\n\nSee &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.\n\n\n# A tibble: 3 × 8\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;      &lt;int&gt;          &lt;int&gt;         &lt;int&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie         0              1             1                 1           1\n2 Chinstrap      0              0             0                 0           0\n3 Gentoo         0              1             1                 1           1\n# ℹ 2 more variables: sex &lt;int&gt;, year &lt;int&gt;\n\nsummarizeby_fun(penguins, species, c(\"bill_length_mm\", \"sex\"))\n\n# A tibble: 3 × 3\n  species   bill_length_mm   sex\n  &lt;fct&gt;              &lt;int&gt; &lt;int&gt;\n1 Adelie                 1     6\n2 Chinstrap              0     0\n3 Gentoo                 1     5",
+    "text": "Default Parameters\nRecall the dice-rolling example from the previous lecture. Sometimes you want to use a function frequently without re-writing the same parameters over and over again. Let’s make a more flexible function that allows us to change the number of faces on the dice being rolled.\n\n#' @details\n#' Simulates rolling `num_dice` number of dice with `n_sides` sides and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run\n#'\n#' @param num_dice integer representing number of dice to be rolled\n#' @param n_sides integer representing the number of sides of each dice\n#' @return the sum of the dice rolled\n  \nroll_dice &lt;- function(n_sides, num_dice) { \n  \n    # throw an error if num_dice (the input) is not an integer\n  \n    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0\n      stop(\"num_dice must be an integer\") #throw this error message and stop the function\n    }\n  \n    #if the num_dice is an integer, continue with the function:\n    sum(sample(1:n_sides, num_dice, replace=TRUE)) #sample two numbers from one to n_sides with replacement, return sum\n}\n\nNotice now that in this function, there are two parameters (the new one is n_sides). We now sample from 1:nsides (instead of 1:10) to make the function more flexible. I also renamed the function to roll_dice as we are not necessarily rolling 10 sided dice.\nSo to roll two 10-sided dice, I can call:\n\nroll_dice(n_sides = 10, num_dice = 2)\n\n[1] 16\n\n\nNow, perhaps I often want to roll ten-sided dice. To avoid having to type n_sides = 10, I can simply make the default number of sides to 10!\n\n#' @details\n#' Simulates rolling `num_dice` number of dice with `n_sides` sides and outputs the sum. Note: no seed is used so the function will return a dice combination each time it is run\n#'\n#' @param num_dice integer representing number of dice to be rolled\n#' @param n_sides integer representing the number of sides of each dice. Default is 10.\n#' @return the sum of the dice rolled\n  \nroll_dice &lt;- function(n_sides = 10, num_dice) { #NEW: n_sides default is 10\n  \n    # throw an error if num_dice (the input) is not an integer\n  \n    if(num_dice %% 1 != 0){ #if num_dice mod 1 is NOT 0\n      stop(\"num_dice must be an integer\") #throw this error message and stop the function\n    }\n  \n    #if the num_dice is an integer, continue with the function:\n    sum(sample(1:n_sides, num_dice, replace=TRUE)) #sample two numbers from one to n_sides with replacement, return sum\n}\n\nWe have set n_sides = 10 as the default. This means the function will assume we have a 10 sided dice unless otherwise specified. Let’s roll 3 dice using 10 sided dice (the default):\n\nroll_dice(num_dice = 3)\n\n[1] 14\n\n\nI didn’t need to include n_sides = 10 in my function call! But I can if I want to change it to a number other than 10. Let’s roll 3 standard 6-sided dice\n\nroll_dice(n_sides = 6, num_dice = 3)\n\n[1] 5\n\n\n\n\n\n\n\n\nWarningExercise: Default Values\n\n\n\nMake a new argument for the summarizeby_fun() we made previously called columns that allows you to input a vector containing which columns you wish to look at missing values for (these can be written as strings). Set the default to everything().\n\n\n\n\n\n\n\n\nWarningClick to reveal the solution!\n\n\n\n\n\n\nsummarizeby_fun &lt;- function(data, groups, columns = everything()){\n  data %&gt;%\n    group_by({{groups}}) %&gt;%\n    summarize(across(columns, ~ sum(is.na(.x))))\n}\n\nsummarizeby_fun(penguins, species)\n\nWarning: There was 1 warning in `summarize()`.\nℹ In argument: `across(columns, ~sum(is.na(.x)))`.\nCaused by warning:\n! Using an external vector in selections was deprecated in tidyselect 1.1.0.\nℹ Please use `all_of()` or `any_of()` instead.\n  # Was:\n  data %&gt;% select(columns)\n\n  # Now:\n  data %&gt;% select(all_of(columns))\n\nSee &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.\n\n\n# A tibble: 3 × 8\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;      &lt;int&gt;          &lt;int&gt;         &lt;int&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie         0              1             1                 1           1\n2 Chinstrap      0              0             0                 0           0\n3 Gentoo         0              1             1                 1           1\n# ℹ 2 more variables: sex &lt;int&gt;, year &lt;int&gt;\n\nsummarizeby_fun(penguins, species, c(\"bill_length_mm\", \"sex\"))\n\n# A tibble: 3 × 3\n  species   bill_length_mm   sex\n  &lt;fct&gt;              &lt;int&gt; &lt;int&gt;\n1 Adelie                 1     6\n2 Chinstrap              0     0\n3 Gentoo                 1     5",
     "crumbs": [
       "Lecture 8b: Advanced Functions"
     ]
