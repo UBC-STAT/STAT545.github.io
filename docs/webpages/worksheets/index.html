@@ -193,8 +193,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#stat-545-a" id="toc-stat-545-a" class="nav-link active" data-scroll-target="#stat-545-a"><strong>STAT 545 A</strong></a></li>
+  <li><a href="#due-dates" id="toc-due-dates" class="nav-link active" data-scroll-target="#due-dates">Due Dates</a>
+  <ul class="collapse">
+  <li><a href="#stat-545-a" id="toc-stat-545-a" class="nav-link" data-scroll-target="#stat-545-a"><strong>STAT 545 A</strong></a></li>
   <li><a href="#stat-545-b" id="toc-stat-545-b" class="nav-link" data-scroll-target="#stat-545-b"><strong>STAT 545 B:</strong></a></li>
+  </ul></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#tips-and-tricks" id="toc-tips-and-tricks" class="nav-link" data-scroll-target="#tips-and-tricks">Tips and Tricks</a></li>
   </ul>
 </nav>
     </div>
@@ -228,16 +233,8 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Worksheets are guided exercises that are meant to supplement lectures, and will be graded as part of your final mark in STAT545. Time will be given in lecture to work on these formative assessments.</p>
 <p>Worksheets are produced with JupyterHub, which is linked directly on Canvas (no installation necessary).</p>
-<p><strong>To work on your worksheet</strong>:</p>
-<ul>
-<li><p>Click the Worksheet Link on Canvas (under Assignments)</p>
-<p><img src="../../webpages/lectures_i/images/worksheets_canvas.png" class="img-fluid"></p></li>
-<li><p>Click “Load worksheet_a0X in a new window”. This will load the worksheet into Jupyter and launch it in your browser!</p>
-<p><img src="../../webpages/lectures_i/images/worksheet_launch.png" class="img-fluid"></p></li>
-<li><p>Work on your worksheet. FIll in code cells where prompted, and run the test cells to see if you got the answer correct. A “Success!” message will appear if the answer is correct.</p></li>
-<li><p>Save your work often.</p></li>
-<li><p>When you are finished, restart your kernel, run all cells, ensure there are no errors and save your work. <strong>Your work will automatically be submitted from this server and graded at the due date!</strong> No submission to Canvas is necessary.</p></li>
-</ul>
+<section id="due-dates" class="level2">
+<h2 class="anchored" data-anchor-id="due-dates">Due Dates</h2>
 <section id="stat-545-a" class="level3">
 <h3 class="anchored" data-anchor-id="stat-545-a"><strong>STAT 545 A</strong></h3>
 <table class="caption-top table">
@@ -305,7 +302,29 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p><u><strong>Worksheet Tips and Tricks:</strong></u></p>
+</section>
+</section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>Follow the instructions below or see (this youtube video LINK) to complete and submit your worksheets.</p>
+<p><strong>To work on your worksheet</strong>:</p>
+<ul>
+<li><p>Click the Worksheet Link on Canvas (under Assignments)</p>
+<p><img src="../../webpages/lectures_i/images/worksheets_canvas.png" class="img-fluid"></p></li>
+<li><p>Click “Load worksheet_a0X in a new window”. This will load the worksheet into Jupyter and launch it in your browser!</p>
+<p><img src="../../webpages/lectures_i/images/worksheet_launch.png" class="img-fluid"></p>
+<p><img src="../../webpages/lectures_i/images/worksheet_jupyterhub.png" class="img-fluid"></p></li>
+<li><p>To run text or code cells, press the “▶️” button to run the code</p></li>
+<li><p>Fill in code cells where prompted, and run the cell.</p></li>
+<li><p>Run the test cells to see if you got the answer correct. A “Success!” message will appear if the answer is correct.</p></li>
+<li><p>If the answer is incorrect, you will get an error message.</p></li>
+<li><p>Save your work often</p></li>
+<li><p>When you are finished, restart your kernel and rerun all cells from top to bottom. Ensure there are no errors and save your work.</p></li>
+<li><p><strong>Your work will automatically be submitted from this server and graded at the due date!</strong> No submission to Canvas is necessary.</p></li>
+</ul>
+</section>
+<section id="tips-and-tricks" class="level2">
+<h2 class="anchored" data-anchor-id="tips-and-tricks">Tips and Tricks</h2>
 <ul>
 <li><p>Only edit cells where prompted. If you accidentally click on a text-only cell, hit the play button and it should re-render.</p></li>
 <li><p>You can check your answers prior to submitting! If you see a “Success!” message, you got the question right. Otherwise, a detailed error message will help you diagnose what went wrong.</p></li>

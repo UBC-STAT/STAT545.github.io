@@ -7,21 +7,7 @@ Worksheets are guided exercises that are meant to supplement lectures, and will 
 
 Worksheets are produced with JupyterHub, which is linked directly on Canvas (no installation necessary).
 
-**To work on your worksheet**:
-
--   Click the Worksheet Link on Canvas (under Assignments)
-
-    ![](/webpages/lectures_i/images/worksheets_canvas.png)
-
--   Click "Load worksheet_a0X in a new window". This will load the worksheet into Jupyter and launch it in your browser!
-
-    ![](/webpages/lectures_i/images/worksheet_launch.png)
-
--   Work on your worksheet. FIll in code cells where prompted, and run the test cells to see if you got the answer correct. A "Success!" message will appear if the answer is correct.
-
--   Save your work often.
-
--   When you are finished, restart your kernel, run all cells, ensure there are no errors and save your work. **Your work will automatically be submitted from this server and graded at the due date!** No submission to Canvas is necessary.
+## Due Dates
 
 ### **STAT 545 A**
 
@@ -41,7 +27,40 @@ Worksheets are produced with JupyterHub, which is linked directly on Canvas (no 
 | Worksheet B2 | Nov 12, 2026 | Nov 19, 2026          |
 | Worksheet B3 | Nov 24, 2026 | Dec 3, 2026           |
 
-[**Worksheet Tips and Tricks:**]{.underline}
+
+## Instructions 
+
+Follow the instructions below or see (this youtube video LINK) to complete and submit your worksheets.
+
+**To work on your worksheet**:
+
+-   Click the Worksheet Link on Canvas (under Assignments)
+
+    ![](/webpages/lectures_i/images/worksheets_canvas.png)
+
+-   Click "Load worksheet_a0X in a new window". This will load the worksheet into Jupyter and launch it in your browser!
+
+    ![](/webpages/lectures_i/images/worksheet_launch.png)
+
+    ![](/webpages/lectures_i/images/worksheet_jupyterhub.png)
+
+-   To run text or code cells, press the "▶️" button to run the code
+
+-   Fill in code cells where prompted, and run the cell.
+
+-   Run the test cells to see if you got the answer correct. A "Success!" message will appear if the answer is correct.
+
+-   If the answer is incorrect, you will get an error message.
+
+-   Save your work often
+
+-   When you are finished, restart your kernel and rerun all cells from top to bottom. Ensure there are no errors and save your work.
+
+-   **Your work will automatically be submitted from this server and graded at the due date!** No submission to Canvas is necessary.
+
+
+
+## Tips and Tricks
 
 -   Only edit cells where prompted. If you accidentally click on a text-only cell, hit the play button and it should re-render.
 
