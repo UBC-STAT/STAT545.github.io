@@ -5,27 +5,33 @@ date-modified: last-modified
 
 Worksheets are guided exercises that are meant to supplement lectures, and will be graded as part of your final mark in STAT545. Time will be given in lecture to work on these formative assessments.
 
-Worksheets are produced with Jupyter Notebooks. For installation instructions, see [Lecture 1A (Installation)](../lectures_i/lec1a_installation.qmd) or check out [this YouTube video](https://www.youtube.com/watch?v=CdISUthp8dk) (**ignore the instructions for downloading from GitHub! You can now download directly by clicking the Worksheet name below**). 
+Worksheets are produced with JupyterHub, which is linked directly on Canvas (no installation necessary).
 
+**To work on your worksheet**:
 
-:::{.callout-note}
+-   Click the Worksheet Link on Canvas (under Assignments)
 
-When submitting to Canvas, **please keep the original file name** (i.e., "worksheet_a01.ipynb"). If you change the file name, your sheet will not work with the auto-grading system! Do not use names like "worksheet_a01 (1).ipynb" or "worksheet_a01_grace.ipynb". 
+    ![](/webpages/lectures_i/images/worksheets_canvas.png)
 
-:::
+-   Click "Load worksheet_a0X in a new window". This will load the worksheet into Jupyter and launch it in your browser!
 
+    ![](/webpages/lectures_i/images/worksheet_launch.png)
 
+-   Work on your worksheet. FIll in code cells where prompted, and run the test cells to see if you got the answer correct. A "Success!" message will appear if the answer is correct.
+
+-   Save your work often.
+
+-   When you are finished, restart your kernel, run all cells, ensure there are no errors and save your work. **Your work will automatically be submitted from this server and graded at the due date!** No submission to Canvas is necessary.
 
 ### **STAT 545 A**
 
-| Worksheet | Release Date | Due Date (11:59PM PT) |
-|------------------------|------------------------|------------------------|
-| <a href="worksheets_blank/worksheet_a01.ipynb" download>Worksheet A1</a> | September 8th, 2026 | September 15th, 2026 |
-| Worksheet A2 | September 15th, 2026 | September 22nd, 2026 |
-| Worksheet A3 | September 29th, 2026 | October 6th, 2026 |
-| Worksheet A4 | October 6th, 2026 | October 15th, 2026 |
-| Worksheet A5 | October 15th, 2026 | October 22nd, 2026 |
-
+| Worksheet    | Release Date         | Due Date (11:59PM PT) |
+|--------------|----------------------|-----------------------|
+| Worksheet A1 | September 8th, 2026  | September 15th, 2026  |
+| Worksheet A2 | September 15th, 2026 | September 22nd, 2026  |
+| Worksheet A3 | September 29th, 2026 | October 6th, 2026     |
+| Worksheet A4 | October 6th, 2026    | October 15th, 2026    |
+| Worksheet A5 | October 15th, 2026   | October 22nd, 2026    |
 
 ### **STAT 545 B:**
 
@@ -44,7 +50,5 @@ When submitting to Canvas, **please keep the original file name** (i.e., "worksh
 -   Save your work frequently.
 
 -   Prior to submitting, restart your kernel and run all to ensure that no errors persist. Save again.
-
--   Submit the .ipynb file to Canvas with the file name "worksheet_a##".
 
 -   We're here to help along the way on Slack, so don't be shy to ask for help if you need it.
