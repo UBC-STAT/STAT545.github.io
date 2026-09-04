@@ -5,7 +5,15 @@ date-modified: last-modified
 
 Worksheets are guided exercises that are meant to supplement lectures, and will be graded as part of your final mark in STAT545. Time will be given in lecture to work on these formative assessments.
 
-Worksheets are produced with JupyterHub, which is linked directly on Canvas (no installation necessary).
+Worksheets are produced with JupyterHub, which is linked directly on Canvas (no installation necessary). 
+
+:::{.callout-important}
+
+There are no late submissions accepted for worksheets. The server will automatically pull your work at the due date and run the autograding software. 
+
+Extensions must be requested at least 6 hours before the due date, and will only be granted for extenuating circumstances.
+
+:::
 
 ## Due Dates
 
@@ -30,37 +38,15 @@ Worksheets are produced with JupyterHub, which is linked directly on Canvas (no 
 
 ## Instructions 
 
-Follow the instructions below or see (this youtube video LINK) to complete and submit your worksheets.
 
-**To work on your worksheet**:
+{{< video https://www.youtube.com/watch?v=PD6POGbd9Ec&list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&index=1 >}}
 
--   Click the Worksheet Link on Canvas (under Assignments)
-
-    ![](/webpages/lectures_i/images/worksheets_canvas.png)
-
--   Click "Load worksheet_a0X in a new window". This will load the worksheet into Jupyter and launch it in your browser!
-
-    ![](/webpages/lectures_i/images/worksheet_launch.png)
-
-    ![](/webpages/lectures_i/images/worksheet_jupyterhub.png)
-
--   To run text or code cells, press the "▶️" button to run the code
-
--   Fill in code cells where prompted, and run the cell.
-
--   Run the test cells to see if you got the answer correct. A "Success!" message will appear if the answer is correct.
-
--   If the answer is incorrect, you will get an error message.
-
--   Save your work often
-
--   When you are finished, restart your kernel and rerun all cells from top to bottom. Ensure there are no errors and save your work.
-
--   **Your work will automatically be submitted from this server and graded at the due date!** No submission to Canvas is necessary.
 
 
 
 ## Tips and Tricks
+
+-   Do not rename your worksheet. 
 
 -   Only edit cells where prompted. If you accidentally click on a text-only cell, hit the play button and it should re-render.
 
@@ -71,3 +57,7 @@ Follow the instructions below or see (this youtube video LINK) to complete and s
 -   Prior to submitting, restart your kernel and run all to ensure that no errors persist. Save again.
 
 -   We're here to help along the way on Slack, so don't be shy to ask for help if you need it.
+
+-   **Your work will automatically be submitted from this server and graded at the due date!** No submission to Canvas is necessary.
+
+

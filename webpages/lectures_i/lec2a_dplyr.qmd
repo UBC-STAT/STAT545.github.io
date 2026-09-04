@@ -275,13 +275,7 @@ Worksheet A2 will guide you through some of the basics of `dplyr`.
 
 Put any questions you have about the worksheet questions or about data manipulation in Slack.
 
-## Next Class: FEV Case Study
 
-Next class we will be working through the [first part of the FEV Case Study](https://github.com/UBC-STAT/STAT545.github.io/blob/main/content/casestudies/casestudy_datamanipulation/casestudy_datamanipulation.Rmd).
-
-By yourself or in small groups, work through the exercises in the case study. The teaching team will walk around and answer questions and chat about anything data manipulation related.
-
-We will conclude class by going over instructor solutions.
 
 ## Resources
 

@@ -1,5 +1,5 @@
 ---
-title: "Lecture 14: Professional Websites with Quarto"
+title: "Lecture 13: Professional Websites with Quarto"
 subtitle: "December 2, 2025"
 date-modified: last-modified
 ---

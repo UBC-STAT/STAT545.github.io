@@ -1,5 +1,5 @@
 ---
-title: "Lecture 10: Dashboards with R Shiny"
+title: "Lecture 11: Dashboards with R Shiny"
 subtitle: "November 4, 2025"
 date-modified: last-modified
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Lecture 13: Lists, Iterations, and `purrr`"
+title: "Lecture 12: Lists, Iterations, and `purrr`"
 subtitle: "November 25, 2025"
 date-modified: last-modified
 ---

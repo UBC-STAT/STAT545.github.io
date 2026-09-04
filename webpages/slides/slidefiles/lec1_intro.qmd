@@ -22,26 +22,23 @@ engine: webr
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 
-
 ## Welcome to STAT545!
 
 For today's lecture, we are going to go through the some important information related to the course and jump right into some coding in R using an interactive worksheet and Jupyter Notebooks.
 
-
 ## Hello!
 
--  My name is Grace (she/her)
+-   My name is Grace (she/her)
 
--  I'm an Assistant Professor of Teaching (just finished my first year)
+-   I'm an Assistant Professor of Teaching (just finished my first year)
 
--  Originally from NS ➡️ did Grad School in Waterloo, ON ➡️ now in Vancouver!
+-   Originally from NS ➡️ did Grad School in Waterloo, ON ➡️ now in Vancouver!
 
-    -  Training: BSc Math, MMATH Biostatistics, PhD Biostatistics
+    -   Training: BSc Math, MMATH Biostatistics, PhD Biostatistics
 
--  Hobbies include crafting (knitting/crochet/pottery) and looking for banana slugs in the forest
+-   Hobbies include crafting (knitting/crochet/pottery) and looking for banana slugs in the forest
 
-
-## Positionality Statement 
+## Positionality Statement
 
 We acknowledge that the land on which we gather is the traditional, ancestral, and unceded territory of the xwməθkwəy̓əm (Musqueam) People.\
 
@@ -51,16 +48,15 @@ Throughout this course, we will be weaving Indigenous topics into more "traditio
 
 As stated in the syllabus, there is a **zero tolerance policy for disrespectful behaviour in this classroom**.
 
--   This includes within physical the classroom community (your peers, TAs, instructors, support staff) and online (discussion forums, social media).\
+-   This includes within physical the classroom community (your peers, TAs, instructors, support staff) and online (discussion forums, social media).
 
-Some sensitive topics will be discussed throughout this course.
+Some sensitive topics may be discussed throughout this course.
 
 -   We are all learners and it is okay to make mistakes.
 
 -   We will offer each other corrections politely, and I ask that you keep an open mind as we all continue to learn in this space.
 
 This classroom is a safe space. [**You are welcome here.**]{.underline}
-
 
 ## Course Platforms
 
@@ -80,13 +76,33 @@ We will be using various technologies throughout this course which you should fa
 
 If you've never used some of these before, that's absolutely OK. This course is made to guide you through the basics of many of these platforms.
 
+## Assessments 
+
+### Worksheets (20%)
+
+-   Worksheets are produced on our JupyterHub linked on Canvas. These are formative assessments meant to supplement lectures
+
+-   **There are no late submissions accepted for worksheets**. The server will automatically pull your work at the due date and run the autograding software.
+
+-   **Extensions must be requested at least 6 hours before the due date, and will only be granted for extenuating circumstances**.
+
+## Assessments 
+
+### Mini Data Analysis (45%)
+
+-   Two equally weighted parts which include an analysis of a real data set
+
+-   These are not graded on the basis of how sophisticated your statistical analysis is, but on the quality of your code and workflow
+
+### Collaborative Project (35%)
+
+-   A group project intended to assess version controlling
+
+-   Groups will be randomly assigned
+
 ## Important Course Information
 
 All of the important information is in the [syllabus](../../syllabus/syllabusA.qmd). There are a few items I'd like to emphasize:
-
--   STAT 545 has frequent worksheets. They are meant to supplement lectures.
-
--   STAT 545 A has a mini data analysis and collaborative project worth most of your marks. These are not graded on the basis of how sophisticated your statistical analysis is, but on the quality of your code and workflow. A grading rubric will be posted for each.
 
 -   Stay home if you're sick. Fill out an Academic Concession Self Declaration form if you miss an assessment due to illness. Accommodations will be given on a case-by-case basis.
 
@@ -94,13 +110,11 @@ All of the important information is in the [syllabus](../../syllabus/syllabusA.q
 
 -   All communications are to be done on Slack - do not email me questions unless they are of a sensitive nature (i.e., an academic concession form).
 
-
 But please - read the syllabus :)
 
-## Course AI Policy 
+## Course AI Policy
 
-
-::: {.callout-important}
+::: callout-important
 Plagiarism includes submitting the same response as another student, copying without citation, or copying from generative AI (ChatGPT, Gemini, etc.). Students are responsible for ensuring that any work submitted does not constitute plagiarism. Students who are in any doubt as to what constitutes plagiarism should consult their instructor before handing in any assignments.
 
 In this course, Generative AI can be used in the following ways:
@@ -114,32 +128,25 @@ In this course, Generative AI can be used in the following ways:
 Generative AI **CANNOT** be used to generate text or code from scratch. Assessments suspected of having AI-generated text and/or code will be flagged and temporarily assigned a grade of zero. Students will be required to meet with the instructor to receive a grade.
 
 **Any use of Generative AI must be disclosed. Students will be asked to submit an AI Declaration Statement disclosing their use on any assessments**
-
 :::
-
-
 
 ## Lecture Flow
 
--  Lectures for STAT545 are designed to be more interactive than a traditional statistics lecture. 
+-   Lectures for STAT545 are designed to be more interactive than a traditional statistics lecture.
 
--  The class will begin with a short summary of the previous class, followed by an introduction to that day's topic. For most of the lectures, we will be going through the interactive worksheets (yes, the ones that you receive marks for and yes, prior to the deadline). This will give provide you with dedicated time to work on the assessments in class with access to the instructor and the TAs.
+-   The class will begin with a short summary of the previous class, followed by an introduction to that day's topic. For most of the lectures, we will be going through the interactive worksheets (yes, the ones that you receive marks for and yes, prior to the deadline). This will give provide you with dedicated time to work on the assessments in class with access to the instructor and the TAs.
 
--  Many lectures will have an accompanying video, which will be linked on the webpage and on [our STAT545 YouTube Playlist.](https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&si=sT-h1q8rTTKxs4vg)
+-   Many lectures will have an accompanying video, which will be linked on the webpage and on [our STAT545 YouTube Playlist.](https://youtube.com/playlist?list=PL32xpGMCWJAkihtosNGDQz0NP4UBqQnq8&si=sT-h1q8rTTKxs4vg)
 
--  Lectures build on top of each other and it is crucial to stay on track as we progress through this course.
-
+-   Lectures build on top of each other and it is crucial to stay on track as we progress through this course.
 
 # Intro to R
 
-
-
-
 ## R Basics
 
--  R is an open source programming language designed for statistical computing and data analysis. 
+-   R is an open source programming language designed for statistical computing and data analysis.
 
--  In its simplest form, R is a *calculator*. For example, we can type `1 + 2` in the console of R (we will be using RStudio) will spit out the answer of 3.
+-   In its simplest form, R is a *calculator*. For example, we can type `1 + 2` in the console of R (we will be using RStudio) will spit out the answer of 3.
 
 ```{webr}
 1 + 2
@@ -149,7 +156,7 @@ Generative AI **CANNOT** be used to generate text or code from scratch. Assessme
 
 ## R Basics
 
--  R can also be used to do more complex expressions, such as $(450 - 15)^2/(5 + 7\times4)$, which we would write in R with:
+-   R can also be used to do more complex expressions, such as $(450 - 15)^2/(5 + 7\times4)$, which we would write in R with:
 
 ```{webr}
 (450-15)^2/(5+7*4)
@@ -157,11 +164,11 @@ Generative AI **CANNOT** be used to generate text or code from scratch. Assessme
 
 ## Variables
 
--  R can also be used to store values as a *variable*. 
+-   R can also be used to store values as a *variable*.
 
--  To assign a value to a variable in R, we use the `<-` symbol (the less than symbol followed by the minus sign). 
+-   To assign a value to a variable in R, we use the `<-` symbol (the less than symbol followed by the minus sign).
 
--  For example, if I wanted to store the number of apartments I've lived in since moving out for university, I could assign this to a variable called `apartments_lived_in` by:
+-   For example, if I wanted to store the number of apartments I've lived in since moving out for university, I could assign this to a variable called `apartments_lived_in` by:
 
 ```{webr}
 apartments_lived_in <- 4
@@ -185,9 +192,9 @@ Variables can also store the results of expressions, which we will dive into in 
 
 ## Comments
 
--  Comments are lines (or parts of lines) of code that R ignores.
+-   Comments are lines (or parts of lines) of code that R ignores.
 
--  We specify them using `#`. Commenting can be useful for documenting what you're doing, or temporarily stopping a line from running. For example:
+-   We specify them using `#`. Commenting can be useful for documenting what you're doing, or temporarily stopping a line from running. For example:
 
 ```{webr}
 
@@ -206,17 +213,17 @@ y
 
 ## Data Structures
 
--  R can handle different *data structures* (which are just objects that contain data) including:
+-   R can handle different *data structures* (which are just objects that contain data) including:
 
-    -  *strings*
-    -  *vectors*
-    -  data frames* (just to name a few). 
-    
+    -   *strings*
+    -   *vectors*
+    -   data frames\* (just to name a few).
+
 We will go over the basics of these structures in this section.
 
 ## Strings
 
--  A string is a R (often called character data) is a string of characters enclosed in quotations. For example, I could store my name in a variable called `name`:
+-   A string is a R (often called character data) is a string of characters enclosed in quotations. For example, I could store my name in a variable called `name`:
 
 ```{webr}
 name <- "Grace"
@@ -239,18 +246,17 @@ manifestation
 
 You can use single `'` or double `"` quotation marks to wrap around the string - just be consistent!
 
-
 ::: callout-tip
 In some worksheets, questions are multiple choice. Ensure that you type your answer as a string, i.e., `my_answer <- "A".`
 :::
 
 ## Numeric Vectors
 
--  A *vector* is an ordered list of items of the same type. A *numeric vector* is an ordered list of numbers.
+-   A *vector* is an ordered list of items of the same type. A *numeric vector* is an ordered list of numbers.
 
--  Vectors are created in R using the `c()` function, with elements separated by commas. 
+-   Vectors are created in R using the `c()` function, with elements separated by commas.
 
--  For example, suppose someone wanted to store the number of roommates they lived with in their four apartments. They had 4 roommates in their first apartment, then 2 in their next, followed by 3, and finally lived alone with 0 roommates. We can save this information in a vector named `roommates` using the following code:
+-   For example, suppose someone wanted to store the number of roommates they lived with in their four apartments. They had 4 roommates in their first apartment, then 2 in their next, followed by 3, and finally lived alone with 0 roommates. We can save this information in a vector named `roommates` using the following code:
 
 ```{webr}
 roommates <- c(4, 2, 3, 0)
@@ -261,9 +267,9 @@ roommates
 
 ## Numeric Vectors
 
--  We can access each element of the vector by indexing it with `[]`. 
+-   We can access each element of the vector by indexing it with `[]`.
 
--  In R, unlike some other programming languages, the index starts at 1. So if you'd like to access the first element of the vector, you can use `[1]`. For example, to see the number of roommates in my first apartment, I could use
+-   In R, unlike some other programming languages, the index starts at 1. So if you'd like to access the first element of the vector, you can use `[1]`. For example, to see the number of roommates in my first apartment, I could use
 
 ```{webr}
 roommates[1]
@@ -277,9 +283,9 @@ roommates[3]
 
 ## Numeric Vectors
 
--  We can also perform math on vectors! 
+-   We can also perform math on vectors!
 
--  Suppose we wanted to calculate the total number of occupants in each apartment (including myself). I need to add one person to each apartment! To do so, I can make a new variable called `totaloccupants` which is equal to `roommates` plus one:
+-   Suppose we wanted to calculate the total number of occupants in each apartment (including myself). I need to add one person to each apartment! To do so, I can make a new variable called `totaloccupants` which is equal to `roommates` plus one:
 
 ```{webr}
 totaloccupants <- roommates + 1
@@ -290,9 +296,9 @@ We will dive more into math (functions) on vectors in Worksheet 1.
 
 ## Logical Vectors
 
--  A *logical vector* is a vector where the elements are a logical statement containing `TRUE` or `FALSE`. 
+-   A *logical vector* is a vector where the elements are a logical statement containing `TRUE` or `FALSE`.
 
--  Let's see how we can create a vector indicating whether or not there were more than two roommates in a given apartment. We can store this as a variable, named `more_than_two_roommates using`
+-   Let's see how we can create a vector indicating whether or not there were more than two roommates in a given apartment. We can store this as a variable, named `more_than_two_roommates using`
 
 ```{webr}
 more_than_two_roommates <- roommates > 2
@@ -303,19 +309,19 @@ From the output, you can see that this statement is true for apartments 1 and 3,
 
 ## Other useful functions on vectors
 
--  R has a number of built in functions that are useful for exploring vectors. 
+-   R has a number of built in functions that are useful for exploring vectors.
 
--  We can check the length (number of elements) of a vector using the `length()` function:
+-   We can check the length (number of elements) of a vector using the `length()` function:
 
 ```{webr}
 length(roommates)
 ```
 
-This answer makes sense as we had data for four apartments. 
+This answer makes sense as we had data for four apartments.
 
 ## Other useful functions on vectors
 
--  We can also look at the types of data stored in vectors using the `typeof` function
+-   We can also look at the types of data stored in vectors using the `typeof` function
 
 ```{webr}
 typeof(roommates)
@@ -327,11 +333,11 @@ typeof(more_than_two_roommates)
 
 ## Dataframes
 
--  Dataframes are a powerful tool for storing *multidimensional* data. 
+-   Dataframes are a powerful tool for storing *multidimensional* data.
 
--  For example, we could have data on housing for multiple people, including the rent paid, number of roommates, city, etc. Dataframes are a convenient way to store such information. 
+-   For example, we could have data on housing for multiple people, including the rent paid, number of roommates, city, etc. Dataframes are a convenient way to store such information.
 
--  Suppose we have data on three individuals stored in the dataframe `housingdata`.
+-   Suppose we have data on three individuals stored in the dataframe `housingdata`.
 
 ```{webr}
 #| echo: false
@@ -381,14 +387,13 @@ I've highlighted some important pieces:
 
 -   Shows your saved variables, data structures, etc (currently empty)
 
-
 ## RStudio and Saving your R Code {.scrollable .nostretch}
 
--  It's okay if your RStudio is configured differently! You can move the positions of some of these panes in the settings.
+-   It's okay if your RStudio is configured differently! You can move the positions of some of these panes in the settings.
 
--  For any code you'd like to save, we write it in an R Script! Let's create a file called "roommates.R". In RStudio, go to File \> New File \> R Script. Now, go to File \> Save As... and save it somewhere that makes sense for you (i.e., a STAT545 folder).
+-   For any code you'd like to save, we write it in an R Script! Let's create a file called "roommates.R". In RStudio, go to File \> New File \> R Script. Now, go to File \> Save As... and save it somewhere that makes sense for you (i.e., a STAT545 folder).
 
--  Instead of working line by line, let's add the following (very simple) code to a new file called roommates.R to calculate the total number of occupants in each apartment lived in:
+-   Instead of working line by line, let's add the following (very simple) code to a new file called roommates.R to calculate the total number of occupants in each apartment lived in:
 
 ``` r
 roommates <- c(4, 2, 3, 0)
@@ -406,9 +411,7 @@ Your RStudio will look something like this:
 
 To run the code, we can highlight it and click the "Run" button or click cmd/ctrl + Shift + Enter to run all code in the R Script. You will notice the code gets sent line by line to the Console, and the variables you created will now be in the Environment.
 
-![](../../lectures_i/images/clipboard-1540324873.png)
-## RStudio and Saving your R Code
-
+![](../../lectures_i/images/clipboard-1540324873.png) \## RStudio and Saving your R Code
 
 Now, anytime you want to run that code you have it right there! You can also edit the code and re-run it to update the variables.
 
@@ -416,13 +419,11 @@ The variables are stored in the environment. If you want to start fresh, you can
 
 ## RStudio and Saving your R Code
 
-
 ::: {.callout-important appearance="minimal" icon="false"}
 #### Exercise 1: Update roommates.R
 :::
 
 Create an R file that creates the `housingdata` dataset:
-
 
 ```{r}
 housingdata <- data.frame(rbind(c("Grace", 2, 2, 2700, "Vancouver"),
@@ -435,9 +436,7 @@ Your landlord has decided that pets count as occupants! You've lived with a pet 
 
 Save the file.
 
-
 ## RStudio and Saving your R Code
-
 
 ::: {.callout-important appearance="minimal" icon="false"}
 #### Exercise 2: Playing in the Console
@@ -453,10 +452,7 @@ totaloccupants
 
 Did anything in your Environment change?
 
-
-
 ## RStudio and Saving your R Code
-
 
 Well... even though you didn't touch roommates.R, you overwrote the `roommates` and `totaloccupants` variables!
 
@@ -465,7 +461,6 @@ Well... even though you didn't touch roommates.R, you overwrote the `roommates` 
 So remember, the console is not separate (functionally) in R. Anything you do in the console will affect your variables in the environment. Of course, if we were to clear our environment and re-run the roommates.R file, we'd go back to our original data.
 
 Those are the basics of RStudio! You will learn more as the course progresses.
-
 
 ## What to do when you're stuck
 
@@ -487,23 +482,19 @@ Try:
 
 While I encourage you to search for answers on your own, don't fret if you're stuck. We're here to help on Slack! Review the posting guidelines on the Syllabus so your questions go to the appropriate channel.
 
-
 ## Worksheet A1
 
 Now it's your turn to use R! Work through [Worksheet A1](../worksheets/index.qmd) on your own and reach out on Slack if you have any issues. Refer to the previous lecture if you need guidance on how to access Worksheets on Jupyter Notebooks.
 
+Some notes on Jupyter notebooks:
 
-Some notes on Jupyter notebooks: 
+-   A terminal or command prompt window will pop up. Do not close it until you are finished with Jupyter. - Save often!
 
--  A terminal or command prompt window will pop up. Do not close it until you are finished with Jupyter. - Save often! 
+-   Sometimes OneDrive folders do not show up on Jupyter. Try saving in a folder on your Desktop if you have issues finding files.
 
--  Sometimes OneDrive folders do not show up on Jupyter. Try saving in a folder on your Desktop if you have issues finding files. 
-
--  To run code, highlight it and click the run (play) button or ctrl/cmd and enter
+-   To run code, highlight it and click the run (play) button or ctrl/cmd and enter
 
 For more on Jupyter Notebooks and our worksheets, see [this YouTube video!](https://www.youtube.com/watch?v=-jPaI1njy3E)
-
-
 
 ## To Save These Slides With Your Code
 

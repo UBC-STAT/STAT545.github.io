@@ -42,9 +42,9 @@ All due dates are at 11:59pm PT (local time, Vancouver).
 |  | Thurs Nov 12 | [Regular Expressions with `stringr`](lectures_ii/lec10_characterdata.qmd) |  |
 | 4 | Tues Nov 17 | [Dashboards with `RShiny`](lectures_ii/lec11_shiny.qmd) | Assignment 2 (R Package) |
 |  | Thurs Nov 19 |  | Worksheet B2 |
-| 5 | Tues Nov 24 | [Iteration](lectures_ii/lec13_purrr.qmd) |  |
+| 5 | Tues Nov 24 | [Iteration](lectures_ii/lec12_purrr.qmd) |  |
 |  | Thurs Nov 26 |  | Assignment 3 (Dashboard) |
-| 6 | Tues Dec 01 | [Websites with `quarto`](lectures_ii/lec14_quarto.qmd) |  |
+| 6 | Tues Dec 01 | [Websites with `quarto`](lectures_ii/lec13_quarto.qmd) |  |
 |  | Thurs Dec 03 |  | Worksheet B3 |
 |  | ... |  |  |
 |  | Tues Dec 15 |  | Assignment 4 (Website) |
